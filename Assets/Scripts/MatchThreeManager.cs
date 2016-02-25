@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MatchThreeManager : MonoBehaviour {
-    public int gridthWidth;
+    public int gridWidth;
     public int gridHeight;
     public int[,] grid;
     public GameObject[] tilePrefabs;
@@ -26,13 +26,13 @@ public class MatchThreeManager : MonoBehaviour {
     {
         grid = new int[gridWidth, gridHeight];
 
-        for(int x = 0; x < gridWith; x++)
+        for(int x = 0; x < gridWidth; x++)
         {
-            for(int y = 0; y < gridHeight)
+            for (int y = 0; y < gridHeight; y++)
             {
                 int randomTile = Random.Range(0, tilePrefabs.Length);
-                grid[x,y] = randomTile;
-                Instantiate(tilePrefabs[randomTile], new Vector2(x,y), Quaternion.identity);
+                grid[x, y] = randomTile;
+                Instantiate(tilePrefabs[randomTile], new Vector2(x, y), Quaternion.identity);
             }
         }
     }
