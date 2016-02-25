@@ -31,37 +31,45 @@ public class MatchThreeInput : MonoBehaviour {
         }
 	}
 
-    /*void SelectTile()
+    void SelectTile()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray, 50f, tiles);
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        //Ray2D ray = new Ray2D(transform.position, mousePosition);
+        //RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(tiles.value, tiles.value));
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+        //RaycastHit2D hit = Physics2D.Raycast(ray, 50f, tiles);
 
         if(hit)
         {
             activeTile = hit.collider.gameObject;
+            print("raycast hit");
         }
     }
 
     void AttemptMove()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = GetRayIntersection(ray, 50f, tiles);
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit2D hit = GetRayIntersection(ray, 50f, tiles);
+        //Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        //RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(tiles.value, tiles.value));
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
 
         if (hit)
         {
             if(NeighborCheck(hit.collider.gameObject))
             {
-                //activeTile.GetComponent<>().Move(hit.collider.gameObject.transform.position);
-                //hit.collider.gameObject.GetComponent<>().Move(activeTile.transform.position);
-                gridManager.CheckMatches();
+                activeTile.GetComponent<MatchThreeInput>().Move(hit.collider.gameObject.transform.position);
+                hit.collider.gameObject.GetComponent<MatchThreeInput>().Move(activeTile.transform.position);
+                //gridManager.CheckMatches();
             }
         }
     }
 
-    bool NeighborCheck(GameObject.object)
+    bool NeighborCheck(GameObject objectToCheck)
     {
-        int xDifference = Mathf.Abs (activeTile.transform.position.x - objectToCheck.transform.position.x);
-        int yDifference = Mathf.Abs (activeTile.transform.position.y - objectToCheck.transform.position.y);
+        float xDifference = Mathf.Abs (activeTile.transform.position.x - objectToCheck.transform.position.x);
+        float yDifference = Mathf.Abs (activeTile.transform.position.y - objectToCheck.transform.position.y);
 
         if (xDifference + yDifference == 1)
             return true;
@@ -72,5 +80,5 @@ public class MatchThreeInput : MonoBehaviour {
     public void Move(Vector2 destination)
     {
         transform.position = destination;
-    }*/
+    }
 }
