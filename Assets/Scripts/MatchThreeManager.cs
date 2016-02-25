@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class MatchThreeManager : MonoBehaviour {
-    public int gridWidth;
-    public int gridHeight;
+    public int gridWidth = 4;
+    public int gridHeight = 4;
     public int[,] grid;
     public GameObject[] tilePrefabs;
 
