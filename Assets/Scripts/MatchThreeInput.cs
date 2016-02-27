@@ -59,17 +59,18 @@ public class MatchThreeInput : MonoBehaviour {
         {
             if(NeighborCheck(hit.collider.gameObject))
             {
-                activeTile.GetComponent<MatchThreeInput>().Move(hit.collider.gameObject.transform.position);
+                activeTile.gameObject.GetComponent<MatchThreeInput>().Move(hit.collider.gameObject.transform.position);
+                print("attempted move");
                 hit.collider.gameObject.GetComponent<MatchThreeInput>().Move(activeTile.transform.position);
-                //gridManager.CheckMatches();
+                gridManager.CheckMatches();
             }
         }
     }
 
     bool NeighborCheck(GameObject objectToCheck)
     {
-        float xDifference = Mathf.Abs (activeTile.transform.position.x - objectToCheck.transform.position.x);
-        float yDifference = Mathf.Abs (activeTile.transform.position.y - objectToCheck.transform.position.y);
+        float xDifference = Mathf.Abs(activeTile.transform.position.x - objectToCheck.transform.position.x);
+        float yDifference = Mathf.Abs(activeTile.transform.position.y - objectToCheck.transform.position.y);
 
         if (xDifference + yDifference == 1)
             return true;
