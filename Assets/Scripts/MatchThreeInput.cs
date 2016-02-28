@@ -37,7 +37,7 @@ public class MatchThreeInput : MonoBehaviour {
         //Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         //Ray2D ray = new Ray2D(transform.position, mousePosition);
         //RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(tiles.value, tiles.value));
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, tiles.value);
         //RaycastHit2D hit = Physics2D.Raycast(ray, 50f, tiles);
 
         if(hit)
@@ -53,7 +53,9 @@ public class MatchThreeInput : MonoBehaviour {
         //RaycastHit2D hit = GetRayIntersection(ray, 50f, tiles);
         //Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         //RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(tiles.value, tiles.value));
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, tiles.value);
+        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+        //print(tiles.GetType());
 
         if (hit)
         {
@@ -74,8 +76,10 @@ public class MatchThreeInput : MonoBehaviour {
 
         if (xDifference + yDifference == 1)
             return true;
+        
         else
             return false;
+        
     }
 
     public void Move(Vector2 destination)
