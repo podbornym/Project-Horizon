@@ -40,7 +40,6 @@ public class MatchThreeManager : MonoBehaviour {
     public void CheckMatches()
     {
         ArrayList matchPositions = new ArrayList();
-
         int currentTile = 0;
         int lastTile = 0;
         int secondToLastTile = 0;
@@ -54,7 +53,6 @@ public class MatchThreeManager : MonoBehaviour {
                 if(currentTile == lastTile && lastTile == secondToLastTile)
                 {
                     matchPositions.Add(new Vector2(x,y));
-
                     secondToLastTile = lastTile;
                     lastTile = currentTile;
                 }
@@ -69,6 +67,7 @@ public class MatchThreeManager : MonoBehaviour {
             foreach(Vector2 tilePosition in matchPositions)
             {
                 //raycast
+
             }
             //destroy (set to 0, send message to older method?)
         }

@@ -5,6 +5,8 @@ public class MatchThreeInput : MonoBehaviour {
     private MatchThreeManager gridManager;
     public LayerMask tiles;
     public GameObject activeTile;
+    public GameObject movingTile;
+    public Vector2 pos;
 
 	void Awake()
     {
@@ -33,38 +35,29 @@ public class MatchThreeInput : MonoBehaviour {
 
     void SelectTile()
     {
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        //Ray2D ray = new Ray2D(transform.position, mousePosition);
-        //RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(tiles.value, tiles.value));
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, tiles.value);
-        //RaycastHit2D hit = Physics2D.Raycast(ray, 50f, tiles);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
 
         if(hit)
         {
             activeTile = hit.collider.gameObject;
-            print("raycast hit");
+            pos = activeTile.transform.position;
         }
     }
 
     void AttemptMove()
     {
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //RaycastHit2D hit = GetRayIntersection(ray, 50f, tiles);
-        //Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        //RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(tiles.value, tiles.value));
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, tiles.value);
-        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
-        //print(tiles.GetType());
-
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+        
         if (hit)
         {
             if(NeighborCheck(hit.collider.gameObject))
             {
-                activeTile.gameObject.GetComponent<MatchThreeInput>().Move(hit.collider.gameObject.transform.position);
-                print("attempted move");
-                hit.collider.gameObject.GetComponent<MatchThreeInput>().Move(activeTile.transform.position);
+                
+                movingTile = hit.collider.gameObject;
+                Move(activeTile, movingTile);
+                MoveOther(movingTile, pos);
                 gridManager.CheckMatches();
+                activeTile = null;
             }
         }
     }
@@ -82,8 +75,13 @@ public class MatchThreeInput : MonoBehaviour {
         
     }
 
-    public void Move(Vector2 destination)
+    public void Move(GameObject tile, GameObject destination)
     {
-        transform.position = destination;
+        tile.transform.position = destination.transform.position;
+    }
+
+    public void MoveOther(GameObject tile, Vector2 destination)
+    {
+        tile.transform.position = destination;
     }
 }
