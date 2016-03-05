@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
     public GameObject player;
@@ -15,6 +16,11 @@ public class PlayerMovement : MonoBehaviour {
 	    if(mousePressed)
         {
             player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, Time.deltaTime * 10);
+        }
+
+        if (player.transform.position == transform.position)
+        {
+            SceneManager.LoadScene("UIScene1");
         }
 	}
 
