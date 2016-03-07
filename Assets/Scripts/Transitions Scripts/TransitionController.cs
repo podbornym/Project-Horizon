@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class TransitionController : MonoBehaviour {
 
-	 public static string levelTo;
+	public static string levelTo;
+
 
 	void Start (){
 		StartCoroutine(loadTimer());
