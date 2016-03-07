@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class TransitionController : MonoBehaviour {
 
 	public static string levelTo;
+	public int seconds;
 
 
 	void Start (){
@@ -19,7 +20,7 @@ public class TransitionController : MonoBehaviour {
 	// Waits for 5 seconds, then loads next scene
 	IEnumerator loadTimer()
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(seconds);
 		SceneManager.LoadScene(levelTo);
 	}
 }
