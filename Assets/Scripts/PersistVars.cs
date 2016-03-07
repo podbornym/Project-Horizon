@@ -7,4 +7,5 @@ public class PersistVars : MonoBehaviour {
     //across scene changes
 
     public static string ggScrub = "This will be the best art theft game ever made.  No doubt about it!";
+    public static GameObject[] landingPairs;
 }
