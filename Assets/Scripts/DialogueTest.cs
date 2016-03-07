@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FindTheDif : MonoBehaviour {
-
-    public GameObject[] OriginalObj;
-    public GameObject[] DifferentObj;
+public class DialogueTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,5 +12,4 @@ public class FindTheDif : MonoBehaviour {
 	void Update () {
 	
 	}
-    
 }
