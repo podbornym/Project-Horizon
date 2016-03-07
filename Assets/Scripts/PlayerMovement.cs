@@ -44,6 +44,15 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = GameObject.Find("stairs1").transform.position;
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
                     break;
+                case "clock":
+                    //landingPos = GameObject.Find("chair").transform.position;
+                    //transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
+                    //if 
+                    break;
+                case "chair":
+                    landingPos = GameObject.Find("clock").transform.position;
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
+                    break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");
                     break;

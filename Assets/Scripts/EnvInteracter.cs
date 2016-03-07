@@ -34,6 +34,10 @@ public class EnvInteracter : MonoBehaviour {
         {
             PlayerMovement.MovePlayer(transform.position, gameObject);
         }
+        else if (gameObject.tag == "bridge")
+        {
+            PlayerMovement.MovePlayer(transform.position, gameObject);
+        }
         else
         {
             PlayerMovement.MovePlayer(transform.position, null);
