@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     private static GameObject landing = null;
     private static float offset;
     private static bool toLanding = false;
+    private bool moving = false;
 
     // Use this for initialization
     void Start () {
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
-        if(mousePressed)
+        /*if(mousePressed)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(moveToPos.x, transform.position.y, transform.position.z), Time.deltaTime * 10);
             if(transform.position.x == moveToPos.x)
@@ -33,7 +34,6 @@ public class PlayerMovement : MonoBehaviour {
         }
         if(toLanding)
         {
-            
             switch (landing.name)
             {
                 case "stairs1":
@@ -42,6 +42,15 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "stairs2":
                     landingPos = GameObject.Find("stairs1").transform.position;
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
+                    break;
+                case "clock":
+                    //landingPos = GameObject.Find("chair").transform.position;
+                    //transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
+                    //if 
+                    break;
+                case "chair":
+                    landingPos = GameObject.Find("clock").transform.position;
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
                     break;
                 default:
@@ -55,14 +64,85 @@ public class PlayerMovement : MonoBehaviour {
                 toLanding = false;
                 mousePressed = false;
             }
-        }
+        }*/
     }
 
-    public static void MovePlayer(Vector3 target, GameObject start)
+    public void MovePlayer(Vector3 target, GameObject start)
     {
         moveToPos = target;
         mousePressed = true;
         landing = start;
+        StartCoroutine(moveStraight());
+    }
+
+    IEnumerator moveStraight()
+    {
+        if (!moving)
+        {
+            moving = true;
+            while (true)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(moveToPos.x, transform.position.y, transform.position.z), Time.deltaTime * 10);
+                yield return null;
+                if (transform.position.x == moveToPos.x)
+                {
+                    if (landing != null)
+                    {
+                        offset = transform.position.y - moveToPos.y;
+                        switch (landing.name)
+                        {
+                            case "stairs1":
+                                landingPos = GameObject.Find("stairs2").transform.position;
+                                StartCoroutine(moveStairs());
+                                break;
+                            case "stairs2":
+                                landingPos = GameObject.Find("stairs1").transform.position;
+                                StartCoroutine(moveStairs());
+                                break;
+                            case "clock":
+                                moveCurve();
+                                break;
+                            case "chair":
+                                moveCurveReverse();
+                                break;
+                            default:
+                             Debug.Log("did not access a name for a valid landing object");
+                                break;
+                        }
+                    }
+                    break;
+                }
+            }
+            moving = false;
+        }
+    }
+
+    IEnumerator moveStairs()
+    {
+        while(true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), Time.deltaTime * 10);
+            yield return null;
+            if (transform.position.x == landingPos.x)
+            {
+                break;
+            }
+        }
+        moving = false;
+    }
+
+    void moveCurve()
+    {
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("clockToChair"), "speed", 10, "easetype", "linear"));
+        //todo implement oncomplete(moving == false) both here and in reverse, and make the function moveCurve
+        //take in the string for the path name and the speed to run the animation at 
+        moving = false;
+    }
+
+    void moveCurveReverse()
+    {
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPathReversed("clockToChair"), "speed", 10, "easetype", "linear"));
+        moving = false;
     }
 }
 /*

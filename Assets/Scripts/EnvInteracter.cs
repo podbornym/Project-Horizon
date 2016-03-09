@@ -8,6 +8,7 @@ public class EnvInteracter : MonoBehaviour {
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
+    public GameObject player;
 
     // Use this for initialization
     void Start () {
@@ -16,6 +17,7 @@ public class EnvInteracter : MonoBehaviour {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
+        player = GameObject.Find("Player");
 	}
 
     void OnMouseEnter()
@@ -30,13 +32,13 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (gameObject.tag == "stairs")
+        if (gameObject.tag != "untagged")
         {
-            PlayerMovement.MovePlayer(transform.position, gameObject);
+            player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
         }
         else
         {
-            PlayerMovement.MovePlayer(transform.position, null);
+            player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
         }
         
     }
