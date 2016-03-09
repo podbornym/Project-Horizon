@@ -32,7 +32,7 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (gameObject.tag != "untagged")
+        if (gameObject.tag != "Untagged")
         {
             player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
         }
