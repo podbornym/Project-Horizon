@@ -12,11 +12,6 @@ public class EnvInteracter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (!cursorSet)
-        {
-            Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
-            cursorSet = true;
-        }
         player = GameObject.Find("Player");
 	}
 
@@ -32,7 +27,7 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (gameObject.tag == "bridge" || gameObject.tag == "stairs")
+        if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator")
         {
             player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
         }

@@ -7,9 +7,6 @@ public class testButtonUI : MonoBehaviour
 
     bool expandMenu = false;
     public Image piece1;
-    public Image piece2;
-    public Image piece3;
-    public Image piece4;
     public Image flyup;
     Vector3 movePiece1;
     Vector3 returnPiece1;
@@ -18,9 +15,6 @@ public class testButtonUI : MonoBehaviour
     void Start()
     {
         piece1.enabled = false;
-        piece2.enabled = false;
-        piece3.enabled = false;
-        piece4.enabled = false;
         movePiece1 = piece1.rectTransform.position + new Vector3(0, 100, 0);
         returnPiece1 = piece1.rectTransform.position;
     }
