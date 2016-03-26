@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     private static Vector3 landingPos;
     private static GameObject landing = null;
     private static float offset;
+    private static float camOffset;
     private bool moving = false;
     GameObject landingPair = null;
     int columnOffset = 0;
@@ -57,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
     void moveStairs()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
 
     void moveCurve(string curveName, int speed)
@@ -73,7 +74,7 @@ public class PlayerMovement : MonoBehaviour {
     void moveElevator()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
 
     void notMoving()
@@ -88,6 +89,7 @@ public class PlayerMovement : MonoBehaviour {
         if (landing != null)
         {
             offset = transform.position.y - moveToPos.y;
+            camOffset = cam.transform.position.y - moveToPos.y;
             switch (landing.name)
             {
                 case "stairs1":
