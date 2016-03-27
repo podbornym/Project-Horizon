@@ -3,11 +3,14 @@ using System.Collections;
 
 public class DialogueTest : MonoBehaviour {
 
-    public string[,] dialogue1 = { { "hello", "goodbye" }, { "hey", "bye"} };
-    public string[,] dialogue2 = { { "what's up", "see ya" }, { "what", "go away" } };
-    public string[,] dialogue3 = { { "I found it", "here ya go" }, { "Really?", "thanks" } };
-    public GameObject testClue;
-    bool testClueFound = false;
+    public string[,] dialogue1 = { { "hello", "goodbye", "clue1", "clue2" }, { "hey", "bye", "I dont know", "I'm not sure" } };
+    public string[,] dialogue2 = { { "hello", "goodbye", "clue1", "clue2" }, { "hey", "bye", "You Found it", "I'm not sure" } };
+    public string[,] dialogue3 = { { "hello", "goodbye", "clue1", "clue2" }, { "hey", "bye", "I dont know", "Cool Find" } };
+    public string[,] dialogue4 = { { "hello", "goodbye", "clue1", "clue2" }, { "hey", "bye", "You Found it", "Cool Find" } };
+    public GameObject clue1;
+    public GameObject clue2;
+    bool[] ClueFound = { false, false };
+    private int init = 0;
     string[,] currentDialogue;
 
     // Use this for initialization
@@ -20,56 +23,70 @@ public class DialogueTest : MonoBehaviour {
 	void Update ()
     {
         int test = 0;
+        if (ClueFound[0] && !ClueFound[1])
+        {
+            currentDialogue = dialogue2;
+        }
+        if (!ClueFound[0] && ClueFound[1])
+        {
+            currentDialogue = dialogue3;
+        }
+        if (ClueFound[0] && ClueFound[1])
+        {
+            currentDialogue = dialogue4;
+        }
+        if (init == 0)
+        {
+            Debug.Log("Options:");
+            Debug.Log("1 - " + currentDialogue[0, 0] + ":    2 - " + currentDialogue[0, 1] + ":    3 - " + currentDialogue[0, 2] + ":    4 - " + currentDialogue[0, 3]);
+            init += 1;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log(currentDialogue[0,0]);
             Debug.Log(currentDialogue[1, 0]);
-            for (int i = 0; i < currentDialogue.GetLength(0); i++)
-            {
-                if(dialogue1[i,0] == currentDialogue[i,0] && test == 0)
-                {
-                    if (testClueFound)
-                        currentDialogue = dialogue3;
-                    else
-                        currentDialogue = dialogue2;
-                    test++;
-                }
-                else if (dialogue2[i, 0] == currentDialogue[i, 0] && test == 0)
-                {
-                    currentDialogue = dialogue1;
-                    test++;
-                }
-                else if (dialogue3[i, 1] == currentDialogue[i, 1] && test == 0)
-                {
-                    currentDialogue = dialogue1;
-                    test++;
-                }
-            }
+            Debug.Log("Options:");
+            Debug.Log("1 - " + currentDialogue[0, 0] + ":    2 - " + currentDialogue[0, 1] + ":    3 - " + currentDialogue[0, 2] + ":    4 - " + currentDialogue[0, 3]);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log(currentDialogue[0, 1]);
             Debug.Log(currentDialogue[1, 1]);
-            for (int i = 0; i < currentDialogue.GetLength(0); i++)
-            {
-                if (dialogue1[i, 1] == currentDialogue[i, 1] && test == 0)
-                {
+            Debug.Log("Options:");
+            Debug.Log("1 - " + currentDialogue[0, 0] + ":    2 - " + currentDialogue[0, 1] + ":    3 - " + currentDialogue[0, 2] + ":    4 - " + currentDialogue[0, 3]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log(currentDialogue[1, 2]);
+            Debug.Log("Options:");
+            Debug.Log("1 - " + currentDialogue[0, 0] + ":    2 - " + currentDialogue[0, 1] + ":    3 - " + currentDialogue[0, 2] + ":    4 - " + currentDialogue[0, 3]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Debug.Log(currentDialogue[1, 3]);
+            Debug.Log("Options:");
+            Debug.Log("1 - " + currentDialogue[0, 0] + ":    2 - " + currentDialogue[0, 1] + ":    3 - " + currentDialogue[0, 2] + ":    4 - " + currentDialogue[0, 3]);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            FindClue();
+        }
+    }
+    void FindClue()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
 
-                    if (testClueFound)
-                        currentDialogue = dialogue3;
-                    else
-                        currentDialogue = dialogue2;
-                    test++;
-                }
-                else if (dialogue2[i, 1] == currentDialogue[i, 1] && test == 0)
+        if (hit)
+        {
+            if(hit.collider.gameObject.tag == "clue")
+            {
+                if (hit.collider.gameObject == clue1)
                 {
-                    currentDialogue = dialogue1;
-                    test++;
+                    ClueFound[0] = true;
+                    Debug.Log("Found Clue 1");
                 }
-                else if (dialogue3[i, 1] == currentDialogue[i, 1] && test == 0)
+                if (hit.collider.gameObject == clue2)
                 {
-                    currentDialogue = dialogue1;
-                    test++;
+                    ClueFound[1] = true;
+                    Debug.Log("Found Clue 2");
                 }
             }
         }
