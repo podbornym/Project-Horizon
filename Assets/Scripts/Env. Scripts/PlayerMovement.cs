@@ -7,14 +7,24 @@ public class PlayerMovement : MonoBehaviour {
     private static Vector3 landingPos;
     private static GameObject landing = null;
     private static float offset;
+    private static float camOffset;
     private bool moving = false;
     GameObject landingPair = null;
     int columnOffset = 0;
+    public GameObject cam;
+    public Texture2D normalCursor;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+    public static bool cursorSet = false;
 
     // Use this for initialization
     void Start () {
-	    
-	}
+        if (!cursorSet)
+        {
+            Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
+            cursorSet = true;
+        }
+    }
 
     void Update()
     {
@@ -48,6 +58,7 @@ public class PlayerMovement : MonoBehaviour {
     void moveStairs()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
+        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
 
     void moveCurve(string curveName, int speed)
@@ -60,10 +71,17 @@ public class PlayerMovement : MonoBehaviour {
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPathReversed(curveName), "speed", speed, "easetype", "linear", "oncomplete", "notMoving"));
     }
 
+    void moveElevator()
+    {
+        iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
+        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+    }
+
     void notMoving()
     {
         moving = false;
         columnOffset = 0;
+        landing = null;
     }
 
     void identifyLanding()
@@ -71,6 +89,7 @@ public class PlayerMovement : MonoBehaviour {
         if (landing != null)
         {
             offset = transform.position.y - moveToPos.y;
+            camOffset = cam.transform.position.y - moveToPos.y;
             switch (landing.name)
             {
                 case "stairs1":
@@ -98,6 +117,20 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("clock");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     moveCurveReverse("clockToChair", 10);
+                    break;
+                case "elevTop":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("elevBot");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveElevator();
+                    break;
+                case "elevBot":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("elevTop");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveElevator();
                     break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");
