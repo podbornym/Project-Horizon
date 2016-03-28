@@ -27,7 +27,7 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator")
+        if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator" || gameObject.tag == "portal")
         {
             player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
         }

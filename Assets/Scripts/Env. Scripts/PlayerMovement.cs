@@ -26,11 +26,6 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     public void MovePlayer(Vector3 target, GameObject start)
     {
         moveToPos = target;
@@ -92,6 +87,7 @@ public class PlayerMovement : MonoBehaviour {
             camOffset = cam.transform.position.y - moveToPos.y;
             switch (landing.name)
             {
+                //Mansion Options
                 case "stairs1":
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("stairs2");
@@ -131,6 +127,31 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     moveElevator();
+                    break;
+                case "portal_0_S":
+                    SceneManager.LoadScene("SurrealistZone");
+                    notMoving();
+                    break;
+                case "portal_3_U":
+                    //dostuff
+                    print("to the ukiyo-e zone!!!");
+                    notMoving();
+                    break;
+                case "portal_4_B":
+                    //dostuff
+                    print("to the baroque zone!!!");
+                    notMoving();
+                    break;
+                //Surrealist options
+                case "rightEdge":
+                    //dostuff
+                    landingPair = GameObject.Find("leftEdge");
+                    landingPos = landingPair.transform.position;
+                    gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                    break;
+                case "leftEdge":
+                    //dostuff
                     break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");
