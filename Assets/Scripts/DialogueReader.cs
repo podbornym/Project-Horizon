@@ -1,33 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using System.Text;
-using System.IO;
-using System;
 
-public class DialogueReader : MonoBehaviour {
-
-	// Use this for initialization
-	void Start ()
-    {
-        entries = dialogue.text.Split('\n');
-        //NextLine();
-        for (int i = 0; i < entries.Length; i++)
-        {
-            Debug.Log(entries[i]);
-        }
-    }
-
-    void Update ()
-    {
-
-    }
-
-    private string[] entries;
-    private string[] currentLine;
+public class DialogueReader : MonoBehaviour
+{
+    public string[] entries;
     private int lineNum = 0;
     private string option;
-    public string[] choiceActions;
+    private string[] choiceActions = new string[6];
     public int selected = 0;
     public TextAsset dialogue;
     public GameObject dialogueContainer;
@@ -45,7 +25,27 @@ public class DialogueReader : MonoBehaviour {
     public Text option4;
     public Text option5;
     public Text option6;
-    private Text currentText;
+    public Text currentText;
+
+    // Use this for initialization
+    void Start ()
+    {
+        entries = dialogue.text.Split('\n');
+        for (int i = 0; i < entries.Length; i++)
+        {
+            Debug.Log(entries[i]);
+            if(entries[i] == null)
+            {
+                Debug.Log("not a string");
+            }
+        }
+        NextLine();
+    }
+
+    void Update ()
+    {
+
+    }
 
     public void NextLine()
     {
@@ -56,8 +56,7 @@ public class DialogueReader : MonoBehaviour {
         option4.text = "";
         option5.text = "";
         option6.text = "";
-        currentLine = entries[lineNum].Split(' ');
-        if (currentLine[lineNum].IndexOf("@") == 0)
+        if (entries[lineNum].IndexOf("@") == 0)
         {
             lineNum++;
             NextLine();
@@ -65,6 +64,7 @@ public class DialogueReader : MonoBehaviour {
         }
         else
         {
+            string[] currentLine = entries[lineNum].Split(' ');
             for (int i = 0; i < currentLine.Length; i++)
             {
                 switch (currentLine[i])
@@ -86,33 +86,33 @@ public class DialogueReader : MonoBehaviour {
                         nextButton.SetActive(false);
                         break;
                     case "#option1":
-                        choiceActions[0] = currentLine[i + 1];
                         option1.gameObject.SetActive(true);
+                        choiceActions[0] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option2":
-                        choiceActions[1] = currentLine[i + 1];
                         option2.gameObject.SetActive(true);
+                        choiceActions[1] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option3":
-                        choiceActions[2] = currentLine[i + 1];
                         option3.gameObject.SetActive(true);
+                        choiceActions[2] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option4":
-                        choiceActions[3] = currentLine[i + 1];
                         option4.gameObject.SetActive(true);
+                        choiceActions[3] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option5":
-                        choiceActions[4] = currentLine[i + 1];
                         option5.gameObject.SetActive(true);
+                        choiceActions[4] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option6":
-                        choiceActions[5] = currentLine[i + 1];
                         option6.gameObject.SetActive(true);
+                        choiceActions[5] = currentLine[i + 1];
                         i++;
                         break;
                     case "#clueonefound":
