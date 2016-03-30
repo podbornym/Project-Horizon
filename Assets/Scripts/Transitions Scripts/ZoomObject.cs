@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class ZoomObject : MonoBehaviour {
 	// scaling rate
@@ -12,24 +11,15 @@ public class ZoomObject : MonoBehaviour {
 	float maxMove = 7.0f;
 	float minScale = 0.75f;
 	float maxScale = 1.0f;
-	// Array to hold info text
-	public string[] text;
 	// 2d Array to hold sprites
 	public Sprite[] image;
 	// Index for arrays
-	public int index;
-
-	//GameObject infoText;
-
-
-	//string info = Text[index];
+	public int index =0;
 
 	void Start () {
 		Sprite spt = image[index];
 		SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer> ();
-		//Text txt = infoText.GetComponent<Text> ();
 		sr.sprite = spt;
-		//txt.text = info;
 	}
 
 	// Update is called once per frame
