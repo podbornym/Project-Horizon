@@ -148,10 +148,15 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("leftEdge");
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
-                    cam.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x + 10.27f, cam.transform.position.y, cam.transform.position.z);
+                    notMoving();
                     break;
                 case "leftEdge":
-                    //dostuff
+                    landingPair = GameObject.Find("rightEdge");
+                    landingPos = landingPair.transform.position;
+                    gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x - 10.27f, cam.transform.position.y, cam.transform.position.z);
+                    notMoving();
                     break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");
