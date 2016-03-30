@@ -1,0 +1,32 @@
+@Start
+#SetDialogue
+Hello there!
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #quit
+#option1Text This is clue one. #option2Text This is clue two. #option3Text Goodbye!
+
+@ClueOne
+#clueonefound #yes You found it! #no What do you mean?
+#goto:Start
+
+@ClueTwo
+#cluetwofound #yes You found it! #no What do you mean?
+#goto:Start
+
+@ClueThree
+#cluethreefound #yes You found it! #no What do you mean?
+#goto:Start
+
+@ClueFour
+#cluefourfound #yes You found it! #no What do you mean?
+#goto:Start
+
+@ClueFive
+#cluefivefound #yes You found it! #no What do you mean?
+#goto:Start
+
+@ClueSix
+#cluesixfound #yes You found it! #no What do you mean?
+#goto:Start
