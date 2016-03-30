@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
+    public Animation Move;
 
     // Use this for initialization
     void Start () {
@@ -39,14 +40,24 @@ public class PlayerMovement : MonoBehaviour {
         landing = start;
         columnOffset = offset;
         moveStraight();
-    }
+        }
 
     void moveStraight()
     {
         if (!moving)
         {
             moving = true;
+            if(moveToPos.x<gameObject.transform.position.x)
+            {
+                Move.Play("MoveLeft");
+            }
+            else if (moveToPos.x > gameObject.transform.position.x)
+            {
+                Move.Play("MoveRight");
+            }
+            
             iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(moveToPos.x + columnOffset, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "identifyLanding"));
+
         }
     }
 
@@ -74,6 +85,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void notMoving()
     {
+        //Move.Play("MainCharacterIdle");
         moving = false;
         columnOffset = 0;
         landing = null;
