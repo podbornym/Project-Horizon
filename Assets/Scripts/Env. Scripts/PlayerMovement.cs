@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
-    public Animation Move;
-
+    private Animator myAnimator;
+    public int Move;
     // Use this for initialization
     void Start () {
         if (!cursorSet)
@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
+        myAnimator = GetComponent<Animator>();
     }
 
     public void MovePlayer(Vector3 target, GameObject start)
@@ -41,21 +42,19 @@ public class PlayerMovement : MonoBehaviour {
         columnOffset = offset;
         moveStraight();
         }
-
     void moveStraight()
     {
         if (!moving)
         {
+            if (gameObject.transform.position.x < moveToPos.x)
+            {
+                myAnimator.SetInteger("Move", -1);
+            }
+            if(gameObject.transform.position.x>moveToPos.x)
+            {
+                myAnimator.SetInteger("Move", 1);
+            }
             moving = true;
-            if(moveToPos.x<gameObject.transform.position.x)
-            {
-                Move.Play("MoveLeft");
-            }
-            else if (moveToPos.x > gameObject.transform.position.x)
-            {
-                Move.Play("MoveRight");
-            }
-            
             iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(moveToPos.x + columnOffset, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "identifyLanding"));
 
         }
@@ -85,10 +84,11 @@ public class PlayerMovement : MonoBehaviour {
 
     void notMoving()
     {
-        //Move.Play("MainCharacterIdle");
+        
         moving = false;
         columnOffset = 0;
         landing = null;
+        myAnimator.SetInteger("Move", 0);
     }
 
     void identifyLanding()
