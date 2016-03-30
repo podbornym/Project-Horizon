@@ -86,9 +86,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         
         moving = false;
+        myAnimator.SetInteger("Move", 0);
         columnOffset = 0;
         landing = null;
-        myAnimator.SetInteger("Move", 0);
+        
     }
 
     void identifyLanding()
