@@ -6,6 +6,10 @@ public class UIHandler : MonoBehaviour {
     //will be used to both store these vars and handle changes within the UI
     private static bool createUI = true;
     public string testString = "";
+    public bool expanded = false;
+    public GameObject flyupMenu;
+    public GameObject MoveToPos;
+    public float offsetY;
 
     void Awake()
     {
@@ -24,4 +28,29 @@ public class UIHandler : MonoBehaviour {
     void Update () {
 	
 	}
+
+    public void ExpandMenu()
+    {
+        if (!expanded)
+        {
+            offsetY = Mathf.Abs(flyupMenu.transform.position.y) + Mathf.Abs(MoveToPos.transform.position.y);
+            iTween.MoveTo(flyupMenu, iTween.Hash("position", new Vector3(flyupMenu.transform.position.x, MoveToPos.transform.position.y, flyupMenu.transform.position.z), "speed", 300, "easetype", "linear"));
+            expanded = true;
+        }
+        else
+        {
+            iTween.MoveTo(flyupMenu, iTween.Hash("position", new Vector3(flyupMenu.transform.position.x, MoveToPos.transform.position.y - offsetY, flyupMenu.transform.position.z), "speed", 300, "easetype", "linear"));
+            expanded = false;
+        }
+    }
+
+    /*void menuOpen()
+    {
+        expanded = true;
+    }
+
+    void menuClosed()
+    {
+        expanded = false;
+    }*/
 }
