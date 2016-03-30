@@ -5,12 +5,6 @@ public class ObjectMoveScript : MonoBehaviour {
     public GameObject player;
     public bool mousePressed = false;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

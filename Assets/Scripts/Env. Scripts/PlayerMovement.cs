@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
+    public Animation Move;
 
     // Use this for initialization
     void Start () {
@@ -24,11 +25,6 @@ public class PlayerMovement : MonoBehaviour {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     public void MovePlayer(Vector3 target, GameObject start)
@@ -44,14 +40,24 @@ public class PlayerMovement : MonoBehaviour {
         landing = start;
         columnOffset = offset;
         moveStraight();
-    }
+        }
 
     void moveStraight()
     {
         if (!moving)
         {
             moving = true;
+            if(moveToPos.x<gameObject.transform.position.x)
+            {
+                Move.Play("MoveLeft");
+            }
+            else if (moveToPos.x > gameObject.transform.position.x)
+            {
+                Move.Play("MoveRight");
+            }
+            
             iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(moveToPos.x + columnOffset, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "identifyLanding"));
+
         }
     }
 
@@ -79,6 +85,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void notMoving()
     {
+        //Move.Play("MainCharacterIdle");
         moving = false;
         columnOffset = 0;
         landing = null;
@@ -92,6 +99,7 @@ public class PlayerMovement : MonoBehaviour {
             camOffset = cam.transform.position.y - moveToPos.y;
             switch (landing.name)
             {
+                //Mansion Options
                 case "stairs1":
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("stairs2");
@@ -131,6 +139,36 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     moveElevator();
+                    break;
+                case "portal_0_S":
+                    SceneManager.LoadScene("SurrealistZone");
+                    notMoving();
+                    break;
+                case "portal_3_U":
+                    //dostuff
+                    print("to the ukiyo-e zone!!!");
+                    notMoving();
+                    break;
+                case "portal_4_B":
+                    //dostuff
+                    print("to the baroque zone!!!");
+                    notMoving();
+                    break;
+                //Surrealist options
+                case "rightEdge":
+                    //dostuff
+                    landingPair = GameObject.Find("leftEdge");
+                    landingPos = landingPair.transform.position;
+                    gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x + 10.27f, cam.transform.position.y, cam.transform.position.z);
+                    notMoving();
+                    break;
+                case "leftEdge":
+                    landingPair = GameObject.Find("rightEdge");
+                    landingPos = landingPair.transform.position;
+                    gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x - 10.27f, cam.transform.position.y, cam.transform.position.z);
+                    notMoving();
                     break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");

@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 23cf79a951db0a444be9526fe91b10e9
+timeCreated: 1459360272
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: walkcyclecolor-Recovered_0
+    21300002: walkcyclecolor-Recovered_1
+    21300004: walkcyclecolor-Recovered_2
+    21300006: walkcyclecolor-Recovered_3
+    21300008: walkcyclecolor-Recovered_4
+    21300010: walkcyclecolor-Recovered_5
+    21300012: walkcyclecolor-Recovered_6
+    21300014: walkcyclecolor-Recovered_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walkcyclecolor-Recovered_0
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 34
+        width: 408
+        height: 1038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51, y: 130.5}
+        - {x: -51, y: -129.5}
+        - {x: 52, y: -129.5}
+        - {x: 52, y: 55.5}
+        - {x: 9, y: 130.5}
+    - name: walkcyclecolor-Recovered_1
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 46
+        width: 424
+        height: 1014
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53, y: 127.5}
+        - {x: -53, y: 71.5}
+        - {x: -50, y: 59.5}
+        - {x: -43, y: 57.5}
+        - {x: -37, y: 64.5}
+        - {x: -41, y: -26.5}
+        - {x: -39, y: -35.5}
+        - {x: -28, y: -49.5}
+        - {x: -53, y: -99.5}
+        - {x: -53, y: -126.5}
+        - {x: 40, y: -126.5}
+        - {x: 54, y: -91.5}
+        - {x: 54, y: 61.5}
+        - {x: 4, y: 127.5}
+    - name: walkcyclecolor-Recovered_2
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 66
+        width: 596
+        height: 984
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: -96}
+        - {x: 6.5, y: -123}
+        - {x: 42.5, y: -123}
+        - {x: 47.5, y: -122}
+        - {x: 75.5, y: -81}
+        - {x: 75.5, y: -54}
+        - {x: 3.5, y: 117}
+        - {x: -5.5, y: 124}
+        - {x: -44.5, y: 124}
+        - {x: -74.5, y: 112}
+        - {x: -74.5, y: -123}
+        - {x: 2.5, y: -123}
+        - {x: 5.5, y: -117}
+        - {x: -1.5, y: -77}
+        - {x: -4.5, y: -67}
+    - name: walkcyclecolor-Recovered_3
+      rect:
+        serializedVersion: 2
+        x: 3498
+        y: 50
+        width: 544
+        height: 1021
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46, y: 128.5}
+        - {x: -68, y: 121.5}
+        - {x: -68, y: -119.5}
+        - {x: -39, y: -127.5}
+        - {x: 69, y: -127.5}
+        - {x: 69, y: 15.5}
+        - {x: 45, y: 128.5}
+    - name: walkcyclecolor-Recovered_4
+      rect:
+        serializedVersion: 2
+        x: 4606
+        y: 54
+        width: 431
+        height: 1034
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46, y: 130}
+        - {x: -54, y: 126}
+        - {x: -54, y: -129}
+        - {x: 20, y: -129}
+        - {x: 55, y: -115}
+        - {x: 55, y: 41}
+        - {x: 41, y: 130}
+    - name: walkcyclecolor-Recovered_5
+      rect:
+        serializedVersion: 2
+        x: 5671
+        y: 38
+        width: 387
+        height: 1010
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.25, y: 127}
+        - {x: -48.25, y: -118}
+        - {x: -43.25, y: -126}
+        - {x: 44.75, y: -126}
+        - {x: 49.75, y: -120}
+        - {x: 49.75, y: 31}
+        - {x: 11.75, y: 127}
+    - name: walkcyclecolor-Recovered_6
+      rect:
+        serializedVersion: 2
+        x: 6622
+        y: 66
+        width: 596
+        height: 990
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.5, y: -111.5}
+        - {x: 25.5, y: -121.5}
+        - {x: 45.5, y: -119.5}
+        - {x: 75.5, y: -90.5}
+        - {x: 75.5, y: -61.5}
+        - {x: -0.5, y: 117.5}
+        - {x: -10.5, y: 124.5}
+        - {x: -40.5, y: 124.5}
+        - {x: -49.5, y: 122.5}
+        - {x: -62.5, y: 95.5}
+        - {x: -74.5, y: 37.5}
+        - {x: -74.5, y: -123.5}
+        - {x: -19.5, y: -123.5}
+        - {x: -1.5, y: -121.5}
+        - {x: 8.5, y: -116.5}
+        - {x: 6.5, y: -94.5}
+    - name: walkcyclecolor-Recovered_7
+      rect:
+        serializedVersion: 2
+        x: 7598
+        y: 62
+        width: 552
+        height: 1014
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38, y: -40.5}
+        - {x: 28, y: -29.5}
+        - {x: 27, y: -6.5}
+        - {x: 34, y: -36.5}
+        - {x: 56, y: -50.5}
+        - {x: 70, y: -49.5}
+        - {x: 70, y: 0.5}
+        - {x: 68, y: 8.5}
+        - {x: 13, y: 127.5}
+        - {x: -32, y: 127.5}
+        - {x: -47, y: 114.5}
+        - {x: -69, y: -54.5}
+        - {x: -69, y: -55.5}
+        - {x: -36, y: -48.5}
+        - {x: -21, y: -37.5}
+        - {x: -17, y: -25.5}
+        - {x: -13, y: -7.5}
+        - {x: -18, y: -34.5}
+        - {x: -69, y: -84.5}
+        - {x: -69, y: -106.5}
+        - {x: -53, y: -125.5}
+        - {x: -44, y: -126.5}
+        - {x: 41, y: -126.5}
+        - {x: 70, y: -112.5}
+        - {x: 70, y: -98.5}
+        - {x: 55, y: -61.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
