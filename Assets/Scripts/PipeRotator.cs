@@ -44,14 +44,39 @@ public class PipeRotator : MonoBehaviour {
             if(gameObject.tag == "Straight")
             {
                 print("Straight");
+                if(transform.rotation.eulerAngles.z == 270 || transform.rotation.eulerAngles.z == 90)
+                {
+                    print(transform.rotation.eulerAngles.z);
+                }
+                else if(transform.rotation.eulerAngles.z == 180 || transform.rotation.eulerAngles.z == 0)
+                {
+                    print(transform.rotation.eulerAngles.z);
+                }
             }
             else if(gameObject.tag == "Turn")
             {
                 print("Turn");
+                if (transform.rotation.eulerAngles.z == 270)
+                {
+                    print(transform.rotation.eulerAngles.z);
+                }
+                else if (transform.rotation.eulerAngles.z == 180)
+                {
+                    print(transform.rotation.eulerAngles.z);
+                }
+                if (transform.rotation.eulerAngles.z == 90)
+                {
+                    print(transform.rotation.eulerAngles.z);
+                }
+                else if (transform.rotation.eulerAngles.z == 0)
+                {
+                    print(transform.rotation.eulerAngles.z);
+                }
             }
             else if(gameObject.tag == "FourWay")
             {
                 print("FourWay");
+                print(transform.rotation.eulerAngles.z);
             }
         }
     }
