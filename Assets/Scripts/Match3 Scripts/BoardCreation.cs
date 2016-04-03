@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class BoardCreation : MonoBehaviour
 {
-
+    // Variables used for initialization, game tracking
     public GameObject puzzlePiecePrefab;
     public bool dragging = false;
     public bool spawning = false;
@@ -17,9 +17,12 @@ public class BoardCreation : MonoBehaviour
     private List<GameObject> markedPieces = new List<GameObject>();
     private GameObject puzzleObject;
 
-    public float seconds = 60;
+    // Timer variables for setting time
+    public float seconds = 90;
 
     public Text timer;
+
+    // Variables for keeping track of score
     public Text redScore;
     public Text yellowScore;
     public Text blueScore;
@@ -37,6 +40,23 @@ public class BoardCreation : MonoBehaviour
     private int greenHit = 0;
     private int blueHit = 0;
     private int magentaHit = 0;
+
+    // Set specified totals for each color on each level
+    public Text redTotal;
+    public Text yellowTotal;
+    public Text blueTotal;
+    public Text greenTotal;
+    public Text magentaTotal;
+
+    private int setRedTotal = 10;
+    private int setGreenTotal = 10;
+    private int setBlueTotal = 10;
+    private int setYellowTotal = 10;
+    private int setMagentaTotal = 10;
+
+    public float dragPenalty;
+
+    public Text warningText;
 
     void Update()
     {
@@ -79,17 +99,32 @@ public class BoardCreation : MonoBehaviour
         {
             dragging = true;
             spawning = true;
+            timer.text = "Time's Up!";
+
+            TallyScore();
         }
+
+        
     }
 
     // Use this for initialization
     void Start()
     {
-        redScore.text = "0";
-        yellowScore.text = "0";
-        greenScore.text = "0";
-        blueScore.text = "0";
-        magentaScore.text = "0";
+        redScore.text = "Red: 0";
+        yellowScore.text = "Yellow: 0";
+        greenScore.text = "Green: 0";
+        blueScore.text = "Blue: 0";
+        magentaScore.text = "Magenta: 0";
+
+        // Use build settings and the SceneManager to determine what the total values should be
+        // if zone
+            // if level
+                // set total
+        redTotal.text = "/" + setRedTotal;
+        yellowTotal.text = "/" + setYellowTotal;
+        greenTotal.text = "/" + setGreenTotal;
+        blueTotal.text = "/" + setBlueTotal;
+        magentaTotal.text = "/" + setMagentaTotal;
 
         puzzleObject = GameObject.Find("PuzzleObject");
         for (int i = 0; i < 6; i++)
@@ -190,46 +225,41 @@ public class BoardCreation : MonoBehaviour
                     if (color == Color.red)
                     {
                         //squadSlot = 0;
-                        print("red destroyed");
                         redHit = hits.Length;
                         setRedValue += redHit;
-                        redScore.text = setRedValue.ToString();
+                        redScore.text = "Red: " + setRedValue.ToString();
                         redHit = 0;
                     }
                     if (color == Color.green)
                     {
                         //squadSlot = 1;
-                        print("green destroyed");
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
-                        greenScore.text = setGreenValue.ToString();
+                        greenScore.text = "Green: " + setGreenValue.ToString();
                         greenHit = 0;
                     }
                     if (color == Color.blue)
                     {
                         //squadSlot = 2;
-                        print("blue destroyed");
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
-                        blueScore.text = setBlueValue.ToString();
+                        blueScore.text = "Blue: " + setBlueValue.ToString();
                         blueHit = 0;
                     }
                     if (color == Color.yellow)
                     {
                         //squadSlot = 3;
-                        print("yellow destroyed");
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
-                        yellowScore.text = setYellowValue.ToString();
-                        blueHit = 0;
+                        yellowScore.text = "Yellow: " + setYellowValue.ToString();
+                        yellowHit = 0;
                     }
                     if (color == Color.magenta)
                     {
                         //squadSlot = 4;
-                        print("magenta destroyed");
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
-                        magentaScore.text = setMagentaValue.ToString();
+                        magentaScore.text = "Magenta: " + setMagentaValue.ToString();
                         magentaHit = 0;
                     }
                     //GameObject.Find("Scripts").GetComponent<ShipScript>().Spawn(1, squadSlot);
@@ -248,46 +278,41 @@ public class BoardCreation : MonoBehaviour
                     if (color == Color.red)
                     {
                         //squadSlot = 0;
-                        print("red destroyed");
                         redHit = hits.Length;
                         setRedValue += redHit;
-                        redScore.text = setRedValue.ToString();
+                        redScore.text = "Red: " + setRedValue.ToString();
                         redHit = 0;
                     }
                     if (color == Color.green)
                     {
                         //squadSlot = 1;
-                        print("green destroyed");
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
-                        greenScore.text = setGreenValue.ToString();
+                        greenScore.text = "Green: " + setGreenValue.ToString();
                         greenHit = 0;
                     }
                     if (color == Color.blue)
                     {
                         //squadSlot = 2;
-                        print("blue destroyed");
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
-                        blueScore.text = setBlueValue.ToString();
+                        blueScore.text = "Blue: " + setBlueValue.ToString();
                         blueHit = 0;
                     }
                     if (color == Color.yellow)
                     {
                         //squadSlot = 3;
-                        print("yellow destroyed");
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
-                        yellowScore.text = setYellowValue.ToString();
-                        blueHit = 0;
+                        yellowScore.text = "Yellow: " + setYellowValue.ToString();
+                        yellowHit = 0;
                     }
                     if (color == Color.magenta)
                     {
                         //squadSlot = 4;
-                        print("magenta destroyed");
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
-                        magentaScore.text = setMagentaValue.ToString();
+                        magentaScore.text = "Magenta: " + setMagentaValue.ToString();
                         magentaHit = 0;
                     }
                     //GameObject.Find("Scripts").GetComponent<ShipScript>().Spawn(1, squadSlot);
@@ -301,5 +326,50 @@ public class BoardCreation : MonoBehaviour
                 allPieces[i].GetComponent<PuzzlePiece>().CallDestruction();
             }
         }
+    }
+
+    void TallyScore()
+    {
+        // Determine if the player reached the necessary scoring
+            if(setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal)
+            {
+                int percentage = (setYellowValue%setYellowTotal + setBlueValue%setYellowTotal + setGreenValue%setGreenTotal + setRedValue%setRedTotal + setMagentaValue%setMagentaTotal)/5;
+                float match3Return;
+
+                if(percentage <= 1)
+                {
+                    print("winnning: " + percentage);
+                    match3Return = 1 - dragPenalty;
+                }
+
+                if (percentage <= 2 && percentage > 1)
+                {
+                    print("winnning: " + percentage);
+                    match3Return = .9f - dragPenalty;
+                }
+
+                if (percentage <= 3 && percentage > 2)
+                {
+                    print("winnning: " + percentage);
+                    match3Return = .8f - dragPenalty;
+                }
+
+                if (percentage >= 4 && percentage > 3)
+                {
+                    print("winnning: " + percentage);
+                    match3Return = .7f - dragPenalty;
+                }
+
+                if (percentage > 4)
+                {
+                    print("winnning: " + percentage);
+                    match3Return = .6f - dragPenalty;
+                }    
+            }
+
+            else
+            {
+                print("losing");
+            }
     }
 }

@@ -5,7 +5,6 @@ using System.Linq;
 
 public class PuzzlePiece : MonoBehaviour
 {
-
     public float baseX;
     public float baseY;
 
@@ -18,6 +17,8 @@ public class PuzzlePiece : MonoBehaviour
 
     private List<GameObject> allPieces = new List<GameObject>();
     private BoardCreation boardScript;
+
+    public float timeDragging = 0;
 
     void Update()
     {
@@ -69,6 +70,27 @@ public class PuzzlePiece : MonoBehaviour
                     baseX = newBaseX;
                     baseY = newBaseY;
                     allPieces[i].GetComponent<PuzzlePiece>().SnapToBase();
+
+                    timeDragging += Time.deltaTime * 1000;
+
+                    if(timeDragging > 200f)
+                    {
+                        //print("dragging: " + timeDragging);
+                        boardScript.dragPenalty = .1f;
+
+                        boardScript.warningText.color = Color.red;
+                        boardScript.warningText.text = "Warning: dragging for too long will incur a score penalty!";
+
+                        float textTimer = 3;
+                        textTimer -= (Time.deltaTime * 100);
+                        print(textTimer);
+
+                        if(textTimer <= 1.2f)
+                        {
+                            boardScript.warningText.text = "";
+                            textTimer = 0;
+                        }
+                    }
                 }
             }
         }
