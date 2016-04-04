@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour {
     public static bool cursorSet = false;
     private Animator myAnimator;
     public int Move;
+    public bool IdleLeft;
+    public bool IdleRight;
     // Use this for initialization
     void Start () {
         if (!cursorSet)
@@ -49,10 +51,14 @@ public class PlayerMovement : MonoBehaviour {
             if (gameObject.transform.position.x < moveToPos.x)
             {
                 myAnimator.SetInteger("Move", -1);
+                //IdleLeft = false;
+                //IdleRight = true;
             }
             if(gameObject.transform.position.x>moveToPos.x)
             {
                 myAnimator.SetInteger("Move", 1);
+                //IdleLeft = true;
+                //IdleRight = false;
             }
             moving = true;
             iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(moveToPos.x + columnOffset, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "identifyLanding"));

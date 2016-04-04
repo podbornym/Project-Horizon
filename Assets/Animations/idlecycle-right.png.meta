@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: 81dad526405067a4f906aaf1b7f7269a
+timeCreated: 1459794221
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: idlecycle-right_0
+    21300002: idlecycle-right_1
+    21300004: idlecycle-right_2
+    21300006: idlecycle-right_3
+    21300008: idlecycle-right_4
+    21300010: idlecycle-right_5
+    21300012: idlecycle-right_6
+    21300014: idlecycle-right_7
+    21300016: idlecycle-right_8
+    21300018: idlecycle-right_9
+    21300020: idlecycle-right_10
+    21300022: idlecycle-right_11
+    21300024: idlecycle-right_12
+    21300026: idlecycle-right_13
+    21300028: idlecycle-right_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: idlecycle-right_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 12
+        width: 532
+        height: 1123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.616806, y: -116.99916}
+        - {x: 16.383194, y: -116.99916}
+        - {x: 56.383194, y: -110.99916}
+        - {x: 56.383194, y: -38.99916}
+        - {x: 51.383194, y: -16.99916}
+        - {x: 10.383194, y: 118.00084}
+        - {x: -23.616806, y: 118.00084}
+        - {x: -55.616806, y: 95.00084}
+    - name: idlecycle-right_1
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 22
+        width: 531
+        height: 1118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.807571, y: 117.58488}
+        - {x: -50.19243, y: 117.58488}
+        - {x: -55.19243, y: 107.58488}
+        - {x: -55.19243, y: -111.41512}
+        - {x: -48.19243, y: -116.41512}
+        - {x: 55.80757, y: -116.41512}
+        - {x: 55.80757, y: -45.415123}
+        - {x: 17.807571, y: 109.58488}
+      - - {x: 39.80757, y: 60.584877}
+        - {x: 41.80757, y: 57.584877}
+        - {x: 45.80757, y: 58.584877}
+        - {x: 47.80757, y: 60.584877}
+        - {x: 47.80757, y: 62.584877}
+        - {x: 44.80757, y: 63.584877}
+      - - {x: 31.807571, y: 67.58488}
+        - {x: 34.80757, y: 68.58488}
+        - {x: 34.80757, y: 71.58488}
+        - {x: 31.807571, y: 72.58488}
+        - {x: 29.807571, y: 70.58488}
+      - - {x: 36.80757, y: 68.58488}
+        - {x: 39.80757, y: 69.58488}
+        - {x: 39.80757, y: 72.58488}
+        - {x: 36.80757, y: 73.58488}
+        - {x: 34.80757, y: 71.58488}
+    - name: idlecycle-right_2
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 26
+        width: 531
+        height: 1118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.437805, y: -2.5815125}
+        - {x: -55.437805, y: -116.58151}
+        - {x: 55.562195, y: -116.58151}
+        - {x: 55.562195, y: -38.581512}
+        - {x: 30.562195, y: 117.41849}
+        - {x: -22.437805, y: 117.41849}
+        - {x: -34.437805, y: 110.41849}
+    - name: idlecycle-right_3
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 22
+        width: 532
+        height: 1118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.22351, y: 85.58488}
+        - {x: -55.22351, y: 17.584877}
+        - {x: -55.22351, y: -112.41512}
+        - {x: -36.22351, y: -116.41512}
+        - {x: 36.77649, y: -116.41512}
+        - {x: 56.77649, y: -114.41512}
+        - {x: 56.77649, y: -7.415123}
+        - {x: 31.77649, y: 117.58488}
+        - {x: -18.22351, y: 117.58488}
+        - {x: -36.22351, y: 104.58488}
+    - name: idlecycle-right_4
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 12
+        width: 531
+        height: 1123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.615112, y: 118.00084}
+        - {x: -35.384888, y: 118.00084}
+        - {x: -55.384888, y: 41.00084}
+        - {x: -55.384888, y: -72.99916}
+        - {x: -39.384888, y: -116.99916}
+        - {x: 21.615112, y: -116.99916}
+        - {x: 54.615112, y: -112.99916}
+        - {x: 56.615112, y: -107.99916}
+        - {x: 56.615112, y: -66.99916}
+    - name: idlecycle-right_5
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 26
+        width: 565
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59.247864, y: -115.58151}
+        - {x: 59.752136, y: -115.58151}
+        - {x: 59.752136, y: -44.581512}
+        - {x: 19.752136, y: 113.41849}
+        - {x: 12.752136, y: 116.41849}
+        - {x: -35.247864, y: 116.41849}
+        - {x: -59.247864, y: 56.418488}
+    - name: idlecycle-right_6
+      rect:
+        serializedVersion: 2
+        x: 4204
+        y: 22
+        width: 536
+        height: 1118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.8722534, y: 117.58488}
+        - {x: -28.872253, y: 85.58488}
+        - {x: -55.872253, y: 14.584877}
+        - {x: -55.872253, y: -108.41512}
+        - {x: -42.872253, y: -116.41512}
+        - {x: 56.127747, y: -116.41512}
+        - {x: 56.127747, y: -26.415123}
+        - {x: 51.127747, y: -3.415123}
+        - {x: 26.127747, y: 109.58488}
+        - {x: 13.127747, y: 117.58488}
+      - - {x: 30.127747, y: 52.584877}
+        - {x: 33.127747, y: 53.584877}
+        - {x: 33.127747, y: 56.584877}
+        - {x: 30.127747, y: 57.584877}
+        - {x: 28.127747, y: 55.584877}
+      - - {x: 24.127747, y: 62.584877}
+        - {x: 27.127747, y: 63.584877}
+        - {x: 27.127747, y: 66.58488}
+        - {x: 24.127747, y: 67.58488}
+        - {x: 22.127747, y: 65.58488}
+      - - {x: 38.127747, y: 63.584877}
+        - {x: 41.127747, y: 64.58488}
+        - {x: 41.127747, y: 67.58488}
+        - {x: 38.127747, y: 68.58488}
+        - {x: 36.127747, y: 66.58488}
+    - name: idlecycle-right_7
+      rect:
+        serializedVersion: 2
+        x: 4927
+        y: 26
+        width: 532
+        height: 1114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.803345, y: -39.081512}
+        - {x: 31.803345, y: -40.081512}
+        - {x: 32.803345, y: -44.081512}
+        - {x: 37.803345, y: -54.081512}
+        - {x: 56.803345, y: -46.081512}
+        - {x: 56.803345, y: -27.081512}
+        - {x: 22.803345, y: 112.91849}
+        - {x: 11.803345, y: 116.91849}
+        - {x: -17.196655, y: 116.91849}
+        - {x: -29.196655, y: 101.91849}
+        - {x: -34.196655, y: 84.91849}
+        - {x: -54.196655, y: -16.081512}
+        - {x: -54.196655, y: -97.08151}
+        - {x: -31.196655, y: -116.08151}
+        - {x: 56.803345, y: -116.08151}
+        - {x: 56.803345, y: -97.08151}
+        - {x: 53.803345, y: -95.08151}
+    - name: idlecycle-right_8
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 31
+        width: 532
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.635254, y: 117.4605}
+        - {x: -19.364746, y: 117.4605}
+        - {x: -32.364746, y: 98.4605}
+        - {x: -33.364746, y: 84.4605}
+        - {x: -54.364746, y: -25.539497}
+        - {x: -54.364746, y: -92.5395}
+        - {x: -37.364746, y: -116.5395}
+        - {x: 56.635254, y: -116.5395}
+        - {x: 56.635254, y: -23.539497}
+        - {x: 31.635254, y: 112.4605}
+    - name: idlecycle-right_9
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 31
+        width: 532
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.569702, y: 117.4605}
+        - {x: -37.569702, y: 112.4605}
+        - {x: -54.569702, y: 27.460503}
+        - {x: -54.569702, y: -103.5395}
+        - {x: -39.569702, y: -116.5395}
+        - {x: 56.430298, y: -116.5395}
+        - {x: 56.430298, y: 13.460503}
+        - {x: 9.430298, y: 117.4605}
+    - name: idlecycle-right_10
+      rect:
+        serializedVersion: 2
+        x: 6757
+        y: 31
+        width: 532
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.81848, y: 84.4605}
+        - {x: -54.81848, y: -22.539497}
+        - {x: -54.81848, y: -94.5395}
+        - {x: -39.81848, y: -116.5395}
+        - {x: 56.18152, y: -116.5395}
+        - {x: 56.18152, y: -28.539497}
+        - {x: 20.181519, y: 113.4605}
+        - {x: 5.1815186, y: 117.4605}
+        - {x: -17.818481, y: 117.4605}
+        - {x: -20.818481, y: 115.4605}
+    - name: idlecycle-right_11
+      rect:
+        serializedVersion: 2
+        x: 7370
+        y: 31
+        width: 532
+        height: 1113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.9327393, y: 116.9605}
+        - {x: -26.06726, y: 116.9605}
+        - {x: -39.06726, y: 110.9605}
+        - {x: -53.06726, y: 2.9605026}
+        - {x: -53.06726, y: -94.0395}
+        - {x: -35.06726, y: -116.0395}
+        - {x: 56.93274, y: -116.0395}
+        - {x: 56.93274, y: -4.0394974}
+        - {x: 23.93274, y: 107.9605}
+    - name: idlecycle-right_12
+      rect:
+        serializedVersion: 2
+        x: 8023
+        y: 17
+        width: 545
+        height: 1132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.979858, y: 119.042854}
+        - {x: -32.97986, y: 116.042854}
+        - {x: -55.97986, y: -29.957146}
+        - {x: -55.97986, y: -96.957146}
+        - {x: -29.979858, y: -117.957146}
+        - {x: 53.02014, y: -117.957146}
+        - {x: 57.02014, y: -113.957146}
+        - {x: 57.02014, y: 29.042854}
+        - {x: 40.02014, y: 119.042854}
+    - name: idlecycle-right_13
+      rect:
+        serializedVersion: 2
+        x: 8611
+        y: 26
+        width: 565
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.9386, y: 33.418488}
+        - {x: -56.9386, y: -104.58151}
+        - {x: -31.938599, y: -115.58151}
+        - {x: 60.0614, y: -115.58151}
+        - {x: 60.0614, y: -46.581512}
+        - {x: 25.061401, y: 116.41849}
+        - {x: -15.938599, y: 116.41849}
+        - {x: -34.9386, y: 107.41849}
+    - name: idlecycle-right_14
+      rect:
+        serializedVersion: 2
+        x: 9191
+        y: 12
+        width: 531
+        height: 1123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.564697, y: -116.99916}
+        - {x: 31.435303, y: -116.99916}
+        - {x: 56.435303, y: -113.99916}
+        - {x: 56.435303, y: -55.99916}
+        - {x: 18.435303, y: 118.00084}
+        - {x: -53.564697, y: 118.00084}
+        - {x: -53.564697, y: -114.99916}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
