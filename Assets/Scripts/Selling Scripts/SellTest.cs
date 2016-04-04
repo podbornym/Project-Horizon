@@ -4,7 +4,7 @@ using System.Collections;
 public class SellTest : MonoBehaviour {
 
 	public int maxValue;
-	public float m1, m2, m3, m4, m5, m6;
+	public float m1, m2, m3, m4, m5, m6, clues;
 	public string buyer;
 	float avg;
 	public SellingLogic logic;
@@ -16,7 +16,7 @@ public class SellTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		avg = logic.Avg (m1, m2, m3, m4, m5, m6);
+		avg = logic.Avg (m1, m2, m3, m4, m5, m6, clues);
 		avg = (float)System.Math.Round (avg,2);
 		check = logic.ErrorCheck (buyer,avg);
 		pay = logic.Payout (buyer, avg, maxValue);

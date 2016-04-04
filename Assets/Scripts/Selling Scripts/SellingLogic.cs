@@ -8,8 +8,8 @@ public class SellingLogic : MonoBehaviour {
 	
 	// Calculates average of all 6 minigame grades
 	// Returns average as float
-	public float Avg (float m1, float m2, float m3, float m4, float m5, float m6) {
-		float average = (m1+m2+m3+m4+m5+m6)/6;
+	public float Avg (float m1, float m2, float m3, float m4, float m5, float m6, float m7) {
+		float average = (m1+m2+m3+m4+m5+m6+m7)/7;
 		return average;
 	}
 
