@@ -43,17 +43,12 @@ public class traceLayoutManager : MonoBehaviour {
         //Set up the startPoint, endPoint, linePoints
         startPoint.Set(startX, startY, -10);
         endPoint.Set(endX, endY, 0);
-        /*for (int i = 0; i < linePointsX.Length; i++)
-        {
-            lineHit[i] = false;
-        }*/// we don't need this
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //Camera.main.ScreenPointToRay(Input.mousePosition);
 
         //if the mousePosition is within the bounds of startPoint
         if (firstHit == false && Input.GetMouseButton(0)
@@ -106,16 +101,16 @@ public class traceLayoutManager : MonoBehaviour {
 
     public void DisplayScore()
     {
-        if(successRatio>=.85)
-            score.text = "Score: " + (successRatio*100).ToString("n2") + " %. Awesome!";
-        if (successRatio >= .80 && successRatio < .85)
-            score.text = "Score: " + (successRatio * 100).ToString("n2") + " %. Great!";
+        if(successRatio>=.90)
+            score.text = "Grade: A.";
+        if (successRatio >= .80 && successRatio < .90)
+            score.text = "Grade: B.";
         if (successRatio >= .70 && successRatio < .80)
-            score.text = "Score: " + (successRatio * 100).ToString("n2") + " %. Good.";
+            score.text = "Grade: C.";
         if (successRatio >= .60 && successRatio < .70)
-            score.text = "Score: " + (successRatio * 100).ToString("n2") + " %. Ok.";
+            score.text = "Grade: D.";
         if (successRatio < .60)
-            score.text = "Score: " + (successRatio * 100).ToString("n2") + " %. You Suck.";
+            score.text = "Grade: F.";
     }
 
     public void CalculateScore()

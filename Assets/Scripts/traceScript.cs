@@ -5,15 +5,13 @@ using UnityEngine.UI;
 public class traceScript : MonoBehaviour {
 
     public float timeRemaining = 2f;
-    public Text sub;
+    //public Text sub;
     public Text time;
     public Text tabs;
     public string introText;
     public int tabsLeft = 5;
 
     public GameObject LineReader;
-    // Use this for initialization
-    void Start () {}
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,47 +19,29 @@ public class traceScript : MonoBehaviour {
         if(timeRemaining >= 0)
         {
             timeRemaining -= Time.deltaTime;
-            time.text = "Time Remaining: " + (timeRemaining).ToString("n2");
-            /*ILineReader.GetComponent<MatchThreeManager>().firstHit = false;
-            LineReader.GetComponent<MatchThreeManager>().lastHit = false;*/
-
+            time.text = "Inspection Time Remaining: " + (timeRemaining).ToString("n2");
         }
         else
         {
             gameObject.GetComponent<Renderer>().enabled = false;
-            sub.text = "Go!";
-            time.text = " ";
+            time.text = "Go!";
+            tabs.text = "Tabs remaining: " + tabsLeft.ToString() + "  You can try again by pressing tab";
         }
-
-        /*if (Input.GetMouseButton(0))
-        {
-            gameObject.GetComponent<Renderer>().enabled = false;
-        }*/
 
         if (Input.GetKeyDown("tab"))
         {
             if(tabsLeft > 0)
             {
                 tabsLeft--;
-                tabs.text = "Tabs left: " + tabsLeft.ToString();
+                tabs.text = "Tabs remaining: " + tabsLeft.ToString();
                 timeRemaining = 2f;
-                sub.text = introText;
                 gameObject.GetComponent<Renderer>().enabled = true;
             }
 
             else
             {
-                timeRemaining = 0f;
-                LineReader.GetComponent<traceLayoutManager>().CalculateScore();
+                tabs.text = "No more tabs!";
             }
         }
-
-        /*if (Input.GetKeyUp("tab"))
-        {
-            print("no left shift, better make it invisible");
-            gameObject.GetComponent<Renderer>().enabled = false;
-        }*/
-        // if tab is down, don't let the player trace
-
     }
 }
