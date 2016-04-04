@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class EnvInteracter : MonoBehaviour {
 
@@ -27,25 +28,27 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator" || gameObject.tag == "portal")
+        if(!EventSystem.current.IsPointerOverGameObject())
         {
-            player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
-        }
-        else if (gameObject.tag == "column")
-        {
-            if (gameObject.transform.position.x < player.transform.position.x)
+            if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator" || gameObject.tag == "portal")
             {
-                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, -5);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+            }
+            else if (gameObject.tag == "column")
+            {
+                if (gameObject.transform.position.x < player.transform.position.x)
+                {
+                    player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, -5);
+                }
+                else
+                {
+                    player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, 5);
+                }
             }
             else
             {
-                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, 5);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
             }
         }
-        else
-        {
-            player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
-        }
-        
     }
 }
