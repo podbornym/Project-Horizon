@@ -153,12 +153,12 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "portal_3_U":
                     //dostuff
-                    print("to the ukiyo-e zone!!!");
+                    SceneManager.LoadScene("Ukiyo-eZone");
                     notMoving();
                     break;
                 case "portal_4_B":
                     //dostuff
-                    print("to the baroque zone!!!");
+                    SceneManager.LoadScene("BaroqueZone");
                     notMoving();
                     break;
                 //Surrealist options
@@ -175,6 +175,39 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     cam.transform.position = new Vector3(landingPos.x - 10.27f, cam.transform.position.y, cam.transform.position.z);
+                    notMoving();
+                    break;
+                //Baroque options
+                case "Bstairs1":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Bstairs3");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "Bstairs2":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Bstairs4");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "Bstairs3":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Bstairs1");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "Bstairs4":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Bstairs2");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "door_0B":
+                    SceneManager.LoadScene("B_0");
                     notMoving();
                     break;
                 default:
