@@ -34,6 +34,9 @@ public class traceLayoutManager : MonoBehaviour {
     public float successRatio;
 
     public Text score;
+    public Text warning;
+
+    public GameObject Tracer;
 
     void Awake() {}
 
@@ -50,6 +53,10 @@ public class traceLayoutManager : MonoBehaviour {
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        if (Input.GetMouseButton(0) && Tracer.GetComponent<traceScript>().timeRemaining >= 0)
+        {
+            warning.text = "Don't start early!";
+        }
         //if the mousePosition is within the bounds of startPoint
         if (firstHit == false && Input.GetMouseButton(0)
             && (startX >= mousePosition.x - boundRadius) && (startX <= mousePosition.x + boundRadius)
@@ -79,7 +86,7 @@ public class traceLayoutManager : MonoBehaviour {
                 {
                     hitCount++;
                     lineHit[i] = true;
-                    print("Line part " + i + " Hit");
+                    //print("Line part " + i + " Hit");
                     aSegmentHit = true;
                 }
             }
@@ -94,14 +101,29 @@ public class traceLayoutManager : MonoBehaviour {
 
         if(lastHit == true)
         {
-            CalculateScore();
-            DisplayScore();
+            if (firstHit == false)
+            {
+                lastHit = false;
+            }
+            if (Tracer.GetComponent<traceScript>().timeRemaining >= 0)
+            {
+                firstHit = false;
+                lastHit = false;
+                hitCount = 0;
+                missCount = 0;
+            }
+            else
+            {
+                CalculateScore();
+                DisplayScore();
+            }
+
         }
     }
 
     public void DisplayScore()
     {
-        if(successRatio>=.90)
+        if (successRatio>=.90)
             score.text = "Grade: A.";
         if (successRatio >= .80 && successRatio < .90)
             score.text = "Grade: B.";
