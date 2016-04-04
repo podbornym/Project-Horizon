@@ -26,12 +26,7 @@ public class SellTest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown("space")) {
-			/*Debug.Log ("m1:" + m1);
-			Debug.Log ("m2:" + m2);
-			Debug.Log ("m3:" + m3);
-			Debug.Log ("m4:" + m4);
-			Debug.Log ("m5:" + m5);
-			Debug.Log ("m6:" + m6);*/
+			
 			Debug.Log ("buyer:" + buyer);
 			Debug.Log ("avg:"+avg);
 			Debug.Log ("pass:"+check);
