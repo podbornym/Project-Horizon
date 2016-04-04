@@ -7,7 +7,7 @@ public class CameraScript : MonoBehaviour {
     public GameObject player;
     GameObject cam;
     float mansionCamOffset = 20.54f;
-    float surrealCamOffset = 20.12f;
+    float surrealCamOffset = 20.45f;
     float baroqueCamOffset = 11.65f;
     float ukiyoCamOffset = 5f;
 
