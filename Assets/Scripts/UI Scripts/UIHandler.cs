@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour {
     //we can use this script for storing stating vars that we want to persist across scene changes
@@ -37,6 +38,11 @@ public class UIHandler : MonoBehaviour {
             iTween.MoveTo(flyupMenu, iTween.Hash("position", new Vector3(flyupMenu.transform.position.x, MoveToPos.transform.position.y - offsetY, flyupMenu.transform.position.z), "speed", 300, "easetype", "linear"));
             expanded = false;
         }
+    }
+
+    public void goToHome()
+    {
+        SceneManager.LoadScene("mansion");
     }
 
     /*void menuOpen()

@@ -30,7 +30,8 @@ public class PlayerMovement : MonoBehaviour {
         myAnimator = GetComponent<Animator>();
 
     }
-
+    
+    //both of these scripts are calling in the EnvInteracter Script when an object is clicked on, and then call moveStraight()
     public void MovePlayer(Vector3 target, GameObject start)
     {
         moveToPos = target;
@@ -44,7 +45,11 @@ public class PlayerMovement : MonoBehaviour {
         landing = start;
         columnOffset = offset;
         moveStraight();
-        }
+    }
+
+    //moves the player to the object that was clicked on, and when the move to the target position is done this calls identifyLanding() to decide if the object clicked on was an object that
+    //requires further interaction, such as stairs, doors, or curves
+    //also sets boolean moving to true so that the player cannot click other objects while they are moving to an object
     void moveStraight()
     {
         if (!moving)
@@ -67,28 +72,33 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    //moves the player and the camera up or down the stairs
     void moveStairs()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
         iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
 
+    //moves the player along a designated curve
     void moveCurve(string curveName, int speed)
     {
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(curveName), "speed", speed, "easetype", "linear", "oncomplete", "notMoving"));
     }
 
+    //same as above, but moves backward along the curve
     void moveCurveReverse(string curveName, int speed)
     {
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPathReversed(curveName), "speed", speed, "easetype", "linear", "oncomplete", "notMoving"));
     }
 
+    //moves the player downwards, as in using an elevator
     void moveElevator()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
         iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
 
+    //resets the vars that are needed during movement, lets the player click to move again, and resets the landing to null for the next click
     void notMoving()
     {
         
@@ -99,6 +109,8 @@ public class PlayerMovement : MonoBehaviour {
         
     }
 
+    //This function takes the passed in landing object, if there is one, and performs necessary operations when the player arrives there
+    //ie. move up the stairs after arriving at the base, or moving through a door after getting to it
     void identifyLanding()
     {
         if (landing != null)
@@ -168,7 +180,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x + 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-                    cam.transform.position = new Vector3(landingPos.x + 10.27f, cam.transform.position.y, cam.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x + camOffset, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
                     break;
                 case "leftEdge":
@@ -176,7 +188,6 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x - 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-                    cam.transform.position = new Vector3(landingPos.x - 10.27f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
                     break;
                 case "door_0S":
@@ -296,6 +307,18 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     moveStairs();
+                    break;
+                case "leftEndU":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("rightEndU");
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveCurve("bridge", 10);
+                    break;
+                case "rightEndU":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("leftEndU");
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveCurveReverse("bridge", 10);
                     break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");

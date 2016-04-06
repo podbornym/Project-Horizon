@@ -45,7 +45,7 @@ public class CameraScript : MonoBehaviour {
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if(gameObject.tag == "column")
+            if(gameObject.tag == "column" || gameObject.tag == "bridge")
             {
                 if (gameObject.transform.position.x < player.transform.position.x)
                 {
