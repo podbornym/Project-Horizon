@@ -14,7 +14,7 @@ public class ZoomObject : MonoBehaviour {
 	// 2d Array to hold sprites
 	public Sprite[] image;
 	// Index for arrays
-	public int index =0;
+	public int index;
 
 	void Start () {
 		Sprite spt = image[index];
