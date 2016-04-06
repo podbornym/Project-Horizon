@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour {
             cursorSet = true;
         }
         myAnimator = GetComponent<Animator>();
+
     }
 
     public void MovePlayer(Vector3 target, GameObject start)
@@ -246,6 +247,55 @@ public class PlayerMovement : MonoBehaviour {
                 case "door_4B":
                     SceneManager.LoadScene("B_4");
                     notMoving();
+                    break;
+                //Ukiyo-E options
+                case "door_0U":
+                    SceneManager.LoadScene("U_0");
+                    notMoving();
+                    break;
+                case "door_1U":
+                    SceneManager.LoadScene("U_1");
+                    notMoving();
+                    break;
+                case "door_2U":
+                    SceneManager.LoadScene("U_2");
+                    notMoving();
+                    break;
+                case "door_3U":
+                    SceneManager.LoadScene("U_3");
+                    notMoving();
+                    break;
+                case "door_4U":
+                    SceneManager.LoadScene("U_4");
+                    notMoving();
+                    break;
+                case "Ustairs1":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Ustairs3");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "Ustairs2":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Ustairs4");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "Ustairs3":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Ustairs1");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
+                    break;
+                case "Ustairs4":
+                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    landingPair = GameObject.Find("Ustairs2");
+                    landingPos = landingPair.transform.position;
+                    landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    moveStairs();
                     break;
                 default:
                     Debug.Log("did not access a name for a valid landing object");

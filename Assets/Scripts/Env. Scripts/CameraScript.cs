@@ -10,7 +10,7 @@ public class CameraScript : MonoBehaviour {
     float mansionCamOffset = 20.54f;
     float surrealCamOffset = 20.45f;
     float baroqueCamOffset = 11.65f;
-    float ukiyoCamOffset = 5f;
+    float ukiyoCamOffset = 11.59f;
 
     public float offsetInUse = 0.0f;
 
@@ -32,7 +32,7 @@ public class CameraScript : MonoBehaviour {
             case "BaroqueZone":
                 offsetInUse = baroqueCamOffset;
                 break;
-            case "UkiyoeZone":
+            case "Ukiyo-eZone":
                 offsetInUse = ukiyoCamOffset;
                 break;
             default:
