@@ -8,43 +8,82 @@ public class DialogueReader : MonoBehaviour
     private int lineNum = 0;
     private string option;
     private string[] choiceActions = new string[6];
-    public int selected = 0;
     public TextAsset dialogue;
     public GameObject dialogueContainer;
     public GameObject nextButton;
-    public bool clueOneFound = false;
-    public bool clueTwoFound = false;
-    public bool clueThreeFound = false;
-    public bool clueFourFound = false;
-    public bool clueFiveFound = false;
-    public bool clueSixFound = false;
+    public GameObject clueOne;
+    public GameObject clueTwo;
+    public GameObject clueThree;
+    public GameObject clueFour;
+    public GameObject clueFive;
+    public GameObject clueSix;
+    bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
+    public Text textbox;
     public Text option1;
     public Text option2;
     public Text option3;
     public Text option4;
     public Text option5;
     public Text option6;
-    public Text currentText;
+    private Text currentText;
 
     // Use this for initialization
     void Start ()
     {
+        textbox.text = "";
         entries = dialogue.text.Split('\n');
-        for (int i = 0; i < entries.Length; i++)
-        {
-            Debug.Log(entries[i]);
-            if(entries[i] == null)
-            {
-                Debug.Log("not a string");
-            }
-        }
         NextLine();
     }
 
     void Update ()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            FindClue();
+        }
+    }
 
+    void FindClue()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+
+        if (hit)
+        {
+            if (hit.collider.gameObject.tag == "clue")
+            {
+                if (hit.collider.gameObject == clueOne)
+                {
+                    ClueFound[0] = true;
+                    Debug.Log("Found Clue 1");
+                }
+                if (hit.collider.gameObject == clueTwo)
+                {
+                    ClueFound[1] = true;
+                    Debug.Log("Found Clue 2");
+                }
+                if (hit.collider.gameObject == clueThree)
+                {
+                    ClueFound[2] = true;
+                    Debug.Log("Found Clue 3");
+                }
+                if (hit.collider.gameObject == clueFour)
+                {
+                    ClueFound[3] = true;
+                    Debug.Log("Found Clue 4");
+                }
+                if (hit.collider.gameObject == clueFive)
+                {
+                    ClueFound[4] = true;
+                    Debug.Log("Found Clue 5");
+                }
+                if (hit.collider.gameObject == clueSix)
+                {
+                    ClueFound[5] = true;
+                    Debug.Log("Found Clue 6");
+                }
+            }
+        }
     }
 
     public void NextLine()
@@ -67,9 +106,25 @@ public class DialogueReader : MonoBehaviour
             string[] currentLine = entries[lineNum].Split(' ');
             for (int i = 0; i < currentLine.Length; i++)
             {
-                switch (currentLine[i])
+                string currentWord = "";
+                string word = currentLine[i];
+                if (i == currentLine.Length - 1)
                 {
+                    for (int j = 0; j < word.Length - 1; j++)
+                    {
+                        currentWord += word[j];
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < word.Length; j++)
+                    {
+                        currentWord += word[j];
+                    }
+                }
 
+                switch (currentWord)
+                {
                     case "#SetDialogue":
                         message.gameObject.SetActive(true);
                         option1.gameObject.SetActive(false);
@@ -87,36 +142,102 @@ public class DialogueReader : MonoBehaviour
                         break;
                     case "#option1":
                         option1.gameObject.SetActive(true);
-                        choiceActions[0] = currentLine[i + 1];
+                        if(i + 1 == currentLine.Length - 1)
+                        {
+                            string tempWord = currentLine[i + 1];
+                            for(int j = 0; j < tempWord.Length - 1; j++)
+                            {
+                                choiceActions[0] += tempWord[j];
+                            }
+                        }
+                        else
+                        {
+                            choiceActions[0] = currentLine[i + 1];
+                        }
                         i++;
                         break;
                     case "#option2":
                         option2.gameObject.SetActive(true);
-                        choiceActions[1] = currentLine[i + 1];
+                        if (i + 1 == currentLine.Length - 1)
+                        {
+                            string tempWord = currentLine[i + 1];
+                            for (int j = 0; j < tempWord.Length - 1; j++)
+                            {
+                                choiceActions[1] += tempWord[j];
+                            }
+                        }
+                        else
+                        {
+                            choiceActions[1] = currentLine[i + 1];
+                        }
                         i++;
                         break;
                     case "#option3":
                         option3.gameObject.SetActive(true);
-                        choiceActions[2] = currentLine[i + 1];
+                        if (i + 1 == currentLine.Length - 1)
+                        {
+                            string tempWord = currentLine[i + 1];
+                            for (int j = 0; j < tempWord.Length - 1; j++)
+                            {
+                                choiceActions[2] += tempWord[j];
+                            }
+                        }
+                        else
+                        {
+                            choiceActions[2] = currentLine[i + 1];
+                        }
                         i++;
                         break;
                     case "#option4":
                         option4.gameObject.SetActive(true);
-                        choiceActions[3] = currentLine[i + 1];
+                        if (i + 1 == currentLine.Length - 1)
+                        {
+                            string tempWord = currentLine[i + 1];
+                            for (int j = 0; j < tempWord.Length - 1; j++)
+                            {
+                                choiceActions[3] += tempWord[j];
+                            }
+                        }
+                        else
+                        {
+                            choiceActions[3] = currentLine[i + 1];
+                        }
                         i++;
                         break;
                     case "#option5":
                         option5.gameObject.SetActive(true);
-                        choiceActions[4] = currentLine[i + 1];
+                        if (i + 1 == currentLine.Length - 1)
+                        {
+                            string tempWord = currentLine[i + 1];
+                            for (int j = 0; j < tempWord.Length - 1; j++)
+                            {
+                                choiceActions[4] += tempWord[j];
+                            }
+                        }
+                        else
+                        {
+                            choiceActions[4] = currentLine[i + 1];
+                        }
                         i++;
                         break;
                     case "#option6":
                         option6.gameObject.SetActive(true);
-                        choiceActions[5] = currentLine[i + 1];
+                        if (i + 1 == currentLine.Length - 1)
+                        {
+                            string tempWord = currentLine[i + 1];
+                            for (int j = 0; j < tempWord.Length - 1; j++)
+                            {
+                                choiceActions[5] += tempWord[j];
+                            }
+                        }
+                        else
+                        {
+                            choiceActions[5] = currentLine[i + 1];
+                        }
                         i++;
                         break;
                     case "#clueonefound":
-                        if (clueOneFound)
+                        if (ClueFound[0])
                         {
                             for (int j = 0; j < currentLine.Length; j++)
                             {
@@ -138,7 +259,7 @@ public class DialogueReader : MonoBehaviour
                         }
                         break;
                     case "#cluetwofound":
-                        if (clueTwoFound)
+                        if (ClueFound[1])
                         {
                             for (int j = 0; j < currentLine.Length; j++)
                             {
@@ -160,7 +281,7 @@ public class DialogueReader : MonoBehaviour
                         }
                         break;
                     case "#cluethreefound":
-                        if (clueThreeFound)
+                        if (ClueFound[2])
                         {
                             for (int j = 0; j < currentLine.Length; j++)
                             {
@@ -182,7 +303,7 @@ public class DialogueReader : MonoBehaviour
                         }
                         break;
                     case "#cluefourfound":
-                        if (clueFourFound)
+                        if (ClueFound[3])
                         {
                             for (int j = 0; j < currentLine.Length; j++)
                             {
@@ -204,7 +325,7 @@ public class DialogueReader : MonoBehaviour
                         }
                         break;
                     case "#cluefivefound":
-                        if (clueFiveFound)
+                        if (ClueFound[4])
                         {
                             for (int j = 0; j < currentLine.Length; j++)
                             {
@@ -226,7 +347,7 @@ public class DialogueReader : MonoBehaviour
                         }
                         break;
                     case "#cluesixfound":
-                        if (clueSixFound)
+                        if (ClueFound[5])
                         {
                             for (int j = 0; j < currentLine.Length; j++)
                             {
@@ -248,8 +369,32 @@ public class DialogueReader : MonoBehaviour
                         }
                         break;
                     case "#yes":
+                        for(int j = i + 1;currentLine[j] != "#no"; j++)
+                        {
+                            if(j == i + 1)
+                            {
+                                currentText.text += currentLine[j];
+                            }
+                            else
+                            {
+                                currentText.text += " " + currentLine[j];
+                            }
+                        }
+                        i = currentLine.Length - 1;
                         break;
                     case "#no":
+                        for (int j = i + 1; j < currentLine.Length; j++)
+                        {
+                            if (j == i + 1)
+                            {
+                                currentText.text += currentLine[j];
+                            }
+                            else
+                            {
+                                currentText.text += " " + currentLine[j];
+                            }
+                        }
+                        i = currentLine.Length - 1;
                         break;
                     case "#option1Text":
                         currentText = option1;
@@ -282,17 +427,28 @@ public class DialogueReader : MonoBehaviour
                         {
                             if(i == 0)
                             {
-                                Debug.Log(currentLine[i]);
+                                currentText.text += currentLine[i];
                             }
                             else
                             {
-                                Debug.Log(" " + currentLine[i]);
+                                currentText.text += " " + currentLine[i];
                             }
                         }
                         break;
                 }
             }
             lineNum += 1;
+        }
+        if(currentText == message && message.text != "")
+        {
+            if(textbox.text == "")
+            {
+                textbox.text += currentText.text;
+            }
+            else
+            {
+                textbox.text += "\n" + currentText.text;
+            }
         }
         if (message.text == "" && option1.text == "" && option2.text == "" && option3.text == "" && option4.text == "" && option5.text == "" && option6.text == "")
         {
@@ -303,15 +459,29 @@ public class DialogueReader : MonoBehaviour
 
     private void GoTo(string location)
     {
-        for(int i = 0; i < entries.Length; i++)
+        string nextTopic = "@" + location;
+        for (int i = 0; i < entries.Length; i++)
         {
-            if(entries[i] == "@" + location)
+            string temp = entries[i];
+            string place = "";
+            if (entries[i] == nextTopic)
             {
                 lineNum = i;
                 break;
             }
+            else
+            {
+                for (int j = 0; j < temp.Length - 1; j++)
+                {
+                    place += temp[j];
+                }
+                if (place == nextTopic)
+                {
+                    lineNum = i;
+                    break;
+                }
+            }
         }
-        NextLine();
     }
 
     public void EndDialogue()
@@ -348,11 +518,11 @@ public class DialogueReader : MonoBehaviour
         {
             string locationName = choiceActions[optionNumber].Split(':')[1];
             GoTo(locationName);
+            for(int i = 0; i < choiceActions.Length; i++)
+            {
+                choiceActions[i] = "";
+            }
+            NextLine();
         }
-    }
-
-    private void Quit()
-    {
-
     }
 }
