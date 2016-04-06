@@ -38,9 +38,13 @@ public class PipeRotator : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().sprite = filled;
             CanRotate = false;
         }
+        if(gameObject.tag == "End")
+        {
+            CheckLeft();
+        }
 	}
 
-    //Called on click with collider
+    //Called on left mouse down while on a collider
     void OnMouseDown()
     {
         //Checks if the tile can rotate
@@ -70,7 +74,7 @@ public class PipeRotator : MonoBehaviour {
             //If tag is Turn
             else if (gameObject.tag == "Turn")
             {
-                //If piece goes from left to up
+                //If piece goes from Left to Up
                 if (transform.rotation.eulerAngles.z == 270)
                 {
                     //Calls CheckLeft and CheckUp
@@ -163,30 +167,54 @@ public class PipeRotator : MonoBehaviour {
             //If hit piece is tagged FourWay
             else if (hitUp.transform.gameObject.tag == "FourWay")
             {
+                //If piece is full
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit piece alligned with top of selected
                     if (hitUp.transform.rotation.eulerAngles.z == 270 || hitUp.transform.rotation.eulerAngles.z == 90 || hitUp.transform.rotation.eulerAngles.z == 180 || hitUp.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Raycasts 1 space above FourWay
                         RaycastHit2D hitUp2 = Physics2D.Raycast(transform.position + new Vector3(0, 2, 0), Vector2.up);
-                        if (hitUp2.transform.gameObject.tag == "Straight")
+                        //If hit2
+                        if (hitUp2)
                         {
-                            if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If piece is tagged Straight
+                            if (hitUp2.transform.gameObject.tag == "Straight")
                             {
-                                if (hitUp2.transform.rotation.eulerAngles.z == 270 || hitUp2.transform.rotation.eulerAngles.z == 90)
+                                //If piece is full
+                                if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If piece is aligned with the FourWay
+                                    if (hitUp2.transform.rotation.eulerAngles.z == 270 || hitUp2.transform.rotation.eulerAngles.z == 90)
+                                    {
+                                        //Fills selected piece
+                                        IsFull = true;
+                                    }
                                 }
                             }
-                        }
-                        else if (hitUp2.transform.gameObject.tag == "Turn")
-                        {
-                            if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If piece is tagged Turn
+                            else if (hitUp2.transform.gameObject.tag == "Turn")
                             {
-                                if (hitUp2.transform.rotation.eulerAngles.z == 90 || hitUp2.transform.rotation.eulerAngles.z == 0)
+                                //If piece is full
+                                if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If piece is aligned with the FourWay
+                                    if (hitUp2.transform.rotation.eulerAngles.z == 90 || hitUp2.transform.rotation.eulerAngles.z == 0)
+                                    {
+                                        //Fills selected piece
+                                        IsFull = true;
+                                    }
                                 }
                             }
+                            /*
+                            The code does not check to see if there is another Fourway to 
+                            prevent an infinite cycle of checking the next piece, due to 
+                            the nature of FourWay pieces. This will however prevent a piece
+                            from becoming full if it is connected to two FourWays in a row.
+
+                            This can potentially be solved with a recursive function, but
+                            since the levels are hand built it is inconsequential.
+                            */
                         }
                     }
                 }
@@ -194,55 +222,82 @@ public class PipeRotator : MonoBehaviour {
         }
     }
 
+    //Checks the tile below the selected
     void CheckDown()
     {
+        //Raycasts 1 space below the selected tile
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0, -1, 0), Vector2.down);
+        //If the raycast hits
         if (hitDown)
         {
+            //If the hit piece is tagged Straight
             if (hitDown.transform.gameObject.tag == "Straight")
             {
+                //If the hit piece is full
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If the hit piece is aligned with the selected
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 90)
                     {
+                        //Sets the selected to full
                         IsFull = true;
                     }
                 }
             }
+            //If the hit piece is tagged Turn
             else if (hitDown.transform.gameObject.tag == "Turn")
             {
+                //If the hit piece is full
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If the hit piece is aligned with the selected
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 180)
                     {
+                        //Sets the selected to full
                         IsFull = true;
                     }
                 }
             }
+            //If the hit piece is tagged FourWay
             else if (hitDown.transform.gameObject.tag == "FourWay")
             {
+                //If the hit piece is full
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If the hit piece is aligned with the selected
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 90 || hitDown.transform.rotation.eulerAngles.z == 180 || hitDown.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Raycasts 1 space below the FourWay
                         RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(0, -2, 0), Vector2.up);
-                        if (hitDown2.transform.gameObject.tag == "Straight")
+                        //If raycast his
+                        if (hitDown2)
                         {
-                            if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If hit piece is tagged Straight
+                            if (hitDown2.transform.gameObject.tag == "Straight")
                             {
-                                if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 90)
+                                //If hit piece is full
+                                if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If hit piece is aligned with FourWay
+                                    if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 90)
+                                    {
+                                        //Sets selected to true
+                                        IsFull = true;
+                                    }
                                 }
                             }
-                        }
-                        else if (hitDown2.transform.gameObject.tag == "Turn")
-                        {
-                            if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If hit piece is tagged Turn
+                            else if (hitDown2.transform.gameObject.tag == "Turn")
                             {
-                                if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 180)
+                                //If hit piece is full
+                                if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If hit piece is aligned with FourWay
+                                    if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 180)
+                                    {
+                                        //Sets selected to true
+                                        IsFull = true;
+                                    }
                                 }
                             }
                         }
@@ -252,63 +307,105 @@ public class PipeRotator : MonoBehaviour {
         }
     }
     
+    //Checks the tile to the left of the selected
     void CheckLeft()
     {
+        //Raycasts 1 space to the left of the selected
         RaycastHit2D hitLeft = Physics2D.Raycast(transform.position + new Vector3(-1, 0, 0), Vector2.left);
+        //If raycast hits
         if (hitLeft)
         {
+            /*
+            The check for the Start tile will only be within
+            the CheckLeft() function because the Start tile
+            will only ever be on the left hand side of the
+            board.
+
+            If a change is wanted this if statement can be used
+            in the other functions, simply changing the name
+            of the raycast to the corresponding check.
+            */
+
+            //If hit is tagged Start
             if (hitLeft.transform.gameObject.tag == "Start")
             {
+                //Sets selected to full
                 IsFull = true;
             }
+            //If hit is tagged Straight
             else if (hitLeft.transform.gameObject.tag == "Straight")
             {
+                //If hit is full
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit is aligned with selected
                     if (hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Sets selected to full
                         IsFull = true;
                     }
                 }
             }
+            //If hit is tagged Turn
             else if (hitLeft.transform.gameObject.tag == "Turn")
             {
+                //If hit is full
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit is aligned with selected
                     if (hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 90)
                     {
+                        //Sets selected to full
                         IsFull = true;
                     }
                 }
             }
+            //If hit is tagged FourWay
             else if (hitLeft.transform.gameObject.tag == "FourWay")
             {
+                //IF hit is full
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit is aligned with selected
                     if (hitLeft.transform.rotation.eulerAngles.z == 270 || hitLeft.transform.rotation.eulerAngles.z == 90 || hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Raycasts 1 space to left of FourWay
                         RaycastHit2D hitLeft2 = Physics2D.Raycast(transform.position + new Vector3(-2, 0, 0), Vector2.up);
-                        if (hitLeft2.transform.gameObject.tag == "Start")
+                        //If hit
+                        if (hitLeft2)
                         {
-                            IsFull = true;
-                        }
-                        else if (hitLeft2.transform.gameObject.tag == "Straight")
-                        {
-                            if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If hit is tagged Start
+                            if (hitLeft2.transform.gameObject.tag == "Start")
                             {
-                                if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 0)
+                                //Fills selected
+                                IsFull = true;
+                            }
+                            //If hit is tagged Straight
+                            else if (hitLeft2.transform.gameObject.tag == "Straight")
+                            {
+                                //If hit is full
+                                if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If hit is aligned with FourWay
+                                    if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 0)
+                                    {
+                                        //Fills selected
+                                        IsFull = true;
+                                    }
                                 }
                             }
-                        }
-                        else if (hitLeft2.transform.gameObject.tag == "Turn")
-                        {
-                            if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If hit is tagged Turn
+                            else if (hitLeft2.transform.gameObject.tag == "Turn")
                             {
-                                if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 90)
+                                //If hit is full
+                                if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If hit is aligned with FourWay
+                                    if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 90)
+                                    {
+                                        //Fills selected
+                                        IsFull = true;
+                                    }
                                 }
                             }
                         }
@@ -318,58 +415,82 @@ public class PipeRotator : MonoBehaviour {
         }
     }
 
+    //Checks the tile to the right of the selected
     void CheckRight()
     {
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + new Vector3(1, 0, 0), Vector2.right); if (hitRight)
+        //Rays casts 1 space to right of the selected
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + new Vector3(1, 0, 0), Vector2.right);
+        //If hits
+        if (hitRight)
         {
-            if (hitRight.transform.gameObject.tag == "Start")
-            {
-                IsFull = true;
-            }
+            //If hit is tagged Straight
             if (hitRight.transform.gameObject.tag == "Straight")
             {
+                //If hit is full
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit is aligned with selected
                     if (hitRight.transform.rotation.eulerAngles.z == 180 || hitRight.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Fills selected
                         IsFull = true;
                     }
                 }
             }
+            //If hit is tagged Turn
             else if (hitRight.transform.gameObject.tag == "Turn")
             {
+                //If hit is full
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit is aligned with selected
                     if (hitRight.transform.rotation.eulerAngles.z == 270 || hitRight.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Fills selected
                         IsFull = true;
                     }
                 }
             }
+            //If hit is tagged FourWay
             else if (hitRight.transform.gameObject.tag == "FourWay")
             {
+                //If hit is full
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
+                    //If hit is aligned with selected
                     if (hitRight.transform.rotation.eulerAngles.z == 270 || hitRight.transform.rotation.eulerAngles.z == 90 || hitRight.transform.rotation.eulerAngles.z == 180 || hitRight.transform.rotation.eulerAngles.z == 0)
                     {
+                        //Raycasts 1 space to the right of the FourWay
                         RaycastHit2D hitRight2 = Physics2D.Raycast(transform.position + new Vector3(2, 0, 0), Vector2.up);
-                        if (hitRight2.transform.gameObject.tag == "Straight")
+                        //If hit
+                        if (hitRight2)
                         {
-                            if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If hit is tagged Straight
+                            if (hitRight2.transform.gameObject.tag == "Straight")
                             {
-                                if (hitRight2.transform.rotation.eulerAngles.z == 180 || hitRight2.transform.rotation.eulerAngles.z == 0)
+                                //If hit is full
+                                if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If hit is aligned with Fourway
+                                    if (hitRight2.transform.rotation.eulerAngles.z == 180 || hitRight2.transform.rotation.eulerAngles.z == 0)
+                                    {
+                                        //Fills selected
+                                        IsFull = true;
+                                    }
                                 }
                             }
-                        }
-                        else if (hitRight2.transform.gameObject.tag == "Turn")
-                        {
-                            if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                            //If hit is tagged Turn
+                            else if (hitRight2.transform.gameObject.tag == "Turn")
                             {
-                                if (hitRight2.transform.rotation.eulerAngles.z == 270 || hitRight2.transform.rotation.eulerAngles.z == 0)
+                                //If hit is full
+                                if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
-                                    IsFull = true;
+                                    //If hit is aligned with FourWay
+                                    if (hitRight2.transform.rotation.eulerAngles.z == 270 || hitRight2.transform.rotation.eulerAngles.z == 0)
+                                    {
+                                        //Fills selected
+                                        IsFull = true;
+                                    }
                                 }
                             }
                         }
