@@ -24,11 +24,6 @@ public class UIHandler : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update () {
-	
-	}
-
     public void ExpandMenu()
     {
         if (!expanded)
