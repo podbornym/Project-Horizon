@@ -24,7 +24,7 @@ public class traceLayoutManager : MonoBehaviour {
     // They're already false by default, so...
     public bool firstHit = false;
     public bool lastHit = false;
-    public bool[] lineHit; // I don't know if we need to know if the lines have been hit...
+    public bool[] lineHit; // We don't really need to know if the lines have been hit...
     public bool complete = false;
     public bool aSegmentHit = false;
 
@@ -42,10 +42,11 @@ public class traceLayoutManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
-    {   
+    {
         //Set up the startPoint, endPoint, linePoints
-        startPoint.Set(startX, startY, -10);
-        endPoint.Set(endX, endY, 0);
+
+        /*startPoint.Set(startX, startY, -10);
+        endPoint.Set(endX, endY, 0);*/
     }
 	
 	// Update is called once per frame
@@ -76,21 +77,20 @@ public class traceLayoutManager : MonoBehaviour {
         }
 
         //if the mousePosition is within the bounds of linePoints
-        for (int i=0; i<linePointsX.Length; i++)
+        for (int i = 0; i < linePointsX.Length; i++)
         {
             if (firstHit == true
             && (linePointsX[i] >= mousePosition.x - boundRadius) && (linePointsX[i] <= mousePosition.x + boundRadius)
             && (linePointsY[i] >= mousePosition.y - boundRadius) && (linePointsY[i] <= mousePosition.y + boundRadius))
             {
-                if(mousePositionOld != mousePosition && lastHit != true && Input.GetMouseButton(0))
+                if (mousePositionOld != mousePosition && lastHit != true && Input.GetMouseButton(0))
                 {
                     hitCount++;
-                    lineHit[i] = true;
+                    //lineHit[i] = true;
                     //print("Line part " + i + " Hit");
                     aSegmentHit = true;
                 }
             }
-
         }
         if (aSegmentHit != true && mousePositionOld != mousePosition && firstHit == true && lastHit != true && Input.GetMouseButton(0))
         {
@@ -101,11 +101,13 @@ public class traceLayoutManager : MonoBehaviour {
 
         if(lastHit == true)
         {
+            // The rules have become a bit strange.
+            // I'm going to look into this
             if (firstHit == false)
             {
                 lastHit = false;
             }
-            if (Tracer.GetComponent<traceScript>().timeRemaining >= 0)
+            else if (Tracer.GetComponent<traceScript>().timeRemaining >= 0)
             {
                 firstHit = false;
                 lastHit = false;
@@ -142,7 +144,7 @@ public class traceLayoutManager : MonoBehaviour {
         else
         {
             successRatio = 0;
-            DisplayScore();
+            //DisplayScore();
         }
     }
 }

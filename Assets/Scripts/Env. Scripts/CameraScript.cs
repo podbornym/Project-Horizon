@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class CameraScript : MonoBehaviour {
 
@@ -42,17 +43,20 @@ public class CameraScript : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if(gameObject.tag == "column")
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if (gameObject.transform.position.x < player.transform.position.x)
+            if(gameObject.tag == "column")
             {
-                float moveCam = cam.transform.position.x - offsetInUse;
-                iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
-            }
-            else
-            {
-                float moveCam = cam.transform.position.x + offsetInUse;
-                iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+                if (gameObject.transform.position.x < player.transform.position.x)
+                {
+                    float moveCam = cam.transform.position.x - offsetInUse;
+                    iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+                }
+                else
+                {
+                    float moveCam = cam.transform.position.x + offsetInUse;
+                    iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+                }
             }
         }
     }
