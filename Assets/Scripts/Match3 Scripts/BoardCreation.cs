@@ -102,18 +102,20 @@ public class BoardCreation : MonoBehaviour
             timer.text = "Time's Up!";
 
             TallyScore();
-        }
-
-        
+            GameObject.Find("Next Button").gameObject.SetActive(true);
+        } 
     }
 
     // Use this for initialization
     void Start()
     {
+        // Disable the UI's canvas
+        GameObject.Find("GENERALUI").GetComponent<Canvas>().gameObject.SetActive(false);
+
         // Use bool in persist vars
             // if zone
                 // if level
-                    // set initial values
+                    // set initial values, colors
         redScore.text = "Red: 0";
         yellowScore.text = "Yellow: 0";
         greenScore.text = "Green: 0";
@@ -225,11 +227,9 @@ public class BoardCreation : MonoBehaviour
                     hits[0].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     hits[1].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     hits[2].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
-                    //int squadSlot = -1;
                     Color color = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().color;
                     if (color == Color.red)
                     {
-                        //squadSlot = 0;
                         redHit = hits.Length;
                         setRedValue += redHit;
                         redScore.text = "Red: " + setRedValue.ToString();
@@ -237,7 +237,6 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.green)
                     {
-                        //squadSlot = 1;
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
                         greenScore.text = "Green: " + setGreenValue.ToString();
@@ -245,7 +244,6 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.blue)
                     {
-                        //squadSlot = 2;
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
                         blueScore.text = "Blue: " + setBlueValue.ToString();
@@ -253,7 +251,6 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.yellow)
                     {
-                        //squadSlot = 3;
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
                         yellowScore.text = "Yellow: " + setYellowValue.ToString();
@@ -261,13 +258,11 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.magenta)
                     {
-                        //squadSlot = 4;
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
                         magentaScore.text = "Magenta: " + setMagentaValue.ToString();
                         magentaHit = 0;
                     }
-                    //GameObject.Find("Scripts").GetComponent<ShipScript>().Spawn(1, squadSlot);
                 }
             }
             hits = Physics2D.RaycastAll(allPieces[i].transform.position, Vector2.down, 1.7f);
@@ -278,11 +273,9 @@ public class BoardCreation : MonoBehaviour
                     hits[0].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     hits[1].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     hits[2].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
-                    //int squadSlot = -1;
                     Color color = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().color;
                     if (color == Color.red)
                     {
-                        //squadSlot = 0;
                         redHit = hits.Length;
                         setRedValue += redHit;
                         redScore.text = "Red: " + setRedValue.ToString();
@@ -290,7 +283,6 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.green)
                     {
-                        //squadSlot = 1;
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
                         greenScore.text = "Green: " + setGreenValue.ToString();
@@ -298,7 +290,6 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.blue)
                     {
-                        //squadSlot = 2;
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
                         blueScore.text = "Blue: " + setBlueValue.ToString();
@@ -306,7 +297,6 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.yellow)
                     {
-                        //squadSlot = 3;
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
                         yellowScore.text = "Yellow: " + setYellowValue.ToString();
@@ -314,13 +304,11 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.magenta)
                     {
-                        //squadSlot = 4;
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
                         magentaScore.text = "Magenta: " + setMagentaValue.ToString();
                         magentaHit = 0;
                     }
-                    //GameObject.Find("Scripts").GetComponent<ShipScript>().Spawn(1, squadSlot);
                 }
             }
         }
@@ -335,46 +323,46 @@ public class BoardCreation : MonoBehaviour
 
     void TallyScore()
     {
-        // Determine if the player reached the necessary scoring
-            if(setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal)
+        // Determine if the player reached the necessary score
+        if (setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal)
+        {
+            int percentage = (setYellowValue % setYellowTotal + setBlueValue % setYellowTotal + setGreenValue % setGreenTotal + setRedValue % setRedTotal + setMagentaValue % setMagentaTotal) / 5;
+            float match3Return;
+
+            if (percentage <= 1)
             {
-                int percentage = (setYellowValue%setYellowTotal + setBlueValue%setYellowTotal + setGreenValue%setGreenTotal + setRedValue%setRedTotal + setMagentaValue%setMagentaTotal)/5;
-                float match3Return;
-
-                if(percentage <= 1)
-                {
-                    print("winnning: " + percentage);
-                    match3Return = 1 - dragPenalty;
-                }
-
-                if (percentage <= 2 && percentage > 1)
-                {
-                    print("winnning: " + percentage);
-                    match3Return = .9f - dragPenalty;
-                }
-
-                if (percentage <= 3 && percentage > 2)
-                {
-                    print("winnning: " + percentage);
-                    match3Return = .8f - dragPenalty;
-                }
-
-                if (percentage >= 4 && percentage > 3)
-                {
-                    print("winnning: " + percentage);
-                    match3Return = .7f - dragPenalty;
-                }
-
-                if (percentage > 4)
-                {
-                    print("winnning: " + percentage);
-                    match3Return = .6f - dragPenalty;
-                }    
+                print("winnning: " + percentage);
+                match3Return = 1 - dragPenalty;
             }
 
-            else
+            if (percentage <= 2 && percentage > 1)
             {
-                print("losing");
+                print("winnning: " + percentage);
+                match3Return = .9f - dragPenalty;
             }
+
+            if (percentage <= 3 && percentage > 2)
+            {
+                print("winnning: " + percentage);
+                match3Return = .8f - dragPenalty;
+            }
+
+            if (percentage >= 4 && percentage > 3)
+            {
+                print("winnning: " + percentage);
+                match3Return = .7f - dragPenalty;
+            }
+
+            if (percentage > 4)
+            {
+                print("winnning: " + percentage);
+                match3Return = .6f - dragPenalty;
+            }
+        }
+
+        else
+        {
+            print("losing");
+        }
     }
 }

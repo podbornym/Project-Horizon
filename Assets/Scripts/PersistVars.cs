@@ -1,13 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PersistVars : MonoBehaviour {
     //this script is attached to the UI so
     //all variables stored in here will persist
     //across scene changes
+    public float match3Score;
+    public float rotatoScore;
+    public float pipeDreamScore;
+    public float tracerScore;
+    public float findDiffScore;
+    public float mastermindScore;
+
+    public Scene currentScene;
+    public Scene previousScene;
+
+    private static GameObject clue = null;
 
     public static string ggScrub = "This will be the best art theft game ever made.  No doubt about it!";
-    public static GameObject[] landingPairs;
+
+    public GameObject clueOne;
+    public GameObject clueTwo;
+    public GameObject clueThree;
+    public GameObject clueFour;
+    public GameObject clueFive;
+    public GameObject clueSix;
+
     //Locations
     public static bool Ukiyo = false;
     public static bool Surreal = false;
@@ -52,39 +71,56 @@ public class PersistVars : MonoBehaviour {
 
         if (hit)
         {
-            if (hit.collider.gameObject.tag == "clue")
+            if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
+                || SceneManager.GetActiveScene().name == "U_0" || SceneManager.GetActiveScene().name == "U_1" || SceneManager.GetActiveScene().name == "U_2" || SceneManager.GetActiveScene().name == "U_3" || SceneManager.GetActiveScene().name == "U_4"
+                || SceneManager.GetActiveScene().name == "B_0" || SceneManager.GetActiveScene().name == "B_1" || SceneManager.GetActiveScene().name == "B_2" || SceneManager.GetActiveScene().name == "B_3" || SceneManager.GetActiveScene().name == "B_4")
             {
-                if (hit.collider.gameObject == clueOne)
+                if (hit.collider.gameObject.tag == "clue")
                 {
-                    ClueFound[0] = true;
-                    Debug.Log("Found Clue 1");
-                }
-                if (hit.collider.gameObject == clueTwo)
-                {
-                    ClueFound[1] = true;
-                    Debug.Log("Found Clue 2");
-                }
-                if (hit.collider.gameObject == clueThree)
-                {
-                    ClueFound[2] = true;
-                    Debug.Log("Found Clue 3");
-                }
-                if (hit.collider.gameObject == clueFour)
-                {
-                    ClueFound[3] = true;
-                    Debug.Log("Found Clue 4");
-                }
-                if (hit.collider.gameObject == clueFive)
-                {
-                    ClueFound[4] = true;
-                    Debug.Log("Found Clue 5");
-                }
-                if (hit.collider.gameObject == clueSix)
-                {
-                    ClueFound[5] = true;
-                    Debug.Log("Found Clue 6");
+                    if (hit.collider.gameObject == clueOne)
+                    {
+                        painting[0] = true;
+                        Debug.Log("Found Clue 1");
+                    }
+                    if (hit.collider.gameObject == clueTwo)
+                    {
+                        painting[1] = true;
+                        Debug.Log("Found Clue 2");
+                    }
+                    if (hit.collider.gameObject == clueThree)
+                    {
+                        painting[2] = true;
+                        Debug.Log("Found Clue 3");
+                    }
+                    if (hit.collider.gameObject == clueFour)
+                    {
+                        painting[3] = true;
+                        Debug.Log("Found Clue 4");
+                    }
+                    if (hit.collider.gameObject == clueFive)
+                    {
+                        painting[4] = true;
+                        Debug.Log("Found Clue 5");
+                    }
+                    if (hit.collider.gameObject == clueSix)
+                    {
+                        painting[5] = true;
+                        Debug.Log("Found Clue 6");
+                    }
                 }
             }
         }
+    }
+
+    void clearVars()
+    {
+        // Use to clear variables once a painting has been sold
+        // Should be flexible, allow for two paintings to be stored at once?? Need twice as many variables then, and lots of work in other scripts
+        match3Score = 0f;
+        rotatoScore = 0f;
+        pipeDreamScore = 0f;
+        tracerScore = 0f;
+        findDiffScore = 0f;
+        mastermindScore = 0f;
     }
 }
