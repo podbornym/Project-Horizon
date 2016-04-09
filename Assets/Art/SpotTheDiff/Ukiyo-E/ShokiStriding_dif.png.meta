@@ -1,0 +1,737 @@
+fileFormatVersion: 2
+guid: abbc51b705987e242a9d7ffe86600364
+timeCreated: 1460237380
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ShokiStriding_dif_0
+    21300002: ShokiStriding_dif_1
+    21300004: ShokiStriding_dif_2
+    21300006: ShokiStriding_dif_3
+    21300008: ShokiStriding_dif_4
+    21300010: ShokiStriding_dif_5
+    21300012: ShokiStriding_dif_6
+    21300014: ShokiStriding_dif_7
+    21300016: ShokiStriding_dif_8
+    21300018: ShokiStriding_dif_9
+    21300020: ShokiStriding_dif_10
+    21300022: ShokiStriding_dif_11
+    21300024: ShokiStriding_dif_12
+    21300026: ShokiStriding_dif_13
+    21300028: ShokiStriding_dif_14
+    21300030: ShokiStriding_dif_15
+    21300032: ShokiStriding_dif_16
+    21300034: ShokiStriding_dif_17
+    21300036: ShokiStriding_dif_18
+    21300038: ShokiStriding_dif_19
+    21300040: ShokiStriding_dif_20
+    21300042: ShokiStriding_dif_21
+    21300044: ShokiStriding_dif_22
+    21300046: ShokiStriding_dif_23
+    21300048: ShokiStriding_dif_24
+    21300050: ShokiStriding_dif_25
+    21300052: ShokiStriding_dif_26
+    21300054: ShokiStriding_dif_27
+    21300056: ShokiStriding_dif_28
+    21300058: ShokiStriding_dif_29
+    21300060: ShokiStriding_dif_30
+    21300062: ShokiStriding_dif_31
+    21300064: ShokiStriding_dif_32
+    21300066: ShokiStriding_dif_33
+    21300068: ShokiStriding_dif_34
+    21300070: ShokiStriding_dif_35
+    21300072: ShokiStriding_dif_36
+    21300074: ShokiStriding_dif_37
+    21300076: ShokiStriding_dif_38
+    21300078: ShokiStriding_dif_39
+    21300080: ShokiStriding_dif_40
+    21300082: ShokiStriding_dif_41
+    21300084: ShokiStriding_dif_42
+    21300086: ShokiStriding_dif_43
+    21300088: ShokiStriding_dif_44
+    21300090: ShokiStriding_dif_45
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ShokiStriding_dif_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 54
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 1024}
+        - {x: -27, y: -1024}
+        - {x: 27, y: -1024}
+        - {x: 27, y: 1024}
+    - name: ShokiStriding_dif_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1692
+        width: 109
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.5, y: 41}
+        - {x: -54.5, y: -41}
+        - {x: 54.5, y: -41}
+        - {x: 54.5, y: 41}
+    - name: ShokiStriding_dif_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1733
+        width: 72
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 38.5}
+        - {x: -36, y: -38.5}
+        - {x: 36, y: -38.5}
+        - {x: 36, y: 38.5}
+    - name: ShokiStriding_dif_3
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1442
+        width: 82
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 45}
+        - {x: -41, y: -45}
+        - {x: 41, y: -45}
+        - {x: 41, y: 45}
+    - name: ShokiStriding_dif_4
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1347
+        width: 137
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68.5, y: 52.5}
+        - {x: -68.5, y: -52.5}
+        - {x: 68.5, y: -52.5}
+        - {x: 68.5, y: 52.5}
+    - name: ShokiStriding_dif_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1122
+        width: 190
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -95, y: 82}
+        - {x: -95, y: -82}
+        - {x: 95, y: -82}
+        - {x: 95, y: 82}
+    - name: ShokiStriding_dif_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 961
+        width: 175
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -87.5, y: 54}
+        - {x: -87.5, y: -54}
+        - {x: 87.5, y: -54}
+        - {x: 87.5, y: 54}
+    - name: ShokiStriding_dif_7
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 598
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_8
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 613
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_9
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 613
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 617
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_11
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 612
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 612
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_13
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 622
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_14
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 612
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_15
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 614
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_16
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 613
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_17
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 613
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_18
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 618
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_19
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 584
+        width: 50
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 20.5}
+        - {x: -25, y: 20.5}
+        - {x: -25, y: -20.5}
+        - {x: 25, y: -20.5}
+        - {x: 25, y: -0.5}
+        - {x: 3, y: 19.5}
+    - name: ShokiStriding_dif_20
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 615
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_21
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 612
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_22
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 432
+        width: 208
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: -78}
+        - {x: 28, y: -81}
+        - {x: 29, y: -81}
+        - {x: 28, y: -82}
+        - {x: 26, y: -80}
+        - {x: 25, y: -80}
+        - {x: 20, y: -71}
+        - {x: -17, y: -66}
+        - {x: 88, y: -63}
+        - {x: 91, y: -79}
+        - {x: 96, y: -85}
+        - {x: 104, y: -85}
+        - {x: 104, y: -48}
+        - {x: 101, y: -48}
+        - {x: 99, y: -50}
+        - {x: 93, y: -51}
+        - {x: 90, y: 85}
+        - {x: -99, y: 85}
+        - {x: -104, y: -8}
+        - {x: -104, y: -73}
+        - {x: -99, y: -83}
+        - {x: -95, y: -85}
+        - {x: 65, y: -85}
+        - {x: 71, y: -78}
+        - {x: 48, y: -70}
+        - {x: 27, y: -70}
+      - - {x: 76, y: -76}
+        - {x: 74, y: -83}
+        - {x: 74, y: -85}
+        - {x: 80, y: -85}
+        - {x: 87, y: -81}
+        - {x: 87, y: -79}
+        - {x: 83, y: -74}
+      - - {x: 90, y: -85}
+        - {x: 90, y: -83}
+        - {x: 87, y: -82}
+        - {x: 85, y: -85}
+      - - {x: 73, y: -81}
+        - {x: 76, y: -80}
+        - {x: 76, y: -77}
+        - {x: 73, y: -76}
+        - {x: 71, y: -78}
+      - - {x: 61, y: -72}
+        - {x: 59, y: -75}
+        - {x: 59, y: -77}
+        - {x: 61, y: -79}
+        - {x: 67, y: -78}
+        - {x: 69, y: -77}
+        - {x: 69, y: -74}
+        - {x: 66, y: -72}
+      - - {x: -101, y: -72}
+        - {x: -101, y: -69}
+        - {x: -104, y: -68}
+        - {x: -104, y: -73}
+      - - {x: 93, y: -25}
+        - {x: 93, y: -36}
+        - {x: 96, y: -37}
+        - {x: 104, y: -36}
+        - {x: 104, y: -26}
+        - {x: 100, y: -25}
+      - - {x: 89, y: 85}
+        - {x: 89, y: 80}
+        - {x: 92, y: 78}
+        - {x: 89, y: 32}
+        - {x: 89, y: -3}
+        - {x: 97, y: -23}
+        - {x: 104, y: -23}
+        - {x: 104, y: 85}
+      - - {x: -104, y: -9}
+        - {x: -103, y: -10}
+        - {x: -100, y: -9}
+        - {x: -100, y: -6}
+        - {x: -103, y: -5}
+        - {x: -104, y: -6}
+      - - {x: -103, y: 19}
+        - {x: -100, y: 20}
+        - {x: -100, y: 25}
+        - {x: -101, y: 28}
+        - {x: -104, y: 28}
+        - {x: -104, y: 19}
+      - - {x: -104, y: 80}
+        - {x: -104, y: 75}
+        - {x: -103, y: 75}
+        - {x: -100, y: 78}
+        - {x: -100, y: 80}
+        - {x: -103, y: 81}
+    - name: ShokiStriding_dif_23
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 601
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_24
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 581
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_25
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 570
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_26
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 525
+        width: 17
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 564
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_28
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 550
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_29
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 549
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_30
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 551
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_31
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 508
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_32
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 525
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_33
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 519
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_34
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 482
+        width: 17
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_35
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 475
+        width: 16
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_36
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 503
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_37
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 449
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_38
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 446
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_39
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 432
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_40
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 438
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_41
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 432
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_42
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 433
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_43
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 432
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ShokiStriding_dif_44
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 127
+        width: 207
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -103.5, y: 52.5}
+        - {x: -103.5, y: -52.5}
+        - {x: 103.5, y: -52.5}
+        - {x: 103.5, y: 52.5}
+    - name: ShokiStriding_dif_45
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 35
+        width: 147
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.5, y: 43.5}
+        - {x: -73.5, y: -43.5}
+        - {x: 73.5, y: -43.5}
+        - {x: 73.5, y: 43.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

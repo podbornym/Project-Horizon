@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: 042c0d4126fadd94ca26dd86e4d385e4
+timeCreated: 1460238977
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TheBigWave_dif_0
+    21300002: TheBigWave_dif_1
+    21300004: TheBigWave_dif_2
+    21300006: TheBigWave_dif_3
+    21300008: TheBigWave_dif_4
+    21300010: TheBigWave_dif_5
+    21300012: TheBigWave_dif_6
+    21300014: TheBigWave_dif_7
+    21300016: TheBigWave_dif_8
+    21300018: TheBigWave_dif_9
+    21300020: TheBigWave_dif_10
+    21300022: TheBigWave_dif_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: TheBigWave_dif_0
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1683
+        width: 75
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 122}
+        - {x: -37.5, y: -66}
+        - {x: -37.5, y: -122}
+        - {x: 32.5, y: -122}
+        - {x: 35.5, y: -23}
+        - {x: 37.5, y: 41}
+        - {x: 37.5, y: 122}
+    - name: TheBigWave_dif_1
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1916
+        width: 121
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TheBigWave_dif_2
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1635
+        width: 242
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -121, y: 105.5}
+        - {x: -121, y: -105.5}
+        - {x: 121, y: -105.5}
+        - {x: 121, y: 105.5}
+    - name: TheBigWave_dif_3
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 1518
+        width: 264
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -132, y: 126}
+        - {x: -132, y: -126}
+        - {x: 132, y: -126}
+        - {x: 132, y: 126}
+    - name: TheBigWave_dif_4
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1574
+        width: 69
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TheBigWave_dif_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1373
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 91}
+        - {x: -70, y: 77}
+        - {x: -70, y: -53}
+        - {x: -60, y: -89}
+        - {x: -47, y: -91}
+        - {x: 70, y: -91}
+        - {x: 70, y: 67}
+        - {x: 38, y: 91}
+    - name: TheBigWave_dif_6
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 718
+        width: 251
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -125.5, y: 124}
+        - {x: -125.5, y: -124}
+        - {x: 125.5, y: -124}
+        - {x: 125.5, y: 124}
+    - name: TheBigWave_dif_7
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 514
+        width: 577
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -288.5, y: 103}
+        - {x: -288.5, y: -103}
+        - {x: 288.5, y: -103}
+        - {x: 288.5, y: 103}
+    - name: TheBigWave_dif_8
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 534
+        width: 203
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -101.5, y: 73.5}
+        - {x: -101.5, y: -73.5}
+        - {x: 101.5, y: -73.5}
+        - {x: 101.5, y: 73.5}
+    - name: TheBigWave_dif_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 292
+        width: 271
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -135.5, y: 118}
+        - {x: -135.5, y: -118}
+        - {x: 135.5, y: -118}
+        - {x: 135.5, y: 118}
+    - name: TheBigWave_dif_10
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1
+        width: 441
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -220.5, y: 111}
+        - {x: -220.5, y: -111}
+        - {x: 220.5, y: -111}
+        - {x: 220.5, y: 111}
+    - name: TheBigWave_dif_11
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 121
+        width: 162
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81, y: 61}
+        - {x: -81, y: -61}
+        - {x: 81, y: -61}
+        - {x: 81, y: 61}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
