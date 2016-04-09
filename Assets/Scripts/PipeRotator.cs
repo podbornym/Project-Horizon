@@ -6,11 +6,15 @@ public class PipeRotator : MonoBehaviour {
     public bool PipeConnection = false;
     public bool IsFull = false;
     public bool CanRotate = true;
+
     public PipeDreamManager manager;
+
     public int[,] tileGrid;
     public int width;
     public int height;
+
     public Sprite filled;
+
     public GameObject ObjectManager;
 
     void Awake()
@@ -43,6 +47,18 @@ public class PipeRotator : MonoBehaviour {
             CheckLeft();
         }
 	}
+    /*
+    OnMouseDown simultaneously rotates the tiles and
+    checks to see if they can be filled. If they can
+    be filled then it will set their bool to true
+    where the update function takes over and changes
+    the sprite to full.
+
+    In the final version of this code, instead of
+    setting the full bool to true, it will check
+    whether or not the pipes are connected as the
+    liquid flows through them.
+    */
 
     //Called on left mouse down while on a collider
     void OnMouseDown()
