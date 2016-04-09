@@ -140,6 +140,36 @@ public class DialogueReader : MonoBehaviour
                         message.gameObject.SetActive(false);
                         nextButton.SetActive(false);
                         break;
+                    case "#play1":
+                        break;
+                    case "#play2":
+                        break;
+                    case "#play3":
+                        break;
+                    case "#play4":
+                        break;
+                    case "#play5":
+                        break;
+                    case "#play6":
+                        break;
+                    case "#activateClue1":
+                        clueOne.gameObject.GetComponent<Collider2D>().enabled = true;
+                        break;
+                    case "#activateClue2":
+                        clueTwo.gameObject.GetComponent<Collider2D>().enabled = true;
+                        break;
+                    case "#activateClue3":
+                        clueThree.gameObject.GetComponent<Collider2D>().enabled = true;
+                        break;
+                    case "#activateClue4":
+                        clueFour.gameObject.GetComponent<Collider2D>().enabled = true;
+                        break;
+                    case "#activateClue5":
+                        clueFive.gameObject.GetComponent<Collider2D>().enabled = true;
+                        break;
+                    case "#activateClue6":
+                        clueSix.gameObject.GetComponent<Collider2D>().enabled = true;
+                        break;
                     case "#option1":
                         option1.gameObject.SetActive(true);
                         if(i + 1 == currentLine.Length - 1)
@@ -239,162 +269,62 @@ public class DialogueReader : MonoBehaviour
                     case "#clueonefound":
                         if (ClueFound[0])
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#yes")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("yes1");
                         }
                         else
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#no")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("no1");
                         }
                         break;
                     case "#cluetwofound":
                         if (ClueFound[1])
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#yes")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("yes2");
                         }
                         else
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#no")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("no2");
                         }
                         break;
                     case "#cluethreefound":
                         if (ClueFound[2])
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#yes")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("yes3");
                         }
                         else
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#no")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("no3");
                         }
                         break;
                     case "#cluefourfound":
                         if (ClueFound[3])
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#yes")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("yes4");
                         }
                         else
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#no")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("no4");
                         }
                         break;
                     case "#cluefivefound":
                         if (ClueFound[4])
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#yes")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("yes5");
                         }
                         else
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#no")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("no5");
                         }
                         break;
                     case "#cluesixfound":
                         if (ClueFound[5])
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#yes")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("yes6");
                         }
                         else
                         {
-                            for (int j = 0; j < currentLine.Length; j++)
-                            {
-                                if (currentLine[j] == "#no")
-                                {
-                                    i = j - 1;
-                                }
-                            }
+                            GoTo("no6");
                         }
-                        break;
-                    case "#yes":
-                        for(int j = i + 1;currentLine[j] != "#no"; j++)
-                        {
-                            if(j == i + 1)
-                            {
-                                currentText.text += currentLine[j];
-                            }
-                            else
-                            {
-                                currentText.text += " " + currentLine[j];
-                            }
-                        }
-                        i = currentLine.Length - 1;
-                        break;
-                    case "#no":
-                        for (int j = i + 1; j < currentLine.Length; j++)
-                        {
-                            if (j == i + 1)
-                            {
-                                currentText.text += currentLine[j];
-                            }
-                            else
-                            {
-                                currentText.text += " " + currentLine[j];
-                            }
-                        }
-                        i = currentLine.Length - 1;
                         break;
                     case "#option1Text":
                         currentText = option1;
@@ -413,6 +343,9 @@ public class DialogueReader : MonoBehaviour
                         break;
                     case "#option6Text":
                         currentText = option6;
+                        break;
+                    case "#play":
+
                         break;
                     case "#quit":
                         EndDialogue();

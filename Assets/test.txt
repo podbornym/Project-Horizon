@@ -10,30 +10,102 @@ How can I help you?
 
 @ClueOne
 #SetDialogue
-#clueonefound #yes You found it! #no What do you mean?
+#clueonefound
+
+@yes1
+You found it!
+Would you like to play game one?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+What do you mean?
+#activateClue1
 #goto:Start
 
 @ClueTwo
 #SetDialogue
-#cluetwofound #yes You found it! #no What do you mean?
+#cluetwofound
+
+@yes2
+You found it!
+Would you like to play game two?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+What do you mean?
+#activateClue2
 #goto:Start
 
 @ClueThree
 #SetDialogue
-#cluethreefound #yes You found it! #no What do you mean?
+#cluethreefound
+
+@yes3
+You found it!
+Would you like to play game one?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+What do you mean?
+#activateClue3
 #goto:Start
 
 @ClueFour
 #SetDialogue
-#cluefourfound #yes You found it! #no What do you mean?
+#cluefourfound
+
+@yes4
+You found it!
+Would you like to play game one?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+What do you mean?
+#activateClue4
 #goto:Start
 
 @ClueFive
 #SetDialogue
-#cluefivefound #yes You found it! #no What do you mean?
+#cluefivefound
+
+@yes5
+You found it!
+Would you like to play game one?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+What do you mean?
+#activateClue5
 #goto:Start
 
 @ClueSix
 #SetDialogue
-#cluesixfound #yes You found it! #no What do you mean?
+#cluesixfound
+
+@yes6
+You found it!
+Would you like to play game six?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+What do you mean?
+#activateClue6
 #goto:Start

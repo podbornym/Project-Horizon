@@ -36,4 +36,55 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqeuFour = { false, false, false, false, false, false };
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
+
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            FindClue();
+        }
+    }
+
+    void FindClue()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+
+        if (hit)
+        {
+            if (hit.collider.gameObject.tag == "clue")
+            {
+                if (hit.collider.gameObject == clueOne)
+                {
+                    ClueFound[0] = true;
+                    Debug.Log("Found Clue 1");
+                }
+                if (hit.collider.gameObject == clueTwo)
+                {
+                    ClueFound[1] = true;
+                    Debug.Log("Found Clue 2");
+                }
+                if (hit.collider.gameObject == clueThree)
+                {
+                    ClueFound[2] = true;
+                    Debug.Log("Found Clue 3");
+                }
+                if (hit.collider.gameObject == clueFour)
+                {
+                    ClueFound[3] = true;
+                    Debug.Log("Found Clue 4");
+                }
+                if (hit.collider.gameObject == clueFive)
+                {
+                    ClueFound[4] = true;
+                    Debug.Log("Found Clue 5");
+                }
+                if (hit.collider.gameObject == clueSix)
+                {
+                    ClueFound[5] = true;
+                    Debug.Log("Found Clue 6");
+                }
+            }
+        }
+    }
 }
