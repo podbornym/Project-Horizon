@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: f8c1fe48822317145a3c6413d6703d6e
+timeCreated: 1460231950
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TurinSpring_dif_0
+    21300002: TurinSpring_dif_1
+    21300004: TurinSpring_dif_2
+    21300006: TurinSpring_dif_3
+    21300008: TurinSpring_dif_4
+    21300010: TurinSpring_dif_5
+    21300012: TurinSpring_dif_6
+    21300014: TurinSpring_dif_7
+    21300016: TurinSpring_dif_8
+    21300018: TurinSpring_dif_9
+    21300020: TurinSpring_dif_10
+    21300022: TurinSpring_dif_11
+    21300024: TurinSpring_dif_12
+    21300026: TurinSpring_dif_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: TurinSpring_dif_0
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1720
+        width: 420
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -210, y: 113.5}
+        - {x: -210, y: -113.5}
+        - {x: 210, y: -113.5}
+        - {x: 210, y: 113.5}
+    - name: TurinSpring_dif_1
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1861
+        width: 170
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -85, y: 93.5}
+        - {x: -85, y: -93.5}
+        - {x: 85, y: -93.5}
+        - {x: 85, y: 93.5}
+    - name: TurinSpring_dif_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1164
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82.5, y: 82.5}
+        - {x: -82.5, y: -82.5}
+        - {x: 82.5, y: -82.5}
+        - {x: 82.5, y: 82.5}
+    - name: TurinSpring_dif_3
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1239
+        width: 168
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -84, y: 61}
+        - {x: -84, y: -61}
+        - {x: 84, y: -61}
+        - {x: 84, y: 61}
+    - name: TurinSpring_dif_4
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 1164
+        width: 100
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 57}
+        - {x: -50, y: -57}
+        - {x: 50, y: -57}
+        - {x: 50, y: 57}
+    - name: TurinSpring_dif_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 810
+        width: 175
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87.5, y: 52}
+        - {x: 72.5, y: 99}
+        - {x: -87.5, y: 99}
+        - {x: -87.5, y: -96}
+        - {x: -53.5, y: -99}
+        - {x: 73.5, y: -99}
+        - {x: 78.5, y: 16}
+        - {x: 82.5, y: 16}
+        - {x: 87.5, y: 21}
+      - - {x: 77.5, y: -25}
+        - {x: 75.5, y: -26}
+        - {x: 75.5, y: -43}
+        - {x: 80.5, y: -43}
+        - {x: 87.5, y: -39}
+        - {x: 87.5, y: -34}
+        - {x: 81.5, y: -25}
+    - name: TurinSpring_dif_6
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 655
+        width: 103
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51.5, y: 230}
+        - {x: -51.5, y: -230}
+        - {x: 51.5, y: -230}
+        - {x: 51.5, y: 230}
+    - name: TurinSpring_dif_7
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 503
+        width: 216
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78, y: -76}
+        - {x: -84, y: -79}
+        - {x: -84, y: -86}
+        - {x: -79, y: -89}
+        - {x: -51, y: -89}
+        - {x: -50, y: -87}
+        - {x: -54, y: -83}
+        - {x: -71, y: -76}
+      - - {x: -48, y: -72}
+        - {x: -49, y: -73}
+        - {x: -49, y: -79}
+        - {x: -48, y: -84}
+        - {x: -36, y: -89}
+        - {x: -23, y: -89}
+        - {x: -23, y: -83}
+        - {x: -39, y: -72}
+      - - {x: -63, y: -82}
+        - {x: -55, y: -82}
+        - {x: -49, y: -79}
+        - {x: -49, y: -72}
+        - {x: -50, y: -69}
+        - {x: -57, y: -69}
+        - {x: -63, y: -74}
+      - - {x: -81, y: -74}
+        - {x: -79, y: -76}
+        - {x: -76, y: -75}
+        - {x: -76, y: -72}
+        - {x: -78, y: -70}
+        - {x: -81, y: -71}
+      - - {x: 31, y: -69}
+        - {x: 27, y: -66}
+        - {x: 34, y: -69}
+        - {x: 35, y: -73}
+        - {x: 45, y: -72}
+        - {x: 97, y: -64}
+        - {x: 98, y: -62}
+        - {x: 98, y: 83}
+        - {x: -106, y: 83}
+        - {x: -108, y: 64}
+        - {x: -108, y: -28}
+        - {x: -102, y: -66}
+        - {x: -7, y: -75}
+        - {x: 29, y: -75}
+        - {x: 31, y: -74}
+        - {x: 33, y: -72}
+      - - {x: 100, y: -52}
+        - {x: 103, y: -51}
+        - {x: 103, y: -48}
+        - {x: 100, y: -47}
+        - {x: 98, y: -49}
+      - - {x: 102, y: -39}
+        - {x: 105, y: -43}
+        - {x: 108, y: -42}
+        - {x: 108, y: -39}
+        - {x: 105, y: -36}
+        - {x: 103, y: -36}
+      - - {x: 103, y: -34}
+        - {x: 105, y: -36}
+        - {x: 106, y: -36}
+        - {x: 108, y: -34}
+        - {x: 108, y: -28}
+        - {x: 103, y: -30}
+      - - {x: -105, y: 13}
+        - {x: -105, y: 16}
+        - {x: -108, y: 17}
+        - {x: -108, y: 12}
+      - - {x: 71, y: 89}
+        - {x: 73, y: 84}
+        - {x: 76, y: 84}
+        - {x: 78, y: 86}
+        - {x: 78, y: 89}
+    - name: TurinSpring_dif_8
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 493
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TurinSpring_dif_9
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 496
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TurinSpring_dif_10
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 519
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TurinSpring_dif_11
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 516
+        width: 279
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -139.5, y: 66}
+        - {x: -139.5, y: -66}
+        - {x: 139.5, y: -66}
+        - {x: 139.5, y: 66}
+    - name: TurinSpring_dif_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 491
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TurinSpring_dif_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 51
+        width: 250
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -125, y: 98.5}
+        - {x: -125, y: -98.5}
+        - {x: 125, y: -98.5}
+        - {x: 125, y: 98.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

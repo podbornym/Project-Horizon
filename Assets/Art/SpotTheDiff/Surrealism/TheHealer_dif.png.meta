@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 6d127d2d9c7c5eb47bcdccffb7f0569f
+timeCreated: 1460229039
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TheHealer_dif_0
+    21300002: TheHealer_dif_1
+    21300004: TheHealer_dif_2
+    21300006: TheHealer_dif_3
+    21300008: TheHealer_dif_4
+    21300010: TheHealer_dif_5
+    21300012: TheHealer_dif_6
+    21300014: TheHealer_dif_7
+    21300016: TheHealer_dif_8
+    21300018: TheHealer_dif_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: TheHealer_dif_0
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 1697
+        width: 238
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -119, y: 24}
+        - {x: -119, y: -24}
+        - {x: 119, y: -24}
+        - {x: 119, y: 24}
+    - name: TheHealer_dif_1
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1500
+        width: 166
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83, y: 60.5}
+        - {x: -83, y: -60.5}
+        - {x: 83, y: -60.5}
+        - {x: 83, y: 60.5}
+    - name: TheHealer_dif_2
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1017
+        width: 197
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -98.5, y: 93}
+        - {x: -98.5, y: -93}
+        - {x: 98.5, y: -93}
+        - {x: 98.5, y: 93}
+    - name: TheHealer_dif_3
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1040
+        width: 202
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -101, y: 47}
+        - {x: -101, y: -47}
+        - {x: 101, y: -47}
+        - {x: 101, y: 47}
+    - name: TheHealer_dif_4
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 770
+        width: 130
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 64.5}
+        - {x: -15, y: 61.5}
+        - {x: -65, y: 61.5}
+        - {x: -65, y: -64.5}
+        - {x: 65, y: -64.5}
+        - {x: 65, y: 61.5}
+        - {x: 12, y: 64.5}
+    - name: TheHealer_dif_5
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 587
+        width: 209
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -104.5, y: 92}
+        - {x: -104.5, y: -92}
+        - {x: 104.5, y: -92}
+        - {x: 104.5, y: 92}
+    - name: TheHealer_dif_6
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 552
+        width: 199
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99.5, y: 86}
+        - {x: -99.5, y: -86}
+        - {x: 99.5, y: -86}
+        - {x: 99.5, y: 86}
+    - name: TheHealer_dif_7
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 506
+        width: 156
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78, y: 99}
+        - {x: -78, y: -99}
+        - {x: 78, y: -99}
+        - {x: 78, y: 99}
+    - name: TheHealer_dif_8
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 271
+        width: 109
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.5, y: 112}
+        - {x: -54.5, y: -112}
+        - {x: 54.5, y: -112}
+        - {x: 54.5, y: 112}
+    - name: TheHealer_dif_9
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 35
+        width: 225
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -112.5, y: 101.5}
+        - {x: -112.5, y: -101.5}
+        - {x: 112.5, y: -101.5}
+        - {x: 112.5, y: 101.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

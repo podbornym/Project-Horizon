@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: ba0c49dfb5f16f942ac14f8387036b50
+timeCreated: 1460225381
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MiVestido_dif_0
+    21300002: MiVestido_dif_1
+    21300004: MiVestido_dif_2
+    21300006: MiVestido_dif_3
+    21300008: MiVestido_dif_4
+    21300010: MiVestido_dif_5
+    21300012: MiVestido_dif_6
+    21300014: MiVestido_dif_7
+    21300016: MiVestido_dif_8
+    21300018: MiVestido_dif_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MiVestido_dif_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1873
+        width: 172
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -86, y: 81.5}
+        - {x: -86, y: -81.5}
+        - {x: 86, y: -81.5}
+        - {x: 86, y: 81.5}
+    - name: MiVestido_dif_1
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 1816
+        width: 115
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.5, y: 110}
+        - {x: -57.5, y: -110}
+        - {x: 57.5, y: -110}
+        - {x: 57.5, y: 110}
+    - name: MiVestido_dif_2
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1647
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53, y: 62.5}
+        - {x: -53, y: -62.5}
+        - {x: 53, y: -62.5}
+        - {x: 53, y: 62.5}
+    - name: MiVestido_dif_3
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1396
+        width: 254
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -127, y: 113}
+        - {x: -127, y: -113}
+        - {x: 127, y: -113}
+        - {x: 127, y: 113}
+    - name: MiVestido_dif_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1007
+        width: 256
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -128, y: 178.5}
+        - {x: -128, y: -178.5}
+        - {x: 128, y: -178.5}
+        - {x: 128, y: 178.5}
+    - name: MiVestido_dif_5
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1217
+        width: 101
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 71.5}
+        - {x: -50.5, y: -71.5}
+        - {x: 50.5, y: -71.5}
+        - {x: 50.5, y: 71.5}
+    - name: MiVestido_dif_6
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 848
+        width: 171
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -85.5, y: 144}
+        - {x: -85.5, y: -144}
+        - {x: 85.5, y: -144}
+        - {x: 85.5, y: 144}
+    - name: MiVestido_dif_7
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 774
+        width: 121
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60.5, y: 54}
+        - {x: -60.5, y: -54}
+        - {x: 60.5, y: -54}
+        - {x: 60.5, y: 54}
+    - name: MiVestido_dif_8
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 404
+        width: 182
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -91, y: 116.5}
+        - {x: -91, y: -116.5}
+        - {x: 91, y: -116.5}
+        - {x: 91, y: 116.5}
+    - name: MiVestido_dif_9
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 419
+        width: 152
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -76, y: 78}
+        - {x: -76, y: -78}
+        - {x: 76, y: -78}
+        - {x: 76, y: 78}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

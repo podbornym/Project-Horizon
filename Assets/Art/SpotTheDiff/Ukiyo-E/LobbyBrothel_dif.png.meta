@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 22eeb779616bd3b4b883888cac91096b
+timeCreated: 1460236652
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LobbyBrothel_dif_0
+    21300002: LobbyBrothel_dif_1
+    21300004: LobbyBrothel_dif_2
+    21300006: LobbyBrothel_dif_3
+    21300008: LobbyBrothel_dif_4
+    21300010: LobbyBrothel_dif_5
+    21300012: LobbyBrothel_dif_6
+    21300014: LobbyBrothel_dif_7
+    21300016: LobbyBrothel_dif_8
+    21300018: LobbyBrothel_dif_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LobbyBrothel_dif_0
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1844
+        width: 293
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -146.5, y: 75.5}
+        - {x: -146.5, y: -75.5}
+        - {x: 146.5, y: -75.5}
+        - {x: 146.5, y: 75.5}
+    - name: LobbyBrothel_dif_1
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1369
+        width: 513
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -254.5, y: 326.5}
+        - {x: -256.5, y: 324.5}
+        - {x: -256.5, y: -326.5}
+        - {x: 256.5, y: -326.5}
+        - {x: 256.5, y: 326.5}
+    - name: LobbyBrothel_dif_2
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1241
+        width: 177
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -88.5, y: 121}
+        - {x: -88.5, y: -121}
+        - {x: 88.5, y: -121}
+        - {x: 88.5, y: 121}
+    - name: LobbyBrothel_dif_3
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1086
+        width: 225
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -112.5, y: 133}
+        - {x: -112.5, y: -133}
+        - {x: 112.5, y: -133}
+        - {x: 112.5, y: 133}
+    - name: LobbyBrothel_dif_4
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1289
+        width: 168
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -84, y: 131}
+        - {x: -84, y: -131}
+        - {x: 84, y: -131}
+        - {x: 84, y: 131}
+    - name: LobbyBrothel_dif_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 750
+        width: 284
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -142, y: 167}
+        - {x: -142, y: -167}
+        - {x: 142, y: -167}
+        - {x: 142, y: 167}
+    - name: LobbyBrothel_dif_6
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 705
+        width: 248
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -124, y: 143}
+        - {x: -124, y: -143}
+        - {x: 124, y: -143}
+        - {x: 124, y: 143}
+    - name: LobbyBrothel_dif_7
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 27
+        width: 302
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -151, y: 160}
+        - {x: -151, y: -160}
+        - {x: 151, y: -160}
+        - {x: 151, y: 160}
+    - name: LobbyBrothel_dif_8
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 333
+        width: 210
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: 162.5}
+        - {x: -17, y: 162.5}
+        - {x: -18, y: 161.5}
+        - {x: -102, y: 161.5}
+        - {x: -104, y: 159.5}
+        - {x: -104, y: -3.5}
+        - {x: -105, y: -3.5}
+        - {x: -105, y: -102.5}
+        - {x: -104, y: -103.5}
+        - {x: -104, y: -162.5}
+        - {x: 105, y: -162.5}
+        - {x: 105, y: 161.5}
+        - {x: 91, y: 161.5}
+    - name: LobbyBrothel_dif_9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1
+        width: 456
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -228, y: 101}
+        - {x: -228, y: -101}
+        - {x: 228, y: -101}
+        - {x: 228, y: 101}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
