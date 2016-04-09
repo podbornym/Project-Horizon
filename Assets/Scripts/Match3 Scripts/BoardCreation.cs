@@ -110,13 +110,17 @@ public class BoardCreation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // Use bool in persist vars
+            // if zone
+                // if level
+                    // set initial values
         redScore.text = "Red: 0";
         yellowScore.text = "Yellow: 0";
         greenScore.text = "Green: 0";
         blueScore.text = "Blue: 0";
         magentaScore.text = "Magenta: 0";
 
-        // Use build settings and the SceneManager to determine what the total values should be
+        // Use bool in persist vars
         // if zone
             // if level
                 // set total
@@ -131,6 +135,7 @@ public class BoardCreation : MonoBehaviour
         {
             for (int j = 0; j < 6; j++)
             {
+                // Look into giving priority to other pieces - first need different available pieces!!
                 GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, -4.5f + j * 0.87f), Quaternion.identity) as GameObject;
                 newPiece.transform.SetParent(puzzleObject.transform);
                 switch (Random.Range(0, 5))
