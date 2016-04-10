@@ -76,7 +76,14 @@ public class PlayerMovement : MonoBehaviour {
     void moveStairs()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+        if (landing.transform.position.x < gameObject.transform.position.x)
+        {
+            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+        }
+        else
+        {
+            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x - CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+        }
     }
 
     //moves the player along a designated curve

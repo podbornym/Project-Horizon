@@ -20,6 +20,14 @@ public class StudioScript : MonoBehaviour {
 
         UI = GameObject.Find("GENERALUI");
 	}
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //load previous scene
+        }
+    }
 
     void OnMouseEnter()
     {
