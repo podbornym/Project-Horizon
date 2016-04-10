@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PersistVars : MonoBehaviour {
     //this script is attached to the UI so
     //all variables stored in here will persist
     //across scene changes
+    //public GameObject UIRef;
+
     public float match3Score;
     public float rotatoScore;
     public float pipeDreamScore;
     public float tracerScore;
     public float findDiffScore;
     public float mastermindScore;
+
+    public int knowledgeCount = 0;
 
     public Scene currentScene;
     public Scene previousScene;
@@ -112,20 +117,79 @@ public class PersistVars : MonoBehaviour {
         }
     }
 
+    // Use to clear variables once a painting has been sold
     void ClearVars()
     {
-        // Use to clear variables once a painting has been sold
-        // Should be flexible, allow for two paintings to be stored at once?? Need twice as many variables then, and lots of work in other scripts
         match3Score = 0f;
         rotatoScore = 0f;
         pipeDreamScore = 0f;
         tracerScore = 0f;
         findDiffScore = 0f;
         mastermindScore = 0f;
+
+        knowledgeCount = 0;
     }
 
+    // Use to get all total inherited scores, then evaluate the player on their painting replication
     void CalculateEvaluation()
     {
-        // Use to get all total inherited scores, then evaluate the player on their painting replication
+        
+    }
+
+    // Allow other scripts to access the arrays defined here
+    public void ArrayAccess(string array, int index)
+    {
+        switch(array)
+        {
+            case "UOne":
+                UkiyoOne[index] = true;
+                break;
+            case "UTwo":
+                UkiyoTwo[index] = true;
+                break;
+            case "UThree":
+                UkiyoThree[index] = true;
+                break;
+            case "UFour":
+                UkiyoFour[index] = true;
+                break;
+            case "UFive":
+                UkiyoFive[index] = true;
+                break;
+            case "USix":
+                UkiyoSix[index] = true;
+                break;
+            default:
+                print("did not assign valid array");
+                break;
+        }
+    }
+
+    // Increment the knowledge meter on the UI
+    public void KnowledgeIncrement()
+    {
+        knowledgeCount++;
+
+        switch(knowledgeCount)
+        {
+            case 1:
+                GameObject.Find("light_0").GetComponent<Image>().enabled = true;
+                break;
+            case 2:
+                GameObject.Find("light_1").GetComponent<Image>().enabled = true;
+                break;
+            case 3:
+                GameObject.Find("light_2").GetComponent<Image>().enabled = true;
+                break;
+            case 4:
+                GameObject.Find("light_3").GetComponent<Image>().enabled = true;
+                break;
+            case 5:
+                GameObject.Find("light_4").GetComponent<Image>().enabled = true;
+                break;
+            case 6:
+                GameObject.Find("light_5").GetComponent<Image>().enabled = true;
+                break;
+        }
     }
 }
