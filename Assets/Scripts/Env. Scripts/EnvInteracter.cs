@@ -6,6 +6,7 @@ public class EnvInteracter : MonoBehaviour {
 
     public Texture2D normalCursor;
     public Texture2D mouseOverCursor;
+    public Texture2D redCursor;
     public Texture2D leftArrow;
     public Texture2D rightArrow;
     public CursorMode cursorMode = CursorMode.Auto;
@@ -20,13 +21,17 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        if (gameObject.tag == "column" && gameObject.transform.position.x < player.transform.position.x)
+        if ((gameObject.tag == "column" || gameObject.name == "leftEdge") && gameObject.transform.position.x < player.transform.position.x)
         {
             Cursor.SetCursor(leftArrow, hotSpot, cursorMode);
         }
-        else if (gameObject.tag == "column" && gameObject.transform.position.x > player.transform.position.x)
+        else if ((gameObject.tag == "column" || gameObject.name == "rightEdge") && gameObject.transform.position.x > player.transform.position.x)
         {
             Cursor.SetCursor(rightArrow, hotSpot, cursorMode);
+        }
+        else if (gameObject.tag == "portal")
+        {
+            Cursor.SetCursor(redCursor, hotSpot, cursorMode);
         }
         else
         {
