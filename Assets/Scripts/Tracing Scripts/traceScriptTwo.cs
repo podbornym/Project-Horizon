@@ -34,12 +34,14 @@ public class traceScriptTwo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        // set up current mouse position
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if(timeRemaining >= 0)
         {
             timeRemaining -= Time.deltaTime;
             time.text = "Inspection Time Remaining: " + (timeRemaining).ToString("n1");
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition))
             {
                 warning.text = "Don't start early!";
             }
@@ -50,14 +52,11 @@ public class traceScriptTwo : MonoBehaviour {
             time.text = "Go!";
             warning.text = " ";
             if (tabs.text != "No more tabs!")
-                tabs.text = "Tabs remaining: " + tabsLeft.ToString() + "  You can try again by pressing tab";
+                tabs.text = "Resets remaining: " + tabsLeft.ToString();
         }
 
         if (Input.GetKeyDown("tab"))
             tabProcedure();
-
-        // set up current mouse position
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //if the mousePosition is within the bounds of startPoint
         if (CheckBoundaries(firstHit, startX, startY, mousePosition))
@@ -112,14 +111,14 @@ public class traceScriptTwo : MonoBehaviour {
         if (tabsLeft > 0)
         {
             tabsLeft--;
-            tabs.text = "Tabs remaining: " + tabsLeft.ToString();
+            tabs.text = "Resets remaining: " + tabsLeft.ToString();
             timeRemaining = timeRemainingTotal;
             gameObject.GetComponent<Renderer>().enabled = true;
         }
 
         else
         {
-            tabs.text = "No more tabs!";
+            tabs.text = "No more resets!";
         }
     }
 
