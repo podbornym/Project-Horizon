@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BoardCreation : MonoBehaviour
 {
@@ -58,6 +59,8 @@ public class BoardCreation : MonoBehaviour
 
     public Text warningText;
 
+    public PersistVars match3;
+
     void Update()
     {
         seconds -= Time.deltaTime;
@@ -102,7 +105,7 @@ public class BoardCreation : MonoBehaviour
             timer.text = "Time's Up!";
 
             TallyScore();
-            GameObject.Find("Next Button").gameObject.SetActive(true);
+            GameObject.Find("Next Button").GetComponent<Button>().interactable = true;
         } 
     }
 
@@ -110,7 +113,10 @@ public class BoardCreation : MonoBehaviour
     void Start()
     {
         // Disable the UI's canvas
-        GameObject.Find("GENERALUI").GetComponent<Canvas>().gameObject.SetActive(false);
+        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        // set the eventsystem to the parent of the game's ui 
+        //GameObject.Find("GENERALUI").GetComponent<EventSystem>().enabled = false;//.transform.parent = GameObject.Find("Canvas").transform;
+        // remember to reassign this back to the UI
 
         // Use bool in persist vars
             // if zone
@@ -332,31 +338,41 @@ public class BoardCreation : MonoBehaviour
             if (percentage <= 1)
             {
                 print("winnning: " + percentage);
-                match3Return = 1 - dragPenalty;
+                match3Return = (1 - dragPenalty) * 100;
+                warningText.color = Color.green;
+                warningText.text = "Your score was: " + match3Return + "%";
             }
 
             if (percentage <= 2 && percentage > 1)
             {
                 print("winnning: " + percentage);
-                match3Return = .9f - dragPenalty;
+                match3Return = (.9f - dragPenalty) * 100;
+                warningText.color = Color.green;
+                warningText.text = "Your score was: " + match3Return + "%";
             }
 
             if (percentage <= 3 && percentage > 2)
             {
                 print("winnning: " + percentage);
-                match3Return = .8f - dragPenalty;
+                match3Return = (.8f - dragPenalty) * 100;
+                warningText.color = Color.green;
+                warningText.text = "Your score was: " + match3Return + "%";
             }
 
             if (percentage >= 4 && percentage > 3)
             {
                 print("winnning: " + percentage);
-                match3Return = .7f - dragPenalty;
+                match3Return = (.7f - dragPenalty) * 100;
+                warningText.color = Color.green;
+                warningText.text = "Your score was: " + match3Return + "%";
             }
 
             if (percentage > 4)
             {
                 print("winnning: " + percentage);
-                match3Return = .6f - dragPenalty;
+                match3Return = (.6f - dragPenalty) * 100;
+                warningText.color = Color.green;
+                warningText.text = "Your score was: " + match3Return + "%";
             }
         }
 

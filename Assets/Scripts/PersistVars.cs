@@ -71,10 +71,10 @@ public class PersistVars : MonoBehaviour {
 
         if (hit)
         {
-            if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
+            /*if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
                 || SceneManager.GetActiveScene().name == "U_0" || SceneManager.GetActiveScene().name == "U_1" || SceneManager.GetActiveScene().name == "U_2" || SceneManager.GetActiveScene().name == "U_3" || SceneManager.GetActiveScene().name == "U_4"
                 || SceneManager.GetActiveScene().name == "B_0" || SceneManager.GetActiveScene().name == "B_1" || SceneManager.GetActiveScene().name == "B_2" || SceneManager.GetActiveScene().name == "B_3" || SceneManager.GetActiveScene().name == "B_4")
-            {
+            {*/
                 if (hit.collider.gameObject.tag == "clue")
                 {
                     if (hit.collider.gameObject == clueOne)
@@ -107,12 +107,12 @@ public class PersistVars : MonoBehaviour {
                         painting[5] = true;
                         Debug.Log("Found Clue 6");
                     }
-                }
+                //}
             }
         }
     }
 
-    void clearVars()
+    void ClearVars()
     {
         // Use to clear variables once a painting has been sold
         // Should be flexible, allow for two paintings to be stored at once?? Need twice as many variables then, and lots of work in other scripts
@@ -122,5 +122,10 @@ public class PersistVars : MonoBehaviour {
         tracerScore = 0f;
         findDiffScore = 0f;
         mastermindScore = 0f;
+    }
+
+    void CalculateEvaluation()
+    {
+        // Use to get all total inherited scores, then evaluate the player on their painting replication
     }
 }
