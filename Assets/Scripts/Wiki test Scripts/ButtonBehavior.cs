@@ -10,11 +10,6 @@ public class ButtonBehavior : MonoBehaviour {
         rend = GetComponent<Renderer>();
         SetInvisible();
     }
-	
-	// Update is called once per frame
-	void Update () {
-
-    }
 
     public void SetVisible()
     {
