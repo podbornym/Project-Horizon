@@ -15,17 +15,17 @@ public class traceScriptTwo : MonoBehaviour {
     Vector3 mousePositionOld;
 
     // Stores whether things have been hit or not
-    // They're already false by default, so...
     public bool firstHit = false;
     public bool lastHit = false;
-    public bool aSegmentHit = false;
 
     // add up the score
     public int hitCount = 0;
     public int missCount = 0;
     public float successRatio;
 
-    public float timeRemaining = 2f;
+    // information related variables
+    public float timeRemaining = 5.9f;
+    public float timeRemainingTotal = 5.9f;
     public int tabsLeft = 5;
     public Text score;
     public Text time;
@@ -35,73 +35,14 @@ public class traceScriptTwo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        print(mousePosition);
-
-        if (Input.GetMouseButton(0) && timeRemaining >= 0)
-        {
-            warning.text = "Don't start early!";
-        }
-
-        //if the mousePosition is within the bounds of startPoint
-        if (CheckBoundaries(firstHit, startX, startY, mousePosition))
-        {
-            firstHit = true;
-            print("Start Hit");
-        }
-
-        //if the mousePosition is within the bounds of endPoint
-        if (CheckBoundaries(lastHit, endX, endY, mousePosition))
-        {
-            lastHit = true;
-            print("Finish Hit");
-        }
-
-        //if the mousePosition is within the bounds of tracing line
-        if( GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition) && firstHit == true)
-        {
-            if (mousePositionOld != mousePosition && lastHit != true && Input.GetMouseButton(0))
-            {
-                hitCount++;
-                aSegmentHit = true;
-            }
-        }
-        
-        if (aSegmentHit != true && mousePositionOld != mousePosition && firstHit == true && lastHit != true && Input.GetMouseButton(0))
-        {
-            missCount++;
-        }
-
-        aSegmentHit = false;
-        mousePositionOld = mousePosition;
-
-        if(lastHit == true)
-        {
-            // The rules have become a bit strange.
-            // I'm going to look into this
-            if (firstHit == false)
-            {
-                lastHit = false;
-            }
-            else if (timeRemaining >= 0)
-            {
-                firstHit = false;
-                lastHit = false;
-                hitCount = 0;
-                missCount = 0;
-            }
-            else
-            {
-                CalculateScore();
-                DisplayScore();
-            }
-
-        }
-
         if(timeRemaining >= 0)
         {
             timeRemaining -= Time.deltaTime;
-            time.text = "Inspection Time Remaining: " + (timeRemaining).ToString("n2");
+            time.text = "Inspection Time Remaining: " + (timeRemaining).ToString("n1");
+            if (Input.GetMouseButton(0))
+            {
+                warning.text = "Don't start early!";
+            }
         }
         else
         {
@@ -113,8 +54,56 @@ public class traceScriptTwo : MonoBehaviour {
         }
 
         if (Input.GetKeyDown("tab"))
-        {
             tabProcedure();
+
+        // set up current mouse position
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        //if the mousePosition is within the bounds of startPoint
+        if (CheckBoundaries(firstHit, startX, startY, mousePosition))
+            firstHit = true;
+
+        //if the mousePosition is within the bounds of endPoint
+        if (CheckBoundaries(lastHit, endX, endY, mousePosition))
+            lastHit = true;
+
+        // if the line is being traced (mouse is down and mouseposition has changed)
+        if (firstHit == true && lastHit != true && mousePositionOld != mousePosition && Input.GetMouseButton(0))
+        {
+            //if the mousePosition is within the bounds of tracing line, hitCount is added to
+            if(GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition))
+                hitCount++;
+            // if there is no segement hit, then the missCount is added to
+            else
+                missCount++;
+        }
+
+        // resets mousePosition to get ready for the next frame
+        mousePositionOld = mousePosition;
+
+        if (timeRemaining >= 0)
+        {
+            firstHit = false;
+            lastHit = false;
+            hitCount = 0;
+            missCount = 0;
+        }
+
+        // if the last part has been hit,
+        // check other variables,
+        // and ultimately decide if the game should end 
+        if(lastHit == true)
+        {
+            
+            if (firstHit == false)
+            {
+                lastHit = false;
+            }
+            else
+            {
+                CalculateScore();
+                DisplayScore();
+            }
         }
     }
 
@@ -124,7 +113,7 @@ public class traceScriptTwo : MonoBehaviour {
         {
             tabsLeft--;
             tabs.text = "Tabs remaining: " + tabsLeft.ToString();
-            timeRemaining = 2f;
+            timeRemaining = timeRemainingTotal;
             gameObject.GetComponent<Renderer>().enabled = true;
         }
 
