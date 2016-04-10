@@ -94,6 +94,7 @@ public class PlayerMovement : MonoBehaviour {
     //moves the player downwards, as in using an elevator
     void moveElevator()
     {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
         iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
@@ -107,6 +108,10 @@ public class PlayerMovement : MonoBehaviour {
         columnOffset = 0;
         landing = null;
         
+        if(!gameObject.GetComponent<SpriteRenderer>().enabled)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     //This function takes the passed in landing object, if there is one, and performs necessary operations when the player arrives there
@@ -180,7 +185,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x + 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-                    cam.transform.position = new Vector3(landingPos.x + camOffset, cam.transform.position.y, cam.transform.position.z);
+                    cam.transform.position = new Vector3(landingPos.x + 10.25f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
                     break;
                 case "leftEdge":
@@ -188,6 +193,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x - 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
+                    cam.transform.position = new Vector3(landingPos.x - 10.25f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
                     break;
                 case "door_0S":
