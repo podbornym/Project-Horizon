@@ -6,6 +6,8 @@ public class EnvInteracter : MonoBehaviour {
 
     public Texture2D normalCursor;
     public Texture2D mouseOverCursor;
+    public Texture2D leftArrow;
+    public Texture2D rightArrow;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
@@ -18,7 +20,19 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        Cursor.SetCursor(mouseOverCursor, hotSpot, cursorMode);
+        if (gameObject.tag == "column" && gameObject.transform.position.x < player.transform.position.x)
+        {
+            Cursor.SetCursor(leftArrow, hotSpot, cursorMode);
+        }
+        else if (gameObject.tag == "column" && gameObject.transform.position.x > player.transform.position.x)
+        {
+            Cursor.SetCursor(rightArrow, hotSpot, cursorMode);
+        }
+        else
+        {
+            Cursor.SetCursor(mouseOverCursor, hotSpot, cursorMode);
+        }
+        
     }
 
     void OnMouseExit()

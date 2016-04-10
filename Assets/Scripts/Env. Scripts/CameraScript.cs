@@ -12,7 +12,7 @@ public class CameraScript : MonoBehaviour {
     float baroqueCamOffset = 11.65f;
     float ukiyoCamOffset = 11.59f;
 
-    public float offsetInUse = 0.0f;
+    public static float offsetInUse = 0.0f;
 
 	// Use this for initialization
 	void Start () {

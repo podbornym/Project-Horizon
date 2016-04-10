@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour {
     void moveElevator()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+        iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
     }
 
     //resets the vars that are needed during movement, lets the player click to move again, and resets the landing to null for the next click
