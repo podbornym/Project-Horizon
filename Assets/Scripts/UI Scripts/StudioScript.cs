@@ -17,13 +17,6 @@ public class StudioScript : MonoBehaviour {
             Cursor.SetCursor(standardCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
-
-        UI = GameObject.Find("GENERALUI");
-
-        if (UI.GetComponent<Canvas>().enabled)
-        {
-            UI.GetComponent<Canvas>().enabled = false;
-        }
 	}
 
     void OnMouseEnter()
@@ -40,8 +33,29 @@ public class StudioScript : MonoBehaviour {
     {
         switch(gameObject.name)
         {
-            case "object name":
-                //do stuff
+            case "clue1":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                break;
+            case "clue2":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                break;
+            case "clue3":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                break;
+            case "clue4":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                break;
+            case "clue5":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                break;
+            case "clue6":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 break;
             default:
                 print("did not click on a valid clue object");
