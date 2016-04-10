@@ -80,16 +80,6 @@ public class PuzzlePiece : MonoBehaviour
 
                         boardScript.warningText.color = Color.red;
                         boardScript.warningText.text = "Warning: dragging for too long will incur a score penalty!";
-
-                        float textTimer = 3;
-                        textTimer -= (Time.deltaTime * 100);
-                        print(textTimer);
-
-                        if(textTimer <= 1.2f)
-                        {
-                            boardScript.warningText.text = "";
-                            textTimer = 0;
-                        }
                     }
                 }
             }
@@ -99,6 +89,7 @@ public class PuzzlePiece : MonoBehaviour
     void OnMouseUp()
     {
         boardScript.dragging = false;
+        boardScript.warningText.text = "";
         SnapToBase();
         boardScript.PopMatches();
     }
