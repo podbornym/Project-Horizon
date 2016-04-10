@@ -51,7 +51,7 @@ public class traceScriptTwo : MonoBehaviour {
             gameObject.GetComponent<Renderer>().enabled = false;
             time.text = "Go!";
             warning.text = " ";
-            if (tabs.text != "No more tabs!")
+            if (tabs.text != "No more resets!")
                 tabs.text = "Resets remaining: " + tabsLeft.ToString();
         }
 
