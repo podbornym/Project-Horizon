@@ -5,7 +5,7 @@ How can I help you?
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
-#option3 #quit
+#option3 #goto:Quit
 #option1Text This is clue one. #option2Text This is clue two. #option3Text Goodbye!
 
 @ClueOne
@@ -109,3 +109,8 @@ Would you like to play game six?
 What do you mean?
 #activateClue6
 #goto:Start
+
+@Quit
+Goodbye!
+blah
+#quit
