@@ -23,10 +23,10 @@ public class traceScriptTwo : MonoBehaviour {
     public int missCount = 0;
     public float successRatio;
 
-    // information related variables
+    // information-related variables
     public float timeRemaining = 5.9f;
     public float timeRemainingTotal = 5.9f;
-    public int tabsLeft = 5;
+    public int tabsLeft = 2;
     public Text score;
     public Text time;
     public Text tabs;
@@ -56,8 +56,6 @@ public class traceScriptTwo : MonoBehaviour {
             gameObject.GetComponent<Renderer>().enabled = false;
             time.text = "Go!";
             warning.text = " ";
-            if (tabs.text != "No more resets!")
-                tabs.text = "Resets remaining: " + tabsLeft.ToString();
         }
 
         if (Input.GetKeyDown("tab"))
