@@ -69,11 +69,15 @@ public class SellingController : MonoBehaviour {
 		else {
 			if (buyer == "blk") {
 				bkPay = logic.BkPay (counter, correct, maxValue);
+				vars.currentMoney += bkPay;
 				Debug.Log ("Payout: " + bkPay);
+				Debug.Log ("Money: " + vars.currentMoney);
 			} 
 			else {
 				pay = logic.Payout (buyer, avg, maxValue);
+				vars.currentMoney += pay;
 				Debug.Log ("Payout: " + pay);
+				Debug.Log ("Money: " + vars.currentMoney);
 			}
 		}
 

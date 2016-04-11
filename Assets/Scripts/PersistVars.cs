@@ -15,6 +15,7 @@ public class PersistVars : MonoBehaviour {
     public float tracerScore;
     public float findDiffScore;
     public float mastermindScore;
+	public int currentMoney;
 
     public int knowledgeCount = 0;
 
