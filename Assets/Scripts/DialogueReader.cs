@@ -35,6 +35,12 @@ public class DialogueReader : MonoBehaviour
     {
         textbox.text = "";
         entries = dialogue.text.Split('\n');
+        clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     void Update ()
