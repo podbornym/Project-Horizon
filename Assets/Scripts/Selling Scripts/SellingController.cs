@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SellingController : MonoBehaviour {
 
 	public int maxValue;
-	public float m1, m2, m3, m4, m5, m6, clues;
+	public float m1, m2, m3, m4, m5, m6;
 	public string buyer;
 	float avg;
 	public SellingLogic logic;
@@ -13,34 +14,63 @@ public class SellingController : MonoBehaviour {
 	int bkPay;
 	public bool counter;
 	public int correct;
+	public PersistVars vars;
+	public GameObject highText;
+	public GameObject medText;
+	public GameObject lowText;
+	public GameObject blkText;
 
 	// Use this for initialization
 	void Start () {
-		avg = logic.Avg (m1, m2, m3, m4, m5, m6, clues);
+		// Setting variables
+		m1 = vars.match3Score;
+		m2 = vars.rotatoScore;
+		m3 = vars.pipeDreamScore;
+		m4 = vars.tracerScore;
+		m5 = vars.findDiffScore;
+		m6 = vars.mastermindScore;
+		avg = logic.Avg (m1, m2, m3, m4, m5, m6);
 		avg = (float)System.Math.Round (avg,2);
-		check = logic.ErrorCheck (buyer,avg);
-		pay = logic.Payout (buyer, avg, maxValue);
-		bkPay = logic.BkPay (counter, correct, maxValue);
+
+		// Setting estimate values
+		Text hText = highText.GetComponent<Text>();
+		hText.text = "$"+(int)(maxValue * .90);
+		Text mText = medText.GetComponent<Text>();
+		mText.text = "$"+(int)(maxValue * .80);
+		Text lText = lowText.GetComponent<Text>();
+		lText.text = "$"+(int)(maxValue * .75);
+		Text bText = blkText.GetComponent<Text>();
+		bText.text = "$"+(int)(maxValue * .70);
 	}
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown("space")) {
-
-			Debug.Log ("buyer:" + buyer);
-			Debug.Log ("avg:"+avg);
-			Debug.Log ("pass:"+check);
-			if (buyer == "black") {
-				Debug.Log ("payment:"+bkPay);
-			} 
-			else {
-				Debug.Log ("payment:"+pay);
-			}
+	public void bHandle(string bName) {
+		if (bName == "cButtonH") {
+			buyer = "high";
+		} 
+		else if (bName == "cButtonM") {
+			buyer = "med";
+		}
+		else if (bName == "cButtonL") {
+			buyer = "low";
+		}
+		else if (bName == "cButtonB") {
+			buyer = "blk";
 		}
 
+		check = logic.ErrorCheck (buyer,avg);
 
+		if (check == false) {
+			Debug.Log ("failed check");
+		} 
+		else {
+			if (buyer == "blk") {
+				bkPay = logic.BkPay (counter, correct, maxValue);
+				Debug.Log ("Payout: " + bkPay);
+			} 
+			else {
+				pay = logic.Payout (buyer, avg, maxValue);
+				Debug.Log ("Payout: " + pay);
+			}
+		}
 	}
-
-	//void OnButclick () {
-	//}
 }

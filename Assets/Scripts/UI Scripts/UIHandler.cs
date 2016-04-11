@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UIHandler : MonoBehaviour {
     //we can use this script for storing stating vars that we want to persist across scene changes
@@ -11,6 +12,8 @@ public class UIHandler : MonoBehaviour {
     public GameObject flyupMenu;
     public GameObject MoveToPos;
     public float offsetY;
+	public SellingController sellC;
+	public string sellName;
 
     void Awake()
     {
@@ -44,6 +47,12 @@ public class UIHandler : MonoBehaviour {
     {
         SceneManager.LoadScene("mansion");
     }
+
+	public void SellClick()
+	{
+		sellName = EventSystem.current.currentSelectedGameObject.name;
+		sellC.bHandle (sellName);
+	}
 
     /*void menuOpen()
     {
