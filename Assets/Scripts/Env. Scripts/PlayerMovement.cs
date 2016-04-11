@@ -298,6 +298,7 @@ public class PlayerMovement : MonoBehaviour {
                     notMoving();
                     break;
                 case "Ustairs1":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs3");
                     landingPos = landingPair.transform.position;
@@ -305,6 +306,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "Ustairs2":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs4");
                     landingPos = landingPair.transform.position;
@@ -312,6 +314,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "Ustairs3":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs1");
                     landingPos = landingPair.transform.position;
@@ -319,6 +322,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "Ustairs4":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs2");
                     landingPos = landingPair.transform.position;
