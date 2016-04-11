@@ -18,6 +18,7 @@ public class DialogueReader : MonoBehaviour
     public GameObject clueFour;
     public GameObject clueFive;
     public GameObject clueSix;
+    public GameObject quit;
     public GameObject muse;
     public bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
@@ -41,6 +42,14 @@ public class DialogueReader : MonoBehaviour
         clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
         clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
         clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
+        nextButton.gameObject.SetActive(false);
+        option1.gameObject.SetActive(false);
+        option2.gameObject.SetActive(false);
+        option3.gameObject.SetActive(false);
+        option4.gameObject.SetActive(false);
+        option5.gameObject.SetActive(false);
+        option6.gameObject.SetActive(false);
+        quit.gameObject.SetActive(false);
     }
 
     void Update ()
@@ -57,39 +66,6 @@ public class DialogueReader : MonoBehaviour
 
         if (hit)
         {
-            if (hit.collider.gameObject.tag == "clue")
-            {
-                if (hit.collider.gameObject == clueOne)
-                {
-                    ClueFound[0] = true;
-                    Debug.Log("Found Clue 1");
-                }
-                if (hit.collider.gameObject == clueTwo)
-                {
-                    ClueFound[1] = true;
-                    Debug.Log("Found Clue 2");
-                }
-                if (hit.collider.gameObject == clueThree)
-                {
-                    ClueFound[2] = true;
-                    Debug.Log("Found Clue 3");
-                }
-                if (hit.collider.gameObject == clueFour)
-                {
-                    ClueFound[3] = true;
-                    Debug.Log("Found Clue 4");
-                }
-                if (hit.collider.gameObject == clueFive)
-                {
-                    ClueFound[4] = true;
-                    Debug.Log("Found Clue 5");
-                }
-                if (hit.collider.gameObject == clueSix)
-                {
-                    ClueFound[5] = true;
-                    Debug.Log("Found Clue 6");
-                }
-            }
             if(hit.collider.tag == "muse")
             {
                 muse = hit.collider.gameObject;
@@ -153,9 +129,9 @@ public class DialogueReader : MonoBehaviour
                     case "#SetOptions":
                         message.gameObject.SetActive(false);
                         nextButton.SetActive(false);
+                        quit.gameObject.SetActive(true);
                         break;
                     case "#play1":
-                        print("trying to play");
                         SceneManager.LoadScene("Z1-TR1");
                         break;
                     case "#play2":
@@ -195,7 +171,6 @@ public class DialogueReader : MonoBehaviour
                             {
                                 choiceActions[0] += tempWord[j];
                             }
-                            print(tempWord);
                         }
                         else
                         {
@@ -436,7 +411,21 @@ public class DialogueReader : MonoBehaviour
 
     public void EndDialogue()
     {
+        lineNum = 0;
+        textbox.text = "";
+        for(int i = 0; i < choiceActions.Length; i++)
+        {
+            choiceActions[i] = "";
+        }
         dialogueContainer.SetActive(false);
+        option1.gameObject.SetActive(false);
+        option2.gameObject.SetActive(false);
+        option3.gameObject.SetActive(false);
+        option4.gameObject.SetActive(false);
+        option5.gameObject.SetActive(false);
+        option6.gameObject.SetActive(false);
+        quit.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
         muse.GetComponent<BoxCollider2D>().enabled = true;
     }
 
