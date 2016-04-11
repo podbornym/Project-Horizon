@@ -203,20 +203,24 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 //Surrealist options
                 case "rightEdge":
+                    myAnimator.SetInteger("Move", -1);
                     landingPair = GameObject.Find("leftEdge");
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x + 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
                     cam.transform.position = new Vector3(landingPos.x + 10.25f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
+                    myAnimator.SetInteger("Move", -1);
                     break;
                 case "leftEdge":
+                    myAnimator.SetInteger("Move", 1);
                     landingPair = GameObject.Find("rightEdge");
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x - 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
                     cam.transform.position = new Vector3(landingPos.x - 10.25f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
+                    myAnimator.SetInteger("Move", 1);
                     break;
                 case "door_0S":
                     SceneManager.LoadScene("S_0");
