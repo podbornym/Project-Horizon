@@ -153,4 +153,9 @@ public class traceScriptTwo : MonoBehaviour {
         else    
             return false;
     }
+
+    public void toPreviousScene()
+    {
+        //will add this soon
+    }
 }
