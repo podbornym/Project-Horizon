@@ -17,6 +17,8 @@ public class traceScriptTwo : MonoBehaviour {
     // Stores whether things have been hit or not
     public bool firstHit = false;
     public bool lastHit = false;
+    //public GameObject firstSphere;
+    //public GameObject lastSphere;
 
     // add up the score
     public int hitCount = 0;
@@ -64,10 +66,14 @@ public class traceScriptTwo : MonoBehaviour {
         //if the mousePosition is within the bounds of startPoint
         if (CheckBoundaries(firstHit, startX, startY, mousePosition))
             firstHit = true;
+        /*if (firstSphere.GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition) && firstHit == false && Input.GetMouseButton(0))
+            firstHit = true;*/
 
         //if the mousePosition is within the bounds of endPoint
         if (CheckBoundaries(lastHit, endX, endY, mousePosition))
             lastHit = true;
+        /*if (lastSphere.GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition) && lastHit == false && Input.GetMouseButton(0))
+            lastHit = true;*/
 
         // if the line is being traced (mouse is down and mouseposition has changed)
         if (firstHit == true && lastHit != true && mousePositionOld != mousePosition && Input.GetMouseButton(0))
