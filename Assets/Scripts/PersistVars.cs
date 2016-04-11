@@ -62,6 +62,17 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
+    void Start()
+    {
+        UI.GetComponent<DialogueReader>().nextButton.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option1.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option2.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option3.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option4.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option5.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
+    }
 
     void Update()
     {
@@ -147,7 +158,6 @@ public class PersistVars : MonoBehaviour {
         switch(array)
         {
             case "UOne":
-                print("hello");
                 UkiyoOne[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
