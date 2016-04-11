@@ -356,12 +356,14 @@ public class PlayerMovement : MonoBehaviour {
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("rightEndU");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = true;
                     moveCurve("bridge", 10);
                     break;
                 case "rightEndU":
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("leftEndU");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = false;
                     moveCurveReverse("bridge", 10);
                     break;
                 default:

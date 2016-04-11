@@ -45,9 +45,22 @@ public class CameraScript : MonoBehaviour {
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if(gameObject.tag == "column" || gameObject.tag == "bridge")
+            if(gameObject.tag == "column")
             {
                 if (gameObject.transform.position.x < player.transform.position.x)
+                {
+                    float moveCam = cam.transform.position.x - offsetInUse;
+                    iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+                }
+                else
+                {
+                    float moveCam = cam.transform.position.x + offsetInUse;
+                    iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+                }
+            }
+            else if(gameObject.tag == "bridge")
+            {
+                if (player.GetComponent<PlayerMovement>().approachLeft)
                 {
                     float moveCam = cam.transform.position.x - offsetInUse;
                     iTween.MoveTo(cam, iTween.Hash("position", new Vector3(moveCam, cam.transform.position.y, cam.transform.position.z), "speed", 10, "easetype", "linear"));
