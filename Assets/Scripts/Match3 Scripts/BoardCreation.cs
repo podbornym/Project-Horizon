@@ -12,6 +12,25 @@ public class BoardCreation : MonoBehaviour
     public bool dragging = false;
     public bool spawning = false;
 
+    public Sprite ukiyoOne;
+    public Sprite ukiyoTwo;
+    public Sprite ukiyoThree;
+    public Sprite ukiyoFour;
+    public Sprite ukiyoFive;
+
+    public Sprite surrealOne;
+    public Sprite surrealTwo;
+    public Sprite surrealThree;
+    public Sprite surrealFour;
+    public Sprite surrealFive;
+
+    public Sprite baroqueOne;
+    public Sprite baroqueTwo;
+    public Sprite baroqueThree;
+    public Sprite baroqueFour;
+    public Sprite baroqueFive;
+
+
     private float deltaTime = 0.0f;
     private float timeSinceSpawned = 0.0f;
     private List<GameObject> allPieces = new List<GameObject>();
@@ -20,6 +39,8 @@ public class BoardCreation : MonoBehaviour
 
     // Timer variables for setting time
     public float seconds = 90;
+
+    private float warningSec;
 
     public Text timer;
 
@@ -102,18 +123,33 @@ public class BoardCreation : MonoBehaviour
         {
             dragging = true;
             spawning = true;
+            timer.color = Color.red;
             timer.text = "Time's Up!";
 
             TallyScore();
             GameObject.Find("Next Button").GetComponent<Button>().interactable = true;
         } 
+
+        if(dragging && seconds > 0)
+        {
+            warningSec = seconds;
+
+            if(warningSec >= 3)
+            {
+                warningText.text = "Warning: Dragging for too long will incur a score penalty!";
+            }
+            warningSec = 3;
+        }
     }
 
     // Use this for initialization
     void Start()
     {
         // Disable the UI's canvas
-        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        if(GameObject.Find("GENERALUI"))
+        {
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        }
         // set the eventsystem to the parent of the game's ui 
         //GameObject.Find("GENERALUI").GetComponent<EventSystem>().enabled = false;//.transform.parent = GameObject.Find("Canvas").transform;
         // remember to reassign this back to the UI
@@ -149,23 +185,28 @@ public class BoardCreation : MonoBehaviour
                 switch (Random.Range(0, 5))
                 {
                     case 0:
-                        newPiece.GetComponent<SpriteRenderer>().color = Color.green;
+                        //newPiece.GetComponent<SpriteRenderer>().color = Color.green;
+                        newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoOne;
                         newPiece.GetComponent<PuzzlePiece>().color = Color.green;
                         break;
                     case 1:
-                        newPiece.GetComponent<SpriteRenderer>().color = Color.red;
+                        //newPiece.GetComponent<SpriteRenderer>().color = Color.red;
+                        newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoTwo;
                         newPiece.GetComponent<PuzzlePiece>().color = Color.red;
                         break;
                     case 2:
-                        newPiece.GetComponent<SpriteRenderer>().color = Color.blue;
+                        //newPiece.GetComponent<SpriteRenderer>().color = Color.blue;
+                        newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoThree;
                         newPiece.GetComponent<PuzzlePiece>().color = Color.blue;
                         break;
                     case 3:
-                        newPiece.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        //newPiece.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoFour;
                         newPiece.GetComponent<PuzzlePiece>().color = Color.yellow;
                         break;
                     case 4:
-                        newPiece.GetComponent<SpriteRenderer>().color = Color.magenta;
+                        //newPiece.GetComponent<SpriteRenderer>().color = Color.magenta;
+                        newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoFive;
                         newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
                         break;
                 }
@@ -188,7 +229,7 @@ public class BoardCreation : MonoBehaviour
                     newPiece.GetComponent<PuzzlePiece>().baseY = -4.5f + j * 0.87f;
                     switch (Random.Range(0, 5))
                     {
-                        case 0:
+                        /*case 0:
                             newPiece.GetComponent<SpriteRenderer>().color = Color.green;
                             newPiece.GetComponent<PuzzlePiece>().color = Color.green;
                             break;
@@ -206,6 +247,31 @@ public class BoardCreation : MonoBehaviour
                             break;
                         case 4:
                             newPiece.GetComponent<SpriteRenderer>().color = Color.magenta;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
+                            break;*/
+                        case 0:
+                            //newPiece.GetComponent<SpriteRenderer>().color = Color.green;
+                            newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoOne;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.green;
+                            break;
+                        case 1:
+                            //newPiece.GetComponent<SpriteRenderer>().color = Color.red;
+                            newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoTwo;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.red;
+                            break;
+                        case 2:
+                            //newPiece.GetComponent<SpriteRenderer>().color = Color.blue;
+                            newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoThree;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.blue;
+                            break;
+                        case 3:
+                            //newPiece.GetComponent<SpriteRenderer>().color = Color.yellow;
+                            newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoFour;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.yellow;
+                            break;
+                        case 4:
+                            //newPiece.GetComponent<SpriteRenderer>().color = Color.magenta;
+                            newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoFive;
                             newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
                             break;
                     }
@@ -234,35 +300,36 @@ public class BoardCreation : MonoBehaviour
                     hits[1].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     hits[2].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     Color color = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().color;
-                    if (color == Color.red)
+                    Sprite sprite = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().sprite;
+                    if (color == Color.red || sprite == ukiyoOne)
                     {
                         redHit = hits.Length;
                         setRedValue += redHit;
                         redScore.text = "Red: " + setRedValue.ToString();
                         redHit = 0;
                     }
-                    if (color == Color.green)
+                    if (color == Color.green || sprite == ukiyoTwo)
                     {
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
                         greenScore.text = "Green: " + setGreenValue.ToString();
                         greenHit = 0;
                     }
-                    if (color == Color.blue)
+                    if (color == Color.blue || sprite == ukiyoThree)
                     {
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
                         blueScore.text = "Blue: " + setBlueValue.ToString();
                         blueHit = 0;
                     }
-                    if (color == Color.yellow)
+                    if (color == Color.yellow || sprite == ukiyoFour)
                     {
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
                         yellowScore.text = "Yellow: " + setYellowValue.ToString();
                         yellowHit = 0;
                     }
-                    if (color == Color.magenta)
+                    if (color == Color.magenta || sprite == ukiyoFive)
                     {
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
@@ -280,35 +347,36 @@ public class BoardCreation : MonoBehaviour
                     hits[1].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     hits[2].transform.gameObject.GetComponent<PuzzlePiece>().popped = true;
                     Color color = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().color;
-                    if (color == Color.red)
+                    Sprite sprite = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().sprite;
+                    if (color == Color.red || sprite == ukiyoOne)
                     {
                         redHit = hits.Length;
                         setRedValue += redHit;
                         redScore.text = "Red: " + setRedValue.ToString();
                         redHit = 0;
                     }
-                    if (color == Color.green)
+                    if (color == Color.green || sprite == ukiyoTwo)
                     {
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
                         greenScore.text = "Green: " + setGreenValue.ToString();
                         greenHit = 0;
                     }
-                    if (color == Color.blue)
+                    if (color == Color.blue || sprite == ukiyoThree)
                     {
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
                         blueScore.text = "Blue: " + setBlueValue.ToString();
                         blueHit = 0;
                     }
-                    if (color == Color.yellow)
+                    if (color == Color.yellow || sprite == ukiyoFour)
                     {
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
                         yellowScore.text = "Yellow: " + setYellowValue.ToString();
                         yellowHit = 0;
                     }
-                    if (color == Color.magenta)
+                    if (color == Color.magenta || sprite == ukiyoFive)
                     {
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
