@@ -31,6 +31,11 @@ public class traceScriptTwo : MonoBehaviour {
     public Text time;
     public Text tabs;
     public Text warning;
+
+    void Start()
+    {
+        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
