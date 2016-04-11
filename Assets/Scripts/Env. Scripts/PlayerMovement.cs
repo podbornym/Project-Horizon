@@ -18,8 +18,10 @@ public class PlayerMovement : MonoBehaviour {
     public static bool cursorSet = false;
     private Animator myAnimator;
     public int Move;
-    public bool IdleLeft;
-    public bool IdleRight;
+
+    //use for stairs cam shtuff
+    public bool approachLeft = true;
+
     // Use this for initialization
     void Start () {
         if (!cursorSet)
@@ -57,14 +59,10 @@ public class PlayerMovement : MonoBehaviour {
             if (gameObject.transform.position.x < moveToPos.x)
             {
                 myAnimator.SetInteger("Move", -1);
-                //IdleLeft = false;
-                //IdleRight = true;
             }
-            if(gameObject.transform.position.x>moveToPos.x)
+            else if (gameObject.transform.position.x > moveToPos.x)
             {
                 myAnimator.SetInteger("Move", 1);
-                //IdleLeft = true;
-                //IdleRight = false;
             }
             moving = true;
             iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(moveToPos.x + columnOffset, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "identifyLanding"));
@@ -73,17 +71,32 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     //moves the player and the camera up or down the stairs
-    void moveStairs()
+    void moveStairs(bool ukiyo = false)
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        if (landing.transform.position.x < gameObject.transform.position.x)
+        if (!ukiyo)
         {
-            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            if (approachLeft)
+            {
+                iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x - CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            }
+            else
+            {
+                iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            }
         }
         else
         {
-            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x - CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            if (approachLeft)
+            {
+                iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            }
+            else
+            {
+                iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            }
         }
+
     }
 
     //moves the player along a designated curve
@@ -138,6 +151,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("stairs2");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = true;
                     moveStairs();
                     break;
                 case "stairs2":
@@ -146,6 +160,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("stairs1");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = false;
                     moveStairs();
                     break;
                 case "clock":
@@ -188,20 +203,24 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 //Surrealist options
                 case "rightEdge":
+                    myAnimator.SetInteger("Move", -1);
                     landingPair = GameObject.Find("leftEdge");
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x + 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
                     cam.transform.position = new Vector3(landingPos.x + 10.25f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
+                    myAnimator.SetInteger("Move", -1);
                     break;
                 case "leftEdge":
+                    myAnimator.SetInteger("Move", 1);
                     landingPair = GameObject.Find("rightEdge");
                     landingPos = landingPair.transform.position;
                     gameObject.transform.position = new Vector3(landingPos.x, gameObject.transform.position.y, gameObject.transform.position.z);
                     iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(gameObject.transform.position.x - 5, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
                     cam.transform.position = new Vector3(landingPos.x - 10.25f, cam.transform.position.y, cam.transform.position.z);
                     notMoving();
+                    myAnimator.SetInteger("Move", 1);
                     break;
                 case "door_0S":
                     SceneManager.LoadScene("S_0");
@@ -230,6 +249,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("Bstairs3");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = false;
                     moveStairs();
                     break;
                 case "Bstairs2":
@@ -238,6 +258,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("Bstairs4");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = true;
                     moveStairs();
                     break;
                 case "Bstairs3":
@@ -246,6 +267,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("Bstairs1");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = true;
                     moveStairs();
                     break;
                 case "Bstairs4":
@@ -254,6 +276,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair = GameObject.Find("Bstairs2");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
+                    approachLeft = false;
                     moveStairs();
                     break;
                 case "door_0B":
@@ -298,32 +321,40 @@ public class PlayerMovement : MonoBehaviour {
                     notMoving();
                     break;
                 case "Ustairs1":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs3");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
-                    moveStairs();
+                    approachLeft = true;
+                    moveStairs(true);
                     break;
                 case "Ustairs2":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs4");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
-                    moveStairs();
+                    approachLeft = false;
+                    moveStairs(true);
                     break;
                 case "Ustairs3":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs1");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
-                    moveStairs();
+                    approachLeft = false;
+                    moveStairs(true);
                     break;
                 case "Ustairs4":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs2");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
-                    moveStairs();
+                    approachLeft = true;
+                    moveStairs(true);
                     break;
                 case "leftEndU":
                     landing.GetComponent<BoxCollider2D>().enabled = false;

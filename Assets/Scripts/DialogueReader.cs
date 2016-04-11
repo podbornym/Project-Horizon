@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueReader : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class DialogueReader : MonoBehaviour
     public GameObject clueFour;
     public GameObject clueFive;
     public GameObject clueSix;
-    bool[] ClueFound = { false, false, false, false, false, false };
+    public GameObject muse;
+    public bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
     public Text textbox;
     public Text option1;
@@ -33,7 +35,12 @@ public class DialogueReader : MonoBehaviour
     {
         textbox.text = "";
         entries = dialogue.text.Split('\n');
-        NextLine();
+        clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
+        clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     void Update ()
@@ -82,6 +89,13 @@ public class DialogueReader : MonoBehaviour
                     ClueFound[5] = true;
                     Debug.Log("Found Clue 6");
                 }
+            }
+            if(hit.collider.tag == "muse")
+            {
+                muse = hit.collider.gameObject;
+                muse.GetComponent<BoxCollider2D>().enabled = false;
+                dialogueContainer.SetActive(true);
+                NextLine();
             }
         }
     }
@@ -141,6 +155,8 @@ public class DialogueReader : MonoBehaviour
                         nextButton.SetActive(false);
                         break;
                     case "#play1":
+                        print("trying to play");
+                        SceneManager.LoadScene("Z1-TR1");
                         break;
                     case "#play2":
                         break;
@@ -179,6 +195,7 @@ public class DialogueReader : MonoBehaviour
                             {
                                 choiceActions[0] += tempWord[j];
                             }
+                            print(tempWord);
                         }
                         else
                         {
@@ -420,6 +437,7 @@ public class DialogueReader : MonoBehaviour
     public void EndDialogue()
     {
         dialogueContainer.SetActive(false);
+        muse.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public void StartDialogue()
@@ -456,6 +474,33 @@ public class DialogueReader : MonoBehaviour
                 choiceActions[i] = "";
             }
             NextLine();
+        }
+        else if(choiceActions[optionNumber].Contains("#play"))
+        {
+            if(choiceActions[optionNumber].Contains("1"))
+            {
+                SceneManager.LoadScene("Z1-TR1");
+            }
+            else if (choiceActions[optionNumber].Contains("2"))
+            {
+                SceneManager.LoadScene("Z1-TR1");
+            }
+            else if (choiceActions[optionNumber].Contains("3"))
+            {
+                SceneManager.LoadScene("Z1-TR1");
+            }
+            else if (choiceActions[optionNumber].Contains("4"))
+            {
+                SceneManager.LoadScene("Z1-TR1");
+            }
+            else if (choiceActions[optionNumber].Contains("5"))
+            {
+                SceneManager.LoadScene("Z1-TR1");
+            }
+            else if (choiceActions[optionNumber].Contains("6"))
+            {
+                SceneManager.LoadScene("Z1-TR1");
+            }
         }
     }
 }
