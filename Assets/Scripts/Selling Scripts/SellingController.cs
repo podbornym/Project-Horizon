@@ -19,6 +19,10 @@ public class SellingController : MonoBehaviour {
 	public GameObject medText;
 	public GameObject lowText;
 	public GameObject blkText;
+	public Button highButton;
+	public Button medButton;
+	public Button lowButton;
+	public Button blkButton;
 
 	// Use this for initialization
 	void Start () {
@@ -72,5 +76,10 @@ public class SellingController : MonoBehaviour {
 				Debug.Log ("Payout: " + pay);
 			}
 		}
+
+		highButton.interactable = false;
+		medButton.interactable = false;
+		lowButton.interactable = false;
+		blkButton.interactable = false;
 	}
 }
