@@ -18,8 +18,10 @@ public class PlayerMovement : MonoBehaviour {
     public static bool cursorSet = false;
     private Animator myAnimator;
     public int Move;
-    public bool IdleLeft;
-    public bool IdleRight;
+
+    //use for stairs cam shtuff
+    public bool approachLeft = true;
+
     // Use this for initialization
     void Start () {
         if (!cursorSet)
@@ -57,14 +59,19 @@ public class PlayerMovement : MonoBehaviour {
             if (gameObject.transform.position.x < moveToPos.x)
             {
                 myAnimator.SetInteger("Move", -1);
-                //IdleLeft = false;
-                //IdleRight = true;
+                approachLeft = false;
             }
-            if(gameObject.transform.position.x>moveToPos.x)
+            else if (gameObject.transform.position.x > moveToPos.x)
             {
                 myAnimator.SetInteger("Move", 1);
-                //IdleLeft = true;
-                //IdleRight = false;
+                approachLeft = true;
+            }
+            else if (gameObject.transform.position. x == moveToPos.x)
+            {
+                if (approachLeft)
+                    approachLeft = false;
+                else if (!approachLeft)
+                    approachLeft = true;
             }
             moving = true;
             iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(moveToPos.x + columnOffset, transform.position.y, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "identifyLanding"));
@@ -76,13 +83,13 @@ public class PlayerMovement : MonoBehaviour {
     void moveStairs()
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        if (landing.transform.position.x < gameObject.transform.position.x)
+        if (approachLeft)
         {
-            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x - CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
         }
         else
         {
-            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x - CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
+            iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
         }
     }
 
