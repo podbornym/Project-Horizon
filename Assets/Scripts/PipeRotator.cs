@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PipeRotator : MonoBehaviour {
 
-    public bool PipeConnection = false;
+    public bool IsConnected = false;
     public bool IsFull = false;
     public bool CanRotate = true;
 
@@ -156,13 +156,13 @@ public class PipeRotator : MonoBehaviour {
             if (hitUp.transform.gameObject.tag == "Straight")
             {
                 //If hit piece is full
-                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit piece alligned with top of selected
                     if (hitUp.transform.rotation.eulerAngles.z == 270 || hitUp.transform.rotation.eulerAngles.z == 90)
                     {
                         //Fills selected piece
-                        IsFull = true;
+                        IsConnected = true;
                     }
                 }
             }
@@ -170,13 +170,13 @@ public class PipeRotator : MonoBehaviour {
             else if (hitUp.transform.gameObject.tag == "Turn")
             {
                 //If hit piece is full
-                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit piece alligned with top of selected
                     if (hitUp.transform.rotation.eulerAngles.z == 90 || hitUp.transform.rotation.eulerAngles.z == 0)
                     {
                         //Fills selected piece
-                        IsFull = true;
+                        IsConnected = true;
                     }
                 }
             }
@@ -184,7 +184,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitUp.transform.gameObject.tag == "FourWay")
             {
                 //If piece is full
-                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit piece alligned with top of selected
                     if (hitUp.transform.rotation.eulerAngles.z == 270 || hitUp.transform.rotation.eulerAngles.z == 90 || hitUp.transform.rotation.eulerAngles.z == 180 || hitUp.transform.rotation.eulerAngles.z == 0)
@@ -198,13 +198,13 @@ public class PipeRotator : MonoBehaviour {
                             if (hitUp2.transform.gameObject.tag == "Straight")
                             {
                                 //If piece is full
-                                if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                                if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If piece is aligned with the FourWay
                                     if (hitUp2.transform.rotation.eulerAngles.z == 270 || hitUp2.transform.rotation.eulerAngles.z == 90)
                                     {
                                         //Fills selected piece
-                                        IsFull = true;
+                                        IsConnected = true;
                                     }
                                 }
                             }
@@ -212,13 +212,13 @@ public class PipeRotator : MonoBehaviour {
                             else if (hitUp2.transform.gameObject.tag == "Turn")
                             {
                                 //If piece is full
-                                if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                                if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If piece is aligned with the FourWay
                                     if (hitUp2.transform.rotation.eulerAngles.z == 90 || hitUp2.transform.rotation.eulerAngles.z == 0)
                                     {
                                         //Fills selected piece
-                                        IsFull = true;
+                                        IsConnected = true;
                                     }
                                 }
                             }
@@ -250,13 +250,13 @@ public class PipeRotator : MonoBehaviour {
             if (hitDown.transform.gameObject.tag == "Straight")
             {
                 //If the hit piece is full
-                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If the hit piece is aligned with the selected
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 90)
                     {
                         //Sets the selected to full
-                        IsFull = true;
+                        IsConnected = true;
                     }
                 }
             }
@@ -264,13 +264,13 @@ public class PipeRotator : MonoBehaviour {
             else if (hitDown.transform.gameObject.tag == "Turn")
             {
                 //If the hit piece is full
-                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If the hit piece is aligned with the selected
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 180)
                     {
                         //Sets the selected to full
-                        IsFull = true;
+                        IsConnected = true;
                     }
                 }
             }
@@ -278,7 +278,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitDown.transform.gameObject.tag == "FourWay")
             {
                 //If the hit piece is full
-                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If the hit piece is aligned with the selected
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 90 || hitDown.transform.rotation.eulerAngles.z == 180 || hitDown.transform.rotation.eulerAngles.z == 0)
@@ -292,13 +292,13 @@ public class PipeRotator : MonoBehaviour {
                             if (hitDown2.transform.gameObject.tag == "Straight")
                             {
                                 //If hit piece is full
-                                if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                                if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit piece is aligned with FourWay
                                     if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 90)
                                     {
                                         //Sets selected to true
-                                        IsFull = true;
+                                        IsConnected = true;
                                     }
                                 }
                             }
@@ -306,13 +306,13 @@ public class PipeRotator : MonoBehaviour {
                             else if (hitDown2.transform.gameObject.tag == "Turn")
                             {
                                 //If hit piece is full
-                                if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                                if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit piece is aligned with FourWay
                                     if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 180)
                                     {
                                         //Sets selected to true
-                                        IsFull = true;
+                                        IsConnected = true;
                                     }
                                 }
                             }
@@ -346,19 +346,19 @@ public class PipeRotator : MonoBehaviour {
             if (hitLeft.transform.gameObject.tag == "Start")
             {
                 //Sets selected to full
-                IsFull = true;
+                IsConnected = true;
             }
             //If hit is tagged Straight
             else if (hitLeft.transform.gameObject.tag == "Straight")
             {
                 //If hit is full
-                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
                     if (hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 0)
                     {
                         //Sets selected to full
-                        IsFull = true;
+                        IsConnected = true;
                     }
                 }
             }
@@ -366,13 +366,13 @@ public class PipeRotator : MonoBehaviour {
             else if (hitLeft.transform.gameObject.tag == "Turn")
             {
                 //If hit is full
-                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
                     if (hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 90)
                     {
                         //Sets selected to full
-                        IsFull = true;
+                        IsConnected = true;
                     }
                 }
             }
@@ -380,7 +380,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitLeft.transform.gameObject.tag == "FourWay")
             {
                 //IF hit is full
-                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
                     if (hitLeft.transform.rotation.eulerAngles.z == 270 || hitLeft.transform.rotation.eulerAngles.z == 90 || hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 0)
@@ -394,19 +394,19 @@ public class PipeRotator : MonoBehaviour {
                             if (hitLeft2.transform.gameObject.tag == "Start")
                             {
                                 //Fills selected
-                                IsFull = true;
+                                IsConnected = true;
                             }
                             //If hit is tagged Straight
                             else if (hitLeft2.transform.gameObject.tag == "Straight")
                             {
                                 //If hit is full
-                                if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                                if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit is aligned with FourWay
                                     if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 0)
                                     {
                                         //Fills selected
-                                        IsFull = true;
+                                        IsConnected = true;
                                     }
                                 }
                             }
@@ -414,13 +414,13 @@ public class PipeRotator : MonoBehaviour {
                             else if (hitLeft2.transform.gameObject.tag == "Turn")
                             {
                                 //If hit is full
-                                if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                                if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit is aligned with FourWay
                                     if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 90)
                                     {
                                         //Fills selected
-                                        IsFull = true;
+                                        IsConnected = true;
                                     }
                                 }
                             }

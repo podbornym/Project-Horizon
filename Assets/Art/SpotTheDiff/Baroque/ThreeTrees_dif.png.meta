@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: 6491a0efe4a745944a8d686552004318
+timeCreated: 1460340226
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ThreeTrees_dif_0
+    21300002: ThreeTrees_dif_1
+    21300004: ThreeTrees_dif_2
+    21300006: ThreeTrees_dif_3
+    21300008: ThreeTrees_dif_4
+    21300010: ThreeTrees_dif_5
+    21300012: ThreeTrees_dif_6
+    21300014: ThreeTrees_dif_7
+    21300016: ThreeTrees_dif_8
+    21300018: ThreeTrees_dif_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ThreeTrees_dif_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1292
+        width: 484
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 215, y: 29.5}
+        - {x: 218, y: 33.5}
+        - {x: 218, y: 35.5}
+        - {x: 220, y: 35.5}
+        - {x: 226, y: 40.5}
+        - {x: 226, y: 42.5}
+        - {x: 227, y: 44.5}
+        - {x: 229, y: 44.5}
+        - {x: 231, y: 46.5}
+        - {x: 231, y: 48.5}
+        - {x: 232, y: 49.5}
+        - {x: 235, y: 53.5}
+        - {x: 235, y: 56.5}
+        - {x: 239, y: 58.5}
+        - {x: 239, y: 64.5}
+        - {x: 241, y: 66.5}
+        - {x: 241, y: 70.5}
+        - {x: 242, y: 72.5}
+        - {x: 241, y: 74.5}
+        - {x: 242, y: 75.5}
+        - {x: 242, y: 94.5}
+        - {x: 241, y: 95.5}
+        - {x: 242, y: 97.5}
+        - {x: 241, y: 98.5}
+        - {x: 241, y: 106.5}
+        - {x: 240, y: 108.5}
+        - {x: 241, y: 110.5}
+        - {x: 238, y: 114.5}
+        - {x: 236, y: 115.5}
+        - {x: 236, y: 118.5}
+        - {x: -242, y: 118.5}
+        - {x: -242, y: -118.5}
+        - {x: 211, y: -118.5}
+        - {x: 211, y: 24.5}
+        - {x: 214, y: 25.5}
+        - {x: 214, y: 28.5}
+    - name: ThreeTrees_dif_1
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 1076
+        width: 299
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -149.5, y: 152}
+        - {x: -149.5, y: -152}
+        - {x: 149.5, y: -152}
+        - {x: 149.5, y: 152}
+    - name: ThreeTrees_dif_2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 702
+        width: 306
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 133, y: -184.5}
+        - {x: 135, y: -182.5}
+        - {x: 135, y: 11.5}
+        - {x: 138, y: 12.5}
+        - {x: 152, y: 41.5}
+        - {x: 153, y: 46.5}
+        - {x: 153, y: 109.5}
+        - {x: 137, y: 140.5}
+        - {x: 135, y: 163.5}
+        - {x: 133, y: 165.5}
+        - {x: 106, y: 172.5}
+        - {x: 101, y: 176.5}
+        - {x: 51, y: 201.5}
+        - {x: 35, y: 207.5}
+        - {x: 30, y: 208.5}
+        - {x: -32, y: 208.5}
+        - {x: -78, y: 193.5}
+        - {x: -100, y: 168.5}
+        - {x: -127, y: 165.5}
+        - {x: -129, y: 163.5}
+        - {x: -129, y: 76.5}
+        - {x: -139, y: 71.5}
+        - {x: -149, y: 32.5}
+        - {x: -149, y: 19.5}
+        - {x: -152, y: 1.5}
+        - {x: -153, y: -10.5}
+        - {x: -153, y: -74.5}
+        - {x: -145, y: -112.5}
+        - {x: -140, y: -131.5}
+        - {x: -129, y: -146.5}
+        - {x: -129, y: -182.5}
+        - {x: -127, y: -184.5}
+        - {x: -88, y: -188.5}
+        - {x: -76, y: -195.5}
+        - {x: -50, y: -202.5}
+        - {x: -17, y: -206.5}
+        - {x: -12, y: -208.5}
+        - {x: 35, y: -208.5}
+        - {x: 51, y: -206.5}
+        - {x: 70, y: -197.5}
+        - {x: 87, y: -184.5}
+    - name: ThreeTrees_dif_3
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 780
+        width: 245
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -122.5, y: 126}
+        - {x: -122.5, y: -126}
+        - {x: 122.5, y: -126}
+        - {x: 122.5, y: 126}
+    - name: ThreeTrees_dif_4
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 540
+        width: 232
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -116, y: 57}
+        - {x: -116, y: -57}
+        - {x: 116, y: -57}
+        - {x: 116, y: 57}
+    - name: ThreeTrees_dif_5
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 393
+        width: 154
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: -66.5}
+        - {x: 77, y: -41.5}
+        - {x: 72, y: -31.5}
+        - {x: 69, y: -27.5}
+        - {x: 62, y: -23.5}
+        - {x: 62, y: 129.5}
+        - {x: -77, y: 129.5}
+        - {x: -77, y: -129.5}
+        - {x: 62, y: -129.5}
+        - {x: 62, y: -81.5}
+        - {x: 68, y: -80.5}
+        - {x: 76, y: -72.5}
+    - name: ThreeTrees_dif_6
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 323
+        width: 237
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118.5, y: 19}
+        - {x: 116.5, y: 20}
+        - {x: 116.5, y: 106}
+        - {x: 114.5, y: 108}
+        - {x: 37.5, y: 108}
+        - {x: 36.5, y: 111}
+        - {x: 30.5, y: 109}
+        - {x: 28.5, y: 113}
+        - {x: 9.5, y: 112}
+        - {x: 9.5, y: 113}
+        - {x: -23.5, y: 113}
+        - {x: -32.5, y: 111}
+        - {x: -37.5, y: 108}
+        - {x: -118.5, y: 108}
+        - {x: -118.5, y: -113}
+        - {x: 116.5, y: -113}
+        - {x: 116.5, y: -52}
+        - {x: 117.5, y: -50}
+        - {x: 118.5, y: -46}
+    - name: ThreeTrees_dif_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 319
+        width: 198
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99, y: 73}
+        - {x: -99, y: -73}
+        - {x: 99, y: -73}
+        - {x: 99, y: 73}
+    - name: ThreeTrees_dif_8
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 321
+        width: 134
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 54}
+        - {x: -67, y: -54}
+        - {x: 67, y: -54}
+        - {x: 67, y: 54}
+    - name: ThreeTrees_dif_9
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 210
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -104, y: 59}
+        - {x: -104, y: 14}
+        - {x: -105, y: 14}
+        - {x: -105, y: -17}
+        - {x: -104, y: -18}
+        - {x: -104, y: -59}
+        - {x: 105, y: -59}
+        - {x: 105, y: 59}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

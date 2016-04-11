@@ -7,7 +7,10 @@ public class PipeDreamManager : MonoBehaviour {
     public int gridHeight = 6;
     public int[,] grid;
     public GameObject[] tilePrefabs;
+    GameObject end;
     public List<GameObject> objectGrid = new List<GameObject>();
+    public PipeRotator rotator;
+    public bool gameRunning = true;
     //public int[] randomAngles = new int[4] { 0, 90, 180, 270 };
 
 
@@ -18,12 +21,23 @@ public class PipeDreamManager : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-	
-	}
+        print((int)Time.time);
+        StartCoroutine(Flow());
+        if (end == null)
+        {
+            end = GameObject.FindWithTag("End");
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        if (gameRunning)
+        {
+            if(end.GetComponent<PipeRotator>().IsFull)
+            {
+                gameRunning = false;
+            }
+        }
 	}
 
     void CreateGrid()
@@ -38,6 +52,15 @@ public class PipeDreamManager : MonoBehaviour {
                 grid[i, j] = randomTile;
                 Instantiate(tilePrefabs[randomTile], new Vector2(i - 3, j - 2), Quaternion.identity);
             }
+        }
+    }
+
+    IEnumerator Flow()
+    {
+        while (gameRunning)
+        {
+            yield return new WaitForSeconds(3);
+            print((int)Time.time);
         }
     }
 }

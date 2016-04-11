@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: fb1b88c0dec691147817dcbf68734d8f
+timeCreated: 1460336798
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BoardPartition_dif_0
+    21300002: BoardPartition_dif_1
+    21300004: BoardPartition_dif_2
+    21300006: BoardPartition_dif_3
+    21300008: BoardPartition_dif_4
+    21300010: BoardPartition_dif_5
+    21300012: BoardPartition_dif_6
+    21300014: BoardPartition_dif_7
+    21300016: BoardPartition_dif_8
+    21300018: BoardPartition_dif_9
+    21300020: BoardPartition_dif_10
+    21300022: BoardPartition_dif_11
+    21300024: BoardPartition_dif_12
+    21300026: BoardPartition_dif_13
+    21300028: BoardPartition_dif_14
+    21300030: BoardPartition_dif_15
+    21300032: BoardPartition_dif_16
+    21300034: BoardPartition_dif_17
+    21300036: BoardPartition_dif_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BoardPartition_dif_0
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1621
+        width: 250
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -125, y: 213.5}
+        - {x: -125, y: -213.5}
+        - {x: 125, y: -213.5}
+        - {x: 125, y: 213.5}
+    - name: BoardPartition_dif_1
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1704
+        width: 281
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -140.5, y: 172}
+        - {x: -140.5, y: -172}
+        - {x: 140.5, y: -172}
+        - {x: 140.5, y: 172}
+    - name: BoardPartition_dif_2
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1404
+        width: 269
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -134.5, y: 131.5}
+        - {x: -134.5, y: -131.5}
+        - {x: 134.5, y: -131.5}
+        - {x: 134.5, y: 131.5}
+    - name: BoardPartition_dif_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 889
+        width: 258
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -122, y: 112.5}
+        - {x: -122, y: -58.5}
+        - {x: -123, y: -57.5}
+        - {x: -125, y: -57.5}
+        - {x: -129, y: -60.5}
+        - {x: -129, y: -67.5}
+        - {x: -128, y: -69.5}
+        - {x: -125, y: -71.5}
+        - {x: -125, y: -73.5}
+        - {x: -124, y: -74.5}
+        - {x: -124, y: -78.5}
+        - {x: -122, y: -80.5}
+        - {x: -122, y: -112.5}
+        - {x: 129, y: -112.5}
+        - {x: 129, y: 112.5}
+    - name: BoardPartition_dif_4
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 863
+        width: 218
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -109, y: 123.5}
+        - {x: -109, y: -123.5}
+        - {x: 109, y: -123.5}
+        - {x: 109, y: 123.5}
+    - name: BoardPartition_dif_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 20
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_6
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 708
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: -22}
+        - {x: -13.5, y: -24}
+        - {x: -7.5, y: -24}
+        - {x: -7.5, y: -22}
+        - {x: -9.5, y: -20}
+        - {x: -11.5, y: -20}
+      - - {x: 9.5, y: -20}
+        - {x: 9.5, y: -21}
+        - {x: 12.5, y: -24}
+        - {x: 15.5, y: -23}
+        - {x: 15.5, y: -20}
+        - {x: 13.5, y: -18}
+        - {x: 11.5, y: -18}
+      - - {x: -2.5, y: 24}
+        - {x: -17.5, y: 12}
+        - {x: -17.5, y: -8}
+        - {x: -13.5, y: -21}
+        - {x: 17.5, y: -21}
+        - {x: 17.5, y: 24}
+      - - {x: -17.5, y: -12}
+        - {x: -17.5, y: -18}
+        - {x: -14.5, y: -18}
+        - {x: -12.5, y: -16}
+        - {x: -12.5, y: -14}
+        - {x: -14.5, y: -12}
+    - name: BoardPartition_dif_7
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 736
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_8
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 576
+        width: 243
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -103.5, y: -143}
+        - {x: -103.5, y: -150}
+        - {x: -100.5, y: -156}
+        - {x: -92.5, y: -156}
+        - {x: -92.5, y: -153}
+        - {x: -93.5, y: -147}
+        - {x: -100.5, y: -143}
+      - - {x: 121.5, y: -66}
+        - {x: 121.5, y: 140}
+        - {x: 63.5, y: 144}
+        - {x: 61.5, y: 151}
+        - {x: 51.5, y: 151}
+        - {x: 32.5, y: 144}
+        - {x: -108.5, y: 140}
+        - {x: -110.5, y: 138}
+        - {x: -110.5, y: -64}
+        - {x: -114.5, y: -64}
+        - {x: -114.5, y: -100}
+        - {x: -112.5, y: -138}
+        - {x: -81.5, y: -155}
+        - {x: -48.5, y: -155}
+        - {x: -48.5, y: -142}
+        - {x: 117.5, y: -139}
+        - {x: 119.5, y: -137}
+      - - {x: -7.5, y: -151}
+        - {x: 0.5, y: -151}
+        - {x: 4.5, y: -149}
+        - {x: 4.5, y: -141}
+        - {x: 3.5, y: -139}
+        - {x: -1.5, y: -139}
+        - {x: -7.5, y: -144}
+      - - {x: -121.5, y: 24}
+        - {x: -121.5, y: 18}
+        - {x: -119.5, y: 18}
+        - {x: -117.5, y: 20}
+        - {x: -117.5, y: 22}
+        - {x: -119.5, y: 24}
+      - - {x: -120.5, y: 30}
+        - {x: -119.5, y: 27}
+        - {x: -115.5, y: 27}
+        - {x: -113.5, y: 29}
+        - {x: -114.5, y: 32}
+        - {x: -118.5, y: 32}
+      - - {x: 34.5, y: 144}
+        - {x: 37.5, y: 145}
+        - {x: 37.5, y: 148}
+        - {x: 34.5, y: 149}
+        - {x: 32.5, y: 147}
+      - - {x: 38.5, y: 146}
+        - {x: 40.5, y: 144}
+        - {x: 43.5, y: 145}
+        - {x: 43.5, y: 148}
+        - {x: 41.5, y: 150}
+        - {x: 38.5, y: 149}
+      - - {x: 45.5, y: 148}
+        - {x: 47.5, y: 146}
+        - {x: 50.5, y: 147}
+        - {x: 50.5, y: 150}
+        - {x: 48.5, y: 152}
+        - {x: 45.5, y: 151}
+      - - {x: -46.5, y: 151}
+        - {x: -43.5, y: 152}
+        - {x: -43.5, y: 156}
+        - {x: -48.5, y: 156}
+        - {x: -48.5, y: 153}
+    - name: BoardPartition_dif_9
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 710
+        width: 33
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: -35.5}
+        - {x: -13.5, y: -35.5}
+        - {x: -13.5, y: -32.5}
+        - {x: -15.5, y: -30.5}
+        - {x: -16.5, y: -30.5}
+      - - {x: 5.5, y: -35.5}
+        - {x: 10.5, y: -35.5}
+        - {x: 10.5, y: -33.5}
+        - {x: 8.5, y: -31.5}
+        - {x: 5.5, y: -32.5}
+      - - {x: -3.5, y: -25.5}
+        - {x: -5.5, y: -26.5}
+        - {x: -5.5, y: -29.5}
+        - {x: -4.5, y: -31.5}
+        - {x: -0.5, y: -31.5}
+        - {x: 0.5, y: -30.5}
+        - {x: 0.5, y: -26.5}
+        - {x: -1.5, y: -25.5}
+      - - {x: -0.5, y: -23.5}
+        - {x: 2.5, y: -22.5}
+        - {x: 2.5, y: -19.5}
+        - {x: -0.5, y: -18.5}
+        - {x: -2.5, y: -20.5}
+      - - {x: 8.5, y: -22.5}
+        - {x: 11.5, y: -21.5}
+        - {x: 11.5, y: -18.5}
+        - {x: 8.5, y: -17.5}
+        - {x: 6.5, y: -19.5}
+      - - {x: -5.5, y: 21.5}
+        - {x: -5.5, y: -16.5}
+        - {x: 1.5, y: -18.5}
+        - {x: 7.5, y: -18.5}
+        - {x: 9.5, y: -17.5}
+        - {x: 14.5, y: -0.5}
+        - {x: 14.5, y: 16.5}
+        - {x: 7.5, y: 21.5}
+      - - {x: -11.5, y: -7.5}
+        - {x: -10.5, y: -10.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -8.5}
+        - {x: -6.5, y: -5.5}
+        - {x: -9.5, y: -5.5}
+      - - {x: 12.5, y: 0.5}
+        - {x: 13.5, y: -2.5}
+        - {x: 16.5, y: -2.5}
+        - {x: 16.5, y: 2.5}
+        - {x: 14.5, y: 2.5}
+      - - {x: -9.5, y: 35.5}
+        - {x: -9.5, y: 31.5}
+        - {x: -3.5, y: 24.5}
+        - {x: -0.5, y: 24.5}
+        - {x: 1.5, y: 26.5}
+        - {x: 0.5, y: 30.5}
+        - {x: -3.5, y: 35.5}
+    - name: BoardPartition_dif_10
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 737
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_11
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 717
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_12
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 666
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_13
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 450
+        width: 231
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -115.5, y: 124.5}
+        - {x: -115.5, y: -124.5}
+        - {x: 115.5, y: -124.5}
+        - {x: 115.5, y: 124.5}
+    - name: BoardPartition_dif_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 657
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_15
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 217
+        width: 136
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68, y: 161}
+        - {x: -68, y: -161}
+        - {x: 68, y: -161}
+        - {x: 68, y: 161}
+    - name: BoardPartition_dif_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 531
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BoardPartition_dif_17
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 66
+        width: 109
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.5, y: 140.5}
+        - {x: -54.5, y: -140.5}
+        - {x: 54.5, y: -140.5}
+        - {x: 54.5, y: 140.5}
+    - name: BoardPartition_dif_18
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 0
+        width: 251
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -125.5, y: 117}
+        - {x: -125.5, y: -117}
+        - {x: 125.5, y: -117}
+        - {x: 125.5, y: 117}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

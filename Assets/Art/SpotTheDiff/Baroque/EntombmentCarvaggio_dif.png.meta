@@ -1,0 +1,245 @@
+fileFormatVersion: 2
+guid: 5677361ec24996c48a84f3a71ff615a4
+timeCreated: 1460338341
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: EntombmentCarvaggio_dif_0
+    21300002: EntombmentCarvaggio_dif_1
+    21300004: EntombmentCarvaggio_dif_2
+    21300006: EntombmentCarvaggio_dif_3
+    21300008: EntombmentCarvaggio_dif_4
+    21300010: EntombmentCarvaggio_dif_5
+    21300012: EntombmentCarvaggio_dif_6
+    21300014: EntombmentCarvaggio_dif_7
+    21300016: EntombmentCarvaggio_dif_8
+    21300018: EntombmentCarvaggio_dif_9
+    21300020: EntombmentCarvaggio_dif_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: EntombmentCarvaggio_dif_0
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1801
+        width: 157
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.5, y: 101.5}
+        - {x: -78.5, y: -101.5}
+        - {x: 78.5, y: -101.5}
+        - {x: 78.5, y: 101.5}
+    - name: EntombmentCarvaggio_dif_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1006
+        width: 67
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 58.5}
+        - {x: -33.5, y: -58.5}
+        - {x: 33.5, y: -58.5}
+        - {x: 33.5, y: 58.5}
+    - name: EntombmentCarvaggio_dif_2
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1086
+        width: 200
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100, y: 108.5}
+        - {x: -100, y: -108.5}
+        - {x: 100, y: -108.5}
+        - {x: 100, y: 108.5}
+    - name: EntombmentCarvaggio_dif_3
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1088
+        width: 163
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81.5, y: 92.5}
+        - {x: -81.5, y: -92.5}
+        - {x: 81.5, y: -92.5}
+        - {x: 81.5, y: 92.5}
+    - name: EntombmentCarvaggio_dif_4
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 990
+        width: 154
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -77, y: 179}
+        - {x: -77, y: -179}
+        - {x: 77, y: -179}
+        - {x: 77, y: 179}
+    - name: EntombmentCarvaggio_dif_5
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 454
+        width: 189
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 217.5}
+        - {x: -24.5, y: 219.5}
+        - {x: -26.5, y: 221.5}
+        - {x: -28.5, y: 220.5}
+        - {x: -29.5, y: 221.5}
+        - {x: -35.5, y: 221.5}
+        - {x: -35.5, y: 219.5}
+        - {x: -34.5, y: 218.5}
+        - {x: -36.5, y: 216.5}
+        - {x: -36.5, y: 214.5}
+        - {x: -53.5, y: 214.5}
+        - {x: -59.5, y: 220.5}
+        - {x: -64.5, y: 221.5}
+        - {x: -67.5, y: 218.5}
+        - {x: -68.5, y: 214.5}
+        - {x: -94.5, y: 214.5}
+        - {x: -94.5, y: -221.5}
+        - {x: 94.5, y: -221.5}
+        - {x: 94.5, y: 214.5}
+        - {x: -21.5, y: 214.5}
+    - name: EntombmentCarvaggio_dif_6
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 607
+        width: 8
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: EntombmentCarvaggio_dif_7
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 430
+        width: 186
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: 106.5}
+        - {x: -93, y: -106.5}
+        - {x: 93, y: -106.5}
+        - {x: 93, y: 106.5}
+    - name: EntombmentCarvaggio_dif_8
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 397
+        width: 226
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -113, y: 38}
+        - {x: -113, y: -38}
+        - {x: 113, y: -38}
+        - {x: 113, y: 38}
+    - name: EntombmentCarvaggio_dif_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 495
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -247.5, y: 119.5}
+        - {x: -247.5, y: -119.5}
+        - {x: 247.5, y: -119.5}
+        - {x: 247.5, y: 119.5}
+    - name: EntombmentCarvaggio_dif_10
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 174
+        width: 312
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -156, y: 63.5}
+        - {x: -156, y: -63.5}
+        - {x: 156, y: -63.5}
+        - {x: 156, y: 63.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

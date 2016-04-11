@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 9c35025cca57c6d4e8879117758fc5db
+timeCreated: 1460339494
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Flowers_dif_0
+    21300002: Flowers_dif_1
+    21300004: Flowers_dif_2
+    21300006: Flowers_dif_3
+    21300008: Flowers_dif_4
+    21300010: Flowers_dif_5
+    21300012: Flowers_dif_6
+    21300014: Flowers_dif_7
+    21300016: Flowers_dif_8
+    21300018: Flowers_dif_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Flowers_dif_0
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 1775
+        width: 244
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -122, y: 92.5}
+        - {x: -122, y: -92.5}
+        - {x: 122, y: -92.5}
+        - {x: 122, y: 92.5}
+    - name: Flowers_dif_1
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1392
+        width: 224
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -112, y: 130.5}
+        - {x: -112, y: -130.5}
+        - {x: 112, y: -130.5}
+        - {x: 112, y: 130.5}
+    - name: Flowers_dif_2
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1431
+        width: 161
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -80.5, y: 92}
+        - {x: -80.5, y: -92}
+        - {x: 80.5, y: -92}
+        - {x: 80.5, y: 92}
+    - name: Flowers_dif_3
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 1494
+        width: 187
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87.5, y: -9.5}
+        - {x: 93.5, y: -8.5}
+        - {x: 93.5, y: 50.5}
+        - {x: 86.5, y: 105.5}
+        - {x: -86.5, y: 105.5}
+        - {x: -87.5, y: -51.5}
+        - {x: -93.5, y: -60.5}
+        - {x: -93.5, y: -95.5}
+        - {x: -92.5, y: -99.5}
+        - {x: -77.5, y: -105.5}
+        - {x: -52.5, y: -105.5}
+        - {x: -41.5, y: -100.5}
+        - {x: 84.5, y: -96.5}
+        - {x: 86.5, y: -94.5}
+    - name: Flowers_dif_4
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 1133
+        width: 118
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59, y: 74}
+        - {x: -59, y: -74}
+        - {x: 59, y: -74}
+        - {x: 59, y: 74}
+    - name: Flowers_dif_5
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 903
+        width: 182
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -91, y: 124.5}
+        - {x: -91, y: -124.5}
+        - {x: 91, y: -124.5}
+        - {x: 91, y: 124.5}
+    - name: Flowers_dif_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 822
+        width: 121
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60.5, y: 66}
+        - {x: -60.5, y: -66}
+        - {x: 60.5, y: -66}
+        - {x: 60.5, y: 66}
+    - name: Flowers_dif_7
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 725
+        width: 185
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.5, y: 132}
+        - {x: -92.5, y: -132}
+        - {x: 92.5, y: -132}
+        - {x: 92.5, y: 132}
+    - name: Flowers_dif_8
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 232
+        width: 186
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: 76.5}
+        - {x: -93, y: -76.5}
+        - {x: 93, y: -76.5}
+        - {x: 93, y: 76.5}
+    - name: Flowers_dif_9
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 80
+        width: 194
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -97, y: 261}
+        - {x: -97, y: -261}
+        - {x: 97, y: -261}
+        - {x: 97, y: 261}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
