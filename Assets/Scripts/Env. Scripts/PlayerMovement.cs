@@ -225,6 +225,7 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 //Baroque options
                 case "Bstairs1":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs3");
                     landingPos = landingPair.transform.position;
@@ -232,6 +233,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "Bstairs2":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs4");
                     landingPos = landingPair.transform.position;
@@ -239,6 +241,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "Bstairs3":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs1");
                     landingPos = landingPair.transform.position;
@@ -246,6 +249,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "Bstairs4":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs2");
                     landingPos = landingPair.transform.position;
