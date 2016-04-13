@@ -45,6 +45,7 @@ public class UIHandler : MonoBehaviour {
 
     public void goToHome()
     {
+        PersistVars.returningToHome = true;
         SceneManager.LoadScene("mansion");
     }
 

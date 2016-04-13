@@ -29,6 +29,8 @@ public class PersistVars : MonoBehaviour {
 
     public static string ggScrub = "This will be the best art theft game ever made.  No doubt about it!";
 
+    public static bool returningToHome = false;
+
     public GameObject UI;
     public GameObject clueOne;
     public GameObject clueTwo;

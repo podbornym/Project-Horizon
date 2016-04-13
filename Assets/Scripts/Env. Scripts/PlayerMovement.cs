@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     private static GameObject landing = null;
     private static float offset;
     private static float camOffset;
-    private bool moving = false;
+    public static bool moving = false;
     GameObject landingPair = null;
     int columnOffset = 0;
     public GameObject cam;
@@ -29,6 +29,18 @@ public class PlayerMovement : MonoBehaviour {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
+
+        if (!PersistVars.returningToHome)
+        {
+            gameObject.transform.position = GameObject.Find("introSpawn").transform.position;
+            cam.transform.position = new Vector3(-51.4f, -1.42f, cam.transform.position.z);
+        }
+        else
+        {
+            gameObject.transform.position = GameObject.Find("hubSpawn").transform.position;
+            cam.transform.position = new Vector3(-10.32f, -13f, cam.transform.position.z);
+        }
+        
         myAnimator = GetComponent<Animator>();
 
     }
