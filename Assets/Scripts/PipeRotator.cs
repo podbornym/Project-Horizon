@@ -76,15 +76,27 @@ public class PipeRotator : MonoBehaviour {
                 if (transform.rotation.eulerAngles.z == 270 || transform.rotation.eulerAngles.z == 90)
                 {
                     //Calls CheckUp and CheckDown
-                    CheckUp();
-                    CheckDown();
+                    if(CheckUp() || CheckDown())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
                 //If piece is horizontally alligned
                 else if (transform.rotation.eulerAngles.z == 180 || transform.rotation.eulerAngles.z == 0)
                 {
                     //Calls CheckLeft and CheckRight
-                    CheckLeft();
-                    CheckRight();
+                    if(CheckLeft() || CheckRight())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
             }
             //If tag is Turn
@@ -94,29 +106,53 @@ public class PipeRotator : MonoBehaviour {
                 if (transform.rotation.eulerAngles.z == 270)
                 {
                     //Calls CheckLeft and CheckUp
-                    CheckLeft();
-                    CheckUp();
+                    if(CheckLeft() || CheckUp())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
                 //If piece goes from up to right
                 else if (transform.rotation.eulerAngles.z == 180)
                 {
                     //Calls CheckUp and CheckRight
-                    CheckUp();
-                    CheckRight();
+                    if(CheckUp() || CheckRight())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
                 //If piece goes from Right to Down
                 else if (transform.rotation.eulerAngles.z == 90)
                 {
                     //Calls CheckRight and CheckDown
-                    CheckRight();
-                    CheckDown();
+                    if(CheckRight() || CheckDown())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
                 //If piece goes from Down to Left
                 else if (transform.rotation.eulerAngles.z == 0)
                 {
                     //Calls CheckDown and CheckLeft
-                    CheckDown();
-                    CheckLeft();
+                    if(CheckDown() || CheckLeft())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
             }
             //If tag is FourWay
@@ -126,26 +162,34 @@ public class PipeRotator : MonoBehaviour {
                 if (transform.rotation.eulerAngles.z == 270 || transform.rotation.eulerAngles.z == 90)
                 {
                     //Calls Check*
-                    CheckUp();
-                    CheckDown();
-                    CheckLeft();
-                    CheckRight();
+                    if(CheckUp() || CheckDown() || CheckLeft() || CheckRight())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
                 //If piece is vertically alligned
                 else if (transform.rotation.eulerAngles.z == 180 || transform.rotation.eulerAngles.z == 0)
                 {
                     //Calls Check*
-                    CheckUp();
-                    CheckDown();
-                    CheckLeft();
-                    CheckRight();
+                    if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
+                    {
+                        IsConnected = true;
+                    }
+                    else
+                    {
+                        IsConnected = false;
+                    }
                 }
             }
         }
     }
 
     //Checks the tile above the selected
-    void CheckUp()
+    bool CheckUp()
     {
         //Raycasts 1 space above selected tile
         RaycastHit2D hitUp = Physics2D.Raycast(transform.position + new Vector3(0, 1, 0), Vector2.up);
@@ -162,7 +206,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitUp.transform.rotation.eulerAngles.z == 270 || hitUp.transform.rotation.eulerAngles.z == 90)
                     {
                         //Fills selected piece
-                        IsConnected = true;
+                        return true;
                     }
                 }
             }
@@ -176,7 +220,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitUp.transform.rotation.eulerAngles.z == 90 || hitUp.transform.rotation.eulerAngles.z == 0)
                     {
                         //Fills selected piece
-                        IsConnected = true;
+                        return true;
                     }
                 }
             }
@@ -204,7 +248,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitUp2.transform.rotation.eulerAngles.z == 270 || hitUp2.transform.rotation.eulerAngles.z == 90)
                                     {
                                         //Fills selected piece
-                                        IsConnected = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -218,7 +262,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitUp2.transform.rotation.eulerAngles.z == 90 || hitUp2.transform.rotation.eulerAngles.z == 0)
                                     {
                                         //Fills selected piece
-                                        IsConnected = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -236,10 +280,11 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
         }
+        return false;
     }
 
     //Checks the tile below the selected
-    void CheckDown()
+    bool CheckDown()
     {
         //Raycasts 1 space below the selected tile
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0, -1, 0), Vector2.down);
@@ -256,7 +301,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 90)
                     {
                         //Sets the selected to full
-                        IsConnected = true;
+                        return true;
                     }
                 }
             }
@@ -270,7 +315,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitDown.transform.rotation.eulerAngles.z == 270 || hitDown.transform.rotation.eulerAngles.z == 180)
                     {
                         //Sets the selected to full
-                        IsConnected = true;
+                        return true;
                     }
                 }
             }
@@ -298,7 +343,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 90)
                                     {
                                         //Sets selected to true
-                                        IsConnected = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -312,7 +357,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitDown2.transform.rotation.eulerAngles.z == 270 || hitDown2.transform.rotation.eulerAngles.z == 180)
                                     {
                                         //Sets selected to true
-                                        IsConnected = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -321,10 +366,11 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
         }
+        return false;
     }
     
     //Checks the tile to the left of the selected
-    void CheckLeft()
+    bool CheckLeft()
     {
         //Raycasts 1 space to the left of the selected
         RaycastHit2D hitLeft = Physics2D.Raycast(transform.position + new Vector3(-1, 0, 0), Vector2.left);
@@ -346,7 +392,7 @@ public class PipeRotator : MonoBehaviour {
             if (hitLeft.transform.gameObject.tag == "Start")
             {
                 //Sets selected to full
-                IsConnected = true;
+                return true;
             }
             //If hit is tagged Straight
             else if (hitLeft.transform.gameObject.tag == "Straight")
@@ -358,7 +404,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 0)
                     {
                         //Sets selected to full
-                        IsConnected = true;
+                        return true;
                     }
                 }
             }
@@ -372,7 +418,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitLeft.transform.rotation.eulerAngles.z == 180 || hitLeft.transform.rotation.eulerAngles.z == 90)
                     {
                         //Sets selected to full
-                        IsConnected = true;
+                        return true;
                     }
                 }
             }
@@ -394,7 +440,7 @@ public class PipeRotator : MonoBehaviour {
                             if (hitLeft2.transform.gameObject.tag == "Start")
                             {
                                 //Fills selected
-                                IsConnected = true;
+                                return true;
                             }
                             //If hit is tagged Straight
                             else if (hitLeft2.transform.gameObject.tag == "Straight")
@@ -406,7 +452,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 0)
                                     {
                                         //Fills selected
-                                        IsConnected = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -420,7 +466,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitLeft2.transform.rotation.eulerAngles.z == 180 || hitLeft2.transform.rotation.eulerAngles.z == 90)
                                     {
                                         //Fills selected
-                                        IsConnected = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -429,10 +475,11 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
         }
+        return false;
     }
 
     //Checks the tile to the right of the selected
-    void CheckRight()
+    bool CheckRight()
     {
         //Rays casts 1 space to right of the selected
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position + new Vector3(1, 0, 0), Vector2.right);
@@ -449,7 +496,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitRight.transform.rotation.eulerAngles.z == 180 || hitRight.transform.rotation.eulerAngles.z == 0)
                     {
                         //Fills selected
-                        IsFull = true;
+                        return true;
                     }
                 }
             }
@@ -463,7 +510,7 @@ public class PipeRotator : MonoBehaviour {
                     if (hitRight.transform.rotation.eulerAngles.z == 270 || hitRight.transform.rotation.eulerAngles.z == 0)
                     {
                         //Fills selected
-                        IsFull = true;
+                        return true;
                     }
                 }
             }
@@ -491,7 +538,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitRight2.transform.rotation.eulerAngles.z == 180 || hitRight2.transform.rotation.eulerAngles.z == 0)
                                     {
                                         //Fills selected
-                                        IsFull = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -505,7 +552,7 @@ public class PipeRotator : MonoBehaviour {
                                     if (hitRight2.transform.rotation.eulerAngles.z == 270 || hitRight2.transform.rotation.eulerAngles.z == 0)
                                     {
                                         //Fills selected
-                                        IsFull = true;
+                                        return true;
                                     }
                                 }
                             }
@@ -514,5 +561,6 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
         }
+        return false;
     }
 }
