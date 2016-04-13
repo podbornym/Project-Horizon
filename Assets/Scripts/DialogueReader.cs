@@ -50,6 +50,11 @@ public class DialogueReader : MonoBehaviour
         option5.gameObject.SetActive(false);
         option6.gameObject.SetActive(false);
         quit.gameObject.SetActive(false);
+		/*if (SceneManager.GetActiveScene ().name == "SellingScene")	
+		{
+			dialogueContainer.SetActive(true);
+			NextLine();
+		}*/
     }
 
     void Update ()
