@@ -45,37 +45,37 @@ public class StudioScript : MonoBehaviour {
         {
             // Cases for the first Uk studio
             case "clue1":
-                print("found me");
+                print("found 1");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
             case "clue2":
-                print("found me");
+                print("found 2");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 1);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
             case "clue3":
-                print("found me");
+                print("found 3");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 2);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
             case "clue4":
-                print("found me");
+                print("found 4");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 3);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
             case "clue5":
-                print("found me");
+                print("found 5");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 4);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
             case "clue6":
-                print("found me");
+                print("found 6");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();

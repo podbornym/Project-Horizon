@@ -5,8 +5,11 @@ How can I help you?
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
-#option3 #quit
-#option1Text This is clue one. #option2Text This is clue two. #option3Text Goodbye!
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text This is clue one. #option2Text This is clue two. #option3Text This is clue three. #option4Text This is clue four. #option5Text This is clue five. #option6Text This is clue six.
 
 @ClueOne
 #SetDialogue
@@ -22,6 +25,7 @@ Would you like to play game one?
 
 @no1
 What do you mean?
+CLUE ONE ACTIVATED
 #activateClue1
 #goto:Start
 
@@ -39,6 +43,7 @@ Would you like to play game two?
 
 @no2
 What do you mean?
+CLUE TWO ACTIVATED
 #activateClue2
 #goto:Start
 
@@ -56,6 +61,7 @@ Would you like to play game one?
 
 @no3
 What do you mean?
+CLUE THREE ACTIVATED
 #activateClue3
 #goto:Start
 
@@ -73,6 +79,7 @@ Would you like to play game one?
 
 @no4
 What do you mean?
+CLUE FOUR ACTIVATED
 #activateClue4
 #goto:Start
 
@@ -90,6 +97,7 @@ Would you like to play game one?
 
 @no5
 What do you mean?
+CLUE FIVE ACTIVATED
 #activateClue5
 #goto:Start
 
@@ -107,5 +115,6 @@ Would you like to play game six?
 
 @no6
 What do you mean?
+CLUE SIX ACTIVATED
 #activateClue6
 #goto:Start

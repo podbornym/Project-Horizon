@@ -15,6 +15,7 @@ public class PersistVars : MonoBehaviour {
     public float tracerScore;
     public float findDiffScore;
     public float mastermindScore;
+	public int currentMoney;
 
     public int knowledgeCount = 0;
 
@@ -25,6 +26,7 @@ public class PersistVars : MonoBehaviour {
 
     public static string ggScrub = "This will be the best art theft game ever made.  No doubt about it!";
 
+    public GameObject UI;
     public GameObject clueOne;
     public GameObject clueTwo;
     public GameObject clueThree;
@@ -61,6 +63,17 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
+    void Start()
+    {
+        UI.GetComponent<DialogueReader>().nextButton.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option1.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option2.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option3.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option4.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option5.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
+        UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
+    }
 
     void Update()
     {
@@ -128,6 +141,10 @@ public class PersistVars : MonoBehaviour {
         mastermindScore = 0f;
 
         knowledgeCount = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            UI.GetComponent<DialogueReader>().ClueFound[i] = false;
+        }
     }
 
     // Use to get all total inherited scores, then evaluate the player on their painting replication
@@ -143,21 +160,27 @@ public class PersistVars : MonoBehaviour {
         {
             case "UOne":
                 UkiyoOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "UTwo":
                 UkiyoTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "UThree":
                 UkiyoThree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "UFour":
                 UkiyoFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "UFive":
                 UkiyoFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "USix":
                 UkiyoSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             default:
                 print("did not assign valid array");
