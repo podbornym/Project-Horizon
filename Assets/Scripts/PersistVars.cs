@@ -21,6 +21,9 @@ public class PersistVars : MonoBehaviour {
 
     public Scene currentScene;
     public Scene previousScene;
+    public bool ukiyoe = false;
+    public bool baroque = false;
+    public bool surrealism = false;
 
     private static GameObject clue = null;
 
@@ -80,6 +83,46 @@ public class PersistVars : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             FindClue();
+        }
+
+        // These cases are to be handled by OnLevelWasLoaded()
+        switch(SceneManager.GetActiveScene().name)
+        {
+            // Switch cases for Ukiyo-e zone
+            case "Ukiyo-eZone":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_0":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_1":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_2":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_3":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_4":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_5":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            // Default case
+            default:
+                //print("did not get a valid scene");
+                ukiyoe = true;
+                break;
+            //ONLOADEDLEVEL
         }
     }
 
