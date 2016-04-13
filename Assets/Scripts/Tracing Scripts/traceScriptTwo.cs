@@ -34,6 +34,9 @@ public class traceScriptTwo : MonoBehaviour {
     public Text tabs;
     public Text warning;
 
+    // Start button renderer
+    public Renderer rend;
+
     void Start()
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
@@ -56,6 +59,7 @@ public class traceScriptTwo : MonoBehaviour {
         else
         {
             gameObject.GetComponent<Renderer>().enabled = false;
+            rend.enabled = false;
             time.text = "Go!";
             warning.text = " ";
         }
@@ -123,6 +127,7 @@ public class traceScriptTwo : MonoBehaviour {
             tabs.text = "Resets remaining: " + tabsLeft.ToString();
             timeRemaining = timeRemainingTotal;
             gameObject.GetComponent<Renderer>().enabled = true;
+            rend.enabled = true;
         }
 
         else
