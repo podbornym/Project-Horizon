@@ -74,6 +74,8 @@ public class PlayerMovement : MonoBehaviour {
     void moveStairs(bool ukiyo = false)
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
+        //checks for the stairs on the left side of the ukiyo-e map
+        //if not on the left side, then do stairs as normal
         if (!ukiyo)
         {
             if (approachLeft)
@@ -85,6 +87,7 @@ public class PlayerMovement : MonoBehaviour {
                 iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
             }
         }
+        //else only move the cam up and down
         else
         {
             if (approachLeft)
@@ -327,7 +330,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     approachLeft = true;
-                    moveStairs(true);
+                    moveStairs(false);
                     break;
                 case "Ustairs2":
                     myAnimator.SetInteger("Move", -1);
@@ -345,7 +348,7 @@ public class PlayerMovement : MonoBehaviour {
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     approachLeft = false;
-                    moveStairs(true);
+                    moveStairs(false);
                     break;
                 case "Ustairs4":
                     myAnimator.SetInteger("Move", 1);
@@ -357,6 +360,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs(true);
                     break;
                 case "leftEndU":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("rightEndU");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -364,6 +368,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveCurve("bridge", 10);
                     break;
                 case "rightEndU":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("leftEndU");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
