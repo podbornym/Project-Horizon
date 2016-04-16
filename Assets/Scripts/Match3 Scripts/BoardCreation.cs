@@ -40,9 +40,10 @@ public class BoardCreation : MonoBehaviour
     private GameObject puzzleObject;
 
     // Timer variables for setting time
-    public float seconds = 90;
+    private float seconds = 90;
 
-    private float warningSec;
+    private float warningSec = 8f;
+    private float warningTimer = 0f;
 
     public Text timer;
 
@@ -136,17 +137,19 @@ public class BoardCreation : MonoBehaviour
 
             TallyScore();
             GameObject.Find("Next Button").GetComponent<Button>().interactable = true;
-        } 
+        }
+
+        warningTimer += Time.deltaTime;
 
         if(dragging && seconds > 0)
         {
-            warningSec = seconds;
-
-            /*if(warningSec >= 3)
+            if(warningTimer >= warningSec)
             {
-                warningText.text = "Warning: Dragging for too long will incur a score penalty!.......";
-            }*/
-            //warningSec = 3;
+                dragPenalty += .02f;
+                warningText.color = Color.red;
+                warningText.text = "Warning: Dragging for too long will incur a score penalty!";
+                warningTimer = 0f;
+            }
         }
     }
 
@@ -165,9 +168,9 @@ public class BoardCreation : MonoBehaviour
         if(match3.ukiyoe)
         {
             setRed = "Flower: ";
+            setYellow = "Octopus: ";
             setGreen = "Frog: ";
             setBlue = "Fish: ";
-            setYellow = "Octopus: ";
             setMagenta = "Coin: ";
 
             switch(match3.previousScene.name)
@@ -225,10 +228,136 @@ public class BoardCreation : MonoBehaviour
             }
         }
 
-        redTotal.text = "/" + setRedTotal + "|";
-        yellowTotal.text = "/" + setYellowTotal + "|";
-        greenTotal.text = "/" + setGreenTotal + "|";
-        blueTotal.text = "/" + setBlueTotal + "|";
+        if (match3.surrealism)
+        {
+            setRed = "Apple: ";
+            setYellow = "Skull: ";
+            setGreen = "Pipe: ";
+            setBlue = "Hat: ";
+            setMagenta = "Clock: ";
+
+            switch (match3.previousScene.name)
+            {
+                case "S_O":
+                    setRedTotal = 33;
+                    setYellowTotal = 1;
+                    setGreenTotal = 33;
+                    setBlueTotal = 33;
+                    setMagentaTotal = 1;
+                    break;
+                case "S_1":
+                    setRedTotal = 1;
+                    setYellowTotal = 100;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 1;
+                    break;
+                case "S_2":
+                    setRedTotal = 50;
+                    setYellowTotal = 1;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 50;
+                    break;
+                case "S_3":
+                    setRedTotal = 1;
+                    setYellowTotal = 50;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 50;
+                    break;
+                case "S_4":
+                    setRedTotal = 20;
+                    setYellowTotal = 1;
+                    setGreenTotal = 1;
+                    setBlueTotal = 80;
+                    setMagentaTotal = 1;
+                    break;
+                case "S_5":
+                    setRedTotal = 60;
+                    setYellowTotal = 1;
+                    setGreenTotal = 40;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 1;
+                    break;
+                default:
+                    print("did not find a valid studio for match3 surrealism variables");
+                    setRedTotal = 100;
+                    setYellowTotal = 100;
+                    setGreenTotal = 100;
+                    setBlueTotal = 100;
+                    setMagentaTotal = 100;
+                    break;
+            }
+        }
+
+        if (match3.baroque)
+        {
+            setRed = "Blue: ";
+            setYellow = "Orangel: ";
+            setGreen = "Green: ";
+            setBlue = "Blue: ";
+            setMagenta = "Pearl: ";
+
+            switch (match3.previousScene.name)
+            {
+                case "B_O":
+                    setRedTotal = 33;
+                    setYellowTotal = 1;
+                    setGreenTotal = 33;
+                    setBlueTotal = 33;
+                    setMagentaTotal = 1;
+                    break;
+                case "B_1":
+                    setRedTotal = 1;
+                    setYellowTotal = 100;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 1;
+                    break;
+                case "B_2":
+                    setRedTotal = 50;
+                    setYellowTotal = 1;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 50;
+                    break;
+                case "B_3":
+                    setRedTotal = 1;
+                    setYellowTotal = 50;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 50;
+                    break;
+                case "B_4":
+                    setRedTotal = 20;
+                    setYellowTotal = 1;
+                    setGreenTotal = 1;
+                    setBlueTotal = 80;
+                    setMagentaTotal = 1;
+                    break;
+                case "B_5":
+                    setRedTotal = 60;
+                    setYellowTotal = 1;
+                    setGreenTotal = 40;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 1;
+                    break;
+                default:
+                    print("did not find a valid studio for match3 baroque variables");
+                    setRedTotal = 100;
+                    setYellowTotal = 100;
+                    setGreenTotal = 100;
+                    setBlueTotal = 100;
+                    setMagentaTotal = 100;
+                    break;
+            }
+        }
+
+        redTotal.text = "/" + setRedTotal + " |";
+        yellowTotal.text = "/" + setYellowTotal + " |";
+        greenTotal.text = "/" + setGreenTotal + " |";
+        blueTotal.text = "/" + setBlueTotal + " |";
         magentaTotal.text = "/" + setMagentaTotal;
 
         redScore.text =  setRed + "0";
@@ -267,6 +396,58 @@ public class BoardCreation : MonoBehaviour
                             break;
                         case 4:
                             newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoFive;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
+                            break;
+                    }
+                }
+                if (match3.surrealism)
+                {
+                    switch (Random.Range(0, 5))
+                    {
+                        case 0:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = surrealOne;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.green;
+                            break;
+                        case 1:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = surrealTwo;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.red;
+                            break;
+                        case 2:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = surrealThree;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.blue;
+                            break;
+                        case 3:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = surrealFour;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.yellow;
+                            break;
+                        case 4:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = surrealFive;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
+                            break;
+                    }
+                }
+                if (match3.baroque)
+                {
+                    switch (Random.Range(0, 5))
+                    {
+                        case 0:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = baroqueOne;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.green;
+                            break;
+                        case 1:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = baroqueTwo;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.red;
+                            break;
+                        case 2:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = baroqueThree;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.blue;
+                            break;
+                        case 3:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = baroqueFour;
+                            newPiece.GetComponent<PuzzlePiece>().color = Color.yellow;
+                            break;
+                        case 4:
+                            newPiece.GetComponent<SpriteRenderer>().sprite = baroqueFive;
                             newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
                             break;
                     }
@@ -310,6 +491,58 @@ public class BoardCreation : MonoBehaviour
                                 break;
                             case 4:
                                 newPiece.GetComponent<SpriteRenderer>().sprite = ukiyoFive;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
+                                break;
+                        }
+                    }
+                    if (match3.surrealism)
+                    {
+                        switch (Random.Range(0, 5))
+                        {
+                            case 0:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = surrealOne;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.green;
+                                break;
+                            case 1:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = surrealTwo;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.red;
+                                break;
+                            case 2:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = surrealThree;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.blue;
+                                break;
+                            case 3:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = surrealFour;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.yellow;
+                                break;
+                            case 4:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = surrealFive;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
+                                break;
+                        }
+                    }
+                    if (match3.baroque)
+                    {
+                        switch (Random.Range(0, 5))
+                        {
+                            case 0:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = baroqueOne;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.green;
+                                break;
+                            case 1:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = baroqueTwo;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.red;
+                                break;
+                            case 2:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = baroqueThree;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.blue;
+                                break;
+                            case 3:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = baroqueFour;
+                                newPiece.GetComponent<PuzzlePiece>().color = Color.yellow;
+                                break;
+                            case 4:
+                                newPiece.GetComponent<SpriteRenderer>().sprite = baroqueFive;
                                 newPiece.GetComponent<PuzzlePiece>().color = Color.magenta;
                                 break;
                         }
