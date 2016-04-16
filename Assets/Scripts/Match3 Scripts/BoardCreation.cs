@@ -13,18 +13,19 @@ public class BoardCreation : MonoBehaviour
     public bool dragging = false;
     public bool spawning = false;
 
+    // Sets the sprites for Ukiyo-e levels
     public Sprite ukiyoOne;
     public Sprite ukiyoTwo;
     public Sprite ukiyoThree;
     public Sprite ukiyoFour;
     public Sprite ukiyoFive;
-
+    // Sets the sprites for the Surrealism levels
     public Sprite surrealOne;
     public Sprite surrealTwo;
     public Sprite surrealThree;
     public Sprite surrealFour;
     public Sprite surrealFive;
-
+    // Sets the sprites for the Baroque levels
     public Sprite baroqueOne;
     public Sprite baroqueTwo;
     public Sprite baroqueThree;
@@ -39,13 +40,12 @@ public class BoardCreation : MonoBehaviour
     private List<GameObject> markedPieces = new List<GameObject>();
     private GameObject puzzleObject;
 
-    // Timer variables for setting time
+    // Timer variables for setting time, keeping track of dragging
     private float seconds = 90;
-
-    private float warningSec = 8f;
-    private float warningTimer = 0f;
-
     public Text timer;
+
+    private float warningSec = 5f;
+    private float warningTimer = 0f;    
 
     // Variables for keeping track of score
     public Text redScore;
@@ -54,12 +54,14 @@ public class BoardCreation : MonoBehaviour
     public Text greenScore;
     public Text magentaScore;
 
+    // Sets the value of the score
     private int setRedValue = 0;
     private int setGreenValue = 0;
     private int setBlueValue = 0;
     private int setYellowValue = 0;
     private int setMagentaValue = 0;
 
+    // Keeps track of how many tiles were matched, adds them to the int above
     private int redHit = 0;
     private int yellowHit = 0;
     private int greenHit = 0;
@@ -72,13 +74,15 @@ public class BoardCreation : MonoBehaviour
     public Text blueTotal;
     public Text greenTotal;
     public Text magentaTotal;
-
+    
+    // Set specific goal for this level
     private int setRedTotal;
     private int setGreenTotal;
     private int setBlueTotal;
     private int setYellowTotal;
     private int setMagentaTotal;
 
+    // Set text for the color category
     private string setRed;
     private string setGreen;
     private string setBlue;
@@ -90,6 +94,28 @@ public class BoardCreation : MonoBehaviour
     public Text warningText;
 
     public PersistVars match3;
+
+    // Sets Ukiyo-e backgrounds per level
+    public Sprite u0Back;
+    public Sprite u1Back;
+    public Sprite u2Back;
+    public Sprite u3Back;
+    public Sprite u4Back;
+    public Sprite u5Back;
+    // Sets Surrealism backgrounds per level
+    public Sprite s0Back;
+    public Sprite s1Back;
+    public Sprite s2Back;
+    public Sprite s3Back;
+    public Sprite s4Back;
+    public Sprite s5Back;
+    // Sets Baroque backgrounds per level
+    public Sprite b0Back;
+    public Sprite b1Back;
+    public Sprite b2Back;
+    public Sprite b3Back;
+    public Sprite b4Back;
+    public Sprite b5Back;
 
     void Update()
     {
@@ -128,6 +154,7 @@ public class BoardCreation : MonoBehaviour
             }
         }
 
+        // Once time is up, disallow player movement, allow the player to continue
         if(seconds <= 0)
         {
             dragging = true;
@@ -141,6 +168,7 @@ public class BoardCreation : MonoBehaviour
 
         warningTimer += Time.deltaTime;
 
+        // If the player is dragging for too long, add a score penalty
         if(dragging && seconds > 0)
         {
             if(warningTimer >= warningSec)
@@ -156,15 +184,16 @@ public class BoardCreation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // Disable the UI's canvas
+        // Disable the UI's canvas, attach the PersistBVars script to our match3 object
         if(GameObject.Find("GENERALUI"))
         {
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+            match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
         }
-        match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
 
         match3.ukiyoe = true; //make sure to remove once the game gets going
 
+        // Set score, text, background variables to Ukiyo-e
         if(match3.ukiyoe)
         {
             setRed = "Flower: ";
@@ -175,59 +204,65 @@ public class BoardCreation : MonoBehaviour
 
             switch(match3.previousScene.name)
             {
-                case "U_O":
+                case "U_O": // 1st Ukiyo-e studio
                     setRedTotal = 25;
                     setYellowTotal = 25;
                     setGreenTotal = 50;
                     setBlueTotal = 80;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u0Back;
                     break;
-                case "U_1":
+                case "U_1": // 2nd Ukiyo-e studio
                     setRedTotal = 20;
                     setYellowTotal = 20;
                     setGreenTotal = 20;
                     setBlueTotal = 20;
                     setMagentaTotal = 20;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u1Back;
                     break;
-                case "U_2":
+                case "U_2": // 3rd Ukiyo-e studio
                     setRedTotal = 50;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u2Back;
                     break;
-                case "U_3":
+                case "U_3": // 4th Ukiyo-e studio
                     setRedTotal = 1;
                     setYellowTotal = 50;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u3Back;
                     break;
-                case "U_4":
+                case "U_4": // 5th Ukiyo-e studio
                     setRedTotal = 20;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 80;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u4Back;
                     break;
-                case "U_5":
+                case "U_5": // 6th Ukiyo-e studio
                     setRedTotal = 60;
                     setYellowTotal = 1;
                     setGreenTotal = 40;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u5Back;
                     break;
-                default:
+                default: // No valid Ukiyo-e studio
                     print("did not find a valid studio for match3 ukiyo-e variables");
-                    setRedTotal = 100;
-                    setYellowTotal = 100;
-                    setGreenTotal = 100;
-                    setBlueTotal = 100;
-                    setMagentaTotal = 100;
+                    setRedTotal = 1;
+                    setYellowTotal = 1;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 1;
                     break;
             }
         }
-
+        // Set score, text, background variables to Surrealism
         if (match3.surrealism)
         {
             setRed = "Apple: ";
@@ -238,49 +273,55 @@ public class BoardCreation : MonoBehaviour
 
             switch (match3.previousScene.name)
             {
-                case "S_O":
+                case "S_O": // 1st Surrealism studio
                     setRedTotal = 33;
                     setYellowTotal = 1;
                     setGreenTotal = 33;
                     setBlueTotal = 33;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s0Back;
                     break;
-                case "S_1":
+                case "S_1": // 2nd Surrealism studio
                     setRedTotal = 1;
                     setYellowTotal = 100;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s1Back;
                     break;
-                case "S_2":
+                case "S_2": // 3rd Surrealism studio
                     setRedTotal = 50;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s2Back;
                     break;
-                case "S_3":
+                case "S_3": // 4th Surrealism studio
                     setRedTotal = 1;
                     setYellowTotal = 50;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s3Back;
                     break;
-                case "S_4":
+                case "S_4": // 5th Surrealism studio
                     setRedTotal = 20;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 80;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s4Back;
                     break;
-                case "S_5":
+                case "S_5": // 6th Surrealism studio
                     setRedTotal = 60;
                     setYellowTotal = 1;
                     setGreenTotal = 40;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s5Back;
                     break;
-                default:
+                default: // No valid Surrealism studio found
                     print("did not find a valid studio for match3 surrealism variables");
                     setRedTotal = 100;
                     setYellowTotal = 100;
@@ -290,7 +331,7 @@ public class BoardCreation : MonoBehaviour
                     break;
             }
         }
-
+        // Set score, text, background variables to Baroque
         if (match3.baroque)
         {
             setRed = "Blue: ";
@@ -301,49 +342,55 @@ public class BoardCreation : MonoBehaviour
 
             switch (match3.previousScene.name)
             {
-                case "B_O":
+                case "B_O": // 1st Baroque studio
                     setRedTotal = 33;
                     setYellowTotal = 1;
                     setGreenTotal = 33;
                     setBlueTotal = 33;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b0Back;
                     break;
-                case "B_1":
+                case "B_1": // 2nd Baroque studio
                     setRedTotal = 1;
                     setYellowTotal = 100;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b1Back;
                     break;
-                case "B_2":
+                case "B_2": // 3rd Baroque studio
                     setRedTotal = 50;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b2Back;
                     break;
-                case "B_3":
+                case "B_3": // 4th Baroque studio
                     setRedTotal = 1;
                     setYellowTotal = 50;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b3Back;
                     break;
-                case "B_4":
+                case "B_4": // 5th Baroque studio
                     setRedTotal = 20;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 80;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b4Back;
                     break;
-                case "B_5":
+                case "B_5": // 6th Baroque studio
                     setRedTotal = 60;
                     setYellowTotal = 1;
                     setGreenTotal = 40;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
+                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b5Back;
                     break;
-                default:
+                default: // No valid Baroque studio found
                     print("did not find a valid studio for match3 baroque variables");
                     setRedTotal = 100;
                     setYellowTotal = 100;
@@ -354,19 +401,23 @@ public class BoardCreation : MonoBehaviour
             }
         }
 
+        // Set our score total equal to those values of the correct variables found above
         redTotal.text = "/" + setRedTotal + " |";
         yellowTotal.text = "/" + setYellowTotal + " |";
         greenTotal.text = "/" + setGreenTotal + " |";
         blueTotal.text = "/" + setBlueTotal + " |";
         magentaTotal.text = "/" + setMagentaTotal;
-
+        // Set our correct tile text to those values of the correct variables found above
         redScore.text =  setRed + "0";
         yellowScore.text = setYellow + "0";
         greenScore.text = setGreen + "0";
         blueScore.text = setBlue + "0";
         magentaScore.text = setMagenta + "0";
 
+        // Find our "parent" puzzle tile
         puzzleObject = GameObject.Find("PuzzleObject");
+
+        // Instantiate the board at Start()
         for (int i = 0; i < 6; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -374,6 +425,7 @@ public class BoardCreation : MonoBehaviour
                 // Look into giving priority to other pieces
                 GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, -4.5f + j * 0.87f), Quaternion.identity) as GameObject;
                 newPiece.transform.SetParent(puzzleObject.transform);
+                // Set the tile sprites to Ukiyo-e sprites
                 if (match3.ukiyoe)
                 {
                     switch (Random.Range(0, 5))
@@ -400,6 +452,7 @@ public class BoardCreation : MonoBehaviour
                             break;
                     }
                 }
+                // Set the tile sprites to Surrealism sprites
                 if (match3.surrealism)
                 {
                     switch (Random.Range(0, 5))
@@ -426,6 +479,7 @@ public class BoardCreation : MonoBehaviour
                             break;
                     }
                 }
+                // Set the tile sprites to Baroque sprites
                 if (match3.baroque)
                 {
                     switch (Random.Range(0, 5))
@@ -456,6 +510,7 @@ public class BoardCreation : MonoBehaviour
         }
     }
 
+    // Create new pieces when others have been popped
     public void NewPieces()
     {
         for (int i = 5; i >= 0; i--)
@@ -469,6 +524,7 @@ public class BoardCreation : MonoBehaviour
                     newPiece.transform.SetParent(puzzleObject.transform);
                     newPiece.GetComponent<PuzzlePiece>().baseX = -2.2f + i * 0.87f;
                     newPiece.GetComponent<PuzzlePiece>().baseY = -4.5f + j * 0.87f;
+                    // Set the tile sprites to Ukiyo-e sprites
                     if (match3.ukiyoe)
                     {
                         switch (Random.Range(0, 5))
@@ -495,6 +551,7 @@ public class BoardCreation : MonoBehaviour
                                 break;
                         }
                     }
+                    // Set the tile sprites to Surrealism sprites
                     if (match3.surrealism)
                     {
                         switch (Random.Range(0, 5))
@@ -521,6 +578,7 @@ public class BoardCreation : MonoBehaviour
                                 break;
                         }
                     }
+                    // Set the tile sprites to Baroque sprites
                     if (match3.baroque)
                     {
                         switch (Random.Range(0, 5))
@@ -553,6 +611,7 @@ public class BoardCreation : MonoBehaviour
         timeSinceSpawned = 1.0f;
     }
 
+    // Add the current tile pieces (on the board) to our list
     public void UpdateAllPieces()
     {
         allPieces = GameObject.FindGameObjectsWithTag("PuzzlePiece").ToList();
@@ -667,6 +726,7 @@ public class BoardCreation : MonoBehaviour
         }
     }
 
+    // Determine and display score
     void TallyScore()
     {
         // Determine if the player reached the necessary score

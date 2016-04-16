@@ -42,5 +42,6 @@ public class HelpButton : MonoBehaviour {
     public void TextDisappear()
     {
         helpText.enabled = false;
+        clicked = false;
     }
 }
