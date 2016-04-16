@@ -19,8 +19,8 @@ public class PersistVars : MonoBehaviour {
 
     public int knowledgeCount = 0;
 
-    public Scene currentScene;
-    public Scene previousScene;
+    public static string currentScene;
+    public static string previousScene;
     public bool ukiyoe = false;
     public bool baroque = false;
     public bool surrealism = false;
@@ -82,12 +82,12 @@ public class PersistVars : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             FindClue();
-        }
+        }*/
 
-        // These cases are to be handled by OnLevelWasLoaded()
+        /*// These cases are to be handled by OnLevelWasLoaded()
         switch(SceneManager.GetActiveScene().name)
         {
             // Switch cases for Ukiyo-e zone
@@ -125,19 +125,19 @@ public class PersistVars : MonoBehaviour {
                 ukiyoe = true;
                 break;
             //ONLOADEDLEVEL
-        }
+        }*/
     }
 
-    void FindClue()
+    /*void FindClue()
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
 
         if (hit)
         {
-            /*if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
+            if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
                 || SceneManager.GetActiveScene().name == "U_0" || SceneManager.GetActiveScene().name == "U_1" || SceneManager.GetActiveScene().name == "U_2" || SceneManager.GetActiveScene().name == "U_3" || SceneManager.GetActiveScene().name == "U_4"
                 || SceneManager.GetActiveScene().name == "B_0" || SceneManager.GetActiveScene().name == "B_1" || SceneManager.GetActiveScene().name == "B_2" || SceneManager.GetActiveScene().name == "B_3" || SceneManager.GetActiveScene().name == "B_4")
-            {*/
+            {
                 if (hit.collider.gameObject.tag == "clue")
                 {
                     if (hit.collider.gameObject == clueOne)
@@ -173,7 +173,7 @@ public class PersistVars : MonoBehaviour {
                 //}
             }
         }
-    }
+    }*/
 
     // Use to clear variables once a painting has been sold
     void ClearVars()

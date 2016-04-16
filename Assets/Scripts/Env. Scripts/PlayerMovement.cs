@@ -205,16 +205,22 @@ public class PlayerMovement : MonoBehaviour {
                     moveElevator();
                     break;
                 case "portal_0_S":
-                    SceneManager.LoadScene("SurrealistZone");
+                    PersistVars.previousScene = "mansion";
+                    PersistVars.currentScene = "surrealism";
                     notMoving();
+                    SceneManager.LoadScene("SurrealistZone");
                     break;
                 case "portal_3_U":
-                    SceneManager.LoadScene("Ukiyo-eZone");
+                    PersistVars.previousScene = "mansion";
+                    PersistVars.currentScene = "ukiyo-e";
                     notMoving();
+                    SceneManager.LoadScene("Ukiyo-eZone");
                     break;
                 case "portal_4_B":
-                    SceneManager.LoadScene("BaroqueZone");
+                    PersistVars.previousScene = "mansion";
+                    PersistVars.currentScene = "baroque";
                     notMoving();
+                    SceneManager.LoadScene("BaroqueZone");
                     break;
                 //Surrealist options
                 case "rightEdge":
@@ -238,23 +244,39 @@ public class PlayerMovement : MonoBehaviour {
                     myAnimator.SetInteger("Move", 1);
                     break;
                 case "door_0S":
+                    PersistVars.previousScene = "surrealism";
+                    PersistVars.currentScene = "S_0";
                     SceneManager.LoadScene("S_0");
                     notMoving();
                     break;
                 case "door_1S":
+                    PersistVars.previousScene = "surrealism";
+                    PersistVars.currentScene = "S_1";
                     SceneManager.LoadScene("S_1");
                     notMoving();
                     break;
                 case "door_2S":
+                    PersistVars.previousScene = "surrealism";
+                    PersistVars.currentScene = "S_2";
                     SceneManager.LoadScene("S_2");
                     notMoving();
                     break;
                 case "door_3S":
+                    PersistVars.previousScene = "surrealism";
+                    PersistVars.currentScene = "S_3";
                     SceneManager.LoadScene("S_3");
                     notMoving();
                     break;
                 case "door_4S":
+                    PersistVars.previousScene = "surrealism";
+                    PersistVars.currentScene = "S_4";
                     SceneManager.LoadScene("S_4");
+                    notMoving();
+                    break;
+                case "door_5S":
+                    PersistVars.previousScene = "surrealism";
+                    PersistVars.currentScene = "S_5";
+                    SceneManager.LoadScene("S_5");
                     notMoving();
                     break;
                 //Baroque options
@@ -295,44 +317,76 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "door_0B":
+                    PersistVars.previousScene = "baroque";
+                    PersistVars.currentScene = "B_0";
                     SceneManager.LoadScene("B_0");
                     notMoving();
                     break;
                 case "door_1B":
+                    PersistVars.previousScene = "baroque";
+                    PersistVars.currentScene = "B_1";
                     SceneManager.LoadScene("B_1");
                     notMoving();
                     break;
                 case "door_2B":
+                    PersistVars.previousScene = "baroque";
+                    PersistVars.currentScene = "B_2";
                     SceneManager.LoadScene("B_2");
                     notMoving();
                     break;
                 case "door_3B":
+                    PersistVars.previousScene = "baroque";
+                    PersistVars.currentScene = "B_3";
                     SceneManager.LoadScene("B_3");
                     notMoving();
                     break;
                 case "door_4B":
+                    PersistVars.previousScene = "baroque";
+                    PersistVars.currentScene = "B_4";
                     SceneManager.LoadScene("B_4");
+                    notMoving();
+                    break;
+                case "door_5B":
+                    PersistVars.previousScene = "baroque";
+                    PersistVars.currentScene = "B_5";
+                    SceneManager.LoadScene("B_5");
                     notMoving();
                     break;
                 //Ukiyo-E options
                 case "door_0U":
+                    PersistVars.previousScene = "ukiyo-e";
+                    PersistVars.currentScene = "U_0";
                     SceneManager.LoadScene("U_0");
                     notMoving();
                     break;
                 case "door_1U":
+                    PersistVars.previousScene = "ukiyo-e";
+                    PersistVars.currentScene = "U_1";
                     SceneManager.LoadScene("U_1");
                     notMoving();
                     break;
                 case "door_2U":
+                    PersistVars.previousScene = "ukiyo-e";
+                    PersistVars.currentScene = "U_2";
                     SceneManager.LoadScene("U_2");
                     notMoving();
                     break;
                 case "door_3U":
+                    PersistVars.previousScene = "ukiyo-e";
+                    PersistVars.currentScene = "U_3";
                     SceneManager.LoadScene("U_3");
                     notMoving();
                     break;
                 case "door_4U":
+                    PersistVars.previousScene = "ukiyo-e";
+                    PersistVars.currentScene = "U_4";
                     SceneManager.LoadScene("U_4");
+                    notMoving();
+                    break;
+                case "door_5U":
+                    PersistVars.previousScene = "ukiyo-e";
+                    PersistVars.currentScene = "U_5";
+                    SceneManager.LoadScene("U_5");
                     notMoving();
                     break;
                 case "Ustairs1":

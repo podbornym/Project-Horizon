@@ -45,6 +45,8 @@ public class UIHandler : MonoBehaviour {
 
     public void goToHome()
     {
+        PersistVars.previousScene = SceneManager.GetCurrentScene().name;
+        PersistVars.currentScene = "mansion";
         PersistVars.returningToHome = true;
         SceneManager.LoadScene("mansion");
     }
