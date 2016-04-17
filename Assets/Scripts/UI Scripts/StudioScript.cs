@@ -50,6 +50,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                SceneManager.LoadScene("3Beauties");
                 break;
             case "clue2":
                 print("found 2");
@@ -88,6 +89,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                SceneManager.LoadScene("LobbyBrothel");
                 break;
             case "clue8":
                 print("found me");
@@ -126,6 +128,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UThree", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                SceneManager.LoadScene("TheBigWaves");
                 break;
             case "clue14":
                 print("found me");
@@ -164,6 +167,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UFour", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                SceneManager.LoadScene("ShokiStriding");
                 break;
             case "clue20":
                 print("found me");
@@ -202,6 +206,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UFive", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                SceneManager.LoadScene("SuddenShower");
                 break;
             case "clue26":
                 print("found me");
@@ -240,6 +245,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("USix", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                SceneManager.LoadScene("YakkoEdobei");
                 break;
             case "clue32":
                 print("found me");

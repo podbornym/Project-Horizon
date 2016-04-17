@@ -23,6 +23,11 @@ public class SpotTheDiffManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (GameObject.Find("GENERALUI"))
+        {
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        }
+
         seconds = 90;
         // Get the UI text components
         howManyFound = GameObject.Find("FoundDiffText").GetComponent<Text>();
