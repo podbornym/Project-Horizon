@@ -43,6 +43,12 @@ You currently have:
 #SetDialogue
 Please select another client.
 
+@blkClient
+The Black Market will buy your forgery for more if you
+can prove your knowledge of the piece you are selling.
+#option1 #goto:blkQuestion1
+#option1Text Continue
+
 @blkQuestion1
 #SetDialogue
 #quest1
