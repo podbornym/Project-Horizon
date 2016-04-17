@@ -202,7 +202,9 @@ public class BoardCreation : MonoBehaviour
             //match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
         }
 
-        PersistVars.Ukiyo = true; //make sure to remove once the game gets going
+        //PersistVars.Ukiyo = true; //make sure to remove once the game gets going
+        //print(PersistVars.currentScene);
+        //string scene = PersistVars.currentScene;
 
         // Set score, text, background variables to Ukiyo-e
         if(PersistVars.Ukiyo)
@@ -213,9 +215,9 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Fish: ";
             setMagenta = "Coin: ";
 
-            switch(PersistVars.previousScene)
+            switch(PersistVars.currentScene)
             {
-                case "U_O": // 1st Ukiyo-e studio
+                case "U_0": // 1st Ukiyo-e studio
                     setRedTotal = 25;
                     setYellowTotal = 25;
                     setGreenTotal = 50;
@@ -282,7 +284,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Hat: ";
             setMagenta = "Clock: ";
 
-            switch (PersistVars.previousScene)
+            switch (PersistVars.currentScene)
             {
                 case "S_O": // 1st Surrealism studio
                     setRedTotal = 33;
@@ -351,7 +353,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Blue: ";
             setMagenta = "Pearl: ";
 
-            switch (PersistVars.previousScene)
+            switch (PersistVars.currentScene)
             {
                 case "B_O": // 1st Baroque studio
                     setRedTotal = 33;
