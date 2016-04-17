@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
         //checks for the stairs on the left side of the ukiyo-e map
         //if not on the left side, then do stairs as normal
-        if (!ukiyo)
+        if (!ukiyo && (cam.transform.position.x !=11.59 && cam.transform.position.y != 2.7))
         {
             if (approachLeft)
             {
