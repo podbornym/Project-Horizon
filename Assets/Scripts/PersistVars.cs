@@ -227,6 +227,54 @@ public class PersistVars : MonoBehaviour {
                 UkiyoSix[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
+            case "SOne":
+                SurrealOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "STwo":
+                SurrealTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SThree":
+                Surrealhree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SFour":
+                SurrealFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SFive":
+                SurrealFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SSix":
+                SurrealSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BOne":
+                BaroqueOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BTwo":
+                BaroqueTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BThree":
+                BaroqueThree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BFour":
+                BaroqueFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BFive":
+                BaroqueFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BSix":
+                BaroqueSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
             default:
                 print("did not assign valid array");
                 break;
