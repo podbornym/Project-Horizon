@@ -64,7 +64,7 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueOne = { false, false, false, false, false, false };
     public static bool[] BaroqueTwo = { false, false, false, false, false, false };
     public static bool[] BaroqueThree = { false, false, false, false, false, false };
-    public static bool[] BaroqeuFour = { false, false, false, false, false, false };
+    public static bool[] BaroqueFour = { false, false, false, false, false, false };
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
@@ -236,7 +236,7 @@ public class PersistVars : MonoBehaviour {
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "SThree":
-                Surrealhree[index] = true;
+                SurrealThree[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "SFour":

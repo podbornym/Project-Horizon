@@ -265,13 +265,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("USix", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-            //
-                //
-                //
-                //
-                //
-                //
-                // Cases for the first Surrealism studio
+            // Cases for the first Surrealism studio
             case "clue37":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -308,7 +302,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("SOne", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the second Surrealism studio
+            // Cases for the second Surrealism studio
             case "clue43":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -345,7 +339,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("STwo", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the third Surrealism studio
+            // Cases for the third Surrealism studio
             case "clue49":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -382,7 +376,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("SThree", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the fourth Surrealism studio
+            // Cases for the fourth Surrealism studio
             case "clue55":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -419,7 +413,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("SFour", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the fifth Surrealism studio
+            // Cases for the fifth Surrealism studio
             case "clue61":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -456,7 +450,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("SFive", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the sixth Surrealism studio
+            // Cases for the sixth Surrealism studio
             case "clue67":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -494,7 +488,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
 
-                // Cases for the first Baroque studio
+            // Cases for the first Baroque studio
             case "clue73":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -531,7 +525,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("BOne", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the second Baroque studio
+            // Cases for the second Baroque studio
             case "clue79":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -568,7 +562,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the third Broque studio
+            // Cases for the third Broque studio
             case "clue85":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -605,7 +599,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("BThree", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the fourth Baroque studio
+            // Cases for the fourth Baroque studio
             case "clue91":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -642,7 +636,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("BFour", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the fifth Baroque studio
+            // Cases for the fifth Baroque studio
             case "clue97":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -679,7 +673,7 @@ public class StudioScript : MonoBehaviour {
                 UI.GetComponent<PersistVars>().ArrayAccess("BFive", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
-                // Cases for the sixth Baroque studio
+            // Cases for the sixth Baroque studio
             case "clue103":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
