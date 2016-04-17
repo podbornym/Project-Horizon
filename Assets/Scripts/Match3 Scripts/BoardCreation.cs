@@ -44,7 +44,7 @@ public class BoardCreation : MonoBehaviour
     private float seconds = 90;
     public Text timer;
 
-    private float warningSec = 5f;
+    private float warningSec = 7f;
     private float warningTimer = 0f;    
 
     // Variables for keeping track of score
@@ -123,6 +123,8 @@ public class BoardCreation : MonoBehaviour
     public Sprite C;
     public Sprite D;
 
+    public static float match3Return;
+
     void Update()
     {
         seconds -= Time.deltaTime;
@@ -179,10 +181,10 @@ public class BoardCreation : MonoBehaviour
         {
             if(warningTimer >= warningSec)
             {
+                warningTimer = 0f;
                 dragPenalty += .02f;
                 warningText.color = Color.red;
                 warningText.text = "Warning: Dragging for too long will incur a score penalty!";
-                warningTimer = 0f;
             }
         }
 
@@ -202,7 +204,9 @@ public class BoardCreation : MonoBehaviour
             //match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
         }
 
-        PersistVars.Ukiyo = true; //make sure to remove once the game gets going
+        //PersistVars.Ukiyo = true; //make sure to remove once the game gets going
+        //print(PersistVars.currentScene);
+        //string scene = PersistVars.currentScene;
 
         // Set score, text, background variables to Ukiyo-e
         if(PersistVars.Ukiyo)
@@ -213,9 +217,9 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Fish: ";
             setMagenta = "Coin: ";
 
-            switch(PersistVars.previousScene)
+            switch(PersistVars.currentScene)
             {
-                case "U_O": // 1st Ukiyo-e studio
+                case "U_0": // 1st Ukiyo-e studio
                     setRedTotal = 25;
                     setYellowTotal = 25;
                     setGreenTotal = 50;
@@ -282,7 +286,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Hat: ";
             setMagenta = "Clock: ";
 
-            switch (PersistVars.previousScene)
+            switch (PersistVars.currentScene)
             {
                 case "S_O": // 1st Surrealism studio
                     setRedTotal = 33;
@@ -351,7 +355,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Blue: ";
             setMagenta = "Pearl: ";
 
-            switch (PersistVars.previousScene)
+            switch (PersistVars.currentScene)
             {
                 case "B_O": // 1st Baroque studio
                     setRedTotal = 33;
@@ -438,6 +442,7 @@ public class BoardCreation : MonoBehaviour
             {
                 // Look into giving priority to other pieces
                 GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, -4.5f + j * 0.87f), Quaternion.identity) as GameObject;
+                //GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, j * 0.87f), Quaternion.identity) as GameObject;
                 newPiece.transform.SetParent(puzzleObject.transform);
                 // Set the tile sprites to Ukiyo-e sprites
                 if (PersistVars.Ukiyo)
@@ -747,7 +752,7 @@ public class BoardCreation : MonoBehaviour
         if (setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal)
         {
             int percentage = (setYellowValue % setYellowTotal + setBlueValue % setYellowTotal + setGreenValue % setGreenTotal + setRedValue % setRedTotal + setMagentaValue % setMagentaTotal) / 5;
-            float match3Return;
+            //float match3Return;
 
             if (percentage <= 1)
             {
