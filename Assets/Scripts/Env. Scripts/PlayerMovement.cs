@@ -207,20 +207,35 @@ public class PlayerMovement : MonoBehaviour {
                 case "portal_0_S":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "surrealism";
+                    PersistVars.Surreal = false;
                     notMoving();
                     SceneManager.LoadScene("SurrealistZone");
                     break;
                 case "portal_3_U":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "ukiyo-e";
+                    PersistVars.Ukiyo = true;
                     notMoving();
                     SceneManager.LoadScene("Ukiyo-eZone");
                     break;
                 case "portal_4_B":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "baroque";
+                    PersistVars.Baroque = true;
                     notMoving();
                     SceneManager.LoadScene("BaroqueZone");
+                    break;
+                case "portal_1":
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
+                    notMoving();
+                    break;
+                case "portal_2":
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
+                    notMoving();
+                    break;
+                case "portal_5":
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
+                    notMoving();
                     break;
                 //Surrealist options
                 case "rightEdge":
