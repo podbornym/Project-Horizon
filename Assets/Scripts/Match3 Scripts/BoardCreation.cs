@@ -442,6 +442,7 @@ public class BoardCreation : MonoBehaviour
             {
                 // Look into giving priority to other pieces
                 GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, -4.5f + j * 0.87f), Quaternion.identity) as GameObject;
+                //GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, j * 0.87f), Quaternion.identity) as GameObject;
                 newPiece.transform.SetParent(puzzleObject.transform);
                 // Set the tile sprites to Ukiyo-e sprites
                 if (PersistVars.Ukiyo)
