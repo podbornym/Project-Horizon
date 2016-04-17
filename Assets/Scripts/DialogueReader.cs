@@ -51,11 +51,6 @@ public class DialogueReader : MonoBehaviour
         option5.gameObject.SetActive(false);
         option6.gameObject.SetActive(false);
         quit.gameObject.SetActive(false);
-		/*if (SceneManager.GetActiveScene ().name == "SellingScene")	
-		{
-			dialogueContainer.SetActive(true);
-			NextLine();
-		}*/
     }
 
     void Update ()
@@ -348,6 +343,47 @@ public class DialogueReader : MonoBehaviour
                     case "#quit":
                         EndDialogue();
                         break;
+					case "#ysell":
+						if(SellCont.check==true)
+						{
+						if (SellCont.buyer=="blk")
+							{
+								GoTo ("blkClient");
+							}
+							else
+							{
+								GoTo ("pass1");
+							}
+							
+						}
+						else if(SellCont.check==false)
+						{
+							if (gameObject.GetComponent<PersistVars> ().strikes < 3 && gameObject.GetComponent<PersistVars> ().freePass == false) 
+							{
+								GoTo ("fail1");
+								gameObject.GetComponent<PersistVars> ().freePass = true;
+							} 
+							else if (gameObject.GetComponent<PersistVars> ().strikes < 3 && gameObject.GetComponent<PersistVars> ().freePass == true) 
+							{
+								GoTo ("fail2");
+							} 
+							else if (gameObject.GetComponent<PersistVars> ().strikes == 3) 
+							{
+								GoTo ("fail3");
+							}
+							
+						}
+						break;
+					case "passed1":
+						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
+						break;
+					case "failed2":
+						currentText.text = "You have been caught\n." +
+							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
+							"Three strikes and your forgery career is over.\n" +
+							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
+						gameObject.GetComponent<PersistVars> ().strikes += 1;
+						break;
                     default:
                         if (currentLine[i].Contains("#goto"))
                         {

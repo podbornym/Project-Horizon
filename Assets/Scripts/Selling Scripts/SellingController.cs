@@ -9,9 +9,9 @@ public class SellingController : MonoBehaviour {
 	public string buyer;
 	float avg;
 	public SellingLogic logic;
-	bool check;
-	int pay;
-	int bkPay;
+	public bool check;
+	public int pay;
+	public int bkPay;
 	public bool counter;
 	public int correct;
 	public PersistVars vars;
@@ -23,6 +23,7 @@ public class SellingController : MonoBehaviour {
 	public Button medButton;
 	public Button lowButton;
 	public Button blkButton;
+	public DialogueReader reader;
 	private KeyCode lastKey;//change
 
 	// Use this for initialization
@@ -56,8 +57,6 @@ public class SellingController : MonoBehaviour {
 
 		Color highlight = new Color ();
 		ColorUtility.TryParseHtmlString ("#69D63A54", out highlight);
-		Color clear = new Color ();
-		ColorUtility.TryParseHtmlString ("#FFFFFF00", out clear);
 
 		if (bName == "cButtonH") {
 			highButton.GetComponent<Image>().color = highlight;
@@ -75,42 +74,23 @@ public class SellingController : MonoBehaviour {
 			blkButton.GetComponent<Image>().color = highlight;
 			buyer = "blk";
 		}
+		check = logic.ErrorCheck (buyer, avg);
+		bkPay = logic.BkPay (counter, correct, maxValue);
+		pay = logic.Payout (buyer, avg, maxValue);
+		reader.NextLine ();
+	}
 
-		if (Input.anyKeyDown) {//change
-			lastKey = Event.current.keyCode;
-		}
+	public void bReset() {
+		Color clear = new Color ();
+		ColorUtility.TryParseHtmlString ("#FFFFFF00", out clear);
 
-		if (lastKey==(KeyCode.Return)) {//change
-			check = logic.ErrorCheck (buyer, avg);
-
-			if (check == false) {
-				Debug.Log ("failed check");
-			} 
-			else {
-				if (buyer == "blk") {
-					bkPay = logic.BkPay (counter, correct, maxValue);
-					vars.currentMoney += bkPay;
-					Debug.Log ("Payout: " + bkPay);
-					Debug.Log ("Money: " + vars.currentMoney);
-				} 
-				else {
-					pay = logic.Payout (buyer, avg, maxValue);
-					vars.currentMoney += pay;
-					Debug.Log ("Payout: " + pay);
-					Debug.Log ("Money: " + vars.currentMoney);
-				}
-			}
-		} 
-		else if (lastKey==(KeyCode.Space)) {//change
-			highButton.interactable = true;
-			medButton.interactable = true;
-			lowButton.interactable = true;
-			blkButton.interactable = true;
-			highButton.GetComponent<Image>().color = clear;
-			medButton.GetComponent<Image>().color = clear;
-			lowButton.GetComponent<Image>().color = clear;
-			blkButton.GetComponent<Image>().color = clear;
-		}
-		Debug.Log ("code end");
+		highButton.interactable = true;
+		medButton.interactable = true;
+		lowButton.interactable = true;
+		blkButton.interactable = true;
+		highButton.GetComponent<Image>().color = clear;
+		medButton.GetComponent<Image>().color = clear;
+		lowButton.GetComponent<Image>().color = clear;
+		blkButton.GetComponent<Image>().color = clear;
 	}
 }

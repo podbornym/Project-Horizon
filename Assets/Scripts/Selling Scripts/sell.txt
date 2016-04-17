@@ -11,8 +11,10 @@ Are you sure you want to sell to this client?
 #ysell
 
 @pass1
-Congratulations!
-You sold this piece for:
+#SetDialogue
+#passed1
+#option1 #goto:Continue
+#option1Text Continue
 
 @fail1
 You have been caught. The cops are willing to look the other way this time,
@@ -26,11 +28,13 @@ You have been caught. You recieve ONE STRIKE,
 and you you will not be able to sell to this client next time.
 Three strikes and your forgery career is over.
 You currently have:
+#SetDialogue
+#failed2
 #SetOptions
 #option1 #goto:Continue
 #option1Text Continue
 
-@fail2
+@fail3
 You have been caught. You recieve ONE STRIKE.
 You have THREE STRIKES in total.
 Your forgery career is over.
