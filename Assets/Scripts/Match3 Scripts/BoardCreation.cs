@@ -123,6 +123,8 @@ public class BoardCreation : MonoBehaviour
     public Sprite C;
     public Sprite D;
 
+    public static float match3Return;
+
     void Update()
     {
         seconds -= Time.deltaTime;
@@ -749,7 +751,7 @@ public class BoardCreation : MonoBehaviour
         if (setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal)
         {
             int percentage = (setYellowValue % setYellowTotal + setBlueValue % setYellowTotal + setGreenValue % setGreenTotal + setRedValue % setRedTotal + setMagentaValue % setMagentaTotal) / 5;
-            float match3Return;
+            //float match3Return;
 
             if (percentage <= 1)
             {
