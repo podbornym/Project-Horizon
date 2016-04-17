@@ -264,7 +264,7 @@ public class PersistVars : MonoBehaviour {
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "BFour":
-                BaroqeuFour[index] = true;
+                BaroqueFour[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             case "BFive":
