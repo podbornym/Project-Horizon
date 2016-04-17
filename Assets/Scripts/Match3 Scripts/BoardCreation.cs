@@ -32,7 +32,7 @@ public class BoardCreation : MonoBehaviour
     public Sprite baroqueFour;
     public Sprite baroqueFive;
 
-    public Scene currentScene;
+    //public Scene currentScene;
 
     private float deltaTime = 0.0f;
     private float timeSinceSpawned = 0.0f;
@@ -188,7 +188,7 @@ public class BoardCreation : MonoBehaviour
         if(GameObject.Find("GENERALUI"))
         {
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
-            match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
+            //match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
         }
 
         match3.ukiyoe = true; //make sure to remove once the game gets going
@@ -202,7 +202,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Fish: ";
             setMagenta = "Coin: ";
 
-            switch(match3.previousScene.name)
+            switch(PersistVars.previousScene)
             {
                 case "U_O": // 1st Ukiyo-e studio
                     setRedTotal = 25;
@@ -271,7 +271,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Hat: ";
             setMagenta = "Clock: ";
 
-            switch (match3.previousScene.name)
+            switch (PersistVars.previousScene)
             {
                 case "S_O": // 1st Surrealism studio
                     setRedTotal = 33;
@@ -340,7 +340,7 @@ public class BoardCreation : MonoBehaviour
             setBlue = "Blue: ";
             setMagenta = "Pearl: ";
 
-            switch (match3.previousScene.name)
+            switch (PersistVars.previousScene)
             {
                 case "B_O": // 1st Baroque studio
                     setRedTotal = 33;
@@ -401,6 +401,9 @@ public class BoardCreation : MonoBehaviour
             }
         }
 
+        // Set the color of the backgrund sprite, to make it appear further in the background
+        GameObject.Find("Background").GetComponent<SpriteRenderer>().color = new Color(36, 36, 36);//232323FF;
+
         // Set our score total equal to those values of the correct variables found above
         redTotal.text = "/" + setRedTotal + " |";
         yellowTotal.text = "/" + setYellowTotal + " |";
@@ -426,7 +429,7 @@ public class BoardCreation : MonoBehaviour
                 GameObject newPiece = Instantiate(puzzlePiecePrefab, new Vector2(-2.2f + i * 0.87f, -4.5f + j * 0.87f), Quaternion.identity) as GameObject;
                 newPiece.transform.SetParent(puzzleObject.transform);
                 // Set the tile sprites to Ukiyo-e sprites
-                if (match3.ukiyoe)
+                if (PersistVars.Ukiyo)
                 {
                     switch (Random.Range(0, 5))
                     {
@@ -453,7 +456,7 @@ public class BoardCreation : MonoBehaviour
                     }
                 }
                 // Set the tile sprites to Surrealism sprites
-                if (match3.surrealism)
+                if (PersistVars.Surreal)
                 {
                     switch (Random.Range(0, 5))
                     {
@@ -480,7 +483,7 @@ public class BoardCreation : MonoBehaviour
                     }
                 }
                 // Set the tile sprites to Baroque sprites
-                if (match3.baroque)
+                if (PersistVars.Baroque)
                 {
                     switch (Random.Range(0, 5))
                     {
@@ -525,7 +528,7 @@ public class BoardCreation : MonoBehaviour
                     newPiece.GetComponent<PuzzlePiece>().baseX = -2.2f + i * 0.87f;
                     newPiece.GetComponent<PuzzlePiece>().baseY = -4.5f + j * 0.87f;
                     // Set the tile sprites to Ukiyo-e sprites
-                    if (match3.ukiyoe)
+                    if (PersistVars.Ukiyo)
                     {
                         switch (Random.Range(0, 5))
                         {
@@ -552,7 +555,7 @@ public class BoardCreation : MonoBehaviour
                         }
                     }
                     // Set the tile sprites to Surrealism sprites
-                    if (match3.surrealism)
+                    if (PersistVars.Surreal)
                     {
                         switch (Random.Range(0, 5))
                         {
@@ -579,7 +582,7 @@ public class BoardCreation : MonoBehaviour
                         }
                     }
                     // Set the tile sprites to Baroque sprites
-                    if (match3.baroque)
+                    if (PersistVars.Baroque)
                     {
                         switch (Random.Range(0, 5))
                         {
