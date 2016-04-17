@@ -401,6 +401,9 @@ public class BoardCreation : MonoBehaviour
             }
         }
 
+        // Set the color of the backgrund sprite, to make it appear further in the background
+        GameObject.Find("Background").GetComponent<SpriteRenderer>().color = new Color(36, 36, 36);//232323FF;
+
         // Set our score total equal to those values of the correct variables found above
         redTotal.text = "/" + setRedTotal + " |";
         yellowTotal.text = "/" + setYellowTotal + " |";
