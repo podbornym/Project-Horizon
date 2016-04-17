@@ -100,11 +100,11 @@ public class Mastermind : MonoBehaviour {
                     {
                         question.text = "What is the name of this piece?";
                         answer1.text = "Actor as Wakanoura Osana Komachi";
-                        answer2.text = "Morita-za";
-                        answer3.text = "Shibai Uki-e";
+                        answer2.text = "Shöki The Devil Queller";
+                        answer3.text = "Actor Hayakawa Hatsuse";
                         answer4.text = "Shoki Striding";
-                        answer5.text = "Taking the Evening Cool by Ryōgoku Bridge";
-                        answer6.text = "A Roofer's Precariousness";
+                        answer5.text = "The Spring Pony Dance";
+                        answer6.text = "Yaoya Oshichi";
                         SetCorrectAnswer(4); // Answer: Shoki Striding
                     }
                     if (questionNo == 2)
@@ -226,16 +226,16 @@ public class Mastermind : MonoBehaviour {
                         answer3.text = "One Hundred Views of Mount Fuji";
                         answer4.text = "Thirty-six Views of Mount Fuji";
                         GameObject.Destroy(GameObject.Find("Answer5"));
-                        SetCorrectAnswer(4); // Answer: 
+                        SetCorrectAnswer(4); // Answer: Thirty-six Views of Mount Fuji
                     }
                     if (questionNo == 4)
                     {
                         question.text = "Why were several woodblocks needed to print this piece?";
-                        answer1.text = "Hokusair spent years on it before settling on the final design";
+                        answer1.text = "Hokusai spent years on it before settling on the final design";
                         answer2.text = "The blocks wore down over time";
                         answer3.text = "Different blocks provided different colors";
                         GameObject.Destroy(GameObject.Find("Answer4"));
-                        SetCorrectAnswer(3); // Answer: Thirty-six Views of Mount Fuji
+                        SetCorrectAnswer(3); // Answer: Different blocks provided different colors
                     }
                     if (questionNo >= 5)
                     {
@@ -294,18 +294,18 @@ public class Mastermind : MonoBehaviour {
                     }
                 }
 
-                if (paintingNo == 5) // Lobby of a Brothel
+                if (paintingNo == 5) // Waitress at an Inn at Akasaka
                 {
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
                         answer1.text = "Street Scene in Yoshiwara";
-                        answer2.text = "Viewing Cherry Blossoms in Ueno";
+                        answer2.text = "Lobby of a Brothel";
                         answer3.text = "Women Dressmaking and Artesans at Work";
                         answer4.text = "A Banquet in a Joroya";
                         answer5.text = "Gardens and Pavilions of Pleasure";
-                        answer6.text = "Lobby of a Brothel";
-                        SetCorrectAnswer(6); // Answer: Lobby of a Brothel
+                        answer6.text = "Waitress at an Inn at Akasaka";
+                        SetCorrectAnswer(6); // Answer: Waitress at an Inn at Akasaka
                     }
                     if (questionNo == 2)
                     {
@@ -344,7 +344,7 @@ public class Mastermind : MonoBehaviour {
                     }
                 }
 
-                if (paintingNo == 6) // Sudden Shower
+                if (paintingNo == 6) // Sudden Shower over Shin-Ōhashi Bridge and Atake
                 {
                     if (questionNo == 1)
                     {
@@ -385,7 +385,7 @@ public class Mastermind : MonoBehaviour {
                         answer2.text = "The gradual darkening of the sky and water";
                         answer3.text = "The diagonal positioning of elements";
                         GameObject.Destroy(GameObject.Find("Answer4"));
-                        SetCorrectAnswer(2); // Answer: Bokashi
+                        SetCorrectAnswer(2); // Answer: The gradual darkening of the sky and water
                     }
                     if (questionNo >= 5)
                     {

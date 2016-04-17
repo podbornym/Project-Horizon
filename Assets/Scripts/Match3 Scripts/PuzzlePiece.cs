@@ -73,14 +73,14 @@ public class PuzzlePiece : MonoBehaviour
 
                     timeDragging += Time.deltaTime * 1000;
 
-                    if(timeDragging > 200f)
+                    /*if(timeDragging > 200f)
                     {
                         //print("dragging: " + timeDragging);
-                        boardScript.dragPenalty = .1f;
+                        boardScript.dragPenalty += .02f;
 
                         boardScript.warningText.color = Color.red;
                         boardScript.warningText.text = "Warning: dragging for too long will incur a score penalty!";
-                    }
+                    }*/
                 }
             }
         }
