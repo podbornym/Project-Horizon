@@ -117,6 +117,12 @@ public class BoardCreation : MonoBehaviour
     public Sprite b4Back;
     public Sprite b5Back;
 
+    // Sprites for use in grading
+    public Sprite A;
+    public Sprite B;
+    public Sprite C;
+    public Sprite D;
+
     void Update()
     {
         seconds -= Time.deltaTime;
@@ -179,6 +185,11 @@ public class BoardCreation : MonoBehaviour
                 warningTimer = 0f;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            seconds -= 10;
+        }
     }
 
     // Use this for initialization
@@ -191,10 +202,10 @@ public class BoardCreation : MonoBehaviour
             //match3 = GameObject.Find("GENERALUI").GetComponent<PersistVars>();
         }
 
-        match3.ukiyoe = true; //make sure to remove once the game gets going
+        PersistVars.Ukiyo = true; //make sure to remove once the game gets going
 
         // Set score, text, background variables to Ukiyo-e
-        if(match3.ukiyoe)
+        if(PersistVars.Ukiyo)
         {
             setRed = "Flower: ";
             setYellow = "Octopus: ";
@@ -254,16 +265,16 @@ public class BoardCreation : MonoBehaviour
                     break;
                 default: // No valid Ukiyo-e studio
                     print("did not find a valid studio for match3 ukiyo-e variables");
-                    setRedTotal = 1;
-                    setYellowTotal = 1;
-                    setGreenTotal = 1;
-                    setBlueTotal = 1;
-                    setMagentaTotal = 1;
+                    setRedTotal = 10;
+                    setYellowTotal = 10;
+                    setGreenTotal = 10;
+                    setBlueTotal = 10;
+                    setMagentaTotal = 10;
                     break;
             }
         }
         // Set score, text, background variables to Surrealism
-        if (match3.surrealism)
+        if (PersistVars.Surreal)
         {
             setRed = "Apple: ";
             setYellow = "Skull: ";
@@ -323,16 +334,16 @@ public class BoardCreation : MonoBehaviour
                     break;
                 default: // No valid Surrealism studio found
                     print("did not find a valid studio for match3 surrealism variables");
-                    setRedTotal = 100;
-                    setYellowTotal = 100;
-                    setGreenTotal = 100;
-                    setBlueTotal = 100;
-                    setMagentaTotal = 100;
+                    setRedTotal = 10;
+                    setYellowTotal = 10;
+                    setGreenTotal = 10;
+                    setBlueTotal = 10;
+                    setMagentaTotal = 10;
                     break;
             }
         }
         // Set score, text, background variables to Baroque
-        if (match3.baroque)
+        if (PersistVars.Baroque)
         {
             setRed = "Blue: ";
             setYellow = "Orangel: ";
@@ -392,14 +403,17 @@ public class BoardCreation : MonoBehaviour
                     break;
                 default: // No valid Baroque studio found
                     print("did not find a valid studio for match3 baroque variables");
-                    setRedTotal = 100;
-                    setYellowTotal = 100;
-                    setGreenTotal = 100;
-                    setBlueTotal = 100;
-                    setMagentaTotal = 100;
+                    setRedTotal = 10;
+                    setYellowTotal = 10;
+                    setGreenTotal = 10;
+                    setBlueTotal = 10;
+                    setMagentaTotal = 10;
                     break;
             }
         }
+
+        // Set the color of the backgrund sprite, to make it appear further in the background
+        GameObject.Find("Background").GetComponent<SpriteRenderer>().color = Color.grey;// new Color(36, 36, 36, 255);//232323FF;
 
         // Set our score total equal to those values of the correct variables found above
         redTotal.text = "/" + setRedTotal + " |";
@@ -737,48 +751,54 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 1)
             {
-                print("winnning: " + percentage);
                 match3Return = (1 - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
             }
 
             if (percentage <= 2 && percentage > 1)
             {
-                print("winnning: " + percentage);
                 match3Return = (.9f - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
             }
 
             if (percentage <= 3 && percentage > 2)
             {
-                print("winnning: " + percentage);
                 match3Return = (.8f - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
             }
 
             if (percentage >= 4 && percentage > 3)
             {
-                print("winnning: " + percentage);
                 match3Return = (.7f - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
             }
 
             if (percentage > 4)
             {
-                print("winnning: " + percentage);
                 match3Return = (.6f - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
             }
         }
 
         else
         {
-            print("losing");
+            GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+            GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
         }
     }
 }

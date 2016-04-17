@@ -64,7 +64,7 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueOne = { false, false, false, false, false, false };
     public static bool[] BaroqueTwo = { false, false, false, false, false, false };
     public static bool[] BaroqueThree = { false, false, false, false, false, false };
-    public static bool[] BaroqeuFour = { false, false, false, false, false, false };
+    public static bool[] BaroqueFour = { false, false, false, false, false, false };
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
@@ -225,6 +225,54 @@ public class PersistVars : MonoBehaviour {
                 break;
             case "USix":
                 UkiyoSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SOne":
+                SurrealOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "STwo":
+                SurrealTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SThree":
+                SurrealThree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SFour":
+                SurrealFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SFive":
+                SurrealFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SSix":
+                SurrealSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BOne":
+                BaroqueOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BTwo":
+                BaroqueTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BThree":
+                BaroqueThree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BFour":
+                BaroqueFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BFive":
+                BaroqueFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BSix":
+                BaroqueSix[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             default:

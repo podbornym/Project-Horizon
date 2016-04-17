@@ -13,7 +13,7 @@ public class PuzzlePiece : MonoBehaviour
     public bool popped = false;
     public bool falling = false;
 
-    public Animation animation;
+    //public Animation animation;
 
     private List<GameObject> allPieces = new List<GameObject>();
     private BoardCreation boardScript;
