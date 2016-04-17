@@ -1,4 +1,44 @@
 @Start
 #SetDialogue
-Please select a buyer you want to sell to.
+Are you sure you want to sell to this client?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option1Text Yes. #option2Text No.
 
+@ClueOne
+#SetDialogue
+#ysell
+
+@pass1
+Congratulations!
+You sold this piece for:
+
+@fail1
+You have been caught. The cops are willing to look the other way this time,
+but you you will not be able to sell to this client next time.
+#SetOptions
+#option1 #goto:Continue
+#option1Text Continue
+
+@fail2
+You have been caught. You recieve ONE STRIKE,
+and you you will not be able to sell to this client next time.
+Three strikes and your forgery career is over.
+You currently have:
+#SetOptions
+#option1 #goto:Continue
+#option1Text Continue
+
+@fail2
+You have been caught. You recieve ONE STRIKE.
+You have THREE STRIKES in total.
+Your forgery career is over.
+You currently have:
+#SetOptions
+#option1 #goto:Continue
+#option1Text Continue
+
+@ClueTwo
+#SetDialogue
+Please select another client.
