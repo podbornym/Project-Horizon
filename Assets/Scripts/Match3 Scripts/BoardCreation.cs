@@ -44,7 +44,7 @@ public class BoardCreation : MonoBehaviour
     private float seconds = 90;
     public Text timer;
 
-    private float warningSec = 5f;
+    private float warningSec = 7f;
     private float warningTimer = 0f;    
 
     // Variables for keeping track of score
@@ -179,10 +179,10 @@ public class BoardCreation : MonoBehaviour
         {
             if(warningTimer >= warningSec)
             {
+                warningTimer = 0f;
                 dragPenalty += .02f;
                 warningText.color = Color.red;
                 warningText.text = "Warning: Dragging for too long will incur a score penalty!";
-                warningTimer = 0f;
             }
         }
 

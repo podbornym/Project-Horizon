@@ -16,7 +16,7 @@ public class RestartScene : MonoBehaviour {
     // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
     public void NextLevel()
     {
-        if(PersistVars.previousScene != " ")
+        if(PersistVars.previousScene != "null")
             SceneManager.LoadScene(PersistVars.previousScene);
     }
 }
