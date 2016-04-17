@@ -42,3 +42,19 @@ You currently have:
 @ClueTwo
 #SetDialogue
 Please select another client.
+
+@blkQuestion1
+#SetDialogue
+#quest1
+
+@blkQuestion2
+#SetDialogue
+#quest2
+
+@blkQuestion3
+#SetDialogue
+#quest3
+
+@blkSell
+#SetDialogue
+#blkresult

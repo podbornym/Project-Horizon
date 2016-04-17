@@ -20,6 +20,7 @@ public class DialogueReader : MonoBehaviour
     public GameObject clueSix;
     public GameObject quit;
     public GameObject muse;
+	public SellingController SellCont;
     public bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
     public Text textbox;
