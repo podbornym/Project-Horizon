@@ -29,6 +29,17 @@ public class UIHandler : MonoBehaviour {
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(PersistVars.previousScene != null)
+            {
+                SceneManager.LoadScene(PersistVars.previousScene);
+            }
+        }
+    }
+
     public void ExpandMenu()
     {
         if (!expanded)
@@ -64,7 +75,7 @@ public class UIHandler : MonoBehaviour {
 
     IEnumerator PortalTextWait()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         GameObject.Find("PortalComingSoon").GetComponent<Image>().enabled = false;
         GameObject.Find("PortalText").GetComponent<Text>().enabled = false;
     }

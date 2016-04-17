@@ -19,8 +19,8 @@ public class PersistVars : MonoBehaviour {
 
     public int knowledgeCount = 0;
 
-    public static string currentScene;
-    public static string previousScene;
+    public static string currentScene = null;
+    public static string previousScene = null;
     public bool ukiyoe = false;
     public bool baroque = false;
     public bool surrealism = false;
