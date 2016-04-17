@@ -20,7 +20,7 @@ public class PipeRotator : MonoBehaviour {
     void Awake()
     {
         ObjectManager = GameObject.Find("Pipe Dream Manager");
-        ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Add(gameObject);
+        //ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Add(gameObject);
     }
 
     // Use this for initialization

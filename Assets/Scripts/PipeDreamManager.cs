@@ -21,11 +21,10 @@ public class PipeDreamManager : MonoBehaviour {
 
     void Awake()
     {
-        CreateGrid();
+        //CreateGrid();
     }
 	// Use this for initialization
 	void Start () {
-        print((int)Time.time);
 
         StartCoroutine(Flow());
         if (end == null)
@@ -84,7 +83,6 @@ public class PipeDreamManager : MonoBehaviour {
         while (gameRunning)
         {
             yield return new WaitForSeconds(4);
-            print((int)Time.time);
             for (int i = 2; i < objectGrid.Count; i++)
             {
                 //Checks tag of tile
