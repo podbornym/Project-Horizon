@@ -78,6 +78,15 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
+	// DEBUG
+	void Awake()
+	{
+		for (int i=0; i<18; i++)
+		{
+			maxValue [i] = 1000000 * (i + 1);
+		}
+	}
+
     void Start()
     {
         DialogueReader.paintNum = paintingNum;
@@ -89,11 +98,6 @@ public class PersistVars : MonoBehaviour {
         UI.GetComponent<DialogueReader>().option5.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
-
-		for (int i=0; i<18; i++)
-		{
-			maxValue [i] = 1000000 * (i + 1);
-		}
     }
 
     void Update()
