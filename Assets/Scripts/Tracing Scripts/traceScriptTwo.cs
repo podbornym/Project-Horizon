@@ -45,10 +45,12 @@ public class traceScriptTwo : MonoBehaviour {
     public Sprite C;
     public Sprite D;
 
+    public Text directions;
 
     void Start()
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        directions.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -59,7 +61,7 @@ public class traceScriptTwo : MonoBehaviour {
         if(timeRemaining >= 0)
         {
             timeRemaining -= Time.deltaTime;
-            time.text = "Inspection Time Remaining: " + (timeRemaining).ToString("n1");
+            time.text = (timeRemaining).ToString("n1");
             if (Input.GetMouseButton(0) && GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition))
             {
                 warning.text = "Don't start early!";
@@ -148,15 +150,15 @@ public class traceScriptTwo : MonoBehaviour {
     public void DisplayScore()
     {
         if (successRatio>=.90)
-            scoreCircle.GetComponent<Image>().sprite = A;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = A;
         if (successRatio >= .80 && successRatio < .90)
-            scoreCircle.GetComponent<Image>().sprite = B;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = B;
         if (successRatio >= .70 && successRatio < .80)
-            scoreCircle.GetComponent<Image>().sprite = C;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = C;
         if (successRatio >= .60 && successRatio < .70)
-            scoreCircle.GetComponent<Image>().sprite = D;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
         if (successRatio < .60)
-            scoreCircle.GetComponent<Image>().sprite = D;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
     }
 
     public void CalculateScore()
@@ -185,5 +187,13 @@ public class traceScriptTwo : MonoBehaviour {
             SceneManager.LoadScene(PersistVars.previousScene);
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
+    }
+
+    public void showDirections()
+    {
+        if (directions.enabled == false)
+            directions.enabled = true;
+        if (directions.enabled == true)
+            directions.enabled = false;
     }
 }
