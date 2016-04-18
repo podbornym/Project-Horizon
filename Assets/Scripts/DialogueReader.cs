@@ -387,7 +387,7 @@ public class DialogueReader : MonoBehaviour
 						currentText.text = "You have been caught\n." +
 							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
 							"Three strikes and your forgery career is over.\n" +
-							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
+							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
 						GoTo ("Quit");
 						break;

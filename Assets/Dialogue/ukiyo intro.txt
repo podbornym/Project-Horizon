@@ -1,17 +1,19 @@
 #SetDialogue
-???: Greetings, traveler. I am Nasu.
-Ren: What is this place?
-Nasu: You are in Edo, otherwise known as Tokyo in your time.
+<b>???:</b> Greetings, traveler. I am Nasu.
+<b>Ren:</b> What is this place?
+<b>Nasu:</b> You are in Edo, otherwise known as Tokyo in your time.
 This is the peak of the artistic cultural period known as Ukiyo-e.
-Ren: Japan, huh? I should get some sushi while I'm here.
-Nasu: FOCUS ON YOUR ART, NOT YOUR STOMACH!
-Ren: Sorry, haha!
+<b>Ren:</b> Japan, huh? I should get some sushi while I'm here.
+<b>Nasu:</b> FOCUS ON YOUR ART, NOT YOUR STOMACH!
+<b>Ren:</b> Sorry, haha!
 What exactly is Ukiyo-e?
-Nasu: Well, Ukiyo-e is made using wood carvings of paintings.
-After making the carving, ink is brushed across the wood and the wood is pressed onto paper.
-It's essentially a wooden stamp, but put to much more detail.
-Ren: That sounds like it'd be fun to make.
-Nasu: Well, you'll have plenty of time to try yourself.
+<b>Nasu:</b> Well, Ukiyo-e is made using wood carvings of prints.
+After making the carving, ink is brushed across multiple wood blocks with various carvings.
+The carvings form the different layers of the print, with different colored inks as well.
+It's essentially multiple wooden stamps, but put to much more detail.
+<b>Ren:</b> That sounds like it'd be fun to make.
+<b>Nasu:</b> Well, you'll have plenty of time to try yourself.
 Why don't you go have a look around and see what you can learn?
-When you're finished, come back and talk to me. I have plenty to teach you.
-#quit #end
+When you're finished, you can find me in any of the nearby studios.
+Just click on me to ask me any questions you have. Have fun!
+#quit
