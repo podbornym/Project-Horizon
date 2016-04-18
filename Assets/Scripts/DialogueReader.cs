@@ -733,6 +733,10 @@ public class DialogueReader : MonoBehaviour
                 PersistVars.paintingNum = 6;
                 paintNum = 6;
             }
+			else if (PersistVars.currentScene == "SellingScene")
+			{
+				ReadFile("./Assets/Scripts/sell.txt");
+			}
             print(PersistVars.currentScene);
             print(PersistVars.currentScene == "U_2");
             print(paintNum);
