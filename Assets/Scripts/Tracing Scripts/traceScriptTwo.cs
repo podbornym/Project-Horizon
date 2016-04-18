@@ -38,6 +38,14 @@ public class traceScriptTwo : MonoBehaviour {
     // Start button renderer
     public Renderer rend;
 
+    public GameObject scoreCircle;
+
+    public Sprite A;
+    public Sprite B;
+    public Sprite C;
+    public Sprite D;
+
+
     void Start()
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
@@ -140,15 +148,15 @@ public class traceScriptTwo : MonoBehaviour {
     public void DisplayScore()
     {
         if (successRatio>=.90)
-            score.text = "Grade: A.";
+            scoreCircle.GetComponent<Image>().sprite = A;
         if (successRatio >= .80 && successRatio < .90)
-            score.text = "Grade: B.";
+            scoreCircle.GetComponent<Image>().sprite = B;
         if (successRatio >= .70 && successRatio < .80)
-            score.text = "Grade: C.";
+            scoreCircle.GetComponent<Image>().sprite = C;
         if (successRatio >= .60 && successRatio < .70)
-            score.text = "Grade: D.";
+            scoreCircle.GetComponent<Image>().sprite = D;
         if (successRatio < .60)
-            score.text = "Grade: F.";
+            scoreCircle.GetComponent<Image>().sprite = D;
     }
 
     public void CalculateScore()
