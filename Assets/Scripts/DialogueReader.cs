@@ -34,6 +34,9 @@ public class DialogueReader : MonoBehaviour
     public Text option6;
     private Text currentText;
     public bool isTalking = false;
+	public string curPiece;
+	public int questCount = 1;
+	public bool cAnswer;
 
     // Use this for initialization
     void Start ()
@@ -439,16 +442,177 @@ public class DialogueReader : MonoBehaviour
 							
 						}
 						break;
-					case "passed1":
+					case "#passed1":
 						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
 						break;
-					case "failed2":
+					case "#failed2":
 						currentText.text = "You have been caught\n." +
 							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
 							"Three strikes and your forgery career is over.\n" +
 							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
 						break;
+					case "#Continue":
+						SceneManager.LoadScene ("mansion");
+						break;
+					case "#quest1":
+						if (curPiece == "piece1") // Shoki Striding
+						{
+							cAnswer = false;
+							GoTo ("ukiyo1_1");
+						}
+						else if (curPiece == "piece2") // Otani Oniji III as Yakko Edobei
+						{
+							cAnswer = true;
+							GoTo ("ukiyo2_1");
+						}
+						else if (curPiece == "piece3") // The Great Wave off Kanagawa
+						{
+							cAnswer = false;
+							GoTo ("ukiyo3_1");
+						}
+						else if (curPiece == "piece4") // Three Beauties of the Present Day
+						{
+							cAnswer = false;
+							GoTo ("ukiyo4_1");
+						}
+						else if (curPiece == "piece5") // Waitress at an Inn at Akasaka
+						{
+							cAnswer = false;
+							GoTo ("ukiyo5_1");
+						}
+						else if (curPiece == "piece6") // Sudden Shower over Shin-Ōhashi Bridge and Atake
+						{
+							cAnswer = false;
+							GoTo ("ukiyo6_1");
+						}
+						break;
+					case "#quest2":
+						if (curPiece == "piece1") // Shoki Striding
+						{
+							cAnswer = false;
+							GoTo ("ukiyo1_2");
+						}
+						else if (curPiece == "piece2") // Otani Oniji III as Yakko Edobei
+						{
+							cAnswer = true;
+							GoTo ("ukiyo2_2");
+						}
+						else if (curPiece == "piece3") // The Great Wave off Kanagawa
+						{
+							cAnswer = false;
+							GoTo ("ukiyo3_2");
+						}
+						else if (curPiece == "piece4") // Three Beauties of the Present Day
+						{
+							cAnswer = true;
+							GoTo ("ukiyo4_2");
+						}
+						else if (curPiece == "piece5") // Waitress at an Inn at Akasaka
+						{
+							cAnswer = true;
+							GoTo ("ukiyo5_2");
+						}
+						else if (curPiece == "piece6") // Sudden Shower over Shin-Ōhashi Bridge and Atake
+						{
+							cAnswer = false;
+							GoTo ("ukiyo6_2");
+						}
+						break;
+					case "#quest3":
+						if (curPiece == "piece1") // Shoki Striding
+						{
+							cAnswer = true;
+							GoTo ("ukiyo1_3");
+						}
+						else if (curPiece == "piece2") // Otani Oniji III as Yakko Edobei
+						{
+							cAnswer = true;
+							GoTo ("ukiyo2_3");
+						}
+						else if (curPiece == "piece3") // The Great Wave off Kanagawa
+						{
+							cAnswer = false;
+							GoTo ("ukiyo3_3");
+						}
+						else if (curPiece == "piece4") // Three Beauties of the Present Day
+						{
+							cAnswer = false;
+							GoTo ("ukiyo4_3");
+						}
+						else if (curPiece == "piece5") // Waitress at an Inn at Akasaka
+						{
+							cAnswer = true;
+							GoTo ("ukiyo5_3");
+						}
+						else if (curPiece == "piece6") // Sudden Shower over Shin-Ōhashi Bridge and Atake
+						{
+							cAnswer = false;
+							GoTo ("ukiyo6_3");
+						}
+						break;
+					case "blkTrue":
+						if (cAnswer == true) 
+						{
+							SellCont.correct += 1;
+						}
+						if (questCount==1)
+						{
+							GoTo ("blkQuestion2");
+						}
+						else if (questCount==2)
+						{
+							GoTo ("blkQuestion3");
+						}
+						if (questCount==3)
+						{
+							GoTo ("blkSell");
+						}
+						break;
+					case "blkFalse":
+						if (cAnswer == false)
+						{
+							SellCont.correct += 1;
+						}
+						if (questCount==1)
+						{
+							GoTo ("blkQuestion2");
+						}
+						else if (questCount==2)
+						{
+							GoTo ("blkQuestion3");
+						}
+						if (questCount==3)
+						{
+							GoTo ("blkSell");
+						}
+						break;
+                    case "#change":
+                        if(PersistVars.currentScene.Contains("0"))
+                        {
+                            PersistVars.paintingNum = 1;
+                        }
+                        else if (PersistVars.currentScene.Contains("1"))
+                        {
+                            PersistVars.paintingNum = 2;
+                        }
+                        else if (PersistVars.currentScene.Contains("2"))
+                        {
+                            PersistVars.paintingNum = 3;
+                        }
+                        else if (PersistVars.currentScene.Contains("3"))
+                        {
+                            PersistVars.paintingNum = 4;
+                        }
+                        else if (PersistVars.currentScene.Contains("4"))
+                        {
+                            PersistVars.paintingNum = 5;
+                        }
+                        else if (PersistVars.currentScene.Contains("5"))
+                        {
+                            PersistVars.paintingNum = 6;
+                        }
+                        break;
                     default:
                         if (currentLine[i].Contains("#goto"))
                         {
