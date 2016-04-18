@@ -220,52 +220,52 @@ public class BoardCreation : MonoBehaviour
             switch(PersistVars.currentScene)
             {
                 case "U_0": // 1st Ukiyo-e studio
-                    setRedTotal = 25;
-                    setYellowTotal = 25;
-                    setGreenTotal = 50;
-                    setBlueTotal = 80;
+                    setRedTotal = 15;
+                    setYellowTotal = 15;
+                    setGreenTotal = 25;
+                    setBlueTotal = 1;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u0Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u0Back;
                     break;
                 case "U_1": // 2nd Ukiyo-e studio
-                    setRedTotal = 20;
-                    setYellowTotal = 20;
-                    setGreenTotal = 20;
-                    setBlueTotal = 20;
-                    setMagentaTotal = 20;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u1Back;
+                    setRedTotal = 10;
+                    setYellowTotal = 10;
+                    setGreenTotal = 10;
+                    setBlueTotal = 10;
+                    setMagentaTotal = 10;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u1Back;
                     break;
                 case "U_2": // 3rd Ukiyo-e studio
-                    setRedTotal = 50;
+                    setRedTotal = 25;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
-                    setMagentaTotal = 50;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u2Back;
+                    setMagentaTotal = 25;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u2Back;
                     break;
                 case "U_3": // 4th Ukiyo-e studio
                     setRedTotal = 1;
-                    setYellowTotal = 50;
+                    setYellowTotal = 25;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
-                    setMagentaTotal = 50;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u3Back;
+                    setMagentaTotal = 25;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u3Back;
                     break;
                 case "U_4": // 5th Ukiyo-e studio
-                    setRedTotal = 20;
+                    setRedTotal = 10;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
-                    setBlueTotal = 80;
+                    setBlueTotal = 40;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u4Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u4Back;
                     break;
                 case "U_5": // 6th Ukiyo-e studio
-                    setRedTotal = 60;
+                    setRedTotal = 20;
                     setYellowTotal = 1;
-                    setGreenTotal = 40;
+                    setGreenTotal = 30;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u5Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = u5Back;
                     break;
                 default: // No valid Ukiyo-e studio
                     print("did not find a valid studio for match3 ukiyo-e variables");
@@ -289,28 +289,28 @@ public class BoardCreation : MonoBehaviour
             switch (PersistVars.currentScene)
             {
                 case "S_O": // 1st Surrealism studio
-                    setRedTotal = 33;
+                    setRedTotal = 23;
                     setYellowTotal = 1;
-                    setGreenTotal = 33;
-                    setBlueTotal = 33;
+                    setGreenTotal = 23;
+                    setBlueTotal = 23;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s0Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s0Back;
                     break;
                 case "S_1": // 2nd Surrealism studio
                     setRedTotal = 1;
-                    setYellowTotal = 100;
+                    setYellowTotal = 50;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s1Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s1Back;
                     break;
                 case "S_2": // 3rd Surrealism studio
-                    setRedTotal = 50;
+                    setRedTotal = 25;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
-                    setMagentaTotal = 50;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s2Back;
+                    setMagentaTotal = 25;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s2Back;
                     break;
                 case "S_3": // 4th Surrealism studio
                     setRedTotal = 1;
@@ -318,23 +318,23 @@ public class BoardCreation : MonoBehaviour
                     setGreenTotal = 1;
                     setBlueTotal = 1;
                     setMagentaTotal = 50;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s3Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s3Back;
                     break;
                 case "S_4": // 5th Surrealism studio
-                    setRedTotal = 20;
+                    setRedTotal = 10;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
-                    setBlueTotal = 80;
+                    setBlueTotal = 40;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s4Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s4Back;
                     break;
                 case "S_5": // 6th Surrealism studio
-                    setRedTotal = 60;
+                    setRedTotal = 30;
                     setYellowTotal = 1;
-                    setGreenTotal = 40;
+                    setGreenTotal = 20;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s5Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = s5Back;
                     break;
                 default: // No valid Surrealism studio found
                     print("did not find a valid studio for match3 surrealism variables");
@@ -358,52 +358,52 @@ public class BoardCreation : MonoBehaviour
             switch (PersistVars.currentScene)
             {
                 case "B_O": // 1st Baroque studio
-                    setRedTotal = 33;
+                    setRedTotal = 23;
                     setYellowTotal = 1;
-                    setGreenTotal = 33;
-                    setBlueTotal = 33;
+                    setGreenTotal = 23;
+                    setBlueTotal = 23;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b0Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b0Back;
                     break;
                 case "B_1": // 2nd Baroque studio
-                    setRedTotal = 1;
-                    setYellowTotal = 100;
-                    setGreenTotal = 1;
-                    setBlueTotal = 1;
-                    setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b1Back;
-                    break;
-                case "B_2": // 3rd Baroque studio
-                    setRedTotal = 50;
-                    setYellowTotal = 1;
-                    setGreenTotal = 1;
-                    setBlueTotal = 1;
-                    setMagentaTotal = 50;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b2Back;
-                    break;
-                case "B_3": // 4th Baroque studio
                     setRedTotal = 1;
                     setYellowTotal = 50;
                     setGreenTotal = 1;
                     setBlueTotal = 1;
-                    setMagentaTotal = 50;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b3Back;
+                    setMagentaTotal = 1;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b1Back;
                     break;
-                case "B_4": // 5th Baroque studio
-                    setRedTotal = 20;
+                case "B_2": // 3rd Baroque studio
+                    setRedTotal = 25;
                     setYellowTotal = 1;
                     setGreenTotal = 1;
-                    setBlueTotal = 80;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 25;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b2Back;
+                    break;
+                case "B_3": // 4th Baroque studio
+                    setRedTotal = 1;
+                    setYellowTotal = 25;
+                    setGreenTotal = 1;
+                    setBlueTotal = 1;
+                    setMagentaTotal = 25;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b3Back;
+                    break;
+                case "B_4": // 5th Baroque studio
+                    setRedTotal = 10;
+                    setYellowTotal = 1;
+                    setGreenTotal = 1;
+                    setBlueTotal = 40;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b4Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b4Back;
                     break;
                 case "B_5": // 6th Baroque studio
-                    setRedTotal = 60;
+                    setRedTotal = 30;
                     setYellowTotal = 1;
-                    setGreenTotal = 40;
+                    setGreenTotal = 20;
                     setBlueTotal = 1;
                     setMagentaTotal = 1;
-                    //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b5Back;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = b5Back;
                     break;
                 default: // No valid Baroque studio found
                     print("did not find a valid studio for match3 baroque variables");
