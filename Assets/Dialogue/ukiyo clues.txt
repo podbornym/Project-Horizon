@@ -1,0 +1,149 @@
+@Start
+#SetDialogue
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Women #option3Text Artist #option4Text Details #option5Text Inking #option6Text History
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+Ren: I managed to find this painting.
+Nasu: Ah, yes, now I remember! It was painted around 1793.
+This print was one of the most famuous of its time.
+If you'd like, you can try painting some of it now.
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+Ren: So what exactly is this painting?
+Nasu: This painting is known as <i>The Three Beauties of the Present Day.</i>
+I can't remember much about it right now.
+If I could only see it, then I might remember more about it.
+Ren: (Maybe I can find the painting around here somewhere...)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+Ren: Do you know anything about the women in the painting?
+Nasu: Well, the one on the left is Takashima Hisa, known as the tea house waitress.
+The middle one is Tomimoto Toyohina, who is a geisha (female entertainer).
+The last one is Naniwaya Kita, another tea house waitress.
+Perhaps you'd like to work on the painting?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+Ren: Who are the women in the painting?
+Nasu: Hmm, it seems I've forgotten.
+Ren: (That figures...)
+Nasu: I do know that each of them can be recognized by their family crest.
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+Ren: What do you know about the artist?
+Nasu: Utamaro has made thousands of different prints.
+He has done many portraits of actors and theater programs.
+Maybe you should try painting something as well?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+Ren: Who made this painting?
+Nasu: His name was Kitagawa Utamaro.
+He was quite famous in his time.
+Ren: (I wonder if he knows more.)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+Ren: Do you know anything about the design of the painting?
+Nasu: Well, the women are positioned in a traingular formation.
+This form is a symbol of unity, and holds the piece together.
+Do you want to try painting something?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+Ren: What kind of information do you have about this painting?
+Nasu: The painting is 35 by 27 cm, made with a woodblock and paper.
+Ren: That's not quite what I had in mind...
+Nasu: Well maybe you should be more specific next time.
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+Ren: What's the process to make the paintings?
+Nasu: After the painting is inked, the artist carves multiple wooden blocks.
+The blocks ahve different parts of the design, and are inked with different colros.
+Then the blocks are pressed into the paper, completing the design.
+Would you like to try creating the painting?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+Ren: How do they make these paintings?
+Nasu: Well, making the woodblocks is a three stage process itself.
+The artist first paints the design with ink, and then... uhh...
+Well, I don't quite remember, to be honest.
+Ren: (Maybe I can find something to jog his memory.)
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+You found it!
+Would you like to play game six?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+Ren: What can you tell me about this time period?
+Nasu: 
+#activateClue6
+#goto:Start
+
+@change
+Would you like to change paintings?
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

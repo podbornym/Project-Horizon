@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StudioScript : MonoBehaviour {
 
@@ -263,6 +264,451 @@ public class StudioScript : MonoBehaviour {
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("USix", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the first Surrealism studio
+            case "clue37":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SOne", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue38":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SOne", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue39":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SOne", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue40":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SOne", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue41":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SOne", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue42":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SOne", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the second Surrealism studio
+            case "clue43":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("STwo", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue44":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("STwo", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue45":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("STwo", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue46":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("STwo", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue47":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("STwo", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue48":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("STwo", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the third Surrealism studio
+            case "clue49":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SThree", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue50":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SThree", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue51":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SThree", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue52":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SThree", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue53":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SThree", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue54":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SThree", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the fourth Surrealism studio
+            case "clue55":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFour", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue56":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFour", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue57":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFour", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue58":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFour", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue59":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFour", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue60":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFour", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the fifth Surrealism studio
+            case "clue61":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFive", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue62":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFive", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue63":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFive", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue64":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFive", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue65":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFive", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue66":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SFive", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the sixth Surrealism studio
+            case "clue67":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SSix", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue68":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SSix", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue69":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SSix", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue70":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SSix", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue71":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SSix", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue72":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("SSix", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+
+            // Cases for the first Baroque studio
+            case "clue73":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BOne", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue74":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BOne", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue75":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BOne", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue76":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BOne", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue77":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BOne", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue78":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BOne", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the second Baroque studio
+            case "clue79":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue80":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue81":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue82":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue83":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue84":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BTwo", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the third Broque studio
+            case "clue85":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BThree", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue86":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BThree", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue87":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BThree", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue88":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BThree", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue89":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BThree", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue90":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BThree", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the fourth Baroque studio
+            case "clue91":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFour", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue92":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFour", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue93":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFour", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue94":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFour", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue95":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFour", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue96":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFour", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the fifth Baroque studio
+            case "clue97":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFive", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue98":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFive", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue99":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFive", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue100":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFive", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue101":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFive", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue102":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BFive", 5);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            // Cases for the sixth Baroque studio
+            case "clue103":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BSix", 0);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue104":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BSix", 1);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue105":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BSix", 2);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue106":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BSix", 3);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue107":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BSix", 4);
+                UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                break;
+            case "clue108":
+                print("found me");
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                UI.GetComponent<PersistVars>().ArrayAccess("BSix", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
                 break;
             default:

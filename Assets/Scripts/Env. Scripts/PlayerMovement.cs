@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     private static GameObject landing = null;
     private static float offset;
     private static float camOffset;
-    private bool moving = false;
+    public static bool moving = false;
     GameObject landingPair = null;
     int columnOffset = 0;
     public GameObject cam;
@@ -29,6 +29,22 @@ public class PlayerMovement : MonoBehaviour {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
+
+        if (SceneManager.GetActiveScene().name == "mansion")
+        {
+            if (!PersistVars.returningToHome)
+            {
+                gameObject.transform.position = GameObject.Find("introSpawn").transform.position;
+                cam.transform.position = new Vector3(-51.4f, -1.42f, cam.transform.position.z);
+            }
+            else
+            {
+                gameObject.transform.position = GameObject.Find("hubSpawn").transform.position;
+                cam.transform.position = new Vector3(-10.32f, -13f, cam.transform.position.z);
+            }
+        }
+
+        
         myAnimator = GetComponent<Animator>();
 
     }
@@ -74,7 +90,9 @@ public class PlayerMovement : MonoBehaviour {
     void moveStairs(bool ukiyo = false)
     {
         iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(landingPos.x, landingPos.y + offset, transform.position.z), "speed", 10, "easetype", "linear", "oncomplete", "notMoving"));
-        if (!ukiyo)
+        //checks for the stairs on the left side of the ukiyo-e map
+        //if not on the left side, then do stairs as normal
+        if (!ukiyo && (cam.transform.position.x !=11.59 && cam.transform.position.y != 2.7))
         {
             if (approachLeft)
             {
@@ -85,6 +103,7 @@ public class PlayerMovement : MonoBehaviour {
                 iTween.MoveTo(cam, iTween.Hash("position", new Vector3(cam.transform.position.x + CameraScript.offsetInUse, landingPos.y + camOffset, cam.transform.position.z), "speed", 10, "easetype", "linear"));
             }
         }
+        //else only move the cam up and down
         else
         {
             if (approachLeft)
@@ -147,7 +166,7 @@ public class PlayerMovement : MonoBehaviour {
                 //Mansion Options
                 case "stairs1":
                     myAnimator.SetInteger("Move", 1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("stairs2");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -156,7 +175,7 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "stairs2":
                     myAnimator.SetInteger("Move", -1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("stairs1");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -190,15 +209,36 @@ public class PlayerMovement : MonoBehaviour {
                     moveElevator();
                     break;
                 case "portal_0_S":
-                    SceneManager.LoadScene("SurrealistZone");
+                    PersistVars.previousScene = "mansion";
+                    PersistVars.currentScene = "SurrealistZone";
+                    PersistVars.Surreal = false;
                     notMoving();
+                    SceneManager.LoadScene("SurrealistZone");
                     break;
                 case "portal_3_U":
-                    SceneManager.LoadScene("Ukiyo-eZone");
+                    PersistVars.previousScene = "mansion";
+                    PersistVars.currentScene = "Ukiyo-EZone";
+                    PersistVars.Ukiyo = true;
                     notMoving();
+                    SceneManager.LoadScene("Ukiyo-eZone");
                     break;
                 case "portal_4_B":
+                    PersistVars.previousScene = "mansion";
+                    PersistVars.currentScene = "BaroqueZone";
+                    PersistVars.Baroque = true;
+                    notMoving();
                     SceneManager.LoadScene("BaroqueZone");
+                    break;
+                case "portal_1":
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
+                    notMoving();
+                    break;
+                case "portal_2":
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
+                    notMoving();
+                    break;
+                case "portal_5":
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
                     notMoving();
                     break;
                 //Surrealist options
@@ -223,29 +263,45 @@ public class PlayerMovement : MonoBehaviour {
                     myAnimator.SetInteger("Move", 1);
                     break;
                 case "door_0S":
+                    PersistVars.previousScene = "SurrealistZone";
+                    PersistVars.currentScene = "S_0";
                     SceneManager.LoadScene("S_0");
                     notMoving();
                     break;
                 case "door_1S":
+                    PersistVars.previousScene = "SurrealistZone";
+                    PersistVars.currentScene = "S_1";
                     SceneManager.LoadScene("S_1");
                     notMoving();
                     break;
                 case "door_2S":
+                    PersistVars.previousScene = "SurrealistZone";
+                    PersistVars.currentScene = "S_2";
                     SceneManager.LoadScene("S_2");
                     notMoving();
                     break;
                 case "door_3S":
+                    PersistVars.previousScene = "SurrealistZone";
+                    PersistVars.currentScene = "S_3";
                     SceneManager.LoadScene("S_3");
                     notMoving();
                     break;
                 case "door_4S":
+                    PersistVars.previousScene = "SurrealistZone";
+                    PersistVars.currentScene = "S_4";
                     SceneManager.LoadScene("S_4");
+                    notMoving();
+                    break;
+                case "door_5S":
+                    PersistVars.previousScene = "SurrealistZone";
+                    PersistVars.currentScene = "S_5";
+                    SceneManager.LoadScene("S_5");
                     notMoving();
                     break;
                 //Baroque options
                 case "Bstairs1":
                     myAnimator.SetInteger("Move", -1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs3");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -254,7 +310,7 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "Bstairs2":
                     myAnimator.SetInteger("Move", 1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs4");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -263,7 +319,7 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "Bstairs3":
                     myAnimator.SetInteger("Move", 1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs1");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -272,7 +328,7 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "Bstairs4":
                     myAnimator.SetInteger("Move", -1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Bstairs2");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -280,58 +336,90 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs();
                     break;
                 case "door_0B":
+                    PersistVars.previousScene = "BaroqueZone";
+                    PersistVars.currentScene = "B_0";
                     SceneManager.LoadScene("B_0");
                     notMoving();
                     break;
                 case "door_1B":
+                    PersistVars.previousScene = "BaroqueZone";
+                    PersistVars.currentScene = "B_1";
                     SceneManager.LoadScene("B_1");
                     notMoving();
                     break;
                 case "door_2B":
+                    PersistVars.previousScene = "BaroqueZone";
+                    PersistVars.currentScene = "B_2";
                     SceneManager.LoadScene("B_2");
                     notMoving();
                     break;
                 case "door_3B":
+                    PersistVars.previousScene = "BaroqueZone";
+                    PersistVars.currentScene = "B_3";
                     SceneManager.LoadScene("B_3");
                     notMoving();
                     break;
                 case "door_4B":
+                    PersistVars.previousScene = "BaroqueZone";
+                    PersistVars.currentScene = "B_4";
                     SceneManager.LoadScene("B_4");
+                    notMoving();
+                    break;
+                case "door_5B":
+                    PersistVars.previousScene = "BaroqueZone";
+                    PersistVars.currentScene = "B_5";
+                    SceneManager.LoadScene("B_5");
                     notMoving();
                     break;
                 //Ukiyo-E options
                 case "door_0U":
+                    PersistVars.previousScene = "Ukiyo-eZone";
+                    PersistVars.currentScene = "U_0";
                     SceneManager.LoadScene("U_0");
                     notMoving();
                     break;
                 case "door_1U":
+                    PersistVars.previousScene = "Ukiyo-eZone";
+                    PersistVars.currentScene = "U_1";
                     SceneManager.LoadScene("U_1");
                     notMoving();
                     break;
                 case "door_2U":
+                    PersistVars.previousScene = "Ukiyo-eZone";
+                    PersistVars.currentScene = "U_2";
                     SceneManager.LoadScene("U_2");
                     notMoving();
                     break;
                 case "door_3U":
+                    PersistVars.previousScene = "Ukiyo-eZone";
+                    PersistVars.currentScene = "U_3";
                     SceneManager.LoadScene("U_3");
                     notMoving();
                     break;
                 case "door_4U":
+                    PersistVars.previousScene = "Ukiyo-eZone";
+                    PersistVars.currentScene = "U_4";
                     SceneManager.LoadScene("U_4");
+                    notMoving();
+                    break;
+                case "door_5U":
+                    PersistVars.previousScene = "Ukiyo-eZone";
+                    PersistVars.currentScene = "U_5";
+                    SceneManager.LoadScene("U_5");
                     notMoving();
                     break;
                 case "Ustairs1":
                     myAnimator.SetInteger("Move", 1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs3");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     approachLeft = true;
-                    moveStairs(true);
+                    moveStairs(false);
                     break;
                 case "Ustairs2":
                     myAnimator.SetInteger("Move", -1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs4");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -340,16 +428,16 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "Ustairs3":
                     myAnimator.SetInteger("Move", -1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs1");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     approachLeft = false;
-                    moveStairs(true);
+                    moveStairs(false);
                     break;
                 case "Ustairs4":
                     myAnimator.SetInteger("Move", 1);
-                    landing.GetComponent<BoxCollider2D>().enabled = false;
+                    //landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("Ustairs2");
                     landingPos = landingPair.transform.position;
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -357,6 +445,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveStairs(true);
                     break;
                 case "leftEndU":
+                    myAnimator.SetInteger("Move", -1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("rightEndU");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
@@ -364,6 +453,7 @@ public class PlayerMovement : MonoBehaviour {
                     moveCurve("bridge", 10);
                     break;
                 case "rightEndU":
+                    myAnimator.SetInteger("Move", 1);
                     landing.GetComponent<BoxCollider2D>().enabled = false;
                     landingPair = GameObject.Find("leftEndU");
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;

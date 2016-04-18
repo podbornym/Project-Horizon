@@ -6,7 +6,7 @@ public class EnvInteracter : MonoBehaviour {
 
     public Texture2D normalCursor;
     public Texture2D mouseOverCursor;
-    public Texture2D redCursor;
+    public Texture2D pinkCursor;
     public Texture2D leftArrow;
     public Texture2D rightArrow;
     public CursorMode cursorMode = CursorMode.Auto;
@@ -31,7 +31,7 @@ public class EnvInteracter : MonoBehaviour {
         }
         else if (gameObject.tag == "portal")
         {
-            Cursor.SetCursor(redCursor, hotSpot, cursorMode);
+            Cursor.SetCursor(pinkCursor, hotSpot, cursorMode);
         }
         else
         {

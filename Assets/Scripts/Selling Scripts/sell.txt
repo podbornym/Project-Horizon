@@ -1,0 +1,209 @@
+@Start
+#SetDialogue
+Are you sure you want to sell to this client?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option1Text Yes. #option2Text No.
+
+@ClueOne
+#SetDialogue
+#ysell
+
+@pass1
+#SetDialogue
+#passed1
+#option1 #goto:Continue
+#option1Text Continue
+
+@fail1
+You have been caught. The cops are willing to look the other way this time,
+but you you will not be able to sell to this client next time.
+#SetOptions
+#option1 #goto:Continue
+#option1Text Continue
+
+@fail2
+#SetDialogue
+#failed2
+#SetOptions
+#option1 #goto:Continue
+#option1Text Continue
+
+@fail3
+You have been caught. You recieve ONE STRIKE.
+You have THREE STRIKES in total.
+Your forgery career is over.
+#SetOptions
+#option1 #goto:Continue
+#option1Text Continue
+
+@ClueTwo
+#SetDialogue
+Please select another client.
+
+@blkClient
+The Black Market will buy your forgery for more if you
+can prove your knowledge of the piece you are selling.
+#option1 #goto:blkQuestion1
+#option1Text Continue
+
+@blkQuestion1
+#SetDialogue
+#quest1
+
+@blkQuestion2
+#SetDialogue
+#quest2
+
+@blkQuestion3
+#SetDialogue
+#quest3
+
+@blkSell
+#SetDialogue
+#blkresult
+
+@ukiyo1_1
+#SetDialogue
+True or False:
+Hishikawa Moronobu created 'Shoki Striding'.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo1_2
+#SetDialogue
+True or False:
+'Shoki Striding' was printed on a paper size called hanging scroll.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo1_3
+#SetDialogue
+True or False:
+Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints?;.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo2_1
+#SetDialogue
+True or False:
+'Otani Oniji III as Yakko Edobei' is the name of the currnt piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo2_2
+#SetDialogue
+True or False:
+Tōshūsai Sharaku created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo2_3
+#SetDialogue
+True or False:
+Sharaku focused on the aspect of energy in his protraits.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo3_1
+#SetDialogue
+True or False:
+'The Great Wave off Kanagawa' is the name of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo3_2
+#SetDialogue
+True or False:
+Utagawa Hiroshige created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo3_3
+#SetDialogue
+True or False:
+'The Great Wave off Kanagawa' is the first of a print series called Oceans of Wisdom.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo4_1
+#SetDialogue
+True or False:
+'Famous Beauties of Edo' is the name of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo4_2
+#SetDialogue
+True or False:
+The three women in the current piece are identified by family crests.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo4_3
+#SetDialogue
+True or False:
+Unity is represented by the triangle composition of the women.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo5_1
+#SetDialogue
+True or False:
+'Lobby of a Brothel' is the name of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo5_2
+#SetDialogue
+True or False:
+Hishikawa Moronobu created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo5_3
+#SetDialogue
+True or False:
+Moronobu's strong, linear style had a huge influence on other ukiyo-e artists.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo6_1
+#SetDialogue
+True or False:
+Katsushika Hokusai created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo6_2
+#SetDialogue
+True or False:
+'Rain Shower at Shōno' is the name of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@ukiyo6_3
+#SetDialogue
+True or False:
+The bokashi technique in the current piece to achieve parallel rain drops.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.

@@ -1,0 +1,783 @@
+fileFormatVersion: 2
+guid: d2378c3d5886f004db10cfc91a5c12d3
+timeCreated: 1460584617
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WoodMuseIdle_0
+    21300002: WoodMuseIdle_1
+    21300004: WoodMuseIdle_2
+    21300006: WoodMuseIdle_3
+    21300008: WoodMuseIdle_4
+    21300010: WoodMuseIdle_5
+    21300012: WoodMuseIdle_6
+    21300014: WoodMuseIdle_7
+    21300016: WoodMuseIdle_8
+    21300018: WoodMuseIdle_9
+    21300020: WoodMuseIdle_10
+    21300022: WoodMuseIdle_11
+    21300024: WoodMuseIdle_12
+    21300026: WoodMuseIdle_13
+    21300028: WoodMuseIdle_14
+    21300030: WoodMuseIdle_15
+    21300032: WoodMuseIdle_16
+    21300034: WoodMuseIdle_17
+    21300036: WoodMuseIdle_18
+    21300038: WoodMuseIdle_19
+    21300040: WoodMuseIdle_20
+    21300042: WoodMuseIdle_21
+    21300044: WoodMuseIdle_22
+    21300046: WoodMuseIdle_23
+    21300048: WoodMuseIdle_24
+    21300050: WoodMuseIdle_25
+    21300052: WoodMuseIdle_26
+    21300054: WoodMuseIdle_27
+    21300056: WoodMuseIdle_28
+    21300058: WoodMuseIdle_29
+    21300060: WoodMuseIdle_30
+    21300062: WoodMuseIdle_31
+    21300064: WoodMuseIdle_32
+    21300066: WoodMuseIdle_33
+    21300068: WoodMuseIdle_34
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: WoodMuseIdle_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 57
+        width: 82
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 157.5}
+        - {x: -41, y: 119.5}
+        - {x: -41, y: -157.5}
+        - {x: 41, y: -157.5}
+        - {x: 41, y: 134.5}
+        - {x: 13, y: 157.5}
+    - name: WoodMuseIdle_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 55
+        width: 82
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 157.5}
+        - {x: -41, y: 119.5}
+        - {x: -41, y: -157.5}
+        - {x: 41, y: -157.5}
+        - {x: 41, y: 134.5}
+        - {x: 13, y: 157.5}
+    - name: WoodMuseIdle_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 57
+        width: 82
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 157.5}
+        - {x: -41, y: 119.5}
+        - {x: -41, y: -157.5}
+        - {x: 41, y: -157.5}
+        - {x: 41, y: 134.5}
+        - {x: 13, y: 157.5}
+    - name: WoodMuseIdle_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 57
+        width: 82
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 157.5}
+        - {x: -41, y: 119.5}
+        - {x: -41, y: -157.5}
+        - {x: 41, y: -157.5}
+        - {x: 41, y: 134.5}
+        - {x: 13, y: 157.5}
+    - name: WoodMuseIdle_4
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 57
+        width: 83
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 157.5}
+        - {x: -41.5, y: 122.5}
+        - {x: -41.5, y: -157.5}
+        - {x: 38.5, y: -157.5}
+        - {x: 41.5, y: -139.5}
+        - {x: 41.5, y: 125.5}
+        - {x: 33.5, y: 157.5}
+    - name: WoodMuseIdle_5
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 57
+        width: 83
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 157.5}
+        - {x: -41.5, y: 122.5}
+        - {x: -41.5, y: -157.5}
+        - {x: 38.5, y: -157.5}
+        - {x: 41.5, y: -139.5}
+        - {x: 41.5, y: 125.5}
+        - {x: 33.5, y: 157.5}
+    - name: WoodMuseIdle_6
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 57
+        width: 83
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 157.5}
+        - {x: -41.5, y: 122.5}
+        - {x: -41.5, y: -157.5}
+        - {x: 38.5, y: -157.5}
+        - {x: 41.5, y: -139.5}
+        - {x: 41.5, y: 125.5}
+        - {x: 33.5, y: 157.5}
+    - name: WoodMuseIdle_7
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 57
+        width: 86
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: -158}
+        - {x: 39, y: -158}
+        - {x: 43, y: -131}
+        - {x: 43, y: 93}
+        - {x: 23, y: 154}
+        - {x: 18, y: 158}
+        - {x: -23, y: 158}
+        - {x: -43, y: 129}
+        - {x: -43, y: -158}
+        - {x: -16, y: -158}
+        - {x: -8, y: -147}
+        - {x: -5, y: -93}
+        - {x: 1, y: -146}
+    - name: WoodMuseIdle_8
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 58
+        width: 88
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: -157}
+        - {x: 44, y: -132}
+        - {x: 44, y: 110}
+        - {x: 12, y: 157}
+        - {x: -23, y: 157}
+        - {x: -34, y: 149}
+        - {x: -44, y: 111}
+        - {x: -44, y: -106}
+        - {x: -41, y: -157}
+        - {x: -15, y: -157}
+        - {x: -6, y: -150}
+        - {x: 0, y: -157}
+    - name: WoodMuseIdle_9
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 61
+        width: 88
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: -157}
+        - {x: 44, y: -132}
+        - {x: 44, y: 110}
+        - {x: 12, y: 157}
+        - {x: -23, y: 157}
+        - {x: -34, y: 149}
+        - {x: -44, y: 111}
+        - {x: -44, y: -106}
+        - {x: -41, y: -157}
+        - {x: -15, y: -157}
+        - {x: -6, y: -150}
+        - {x: 0, y: -157}
+    - name: WoodMuseIdle_10
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 69
+        width: 92
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: -156}
+        - {x: 46, y: 156}
+        - {x: -38, y: 156}
+        - {x: -46, y: 138}
+        - {x: -46, y: -156}
+        - {x: -16, y: -156}
+        - {x: -6, y: -145}
+        - {x: 7, y: -155}
+        - {x: 10, y: -156}
+    - name: WoodMuseIdle_11
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 69
+        width: 92
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: -156}
+        - {x: 46, y: 156}
+        - {x: -38, y: 156}
+        - {x: -46, y: 138}
+        - {x: -46, y: -156}
+        - {x: -16, y: -156}
+        - {x: -6, y: -145}
+        - {x: 7, y: -155}
+        - {x: 10, y: -156}
+    - name: WoodMuseIdle_12
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 69
+        width: 96
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 155.5}
+        - {x: -48, y: 155.5}
+        - {x: -48, y: -137.5}
+        - {x: -40, y: -155.5}
+        - {x: 32, y: -155.5}
+        - {x: 32, y: -154.5}
+        - {x: 48, y: -147.5}
+        - {x: 48, y: 138.5}
+    - name: WoodMuseIdle_13
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 70
+        width: 93
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: -155.5}
+        - {x: 37.5, y: -155.5}
+        - {x: 42.5, y: -154.5}
+        - {x: 46.5, y: -88.5}
+        - {x: 46.5, y: 121.5}
+        - {x: 0.5, y: 155.5}
+        - {x: -46.5, y: 155.5}
+        - {x: -46.5, y: -131.5}
+        - {x: -41.5, y: -155.5}
+        - {x: -10.5, y: -155.5}
+        - {x: -1.5, y: -144.5}
+        - {x: 1.5, y: -90.5}
+        - {x: 4.5, y: -154.5}
+    - name: WoodMuseIdle_14
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 70
+        width: 95
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: 155.5}
+        - {x: -35.5, y: 155.5}
+        - {x: -47.5, y: 126.5}
+        - {x: -47.5, y: -101.5}
+        - {x: -43.5, y: -155.5}
+        - {x: 32.5, y: -155.5}
+        - {x: 39.5, y: -153.5}
+        - {x: 47.5, y: -109.5}
+        - {x: 47.5, y: 96.5}
+    - name: WoodMuseIdle_15
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 70
+        width: 101
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 155.5}
+        - {x: -50.5, y: 144.5}
+        - {x: -50.5, y: -148.5}
+        - {x: -48.5, y: -155.5}
+        - {x: 34.5, y: -155.5}
+        - {x: 50.5, y: -151.5}
+        - {x: 50.5, y: 155.5}
+    - name: WoodMuseIdle_16
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 70
+        width: 101
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 155.5}
+        - {x: -50.5, y: 144.5}
+        - {x: -50.5, y: -148.5}
+        - {x: -48.5, y: -155.5}
+        - {x: 34.5, y: -155.5}
+        - {x: 50.5, y: -151.5}
+        - {x: 50.5, y: 155.5}
+    - name: WoodMuseIdle_17
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 69
+        width: 101
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 155.5}
+        - {x: -50.5, y: 144.5}
+        - {x: -50.5, y: -148.5}
+        - {x: -48.5, y: -155.5}
+        - {x: 34.5, y: -155.5}
+        - {x: 50.5, y: -151.5}
+        - {x: 50.5, y: 155.5}
+    - name: WoodMuseIdle_18
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 69
+        width: 104
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52, y: -152}
+        - {x: 52, y: 142}
+        - {x: 50, y: 156}
+        - {x: -52, y: 156}
+        - {x: -52, y: -156}
+        - {x: -15, y: -156}
+        - {x: -10, y: -146}
+        - {x: -7, y: -156}
+        - {x: 34, y: -156}
+    - name: WoodMuseIdle_19
+      rect:
+        serializedVersion: 2
+        x: 2883
+        y: 68
+        width: 104
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52, y: -151.5}
+        - {x: 52, y: 155.5}
+        - {x: -52, y: 155.5}
+        - {x: -52, y: -155.5}
+        - {x: -15, y: -155.5}
+        - {x: -10, y: -145.5}
+        - {x: -7, y: -155.5}
+        - {x: 35, y: -155.5}
+    - name: WoodMuseIdle_20
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 70
+        width: 104
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52, y: -151.5}
+        - {x: 52, y: 155.5}
+        - {x: -52, y: 155.5}
+        - {x: -52, y: -155.5}
+        - {x: -15, y: -155.5}
+        - {x: -10, y: -145.5}
+        - {x: -7, y: -155.5}
+        - {x: 35, y: -155.5}
+    - name: WoodMuseIdle_21
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 68
+        width: 104
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52, y: -152}
+        - {x: 52, y: 142}
+        - {x: 50, y: 156}
+        - {x: -52, y: 156}
+        - {x: -52, y: -156}
+        - {x: -15, y: -156}
+        - {x: -10, y: -146}
+        - {x: -7, y: -156}
+        - {x: 34, y: -156}
+    - name: WoodMuseIdle_22
+      rect:
+        serializedVersion: 2
+        x: 3377
+        y: 70
+        width: 101
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 155.5}
+        - {x: -50.5, y: 144.5}
+        - {x: -50.5, y: -148.5}
+        - {x: -48.5, y: -155.5}
+        - {x: 34.5, y: -155.5}
+        - {x: 50.5, y: -151.5}
+        - {x: 50.5, y: 155.5}
+    - name: WoodMuseIdle_23
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 69
+        width: 101
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 155.5}
+        - {x: -50.5, y: 144.5}
+        - {x: -50.5, y: -148.5}
+        - {x: -48.5, y: -155.5}
+        - {x: 34.5, y: -155.5}
+        - {x: 50.5, y: -151.5}
+        - {x: 50.5, y: 155.5}
+    - name: WoodMuseIdle_24
+      rect:
+        serializedVersion: 2
+        x: 3733
+        y: 69
+        width: 101
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 155.5}
+        - {x: -50.5, y: 144.5}
+        - {x: -50.5, y: -148.5}
+        - {x: -48.5, y: -155.5}
+        - {x: 34.5, y: -155.5}
+        - {x: 50.5, y: -151.5}
+        - {x: 50.5, y: 155.5}
+    - name: WoodMuseIdle_25
+      rect:
+        serializedVersion: 2
+        x: 3918
+        y: 68
+        width: 93
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: -155.5}
+        - {x: 37.5, y: -155.5}
+        - {x: 42.5, y: -154.5}
+        - {x: 46.5, y: -88.5}
+        - {x: 46.5, y: 121.5}
+        - {x: 0.5, y: 155.5}
+        - {x: -46.5, y: 155.5}
+        - {x: -46.5, y: -131.5}
+        - {x: -41.5, y: -155.5}
+        - {x: -10.5, y: -155.5}
+        - {x: -1.5, y: -144.5}
+        - {x: 1.5, y: -90.5}
+        - {x: 4.5, y: -154.5}
+    - name: WoodMuseIdle_26
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 69
+        width: 93
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: -155.5}
+        - {x: 37.5, y: -155.5}
+        - {x: 42.5, y: -154.5}
+        - {x: 46.5, y: -88.5}
+        - {x: 46.5, y: 121.5}
+        - {x: 0.5, y: 155.5}
+        - {x: -46.5, y: 155.5}
+        - {x: -46.5, y: -131.5}
+        - {x: -41.5, y: -155.5}
+        - {x: -10.5, y: -155.5}
+        - {x: -1.5, y: -144.5}
+        - {x: 1.5, y: -90.5}
+        - {x: 4.5, y: -154.5}
+    - name: WoodMuseIdle_27
+      rect:
+        serializedVersion: 2
+        x: 4228
+        y: 69
+        width: 91
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: -155.5}
+        - {x: 20.5, y: -155.5}
+        - {x: 29.5, y: -154.5}
+        - {x: 33.5, y: -150.5}
+        - {x: 36.5, y: -141.5}
+        - {x: 45.5, y: -110.5}
+        - {x: 45.5, y: 112.5}
+        - {x: 27.5, y: 155.5}
+        - {x: -38.5, y: 155.5}
+        - {x: -45.5, y: 144.5}
+        - {x: -45.5, y: -130.5}
+        - {x: -42.5, y: -150.5}
+        - {x: -37.5, y: -155.5}
+        - {x: -14.5, y: -155.5}
+        - {x: -4.5, y: -144.5}
+        - {x: -2.5, y: -90.5}
+        - {x: 2.5, y: -144.5}
+    - name: WoodMuseIdle_28
+      rect:
+        serializedVersion: 2
+        x: 4397
+        y: 68
+        width: 92
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: -156}
+        - {x: 46, y: 156}
+        - {x: -38, y: 156}
+        - {x: -46, y: 138}
+        - {x: -46, y: -156}
+        - {x: -16, y: -156}
+        - {x: -6, y: -145}
+        - {x: 7, y: -155}
+        - {x: 10, y: -156}
+    - name: WoodMuseIdle_29
+      rect:
+        serializedVersion: 2
+        x: 4565
+        y: 67
+        width: 92
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: -156}
+        - {x: 46, y: 156}
+        - {x: -38, y: 156}
+        - {x: -46, y: 138}
+        - {x: -46, y: -156}
+        - {x: -16, y: -156}
+        - {x: -6, y: -145}
+        - {x: 7, y: -155}
+        - {x: 10, y: -156}
+    - name: WoodMuseIdle_30
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 67
+        width: 88
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: -157}
+        - {x: 44, y: -132}
+        - {x: 44, y: 110}
+        - {x: 12, y: 157}
+        - {x: -23, y: 157}
+        - {x: -34, y: 149}
+        - {x: -44, y: 111}
+        - {x: -44, y: -106}
+        - {x: -41, y: -157}
+        - {x: -15, y: -157}
+        - {x: -6, y: -150}
+        - {x: 0, y: -157}
+    - name: WoodMuseIdle_31
+      rect:
+        serializedVersion: 2
+        x: 4875
+        y: 66
+        width: 83
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 157.5}
+        - {x: -41.5, y: 122.5}
+        - {x: -41.5, y: -157.5}
+        - {x: 38.5, y: -157.5}
+        - {x: 41.5, y: -139.5}
+        - {x: 41.5, y: 125.5}
+        - {x: 33.5, y: 157.5}
+    - name: WoodMuseIdle_32
+      rect:
+        serializedVersion: 2
+        x: 5023
+        y: 66
+        width: 83
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 157.5}
+        - {x: -41.5, y: 122.5}
+        - {x: -41.5, y: -157.5}
+        - {x: 38.5, y: -157.5}
+        - {x: 41.5, y: -139.5}
+        - {x: 41.5, y: 125.5}
+        - {x: 33.5, y: 157.5}
+    - name: WoodMuseIdle_33
+      rect:
+        serializedVersion: 2
+        x: 5176
+        y: 66
+        width: 83
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 157.5}
+        - {x: -41.5, y: 122.5}
+        - {x: -41.5, y: -157.5}
+        - {x: 38.5, y: -157.5}
+        - {x: 41.5, y: -139.5}
+        - {x: 41.5, y: 125.5}
+        - {x: 33.5, y: 157.5}
+    - name: WoodMuseIdle_34
+      rect:
+        serializedVersion: 2
+        x: 5319
+        y: 65
+        width: 82
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 157.5}
+        - {x: -41, y: 119.5}
+        - {x: -41, y: -157.5}
+        - {x: 41, y: -157.5}
+        - {x: 41, y: 134.5}
+        - {x: 13, y: 157.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DialogueReader : MonoBehaviour
 {
+    public static int paintNum;
     public string[] entries;
     private int lineNum = 0;
     private string option;
     private string[] choiceActions = new string[6];
+    public GameObject UI;
     public TextAsset dialogue;
     public GameObject dialogueContainer;
     public GameObject nextButton;
@@ -20,6 +22,7 @@ public class DialogueReader : MonoBehaviour
     public GameObject clueSix;
     public GameObject quit;
     public GameObject muse;
+	public SellingController SellCont;
     public bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
     public Text textbox;
@@ -30,6 +33,10 @@ public class DialogueReader : MonoBehaviour
     public Text option5;
     public Text option6;
     private Text currentText;
+    public bool isTalking = false;
+	public string curPiece;
+	public int questCount = 1;
+	public bool cAnswer;
 
     // Use this for initialization
     void Start ()
@@ -58,6 +65,48 @@ public class DialogueReader : MonoBehaviour
         {
             FindClue();
         }
+        if (clueOne == null || clueTwo == null || clueThree == null || clueFour == null || clueFive == null || clueSix == null)
+        {
+            SetClue();
+        }
+    }
+
+    void SetClue()
+    {
+        for(int i = 1; i < 7; i++)
+        {
+            if (i == 1)
+            {
+                clueOne = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 2)
+            {
+                clueTwo = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 3)
+            {
+                clueThree = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 4)
+            {
+                clueFour = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 5)
+            {
+                clueFive = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 6)
+            {
+                clueSix = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+        }
+        muse = GameObject.Find("muse");
     }
 
     void FindClue()
@@ -71,7 +120,15 @@ public class DialogueReader : MonoBehaviour
                 muse = hit.collider.gameObject;
                 muse.GetComponent<BoxCollider2D>().enabled = false;
                 dialogueContainer.SetActive(true);
-                NextLine();
+                isTalking = true;
+                if(PersistVars.currentScene.Contains(((paintNum - 1) % 6).ToString()))
+                {
+                    NextLine();
+                }
+                else
+                {
+                    GoTo("change");
+                }
             }
         }
     }
@@ -336,11 +393,210 @@ public class DialogueReader : MonoBehaviour
                     case "#option6Text":
                         currentText = option6;
                         break;
-                    case "#play":
-
-                        break;
                     case "#quit":
                         EndDialogue();
+                        break;
+					case "#ysell":
+						if(SellCont.check==true)
+						{
+						if (SellCont.buyer=="blk")
+							{
+								GoTo ("blkClient");
+							}
+							else
+							{
+								GoTo ("pass1");
+							}
+							
+						}
+						else if(SellCont.check==false)
+						{
+							if (gameObject.GetComponent<PersistVars> ().strikes < 3 && gameObject.GetComponent<PersistVars> ().freePass == false) 
+							{
+								GoTo ("fail1");
+								gameObject.GetComponent<PersistVars> ().freePass = true;
+							} 
+							else if (gameObject.GetComponent<PersistVars> ().strikes < 3 && gameObject.GetComponent<PersistVars> ().freePass == true) 
+							{
+								GoTo ("fail2");
+							} 
+							else if (gameObject.GetComponent<PersistVars> ().strikes == 3) 
+							{
+								GoTo ("fail3");
+							}
+							
+						}
+						break;
+					case "#passed1":
+						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
+						break;
+					case "#failed2":
+						currentText.text = "You have been caught\n." +
+							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
+							"Three strikes and your forgery career is over.\n" +
+							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
+						gameObject.GetComponent<PersistVars> ().strikes += 1;
+						break;
+					case "#Continue":
+						SceneManager.LoadScene ("mansion");
+						break;
+					case "#quest1":
+						if (curPiece == "piece1") // Shoki Striding
+						{
+							cAnswer = false;
+							GoTo ("ukiyo1_1");
+						}
+						else if (curPiece == "piece2") // Otani Oniji III as Yakko Edobei
+						{
+							cAnswer = true;
+							GoTo ("ukiyo2_1");
+						}
+						else if (curPiece == "piece3") // The Great Wave off Kanagawa
+						{
+							cAnswer = false;
+							GoTo ("ukiyo3_1");
+						}
+						else if (curPiece == "piece4") // Three Beauties of the Present Day
+						{
+							cAnswer = false;
+							GoTo ("ukiyo4_1");
+						}
+						else if (curPiece == "piece5") // Waitress at an Inn at Akasaka
+						{
+							cAnswer = false;
+							GoTo ("ukiyo5_1");
+						}
+						else if (curPiece == "piece6") // Sudden Shower over Shin-Ōhashi Bridge and Atake
+						{
+							cAnswer = false;
+							GoTo ("ukiyo6_1");
+						}
+						break;
+					case "#quest2":
+						if (curPiece == "piece1") // Shoki Striding
+						{
+							cAnswer = false;
+							GoTo ("ukiyo1_2");
+						}
+						else if (curPiece == "piece2") // Otani Oniji III as Yakko Edobei
+						{
+							cAnswer = true;
+							GoTo ("ukiyo2_2");
+						}
+						else if (curPiece == "piece3") // The Great Wave off Kanagawa
+						{
+							cAnswer = false;
+							GoTo ("ukiyo3_2");
+						}
+						else if (curPiece == "piece4") // Three Beauties of the Present Day
+						{
+							cAnswer = true;
+							GoTo ("ukiyo4_2");
+						}
+						else if (curPiece == "piece5") // Waitress at an Inn at Akasaka
+						{
+							cAnswer = true;
+							GoTo ("ukiyo5_2");
+						}
+						else if (curPiece == "piece6") // Sudden Shower over Shin-Ōhashi Bridge and Atake
+						{
+							cAnswer = false;
+							GoTo ("ukiyo6_2");
+						}
+						break;
+					case "#quest3":
+						if (curPiece == "piece1") // Shoki Striding
+						{
+							cAnswer = true;
+							GoTo ("ukiyo1_3");
+						}
+						else if (curPiece == "piece2") // Otani Oniji III as Yakko Edobei
+						{
+							cAnswer = true;
+							GoTo ("ukiyo2_3");
+						}
+						else if (curPiece == "piece3") // The Great Wave off Kanagawa
+						{
+							cAnswer = false;
+							GoTo ("ukiyo3_3");
+						}
+						else if (curPiece == "piece4") // Three Beauties of the Present Day
+						{
+							cAnswer = false;
+							GoTo ("ukiyo4_3");
+						}
+						else if (curPiece == "piece5") // Waitress at an Inn at Akasaka
+						{
+							cAnswer = true;
+							GoTo ("ukiyo5_3");
+						}
+						else if (curPiece == "piece6") // Sudden Shower over Shin-Ōhashi Bridge and Atake
+						{
+							cAnswer = false;
+							GoTo ("ukiyo6_3");
+						}
+						break;
+					case "blkTrue":
+						if (cAnswer == true) 
+						{
+							SellCont.correct += 1;
+						}
+						if (questCount==1)
+						{
+							GoTo ("blkQuestion2");
+						}
+						else if (questCount==2)
+						{
+							GoTo ("blkQuestion3");
+						}
+						if (questCount==3)
+						{
+							GoTo ("blkSell");
+						}
+						break;
+					case "blkFalse":
+						if (cAnswer == false)
+						{
+							SellCont.correct += 1;
+						}
+						if (questCount==1)
+						{
+							GoTo ("blkQuestion2");
+						}
+						else if (questCount==2)
+						{
+							GoTo ("blkQuestion3");
+						}
+						if (questCount==3)
+						{
+							GoTo ("blkSell");
+						}
+						break;
+                    case "#change":
+                        if(PersistVars.currentScene.Contains("0"))
+                        {
+                            PersistVars.paintingNum = 1;
+                        }
+                        else if (PersistVars.currentScene.Contains("1"))
+                        {
+                            PersistVars.paintingNum = 2;
+                        }
+                        else if (PersistVars.currentScene.Contains("2"))
+                        {
+                            PersistVars.paintingNum = 3;
+                        }
+                        else if (PersistVars.currentScene.Contains("3"))
+                        {
+                            PersistVars.paintingNum = 4;
+                        }
+                        else if (PersistVars.currentScene.Contains("4"))
+                        {
+                            PersistVars.paintingNum = 5;
+                        }
+                        else if (PersistVars.currentScene.Contains("5"))
+                        {
+                            PersistVars.paintingNum = 6;
+                        }
                         break;
                     default:
                         if (currentLine[i].Contains("#goto"))
@@ -427,6 +683,7 @@ public class DialogueReader : MonoBehaviour
         quit.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         muse.GetComponent<BoxCollider2D>().enabled = true;
+        isTalking = false;
     }
 
     public void StartDialogue()
@@ -468,15 +725,15 @@ public class DialogueReader : MonoBehaviour
         {
             if(choiceActions[optionNumber].Contains("1"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Z1-TR" + PersistVars.paintingNum.ToString());
             }
             else if (choiceActions[optionNumber].Contains("2"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("3Beauties");
             }
             else if (choiceActions[optionNumber].Contains("3"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Match3 Base");
             }
             else if (choiceActions[optionNumber].Contains("4"))
             {

@@ -16,15 +16,22 @@ public class PersistVars : MonoBehaviour {
     public float findDiffScore;
     public float mastermindScore;
 	public int currentMoney;
+	public int strikes;
+	public bool freePass = false;
 
     public int knowledgeCount = 0;
 
-    public Scene currentScene;
-    public Scene previousScene;
+    public static string currentScene = null;
+    public static string previousScene = null;
+    public bool ukiyoe = false;
+    public bool baroque = false;
+    public bool surrealism = false;
 
     private static GameObject clue = null;
 
     public static string ggScrub = "This will be the best art theft game ever made.  No doubt about it!";
+
+    public static bool returningToHome = false;
 
     public GameObject UI;
     public GameObject clueOne;
@@ -33,6 +40,11 @@ public class PersistVars : MonoBehaviour {
     public GameObject clueFour;
     public GameObject clueFive;
     public GameObject clueSix;
+
+    //Painting Number
+    //This is a number between 1-18, which determines what painting you're working on.
+    //1-6 is Ukiyo, 7-12 is Surreal, 13-18 is Baroque
+    public static int paintingNum = 1;
 
     //Locations
     public static bool Ukiyo = false;
@@ -59,12 +71,13 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueOne = { false, false, false, false, false, false };
     public static bool[] BaroqueTwo = { false, false, false, false, false, false };
     public static bool[] BaroqueThree = { false, false, false, false, false, false };
-    public static bool[] BaroqeuFour = { false, false, false, false, false, false };
+    public static bool[] BaroqueFour = { false, false, false, false, false, false };
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
     void Start()
     {
+        DialogueReader.paintNum = paintingNum;
         UI.GetComponent<DialogueReader>().nextButton.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option1.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option2.gameObject.SetActive(false);
@@ -77,22 +90,62 @@ public class PersistVars : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             FindClue();
-        }
+        }*/
+
+        /*// These cases are to be handled by OnLevelWasLoaded()
+        switch(SceneManager.GetActiveScene().name)
+        {
+            // Switch cases for Ukiyo-e zone
+            case "Ukiyo-eZone":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_0":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_1":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_2":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_3":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_4":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            case "U_5":
+                ukiyoe = true;
+                currentScene = SceneManager.GetActiveScene();
+                break;
+            // Default case
+            default:
+                //print("did not get a valid scene");
+                ukiyoe = true;
+                break;
+            //ONLOADEDLEVEL
+        }*/
     }
 
-    void FindClue()
+    /*void FindClue()
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
 
         if (hit)
         {
-            /*if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
+            if (SceneManager.GetActiveScene().name == "S_0" || SceneManager.GetActiveScene().name == "S_1" || SceneManager.GetActiveScene().name == "S_2" || SceneManager.GetActiveScene().name == "S_3" || SceneManager.GetActiveScene().name == "S_4"
                 || SceneManager.GetActiveScene().name == "U_0" || SceneManager.GetActiveScene().name == "U_1" || SceneManager.GetActiveScene().name == "U_2" || SceneManager.GetActiveScene().name == "U_3" || SceneManager.GetActiveScene().name == "U_4"
                 || SceneManager.GetActiveScene().name == "B_0" || SceneManager.GetActiveScene().name == "B_1" || SceneManager.GetActiveScene().name == "B_2" || SceneManager.GetActiveScene().name == "B_3" || SceneManager.GetActiveScene().name == "B_4")
-            {*/
+            {
                 if (hit.collider.gameObject.tag == "clue")
                 {
                     if (hit.collider.gameObject == clueOne)
@@ -128,7 +181,7 @@ public class PersistVars : MonoBehaviour {
                 //}
             }
         }
-    }
+    }*/
 
     // Use to clear variables once a painting has been sold
     void ClearVars()
@@ -180,6 +233,54 @@ public class PersistVars : MonoBehaviour {
                 break;
             case "USix":
                 UkiyoSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SOne":
+                SurrealOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "STwo":
+                SurrealTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SThree":
+                SurrealThree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SFour":
+                SurrealFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SFive":
+                SurrealFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "SSix":
+                SurrealSix[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BOne":
+                BaroqueOne[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BTwo":
+                BaroqueTwo[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BThree":
+                BaroqueThree[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BFour":
+                BaroqueFour[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BFive":
+                BaroqueFive[index] = true;
+                UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                break;
+            case "BSix":
+                BaroqueSix[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
                 break;
             default:
