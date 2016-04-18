@@ -63,6 +63,8 @@ can prove your knowledge of the piece you are selling.
 @blkSell
 #SetDialogue
 #blkresult
+#option1 #goto:Continue
+#option1Text Continue
 
 @ukiyo1_1
 #SetDialogue

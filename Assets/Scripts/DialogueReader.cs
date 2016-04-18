@@ -587,6 +587,10 @@ public class DialogueReader : MonoBehaviour
 							GoTo ("blkSell");
 						}
 						break;
+				case "#blkresult":
+					currentText.text = "You got " + SellCont.correct + " questions correct\n" 
+						+ "You sold the forgery for $" + SellCont.bkPay;
+					break;
                     case "#change":
                         if(PersistVars.currentScene.Contains("0"))
                         {
@@ -769,7 +773,6 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 1;
                 paintNum = 1;
-                dialogue = 
             }
             else if (PersistVars.currentScene == "U_1")
             {
