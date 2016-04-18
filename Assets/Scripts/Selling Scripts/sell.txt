@@ -24,10 +24,6 @@ but you you will not be able to sell to this client next time.
 #option1Text Continue
 
 @fail2
-You have been caught. You recieve ONE STRIKE,
-and you you will not be able to sell to this client next time.
-Three strikes and your forgery career is over.
-You currently have:
 #SetDialogue
 #failed2
 #SetOptions
@@ -38,7 +34,6 @@ You currently have:
 You have been caught. You recieve ONE STRIKE.
 You have THREE STRIKES in total.
 Your forgery career is over.
-You currently have:
 #SetOptions
 #option1 #goto:Continue
 #option1Text Continue
@@ -75,4 +70,92 @@ True or False:
 Hishikawa Moronobu created 'Shoki Striding'.
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
-#option1Text True. #option2Text False.
+#option1Text True. #option2Text $False.
+
+@ukiyo1_2
+#SetDialogue
+True or False:
+'Shoki Striding' was printed on a paper size called hanging scroll.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo1_3
+#SetDialogue
+True or False:
+Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints?;.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text $True. #option2Text False.
+
+@ukiyo2_1
+#SetDialogue
+True or False:
+'Otani Oniji III as Yakko Edobei' is the name of the currnt piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text $True. #option2Text False.
+
+@ukiyo2_2
+#SetDialogue
+True or False:
+Tōshūsai Sharaku created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text $True. #option2Text False.
+
+@ukiyo2_3
+#SetDialogue
+True or False:
+Sharaku focused on the aspect of energy in his protraits.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text $True. #option2Text False.
+
+@ukiyo3_1
+#SetDialogue
+True or False:
+'The Great Wave off Kanagawa' is the game of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo3_2
+#SetDialogue
+True or False:
+Utagawa Hiroshige created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo3_3
+#SetDialogue
+True or False:
+'The Great Wave off Kanagawa' is the first of a print series called Oceans of Wisdom.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo4_1
+#SetDialogue
+True or False:
+'The Great Wave off Kanagawa' is the game of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo4_2
+#SetDialogue
+True or False:
+Utagawa Hiroshige created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo4_3
+#SetDialogue
+True or False:
+'The Great Wave off Kanagawa' is the first of a print series called Oceans of Wisdom.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
