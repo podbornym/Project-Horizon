@@ -41,6 +41,11 @@ public class PersistVars : MonoBehaviour {
     public GameObject clueFive;
     public GameObject clueSix;
 
+    //Painting Number
+    //This is a number between 1-18, which determines what painting you're working on.
+    //1-6 is Ukiyo, 7-12 is Surreal, 13-18 is Baroque
+    public int paintingNum = 1;
+
     //Locations
     public static bool Ukiyo = false;
     public static bool Surreal = false;

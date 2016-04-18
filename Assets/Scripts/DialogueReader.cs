@@ -9,6 +9,7 @@ public class DialogueReader : MonoBehaviour
     private int lineNum = 0;
     private string option;
     private string[] choiceActions = new string[6];
+    public GameObject UI;
     public TextAsset dialogue;
     public GameObject dialogueContainer;
     public GameObject nextButton;
@@ -514,15 +515,15 @@ public class DialogueReader : MonoBehaviour
         {
             if(choiceActions[optionNumber].Contains("1"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Z1-TR" + UI.GetComponent<PersistVars>().paintingNum.ToString());
             }
             else if (choiceActions[optionNumber].Contains("2"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("3Beauties");
             }
             else if (choiceActions[optionNumber].Contains("3"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Mastermind Base");
             }
             else if (choiceActions[optionNumber].Contains("4"))
             {
