@@ -40,12 +40,6 @@ public class DialogueReader : MonoBehaviour
     {
         textbox.text = "";
         entries = dialogue.text.Split('\n');
-        clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
-        clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
-        clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
-        clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
-        clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
-        clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
         nextButton.gameObject.SetActive(false);
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
@@ -66,6 +60,18 @@ public class DialogueReader : MonoBehaviour
         {
             SetClue();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            clueOne = null;
+            clueTwo = null;
+            clueThree = null;
+            clueFour = null;
+            clueFive = null;
+            clueSix = null;
+            muse = null;
+        }
+       
     }
 
     void SetClue()
@@ -75,35 +81,43 @@ public class DialogueReader : MonoBehaviour
             if (i == 1)
             {
                 clueOne = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
+                if(clueOne != null)
+                    clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
             }
             if (i == 2)
             {
                 clueTwo = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
+                if (clueTwo != null)
+                    clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
             }
             if (i == 3)
             {
                 clueThree = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
+                if (clueThree != null)
+                    clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
             }
             if (i == 4)
             {
                 clueFour = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
+                if(clueFour != null)
+                    clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
             }
             if (i == 5)
             {
                 clueFive = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
+                if(clueFive != null)
+                    clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
             }
             if (i == 6)
             {
                 clueSix = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
+                if(clueSix != null)
+                    clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
             }
         }
-        muse = GameObject.Find("muse");
+        muse = GameObject.FindGameObjectWithTag("muse");
+        if(muse != null)
+            muse.gameObject.GetComponent<Collider2D>().enabled = true;
     }
 
     void FindClue()
@@ -114,7 +128,7 @@ public class DialogueReader : MonoBehaviour
         {
             if(hit.collider.tag == "muse")
             {
-                muse = hit.collider.gameObject;
+                //muse = hit.collider.gameObject;
                 muse.GetComponent<BoxCollider2D>().enabled = false;
                 dialogueContainer.SetActive(true);
                 isTalking = true;
@@ -125,6 +139,7 @@ public class DialogueReader : MonoBehaviour
                 else
                 {
                     GoTo("change");
+                    NextLine();
                 }
             }
         }
@@ -434,32 +449,6 @@ public class DialogueReader : MonoBehaviour
 							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
 						break;
-                    case "#change":
-                        if(PersistVars.currentScene.Contains("0"))
-                        {
-                            PersistVars.paintingNum = 1;
-                        }
-                        else if (PersistVars.currentScene.Contains("1"))
-                        {
-                            PersistVars.paintingNum = 2;
-                        }
-                        else if (PersistVars.currentScene.Contains("2"))
-                        {
-                            PersistVars.paintingNum = 3;
-                        }
-                        else if (PersistVars.currentScene.Contains("3"))
-                        {
-                            PersistVars.paintingNum = 4;
-                        }
-                        else if (PersistVars.currentScene.Contains("4"))
-                        {
-                            PersistVars.paintingNum = 5;
-                        }
-                        else if (PersistVars.currentScene.Contains("5"))
-                        {
-                            PersistVars.paintingNum = 6;
-                        }
-                        break;
                     default:
                         if (currentLine[i].Contains("#goto"))
                         {
@@ -609,6 +598,49 @@ public class DialogueReader : MonoBehaviour
             {
                 SceneManager.LoadScene("Z1-TR1");
             }
+        }
+        else if (choiceActions[optionNumber].Contains("#change"))
+        {
+            if (PersistVars.currentScene == "U_0")
+            {
+                PersistVars.paintingNum = 1;
+                paintNum = 1;
+            }
+            else if (PersistVars.currentScene == "U_1")
+            {
+                PersistVars.paintingNum = 2;
+                paintNum = 2;
+            }
+            else if (PersistVars.currentScene == "U_2")
+            {
+                PersistVars.paintingNum = 3;
+                paintNum = 3;
+            }
+            else if (PersistVars.currentScene == "U_3")
+            {
+                PersistVars.paintingNum = 4;
+                paintNum = 4;
+            }
+            else if (PersistVars.currentScene == "U_4")
+            {
+                PersistVars.paintingNum = 5;
+                paintNum = 5;
+            }
+            else if (PersistVars.currentScene == "U_5")
+            {
+                PersistVars.paintingNum = 6;
+                paintNum = 6;
+            }
+            print(PersistVars.currentScene);
+            print(PersistVars.currentScene == "U_2");
+            print(paintNum);
+            print((paintNum - 1) * 6);
+            GoTo("Start");
+            NextLine();
+        }
+        else if (choiceActions[optionNumber].Contains("#quit"))
+        {
+            EndDialogue();
         }
     }
 }

@@ -143,7 +143,10 @@ Nasu:
 #goto:Start
 
 @change
+#SetDialogue
+#SetDialogue
 Would you like to change paintings?
+#SetOptions
 #option1 #change
 #option2 #quit
 #option1Text Yes #option2Text No
