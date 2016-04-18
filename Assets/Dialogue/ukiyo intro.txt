@@ -1,0 +1,16 @@
+???: Greetings, traveler. I am Nasu.
+Ren: What is this place?
+Nasu: You are in Edo, otherwise known as Tokyo in your time.
+This is the peak of the artistic cultural period known as Ukiyo-e.
+Ren: Japan, huh? I should get some sushi while I'm here.
+Nasu: FOCUS ON YOUR ART, NOT YOUR STOMACH!
+Ren: Sorry, haha!
+What exactly is Ukiyo-e?
+Nasu: Well, Ukiyo-e is made using wood carvings of paintings.
+After making the carving, ink is brushed across the wood and the wood is pressed onto paper.
+It's essentially a wooden stamp, but put to much more detail.
+Ren: That sounds like it'd be fun to make.
+Nasu: Well, you'll have plenty of time to try yourself.
+Why don't you go have a look around and see what you can learn?
+When you're finished, come back and talk to me. I have plenty to teach you.
+#quit

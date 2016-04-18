@@ -30,6 +30,7 @@ public class DialogueReader : MonoBehaviour
     public Text option5;
     public Text option6;
     private Text currentText;
+    public bool isTalking = false;
 
     // Use this for initialization
     void Start ()
@@ -58,6 +59,10 @@ public class DialogueReader : MonoBehaviour
         {
             FindClue();
         }
+        if(!isTalking)
+        {
+
+        }
     }
 
     void FindClue()
@@ -71,6 +76,7 @@ public class DialogueReader : MonoBehaviour
                 muse = hit.collider.gameObject;
                 muse.GetComponent<BoxCollider2D>().enabled = false;
                 dialogueContainer.SetActive(true);
+                isTalking = true;
                 NextLine();
             }
         }
@@ -336,9 +342,6 @@ public class DialogueReader : MonoBehaviour
                     case "#option6Text":
                         currentText = option6;
                         break;
-                    case "#play":
-
-                        break;
                     case "#quit":
                         EndDialogue();
                         break;
@@ -427,6 +430,7 @@ public class DialogueReader : MonoBehaviour
         quit.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         muse.GetComponent<BoxCollider2D>().enabled = true;
+        isTalking = false;
     }
 
     public void StartDialogue()
