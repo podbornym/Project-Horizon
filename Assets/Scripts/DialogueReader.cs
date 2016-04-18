@@ -727,6 +727,7 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 5;
                 paintNum = 5;
+                ReadFile("./Assets/Dialogue/SuddenShowerDialogue.txt");
             }
             else if (PersistVars.currentScene == "U_5")
             {
