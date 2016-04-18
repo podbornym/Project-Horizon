@@ -44,7 +44,7 @@ public class PipeDreamManager : MonoBehaviour {
         {
             if (end.GetComponent<PipeRotator>().IsConnected)
             {
-                for (int i = 2; i < objectGrid.Count; i++)
+                for (int i = 0; i < objectGrid.Count; i++)
                 {
                     if(objectGrid[i].GetComponent<PipeRotator>().IsConnected)
                     {
@@ -83,7 +83,7 @@ public class PipeDreamManager : MonoBehaviour {
         while (gameRunning)
         {
             yield return new WaitForSeconds(4);
-            for (int i = 2; i < objectGrid.Count; i++)
+            for (int i = 0; i < objectGrid.Count; i++)
             {
                 //Checks tag of tile
                 //If tag is Straight

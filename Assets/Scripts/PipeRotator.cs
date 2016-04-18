@@ -20,7 +20,7 @@ public class PipeRotator : MonoBehaviour {
     void Awake()
     {
         ObjectManager = GameObject.Find("Pipe Dream Manager");
-        //ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Add(gameObject);
+        ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Add(gameObject);
     }
 
     // Use this for initialization
@@ -188,13 +188,16 @@ public class PipeRotator : MonoBehaviour {
     //Called on left mouse down while on a collider
     void OnMouseDown()
     {
-        for(int i = 2; i < ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Count; i++)
+        for(int i = 0; i < ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Count; i++)
         {
             ObjectManager.GetComponent<PipeDreamManager>().objectGrid[i].GetComponent<PipeRotator>().IsConnected = false;
         }
-        for(int i = 2; i < ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Count; i++)
+        for(int i = 0; i < ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Count; i++)
         {
-
+            if(ObjectManager.GetComponent<PipeDreamManager>().objectGrid[i].gameObject.tag == "Start")
+            {
+                ObjectManager.GetComponent<PipeDreamManager>().objectGrid[i].GetComponent<PipeRotator>().IsConnected = true;
+            }
         }
 
         //Checks if the tile can rotate
