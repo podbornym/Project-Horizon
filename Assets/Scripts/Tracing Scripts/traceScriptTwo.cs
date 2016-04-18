@@ -46,10 +46,19 @@ public class traceScriptTwo : MonoBehaviour {
 
     public Text directions;
 
+    public Button resetButton;
+    public Button continueButton;
+
     void Start()
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         // directions.enabled = !directions.enabled;
+
+    }
+    void Awake()
+    {
+        continueButton.interactable = false;
+        resetButton.interactable = false;
     }
 	
 	// Update is called once per frame
@@ -65,6 +74,7 @@ public class traceScriptTwo : MonoBehaviour {
             {
                 warning.text = "Don't start early!";
             }
+            resetButton.interactable = false;
         }
         else
         {
@@ -72,10 +82,13 @@ public class traceScriptTwo : MonoBehaviour {
             rend.enabled = false;
             time.text = "Go!";
             warning.text = " ";
+            resetButton.interactable = true;
         }
 
         if (Input.GetKeyDown("tab"))
+        {
             tabProcedure();
+        }
 
         //if the mousePosition is within the bounds of startPoint
         if (CheckBoundaries(firstHit, startX, startY, mousePosition))
@@ -125,6 +138,9 @@ public class traceScriptTwo : MonoBehaviour {
             {
                 CalculateScore();
                 DisplayScore();
+                resetButton.interactable = false;
+                continueButton.interactable = true;
+                print("continueButton not interactable");
             }
         }
     }
