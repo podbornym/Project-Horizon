@@ -192,10 +192,6 @@ public class PersistVars : MonoBehaviour {
         {
             UI.GetComponent<DialogueReader>().ClueFound[i] = false;
         }
-		if (freePass == true)
-		{
-			freePass = false;
-		}
     }
 
     // Use to get all total inherited scores, then evaluate the player on their painting replication

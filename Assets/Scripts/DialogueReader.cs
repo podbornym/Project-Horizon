@@ -31,6 +31,7 @@ public class DialogueReader : MonoBehaviour
     public Text option5;
     public Text option6;
     private Text currentText;
+	public string curPiece; //placeholder
 
     // Use this for initialization
     void Start ()
@@ -374,16 +375,22 @@ public class DialogueReader : MonoBehaviour
 							
 						}
 						break;
-					case "passed1":
+					case "#passed1":
 						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
 						break;
-					case "failed2":
+					case "#failed2":
 						currentText.text = "You have been caught\n." +
 							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
 							"Three strikes and your forgery career is over.\n" +
 							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
 						break;
+				case "#quest1":
+					if (curPiece == "piece1") //Shoki Striding
+					{
+						GoTo ("ukiyo1_1");
+					}
+					break;
                     default:
                         if (currentLine[i].Contains("#goto"))
                         {
