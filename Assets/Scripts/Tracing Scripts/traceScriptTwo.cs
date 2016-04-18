@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class traceScriptTwo : MonoBehaviour {
 
@@ -170,6 +171,11 @@ public class traceScriptTwo : MonoBehaviour {
 
     public void toPreviousScene()
     {
-        //will add this soon
+        if (PersistVars.previousScene != "null")
+        {
+            GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = successRatio;
+            SceneManager.LoadScene(PersistVars.previousScene);
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
+        }
     }
 }

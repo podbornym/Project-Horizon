@@ -99,48 +99,48 @@ public class Mastermind : MonoBehaviour {
         {
             if (artStyle == "ukiyo-e")
             {
-                if (paintingNo == 1) // Shoki Striding
+                if (paintingNo == 1) // Three Beauties of the Present Day
                 {
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
-                        answer1.text = "Actor as Wakanoura Osana Komachi";
-                        answer2.text = "Shöki The Devil Queller";
-                        answer3.text = "Actor Hayakawa Hatsuse";
-                        answer4.text = "Shoki Striding";
-                        answer5.text = "The Spring Pony Dance";
-                        answer6.text = "Yaoya Oshichi";
-                        SetCorrectAnswer(4); // Answer: Shoki Striding
+                        answer1.text = "Famous Beauties of Edo";
+                        answer2.text = "Hairdresser";
+                        answer3.text = "Three Beauties of the Present Day";
+                        answer4.text = "Three Beauties Holding Bags of Snacks";
+                        answer5.text = "An Array of Passionate Lovers";
+                        answer6.text = "Stylish Amusements of the Four Seasons";
+                        SetCorrectAnswer(3); // Answer: Three Beauties of the Present Day
                     }
                     if (questionNo == 2)
                     {
                         question.text = "Who created this piece?";
                         answer1.text = "Tōshūsai Sharaku";
                         answer2.text = "Kitagawa Utamaro";
-                        answer3.text = "Utagawa Hiroshige";
-                        answer4.text = "Hishikawa Moronobu";
+                        answer3.text = "Katsushika Hokusai";
+                        answer4.text = "Utagawa Hiroshige";
                         answer5.text = "Okumura Masanobu";
                         GameObject.Destroy(GameObject.Find("Answer6"));
-                        SetCorrectAnswer(5); // Answer: Okumura Masanobu
+                        SetCorrectAnswer(2); // Answer: Kitagawa Utamaro
                     }
                     if (questionNo == 3)
                     {
-                        question.text = "'Shoki Striding' was printed on what paper size?";
-                        answer1.text = "Narrow";
-                        answer2.text = "Pillar print";
-                        answer3.text = "Hanging scroll";
-                        answer4.text = "Large poem card";
+                        question.text = "What do the three women have that identifies who they are?";
+                        answer1.text = "Unique clothing";
+                        answer2.text = "Fashionable hairstyles";
+                        answer3.text = "Different facial features";
+                        answer4.text = "Family crests";
                         GameObject.Destroy(GameObject.Find("Answer5"));
-                        SetCorrectAnswer(2); // Answer: Pillar print
+                        SetCorrectAnswer(4); // Answer: Family crests
                     }
                     if (questionNo == 4)
                     {
-                        question.text = "What sets apart Masanobu's style, urushi-e, from other woodblock prints?";
-                        answer1.text = "Thick lines";
-                        answer2.text = "Lack of color";
-                        answer3.text = "Figures in motion";
+                        question.text = "What aspect is represented by the triangle composition of the women?";
+                        answer1.text = "Unity";
+                        answer2.text = "Beauty";
+                        answer3.text = "Fame";
                         GameObject.Destroy(GameObject.Find("Answer4"));
-                        SetCorrectAnswer(1); // Answer: Thick lines
+                        SetCorrectAnswer(1); // Answer: Unity
                     }
                     if (questionNo >= 5)
                     {
@@ -149,48 +149,48 @@ public class Mastermind : MonoBehaviour {
                     }
                 }
 
-                if (paintingNo == 2) // Otani Oniji III as Yakko Edobei
+                if (paintingNo == 2) // Waitress at an Inn at Akasaka
                 {
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
-                        answer1.text = "Sakata Hangoro III as the villain Fujikawa Mizuemon";
-                        answer2.text = "Segawa Kikujurō III as Oshizu, Wife of Tanabe";
-                        answer3.text = "Ishikawa Ebizo IV as Takemura Sadanoshin";
-                        answer4.text = "Sawamura Sōjurō III as Ogishi Kurando";
-                        answer5.text = "Otani Oniji III as Yakko Edobei";
-                        answer6.text = "Ichikawa Yaozo III as Tanabe Bunzo";
-                        SetCorrectAnswer(5); // Answer: Otani Oniji III as Yakko Edobei
+                        answer1.text = "Street Scene in Yoshiwara";
+                        answer2.text = "Lobby of a Brothel";
+                        answer3.text = "Women Dressmaking and Artesans at Work";
+                        answer4.text = "A Banquet in a Joroya";
+                        answer5.text = "Gardens and Pavilions of Pleasure";
+                        answer6.text = "Waitress at an Inn at Akasaka";
+                        SetCorrectAnswer(6); // Answer: Waitress at an Inn at Akasaka
                     }
                     if (questionNo == 2)
                     {
                         question.text = "Who created this piece?";
-                        answer1.text = "Hishikawa Moronobu";
-                        answer2.text = "Katsushika Hokusai";
-                        answer3.text = "Kitagawa Utamaro";
-                        answer4.text = "Utagawa Hiroshige";
+                        answer1.text = "Katsushika Hokusai";
+                        answer2.text = "Okumura Masanobu";
+                        answer3.text = "Hishikawa Moronobu";
+                        answer4.text = "Kitagawa Utamaro";
                         answer5.text = "Tōshūsai Sharaku";
                         GameObject.Destroy(GameObject.Find("Answer6"));
-                        SetCorrectAnswer(5); // Answer: Tōshūsai Sharaku
+                        SetCorrectAnswer(3); // Answer: Hishikawa Moronobu
                     }
                     if (questionNo == 3)
                     {
-                        question.text = "The polychrome woodblock printing style that Sharaku used was known as what?";
-                        answer1.text = "Urushi-e";
-                        answer2.text = "Shini-e";
-                        answer3.text = "Aizuri-e";
-                        answer4.text = "Nishiki-e";
+                        question.text = "Why did Moronobu reproduce his art with woodblock prints?";
+                        answer1.text = "To prevent his work from being stolen";
+                        answer2.text = "To make changes and revisions";
+                        answer3.text = "To share his ideas with other artists";
+                        answer4.text = "To make it more available to the public";
                         GameObject.Destroy(GameObject.Find("Answer5"));
-                        SetCorrectAnswer(4); // Answer: Nishiki-e
+                        SetCorrectAnswer(4); // Answer: To make it more available to the public
                     }
                     if (questionNo == 4)
                     {
-                        question.text = "What aspect did Sharaku focus on in his protraits?";
-                        answer1.text = "Beauty";
-                        answer2.text = "Energy";
-                        answer3.text = "Truth";
+                        question.text = "What aspect of Moronobu's art had the most influence on other ukiyo-e artists?";
+                        answer1.text = "Contrasting black and white areas";
+                        answer2.text = "A strong, linear style";
+                        answer3.text = "Scenes of urban life";
                         GameObject.Destroy(GameObject.Find("Answer4"));
-                        SetCorrectAnswer(2); // Answer: Energy
+                        SetCorrectAnswer(2); // Answer: A strong, linear style
                     }
                     if (questionNo >= 5)
                     {
@@ -249,48 +249,48 @@ public class Mastermind : MonoBehaviour {
                     }
                 }
 
-                if (paintingNo == 4) // Three Beauties of the Present Day
+                if (paintingNo == 4) // Shoki Striding
                 {
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
-                        answer1.text = "Famous Beauties of Edo";
-                        answer2.text = "Hairdresser";
-                        answer3.text = "Three Beauties of the Present Day";
-                        answer4.text = "Three Beauties Holding Bags of Snacks";
-                        answer5.text = "An Array of Passionate Lovers";
-                        answer6.text = "Stylish Amusements of the Four Seasons";
-                        SetCorrectAnswer(3); // Answer: Three Beauties of the Present Day
+                        answer1.text = "Actor as Wakanoura Osana Komachi";
+                        answer2.text = "Shöki The Devil Queller";
+                        answer3.text = "Actor Hayakawa Hatsuse";
+                        answer4.text = "Shoki Striding";
+                        answer5.text = "The Spring Pony Dance";
+                        answer6.text = "Yaoya Oshichi";
+                        SetCorrectAnswer(4); // Answer: Shoki Striding
                     }
                     if (questionNo == 2)
                     {
                         question.text = "Who created this piece?";
                         answer1.text = "Tōshūsai Sharaku";
                         answer2.text = "Kitagawa Utamaro";
-                        answer3.text = "Katsushika Hokusai";
-                        answer4.text = "Utagawa Hiroshige";
+                        answer3.text = "Utagawa Hiroshige";
+                        answer4.text = "Hishikawa Moronobu";
                         answer5.text = "Okumura Masanobu";
                         GameObject.Destroy(GameObject.Find("Answer6"));
-                        SetCorrectAnswer(2); // Answer: Kitagawa Utamaro
+                        SetCorrectAnswer(5); // Answer: Okumura Masanobu
                     }
                     if (questionNo == 3)
                     {
-                        question.text = "What do the three women have that identifies who they are?";
-                        answer1.text = "Unique clothing";
-                        answer2.text = "Fashionable hairstyles";
-                        answer3.text = "Different facial features";
-                        answer4.text = "Family crests";
+                        question.text = "'Shoki Striding' was printed on what paper size?";
+                        answer1.text = "Narrow";
+                        answer2.text = "Pillar print";
+                        answer3.text = "Hanging scroll";
+                        answer4.text = "Large poem card";
                         GameObject.Destroy(GameObject.Find("Answer5"));
-                        SetCorrectAnswer(4); // Answer: Family crests
+                        SetCorrectAnswer(2); // Answer: Pillar print
                     }
                     if (questionNo == 4)
                     {
-                        question.text = "What aspect is represented by the triangle composition of the women?";
-                        answer1.text = "Unity";
-                        answer2.text = "Beauty";
-                        answer3.text = "Fame";
+                        question.text = "What sets apart Masanobu's style, urushi-e, from other woodblock prints?";
+                        answer1.text = "Thick lines";
+                        answer2.text = "Lack of color";
+                        answer3.text = "Figures in motion";
                         GameObject.Destroy(GameObject.Find("Answer4"));
-                        SetCorrectAnswer(1); // Answer: Unity
+                        SetCorrectAnswer(1); // Answer: Thick lines
                     }
                     if (questionNo >= 5)
                     {
@@ -299,57 +299,7 @@ public class Mastermind : MonoBehaviour {
                     }
                 }
 
-                if (paintingNo == 5) // Waitress at an Inn at Akasaka
-                {
-                    if (questionNo == 1)
-                    {
-                        question.text = "What is the name of this piece?";
-                        answer1.text = "Street Scene in Yoshiwara";
-                        answer2.text = "Lobby of a Brothel";
-                        answer3.text = "Women Dressmaking and Artesans at Work";
-                        answer4.text = "A Banquet in a Joroya";
-                        answer5.text = "Gardens and Pavilions of Pleasure";
-                        answer6.text = "Waitress at an Inn at Akasaka";
-                        SetCorrectAnswer(6); // Answer: Waitress at an Inn at Akasaka
-                    }
-                    if (questionNo == 2)
-                    {
-                        question.text = "Who created this piece?";
-                        answer1.text = "Katsushika Hokusai";
-                        answer2.text = "Okumura Masanobu";
-                        answer3.text = "Hishikawa Moronobu";
-                        answer4.text = "Kitagawa Utamaro";
-                        answer5.text = "Tōshūsai Sharaku";
-                        GameObject.Destroy(GameObject.Find("Answer6"));
-                        SetCorrectAnswer(3); // Answer: Hishikawa Moronobu
-                    }
-                    if (questionNo == 3)
-                    {
-                        question.text = "Why did Moronobu reproduce his art with woodblock prints?";
-                        answer1.text = "To prevent his work from being stolen";
-                        answer2.text = "To make changes and revisions";
-                        answer3.text = "To share his ideas with other artists";
-                        answer4.text = "To make it more available to the public";
-                        GameObject.Destroy(GameObject.Find("Answer5"));
-                        SetCorrectAnswer(4); // Answer: To make it more available to the public
-                    }
-                    if (questionNo == 4)
-                    {
-                        question.text = "What aspect of Moronobu's art had the most influence on other ukiyo-e artists?";
-                        answer1.text = "Contrasting black and white areas";
-                        answer2.text = "A strong, linear style";
-                        answer3.text = "Scenes of urban life";
-                        GameObject.Destroy(GameObject.Find("Answer4"));
-                        SetCorrectAnswer(2); // Answer: A strong, linear style
-                    }
-                    if (questionNo >= 5)
-                    {
-                        allAnswered = true;
-                        AllDone();
-                    }
-                }
-
-                if (paintingNo == 6) // Sudden Shower over Shin-Ōhashi Bridge and Atake
+                if (paintingNo == 5) // Sudden Shower over Shin-Ōhashi Bridge and Atake
                 {
                     if (questionNo == 1)
                     {
@@ -391,6 +341,56 @@ public class Mastermind : MonoBehaviour {
                         answer3.text = "The diagonal positioning of elements";
                         GameObject.Destroy(GameObject.Find("Answer4"));
                         SetCorrectAnswer(2); // Answer: The gradual darkening of the sky and water
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 6) // Otani Oniji III as Yakko Edobei
+                {
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Sakata Hangoro III as the villain Fujikawa Mizuemon";
+                        answer2.text = "Segawa Kikujurō III as Oshizu, Wife of Tanabe";
+                        answer3.text = "Ishikawa Ebizo IV as Takemura Sadanoshin";
+                        answer4.text = "Sawamura Sōjurō III as Ogishi Kurando";
+                        answer5.text = "Otani Oniji III as Yakko Edobei";
+                        answer6.text = "Ichikawa Yaozo III as Tanabe Bunzo";
+                        SetCorrectAnswer(5); // Answer: Otani Oniji III as Yakko Edobei
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Hishikawa Moronobu";
+                        answer2.text = "Katsushika Hokusai";
+                        answer3.text = "Kitagawa Utamaro";
+                        answer4.text = "Utagawa Hiroshige";
+                        answer5.text = "Tōshūsai Sharaku";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(5); // Answer: Tōshūsai Sharaku
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "The polychrome woodblock printing style that Sharaku used was known as what?";
+                        answer1.text = "Urushi-e";
+                        answer2.text = "Shini-e";
+                        answer3.text = "Aizuri-e";
+                        answer4.text = "Nishiki-e";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(4); // Answer: Nishiki-e
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "What aspect did Sharaku focus on in his protraits?";
+                        answer1.text = "Beauty";
+                        answer2.text = "Energy";
+                        answer3.text = "Truth";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(2); // Answer: Energy
                     }
                     if (questionNo >= 5)
                     {

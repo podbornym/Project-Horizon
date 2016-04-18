@@ -18,7 +18,7 @@ public class StudioScript : MonoBehaviour {
             Cursor.SetCursor(standardCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
-
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         UI = GameObject.Find("GENERALUI");
 	}
     
