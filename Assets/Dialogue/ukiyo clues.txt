@@ -141,3 +141,9 @@ Ren: What can you tell me about this time period?
 Nasu: 
 #activateClue6
 #goto:Start
+
+@change
+Would you like to change paintings?
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

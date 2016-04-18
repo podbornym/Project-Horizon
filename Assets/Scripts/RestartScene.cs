@@ -18,7 +18,10 @@ public class RestartScene : MonoBehaviour {
     public void NextLevel()
     {
         if (PersistVars.previousScene != "null")
+        {
             GameObject.Find("GENERALUI").GetComponent<PersistVars>().match3Score = BoardCreation.match3Return;
             SceneManager.LoadScene(PersistVars.previousScene);
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
+        }
     }
 }

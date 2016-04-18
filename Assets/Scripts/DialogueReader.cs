@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueReader : MonoBehaviour
 {
+    public static int paintNum;
     public string[] entries;
     private int lineNum = 0;
     private string option;
@@ -61,10 +62,48 @@ public class DialogueReader : MonoBehaviour
         {
             FindClue();
         }
-        if(!isTalking)
+        if (clueOne == null || clueTwo == null || clueThree == null || clueFour == null || clueFive == null || clueSix == null)
         {
-
+            SetClue();
         }
+    }
+
+    void SetClue()
+    {
+        for(int i = 1; i < 7; i++)
+        {
+            if (i == 1)
+            {
+                clueOne = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 2)
+            {
+                clueTwo = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueTwo.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 3)
+            {
+                clueThree = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueThree.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 4)
+            {
+                clueFour = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueFour.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 5)
+            {
+                clueFive = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueFive.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+            if (i == 6)
+            {
+                clueSix = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
+                clueSix.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+        }
+        muse = GameObject.Find("muse");
     }
 
     void FindClue()
@@ -79,7 +118,14 @@ public class DialogueReader : MonoBehaviour
                 muse.GetComponent<BoxCollider2D>().enabled = false;
                 dialogueContainer.SetActive(true);
                 isTalking = true;
-                NextLine();
+                if(PersistVars.currentScene.Contains(((paintNum - 1) % 6).ToString()))
+                {
+                    NextLine();
+                }
+                else
+                {
+                    GoTo("change");
+                }
             }
         }
     }
@@ -388,6 +434,32 @@ public class DialogueReader : MonoBehaviour
 							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " skrikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
 						break;
+                    case "#change":
+                        if(PersistVars.currentScene.Contains("0"))
+                        {
+                            PersistVars.paintingNum = 1;
+                        }
+                        else if (PersistVars.currentScene.Contains("1"))
+                        {
+                            PersistVars.paintingNum = 2;
+                        }
+                        else if (PersistVars.currentScene.Contains("2"))
+                        {
+                            PersistVars.paintingNum = 3;
+                        }
+                        else if (PersistVars.currentScene.Contains("3"))
+                        {
+                            PersistVars.paintingNum = 4;
+                        }
+                        else if (PersistVars.currentScene.Contains("4"))
+                        {
+                            PersistVars.paintingNum = 5;
+                        }
+                        else if (PersistVars.currentScene.Contains("5"))
+                        {
+                            PersistVars.paintingNum = 6;
+                        }
+                        break;
                     default:
                         if (currentLine[i].Contains("#goto"))
                         {
@@ -515,7 +587,7 @@ public class DialogueReader : MonoBehaviour
         {
             if(choiceActions[optionNumber].Contains("1"))
             {
-                SceneManager.LoadScene("Z1-TR" + UI.GetComponent<PersistVars>().paintingNum.ToString());
+                SceneManager.LoadScene("Z1-TR" + PersistVars.paintingNum.ToString());
             }
             else if (choiceActions[optionNumber].Contains("2"))
             {
@@ -523,7 +595,7 @@ public class DialogueReader : MonoBehaviour
             }
             else if (choiceActions[optionNumber].Contains("3"))
             {
-                SceneManager.LoadScene("Mastermind Base");
+                SceneManager.LoadScene("Match3 Base");
             }
             else if (choiceActions[optionNumber].Contains("4"))
             {

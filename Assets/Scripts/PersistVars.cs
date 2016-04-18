@@ -44,7 +44,7 @@ public class PersistVars : MonoBehaviour {
     //Painting Number
     //This is a number between 1-18, which determines what painting you're working on.
     //1-6 is Ukiyo, 7-12 is Surreal, 13-18 is Baroque
-    public int paintingNum = 1;
+    public static int paintingNum = 1;
 
     //Locations
     public static bool Ukiyo = false;
@@ -77,6 +77,7 @@ public class PersistVars : MonoBehaviour {
 
     void Start()
     {
+        DialogueReader.paintNum = paintingNum;
         UI.GetComponent<DialogueReader>().nextButton.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option1.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option2.gameObject.SetActive(false);
