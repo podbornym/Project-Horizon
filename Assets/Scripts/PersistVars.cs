@@ -46,6 +46,9 @@ public class PersistVars : MonoBehaviour {
     //1-6 is Ukiyo, 7-12 is Surreal, 13-18 is Baroque
     public static int paintingNum = 1;
 
+	// Painting Max Value
+	public static int[] maxValue = new int[18];
+
     //Locations
     public static bool Ukiyo = false;
     public static bool Surreal = false;
@@ -86,6 +89,11 @@ public class PersistVars : MonoBehaviour {
         UI.GetComponent<DialogueReader>().option5.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
+
+		for (int i=0; i<18; i++)
+		{
+			maxValue [i] = 1000000 * (i + 1);
+		}
     }
 
     void Update()

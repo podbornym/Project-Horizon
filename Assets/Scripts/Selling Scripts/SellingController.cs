@@ -36,6 +36,7 @@ public class SellingController : MonoBehaviour {
 		m6 = vars.mastermindScore;
 		avg = logic.Avg (m1, m2, m3, m4, m5, m6);
 		avg = (float)System.Math.Round (avg,2);
+		maxValue = PersistVars.maxValue[PersistVars.paintingNum-1];
 
 		// Setting estimate values
 		Text hText = highText.GetComponent<Text>();

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class traceScriptTwo : MonoBehaviour {
 
@@ -37,9 +38,19 @@ public class traceScriptTwo : MonoBehaviour {
     // Start button renderer
     public Renderer rend;
 
+    public GameObject scoreCircle;
+
+    public Sprite A;
+    public Sprite B;
+    public Sprite C;
+    public Sprite D;
+
+    public Text directions;
+
     void Start()
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        // directions.enabled = !directions.enabled;
     }
 	
 	// Update is called once per frame
@@ -50,7 +61,7 @@ public class traceScriptTwo : MonoBehaviour {
         if(timeRemaining >= 0)
         {
             timeRemaining -= Time.deltaTime;
-            time.text = "Inspection Time Remaining: " + (timeRemaining).ToString("n1");
+            time.text = (timeRemaining).ToString("n1");
             if (Input.GetMouseButton(0) && GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition))
             {
                 warning.text = "Don't start early!";
@@ -139,15 +150,15 @@ public class traceScriptTwo : MonoBehaviour {
     public void DisplayScore()
     {
         if (successRatio>=.90)
-            score.text = "Grade: A.";
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = A;
         if (successRatio >= .80 && successRatio < .90)
-            score.text = "Grade: B.";
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = B;
         if (successRatio >= .70 && successRatio < .80)
-            score.text = "Grade: C.";
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = C;
         if (successRatio >= .60 && successRatio < .70)
-            score.text = "Grade: D.";
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
         if (successRatio < .60)
-            score.text = "Grade: F.";
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
     }
 
     public void CalculateScore()
@@ -170,6 +181,20 @@ public class traceScriptTwo : MonoBehaviour {
 
     public void toPreviousScene()
     {
-        //will add this soon
+        if (PersistVars.previousScene != "null")
+        {
+            GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = successRatio;
+            SceneManager.LoadScene(PersistVars.previousScene);
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
+        }
+    }
+
+    public void showDirections()
+    {
+        /*if (directions.GetComponent<Text>().enabled == false)
+            directions.enabled = true;
+        if (directions.enabled == true)
+            directions.enabled = false;*/
+        directions.enabled = !directions.enabled;
     }
 }

@@ -11,22 +11,31 @@ public class TimerScipt : MonoBehaviour {
     public float zTotalScore;
     public Text finishText;
 
-    public GameObject[] puzzlePieces = new GameObject[3];
+	public Sprite GradeA;
+	public Sprite GradeB;
+	public Sprite GradeC;
+	public Sprite GradeD;
+
+    public GameObject[] puzzlePieces = new GameObject[2];
     private SelectAndMove[] puzzleSM;
 
     void Awake()
     {
+		
         puzzleSM = new SelectAndMove[puzzlePieces.Length];
         int i = 0;
         foreach (GameObject cur in puzzlePieces)
         {
-            puzzleSM[i] = cur.GetComponent<SelectAndMove>();
+			print (cur);
+			puzzleSM[i] = cur.GetComponent<SelectAndMove>();
             i++;
         }
+        
     }
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         seconds = 0;
         timeCounter = GameObject.Find("TimerText").GetComponent<Text>();
     }
@@ -50,48 +59,57 @@ public class TimerScipt : MonoBehaviour {
             print("ERROR: waveSM is null");
         }
 
+
         int i = 0;
         float posScore = 0;
         zTotalScore = 0;
-        foreach (SelectAndMove cur in puzzleSM)
+		foreach (GameObject cur in puzzlePieces)
         {
+			print (cur);
             if (cur == null)
             {
                 print("ERROR: cur[" + i + "] is null");
             }
-			print ("Piece[" + i + "] has position score " + cur.returnPosScore () + " and rotated score " + cur.returnZScore ());
-            posScore += cur.returnPosScore();
-            zTotalScore += cur.returnZScore();
+
+			//print ("Piece[" + i + "] has position score " + cur.returnPosScore () + " and rotated score " + cur.returnZScore ());
+//			print(cur.GetComponent<SelectAndMove>().returnPosScore() );
+
+			/*
+			posScore += cur.GetComponent<SelectAndMove>().returnPosScore();
+			zTotalScore += cur.GetComponent<SelectAndMove>().returnZScore();
             i++;
+            */
         }
-        //posScore /= 4.0f;
-        //zTotalScore /= 4.0f;
-        //if (zTotalScore > 180)
-        //{
-        //    zTotalScore = 360 - zTotalScore;
-        //}
+
         print("Returned position score: " + posScore);
         print("Rotation Score: " + zTotalScore);
 
+		GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
+		GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
 
         if ((posScore < 9) && (zTotalScore < 15))
         {
             print("You have done 'A' quality work!");
-            finishText.text = "You have earned an A for this work";
+			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
+			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
         }
         else if ((posScore < 15) && (zTotalScore < 23))
         {
             print("You have done 'B' quality work!");
+			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
+			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeB;
         }
         else if ((posScore < 20) && (zTotalScore < 30))
         {
             print("You have done 'C' quality work!");
+			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
+			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeC;
         }
         else
         {
             print("You have done 'D' quality work.");
-            finishText.color = Color.red;
-            finishText.text = "You have earned a D for this work";
+			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
+			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeD;
         }
     }
 }
