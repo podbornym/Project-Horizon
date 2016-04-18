@@ -115,7 +115,7 @@ Sharaku focused on the aspect of energy in his protraits.
 @ukiyo3_1
 #SetDialogue
 True or False:
-'The Great Wave off Kanagawa' is the game of the current piece.
+'The Great Wave off Kanagawa' is the name of the current piece.
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text $False.
@@ -139,7 +139,7 @@ True or False:
 @ukiyo4_1
 #SetDialogue
 True or False:
-'The Great Wave off Kanagawa' is the game of the current piece.
+'Famous Beauties of Edo' is the name of the current piece.
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text $False.
@@ -147,15 +147,63 @@ True or False:
 @ukiyo4_2
 #SetDialogue
 True or False:
-Utagawa Hiroshige created the current piece.
+The three women in the current piece are identified by family crests.
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
-#option1Text True. #option2Text $False.
+#option1Text $True. #option2Text False.
 
 @ukiyo4_3
 #SetDialogue
 True or False:
-'The Great Wave off Kanagawa' is the first of a print series called Oceans of Wisdom.
+Unity is represented by the triangle composition of the women.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo5_1
+#SetDialogue
+True or False:
+'Lobby of a Brothel' is the name of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo5_2
+#SetDialogue
+True or False:
+Hishikawa Moronobu created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text $True. #option2Text False.
+
+@ukiyo5_3
+#SetDialogue
+True or False:
+Moronobu's strong, linear style had a huge influence on other ukiyo-e artists.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text $True. #option2Text False.
+
+@ukiyo6_1
+#SetDialogue
+True or False:
+Katsushika Hokusai created the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo6_2
+#SetDialogue
+True or False:
+'Rain Shower at Shōno' is the name of the current piece.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text $False.
+
+@ukiyo6_3
+#SetDialogue
+True or False:
+The bokashi technique in the current piece to achieve parallel rain drops.
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text $False.
