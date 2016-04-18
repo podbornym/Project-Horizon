@@ -12,7 +12,7 @@ public class SellingController : MonoBehaviour {
 	public bool check;
 	public int pay;
 	public int bkPay;
-	public bool counter;
+	public bool counter = true;
 	public int correct;
 	public PersistVars vars;
 	public GameObject highText;
