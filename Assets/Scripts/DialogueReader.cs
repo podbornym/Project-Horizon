@@ -368,6 +368,10 @@ public class DialogueReader : MonoBehaviour
 							
 						}
 						break;
+					case "#nsell":
+						currentText.text = "Please select another client.";
+						SellCont.bReset ();
+						break;
 					case "#passed1":
 						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
 						GoTo ("Quit");
@@ -736,7 +740,7 @@ public class DialogueReader : MonoBehaviour
             }
 			else if (PersistVars.currentScene == "SellingScene")
 			{
-				ReadFile("./Assets/Scripts/Selling Scripts/sell.txt");
+				ReadFile("./Assets/Dialogue/sell.txt");
 			}
             print(PersistVars.currentScene);
             print(PersistVars.currentScene == "U_2");
@@ -750,6 +754,17 @@ public class DialogueReader : MonoBehaviour
             EndDialogue();
         }
     }
+
+	public void SellingStart()
+	{
+		ReadFile("./Assets/Dialogue/sell.txt");
+		print(PersistVars.currentScene);
+		print(PersistVars.currentScene == "U_2");
+		print(paintNum);
+		print((paintNum - 1) * 6);
+		GoTo("Start");
+		NextLine();
+	}
 
     void ReadFile(string filepath)
     {

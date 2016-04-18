@@ -19,9 +19,9 @@ public class PersistVars : MonoBehaviour {
 	public int strikes;
 	public bool freePass = false;
 
-    public int knowledgeCount = 0;
+    public int knowledgeCount = 0; 
 
-    public static string currentScene = null;
+	public static string currentScene = null;
     public static string previousScene = null;
     public bool ukiyoe = false;
     public bool baroque = false;
