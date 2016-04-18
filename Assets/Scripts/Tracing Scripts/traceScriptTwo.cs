@@ -30,7 +30,6 @@ public class traceScriptTwo : MonoBehaviour {
     public float timeRemaining = 5.9f;
     public float timeRemainingTotal = 5.9f;
     public int tabsLeft = 2;
-    public Text score;
     public Text time;
     public Text tabs;
     public Text warning;
