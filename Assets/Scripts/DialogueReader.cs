@@ -754,6 +754,7 @@ public class DialogueReader : MonoBehaviour
     {
         sr = new StreamReader(filepath);
         textbox.text = "";
+        entries.Clear();
         try
         {
             using (sr)
