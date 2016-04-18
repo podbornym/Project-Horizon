@@ -74,16 +74,16 @@ public class TimerScipt : MonoBehaviour {
         print("Rotation Score: " + zTotalScore);
 
 
-        if ((posScore < 4) && (zTotalScore < 15))
+        if ((posScore < 9) && (zTotalScore < 15))
         {
             print("You have done 'A' quality work!");
             finishText.text = "You have earned an A for this work";
         }
-        else if ((posScore < 5) && (zTotalScore < 25))
+        else if ((posScore < 15) && (zTotalScore < 23))
         {
             print("You have done 'B' quality work!");
         }
-        else if ((posScore < 6) && (zTotalScore < 35))
+        else if ((posScore < 20) && (zTotalScore < 30))
         {
             print("You have done 'C' quality work!");
         }
