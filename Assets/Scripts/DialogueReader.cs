@@ -764,10 +764,6 @@ public class DialogueReader : MonoBehaviour
 	public void SellingStart()
 	{
 		ReadFile("./Assets/Dialogue/sell.txt");
-		print(PersistVars.currentScene);
-		print(PersistVars.currentScene == "U_2");
-		print(paintNum);
-		print((paintNum - 1) * 6);
 		GoTo("Start");
 		NextLine();
 	}
