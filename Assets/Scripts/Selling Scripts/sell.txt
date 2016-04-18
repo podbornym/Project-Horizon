@@ -68,3 +68,11 @@ can prove your knowledge of the piece you are selling.
 @blkSell
 #SetDialogue
 #blkresult
+
+@ukiyo1_1
+#SetDialogue
+True or False:
+Hishikawa Moronobu created 'Shoki Striding'.
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
