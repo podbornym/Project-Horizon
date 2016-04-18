@@ -736,7 +736,7 @@ public class DialogueReader : MonoBehaviour
             }
 			else if (PersistVars.currentScene == "SellingScene")
 			{
-				ReadFile("./Assets/Scripts/sell.txt");
+				ReadFile("./Assets/Scripts/Selling Scripts/sell.txt");
 			}
             print(PersistVars.currentScene);
             print(PersistVars.currentScene == "U_2");
