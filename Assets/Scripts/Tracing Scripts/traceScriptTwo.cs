@@ -50,7 +50,7 @@ public class traceScriptTwo : MonoBehaviour {
     void Start()
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
-        directions.enabled = false;
+        // directions.enabled = !directions.enabled;
     }
 	
 	// Update is called once per frame
@@ -191,9 +191,10 @@ public class traceScriptTwo : MonoBehaviour {
 
     public void showDirections()
     {
-        if (directions.enabled == false)
+        /*if (directions.GetComponent<Text>().enabled == false)
             directions.enabled = true;
         if (directions.enabled == true)
-            directions.enabled = false;
+            directions.enabled = false;*/
+        directions.enabled = !directions.enabled;
     }
 }
