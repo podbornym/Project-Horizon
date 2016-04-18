@@ -1,3 +1,4 @@
+#SetDialogue
 ???: Greetings, traveler. I am Nasu.
 Ren: What is this place?
 Nasu: You are in Edo, otherwise known as Tokyo in your time.
@@ -13,4 +14,4 @@ Ren: That sounds like it'd be fun to make.
 Nasu: Well, you'll have plenty of time to try yourself.
 Why don't you go have a look around and see what you can learn?
 When you're finished, come back and talk to me. I have plenty to teach you.
-#quit
+#quit #end
