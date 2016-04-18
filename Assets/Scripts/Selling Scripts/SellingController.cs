@@ -24,7 +24,6 @@ public class SellingController : MonoBehaviour {
 	public Button lowButton;
 	public Button blkButton;
 	public DialogueReader reader;
-	private KeyCode lastKey;//change
 
 	// Use this for initialization
 	void Start () {
