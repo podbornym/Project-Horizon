@@ -37,15 +37,15 @@ public class traceScriptTwo : MonoBehaviour {
     // Start button renderer
     public Renderer rend;
 
+    // Score-related variables
     public GameObject scoreCircle;
-
     public Sprite A;
     public Sprite B;
     public Sprite C;
     public Sprite D;
 
+    // Help and reset stuff
     public Text directions;
-
     public Button resetButton;
     public Button continueButton;
 
@@ -66,6 +66,7 @@ public class traceScriptTwo : MonoBehaviour {
         // set up current mouse position
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        // Don't let the player do anything until time is up
         if(timeRemaining >= 0)
         {
             timeRemaining -= Time.deltaTime;
@@ -76,6 +77,7 @@ public class traceScriptTwo : MonoBehaviour {
             }
             resetButton.interactable = false;
         }
+        // Tell the player to go
         else
         {
             gameObject.GetComponent<Renderer>().enabled = false;
@@ -85,6 +87,7 @@ public class traceScriptTwo : MonoBehaviour {
             resetButton.interactable = true;
         }
 
+        // If you press tab (I will remove this when possible)
         if (Input.GetKeyDown("tab"))
         {
             tabProcedure();
@@ -93,14 +96,10 @@ public class traceScriptTwo : MonoBehaviour {
         //if the mousePosition is within the bounds of startPoint
         if (CheckBoundaries(firstHit, startX, startY, mousePosition))
             firstHit = true;
-        /*if (firstSphere.GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition) && firstHit == false && Input.GetMouseButton(0))
-            firstHit = true;*/
 
         //if the mousePosition is within the bounds of endPoint
         if (CheckBoundaries(lastHit, endX, endY, mousePosition))
             lastHit = true;
-        /*if (lastSphere.GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition) && lastHit == false && Input.GetMouseButton(0))
-            lastHit = true;*/
 
         // if the line is being traced (mouse is down and mouseposition has changed)
         if (firstHit == true && lastHit != true && mousePositionOld != mousePosition && Input.GetMouseButton(0))
@@ -145,6 +144,7 @@ public class traceScriptTwo : MonoBehaviour {
         }
     }
 
+    // If the reset button is pressed
     public void tabProcedure()
     {
         if (tabsLeft > 0)
@@ -162,6 +162,7 @@ public class traceScriptTwo : MonoBehaviour {
         }
     }
 
+    // Display the corresponding Grade on-screen
     public void DisplayScore()
     {
         if (successRatio>=.90)
@@ -176,6 +177,7 @@ public class traceScriptTwo : MonoBehaviour {
             scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
     }
 
+    // Calculate the player's score
     public void CalculateScore()
     {
         if(lastHit == true)
@@ -184,6 +186,7 @@ public class traceScriptTwo : MonoBehaviour {
             successRatio = 0;
     }
 
+    // Boundary check for first, last spots
     public bool CheckBoundaries(bool hit, float xValue, float yValue, Vector3 mousePosition)
     {
         if (hit == false && Input.GetMouseButton(0)
@@ -194,6 +197,7 @@ public class traceScriptTwo : MonoBehaviour {
             return false;
     }
 
+    // Moves to the scene player came from
     public void toPreviousScene()
     {
         if (PersistVars.previousScene != "null")
@@ -204,12 +208,9 @@ public class traceScriptTwo : MonoBehaviour {
         }
     }
 
+    // Toggle directions
     public void showDirections()
     {
-        /*if (directions.GetComponent<Text>().enabled == false)
-            directions.enabled = true;
-        if (directions.enabled == true)
-            directions.enabled = false;*/
         directions.enabled = !directions.enabled;
     }
 }
