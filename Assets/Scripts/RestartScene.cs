@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class RestartScene : MonoBehaviour {
-    public Scene previous;
+    public string previous;
+    //public float match3Score;
     // Use this script to easily restart a game, or go back to the level they were on previously
     // Variables are not preserved, so if you need values to stay the same, make sure to attach them to the PersistVars.cs script
     
@@ -16,7 +17,8 @@ public class RestartScene : MonoBehaviour {
     // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
     public void NextLevel()
     {
-        previous = GameObject.Find("GENERALUI").GetComponent<PersistVars>().previousScene;
-        SceneManager.LoadScene(previous.name);
+        if (PersistVars.previousScene != "null")
+            GameObject.Find("GENERALUI").GetComponent<PersistVars>().match3Score = BoardCreation.match3Return;
+            SceneManager.LoadScene(PersistVars.previousScene);
     }
 }

@@ -10,7 +10,7 @@ public class HelpButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         helpText.enabled = true;
-        timer = 8;
+        timer = 20;
 	}
 	
 	// Update is called once per frame
@@ -42,5 +42,6 @@ public class HelpButton : MonoBehaviour {
     public void TextDisappear()
     {
         helpText.enabled = false;
+        clicked = false;
     }
 }
