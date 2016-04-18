@@ -769,6 +769,7 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 1;
                 paintNum = 1;
+                dialogue = 
             }
             else if (PersistVars.currentScene == "U_1")
             {
