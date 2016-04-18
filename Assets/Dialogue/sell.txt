@@ -10,6 +10,10 @@ Are you sure you want to sell to this client?
 #SetDialogue
 #ysell
 
+@ClueTwo
+#SetDialogue
+#nsell
+
 @pass1
 #SetDialogue
 #passed1

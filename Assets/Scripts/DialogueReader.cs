@@ -39,6 +39,8 @@ public class DialogueReader : MonoBehaviour
     private Text currentText;
     public bool isTalking = false;
 	public int questCount = 1;
+    public bool intro_speech_ukiyo = true;
+    public bool finished_intro = false;
 	public bool cAnswer;
 
     // Use this for initialization
@@ -65,7 +67,13 @@ public class DialogueReader : MonoBehaviour
         {
             SetClue();
         }
-
+        if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-EZone")
+        {
+            intro_speech_ukiyo = false;
+            print("yeh");
+            ReadFile("./Assets/Dialogue/ukiyo intro.txt");
+            NextLine();
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             clueOne = null;
@@ -365,8 +373,11 @@ public class DialogueReader : MonoBehaviour
 							{
 								GoTo ("fail3");
 							}
-							
 						}
+						break;
+					case "#nsell":
+						currentText.text = "Please select another client.";
+						SellCont.bReset ();
 						break;
 					case "#passed1":
 						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
@@ -597,7 +608,6 @@ public class DialogueReader : MonoBehaviour
             if (entries[i] == nextTopic)
             {
                 lineNum = i;
-                print("found");
                 break;
             }
             else
@@ -609,7 +619,6 @@ public class DialogueReader : MonoBehaviour
                 if (place == nextTopic)
                 {
                     lineNum = i;
-                    print("sup");
                     break;
                 }
             }
@@ -618,6 +627,11 @@ public class DialogueReader : MonoBehaviour
 
     public void EndDialogue()
     {
+        if(finished_intro == false)
+        {
+            finished_intro = true;
+            ReadFile("./Assets/Dialogue/Three Beauties.txt");
+        }
         lineNum = 0;
         textbox.text = "";
         for(int i = 0; i < choiceActions.Length; i++)
@@ -727,6 +741,7 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 5;
                 paintNum = 5;
+                ReadFile("./Assets/Dialogue/SuddenShowerDialogue.txt");
             }
             else if (PersistVars.currentScene == "U_5")
             {
@@ -735,12 +750,8 @@ public class DialogueReader : MonoBehaviour
             }
 			else if (PersistVars.currentScene == "SellingScene")
 			{
-				ReadFile("./Assets/Scripts/sell.txt");
+				ReadFile("./Assets/Dialogue/sell.txt");
 			}
-            print(PersistVars.currentScene);
-            print(PersistVars.currentScene == "U_2");
-            print(paintNum);
-            print((paintNum - 1) * 6);
             GoTo("Start");
             NextLine();
         }
@@ -749,6 +760,13 @@ public class DialogueReader : MonoBehaviour
             EndDialogue();
         }
     }
+
+	public void SellingStart()
+	{
+		ReadFile("./Assets/Dialogue/sell.txt");
+		GoTo("Start");
+		NextLine();
+	}
 
     void ReadFile(string filepath)
     {
@@ -763,7 +781,6 @@ public class DialogueReader : MonoBehaviour
                 int i = 0;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    print(line);
                     entries.Add(line);
                     i++;
                 }
