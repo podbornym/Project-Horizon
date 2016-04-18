@@ -13,7 +13,8 @@ public class Mastermind : MonoBehaviour {
     public Text answer6;
     public Text timer;
     public Text correctText;
-    public Text finalText;
+    public int hiddenScore = 10;
+    public int score;
     public bool allAnswered = false;
     public static float seconds;
     public static float correctTime = -1;
@@ -23,6 +24,10 @@ public class Mastermind : MonoBehaviour {
     public static int paintingNo = 1;
     public static int questionNo = 1;
     public static GameObject correctButton;
+    public Sprite gradeA;
+    public Sprite gradeB;
+    public Sprite gradeC;
+    public Sprite gradeD;
 
     // Use this for initialization
     void Start () {
@@ -57,7 +62,7 @@ public class Mastermind : MonoBehaviour {
         if (allAnswered)
         {
             timer.text = "All done!";
-            timer.color = Color.black;
+            timer.color = Color.white;
             penaltyTime = -1;
         }
 
@@ -73,10 +78,10 @@ public class Mastermind : MonoBehaviour {
             }
         }
 
-        // After a penalty, wait half a second before changing the timer's color back to black
+        // After a penalty, wait half a second before changing the timer's color back to white
         if (penaltyTime != -1 && penaltyTime - seconds >= 0.5)
         {
-            timer.color = Color.black;
+            timer.color = Color.white;
         }
 
         // set question
@@ -450,15 +455,18 @@ public class Mastermind : MonoBehaviour {
             if (correctButton.GetComponent<ButtonPress>().isCorrect)
             {
                 // Clicked the right answer
-                correctText.text = "Correct!";
+                correctText.text = "O";
                 correctText.color = Color.green;
                 correct = true;
             }
             else
             {
                 // Clicked a wrong answer
-                correctText.text = "Incorrect!";
+                correctText.text = "X";
                 correctText.color = Color.red;
+
+                //Subtract 1 from the player's overall score
+                hiddenScore -= 1;
 
                 if (seconds > 0)
                 {
@@ -491,22 +499,11 @@ public class Mastermind : MonoBehaviour {
 
     void AllDone()//bool allAnswered)
     {
-        
-        
-        /*// If the quiz was finished in time
-        if (allAnswered)
+        // Penalize the player if time ran out
+        if (seconds <= 0)
         {
-            timer.text = "All done!";
+            hiddenScore -= 3;
         }
-        // If time ran out before the quiz was finished
-        else
-        {
-            penaltyTime = -1;
-            correctTime = -1;
-            correctText.text = "";
-            timer.text = "Time's up!";
-        }*/
-        finalText.text = "You got " + (questionNo - 1) + " out of 4 questions right!";
 
         // Remove the other elements
         question.text = "";
@@ -524,6 +521,37 @@ public class Mastermind : MonoBehaviour {
                     GameObject.Destroy(GameObject.Find("Answer6"));
                 }
             }
+        }
+
+        // Grade the player based on their hidden score
+        // Scored 8, 9, or 10: grade A
+        if (hiddenScore >= 8 && hiddenScore <= 10)
+        {
+            GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
+            GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeA;
+        }
+        // Scored 6 or 7: grade B
+        else if (hiddenScore >= 6 && hiddenScore <= 7)
+        {
+            GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
+            GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeB;
+        }
+        // Scored 3, 4, or 5: grade C
+        else if (hiddenScore >= 3 && hiddenScore <= 5)
+        {
+            GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
+            GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeC;
+        }
+        // Scored 0, 1, or 2: grade D
+        else if (hiddenScore <= 2)
+        {
+            GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
+            GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeD;
+        }
+        score = hiddenScore * 10;
+        if (score < 0)
+        {
+            score = 0;
         }
     }
 }
