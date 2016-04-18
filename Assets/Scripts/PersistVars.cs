@@ -21,7 +21,7 @@ public class PersistVars : MonoBehaviour {
 
     public int knowledgeCount = 0;
 
-    public static string currentScene = null;
+    public static string currentScene = "mansion";
     public static string previousScene = null;
     public bool ukiyoe = false;
     public bool baroque = false;

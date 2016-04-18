@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
     private static Vector3 moveToPos;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
             cursorSet = true;
         }
 
-        if (SceneManager.GetActiveScene().name == "mansion")
+        if (PersistVars.currentScene == "mansion")
         {
             if (!PersistVars.returningToHome)
             {
@@ -42,11 +43,32 @@ public class PlayerMovement : MonoBehaviour {
                 gameObject.transform.position = GameObject.Find("hubSpawn").transform.position;
                 cam.transform.position = new Vector3(-10.32f, -13f, cam.transform.position.z);
             }
+
+            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+            GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+            GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+            GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
         }
 
-        
-        myAnimator = GetComponent<Animator>();
+        if(PersistVars.currentScene == "Ukiyo-eZone")
+        {
+            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+            GameObject.Find("DragPort").GetComponent<Image>().enabled = true;
+        }
 
+        else if (PersistVars.currentScene == "BaroqueZone")
+        {
+            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+            GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = true;
+        }
+
+        else if (PersistVars.currentScene == "SurrealistZone")
+        {
+            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+            GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = true;
+        }
+
+        myAnimator = GetComponent<Animator>();
     }
     
     //both of these scripts are calling in the EnvInteracter Script when an object is clicked on, and then call moveStraight()
@@ -217,7 +239,7 @@ public class PlayerMovement : MonoBehaviour {
                     break;
                 case "portal_3_U":
                     PersistVars.previousScene = "mansion";
-                    PersistVars.currentScene = "Ukiyo-EZone";
+                    PersistVars.currentScene = "Ukiyo-eZone";
                     PersistVars.Ukiyo = true;
                     notMoving();
                     SceneManager.LoadScene("Ukiyo-eZone");

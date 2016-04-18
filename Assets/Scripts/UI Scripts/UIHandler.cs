@@ -15,6 +15,7 @@ public class UIHandler : MonoBehaviour {
     public float offsetY;
 	public SellingController sellC;
 	public string sellName;
+    public bool UIALive = true;
 
     void Awake()
     {
@@ -36,6 +37,24 @@ public class UIHandler : MonoBehaviour {
             if(PersistVars.previousScene != null)
             {
                 SceneManager.LoadScene(PersistVars.previousScene);
+            }
+            if (!gameObject.GetComponent<Canvas>().enabled)
+            {
+                gameObject.GetComponent<Canvas>().enabled = true;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (UIALive)
+            {
+                gameObject.GetComponent<Canvas>().enabled = false;
+                UIALive = false;
+            }
+            else
+            {
+                gameObject.GetComponent<Canvas>().enabled = true;
+                UIALive = true;
             }
         }
     }
@@ -63,7 +82,10 @@ public class UIHandler : MonoBehaviour {
         PersistVars.Ukiyo = false;
         PersistVars.Surreal = false;
         PersistVars.Baroque = false;
+        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+        ExpandMenu();
         SceneManager.LoadScene("mansion");
+
     }
 
     public void PortalComingSoon()
