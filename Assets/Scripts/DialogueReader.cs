@@ -2,14 +2,18 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
+using System.IO;
+using System.Collections.Generic;
 
 public class DialogueReader : MonoBehaviour
 {
     public static int paintNum;
-    public string[] entries;
+    public List<string> entries = new List<string>();
     private int lineNum = 0;
     private string option;
     private string[] choiceActions = new string[6];
+    public StreamReader sr;
     public GameObject UI;
     public TextAsset dialogue;
     public GameObject dialogueContainer;
@@ -41,8 +45,7 @@ public class DialogueReader : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        textbox.text = "";
-        entries = dialogue.text.Split('\n');
+        ReadFile("./Assets/Dialogue/Three Beauties.txt");
         nextButton.gameObject.SetActive(false);
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
@@ -170,21 +173,10 @@ public class DialogueReader : MonoBehaviour
             {
                 string currentWord = "";
                 string word = currentLine[i];
-                if (i == currentLine.Length - 1)
+                for (int j = 0; j < word.Length; j++)
                 {
-                    for (int j = 0; j < word.Length - 1; j++)
-                    {
-                        currentWord += word[j];
-                    }
+                    currentWord += word[j];
                 }
-                else
-                {
-                    for (int j = 0; j < word.Length; j++)
-                    {
-                        currentWord += word[j];
-                    }
-                }
-
                 switch (currentWord)
                 {
                     case "#SetDialogue":
@@ -237,97 +229,32 @@ public class DialogueReader : MonoBehaviour
                     case "#option1":
                         option1.gameObject.SetActive(true);
                         if(i + 1 == currentLine.Length - 1)
-                        {
-                            string tempWord = currentLine[i + 1];
-                            for(int j = 0; j < tempWord.Length - 1; j++)
-                            {
-                                choiceActions[0] += tempWord[j];
-                            }
-                        }
-                        else
-                        {
-                            choiceActions[0] = currentLine[i + 1];
-                        }
+                        choiceActions[0] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option2":
                         option2.gameObject.SetActive(true);
-                        if (i + 1 == currentLine.Length - 1)
-                        {
-                            string tempWord = currentLine[i + 1];
-                            for (int j = 0; j < tempWord.Length - 1; j++)
-                            {
-                                choiceActions[1] += tempWord[j];
-                            }
-                        }
-                        else
-                        {
-                            choiceActions[1] = currentLine[i + 1];
-                        }
+                        choiceActions[1] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option3":
                         option3.gameObject.SetActive(true);
-                        if (i + 1 == currentLine.Length - 1)
-                        {
-                            string tempWord = currentLine[i + 1];
-                            for (int j = 0; j < tempWord.Length - 1; j++)
-                            {
-                                choiceActions[2] += tempWord[j];
-                            }
-                        }
-                        else
-                        {
-                            choiceActions[2] = currentLine[i + 1];
-                        }
+                        choiceActions[2] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option4":
                         option4.gameObject.SetActive(true);
-                        if (i + 1 == currentLine.Length - 1)
-                        {
-                            string tempWord = currentLine[i + 1];
-                            for (int j = 0; j < tempWord.Length - 1; j++)
-                            {
-                                choiceActions[3] += tempWord[j];
-                            }
-                        }
-                        else
-                        {
-                            choiceActions[3] = currentLine[i + 1];
-                        }
+                        choiceActions[3] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option5":
                         option5.gameObject.SetActive(true);
-                        if (i + 1 == currentLine.Length - 1)
-                        {
-                            string tempWord = currentLine[i + 1];
-                            for (int j = 0; j < tempWord.Length - 1; j++)
-                            {
-                                choiceActions[4] += tempWord[j];
-                            }
-                        }
-                        else
-                        {
-                            choiceActions[4] = currentLine[i + 1];
-                        }
+                        choiceActions[4] = currentLine[i + 1];
                         i++;
                         break;
                     case "#option6":
                         option6.gameObject.SetActive(true);
-                        if (i + 1 == currentLine.Length - 1)
-                        {
-                            string tempWord = currentLine[i + 1];
-                            for (int j = 0; j < tempWord.Length - 1; j++)
-                            {
-                                choiceActions[5] += tempWord[j];
-                            }
-                        }
-                        else
-                        {
-                            choiceActions[5] = currentLine[i + 1];
-                        }
+                        choiceActions[5] = currentLine[i + 1];
                         i++;
                         break;
                     case "#clueonefound":
@@ -656,13 +583,14 @@ public class DialogueReader : MonoBehaviour
     private void GoTo(string location)
     {
         string nextTopic = "@" + location;
-        for (int i = 0; i < entries.Length; i++)
+        for (int i = 0; i < entries.Count; i++)
         {
             string temp = entries[i];
             string place = "";
             if (entries[i] == nextTopic)
             {
                 lineNum = i;
+                print("found");
                 break;
             }
             else
@@ -674,6 +602,7 @@ public class DialogueReader : MonoBehaviour
                 if (place == nextTopic)
                 {
                     lineNum = i;
+                    print("sup");
                     break;
                 }
             }
@@ -744,7 +673,7 @@ public class DialogueReader : MonoBehaviour
             }
             else if (choiceActions[optionNumber].Contains("2"))
             {
-                SceneManager.LoadScene("3Beauties");
+                SceneManager.LoadScene("Z1-SD" + PersistVars.paintingNum.ToString());
             }
             else if (choiceActions[optionNumber].Contains("3"))
             {
@@ -752,15 +681,15 @@ public class DialogueReader : MonoBehaviour
             }
             else if (choiceActions[optionNumber].Contains("4"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Z1-RT" + PersistVars.paintingNum.ToString());
             }
             else if (choiceActions[optionNumber].Contains("5"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Z1-PD" + PersistVars.paintingNum.ToString());
             }
             else if (choiceActions[optionNumber].Contains("6"))
             {
-                SceneManager.LoadScene("Z1-TR1");
+                SceneManager.LoadScene("Mastermind Base");
             }
         }
         else if (choiceActions[optionNumber].Contains("#change"))
@@ -769,7 +698,7 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 1;
                 paintNum = 1;
-                dialogue = 
+                ReadFile("./Assets/Dialogue/Three Beauties.txt");
             }
             else if (PersistVars.currentScene == "U_1")
             {
@@ -780,6 +709,7 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 3;
                 paintNum = 3;
+                ReadFile("./Assets/Dialogue/Wave of Kanagawa.txt");
             }
             else if (PersistVars.currentScene == "U_3")
             {
@@ -806,6 +736,30 @@ public class DialogueReader : MonoBehaviour
         else if (choiceActions[optionNumber].Contains("#quit"))
         {
             EndDialogue();
+        }
+    }
+
+    void ReadFile(string filepath)
+    {
+        sr = new StreamReader(filepath);
+        textbox.text = "";
+        try
+        {
+            using (sr)
+            {
+                string line;
+                int i = 0;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    print(line);
+                    entries.Add(line);
+                    i++;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            print("Exception: " + e);
         }
     }
 }
