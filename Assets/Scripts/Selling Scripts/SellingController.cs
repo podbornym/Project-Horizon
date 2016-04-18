@@ -37,6 +37,8 @@ public class SellingController : MonoBehaviour {
 		avg = logic.Avg (m1, m2, m3, m4, m5, m6);
 		avg = (float)System.Math.Round (avg,2);
 		maxValue = PersistVars.maxValue[PersistVars.paintingNum-1];
+		Debug.Log (PersistVars.maxValue[PersistVars.paintingNum-1]);
+		Debug.Log (maxValue);
 		PersistVars.currentScene = "SellingScene";
 
 		// Setting estimate values
