@@ -61,6 +61,13 @@ public class DialogueReader : MonoBehaviour
 
     void Update ()
     {
+        for (int i = 0; i < 6; i++)
+        {
+            if(ClueFound[i])
+            {
+                
+            }
+        }
         if (Input.GetMouseButtonDown(0))
         {
             FindClue();
