@@ -61,7 +61,6 @@ public class DialogueReader : MonoBehaviour
 
     void Update ()
     {
-        print(PersistVars.currentScene);
         if (Input.GetMouseButtonDown(0))
         {
             FindClue();
@@ -73,7 +72,6 @@ public class DialogueReader : MonoBehaviour
         if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-eZone")
         {
             intro_speech_ukiyo = false;
-            print("yeh");
             ReadFile("./Assets/Dialogue/ukiyo intro.txt");
             NextLine();
         }

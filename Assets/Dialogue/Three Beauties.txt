@@ -182,6 +182,15 @@ Would you like to play game six?
 #SetDialogue
 Would you like to change paintings?
 #SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
 #option1 #change
 #option2 #quit
 #option1Text Yes #option2Text No
