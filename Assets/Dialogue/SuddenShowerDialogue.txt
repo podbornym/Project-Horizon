@@ -8,25 +8,25 @@ What do you want to know?
 #option4 #goto:ClueFour
 #option5 #goto:ClueFive
 #option6 #goto:ClueSix
-#option1Text Painting #option2Text Bridge #option3Text Artist #option4Text Details #option5Text Inking #option6Text This is clue six.
+#option1Text Print #option2Text Bridge #option3Text Artist #option4Text Details #option5Text Inking #option6Text This is clue six.
 
 @ClueOne
 #SetDialogue
 #clueonefound
 
 @yes1
-Ren: I think i've found something! Will this help you remember more?
-Nasu: Hmm, Ah yes. This painting was created in 1857 as part of a series of several paintings.
-You're talented, no? You should try and paint it yourself!
+Ren: I think I've found something! Will this help you remember more?
+Nasu: Hmm, ah yes. This print was created in 1857 as part of a series of several paintings.
+You're talented, no? You should try and make it yourself!
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
 #option1Text Yes #option2Text No
 
 @no1
-Ren: Hmm, what painting is this?
-Nasu: This painting is known as <i>Sudden Shower over Shin-Ohashi Bridge and Atake.</i>
-I'd like to tell you more about it, but my memory just isn't what It used to be.
+Ren: Hmm, what print is this?
+Nasu: This print is known as <i>Sudden Shower over Shin-Ohashi Bridge and Atake.</i>
+I'd like to tell you more about it, but my memory just isn't what it used to be.
 Ren: (I'll find a clue to help Nasu remember...)
 #activateClue1
 #goto:Start
@@ -37,15 +37,15 @@ Ren: (I'll find a clue to help Nasu remember...)
 
 @yes2
 Ren: I found this. Now can you tell me more about the bridge?
-Nasu: The painting shows the Ohashi bridge across the Sumida River.
-Perhaps now you'd like to work on the painting?
+Nasu: The print shows the Ohashi bridge across the Sumida River.
+Perhaps now you'd like to work on the print?
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
 #option1Text Yes #option2Text No
 
 @no2
-Ren: What is the bridge depicted in the painting?
+Ren: What is the bridge depicted in the print?
 Nasu: Well, that is a....bridge....
 Ren: Well that was specific.
 Nasu: I'm sorry, maybe you could find another clue? That may help.	
@@ -60,7 +60,7 @@ Nasu: I'm sorry, maybe you could find another clue? That may help.
 Ren: Is there anything else that you know about Ando Hiroshige?
 Nasu: Of course! Hiroshige was best known for his landscape painting.
 He typically worked within the ukiyo-e genre, and was considered the last great master for the ukiyo-e tradition.
-You should continue working on your painting!
+You should continue working on your print!
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -78,10 +78,10 @@ Ren: (I wonder if he knows more about the artist?)
 #cluefourfound
 
 @yes4
-Ren: Do you know anything else about the paintings design?
+Ren: Do you know anything else about the prints design?
 Nasu: The dark cluds seen in the painting were produced using the bokashi technique.
 This technique was very difficult, and was also used to create the water around the bridge.
-Do you want to try painting something?
+Do you want to try creating something?
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -90,7 +90,7 @@ Do you want to try painting something?
 @no4
 Ren: What sorts of other information do you have about this piece?
 Nasu: Hiroshige used a recurring theme in ukiyo-e works called "white rain"
-Ren: Hmm that sounds pretty interesting.
+Ren: Hmm, that sounds pretty interesting.
 Nasu: Yes, "white rain" was created by using many thin, dark parallel lines in two different directions.
 Ren: (I bet I can find another clue to get more information yet.)
 #activateClue4
@@ -101,18 +101,18 @@ Ren: (I bet I can find another clue to get more information yet.)
 #cluefivefound
 
 @yes5
-Ren: Anything else you can tell me about these types of ukiyo-e paintings?
+Ren: Anything else you can tell me about these types of ukiyo-e prints?
 Nasu: Ukiyo-e means "Pictures of the floating world"
 And this world was definitely one of delightful and pleasurable themes.
-Would you like to try creating the painting?
+Would you like to try creating the print?
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
 #option1Text Yes #option2Text No
 
 @no5
-Ren: What else can you tell me about these sorts of paintings?
-Nasu: Many woodblock prints sucha s this one were produced in 18th and 19th centurary Japan...
+Ren: What else can you tell me about these sorts of prints?
+Nasu: Many woodblock prints such as this one were produced in 18th and 19th century Japan...
 Ren: I'm going to find another clue to help you remember more! 
 #activateClue5
 #goto:Start
@@ -122,11 +122,11 @@ Ren: I'm going to find another clue to help you remember more!
 #cluesixfound
 
 @yes6
-Nasu: You found the last clue!
-Ren: Yeah! What is the last bit of knowledge you wanted to tell me?
+Nasu: You found the another clue!
+Ren: Yeah! What is another bit of knowledge you wanted to tell me?
 Nasu: Well, I may have stretched the truth a bit.
 It was more so advice than knowledge.
-My advice is "good luck finishing this piece!"
+My advice is "good luck working on this piece!"
 Ren: (This dragon is something else..)
 #SetOptions
 #option1 #play6
@@ -135,7 +135,7 @@ Ren: (This dragon is something else..)
 
 @no6
 Ren: Is there anything else I should know?
-Nasu: Find your last clue and show me, and I should be able to give one last piece of knowledge about this work.
+Nasu: Find another clue and show me, and I should be able to give one more piece of knowledge about this work.
 #activateClue6
 #goto:Start
 

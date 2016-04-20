@@ -51,7 +51,7 @@ Would you like to try and frame something in a painting?
 @no2
 Ren: What's with the wave?
 Nasu: Well, while the wave is quite large, it's most likely not a tsunami.
-Rather it is about the size of a large rogue wave, based on the size of those boats.
+Rather it is about the size of a large rogue wave, based on the size of the boats.
 Ren: Anything else?
 Nasu: Maybe later. It should come back to me any minute now...
 #activateClue2
@@ -100,7 +100,7 @@ You should try to balance out your artistic abilities.
 @no4
 Ren: Do you know any small details about this painting?
 Nasu: The boats in the picture can act as a scale to determine how big the wave is.
-It's actually not all that huge.
+The wave isn't as large as it appears.
 Ren: Anything else?
 Nasu: If you look to the upper corner, you can see the artist's signature.
 Ren: Maybe I'll come back later...
@@ -123,7 +123,7 @@ Do you want to try for yourself?
 #option1Text Yes #option2Text No
 
 @no5
-Ren: What do the artists use for these paintings?
+Ren: What do the artists use for these prints?
 Nasu: It starts off with a series of woodblocks.
 Typically the type of wood used was cherrywood.
 There was more to this, but I can't recall what.
@@ -148,7 +148,7 @@ Perhaps you'd like to test your knowledge?
 @no6
 Ren: What can you tell me about this time period?
 Nasu: Well, the Ukiyo-e art pieces depicted the entertainments of Edo in the beginning.
-This included things like coutesan and kabuki actors.
+This included amusements such as coutesan and kabuki actors.
 I know of more, but it's a bit foggy right now. Come back later.
 #activateClue6
 #goto:Start
