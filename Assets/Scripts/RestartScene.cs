@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RestartScene : MonoBehaviour {
     public string previous;
@@ -17,11 +18,18 @@ public class RestartScene : MonoBehaviour {
     // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
     public void NextLevel()
     {
-        if (PersistVars.previousScene != "null")
+        if (GameObject.Find("GradeImage").GetComponent<Image>().enabled == false)
         {
-            GameObject.Find("GENERALUI").GetComponent<PersistVars>().match3Score = BoardCreation.match3Return;
-            SceneManager.LoadScene(PersistVars.previousScene);
-            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
+            GameObject.Find("Scripts").GetComponent<BoardCreation>().TallyScore();
+            float timer = 2;
+            timer -= Time.deltaTime;
+            print (timer);
+            if (PersistVars.previousScene != "null")// && timer < 0)
+            {
+                GameObject.Find("GENERALUI").GetComponent<PersistVars>().match3Score = BoardCreation.match3Return;
+                SceneManager.LoadScene(PersistVars.previousScene);
+                GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
+            }
         }
     }
 }

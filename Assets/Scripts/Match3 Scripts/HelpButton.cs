@@ -10,22 +10,22 @@ public class HelpButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         helpText.enabled = true;
-        timer = 20;
+        //timer = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        timer -= Time.deltaTime;
+        /*timer -= Time.deltaTime;
         if(timer <= 0)
         {
             TextDisappear();
-        }
+        }*/
 	}
 
     // Show text on click
     public void ShowHelpText()
     {
-        if (clicked == false)
+        /*if (clicked == false)
         {
             helpText.enabled = true;
             clicked = true;
@@ -35,13 +35,14 @@ public class HelpButton : MonoBehaviour {
         {
             Update();
             clicked = false;
-        }
+        }*/
+        helpText.enabled = !helpText.enabled;
     }
 
     // Disable the text element
     public void TextDisappear()
     {
         helpText.enabled = false;
-        clicked = false;
+        //clicked = false;
     }
 }
