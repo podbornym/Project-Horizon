@@ -108,6 +108,11 @@ public class UIHandler : MonoBehaviour {
 		sellC.bHandle (sellName);
 	}
 
+    public void QuitToDesktop()
+    {
+        Application.Quit();
+    }
+
     /*void menuOpen()
     {
         expanded = true;
