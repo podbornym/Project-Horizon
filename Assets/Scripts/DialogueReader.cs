@@ -421,15 +421,7 @@ public class DialogueReader : MonoBehaviour
 						EndDialogue();
 						break;
 					case "#blkbegin":
-						SellCont.counter = true;
 						GoTo ("blkQuestion1");
-						break;
-					case "#blkend":
-						SellCont.counter = false;
-						blkPrice = SLog.BkPay (SellCont.counter, SellCont.correct, SellCont.maxValue);
-						currentText.text = "Congradulations! You sold the forgery for $" + blkPrice;
-						PersistVars.currentMoney += blkPrice;
-						GoTo ("Continue");
 						break;
 					case "#quest1":
 						if (PersistVars.paintingNum == 4) // Shoki Striding
