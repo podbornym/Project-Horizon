@@ -216,16 +216,13 @@ public class PlayerMovement : MonoBehaviour {
                     notMoving();
                     SceneManager.LoadScene("SurrealistZone");
                     break;
-                case "portal_3_U":
+                case "Ukiyo-e":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "Ukiyo-eZone";
                     PersistVars.Ukiyo = true;
+                    myAnimator.SetBool("PortalWalk", true);
                     notMoving();
-                    myAnimator.SetBool("Portal", true);
                     StartCoroutine(PortalEnter());
-                    SceneManager.LoadScene("Ukiyo-eZone");
-                    myAnimator.SetBool("Portal", false);
-
                     break;
                 case "portal_4_B":
                     PersistVars.previousScene = "mansion";
@@ -477,7 +474,8 @@ public class PlayerMovement : MonoBehaviour {
     }
     IEnumerator PortalEnter()
     {
-        yield return new WaitForSeconds(1.03f);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Ukiyo-eZone");
     }
 }
 
