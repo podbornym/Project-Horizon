@@ -59,7 +59,7 @@ public class PipeRotator : MonoBehaviour {
         if (gameObject.tag == "Straight")
         {
             //If piece is vertically alligned
-            if (Mathf.Approximately(transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(transform.rotation.eulerAngles.z, 90))
+            if ( Approximately(transform.rotation.eulerAngles.z) == 270 ||  Approximately(transform.rotation.eulerAngles.z) == 90)
             {
                 //Calls CheckUp and CheckDown
                 if (CheckUp() || CheckDown())
@@ -72,7 +72,7 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
             //If piece is horizontally alligned
-            else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
+            else if ( Approximately(transform.rotation.eulerAngles.z) == 180 ||  Approximately(transform.rotation.eulerAngles.z) == 0)
             {
                 //Calls CheckLeft and CheckRight
                 if (CheckLeft() || CheckRight())
@@ -89,7 +89,7 @@ public class PipeRotator : MonoBehaviour {
         else if (gameObject.tag == "Turn")
         {
             //If piece goes from Left to Up
-            if (Mathf.Approximately(transform.rotation.eulerAngles.z, 270))
+            if ( Approximately(transform.rotation.eulerAngles.z) == 270)
             {
                 //Calls CheckLeft and CheckUp
                 if (CheckLeft() || CheckUp())
@@ -102,7 +102,7 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
             //If piece goes from up to right
-            else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 180))
+            else if ( Approximately(transform.rotation.eulerAngles.z) == 180)
             {
                 //Calls CheckUp and CheckRight
                 if (CheckUp() || CheckRight())
@@ -115,7 +115,7 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
             //If piece goes from Right to Down
-            else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 90))
+            else if ( Approximately(transform.rotation.eulerAngles.z) == 90)
             {
                 //Calls CheckRight and CheckDown
                 if (CheckRight() || CheckDown())
@@ -128,7 +128,7 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
             //If piece goes from Down to Left
-            else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
+            else if ( Approximately(transform.rotation.eulerAngles.z) == 0)
             {
                 //Calls CheckDown and CheckLeft
                 if (CheckDown() || CheckLeft())
@@ -145,7 +145,7 @@ public class PipeRotator : MonoBehaviour {
         else if (gameObject.tag == "FourWay")
         {
             //If piece is horizontally alligned
-            if (Mathf.Approximately(transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(transform.rotation.eulerAngles.z, 90))
+            if ( Approximately(transform.rotation.eulerAngles.z) == 270 ||  Approximately(transform.rotation.eulerAngles.z) == 90)
             {
                 //Calls Check*
                 if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
@@ -158,7 +158,7 @@ public class PipeRotator : MonoBehaviour {
                 }
             }
             //If piece is vertically alligned
-            else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
+            else if ( Approximately(transform.rotation.eulerAngles.z) == 180 ||  Approximately(transform.rotation.eulerAngles.z) == 0)
             {
                 //Calls Check*
                 if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
@@ -210,7 +210,7 @@ public class PipeRotator : MonoBehaviour {
             if (gameObject.tag == "Straight")
             {
                 //If piece is vertically alligned
-                if (Mathf.Approximately(transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(transform.rotation.eulerAngles.z, 90))
+                if ( Approximately(transform.rotation.eulerAngles.z) == 270 ||  Approximately(transform.rotation.eulerAngles.z) == 90)
                 {
                     //Calls CheckUp and CheckDown
                     if (CheckUp() || CheckDown())
@@ -223,7 +223,7 @@ public class PipeRotator : MonoBehaviour {
                     }
                 }
                 //If piece is horizontally alligned
-                else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
+                else if ( Approximately(transform.rotation.eulerAngles.z) == 180 ||  Approximately(transform.rotation.eulerAngles.z) == 0)
                 {
                     //Calls CheckLeft and CheckRight
                     if (CheckLeft() || CheckRight())
@@ -240,7 +240,7 @@ public class PipeRotator : MonoBehaviour {
             else if (gameObject.tag == "Turn")
             {
                 //If piece goes from Left to Up
-                if (Mathf.Approximately(transform.rotation.eulerAngles.z, 270))
+                if ( Approximately(transform.rotation.eulerAngles.z) == 270)
                 {
                     //Calls CheckLeft and CheckUp
                     if (CheckLeft() || CheckUp())
@@ -253,7 +253,7 @@ public class PipeRotator : MonoBehaviour {
                     }
                 }
                 //If piece goes from up to right
-                else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 180))
+                else if ( Approximately(transform.rotation.eulerAngles.z) == 180)
                 {
                     //Calls CheckUp and CheckRight
                     if (CheckUp() || CheckRight())
@@ -266,7 +266,7 @@ public class PipeRotator : MonoBehaviour {
                     }
                 }
                 //If piece goes from Right to Down
-                else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 90))
+                else if ( Approximately(transform.rotation.eulerAngles.z) == 90)
                 {
                     //Calls CheckRight and CheckDown
                     if (CheckRight() || CheckDown())
@@ -279,7 +279,7 @@ public class PipeRotator : MonoBehaviour {
                     }
                 }
                 //If piece goes from Down to Left
-                else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
+                else if ( Approximately(transform.rotation.eulerAngles.z) == 0)
                 {
                     //Calls CheckDown and CheckLeft
                     if (CheckDown() || CheckLeft())
@@ -296,7 +296,7 @@ public class PipeRotator : MonoBehaviour {
             else if (gameObject.tag == "FourWay")
             {
                 //If piece is horizontally alligned
-                if (Mathf.Approximately(transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(transform.rotation.eulerAngles.z, 90))
+                if ( Approximately(transform.rotation.eulerAngles.z) == 270 ||  Approximately(transform.rotation.eulerAngles.z) == 90)
                 {
                     //Calls Check*
                     if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
@@ -309,7 +309,7 @@ public class PipeRotator : MonoBehaviour {
                     }
                 }
                 //If piece is vertically alligned
-                else if (Mathf.Approximately(transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
+                else if ( Approximately(transform.rotation.eulerAngles.z) == 180 ||  Approximately(transform.rotation.eulerAngles.z) == 0)
                 {
                     //Calls Check*
                     if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
@@ -340,7 +340,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit piece alligned with top of selected
-                    if (Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 90))
+                    if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 90)
                     {
                         return true;
                     }
@@ -353,7 +353,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit piece alligned with top of selected
-                    if (Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -366,7 +366,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit piece alligned with top of selected
-                    if (Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space above FourWay
                         RaycastHit2D hitUp2 = Physics2D.Raycast(transform.position + new Vector3(0, 2, 0), Vector2.up);
@@ -380,7 +380,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If piece is aligned with the FourWay
-                                    if (Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 90))
+                                    if ( Approximately(hitUp2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp2.transform.rotation.eulerAngles.z) == 90)
                                     {
                                         return true;
                                     }
@@ -393,7 +393,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If piece is aligned with the FourWay
-                                    if (Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitUp2.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -435,7 +435,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If the hit piece is aligned with the selected
-                    if (Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 90))
+                    if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 90)
                     {
                         return true;
                     }
@@ -448,7 +448,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If the hit piece is aligned with the selected
-                    if (Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 180))
+                    if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 180)
                     {
                         return true;
                     }
@@ -461,7 +461,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If the hit piece is aligned with the selected
-                    if (Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space below the FourWay
                         RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(0, -2, 0), Vector2.up);
@@ -475,7 +475,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit piece is aligned with FourWay
-                                    if (Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 90))
+                                    if ( Approximately(hitDown2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown2.transform.rotation.eulerAngles.z) == 90)
                                     {
                                         return true;
                                     }
@@ -488,7 +488,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit piece is aligned with FourWay
-                                    if (Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 180))
+                                    if ( Approximately(hitDown2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown2.transform.rotation.eulerAngles.z) == 180)
                                     {
                                         return true;
                                     }
@@ -538,7 +538,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -551,7 +551,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 90))
+                    if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 90)
                     {
                         return true;
                     }
@@ -564,7 +564,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space to left of FourWay
                         RaycastHit2D hitLeft2 = Physics2D.Raycast(transform.position + new Vector3(-2, 0, 0), Vector2.up);
@@ -583,7 +583,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit is aligned with FourWay
-                                    if (Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -596,7 +596,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit is aligned with FourWay
-                                    if (Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 90))
+                                    if ( Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 90)
                                     {
                                         return true;
                                     }
@@ -629,7 +629,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -642,7 +642,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -655,7 +655,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space to the right of the FourWay
                         RaycastHit2D hitRight2 = Physics2D.Raycast(transform.position + new Vector3(2, 0, 0), Vector2.up);
@@ -669,7 +669,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit is aligned with Fourway
-                                    if (Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitRight2.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -682,7 +682,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsConnected)
                                 {
                                     //If hit is aligned with FourWay
-                                    if (Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitRight2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -714,7 +714,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit piece alligned with top of selected
-                    if (Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 90))
+                    if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 90)
                     {
                         return true;
                     }
@@ -727,7 +727,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit piece alligned with top of selected
-                    if (Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -740,7 +740,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit piece alligned with top of selected
-                    if (Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitUp.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space above FourWay
                         RaycastHit2D hitUp2 = Physics2D.Raycast(transform.position + new Vector3(0, 2, 0), Vector2.up);
@@ -754,7 +754,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If piece is aligned with the FourWay
-                                    if (Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 90))
+                                    if ( Approximately(hitUp2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp2.transform.rotation.eulerAngles.z) == 90)
                                     {
                                         return true;
                                     }
@@ -767,7 +767,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitUp2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If piece is aligned with the FourWay
-                                    if (Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitUp2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitUp2.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -809,7 +809,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If the hit piece is aligned with the selected
-                    if (Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 90))
+                    if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 90)
                     {
                         return true;
                     }
@@ -822,7 +822,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If the hit piece is aligned with the selected
-                    if (Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 180))
+                    if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 180)
                     {
                         return true;
                     }
@@ -835,7 +835,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If the hit piece is aligned with the selected
-                    if (Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitDown.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space below the FourWay
                         RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(0, -2, 0), Vector2.up);
@@ -849,7 +849,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If hit piece is aligned with FourWay
-                                    if (Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 90))
+                                    if ( Approximately(hitDown2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown2.transform.rotation.eulerAngles.z) == 90)
                                     {
                                         return true;
                                     }
@@ -862,7 +862,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitDown2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If hit piece is aligned with FourWay
-                                    if (Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitDown2.transform.rotation.eulerAngles.z, 180))
+                                    if ( Approximately(hitDown2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown2.transform.rotation.eulerAngles.z) == 180)
                                     {
                                         return true;
                                     }
@@ -912,7 +912,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -925,7 +925,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 90))
+                    if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 90)
                     {
                         return true;
                     }
@@ -938,7 +938,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space to left of FourWay
                         RaycastHit2D hitLeft2 = Physics2D.Raycast(transform.position + new Vector3(-2, 0, 0), Vector2.up);
@@ -957,7 +957,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If hit is aligned with FourWay
-                                    if (Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -970,7 +970,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitLeft2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If hit is aligned with FourWay
-                                    if (Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitLeft2.transform.rotation.eulerAngles.z, 90))
+                                    if ( Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft2.transform.rotation.eulerAngles.z) == 90)
                                     {
                                         return true;
                                     }
@@ -1003,7 +1003,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -1016,7 +1016,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
                     {
                         return true;
                     }
@@ -1029,7 +1029,7 @@ public class PipeRotator : MonoBehaviour {
                 if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                 {
                     //If hit is aligned with selected
-                    if (Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 90) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitRight.transform.rotation.eulerAngles.z, 0))
+                    if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
                     {
                         //Raycasts 1 space to the right of the FourWay
                         RaycastHit2D hitRight2 = Physics2D.Raycast(transform.position + new Vector3(2, 0, 0), Vector2.up);
@@ -1043,7 +1043,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If hit is aligned with Fourway
-                                    if (Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 180) || Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitRight2.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -1056,7 +1056,7 @@ public class PipeRotator : MonoBehaviour {
                                 if (hitRight2.transform.gameObject.GetComponent<PipeRotator>().IsFull)
                                 {
                                     //If hit is aligned with FourWay
-                                    if (Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 270) || Mathf.Approximately(hitRight2.transform.rotation.eulerAngles.z, 0))
+                                    if ( Approximately(hitRight2.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight2.transform.rotation.eulerAngles.z) == 0)
                                     {
                                         return true;
                                     }
@@ -1072,5 +1072,26 @@ public class PipeRotator : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    int Approximately(float value)
+    {
+        if((value < 45 && value >= 0) || (value <= 360 && value > 315))
+        {
+            return 0;
+        }
+        else if(value < 135 && value > 45)
+        {
+            return 90;
+        }
+        else if(value < 225 && value > 135)
+        {
+            return 180;
+        }
+        else if(value < 315 && value > 225)
+        {
+            return 270;
+        }
+        return 123456789;
     }
 }
