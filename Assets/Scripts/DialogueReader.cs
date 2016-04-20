@@ -27,6 +27,7 @@ public class DialogueReader : MonoBehaviour
     public GameObject quit;
     public GameObject muse;
 	public SellingController SellCont;
+	public SellingLogic SLog;
     public bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
     public Text textbox;
@@ -42,6 +43,7 @@ public class DialogueReader : MonoBehaviour
     public bool intro_speech_ukiyo = true;
     public bool finished_intro = false;
 	public bool cAnswer;
+	public int blkPrice;
 
     // Use this for initialization
     void Start ()
@@ -67,10 +69,9 @@ public class DialogueReader : MonoBehaviour
         {
             SetClue();
         }
-        if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-EZone")
+        if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-eZone")
         {
             intro_speech_ukiyo = false;
-            print("yeh");
             ReadFile("./Assets/Dialogue/ukiyo intro.txt");
             NextLine();
         }
@@ -202,18 +203,40 @@ public class DialogueReader : MonoBehaviour
                         nextButton.SetActive(false);
                         quit.gameObject.SetActive(true);
                         break;
-                    case "#play1":
-                        SceneManager.LoadScene("Z1-TR1");
+                    case "#SetPlayer":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play2":
+                    case "#SetUkiyoMuse":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = true;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play3":
+                    case "#SetBaroqueMuse":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = true;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play4":
+                    case "#SetSurrealMuse":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = true;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play5":
-                        break;
-                    case "#play6":
+                    case "#SetWoodStock":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = true;
                         break;
                     case "#activateClue1":
                         clueOne.gameObject.GetComponent<Collider2D>().enabled = true;
@@ -378,10 +401,12 @@ public class DialogueReader : MonoBehaviour
 					case "#nsell":
 						currentText.text = "Please select another client.";
 						SellCont.bReset ();
+						GoTo ("Start");
 						break;
 					case "#passed1":
-						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
-						GoTo ("Quit");
+						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.Pay;
+						PersistVars.currentMoney += SellCont.Pay;
+						GoTo ("Continue");
 						break;
 					case "#failed2":
 						currentText.text = "You have been caught\n." +
@@ -389,11 +414,22 @@ public class DialogueReader : MonoBehaviour
 							"Three strikes and your forgery career is over.\n" +
 							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
-						GoTo ("Quit");
+						GoTo ("Continue");
 						break;
 					case "#Continue":
 						SceneManager.LoadScene ("mansion");
-						GoTo ("Quit");
+						EndDialogue();
+						break;
+					case "#blkbegin":
+						SellCont.counter = true;
+						GoTo ("blkQuestion1");
+						break;
+					case "#blkend":
+						SellCont.counter = false;
+						blkPrice = SLog.BkPay (SellCont.counter, SellCont.correct, SellCont.maxValue);
+						currentText.text = "Congradulations! You sold the forgery for $" + blkPrice;
+						PersistVars.currentMoney += blkPrice;
+						GoTo ("Continue");
 						break;
 					case "#quest1":
 						if (PersistVars.paintingNum == 4) // Shoki Striding
@@ -491,47 +527,43 @@ public class DialogueReader : MonoBehaviour
 							GoTo ("ukiyo6_3");
 						}
 						break;
-					case "blkTrue":
-						if (cAnswer == true) 
-						{
+					case "#blkTrue":
+						if (cAnswer == true) {
 							SellCont.correct += 1;
 						}
-						if (questCount==1)
-						{
+						if (questCount == 1) {
 							GoTo ("blkQuestion2");
 						}
-						else if (questCount==2)
-						{
+						if (questCount == 2) {
 							GoTo ("blkQuestion3");
 						}
-						if (questCount==3)
-						{
+						if (questCount == 3) {
 							GoTo ("blkSell");
 						}
+						questCount++;
 						break;
-					case "blkFalse":
-						if (cAnswer == false)
-						{
+					case "#blkFalse":
+						if (cAnswer == false) {
 							SellCont.correct += 1;
 						}
-						if (questCount==1)
-						{
+						if (questCount == 1) {
 							GoTo ("blkQuestion2");
 						}
-						else if (questCount==2)
-						{
+						if (questCount == 2) {
 							GoTo ("blkQuestion3");
 						}
-						if (questCount==3)
-						{
+						if (questCount == 3) {
 							GoTo ("blkSell");
 						}
+						questCount++;
 						break;
-				case "#blkresult":
-					currentText.text = "You got " + SellCont.correct + " questions correct\n"
-					+ "You sold the forgery for $" + SellCont.bkPay;
-					GoTo ("Quit");
-					break;
+					case "#blkresult":
+						blkPrice = SLog.BkPay (SellCont.counter, SellCont.correct, SellCont.maxValue);
+						currentText.text = "You got " + SellCont.correct + " questions correct\n"
+						+ "You sold the forgery for $" + blkPrice;
+						PersistVars.currentMoney += blkPrice;
+						GoTo ("Continue");
+						break;
                     case "#change":
                         if(PersistVars.currentScene.Contains("0"))
                         {
@@ -632,6 +664,11 @@ public class DialogueReader : MonoBehaviour
             finished_intro = true;
             ReadFile("./Assets/Dialogue/Three Beauties.txt");
         }
+        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
         lineNum = 0;
         textbox.text = "";
         for(int i = 0; i < choiceActions.Length; i++)
@@ -712,6 +749,7 @@ public class DialogueReader : MonoBehaviour
             {
                 SceneManager.LoadScene("Mastermind Base");
             }
+            EndDialogue();
         }
         else if (choiceActions[optionNumber].Contains("#change"))
         {

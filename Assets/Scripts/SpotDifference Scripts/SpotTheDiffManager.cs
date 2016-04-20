@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SpotTheDiffManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class SpotTheDiffManager : MonoBehaviour
     public static Text timeCounter;
     public Text timeUp;
     public List<GameObject> possibleList;
-    public int score;
+    public static int findDiffReturn;
     public Sprite gradeA;
     public Sprite gradeB;
     public Sprite gradeC;
@@ -129,6 +130,9 @@ public class SpotTheDiffManager : MonoBehaviour
 
     public void FinalScore()
     {
+        GameObject.Find("ContinueButton").GetComponent<Button>().interactable = true;
+        GameObject.Find("ResetButton").GetComponent<Button>().interactable = true;
+
         // The player found all 5 mistakes
         if (foundAll)
         {
@@ -137,14 +141,14 @@ public class SpotTheDiffManager : MonoBehaviour
             {
                 GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeA;
-                score = 100;
+                findDiffReturn = 100;
             }
             // The player took more than a minute: score 90 / grade A
             else
             {
                 GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeA;
-                score = 90;
+                findDiffReturn = 90;
             }
         }
         // The player ran out of time
@@ -155,22 +159,33 @@ public class SpotTheDiffManager : MonoBehaviour
             {
                 GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeB;
-                score = 80;
+                findDiffReturn = 80;
             }
             // Only 3 differences were found: score 70 / grade C
             else if (foundDiff == 3)
             {
                 GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeC;
-                score = 70;
+                findDiffReturn = 70;
             }
             // 2 or fewer differences were found: score 60 / grade D
             else if (foundDiff <= 2)
             {
                 GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeD;
-                score = 60;
+                findDiffReturn = 60;
             }
+        }
+    }
+
+    // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
+    public void NextLevel()
+    {
+        if (PersistVars.previousScene != "null")
+        {
+            GameObject.Find("GENERALUI").GetComponent<PersistVars>().findDiffScore = findDiffReturn;
+            SceneManager.LoadScene(PersistVars.previousScene);
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
     }
 }
