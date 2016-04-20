@@ -417,8 +417,8 @@ public class DialogueReader : MonoBehaviour
 						GoTo ("Continue");
 						break;
 					case "#Continue":
-						SceneManager.LoadScene ("mansion");
 						EndDialogue();
+						SceneManager.LoadScene ("mansion");
 						break;
 					case "#blkbegin":
 						GoTo ("blkQuestion1");
