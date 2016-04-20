@@ -14,6 +14,10 @@ Are you sure you want to sell to this client?
 #SetDialogue
 #nsell
 
+@Continue
+#SetDialogue
+#Continue
+
 @pass1
 #SetDialogue
 #passed1
@@ -42,15 +46,19 @@ Your forgery career is over.
 #option1 #goto:Continue
 #option1Text Continue
 
-@ClueTwo
-#SetDialogue
-Please select another client.
-
 @blkClient
 The Black Market will buy your forgery for more if you
 can prove your knowledge of the piece you are selling.
-#option1 #goto:blkQuestion1
-#option1Text Continue
+Do you want to counter their offer?
+#option1 #goto:Counter
+#option2 #goto:NoCounter
+#option1Text Yes. #option2Text No.
+
+@Counter
+#blkbegin
+
+@NoCounter
+#blkend
 
 @blkQuestion1
 #SetDialogue
@@ -67,8 +75,12 @@ can prove your knowledge of the piece you are selling.
 @blkSell
 #SetDialogue
 #blkresult
-#option1 #goto:Continue
-#option1Text Continue
+
+@blkTrue
+#blkTrue
+
+@blkFalse
+#blkFalse
 
 @ukiyo1_1
 #SetDialogue

@@ -1,5 +1,5 @@
 @Start
-#SetDialogue
+#SetDialogue #SetUkiyoMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -15,8 +15,10 @@ What do you want to know?
 #clueonefound
 
 @yes1
-Ren: Tell me about <i>The Great Wave off Kanagawa.</i>
-Nasu: Well, the painting was created between 1830 and 1833.
+#SetPlayer
+<b>Ren:</b> Tell me about <i>The Great Wave off Kanagawa.</i>
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the painting was created between 1830 and 1833.
 It depicts a large wave terrorizing boats off the coast of Kanagawa.
 I think you might enjoy trying to recreate it. Interested?
 #SetOptions
@@ -25,12 +27,16 @@ I think you might enjoy trying to recreate it. Interested?
 #option1Text Yes #option2Text No
 
 @no1
-Ren: Can you tell me about this painting?
-Nasu: Ah yes, <i>The Great Wave off Kanagawa.</i>
+#SetPlayer
+<b>Ren:</b> Can you tell me about this painting?
+#SetUkiyoMuse
+<b>Nasu:</b> Ah yes, <i>The Great Wave off Kanagawa.</i>
 It's quite a beautiful painting, yet...
-Ren: What's wrong?
-Nasu: I'm having difficulty remembering the details.
-Ren: (I should try to show it to him.)
+#SetPlayer
+<b>Ren:</b> What's wrong?
+#SetUkiyoMuse
+<b>Nasu:</b> I'm having difficulty remembering the details.
+<b>Ren:</b> (I should try to show it to him.)
 #activateClue1
 #goto:Start
 
@@ -39,8 +45,10 @@ Ren: (I should try to show it to him.)
 #cluetwofound
 
 @yes2
-Ren: Remember anything else about the wave?
-Nasu: The wave is both the center of the piece and a frame for another part.
+#SetPlayer
+<b>Ren:</b> Remember anything else about the wave?
+#SetUkiyoMuse
+<b>Nasu:</b> The wave is both the center of the piece and a frame for another part.
 If you look closely, you can see that Mount Fuji is framed by the wave.
 Would you like to try and frame something in a painting?
 #SetOptions
@@ -49,11 +57,15 @@ Would you like to try and frame something in a painting?
 #option1Text Yes #option2Text No
 
 @no2
-Ren: What's with the wave?
-Nasu: Well, while the wave is quite large, it's most likely not a tsunami.
+#SetPlayer
+<b>Ren:</b> What's with the wave?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, while the wave is quite large, it's most likely not a tsunami.
 Rather it is about the size of a large rogue wave, based on the size of the boats.
-Ren: Anything else?
-Nasu: Maybe later. It should come back to me any minute now...
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> Maybe later. It should come back to me any minute now...
 #activateClue2
 #goto:Start
 
@@ -62,11 +74,15 @@ Nasu: Maybe later. It should come back to me any minute now...
 #cluethreefound
 
 @yes3
-Ren: Do you know anything about Hokusai?
-Nasu: Hokusai first became known after creating a print of the Buddhist Daruma.
+#SetPlayer
+<b>Ren:</b> Do you know anything about Hokusai?
+#SetUkiyoMuse
+<b>Nasu:</b> Hokusai first became known after creating a print of the Buddhist Daruma.
 From then on he has made many prints, but most were destroyed in a studio fire.
-Ren: That's so tragic!
-Nasu: Well, at least you won't have to worry about your studio lighting on fire.
+#SetPlayer
+<b>Ren:</b> That's so tragic!
+#SetUkiyoMuse
+<b>Nasu:</b> Well, at least you won't have to worry about your studio lighting on fire.
 Why not try painting something?
 #SetOptions
 #option1 #play3
@@ -74,12 +90,17 @@ Why not try painting something?
 #option1Text Yes #option2Text No
 
 @no3
-Ren: Who is the creator of this?
-Nasu: Hokusai, the apprentice of Kastukawa Shunsho.
+#SetPlayer
+<b>Ren:</b> Who is the creator of this?
+#SetUkiyoMuse
+<b>Nasu:</b> Hokusai, the apprentice of Kastukawa Shunsho.
 Katsukawa was one of the foremost Ukiyo-e artists of the time.
-Ren: But what about Hokusai?
-Nasu: Hmm, I'm having a hard time remembering...
-Ren: (I'll ask him later. I'm sure he knows something.)
+#SetPlayer
+<b>Ren:</b> But what about Hokusai?
+#SetUkiyoMuse
+<b>Nasu:</b> Hmm, I'm having a hard time remembering...
+#SetPlayer
+<b>Ren:</b> (I'll ask him later. I'm sure he knows something.)
 #activateClue3
 #goto:Start
 
@@ -88,8 +109,10 @@ Ren: (I'll ask him later. I'm sure he knows something.)
 #cluefourfound
 
 @yes4
-Ren: Any more details about this painting?
-Nasu: The wave and Mount Fuji actually form a sense of unity.
+#SetPlayer
+<b>Ren:</b> Any more details about this painting?
+#SetUkiyoMuse
+<b>Nasu:</b> The wave and Mount Fuji actually form a sense of unity.
 They create Yin and Yang, forming balance in the system.
 You should try to balance out your artistic abilities.
 #SetOptions
@@ -98,12 +121,17 @@ You should try to balance out your artistic abilities.
 #option1Text Yes #option2Text No
 
 @no4
-Ren: Do you know any small details about this painting?
-Nasu: The boats in the picture can act as a scale to determine how big the wave is.
+#SetPlayer
+<b>Ren:</b> Do you know any small details about this painting?
+#SetUkiyoMuse
+<b>Nasu:</b> The boats in the picture can act as a scale to determine how big the wave is.
 The wave isn't as large as it appears.
-Ren: Anything else?
-Nasu: If you look to the upper corner, you can see the artist's signature.
-Ren: Maybe I'll come back later...
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> If you look to the upper corner, you can see the artist's signature.
+#SetPlayer
+<b>Ren:</b> Maybe I'll come back later...
 #activateClue4
 #goto:Start
 
@@ -112,8 +140,10 @@ Ren: Maybe I'll come back later...
 #cluefivefound
 
 @yes5
-Ren: Know anything else about the wood blocks?
-Nasu: The wooden blocks were brought to a <i>horoshi,</i> or woodcarver.
+#SetPlayer
+<b>Ren:</b> Know anything else about the wood blocks?
+#SetUkiyoMuse
+<b>Nasu:</b> The wooden blocks were brought to a <i>horoshi,</i> or woodcarver.
 They would carve away relief lines of the image for inking.
 Then a <i>surushi</i> (printer) would produce the print with the woodblocks.
 Do you want to try for yourself?
@@ -123,11 +153,14 @@ Do you want to try for yourself?
 #option1Text Yes #option2Text No
 
 @no5
-Ren: What do the artists use for these prints?
-Nasu: It starts off with a series of woodblocks.
+#SetPlayer
+<b>Ren:</b> What do the artists use for these prints?
+#SetUkiyoMuse
+<b>Nasu:</b> It starts off with a series of woodblocks.
 Typically the type of wood used was cherrywood.
 There was more to this, but I can't recall what.
-Ren: I'll come back later then.
+#SetPlayer
+<b>Ren:</b> I'll come back later then.
 #activateClue5
 #goto:Start
 
@@ -136,8 +169,10 @@ Ren: I'll come back later then.
 #cluesixfound
 
 @yes6
-Ren: What else can you tell me about the period?
-Nasu: As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
+#SetPlayer
+<b>Ren:</b> What else can you tell me about the period?
+#SetUkiyoMuse
+<b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
 But it declined as the century ended, being seen as both old-fashioned and requiring too much effort.
 Perhaps you'd like to test your knowledge?
 #SetOptions
@@ -146,8 +181,10 @@ Perhaps you'd like to test your knowledge?
 #option1Text Yes #option2Text No
 
 @no6
-Ren: What can you tell me about this time period?
-Nasu: Well, the Ukiyo-e art pieces depicted the entertainments of Edo in the beginning.
+#SetPlayer
+<b>Ren:</b> What can you tell me about this time period?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the Ukiyo-e art pieces depicted the entertainments of Edo in the beginning.
 This included amusements such as coutesan and kabuki actors.
 I know of more, but it's a bit foggy right now. Come back later.
 #activateClue6
@@ -157,6 +194,15 @@ I know of more, but it's a bit foggy right now. Come back later.
 #SetDialogue
 #SetDialogue
 Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
 #SetOptions
 #option1 #change
 #option2 #quit
