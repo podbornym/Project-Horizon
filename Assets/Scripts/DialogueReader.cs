@@ -27,6 +27,7 @@ public class DialogueReader : MonoBehaviour
     public GameObject quit;
     public GameObject muse;
 	public SellingController SellCont;
+	public SellingLogic SLog;
     public bool[] ClueFound = { false, false, false, false, false, false };
     public Text message;
     public Text textbox;
@@ -42,6 +43,7 @@ public class DialogueReader : MonoBehaviour
     public bool intro_speech_ukiyo = true;
     public bool finished_intro = false;
 	public bool cAnswer;
+	public int blkPrice;
 
     // Use this for initialization
     void Start ()
@@ -401,10 +403,12 @@ public class DialogueReader : MonoBehaviour
 					case "#nsell":
 						currentText.text = "Please select another client.";
 						SellCont.bReset ();
+						GoTo ("Start");
 						break;
 					case "#passed1":
-						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.pay;
-						GoTo ("Quit");
+						currentText.text = "Congradulations! You sold the forgery for $" + SellCont.Pay;
+						PersistVars.currentMoney += SellCont.Pay;
+						GoTo ("Continue");
 						break;
 					case "#failed2":
 						currentText.text = "You have been caught\n." +
@@ -412,11 +416,14 @@ public class DialogueReader : MonoBehaviour
 							"Three strikes and your forgery career is over.\n" +
 							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strikes.";
 						gameObject.GetComponent<PersistVars> ().strikes += 1;
-						GoTo ("Quit");
+						GoTo ("Continue");
 						break;
 					case "#Continue":
 						SceneManager.LoadScene ("mansion");
-						GoTo ("Quit");
+						EndDialogue();
+						break;
+					case "#blkbegin":
+						GoTo ("blkQuestion1");
 						break;
 					case "#quest1":
 						if (PersistVars.paintingNum == 4) // Shoki Striding
@@ -514,47 +521,46 @@ public class DialogueReader : MonoBehaviour
 							GoTo ("ukiyo6_3");
 						}
 						break;
-					case "blkTrue":
-						if (cAnswer == true) 
-						{
+					case "#blkTrue":
+						if (cAnswer == true) {
 							SellCont.correct += 1;
 						}
-						if (questCount==1)
-						{
+						if (questCount == 1) {
 							GoTo ("blkQuestion2");
 						}
-						else if (questCount==2)
-						{
+						if (questCount == 2) {
 							GoTo ("blkQuestion3");
 						}
-						if (questCount==3)
-						{
+						if (questCount == 3) {
 							GoTo ("blkSell");
 						}
+						questCount++;
 						break;
-					case "blkFalse":
-						if (cAnswer == false)
-						{
+					case "#blkFalse":
+						if (cAnswer == false) {
 							SellCont.correct += 1;
 						}
-						if (questCount==1)
-						{
+						if (questCount == 1) {
 							GoTo ("blkQuestion2");
 						}
-						else if (questCount==2)
-						{
+						if (questCount == 2) {
 							GoTo ("blkQuestion3");
 						}
-						if (questCount==3)
-						{
+						if (questCount == 3) {
 							GoTo ("blkSell");
 						}
+						questCount++;
 						break;
-				case "#blkresult":
-					currentText.text = "You got " + SellCont.correct + " questions correct\n"
-					+ "You sold the forgery for $" + SellCont.bkPay;
-					GoTo ("Quit");
-					break;
+					case "#blkresult":
+						Debug.Log (SellCont.counter);
+						Debug.Log (SellCont.correct);
+						Debug.Log (SellCont.maxValue);
+						blkPrice = SLog.BkPay (SellCont.counter, SellCont.correct, SellCont.maxValue);
+						currentText.text = "You got " + SellCont.correct + " questions correct\n"
+						+ "You sold the forgery for $" + blkPrice;
+						PersistVars.currentMoney += blkPrice;
+						GoTo ("Continue");
+						break;
                     case "#change":
                         if(PersistVars.currentScene.Contains("0"))
                         {
