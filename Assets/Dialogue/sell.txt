@@ -49,7 +49,16 @@ Your forgery career is over.
 @blkClient
 The Black Market will buy your forgery for more if you
 can prove your knowledge of the piece you are selling.
+Do you want to counter their offer?
+#option1 #goto:Counter
+#option2 #goto:NoCounter
+#option1Text Yes. #option2Text No.
+
+@Counter
 #blkbegin
+
+@NoCounter
+#blkend
 
 @blkQuestion1
 #SetDialogue

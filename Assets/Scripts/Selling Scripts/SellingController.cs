@@ -27,7 +27,6 @@ public class SellingController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Setting variables
-		counter=true;
 		m1 = vars.match3Score;
 		m2 = vars.rotatoScore;
 		m3 = vars.pipeDreamScore;
