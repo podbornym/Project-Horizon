@@ -59,6 +59,7 @@ public class DialogueReader : MonoBehaviour
 
     void Update ()
     {
+        print(PersistVars.currentScene);
         if (Input.GetMouseButtonDown(0))
         {
             FindClue();
@@ -67,7 +68,7 @@ public class DialogueReader : MonoBehaviour
         {
             SetClue();
         }
-        if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-EZone")
+        if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-eZone")
         {
             intro_speech_ukiyo = false;
             print("yeh");
@@ -202,18 +203,40 @@ public class DialogueReader : MonoBehaviour
                         nextButton.SetActive(false);
                         quit.gameObject.SetActive(true);
                         break;
-                    case "#play1":
-                        SceneManager.LoadScene("Z1-TR1");
+                    case "#SetPlayer":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play2":
+                    case "#SetUkiyoMuse":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = true;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play3":
+                    case "#SetBaroqueMuse":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = true;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play4":
+                    case "#SetSurrealMuse":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = true;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
                         break;
-                    case "#play5":
-                        break;
-                    case "#play6":
+                    case "#SetWoodStock":
+                        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
+                        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+                        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+                        GameObject.Find("WoodStock").GetComponent<Image>().enabled = true;
                         break;
                     case "#activateClue1":
                         clueOne.gameObject.GetComponent<Collider2D>().enabled = true;
@@ -632,6 +655,11 @@ public class DialogueReader : MonoBehaviour
             finished_intro = true;
             ReadFile("./Assets/Dialogue/Three Beauties.txt");
         }
+        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
         lineNum = 0;
         textbox.text = "";
         for(int i = 0; i < choiceActions.Length; i++)
@@ -712,6 +740,7 @@ public class DialogueReader : MonoBehaviour
             {
                 SceneManager.LoadScene("Mastermind Base");
             }
+            EndDialogue();
         }
         else if (choiceActions[optionNumber].Contains("#change"))
         {

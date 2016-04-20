@@ -1,5 +1,5 @@
 @Start
-#SetDialogue
+#SetDialogue #SetUkiyoMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -15,8 +15,10 @@ What do you want to know?
 #clueonefound
 
 @yes1
-Ren: I managed to find this print.
-Nasu: Ah, yes, now I remember! It was painted around 1793.
+#SetPlayer
+<b>Ren:</b> I managed to find this print.
+#SetUkiyoMuse
+<b>Nasu:</b> Ah, yes, now I remember! It was painted around 1793.
 This print was one of the most famuous of its time.
 If you'd like, you can try recreating some of it now.
 #SetOptions
@@ -25,11 +27,14 @@ If you'd like, you can try recreating some of it now.
 #option1Text Yes #option2Text No
 
 @no1
-Ren: So what exactly is this print?
-Nasu: This print is known as <i>The Three Beauties of the Present Day.</i>
+#SetPlayer
+<b>Ren:</b> So what exactly is this print?
+#SetUkiyoMuse
+<b>Nasu:</b> This print is known as <i>The Three Beauties of the Present Day.</i>
 I can't remember much about it right now.
 If I could only see it, then I might remember more.
-Ren: (Maybe I can find the print around here somewhere...)
+#SetPlayer
+<b>Ren:</b> (Maybe I can find the print around here somewhere...)
 #activateClue1
 #goto:Start
 
@@ -38,8 +43,10 @@ Ren: (Maybe I can find the print around here somewhere...)
 #cluetwofound
 
 @yes2
-Ren: Do you remember anything about the women in the print?
-Nasu: Well, the one on the left is Takashima Hisa, known as the tea house waitress.
+#SetPlayer
+<b>Ren:</b> Do you remember anything about the women in the print?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the one on the left is Takashima Hisa, known as the tea house waitress.
 The middle one is Tomimoto Toyohina, who is a <i>geisha</i> (female entertainer).
 The last one is Naniwaya Kita, another tea house waitress.
 Perhaps you'd like to work on the print?
@@ -49,10 +56,14 @@ Perhaps you'd like to work on the print?
 #option1Text Yes #option2Text No
 
 @no2
-Ren: Who are the women in the print?
-Nasu: Hmm, it seems I've forgotten.
-Ren: (That figures...)
-Nasu: I do know that each of them can be recognized by their family crest.
+#SetPlayer
+<b>Ren:</b> Who are the women in the print?
+#SetUkiyoMuse
+<b>Nasu:</b> Hmm, it seems I've forgotten.
+#SetPlayer
+<b>Ren:</b> (That figures...)
+#SetUkiyoMuse
+<b>Nasu:</b> I do know that each of them can be recognized by their family crest.
 But I'm sure that if you give me some time, I'll have more to tell you.
 #activateClue2
 #goto:Start
@@ -62,8 +73,10 @@ But I'm sure that if you give me some time, I'll have more to tell you.
 #cluethreefound
 
 @yes3
-Ren: What do you know about the artist?
-Nasu: Utamaro has made thousands of different prints.
+#SetPlayer
+<b>Ren:</b> What do you know about the artist?
+#SetUkiyoMuse
+<b>Nasu:</b> Utamaro has made thousands of different prints.
 He has done many portraits of actors and theater programs.
 Maybe you should try creating something as well?
 #SetOptions
@@ -72,10 +85,13 @@ Maybe you should try creating something as well?
 #option1Text Yes #option2Text No
 
 @no3
-Ren: Who made this print?
-Nasu: His name was Kitagawa Utamaro.
+#SetPlayer
+<b>Ren:</b> Who made this print?
+#SetUkiyoMuse
+<b>Nasu:</b> His name was Kitagawa Utamaro.
 He was quite famous in his time.
-Ren: (I wonder if he knows more.)
+#SetPlayer
+<b>Ren:</b> (I wonder if he knows more.)
 #activateClue3
 #goto:Start
 
@@ -84,8 +100,10 @@ Ren: (I wonder if he knows more.)
 #cluefourfound
 
 @yes4
-Ren: Do you know anything about the design of the print?
-Nasu: Well, the women are positioned in a traingular formation.
+#SetPlayer
+<b>Ren:</b> Do you know anything about the design of the print?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the women are positioned in a traingular formation.
 This form is a symbol of unity, and holds the piece together.
 Do you want to try making something?
 #SetOptions
@@ -94,10 +112,14 @@ Do you want to try making something?
 #option1Text Yes #option2Text No
 
 @no4
-Ren: What kind of information do you have about this print?
-Nasu: The print is 35 by 27 cm, made with multiple woodblocks and paper.
-Ren: That's not quite what I had in mind...
-Nasu: Well maybe you should be more specific next time.
+#SetPlayer
+<b>Ren:</b> What kind of information do you have about this print?
+#SetUkiyoMuse
+<b>Nasu:</b> The print is 35 by 27 cm, made with multiple woodblocks and paper.
+#SetPlayer
+<b>Ren:</b> That's not quite what I had in mind...
+#SetUkiyoMuse
+<b>Nasu:</b> Well maybe you should be more specific next time.
 #activateClue4
 #goto:Start
 
@@ -106,12 +128,16 @@ Nasu: Well maybe you should be more specific next time.
 #cluefivefound
 
 @yes5
-Ren: What's the process to make the prints?
-Nasu: The paper would be glued to the blocks and rubbed with oil, peeling away upper layers to create a thin, translucent layer.
+#SetPlayer
+<b>Ren:</b> What's the process to make the prints?
+#SetUkiyoMuse
+<b>Nasu:</b> The paper would be glued to the blocks and rubbed with oil, peeling away upper layers to create a thin, translucent layer.
 This layer acted as a guide for the block cutter, carving away non-black areas to form raised, inked areas.
 This destroyed the original drawing in the process.
-Ren: But they used the blocks to create the final piece, right?
-Nasu: Correct! The artist would place the paper on the inked blocks and rubbed with a burnishing tool, creating the print you see today.
+#SetPlayer
+<b>Ren:</b> But they used the blocks to create the final piece, right?
+#SetUkiyoMuse
+<b>Nasu:</b> Correct! The artist would place the paper on the inked blocks and rubbed with a burnishing tool, creating the print you see today.
 Would you like to try creating the print?
 #SetOptions
 #option1 #play5
@@ -119,11 +145,14 @@ Would you like to try creating the print?
 #option1Text Yes #option2Text No
 
 @no5
-Ren: How do they make these prints?
-Nasu: Well, there were many steps to creating these prints
+#SetPlayer
+<b>Ren:</b> How do they make these prints?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, there were many steps to creating these prints
 The artist first draws the design with ink on handmade paper, and then... hmm...
 Well, I don't quite remember, to be honest.
-Ren: (Maybe I can find something to jog his memory.)
+#SetPlayer
+<b>Ren:</b> (Maybe I can find something to jog his memory.)
 #activateClue5
 #goto:Start
 
@@ -132,6 +161,7 @@ Ren: (Maybe I can find something to jog his memory.)
 #cluesixfound
 
 @yes6
+#SetPlayer
 You found it!
 Would you like to play game six?
 #SetOptions
@@ -140,8 +170,10 @@ Would you like to play game six?
 #option1Text Yes #option2Text No
 
 @no6
-Ren: What can you tell me about this time period?
-Nasu: 
+#SetPlayer
+<b>Ren:</b> What can you tell me about this time period?
+#SetUkiyoMuse
+<b>Nasu:</b> 
 #activateClue6
 #goto:Start
 

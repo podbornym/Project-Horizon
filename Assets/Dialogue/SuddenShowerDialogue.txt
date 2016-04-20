@@ -1,5 +1,5 @@
 @Start
-#SetDialogue
+#SetDialogue #SetUkiyoMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -15,8 +15,10 @@ What do you want to know?
 #clueonefound
 
 @yes1
-Ren: I think I've found something! Will this help you remember more?
-Nasu: Hmm, ah yes. This print was created in 1857 as part of a series of several paintings.
+#SetPlayer
+<b>Ren:</b> I think I've found something! Will this help you remember more?
+#SetUkiyoMuse
+<b>Nasu:</b> Hmm, ah yes. This print was created in 1857 as part of a series of several paintings.
 You're talented, no? You should try and make it yourself!
 #SetOptions
 #option1 #play1
@@ -24,10 +26,13 @@ You're talented, no? You should try and make it yourself!
 #option1Text Yes #option2Text No
 
 @no1
-Ren: Hmm, what print is this?
-Nasu: This print is known as <i>Sudden Shower over Shin-Ohashi Bridge and Atake.</i>
+#SetPlayer
+<b>Ren:</b> Hmm, what print is this?
+#SetUkiyoMuse
+<b>Nasu:</b> This print is known as <i>Sudden Shower over Shin-Ohashi Bridge and Atake.</i>
 I'd like to tell you more about it, but my memory just isn't what it used to be.
-Ren: (I'll find a clue to help Nasu remember...)
+#SetPlayer
+<b>Ren:</b> (I'll find a clue to help Nasu remember...)
 #activateClue1
 #goto:Start
 
@@ -36,8 +41,10 @@ Ren: (I'll find a clue to help Nasu remember...)
 #cluetwofound
 
 @yes2
-Ren: I found this. Now can you tell me more about the bridge?
-Nasu: The print shows the Ohashi bridge across the Sumida River.
+#SetPlayer
+<b>Ren:</b> I found this. Now can you tell me more about the bridge?
+#SetUkiyoMuse
+<b>Nasu:</b> The print shows the Ohashi bridge across the Sumida River.
 Perhaps now you'd like to work on the print?
 #SetOptions
 #option1 #play2
@@ -45,10 +52,14 @@ Perhaps now you'd like to work on the print?
 #option1Text Yes #option2Text No
 
 @no2
-Ren: What is the bridge depicted in the print?
-Nasu: Well, that is a....bridge....
-Ren: Well that was specific.
-Nasu: I'm sorry, maybe you could find another clue? That may help.	
+#SetPlayer
+<b>Ren:</b> What is the bridge depicted in the print?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, that is a....bridge....
+#SetPlayer
+<b>Ren:</b> Well that was specific.
+#SetUkiyoMuse
+<b>Nasu:</b> I'm sorry, maybe you could find another clue? That may help.	
 #activateClue2
 #goto:Start
 
@@ -57,8 +68,10 @@ Nasu: I'm sorry, maybe you could find another clue? That may help.
 #cluethreefound
 
 @yes3
-Ren: Is there anything else that you know about Ando Hiroshige?
-Nasu: Of course! Hiroshige was best known for his landscape painting.
+#SetPlayer
+<b>Ren:</b> Is there anything else that you know about Ando Hiroshige?
+#SetUkiyoMuse
+<b>Nasu:</b> Of course! Hiroshige was best known for his landscape painting.
 He typically worked within the ukiyo-e genre, and was considered the last great master for the ukiyo-e tradition.
 You should continue working on your print!
 #SetOptions
@@ -67,9 +80,12 @@ You should continue working on your print!
 #option1Text Yes #option2Text No
 
 @no3
-Ren: Do you know who created this piece?
-Nasu: Ando Hiroshige is the original creator of this work of art!
-Ren: (I wonder if he knows more about the artist?)
+#SetPlayer
+<b>Ren:</b> Do you know who created this piece?
+#SetUkiyoMuse
+<b>Nasu:</b> Ando Hiroshige is the original creator of this work of art!
+#SetPlayer
+<b>Ren:</b> (I wonder if he knows more about the artist?)
 #activateClue3
 #goto:Start
 
@@ -78,8 +94,10 @@ Ren: (I wonder if he knows more about the artist?)
 #cluefourfound
 
 @yes4
-Ren: Do you know anything else about the prints design?
-Nasu: The dark cluds seen in the painting were produced using the bokashi technique.
+#SetPlayer
+<b>Ren:</b> Do you know anything else about the prints design?
+#SetUkiyoMuse
+<b>Nasu:</b> The dark cluds seen in the painting were produced using the bokashi technique.
 This technique was very difficult, and was also used to create the water around the bridge.
 Do you want to try creating something?
 #SetOptions
@@ -88,11 +106,16 @@ Do you want to try creating something?
 #option1Text Yes #option2Text No
 
 @no4
-Ren: What sorts of other information do you have about this piece?
-Nasu: Hiroshige used a recurring theme in ukiyo-e works called "white rain"
-Ren: Hmm, that sounds pretty interesting.
-Nasu: Yes, "white rain" was created by using many thin, dark parallel lines in two different directions.
-Ren: (I bet I can find another clue to get more information yet.)
+#SetPlayer
+<b>Ren:</b> What sorts of other information do you have about this piece?
+#SetUkiyoMuse
+<b>Nasu:</b> Hiroshige used a recurring theme in ukiyo-e works called "white rain."
+#SetPlayer
+<b>Ren:</b> Hmm, that sounds pretty interesting.
+#SetUkiyoMuse
+<b>Nasu:</b> Yes, "white rain" was created by using many thin, dark parallel lines in two different directions.
+#SetPlayer
+<b>Ren:</b> (I bet I can find another clue to get more information yet.)
 #activateClue4
 #goto:Start
 
@@ -101,8 +124,10 @@ Ren: (I bet I can find another clue to get more information yet.)
 #cluefivefound
 
 @yes5
-Ren: Anything else you can tell me about these types of ukiyo-e prints?
-Nasu: Ukiyo-e means "Pictures of the floating world"
+#SetPlayer
+<b>Ren:</b> Anything else you can tell me about these types of ukiyo-e prints?
+#SetUkiyoMuse
+<b>Nasu:</b> Ukiyo-e means "Pictures of the floating world"
 And this world was definitely one of delightful and pleasurable themes.
 Would you like to try creating the print?
 #SetOptions
@@ -111,9 +136,12 @@ Would you like to try creating the print?
 #option1Text Yes #option2Text No
 
 @no5
-Ren: What else can you tell me about these sorts of prints?
-Nasu: Many woodblock prints such as this one were produced in 18th and 19th century Japan...
-Ren: I'm going to find another clue to help you remember more! 
+#SetPlayer
+<b>Ren:</b> What else can you tell me about these sorts of prints?
+#SetUkiyoMuse
+<b>Nasu:</b> Many woodblock prints such as this one were produced in 18th and 19th century Japan...
+#SetPlayer
+<b>Ren:</b> I'm going to find another clue to help you remember more! 
 #activateClue5
 #goto:Start
 
@@ -122,20 +150,26 @@ Ren: I'm going to find another clue to help you remember more!
 #cluesixfound
 
 @yes6
-Nasu: You found the another clue!
-Ren: Yeah! What is another bit of knowledge you wanted to tell me?
-Nasu: Well, I may have stretched the truth a bit.
+#SetUkiyoMuse
+<b>Nasu:</b> You found the another clue!
+#SetPlayer
+<b>Ren:</b> Yeah! What is another bit of knowledge you wanted to tell me?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, I may have stretched the truth a bit.
 It was more so advice than knowledge.
 My advice is "good luck working on this piece!"
-Ren: (This dragon is something else..)
+#SetPlayer
+<b>Ren:</b> (This dragon is something else..)
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
 #option1Text Yes #option2Text No
 
 @no6
-Ren: Is there anything else I should know?
-Nasu: Find another clue and show me, and I should be able to give one more piece of knowledge about this work.
+#SetPlayer
+<b>Ren:</b> Is there anything else I should know?
+#SetUkiyoMuse
+<b>Nasu:</b> Find another clue and show me, and I should be able to give one more piece of knowledge about this work.
 #activateClue6
 #goto:Start
 
