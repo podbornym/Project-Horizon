@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TimerScipt : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class TimerScipt : MonoBehaviour {
     public float zTotalScore;
     public Text finishText;
 
+	public Sprite helpScreen;
 	public Sprite GradeA;
 	public Sprite GradeB;
 	public Sprite GradeC;
@@ -21,7 +23,8 @@ public class TimerScipt : MonoBehaviour {
 
     void Awake()
     {
-		
+		//GameObject.Find ("Help Screen").GetComponent<Image> ().sprite = helpScreen;
+
         puzzleSM = new SelectAndMove[puzzlePieces.Length];
         int i = 0;
         foreach (GameObject cur in puzzlePieces)
@@ -36,6 +39,12 @@ public class TimerScipt : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		if (GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = true) 
+		{
+			GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = false;
+		}
+
+
         seconds = 0;
         timeCounter = GameObject.Find("TimerText").GetComponent<Text>();
     }
@@ -45,6 +54,21 @@ public class TimerScipt : MonoBehaviour {
     {
         seconds += Time.deltaTime;
         timeCounter.text = seconds.ToString("0");	
+	}
+
+	public void continueButtonClicked()
+	{
+		if (PersistVars.previousScene != "null") 
+		{
+			SceneManager.LoadScene (PersistVars.previousScene);
+		}
+
+	}
+
+	public void helpButtonClicked()
+	{
+		GameObject.Find ("Help Screen").GetComponent<Image> ().enabled = !GameObject.Find ("Help Screen").GetComponent<Image> ().enabled;
+
 	}
 
     public void finishButtonClicked()
