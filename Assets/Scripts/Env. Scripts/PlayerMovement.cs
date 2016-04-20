@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     int columnOffset = 0;
     public GameObject cam;
     public Texture2D normalCursor;
-    public CursorMode cursorMode = CursorMode.Auto;
+    public CursorMode cursorMode = CursorMode.ForceSoftware;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
     private Animator myAnimator;
@@ -44,28 +44,7 @@ public class PlayerMovement : MonoBehaviour {
                 cam.transform.position = new Vector3(-10.32f, -13f, cam.transform.position.z);
             }
 
-            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
-            GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
-            GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
-            GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
-        }
 
-        if(PersistVars.currentScene == "Ukiyo-eZone")
-        {
-            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
-            GameObject.Find("DragPort").GetComponent<Image>().enabled = true;
-        }
-
-        else if (PersistVars.currentScene == "BaroqueZone")
-        {
-            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
-            GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = true;
-        }
-
-        else if (PersistVars.currentScene == "SurrealistZone")
-        {
-            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = false;
-            GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = true;
         }
 
         myAnimator = GetComponent<Animator>();
@@ -242,7 +221,11 @@ public class PlayerMovement : MonoBehaviour {
                     PersistVars.currentScene = "Ukiyo-eZone";
                     PersistVars.Ukiyo = true;
                     notMoving();
+                    myAnimator.SetBool("Portal", true);
+                    StartCoroutine(PortalEnter());
                     SceneManager.LoadScene("Ukiyo-eZone");
+                    myAnimator.SetBool("Portal", false);
+
                     break;
                 case "portal_4_B":
                     PersistVars.previousScene = "mansion";
@@ -491,6 +474,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             notMoving();
         }
+    }
+    IEnumerator PortalEnter()
+    {
+        yield return new WaitForSeconds(1.03f);
     }
 }
 

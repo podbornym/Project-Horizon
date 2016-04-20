@@ -9,15 +9,25 @@ public class EnvInteracter : MonoBehaviour {
     public Texture2D pinkCursor;
     public Texture2D leftArrow;
     public Texture2D rightArrow;
-    public CursorMode cursorMode = CursorMode.Auto;
+    public CursorMode cursorMode = CursorMode.ForceSoftware;
     public Vector2 hotSpot = Vector2.zero;
     public static bool cursorSet = false;
     public GameObject player;
-
+    public GameObject ukiyo;
+    private Animator ukioyAnimator;
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
-	}
+        try
+        {
+            ukiyo = GameObject.Find("Ukiyo-e");
+        }
+        catch
+        {
+
+        }
+        ukioyAnimator = ukiyo.GetComponent<Animator>();
+    }
 
     void OnMouseEnter()
     {
@@ -64,10 +74,24 @@ public class EnvInteracter : MonoBehaviour {
                     player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, 5);
                 }
             }
-            else
+            if (gameObject.tag == "portal")
+            {
+                ukioyAnimator.SetInteger("OpenUkiyo-eDoor", 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                ukioyAnimator.SetInteger("UkiyoIsOpen", 100);
+
+                StartCoroutine(Portal());
+
+            }
+           /* else
             {
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
-            }
+            }*/
         }
+    }
+    IEnumerator Portal()
+    {
+        yield return new WaitForSeconds(2);
+
     }
 }
