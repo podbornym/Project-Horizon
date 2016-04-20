@@ -7,13 +7,12 @@ public class SellingController : MonoBehaviour {
 	public int maxValue;
 	public float m1, m2, m3, m4, m5, m6;
 	public string buyer;
-	float avg;
+	public float avg;
 	public SellingLogic logic;
 	public bool check;
-	public int pay;
-	public int bkPay;
-	public bool counter = true;
+	public bool counter;
 	public int correct;
+	public int Pay;
 	public PersistVars vars;
 	public GameObject highText;
 	public GameObject medText;
@@ -76,8 +75,7 @@ public class SellingController : MonoBehaviour {
 			buyer = "blk";
 		}
 		check = logic.ErrorCheck (buyer, avg);
-		bkPay = logic.BkPay (counter, correct, maxValue);
-		pay = logic.Payout (buyer, avg, maxValue);
+		Pay = logic.Payout (buyer,avg,maxValue);
 		reader.NextLine ();
 	}
 
