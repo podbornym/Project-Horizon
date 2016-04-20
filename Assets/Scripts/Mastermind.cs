@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Mastermind : MonoBehaviour {
     public Text question;
@@ -14,7 +15,7 @@ public class Mastermind : MonoBehaviour {
     public Text timer;
     public Text correctText;
     public int hiddenScore = 10;
-    public int score;
+    public static int masterReturn;
     public bool allAnswered = false;
     public static float seconds;
     public static float correctTime = -1;
@@ -523,6 +524,9 @@ public class Mastermind : MonoBehaviour {
             }
         }
 
+        GameObject.Find("ContinueButton").GetComponent<Button>().interactable = true;
+        GameObject.Find("ResetButton").GetComponent<Button>().interactable = true;
+
         // Grade the player based on their hidden score
         // Scored 8, 9, or 10: grade A
         if (hiddenScore >= 8 && hiddenScore <= 10)
@@ -548,10 +552,21 @@ public class Mastermind : MonoBehaviour {
             GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
             GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeD;
         }
-        score = hiddenScore * 10;
-        if (score < 0)
+        masterReturn = hiddenScore * 10;
+        if (masterReturn < 0)
         {
-            score = 0;
+            masterReturn = 0;
+        }
+    }
+
+    // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
+    public void NextLevel()
+    {
+        if (PersistVars.previousScene != "null")
+        {
+            GameObject.Find("GENERALUI").GetComponent<PersistVars>().mastermindScore = masterReturn;
+            SceneManager.LoadScene(PersistVars.previousScene);
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
     }
 }
