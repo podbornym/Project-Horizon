@@ -92,7 +92,7 @@ True or False:
 @ukiyo1_3
 #SetDialogue
 True or False:
-Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints?;.
+Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints.
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
