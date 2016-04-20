@@ -51,7 +51,7 @@ Would you like to try and frame something in a painting?
 @no2
 Ren: What's with the wave?
 Nasu: Well, while the wave is quite large, it's most likely not a tsunami.
-Rather it is about the size of a large rogue wave, based on those boats.
+Rather it is about the size of a large rogue wave, based on the size of those boats.
 Ren: Anything else?
 Nasu: Maybe later. It should come back to me any minute now...
 #activateClue2
