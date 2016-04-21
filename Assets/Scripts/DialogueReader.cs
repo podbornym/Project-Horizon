@@ -65,7 +65,19 @@ public class DialogueReader : MonoBehaviour
         {
             if(ClueFound[i])
             {
-                
+                Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                ColorBlock cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f ,1);
+                b.colors = cb;
+            }
+            if(!ClueFound[i])
+            {
+                Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                ColorBlock cb = b.colors;
+                cb.normalColor = Color.white;
+                cb.highlightedColor = Color.white;
+                b.colors = cb;
             }
         }
         if (Input.GetMouseButtonDown(0))
@@ -587,6 +599,10 @@ public class DialogueReader : MonoBehaviour
                         else if (PersistVars.currentScene.Contains("5"))
                         {
                             PersistVars.paintingNum = 6;
+                        }
+                        for (int j = 0; j < 6; j++)
+                        {
+                            ClueFound[j] = false;
                         }
                         break;
                     default:
