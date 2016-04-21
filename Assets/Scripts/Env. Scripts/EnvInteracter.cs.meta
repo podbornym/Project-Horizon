@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 guid: 72a60e4adc2868c4bac979759b4780e2
-timeCreated: 1456690534
+timeCreated: 1461276229
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - UI: {instanceID: 0}
+  - normalCursor: {instanceID: 0}
+  - mouseOverCursor: {instanceID: 0}
+  - pinkCursor: {instanceID: 0}
+  - leftArrow: {instanceID: 0}
+  - rightArrow: {instanceID: 0}
+  - player: {instanceID: 0}
+  - ukiyo: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
