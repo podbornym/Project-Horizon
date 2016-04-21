@@ -16,6 +16,7 @@ public class UIHandler : MonoBehaviour {
 	public SellingController sellC;
 	public string sellName;
     public bool UIALive = true;
+    public Vector3 startPos;
 
     void Awake()
     {
@@ -76,16 +77,18 @@ public class UIHandler : MonoBehaviour {
 
     public void goToHome()
     {
-        PersistVars.previousScene = SceneManager.GetActiveScene().name;
-        PersistVars.currentScene = "mansion";
-        PersistVars.returningToHome = true;
-        PersistVars.Ukiyo = false;
-        PersistVars.Surreal = false;
-        PersistVars.Baroque = false;
-        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
-        ExpandMenu();
-        SceneManager.LoadScene("mansion");
-
+        if (PersistVars.currentScene != "mansion")
+        {
+            PersistVars.previousScene = SceneManager.GetActiveScene().name;
+            PersistVars.currentScene = "mansion";
+            PersistVars.returningToHome = true;
+            PersistVars.Ukiyo = false;
+            PersistVars.Surreal = false;
+            PersistVars.Baroque = false;
+            GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+            ExpandMenu();
+            SceneManager.LoadScene("mansion");
+        }
     }
 
     public void PortalComingSoon()
@@ -111,6 +114,11 @@ public class UIHandler : MonoBehaviour {
     public void QuitToDesktop()
     {
         Application.Quit();
+    }
+
+    public void SetLocationText(string locText)
+    {
+        GameObject.Find("Location").GetComponent<Text>().text = locText;
     }
 
     /*void menuOpen()
