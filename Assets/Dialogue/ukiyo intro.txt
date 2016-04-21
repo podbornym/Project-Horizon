@@ -1,4 +1,7 @@
 #SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
 <b>???:</b> Greetings, traveler. I am Nasu.
 #SetPlayer
 <b>Ren:</b> What is this place?

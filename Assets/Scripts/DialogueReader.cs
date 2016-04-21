@@ -48,7 +48,7 @@ public class DialogueReader : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        ReadFile("./Assets/Dialogue/Three Beauties.txt");
+        ReadFile("./Assets/Dialogue/MansionDefault.txt");
         nextButton.gameObject.SetActive(false);
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
@@ -57,6 +57,11 @@ public class DialogueReader : MonoBehaviour
         option5.gameObject.SetActive(false);
         option6.gameObject.SetActive(false);
         quit.gameObject.SetActive(false);
+        GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
+        GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
+        GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
+        GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
+        GameObject.Find("WoodStock").GetComponent<Image>().enabled = false;
     }
 
     void Update ()
@@ -180,6 +185,7 @@ public class DialogueReader : MonoBehaviour
 
     public void NextLine()
     {
+        print("next");
         message.text = "";
         option1.text = "";
         option2.text = "";
@@ -680,8 +686,11 @@ public class DialogueReader : MonoBehaviour
     {
         if(finished_intro == false)
         {
-            finished_intro = true;
-            ReadFile("./Assets/Dialogue/Three Beauties.txt");
+            if (intro_speech_ukiyo == false)
+            {
+                finished_intro = true;
+                ReadFile("./Assets/Dialogue/Three Beauties.txt");
+            }
         }
         GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
         GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
@@ -694,7 +703,6 @@ public class DialogueReader : MonoBehaviour
         {
             choiceActions[i] = "";
         }
-        dialogueContainer.SetActive(false);
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
         option3.gameObject.SetActive(false);
@@ -705,31 +713,9 @@ public class DialogueReader : MonoBehaviour
         nextButton.gameObject.SetActive(false);
         muse.GetComponent<BoxCollider2D>().enabled = true;
         isTalking = false;
+        textbox.text = " ";
     }
-
-    public void StartDialogue()
-    {
-        lineNum = 0;
-        message.text = "";
-        option1.text = "";
-        option2.text = "";
-        option3.text = "";
-        option4.text = "";
-        option5.text = "";
-        option6.text = "";
-        currentText = message;
-        dialogueContainer.SetActive(true);
-        message.gameObject.SetActive(true);
-        option1.gameObject.SetActive(false);
-        option2.gameObject.SetActive(false);
-        option3.gameObject.SetActive(false);
-        option4.gameObject.SetActive(false);
-        option5.gameObject.SetActive(false);
-        option6.gameObject.SetActive(false);
-        nextButton.SetActive(true);
-        NextLine();
-    }
-
+    
     public void ChooseOption(int optionNumber)
     {
         if (choiceActions[optionNumber].Contains("#goto:"))

@@ -1,0 +1,10 @@
+#SetDialogue #SetWoodStock
+<b>WoodStock:</b> How's your current painting coming along?
+#SetPlayer
+<b>Ren:</b> I'm still working on it.
+#SetWoodStock
+<b>WoodStock:</b> Well, when you're finished, come talk to me.
+Then we can take it to the black market and sell it.
+Good luck on your painting!
+#SetPlayer
+. #quit

@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     private static GameObject landing = null;
     private static float offset;
     private static float camOffset;
-    public static bool moving = false;
+    public bool moving = false;
     GameObject landingPair = null;
     int columnOffset = 0;
     public GameObject cam;
@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
             cursorSet = true;
         }
+
+        GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Mansion");
+
+        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
 
         if (PersistVars.currentScene == "mansion")
         {
@@ -213,6 +217,7 @@ public class PlayerMovement : MonoBehaviour {
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "SurrealistZone";
                     PersistVars.Surreal = false;
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Surrealism Zone");
                     notMoving();
                     SceneManager.LoadScene("SurrealistZone");
                     break;
@@ -221,6 +226,7 @@ public class PlayerMovement : MonoBehaviour {
                     PersistVars.currentScene = "Ukiyo-eZone";
                     PersistVars.Ukiyo = true;
                     myAnimator.SetBool("PortalWalk", true);
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Ukiyo-E Zone");
                     notMoving();
                     StartCoroutine(PortalEnter());
                     break;
@@ -228,6 +234,7 @@ public class PlayerMovement : MonoBehaviour {
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "BaroqueZone";
                     PersistVars.Baroque = true;
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Baroque Zone");
                     notMoving();
                     SceneManager.LoadScene("BaroqueZone");
                     break;
