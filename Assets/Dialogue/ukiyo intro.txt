@@ -22,6 +22,7 @@ It's essentially multiple wooden stamps, but put to much more detail.
 #SetUkiyoMuse
 <b>Nasu:</b> Well, you'll have plenty of time to try yourself.
 Why don't you go have a look around and see what you can learn?
+Each studio contains <b>6</b> different clues that you can find, but only after you talk to me first!
 When you're finished, you can find me in any of the nearby studios.
 Just click on me to ask me any questions you have. Have fun!
 #SetPlayer

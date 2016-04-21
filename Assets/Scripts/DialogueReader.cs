@@ -65,7 +65,19 @@ public class DialogueReader : MonoBehaviour
         {
             if(ClueFound[i])
             {
-                
+                Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                ColorBlock cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f ,1);
+                b.colors = cb;
+            }
+            if(!ClueFound[i])
+            {
+                Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                ColorBlock cb = b.colors;
+                cb.normalColor = Color.white;
+                cb.highlightedColor = Color.white;
+                b.colors = cb;
             }
         }
         if (Input.GetMouseButtonDown(0))
@@ -378,7 +390,7 @@ public class DialogueReader : MonoBehaviour
 					case "#ysell":
 						if(SellCont.check==true)
 						{
-						if (SellCont.buyer=="blk")
+							if (SellCont.buyer=="blk")
 							{
 								GoTo ("blkClient");
 							}
@@ -390,6 +402,7 @@ public class DialogueReader : MonoBehaviour
 						}
 						else if(SellCont.check==false)
 						{
+							gameObject.GetComponent<PersistVars> ().strikes += 1;
 							if (gameObject.GetComponent<PersistVars> ().strikes < 3 && gameObject.GetComponent<PersistVars> ().freePass == false) 
 							{
 								GoTo ("fail1");
@@ -419,13 +432,12 @@ public class DialogueReader : MonoBehaviour
 						currentText.text = "You have been caught\n." +
 							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
 							"Three strikes and your forgery career is over.\n" +
-							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strikes.";
-						gameObject.GetComponent<PersistVars> ().strikes += 1;
+						"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strike(s).";
 						GoTo ("Continue");
 						break;
 					case "#Continue":
-						EndDialogue();
 						SceneManager.LoadScene ("mansion");
+						EndDialogue();
 						break;
 					case "#blkbegin":
 						GoTo ("blkQuestion1");
@@ -587,6 +599,10 @@ public class DialogueReader : MonoBehaviour
                         else if (PersistVars.currentScene.Contains("5"))
                         {
                             PersistVars.paintingNum = 6;
+                        }
+                        for (int j = 0; j < 6; j++)
+                        {
+                            ClueFound[j] = false;
                         }
                         break;
                     default:
