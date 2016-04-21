@@ -390,7 +390,7 @@ public class DialogueReader : MonoBehaviour
 					case "#ysell":
 						if(SellCont.check==true)
 						{
-						if (SellCont.buyer=="blk")
+							if (SellCont.buyer=="blk")
 							{
 								GoTo ("blkClient");
 							}
@@ -402,6 +402,7 @@ public class DialogueReader : MonoBehaviour
 						}
 						else if(SellCont.check==false)
 						{
+							gameObject.GetComponent<PersistVars> ().strikes += 1;
 							if (gameObject.GetComponent<PersistVars> ().strikes < 3 && gameObject.GetComponent<PersistVars> ().freePass == false) 
 							{
 								GoTo ("fail1");
@@ -431,13 +432,12 @@ public class DialogueReader : MonoBehaviour
 						currentText.text = "You have been caught\n." +
 							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
 							"Three strikes and your forgery career is over.\n" +
-							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strikes.";
-						gameObject.GetComponent<PersistVars> ().strikes += 1;
+						"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strike(s).";
 						GoTo ("Continue");
 						break;
 					case "#Continue":
-						EndDialogue();
 						SceneManager.LoadScene ("mansion");
+						EndDialogue();
 						break;
 					case "#blkbegin":
 						GoTo ("blkQuestion1");
