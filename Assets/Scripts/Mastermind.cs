@@ -17,21 +17,37 @@ public class Mastermind : MonoBehaviour {
     public int hiddenScore = 10;
     public static int masterReturn;
     public bool allAnswered = false;
-    public static float seconds;
-    public static float correctTime = -1;
-    public static float penaltyTime = -1;
-    public static bool correct = false;
-    public static string artStyle = "ukiyo-e";
-    public static int paintingNo = 1;
-    public static int questionNo = 1;
-    public static GameObject correctButton;
+    public float seconds;
+    public float correctTime = -1;
+    public float penaltyTime = -1;
+    public bool correct = false;
+    public string artStyle = "ukiyo-e";
+    public int paintingNo = 1;
+    public int questionNo = 1;
+    public GameObject correctButton;
     public Sprite gradeA;
     public Sprite gradeB;
     public Sprite gradeC;
     public Sprite gradeD;
+    public Sprite backgroundZ1_1;
+    public Sprite backgroundZ1_2;
+    public Sprite backgroundZ1_3;
+    public Sprite backgroundZ1_4;
+    public Sprite backgroundZ1_5;
+    public Sprite backgroundZ1_6;
+    public Sprite imageZ1_1;
+    public Sprite imageZ1_2;
+    public Sprite imageZ1_3;
+    public Sprite imageZ1_4;
+    public Sprite imageZ1_5;
+    public Sprite imageZ1_6;
 
     // Use this for initialization
     void Start () {
+        if (GameObject.Find("GENERALUI"))
+        {
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        }
         // start with one minute, we'll see how it works from there
         seconds = 60;
         //correctText.FindObject<CorrectText>.GetComponent<>();
@@ -102,6 +118,8 @@ public class Mastermind : MonoBehaviour {
             {
                 if (paintingNo == 1) // Three Beauties of the Present Day
                 {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_1;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_1;
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
@@ -152,6 +170,8 @@ public class Mastermind : MonoBehaviour {
 
                 if (paintingNo == 2) // Waitress at an Inn at Akasaka
                 {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_2;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_2;
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
@@ -202,6 +222,8 @@ public class Mastermind : MonoBehaviour {
 
                 if (paintingNo == 3) // The Great Wave off Kanagawa
                 {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_3;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_3;
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
@@ -252,6 +274,8 @@ public class Mastermind : MonoBehaviour {
 
                 if (paintingNo == 4) // Shoki Striding
                 {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_4;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_4;
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
@@ -302,6 +326,8 @@ public class Mastermind : MonoBehaviour {
 
                 if (paintingNo == 5) // Sudden Shower over Shin-Ōhashi Bridge and Atake
                 {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_5;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_5;
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
@@ -352,6 +378,8 @@ public class Mastermind : MonoBehaviour {
 
                 if (paintingNo == 6) // Otani Oniji III as Yakko Edobei
                 {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_6;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_6;
                     if (questionNo == 1)
                     {
                         question.text = "What is the name of this piece?";
@@ -482,7 +510,7 @@ public class Mastermind : MonoBehaviour {
         }
     }
 
-    public static void NextQuestion()
+    public void NextQuestion()
     {
         // use to show the next questions, remove the one correct answer
         // if last question, show score, then next scene?
