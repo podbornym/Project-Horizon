@@ -15,6 +15,7 @@ public class EnvInteracter : MonoBehaviour {
     public GameObject player;
     public GameObject ukiyo;
     private Animator ukioyAnimator;
+
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
@@ -31,23 +32,25 @@ public class EnvInteracter : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        if ((gameObject.tag == "column" || gameObject.name == "leftEdge") && gameObject.transform.position.x < player.transform.position.x)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            Cursor.SetCursor(leftArrow, hotSpot, cursorMode);
+            if ((gameObject.tag == "column" || gameObject.name == "leftEdge") && gameObject.transform.position.x < player.transform.position.x)
+            {
+                Cursor.SetCursor(leftArrow, hotSpot, cursorMode);
+            }
+            else if ((gameObject.tag == "column" || gameObject.name == "rightEdge") && gameObject.transform.position.x > player.transform.position.x)
+            {
+                Cursor.SetCursor(rightArrow, hotSpot, cursorMode);
+            }
+            else if (gameObject.tag == "portal")
+            {
+                Cursor.SetCursor(pinkCursor, hotSpot, cursorMode);
+            }
+            else
+            {
+                Cursor.SetCursor(mouseOverCursor, hotSpot, cursorMode);
+            }
         }
-        else if ((gameObject.tag == "column" || gameObject.name == "rightEdge") && gameObject.transform.position.x > player.transform.position.x)
-        {
-            Cursor.SetCursor(rightArrow, hotSpot, cursorMode);
-        }
-        else if (gameObject.tag == "portal")
-        {
-            Cursor.SetCursor(pinkCursor, hotSpot, cursorMode);
-        }
-        else
-        {
-            Cursor.SetCursor(mouseOverCursor, hotSpot, cursorMode);
-        }
-        
     }
 
     void OnMouseExit()

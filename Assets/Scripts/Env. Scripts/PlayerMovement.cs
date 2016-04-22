@@ -47,8 +47,6 @@ public class PlayerMovement : MonoBehaviour {
                 gameObject.transform.position = GameObject.Find("hubSpawn").transform.position;
                 cam.transform.position = new Vector3(-10.32f, -13f, cam.transform.position.z);
             }
-
-
         }
 
         myAnimator = GetComponent<Animator>();
@@ -274,38 +272,44 @@ public class PlayerMovement : MonoBehaviour {
                 case "door_0S":
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_0";
-                    SceneManager.LoadScene("S_0");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 1");
                     notMoving();
+                    SceneManager.LoadScene("S_0");
                     break;
                 case "door_1S":
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_1";
-                    SceneManager.LoadScene("S_1");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 2");
                     notMoving();
+                    SceneManager.LoadScene("S_1");
                     break;
                 case "door_2S":
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_2";
-                    SceneManager.LoadScene("S_2");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 3");
                     notMoving();
+                    SceneManager.LoadScene("S_2");
                     break;
                 case "door_3S":
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_3";
-                    SceneManager.LoadScene("S_3");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 4");
                     notMoving();
+                    SceneManager.LoadScene("S_3");
                     break;
                 case "door_4S":
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_4";
-                    SceneManager.LoadScene("S_4");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 5");
                     notMoving();
+                    SceneManager.LoadScene("S_4");
                     break;
                 case "door_5S":
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_5";
-                    SceneManager.LoadScene("S_5");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 6");
                     notMoving();
+                    SceneManager.LoadScene("S_5");
                     break;
                 //Baroque options
                 case "Bstairs1":
@@ -347,75 +351,87 @@ public class PlayerMovement : MonoBehaviour {
                 case "door_0B":
                     PersistVars.previousScene = "BaroqueZone";
                     PersistVars.currentScene = "B_0";
-                    SceneManager.LoadScene("B_0");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 1");
                     notMoving();
+                    SceneManager.LoadScene("B_0");
                     break;
                 case "door_1B":
                     PersistVars.previousScene = "BaroqueZone";
                     PersistVars.currentScene = "B_1";
-                    SceneManager.LoadScene("B_1");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 2");
                     notMoving();
+                    SceneManager.LoadScene("B_1");
                     break;
                 case "door_2B":
                     PersistVars.previousScene = "BaroqueZone";
                     PersistVars.currentScene = "B_2";
-                    SceneManager.LoadScene("B_2");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 3");
                     notMoving();
+                    SceneManager.LoadScene("B_2");
                     break;
                 case "door_3B":
                     PersistVars.previousScene = "BaroqueZone";
                     PersistVars.currentScene = "B_3";
-                    SceneManager.LoadScene("B_3");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 4");
                     notMoving();
+                    SceneManager.LoadScene("B_3");
                     break;
                 case "door_4B":
                     PersistVars.previousScene = "BaroqueZone";
                     PersistVars.currentScene = "B_4";
-                    SceneManager.LoadScene("B_4");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 5");
                     notMoving();
+                    SceneManager.LoadScene("B_4");
                     break;
                 case "door_5B":
                     PersistVars.previousScene = "BaroqueZone";
                     PersistVars.currentScene = "B_5";
-                    SceneManager.LoadScene("B_5");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 6");
                     notMoving();
+                    SceneManager.LoadScene("B_5");
                     break;
                 //Ukiyo-E options
                 case "door_0U":
                     PersistVars.previousScene = "Ukiyo-eZone";
                     PersistVars.currentScene = "U_0";
-                    SceneManager.LoadScene("U_0");
                     notMoving();
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 1");
+                    SceneManager.LoadScene("U_0");
                     break;
                 case "door_1U":
                     PersistVars.previousScene = "Ukiyo-eZone";
                     PersistVars.currentScene = "U_1";
-                    SceneManager.LoadScene("U_1");
                     notMoving();
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 2");
+                    SceneManager.LoadScene("U_1");
                     break;
                 case "door_2U":
                     PersistVars.previousScene = "Ukiyo-eZone";
                     PersistVars.currentScene = "U_2";
-                    SceneManager.LoadScene("U_2");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 3");
                     notMoving();
+                    SceneManager.LoadScene("U_2");
                     break;
                 case "door_3U":
                     PersistVars.previousScene = "Ukiyo-eZone";
                     PersistVars.currentScene = "U_3";
-                    SceneManager.LoadScene("U_3");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 4");
                     notMoving();
+                    SceneManager.LoadScene("U_3");
                     break;
                 case "door_4U":
                     PersistVars.previousScene = "Ukiyo-eZone";
                     PersistVars.currentScene = "U_4";
-                    SceneManager.LoadScene("U_4");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 5");
                     notMoving();
+                    SceneManager.LoadScene("U_4");
                     break;
                 case "door_5U":
                     PersistVars.previousScene = "Ukiyo-eZone";
                     PersistVars.currentScene = "U_5";
-                    SceneManager.LoadScene("U_5");
+                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 6");
                     notMoving();
+                    SceneManager.LoadScene("U_5");
                     break;
                 case "Ustairs1":
                     myAnimator.SetInteger("Move", 1);
