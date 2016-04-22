@@ -18,6 +18,10 @@ Are you sure you want to sell to this client?
 #SetDialogue
 #Continue
 
+@GContinue
+#SetDialogue
+#GContinue
+
 @pass1
 #SetDialogue
 #passed1
@@ -43,7 +47,7 @@ You have been caught. You recieve ONE STRIKE.
 You have THREE STRIKES in total.
 Your forgery career is over.
 #SetOptions
-#option1 #goto:Continue
+#option1 #goto:GContinue
 #option1Text Continue
 
 @blkClient

@@ -445,6 +445,10 @@ public class DialogueReader : MonoBehaviour
 						SceneManager.LoadScene ("mansion");
 						EndDialogue();
 						break;
+					case "#GContinue":
+						SceneManager.LoadScene ("GameOver");
+						EndDialogue();
+						break;
 					case "#blkbegin":
 						GoTo ("blkQuestion1");
 						break;

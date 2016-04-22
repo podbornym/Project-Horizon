@@ -1,0 +1,199 @@
+@Start
+#SetDialogue #SetUkiyoMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Print #option2Text Setting #option3Text Artist #option4Text Details #option5Text Inking #option6Text History
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> I managed to find this print.
+#SetUkiyoMuse
+<b>Nasu:</b> Ah, yes, now I remember! It was painted around 1680.
+This print was one of the most famuous of its time.
+If you'd like, you can try recreating some of it now.
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> So what exactly is this print?
+#SetUkiyoMuse
+<b>Nasu:</b> This print is known as <i>Lobby of a Brothel.</i>
+I can't remember much about it right now.
+If I could only see it, then I might remember more.
+#SetPlayer
+<b>Ren:</b> (Maybe I can find the print around here somewhere...)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Do you remember anything about the setting of the print?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the one on the left is Takashima Hisa, known as the tea house waitress.
+The middle one is Tomimoto Toyohina, who is a <i>geisha</i> (female entertainer).
+The last one is Naniwaya Kita, another tea house waitress.
+Perhaps you'd like to work on the print?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> What is the setting of the print?
+#SetUkiyoMuse
+<b>Nasu:</b> Hmm, it seems I've forgotten.
+#SetPlayer
+<b>Ren:</b> (That figures...)
+#SetUkiyoMuse
+<b>Nasu:</b> I do know that this painting represents a typical brothel of 15th century Japan.
+But I'm sure that if you give me some time, I'll have more to tell you.
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> What do you know about the artist?
+#SetUkiyoMuse
+<b>Nasu:</b> Hishikawa Moronobu was born in 1618 and died in 1694, and is said to have set the standard for Ukiyo-e prints.
+He started drawing designs for his father who was an embroider.
+He later became an illustrator of storybooks using woodblocks.
+Moroobu later went on to develop this skill into reproducing paintings for the populace.
+Maybe you should try creating something as well?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who made this print?
+#SetUkiyoMuse
+<b>Nasu:</b> His name was Hishikawa Moronobu.
+He is thought to have made some of the first Ukiyo-e woodblock prints.
+#SetPlayer
+<b>Ren:</b> (I wonder if he knows more.)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Do you know anything about the design of the print?
+#SetUkiyoMuse
+<b>Nasu:</b> This print depicts a brothel, a house where men can pay for prostitutes.
+Sexual themes were often present in many Ukiyo-e style prints.
+Do you want to try making something?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> What kind of information do you have about this print?
+#SetUkiyoMuse
+<b>Nasu:</b> The print is a hand-colored woodblock..
+#SetPlayer
+<b>Ren:</b> That's not quite what I had in mind...
+#SetUkiyoMuse
+<b>Nasu:</b> Well maybe you should be more specific next time.
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> What's the process to make the prints?
+#SetUkiyoMuse
+<b>Nasu:</b> The paper would be glued to the blocks and rubbed with oil, peeling away upper layers to create a thin, translucent layer.
+This layer acted as a guide for the block cutter, carving away non-black areas to form raised, inked areas.
+This destroyed the original drawing in the process.
+#SetPlayer
+<b>Ren:</b> But they used the blocks to create the final piece, right?
+#SetUkiyoMuse
+<b>Nasu:</b> Correct! The artist would place the paper on the inked blocks and rubbed with a burnishing tool, creating the print you see today.
+This print is hand-colored, something not commonly seen during the Ukiyo-e period.
+Would you like to try creating the print?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> How do they make these prints?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, there were many steps to creating these prints
+The artist first draws the design with ink on handmade paper, and then... hmm...
+Well, I don't quite remember, to be honest.
+#SetPlayer
+<b>Ren:</b> (Maybe I can find something to jog his memory.)
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+Ukiyo-e often featured subjects including female beauties, actors, and sumo wrestlers.
+Would you like to explore this a bit?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> What can you tell me about this time period?
+#SetUkiyoMuse
+<b>Nasu:</b> The Ukiyo-e style period is said to have been most prevalent from the 17th to the 19th centuries.
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change prints?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous print. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No
