@@ -141,16 +141,77 @@ public class UIHandler : MonoBehaviour {
         GameObject.Find("Art Piece").GetComponent<Text>().text = pieceInfo;
     }
 
+    public void ChangePaintingInfo()
+    {
+        switch(PersistVars.paintingNum)
+        {
+            case 1:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 2:
+                SetPieceInfo("3 Beauties of the Present Day\n1793, Kitagawa Utamaro");
+                break;
+            case 3:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 4:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 5:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 6:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 7:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 8:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 9:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 10:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 11:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 12:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 13:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 14:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 15:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 16:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 17:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+            case 18:
+                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                break;
+        }
+    }
+
     public void UnhideMenu()
     {
-        GameObject.Find("GeneralUI").GetComponent<Canvas>().enabled = true;
-        GameObject.Find("UIUnhide").GetComponent<Canvas>().enabled = false;
+        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
+        GameObject.Find("UIUnhide").GetComponent<Image>().enabled = false;
     }
 
     public void HideMenu()
     {
-        GameObject.Find("GeneralUI").GetComponent<Canvas>().enabled = false;
-        GameObject.Find("UIUnhide").GetComponent<Canvas>().enabled = true;
+        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        GameObject.Find("UIUnhide").GetComponent<Image>().enabled = true;
     }
 
     /*void menuOpen()

@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
             cursorSet = true;
         }
 
-        GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Mansion");
+        
 
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
 
@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour {
             {
                 gameObject.transform.position = GameObject.Find("introSpawn").transform.position;
                 cam.transform.position = new Vector3(-51.4f, -1.42f, cam.transform.position.z);
+                GameObject.Find("Art Piece").GetComponent<Text>().text = "No Current Painting";
+                GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Mansion");
             }
             else
             {

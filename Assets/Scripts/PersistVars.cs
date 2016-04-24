@@ -44,7 +44,7 @@ public class PersistVars : MonoBehaviour {
     //Painting Number
     //This is a number between 1-18, which determines what painting you're working on.
     //1-6 is Ukiyo, 7-12 is Surreal, 13-18 is Baroque
-    public static int paintingNum = 1;
+    public static int paintingNum = 0;
 
 	// Painting Max Value
 	public static int[] maxValue = new int[18];
