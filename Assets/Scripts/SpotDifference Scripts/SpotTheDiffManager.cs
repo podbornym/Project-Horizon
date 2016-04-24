@@ -49,7 +49,7 @@ public class SpotTheDiffManager : MonoBehaviour
         // and removed from the list so it can't be picked twice
         for (int i = 0; i < diffArray.Length; i++)
         {
-            int numRandom = Random.Range(1, possibleList.Count);
+            int numRandom = Random.Range(0, possibleList.Count);
             diffArray[i] = GameObject.Find("Diff " + numRandom);
             possibleList.RemoveAt(numRandom);
         }
@@ -126,6 +126,12 @@ public class SpotTheDiffManager : MonoBehaviour
     public void AddDifference(int value)
     {
         foundDiff = value;
+    }
+
+    public void HelpButton()
+    {
+        // Toggle the help information on and off
+        GameObject.Find("HelpUI").GetComponent<Image>().enabled = !GameObject.Find("HelpUI").GetComponent<Image>().enabled;
     }
 
     public void FinalScore()
