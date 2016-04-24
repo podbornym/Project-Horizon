@@ -768,8 +768,9 @@ public class BoardCreation : MonoBehaviour
     public void TallyScore()
     {
         // Determine if the player reached the necessary score
-        if (setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal)
-        {
+        /*if ((setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal) ||
+            (setYellowValue - setYellowTotal <= -2 && setBlueValue - setYellowTotal <=-2 && setGreenValue - setGreenTotal <=-2 && setRedValue - setRedTotal <=-2 && setMagentaValue - setMagentaTotal <=-2))
+        {*/
             int percentage = (setYellowValue % setYellowTotal + setBlueValue % setYellowTotal + setGreenValue % setGreenTotal + setRedValue % setRedTotal + setMagentaValue % setMagentaTotal) / 5;
             //float match3Return;
 
@@ -788,7 +789,7 @@ public class BoardCreation : MonoBehaviour
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
             }
 
             if (percentage <= 3 && percentage > 2)
@@ -797,7 +798,7 @@ public class BoardCreation : MonoBehaviour
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
             }
 
             if (percentage >= 4 && percentage > 3)
@@ -806,7 +807,7 @@ public class BoardCreation : MonoBehaviour
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
             }
 
             if (percentage > 4)
@@ -817,12 +818,12 @@ public class BoardCreation : MonoBehaviour
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
             }
-        }
+        //}
 
-        else
+        /*else
         {
             GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
             GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
-        }
+        }*/
     }
 }
