@@ -2,12 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PipeDreamManager : MonoBehaviour {
     public int gridWidth = 6;
     public int gridHeight = 6;
     public int[,] grid;
     public int clicks = 0;
+    public int minimum;
+
+    public static float pipeDreamReturn;
 
     public GameObject[] tilePrefabs;
     GameObject end;
@@ -19,7 +23,11 @@ public class PipeDreamManager : MonoBehaviour {
 
     public bool gameRunning = true;
     public bool hitTile = true;
-    //public int[] randomAngles = new int[4] { 0, 90, 180, 270 };
+
+    public Sprite A;
+    public Sprite B;
+    public Sprite C;
+    public Sprite D;
 
 
     void Awake()
@@ -76,8 +84,7 @@ public class PipeDreamManager : MonoBehaviour {
             }
             if (end.GetComponent<PipeRotator>().IsFull)
             {
-                gameRunning = false;
-                print("Game Over, you win!");
+                GameOver();
             }
         }
 
@@ -103,6 +110,48 @@ public class PipeDreamManager : MonoBehaviour {
         if (PersistVars.previousScene != "null")
         {
             SceneManager.LoadScene(PersistVars.previousScene);
+        }
+    }
+
+    public void GameOver()
+    {
+        gameRunning = false;
+        for (int i = 0; i < objectGrid.Count; i++)
+        {
+            objectGrid[i].GetComponent<PipeRotator>().CanRotate = false;
+        }
+        if (hitTile == false)
+        {
+            GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+            GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+            print("D");
+        }
+        else if (hitTile == true)
+        {
+            if (clicks <= minimum)
+            {
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
+                print("A");
+            }
+            else if (clicks <= minimum + 4)
+            {
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
+                print("B");
+            }
+            else if (clicks <= minimum + 8)
+            {
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
+                print("C");
+            }
+            else
+            {
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+                print("D");
+            }
         }
     }
 
@@ -256,8 +305,7 @@ public class PipeDreamManager : MonoBehaviour {
             {
                 if (gameRunning == true)
                 {
-                    print("Game Over, you lose!");
-                    gameRunning = false;
+                    GameOver();
                 }
             }
         }

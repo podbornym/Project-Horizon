@@ -216,11 +216,7 @@ public class PipeRotator : MonoBehaviour {
             {
                 ObjectManager.GetComponent<PipeDreamManager>().objectGrid[i].GetComponent<PipeRotator>().IsConnected = true;
             }
-        }
-
-        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
-        //print(ObjectManager.GetComponent<PipeDreamManager>().clicks);
-        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
+        }        
 
         //Checks if the tile can rotate
         if (CanRotate)
@@ -238,10 +234,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckUp() || CheckDown())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
                 //If piece is horizontally alligned
@@ -251,10 +251,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckLeft() || CheckRight())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
             }
@@ -268,10 +272,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckLeft() || CheckUp())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
                 //If piece goes from up to right
@@ -281,10 +289,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckUp() || CheckRight())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
                 //If piece goes from Right to Down
@@ -294,10 +306,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckRight() || CheckDown())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
                 //If piece goes from Down to Left
@@ -307,10 +323,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckDown() || CheckLeft())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
             }
@@ -324,10 +344,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
                 //If piece is vertically alligned
@@ -337,10 +361,14 @@ public class PipeRotator : MonoBehaviour {
                     if (CheckUp() || CheckDown() || CheckLeft() || CheckRight())
                     {
                         IsConnected = true;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                     else
                     {
                         IsConnected = false;
+                        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+                        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
                     }
                 }
             }
