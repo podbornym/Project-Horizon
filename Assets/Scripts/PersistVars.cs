@@ -80,6 +80,12 @@ public class PersistVars : MonoBehaviour {
 
     public static bool paintingDone;
 
+    //Background music files
+    public AudioClip ukiyoMusic;
+    public AudioClip surrealMusic;
+    public AudioClip baroqueMusic;
+    public AudioClip mansionMusic;
+
 	// DEBUG
 	void Awake()
 	{
@@ -107,6 +113,32 @@ public class PersistVars : MonoBehaviour {
         if(match3Score != 0 && rotatoScore != 0 && pipeDreamScore != 0 && findDiffScore != 0 && mastermindScore != 0 && tracerScore != 0)
         {
             paintingDone = true;
+        }
+
+        // Statements to detect what background music to play
+        if(Ukiyo)
+        {
+            gameObject.GetComponent<AudioSource>().clip = ukiyoMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
+        }
+        if(Surreal)
+        {
+            gameObject.GetComponent<AudioSource>().clip = surrealMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
+        }
+        if(Baroque)
+        {
+            gameObject.GetComponent<AudioSource>().clip = baroqueMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().clip = mansionMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
         }
         /*if (Input.GetMouseButtonDown(0))
         {

@@ -5,4 +5,16 @@
 #SetWoodStock
 <b>WoodStock:</b> Great! How about we sell it on the black market then?
 #SetPlayer
-. #quit
+#SetOptions
+#option1 #goto:GoSell
+#option2 #goto:NoSell
+#option1Text Yes #option2Text No
+
+@GoSell
+#SetDialogue
+#gosell
+#quit
+
+@NoSell
+#SetDialogue
+#quit
