@@ -35,29 +35,7 @@ public class UIHandler : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(PersistVars.previousScene != null)
-            {
-                SceneManager.LoadScene(PersistVars.previousScene);
-            }
-            if (!gameObject.GetComponent<Canvas>().enabled)
-            {
-                gameObject.GetComponent<Canvas>().enabled = true;
-            }
-            switch(PersistVars.previousScene)
-            {
-                case "mansion":
-                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Mansion");
-                    break;
-                case "SurrealistZone":
-                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Surrealist Zone");
-                    break;
-                case "BaroqueZone":
-                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Baroque Zone");
-                    break;
-                case "Ukiyo-eZone":
-                    GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Ukiyo-e Zone");
-                    break;
-            }
+            GoBack();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -72,6 +50,33 @@ public class UIHandler : MonoBehaviour {
                 UnhideMenu();
                 UIALive = true;
             }
+        }
+    }
+
+    public void GoBack()
+    {
+        if (PersistVars.previousScene != null)
+        {
+            SceneManager.LoadScene(PersistVars.previousScene);
+        }
+        if (!gameObject.GetComponent<Canvas>().enabled)
+        {
+            gameObject.GetComponent<Canvas>().enabled = true;
+        }
+        switch (PersistVars.previousScene)
+        {
+            case "mansion":
+                GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Mansion");
+                break;
+            case "SurrealistZone":
+                GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Surrealist Zone");
+                break;
+            case "BaroqueZone":
+                GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Baroque Zone");
+                break;
+            case "Ukiyo-eZone":
+                GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Ukiyo-e Zone");
+                break;
         }
     }
 
