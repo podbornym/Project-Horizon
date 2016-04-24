@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PipeDreamManager : MonoBehaviour {
     public int gridWidth = 6;
     public int gridHeight = 6;
     public int[,] grid;
+    public int clicks = 0;
 
     public GameObject[] tilePrefabs;
     GameObject end;
@@ -22,11 +24,15 @@ public class PipeDreamManager : MonoBehaviour {
 
     void Awake()
     {
+        /*if (GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled == true)
+        {
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        }*/
         //CreateGrid();
     }
 	// Use this for initialization
 	void Start () {
-
+        
         StartCoroutine(Flow());
         if (end == null)
         {
@@ -92,12 +98,20 @@ public class PipeDreamManager : MonoBehaviour {
         }
     }
 
+    public void continueButtonClicked()
+    {
+        if (PersistVars.previousScene != "null")
+        {
+            SceneManager.LoadScene(PersistVars.previousScene);
+        }
+    }
+
     IEnumerator Flow()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(6);
         while (gameRunning)
         {
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(2);
             for (int i = 0; i < objectGrid.Count; i++)
             {
                 //Checks tag of tile
