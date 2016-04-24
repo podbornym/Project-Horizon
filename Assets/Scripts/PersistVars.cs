@@ -334,4 +334,12 @@ public class PersistVars : MonoBehaviour {
                 break;
         }
     }
+
+    public void KnowledgeClear()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            GameObject.Find("light_" + i).GetComponent<Image>().enabled = false;
+        }
+    }
 }
