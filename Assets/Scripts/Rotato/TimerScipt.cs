@@ -11,6 +11,7 @@ public class TimerScipt : MonoBehaviour {
     public float zError;
     public float zTotalScore;
     public Text finishText;
+	public float rotatoTotalScore;
 
 	public Sprite helpScreen;
 	public Sprite GradeA;
@@ -39,7 +40,7 @@ public class TimerScipt : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if (GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = true) 
+		if (GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled == true) 
 		{
 			GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = false;
 		}
@@ -60,7 +61,9 @@ public class TimerScipt : MonoBehaviour {
 	{
 		if (PersistVars.previousScene != "null") 
 		{
+			GameObject.Find ("GENERALUI").GetComponent<PersistVars> ().rotatoScore = rotatoTotalScore;
 			SceneManager.LoadScene (PersistVars.previousScene);
+			GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = true;
 		}
 
 	}
@@ -135,5 +138,8 @@ public class TimerScipt : MonoBehaviour {
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeD;
         }
+
+
+
     }
 }
