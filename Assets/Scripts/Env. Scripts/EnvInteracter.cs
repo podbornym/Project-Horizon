@@ -97,7 +97,7 @@ public class EnvInteracter : MonoBehaviour {
             }
             if (gameObject.tag == "SurrealismPortal")
             {
-                ukioyAnimator.SetInteger("SurrealismIsOpening, 1);
+                ukioyAnimator.SetInteger("SurrealismIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
                 ukioyAnimator.SetInteger("SurrealismIsOpen", 100);
 
