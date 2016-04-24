@@ -10,7 +10,7 @@ public class EnvInteracter : MonoBehaviour {
     public Texture2D leftArrow;
     public Texture2D rightArrow;
     public CursorMode cursorMode = CursorMode.ForceSoftware;
-    public Vector2 hotSpot = Vector2.zero;
+    public Vector2 hotSpot = new Vector2(30, 30);
     public static bool cursorSet = false;
     public GameObject player;
     public GameObject ukiyo;

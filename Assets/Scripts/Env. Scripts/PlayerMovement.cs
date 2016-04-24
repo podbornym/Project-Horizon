@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject cam;
     public Texture2D normalCursor;
     public CursorMode cursorMode = CursorMode.ForceSoftware;
-    public Vector2 hotSpot = Vector2.zero;
+    public Vector2 hotSpot = new Vector2(30, 30);
     public static bool cursorSet = false;
     private Animator myAnimator;
     public int Move;
