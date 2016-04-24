@@ -106,12 +106,6 @@ public class PersistVars : MonoBehaviour {
         UI.GetComponent<DialogueReader>().option5.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
-		match3Score = .8f;
-		rotatoScore = .8f;
-		pipeDreamScore = .8f;
-		findDiffScore = .8f;
-		mastermindScore = .8f;
-		tracerScore = .8f;
     }
 
     void Update()
