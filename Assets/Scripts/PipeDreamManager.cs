@@ -49,7 +49,21 @@ public class PipeDreamManager : MonoBehaviour {
                 {
                     if(objectGrid[i].GetComponent<PipeRotator>().IsConnected)
                     {
-                        objectGrid[i].GetComponent<PipeRotator>().IsFull = true;
+                        if (objectGrid[i].tag == "FourWay")
+                        {
+                            if (objectGrid[i].GetComponent<PipeRotator>().CheckUp() || objectGrid[i].GetComponent<PipeRotator>().CheckDown())
+                            {
+                                objectGrid[i].GetComponent<PipeRotator>().IsFullVertical = true;
+                            }
+                            else if (objectGrid[i].GetComponent<PipeRotator>().CheckLeft() || objectGrid[i].GetComponent<PipeRotator>().CheckRight())
+                            {
+                                objectGrid[i].GetComponent<PipeRotator>().IsFullHorizontal = true;
+                            }
+                        }
+                        else
+                        {
+                            objectGrid[i].GetComponent<PipeRotator>().IsFull = true;
+                        }
                     }
                 }
                 end.GetComponent<PipeRotator>().IsFull = true;
@@ -57,7 +71,7 @@ public class PipeDreamManager : MonoBehaviour {
             if (end.GetComponent<PipeRotator>().IsFull)
             {
                 gameRunning = false;
-                print("Game Over");
+                print("Game Over, you win!");
             }
         }
 
@@ -182,29 +196,37 @@ public class PipeDreamManager : MonoBehaviour {
                 //If tag is FourWay
                 else if (objectGrid[i].GetComponent<PipeRotator>().gameObject.tag == "FourWay")
                 {
-                    //If piece is horizontally alligned
-                    if ( Approximately(objectGrid[i].GetComponent<PipeRotator>().transform.rotation.eulerAngles.z) == 270 ||  Approximately(objectGrid[i].GetComponent<PipeRotator>().transform.rotation.eulerAngles.z) == 90)
+                    if (objectGrid[i].GetComponent<PipeRotator>().CheckUpFull() || objectGrid[i].GetComponent<PipeRotator>().CheckDownFull())
                     {
-                        //Calls Check*
-                        if (objectGrid[i].GetComponent<PipeRotator>().CheckUpFull() || objectGrid[i].GetComponent<PipeRotator>().CheckDownFull() || objectGrid[i].GetComponent<PipeRotator>().CheckLeftFull() || objectGrid[i].GetComponent<PipeRotator>().CheckRightFull())
+                        if (objectGrid[i].GetComponent<PipeRotator>().IsFullVertical == false)
                         {
-                            if (objectGrid[i].GetComponent<PipeRotator>().IsFull == false)
+                            if (objectGrid[i].GetComponent<PipeRotator>().IsFullHorizontal == true)
                             {
                                 objectGrid[i].GetComponent<PipeRotator>().IsFull = true;
                                 hitTile = true;
                                 break;
                             }
+                            else
+                            {
+                                objectGrid[i].GetComponent<PipeRotator>().IsFullVertical = true;
+                                hitTile = true;
+                                break;
+                            }
                         }
                     }
-                    //If piece is vertically alligned
-                    else if ( Approximately(objectGrid[i].GetComponent<PipeRotator>().transform.rotation.eulerAngles.z) == 180 ||  Approximately(objectGrid[i].GetComponent<PipeRotator>().transform.rotation.eulerAngles.z) == 0)
+                    else if (objectGrid[i].GetComponent<PipeRotator>().CheckLeftFull() || objectGrid[i].GetComponent<PipeRotator>().CheckRightFull())
                     {
-                        //Calls Check*
-                        if (objectGrid[i].GetComponent<PipeRotator>().CheckUpFull() || objectGrid[i].GetComponent<PipeRotator>().CheckDownFull() || objectGrid[i].GetComponent<PipeRotator>().CheckLeftFull() || objectGrid[i].GetComponent<PipeRotator>().CheckRightFull())
+                        if (objectGrid[i].GetComponent<PipeRotator>().IsFullHorizontal == false)
                         {
-                            if (objectGrid[i].GetComponent<PipeRotator>().IsFull == false)
+                            if (objectGrid[i].GetComponent<PipeRotator>().IsFullVertical == true)
                             {
                                 objectGrid[i].GetComponent<PipeRotator>().IsFull = true;
+                                hitTile = true;
+                                break;
+                            }
+                            else
+                            {
+                                objectGrid[i].GetComponent<PipeRotator>().IsFullHorizontal = true;
                                 hitTile = true;
                                 break;
                             }
@@ -218,8 +240,11 @@ public class PipeDreamManager : MonoBehaviour {
             }
             if (hitTile == false)
             {
-                print("Wow you suck, get good scrub");
-                gameRunning = false;
+                if (gameRunning == true)
+                {
+                    print("Game Over, you lose!");
+                    gameRunning = false;
+                }
             }
         }
     }
