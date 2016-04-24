@@ -266,8 +266,10 @@ public class DialogueReader : MonoBehaviour
                         GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
                         GameObject.Find("WoodStock").GetComponent<Image>().enabled = true;
                         break;
-					case "gosell":
+					case "#gosell":
+						Debug.Log ("reached gosell");
 						SceneManager.LoadScene ("SellingScene");
+						EndDialogue ();
 						break;
                     case "#activateClue1":
                         clueOne.gameObject.GetComponent<Collider2D>().enabled = true;

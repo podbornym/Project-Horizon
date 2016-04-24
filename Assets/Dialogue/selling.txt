@@ -1,4 +1,6 @@
-#SetDialogue #SetWoodStock
+@Start
+#SetDialogue
+#SetWoodStock
 <b>WoodStock:</b> How's your current painting coming along?
 #SetPlayer
 <b>Ren:</b> I've finished it.
