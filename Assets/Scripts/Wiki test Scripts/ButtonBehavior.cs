@@ -18,7 +18,7 @@ public class ButtonBehavior : MonoBehaviour {
         {
             gameObject.SetActive(false);
             textWindow.text = "Please select from the left, and then select a work of art.";
-            print("text should be changed");
+            //print("text should be changed");
         }
         //rend.enabled = true;
         else
