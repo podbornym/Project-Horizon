@@ -14,19 +14,30 @@ public class EnvInteracter : MonoBehaviour {
     public static bool cursorSet = false;
     public GameObject player;
     public GameObject ukiyo;
+    public GameObject baroque;
+    public GameObject surrealism;
     private Animator ukioyAnimator;
+    private Animator baroqueAnimator;
+    private Animator surrealismAnimator;
 
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
-        try
+        if (PersistVars.currentScene == "mansion")
         {
-            ukiyo = GameObject.Find("Ukiyo-e");
-            ukioyAnimator = ukiyo.GetComponent<Animator>();
-        }
-        catch
-        {
+            try
+            {
+                ukiyo = GameObject.Find("Ukiyo-e");
+                ukioyAnimator = ukiyo.GetComponent<Animator>();
+                baroque = GameObject.Find("Baroque");
+                baroqueAnimator = baroque.GetComponent<Animator>();
+                surrealism = GameObject.Find("Surrealism");
+                surrealismAnimator = surrealism.GetComponent<Animator>();
+            }
+            catch
+            {
 
+            }
         }
     }
 
@@ -88,18 +99,18 @@ public class EnvInteracter : MonoBehaviour {
             }
             if (gameObject.tag == "BaroquePortal")
             {
-                ukioyAnimator.SetInteger("BaroqueIsOpening", 1);
+                baroqueAnimator.SetInteger("BaroqueIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
-                ukioyAnimator.SetInteger("BaroqueIsOpening", 100);
+                baroqueAnimator.SetInteger("BaroqueIsOpening", 100);
 
                 StartCoroutine(Portal());
 
             }
             if (gameObject.tag == "SurrealismPortal")
             {
-                ukioyAnimator.SetInteger("SurrealismIsOpening", 1);
+                surrealismAnimator.SetInteger("SurrealismIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
-                ukioyAnimator.SetInteger("SurrealismIsOpen", 100);
+                surrealismAnimator.SetInteger("SurrealismIsOpen", 100);
 
                 StartCoroutine(Portal());
 
