@@ -148,61 +148,65 @@ public class UIHandler : MonoBehaviour {
 
     public void ChangePaintingInfo()
     {
+        print("In change painting info");
         switch(PersistVars.paintingNum)
         {
             case 1:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
-                break;
-            case 2:
                 SetPieceInfo("3 Beauties of the Present Day\n1793, Kitagawa Utamaro");
                 break;
+            case 2:
+                SetPieceInfo("Fifty-Three Stations of the Tokaido\n1833, Utagawa Hiroshige");
+                break;
             case 3:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("The Great Wave off the Coast of Kanagawa\n1831, Katsushika Hokusai");
                 break;
             case 4:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Shoki Striding\nc. 1741-51, Okumura Masanobu");
                 break;
             case 5:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Sudden Shower over Shin-Ohashi Bridge and Atake\n,1857, Utagawa Hiroshige ");
                 break;
             case 6:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Yakko Edobei\n1794, Toshusai Sharaku");
                 break;
             case 7:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Tristan and Isolde\n1944, Salvador Dali");
                 break;
             case 8:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("The Healer\n1937, Rene Magritte");
                 break;
             case 9:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("The Slug Room\n1920, Max Ernst");
                 break;
             case 10:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Turin Spring\n1914, Giorgio de Chirico");
                 break;
             case 11:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Through Birds Through Fire But Not Through Glass\n1943, Yves Tanguy");
                 break;
             case 12:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Alla Cuelga mi Vestido\n1933, Frida Kahlo");
                 break;
             case 13:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("The Three Trees\n1643, Rembrant Harmenszoon van Rijn");
                 break;
             case 14:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("The Board Partition with Letter Rack and Music Book\n1668, Cornelius Norbertus Gijsbrechts");
                 break;
             case 15:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("The Entombment of Christ\nc. 1603-04, Michelangelo Merisi da Caravaggio");
                 break;
             case 16:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Bouquet of Flowers in a Glass Vase\n1685, Maria Van Oosterwijck");
                 break;
             case 17:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Christ Preaching\n1652, Rembrant Harmenszoon van Rijn");
                 break;
             case 18:
-                SetPieceInfo("3 Beauties of the Present Day\nc. 1792-93, Kitagawa Utamaro");
+                SetPieceInfo("Rape of Persephone\n1622, Gian Lorenzo Bernini");
+                break;
+            default:
+                print("did not start a valid painting");
                 break;
         }
     }

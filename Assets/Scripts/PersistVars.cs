@@ -102,6 +102,11 @@ public class PersistVars : MonoBehaviour {
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            print(paintingNum);
+        }
         /*if (Input.GetMouseButtonDown(0))
         {
             FindClue();

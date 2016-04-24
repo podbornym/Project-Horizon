@@ -586,7 +586,6 @@ public class DialogueReader : MonoBehaviour
 						GoTo ("Continue");
 						break;
                     case "#change":
-                        GameObject.Find("GENERALUI").GetComponent<UIHandler>().ChangePaintingInfo();
                         if(PersistVars.currentScene.Contains("0"))
                         {
                             PersistVars.paintingNum = 1;
@@ -796,6 +795,8 @@ public class DialogueReader : MonoBehaviour
 			{
 				ReadFile("./Assets/Dialogue/sell.txt");
 			}
+
+            GameObject.Find("GENERALUI").GetComponent<UIHandler>().ChangePaintingInfo();
             GoTo("Start");
             NextLine();
         }

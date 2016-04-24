@@ -22,12 +22,12 @@ public class EnvInteracter : MonoBehaviour {
         try
         {
             ukiyo = GameObject.Find("Ukiyo-e");
+            ukioyAnimator = ukiyo.GetComponent<Animator>();
         }
         catch
         {
 
         }
-        ukioyAnimator = ukiyo.GetComponent<Animator>();
     }
 
     void OnMouseEnter()
