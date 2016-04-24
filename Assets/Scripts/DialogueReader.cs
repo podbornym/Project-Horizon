@@ -162,6 +162,17 @@ public class DialogueReader : MonoBehaviour
                 muse.GetComponent<BoxCollider2D>().enabled = false;
                 dialogueContainer.SetActive(true);
                 isTalking = true;
+                if(GameObject.Find("Mansion Muse"))
+                {
+                    if(PersistVars.paintingDone)
+                    {
+                        ReadFile("./Assets/Dialogue/selling.txt");
+                    }
+                    else
+                    {
+                        ReadFile("./Assets/Dialogue/MansionDefault.txt");
+                    }
+                }
                 if(PersistVars.currentScene.Contains(((paintNum - 1) % 6).ToString()))
                 {
                     NextLine();

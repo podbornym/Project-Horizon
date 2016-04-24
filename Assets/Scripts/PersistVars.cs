@@ -78,7 +78,7 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
-    public bool paintingDone;
+    public static bool paintingDone;
 
 	// DEBUG
 	void Awake()
