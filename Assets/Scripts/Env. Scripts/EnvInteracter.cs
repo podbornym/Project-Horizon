@@ -86,10 +86,28 @@ public class EnvInteracter : MonoBehaviour {
                 StartCoroutine(Portal());
 
             }
-           /* else
+            if (gameObject.tag == "BaroquePortal")
             {
-                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
-            }*/
+                ukioyAnimator.SetInteger("BaroqueIsOpening", 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                ukioyAnimator.SetInteger("BaroqueIsOpening", 100);
+
+                StartCoroutine(Portal());
+
+            }
+            if (gameObject.tag == "SurrealismPortal")
+            {
+                ukioyAnimator.SetInteger("SurrealismIsOpening, 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                ukioyAnimator.SetInteger("SurrealismIsOpen", 100);
+
+                StartCoroutine(Portal());
+
+            }
+            /* else
+             {
+                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
+             }*/
         }
     }
     IEnumerator Portal()

@@ -213,13 +213,14 @@ public class PlayerMovement : MonoBehaviour {
                     landingPair.GetComponent<BoxCollider2D>().enabled = true;
                     moveElevator();
                     break;
-                case "portal_0_S":
+                case "Surrealism":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "SurrealistZone";
                     PersistVars.Surreal = false;
+                    myAnimator.SetBool("PortalWalk", true);
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Surrealism Zone");
                     notMoving();
-                    SceneManager.LoadScene("SurrealistZone");
+                    StartCoroutine(SurrealismPortalEnter());
                     break;
                 case "Ukiyo-e":
                     PersistVars.previousScene = "mansion";
@@ -228,15 +229,16 @@ public class PlayerMovement : MonoBehaviour {
                     myAnimator.SetBool("PortalWalk", true);
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Ukiyo-E Zone");
                     notMoving();
-                    StartCoroutine(PortalEnter());
+                    StartCoroutine(UkiyoPortalEnter());
                     break;
-                case "portal_4_B":
+                case "Baroque":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "BaroqueZone";
                     PersistVars.Baroque = true;
+                    myAnimator.SetBool("PortalWalk", true);
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Baroque Zone");
                     notMoving();
-                    SceneManager.LoadScene("BaroqueZone");
+                    StartCoroutine(BaroquePortalEnter());
                     break;
                 case "portal_1":
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().PortalComingSoon();
@@ -497,10 +499,20 @@ public class PlayerMovement : MonoBehaviour {
             notMoving();
         }
     }
-    IEnumerator PortalEnter()
+    IEnumerator UkiyoPortalEnter()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Ukiyo-eZone");
+    }
+    IEnumerator BaroquePortalEnter()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("BaroqueZone");
+    }
+    IEnumerator SurrealismPortalEnter()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("SurrealistZone");
     }
 }
 
