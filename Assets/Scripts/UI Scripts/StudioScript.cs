@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
+using System.IO;
+using System.Collections.Generic;
 
 public class StudioScript : MonoBehaviour {
 
@@ -50,36 +54,69 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+
+                Button b = GameObject.Find("Button (1)").GetComponent<Button>();
+                ColorBlock cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue2":
                 print("found 2");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 1);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+
+                b = GameObject.Find("Button (2)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue3":
                 print("found 3");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 2);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+
+                b = GameObject.Find("Button (3)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue4":
                 print("found 4");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 3);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (4)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue5":
                 print("found 5");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 4);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (5)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue6":
                 print("found 6");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (6)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             // Cases for the second Uk studio
             case "clue7":
@@ -87,36 +124,66 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (1)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue8":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 1);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (2)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue9":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 2);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (3)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue10":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 3);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (4)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue11":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 4);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (5)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue12":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UTwo", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (6)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             // Cases for the third Uk studio
             case "clue13":
@@ -124,24 +191,44 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UThree", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (1)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue14":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UThree", 1);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (2)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue15":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UThree", 2);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (3)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue16":
                 print("found me");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UThree", 3);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                b = GameObject.Find("Button (4)").GetComponent<Button>();
+                cb = b.colors;
+                cb.normalColor = Color.yellow;
+                cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
+                b.colors = cb;
                 break;
             case "clue17":
                 print("found me");

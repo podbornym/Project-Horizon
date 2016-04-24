@@ -776,7 +776,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 1)
             {
-                match3Return = (1 - dragPenalty) * 100;
+                match3Return = (1 - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
@@ -785,7 +785,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 2 && percentage > 1)
             {
-                match3Return = (.9f - dragPenalty) * 100;
+                match3Return = (.9f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
@@ -794,7 +794,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 3 && percentage > 2)
             {
-                match3Return = (.8f - dragPenalty) * 100;
+                match3Return = (.8f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
@@ -803,7 +803,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage >= 4 && percentage > 3)
             {
-                match3Return = (.7f - dragPenalty) * 100;
+                match3Return = (.7f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
@@ -812,7 +812,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage > 4)
             {
-                match3Return = (.6f - dragPenalty) * 100;
+                match3Return = (.6f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;

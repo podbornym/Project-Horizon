@@ -17,6 +17,7 @@ public class UIHandler : MonoBehaviour {
 	public string sellName;
     public bool UIALive = true;
     public Vector3 startPos;
+    public GameObject WikiPrefab;
 
     void Awake()
     {
@@ -221,6 +222,20 @@ public class UIHandler : MonoBehaviour {
     {
         GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         GameObject.Find("UIUnhide").GetComponent<Image>().enabled = true;
+    }
+
+    public void openWiki()
+    {
+        if (GameObject.Find("Wiki_Prefab(Clone)") == null)
+        {
+            Instantiate(WikiPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+        else
+        {
+            GameObject destroyWiki = GameObject.Find("Wiki_Prefab(Clone)");
+            Destroy(destroyWiki);
+        }
+
     }
 
     /*void menuOpen()

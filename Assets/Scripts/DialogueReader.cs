@@ -68,14 +68,6 @@ public class DialogueReader : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            if(ClueFound[i])
-            {
-                Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
-                ColorBlock cb = b.colors;
-                cb.normalColor = Color.yellow;
-                cb.highlightedColor = new Color(1, 0.92f, 0.016f ,1);
-                b.colors = cb;
-            }
             if(!ClueFound[i])
             {
                 Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
@@ -170,6 +162,17 @@ public class DialogueReader : MonoBehaviour
                 muse.GetComponent<BoxCollider2D>().enabled = false;
                 dialogueContainer.SetActive(true);
                 isTalking = true;
+                if(GameObject.Find("Mansion Muse"))
+                {
+                    if(PersistVars.paintingDone)
+                    {
+                        ReadFile("./Assets/Dialogue/selling.txt");
+                    }
+                    else
+                    {
+                        ReadFile("./Assets/Dialogue/MansionDefault.txt");
+                    }
+                }
                 if(PersistVars.currentScene.Contains(((paintNum - 1) % 6).ToString()))
                 {
                     NextLine();
@@ -263,6 +266,11 @@ public class DialogueReader : MonoBehaviour
                         GameObject.Find("BaroqueMuse").GetComponent<Image>().enabled = false;
                         GameObject.Find("WoodStock").GetComponent<Image>().enabled = true;
                         break;
+					case "#gosell":
+						Debug.Log ("reached gosell");
+						SceneManager.LoadScene ("SellingScene");
+						EndDialogue ();
+						break;
                     case "#activateClue1":
                         clueOne.gameObject.GetComponent<Collider2D>().enabled = true;
                         break;
@@ -835,5 +843,14 @@ public class DialogueReader : MonoBehaviour
         {
             print("Exception: " + e);
         }
+    }
+
+    public void ColorChange(String button)
+    {
+        Button b = GameObject.Find(button).GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.white;
+        cb.highlightedColor = Color.white;
+        b.colors = cb;
     }
 }

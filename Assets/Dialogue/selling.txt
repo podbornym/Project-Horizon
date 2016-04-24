@@ -1,0 +1,22 @@
+@Start
+#SetDialogue
+#SetWoodStock
+<b>WoodStock:</b> How's your current painting coming along?
+#SetPlayer
+<b>Ren:</b> I've finished it.
+#SetWoodStock
+<b>WoodStock:</b> Great! How about we sell it on the black market then?
+#SetPlayer
+#SetOptions
+#option1 #goto:GoSell
+#option2 #goto:NoSell
+#option1Text Yes #option2Text No
+
+@GoSell
+#SetDialogue
+#gosell
+#quit
+
+@NoSell
+#SetDialogue
+#quit

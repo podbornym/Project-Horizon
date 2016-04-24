@@ -78,6 +78,14 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
+    public static bool paintingDone;
+
+    //Background music files
+    public AudioClip ukiyoMusic;
+    public AudioClip surrealMusic;
+    public AudioClip baroqueMusic;
+    public AudioClip mansionMusic;
+
 	// DEBUG
 	void Awake()
 	{
@@ -106,6 +114,35 @@ public class PersistVars : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             print(paintingNum);
+        if(match3Score != 0 && rotatoScore != 0 && pipeDreamScore != 0 && findDiffScore != 0 && mastermindScore != 0 && tracerScore != 0)
+        {
+            paintingDone = true;
+        }
+
+        // Statements to detect what background music to play
+        if(Ukiyo)
+        {
+            gameObject.GetComponent<AudioSource>().clip = ukiyoMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
+        }
+        if(Surreal)
+        {
+            gameObject.GetComponent<AudioSource>().clip = surrealMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
+        }
+        if(Baroque)
+        {
+            gameObject.GetComponent<AudioSource>().clip = baroqueMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().clip = mansionMusic;
+            gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<AudioSource>().loop = true;
         }
         /*if (Input.GetMouseButtonDown(0))
         {
@@ -331,6 +368,14 @@ public class PersistVars : MonoBehaviour {
             case 6:
                 GameObject.Find("light_5").GetComponent<Image>().enabled = true;
                 break;
+        }
+    }
+
+    public void KnowledgeClear()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            GameObject.Find("light_" + i).GetComponent<Image>().enabled = false;
         }
     }
 }

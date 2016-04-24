@@ -5,6 +5,8 @@ public class PipeRotator : MonoBehaviour {
 
     public bool IsConnected = false;
     public bool IsFull = false;
+    public bool IsFullHorizontal = false;
+    public bool IsFullVertical = false;
     public bool CanRotate = true;
 
     public PipeDreamManager manager;
@@ -14,6 +16,8 @@ public class PipeRotator : MonoBehaviour {
     public int height;
 
     public Sprite filled;
+    public Sprite fourwayFilledHorizontal;
+    public Sprite fourwayFilledVertical;
 
     public GameObject ObjectManager;
 
@@ -43,6 +47,16 @@ public class PipeRotator : MonoBehaviour {
         if (IsFull)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = filled;
+            CanRotate = false;
+        }
+        else if (IsFullHorizontal)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fourwayFilledHorizontal;
+            CanRotate = false;
+        }
+        else if (IsFullVertical)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fourwayFilledVertical;
             CanRotate = false;
         }
 
@@ -737,7 +751,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitUp.transform.gameObject.tag == "FourWay")
             {
                 //If piece is full
-                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFull || hitUp.transform.gameObject.GetComponent<PipeRotator>().IsFullVertical)
                 {
                     //If hit piece alligned with top of selected
                     if ( Approximately(hitUp.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitUp.transform.rotation.eulerAngles.z) == 0)
@@ -832,7 +846,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitDown.transform.gameObject.tag == "FourWay")
             {
                 //If the hit piece is full
-                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFull || hitDown.transform.gameObject.GetComponent<PipeRotator>().IsFullVertical)
                 {
                     //If the hit piece is aligned with the selected
                     if ( Approximately(hitDown.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitDown.transform.rotation.eulerAngles.z) == 0)
@@ -935,7 +949,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitLeft.transform.gameObject.tag == "FourWay")
             {
                 //IF hit is full
-                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFull || hitLeft.transform.gameObject.GetComponent<PipeRotator>().IsFullHorizontal)
                 {
                     //If hit is aligned with selected
                     if ( Approximately(hitLeft.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitLeft.transform.rotation.eulerAngles.z) == 0)
@@ -1026,7 +1040,7 @@ public class PipeRotator : MonoBehaviour {
             else if (hitRight.transform.gameObject.tag == "FourWay")
             {
                 //If hit is full
-                if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull)
+                if (hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFull || hitRight.transform.gameObject.GetComponent<PipeRotator>().IsFullHorizontal)
                 {
                     //If hit is aligned with selected
                     if ( Approximately(hitRight.transform.rotation.eulerAngles.z) == 270 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 90 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 180 ||  Approximately(hitRight.transform.rotation.eulerAngles.z) == 0)
