@@ -93,6 +93,16 @@ public class PersistVars : MonoBehaviour {
 		{
 			maxValue [i] = 1000000 * (i + 1);
 		}
+
+        //GameObject.Find("Player").GetComponent<AudioSource>().clip = mansionMusic;
+        //GameObject.Find("Player").GetComponent<AudioSource>().Play();
+        //print(gameObject.GetComponent<AudioSource>().isPlaying);
+        //GameObject.Find("Player").GetComponent<AudioSource>().loop = true;
+
+        AudioSource audio = gameObject.GetComponent<AudioSource>();
+        audio.clip = mansionMusic;
+        audio.Play();//GetComponent<AudioSource>().Play();
+        audio.loop = true;
 	}
 
     void Start()
@@ -106,6 +116,8 @@ public class PersistVars : MonoBehaviour {
         UI.GetComponent<DialogueReader>().option5.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
+
+        
     }
 
     void Update()
@@ -114,6 +126,8 @@ public class PersistVars : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             print(paintingNum);
+        }
+
         if(match3Score != 0 && rotatoScore != 0 && pipeDreamScore != 0 && findDiffScore != 0 && mastermindScore != 0 && tracerScore != 0)
         {
             paintingDone = true;
@@ -122,28 +136,32 @@ public class PersistVars : MonoBehaviour {
         // Statements to detect what background music to play
         if(Ukiyo)
         {
-            gameObject.GetComponent<AudioSource>().clip = ukiyoMusic;
-            gameObject.GetComponent<AudioSource>().Play();
-            gameObject.GetComponent<AudioSource>().loop = true;
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.clip = ukiyoMusic;
+            audio.Play();//GetComponent<AudioSource>().Play();
+            audio.loop = true;
         }
         if(Surreal)
         {
-            gameObject.GetComponent<AudioSource>().clip = surrealMusic;
-            gameObject.GetComponent<AudioSource>().Play();
-            gameObject.GetComponent<AudioSource>().loop = true;
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.clip = surrealMusic;
+            audio.Play();//GetComponent<AudioSource>().Play();
+            audio.loop = true;
         }
         if(Baroque)
         {
-            gameObject.GetComponent<AudioSource>().clip = baroqueMusic;
-            gameObject.GetComponent<AudioSource>().Play();
-            gameObject.GetComponent<AudioSource>().loop = true;
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.clip = baroqueMusic;
+            audio.Play();//GetComponent<AudioSource>().Play();
+            audio.loop = true;
         }
-        else
+        /*else
         {
             gameObject.GetComponent<AudioSource>().clip = mansionMusic;
-            gameObject.GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
+            print(GetComponent<AudioSource>().isPlaying);
             gameObject.GetComponent<AudioSource>().loop = true;
-        }
+        }*/
         /*if (Input.GetMouseButtonDown(0))
         {
             FindClue();
@@ -371,6 +389,7 @@ public class PersistVars : MonoBehaviour {
         }
     }
 
+    // Clear the knowledge meter on the UI
     public void KnowledgeClear()
     {
         for(int i = 0; i < 6; i++)
