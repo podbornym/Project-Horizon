@@ -18,6 +18,7 @@ public class UIHandler : MonoBehaviour {
     public bool UIALive = true;
     public Vector3 startPos;
     public GameObject WikiPrefab;
+    public Text WikiButtonText;
 
     void Awake()
     {
@@ -229,11 +230,13 @@ public class UIHandler : MonoBehaviour {
         if (GameObject.Find("Wiki_Prefab(Clone)") == null)
         {
             Instantiate(WikiPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            WikiButtonText.text = "Close Wiki";
         }
         else
         {
             GameObject destroyWiki = GameObject.Find("Wiki_Prefab(Clone)");
             Destroy(destroyWiki);
+            WikiButtonText.text = "Launch Wiki";
         }
 
     }

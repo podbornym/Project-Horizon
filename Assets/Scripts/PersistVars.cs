@@ -127,7 +127,6 @@ public class PersistVars : MonoBehaviour {
         {
             print(paintingNum);
         }
-
         if(match3Score != 0 && rotatoScore != 0 && pipeDreamScore != 0 && findDiffScore != 0 && mastermindScore != 0 && tracerScore != 0)
         {
             paintingDone = true;

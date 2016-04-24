@@ -10,23 +10,34 @@ public class EnvInteracter : MonoBehaviour {
     public Texture2D leftArrow;
     public Texture2D rightArrow;
     public CursorMode cursorMode = CursorMode.ForceSoftware;
-    public Vector2 hotSpot = Vector2.zero;
+    public Vector2 hotSpot = new Vector2(30, 30);
     public static bool cursorSet = false;
     public GameObject player;
     public GameObject ukiyo;
+    public GameObject baroque;
+    public GameObject surrealism;
     private Animator ukioyAnimator;
+    private Animator baroqueAnimator;
+    private Animator surrealismAnimator;
 
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
-        try
+        if (PersistVars.currentScene == "mansion")
         {
-            ukiyo = GameObject.Find("Ukiyo-e");
-            ukioyAnimator = ukiyo.GetComponent<Animator>();
-        }
-        catch
-        {
+            try
+            {
+                ukiyo = GameObject.Find("Ukiyo-e");
+                ukioyAnimator = ukiyo.GetComponent<Animator>();
+                baroque = GameObject.Find("Baroque");
+                baroqueAnimator = baroque.GetComponent<Animator>();
+                surrealism = GameObject.Find("Surrealism");
+                surrealismAnimator = surrealism.GetComponent<Animator>();
+            }
+            catch
+            {
 
+            }
         }
     }
 
@@ -86,10 +97,28 @@ public class EnvInteracter : MonoBehaviour {
                 StartCoroutine(Portal());
 
             }
-           /* else
+            if (gameObject.tag == "BaroquePortal")
             {
-                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
-            }*/
+                baroqueAnimator.SetInteger("BaroqueIsOpening", 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                baroqueAnimator.SetInteger("BaroqueIsOpening", 100);
+
+                StartCoroutine(Portal());
+
+            }
+            if (gameObject.tag == "SurrealismPortal")
+            {
+                surrealismAnimator.SetInteger("SurrealismIsOpening", 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                surrealismAnimator.SetInteger("SurrealismIsOpen", 100);
+
+                StartCoroutine(Portal());
+
+            }
+            /* else
+             {
+                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
+             }*/
         }
     }
     IEnumerator Portal()

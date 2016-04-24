@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PipeRotator : MonoBehaviour {
 
@@ -20,11 +21,14 @@ public class PipeRotator : MonoBehaviour {
     public Sprite fourwayFilledVertical;
 
     public GameObject ObjectManager;
+    public Text PressCounter;
 
     void Awake()
     {
         ObjectManager = GameObject.Find("Pipe Dream Manager");
         ObjectManager.GetComponent<PipeDreamManager>().objectGrid.Add(gameObject);
+
+        PressCounter = GameObject.Find("PressCounter").GetComponent<Text>();
     }
 
     // Use this for initialization
@@ -214,8 +218,12 @@ public class PipeRotator : MonoBehaviour {
             }
         }
 
+        ObjectManager.GetComponent<PipeDreamManager>().clicks++;
+        //print(ObjectManager.GetComponent<PipeDreamManager>().clicks);
+        PressCounter.text = "Clicks: " + ObjectManager.GetComponent<PipeDreamManager>().clicks;
+
         //Checks if the tile can rotate
-        if(CanRotate)
+        if (CanRotate)
         {
             //Rotates tile 90* clockwise
             transform.Rotate(new Vector3((int)0, (int)0, (int)-90));
