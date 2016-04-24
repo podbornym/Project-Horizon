@@ -78,6 +78,8 @@ public class PersistVars : MonoBehaviour {
     public static bool[] BaroqueFive = { false, false, false, false, false, false };
     public static bool[] BaroqueSix = { false, false, false, false, false, false };
 
+    public bool paintingDone;
+
 	// DEBUG
 	void Awake()
 	{
@@ -102,6 +104,10 @@ public class PersistVars : MonoBehaviour {
 
     void Update()
     {
+        if(match3Score != 0 && rotatoScore != 0 && pipeDreamScore != 0 && findDiffScore != 0 && mastermindScore != 0 && tracerScore != 0)
+        {
+            paintingDone = true;
+        }
         /*if (Input.GetMouseButtonDown(0))
         {
             FindClue();
