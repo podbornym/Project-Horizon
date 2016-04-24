@@ -68,14 +68,6 @@ public class DialogueReader : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            if(ClueFound[i])
-            {
-                Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
-                ColorBlock cb = b.colors;
-                cb.normalColor = Color.yellow;
-                cb.highlightedColor = new Color(1, 0.92f, 0.016f ,1);
-                b.colors = cb;
-            }
             if(!ClueFound[i])
             {
                 Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
@@ -834,5 +826,14 @@ public class DialogueReader : MonoBehaviour
         {
             print("Exception: " + e);
         }
+    }
+
+    public void ColorChange(String button)
+    {
+        Button b = GameObject.Find(button).GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.white;
+        cb.highlightedColor = Color.white;
+        b.colors = cb;
     }
 }
