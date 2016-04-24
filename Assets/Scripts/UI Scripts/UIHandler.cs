@@ -64,12 +64,12 @@ public class UIHandler : MonoBehaviour {
         {
             if (UIALive)
             {
-                gameObject.GetComponent<Canvas>().enabled = false;
+                HideMenu();
                 UIALive = false;
             }
             else
             {
-                gameObject.GetComponent<Canvas>().enabled = true;
+                UnhideMenu();
                 UIALive = true;
             }
         }
@@ -134,6 +134,23 @@ public class UIHandler : MonoBehaviour {
     public void SetLocationText(string locText)
     {
         GameObject.Find("Location").GetComponent<Text>().text = locText;
+    }
+
+    public void SetPieceInfo(string pieceInfo)
+    {
+        GameObject.Find("Art Piece").GetComponent<Text>().text = pieceInfo;
+    }
+
+    public void UnhideMenu()
+    {
+        GameObject.Find("GeneralUI").GetComponent<Canvas>().enabled = true;
+        GameObject.Find("UIUnhide").GetComponent<Canvas>().enabled = false;
+    }
+
+    public void HideMenu()
+    {
+        GameObject.Find("GeneralUI").GetComponent<Canvas>().enabled = false;
+        GameObject.Find("UIUnhide").GetComponent<Canvas>().enabled = true;
     }
 
     /*void menuOpen()
