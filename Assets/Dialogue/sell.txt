@@ -31,6 +31,7 @@ Are you sure you want to sell to this client?
 @fail1
 You have been caught. The cops are willing to look the other way this time,
 but you you will not be able to sell to this client next time.
+#failed1
 #SetOptions
 #option1 #goto:Continue
 #option1Text Continue

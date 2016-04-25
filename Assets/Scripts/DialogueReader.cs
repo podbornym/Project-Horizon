@@ -442,11 +442,45 @@ public class DialogueReader : MonoBehaviour
 						PersistVars.currentMoney += SellCont.Pay;
 						GoTo ("Continue");
 						break;
+					case "#failed1":
+						if (SellCont.buyer=="high")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "high";
+						}
+						else if (SellCont.buyer=="med")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "med";
+						}
+						else if (SellCont.buyer=="low")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "low";
+						}
+						else if (SellCont.buyer=="blk")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "blk";
+						}
+						break;
 					case "#failed2":
 						currentText.text = "You have been caught\n." +
 							"You recieve ONE STRIKE, and you you will not be able to sell to this client next time.\n" +
 							"Three strikes and your forgery career is over.\n" +
-						"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strike(s).";
+							"You currently have " + gameObject.GetComponent<PersistVars> ().strikes + " strike(s).";
+						if (SellCont.buyer=="high")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "high";
+						}
+						else if (SellCont.buyer=="med")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "med";
+						}
+						else if (SellCont.buyer=="low")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "low";
+						}
+						else if (SellCont.buyer=="blk")
+						{
+							PersistVars.blocked [PersistVars.paintingNum - 1] = "blk";
+						}
 						GoTo ("Continue");
 						break;
 					case "#Continue":

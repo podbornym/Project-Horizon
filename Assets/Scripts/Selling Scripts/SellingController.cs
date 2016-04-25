@@ -23,6 +23,7 @@ public class SellingController : MonoBehaviour {
 	public Button lowButton;
 	public Button blkButton;
 	public DialogueReader reader;
+	public string blockedClient;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +49,32 @@ public class SellingController : MonoBehaviour {
 		lText.text = "$"+(int)(maxValue * .75);
 		Text bText = blkText.GetComponent<Text>();
 		bText.text = "$"+(int)(maxValue * .70);
+
+		Color block = new Color ();
+		ColorUtility.TryParseHtmlString ("#888888CC", out block);
+
+		blockedClient = PersistVars.blocked[PersistVars.paintingNum-1];
+
+		if (blockedClient=="high")
+		{
+			highButton.interactable = false;
+			highButton.GetComponent<Image>().color = block;
+		}
+		if (blockedClient=="med")
+		{
+			medButton.interactable = false;
+			medButton.GetComponent<Image>().color = block;
+		}
+		if (blockedClient=="low")
+		{
+			lowButton.interactable = false;
+			lowButton.GetComponent<Image>().color = block;
+		}
+		if (blockedClient=="blk" || (PersistVars.paintingNum>6 && PersistVars.paintingNum<13))
+		{
+			blkButton.interactable = false;
+			blkButton.GetComponent<Image>().color = block;
+		}
 	}
 
 	public void bHandle(string bName) {
@@ -84,13 +111,25 @@ public class SellingController : MonoBehaviour {
 		Color clear = new Color ();
 		ColorUtility.TryParseHtmlString ("#FFFFFF00", out clear);
 
-		highButton.interactable = true;
-		medButton.interactable = true;
-		lowButton.interactable = true;
-		blkButton.interactable = true;
-		highButton.GetComponent<Image>().color = clear;
-		medButton.GetComponent<Image>().color = clear;
-		lowButton.GetComponent<Image>().color = clear;
-		blkButton.GetComponent<Image>().color = clear;
+		if (blockedClient!="high")
+		{
+			highButton.interactable = true;
+			highButton.GetComponent<Image>().color = clear;
+		}
+		if (blockedClient!="med")
+		{
+			medButton.interactable = true;
+			medButton.GetComponent<Image>().color = clear;
+		}
+		if (blockedClient!="low")
+		{
+			lowButton.interactable = true;
+			lowButton.GetComponent<Image>().color = clear;
+		}
+		if (blockedClient!="blk" && (PersistVars.paintingNum<7))
+		{
+			blkButton.interactable = true;
+			blkButton.GetComponent<Image>().color = clear;
+		}
 	}
 }

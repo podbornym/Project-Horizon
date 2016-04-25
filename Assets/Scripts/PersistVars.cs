@@ -49,6 +49,9 @@ public class PersistVars : MonoBehaviour {
 	// Painting Max Value
 	public static int[] maxValue = new int[18];
 
+	// Buyers not allowed on second try
+	public static string[] blocked = new string[18];
+
     //Locations
     public static bool Ukiyo = false;
     public static bool Surreal = false;
@@ -117,7 +120,6 @@ public class PersistVars : MonoBehaviour {
         UI.GetComponent<DialogueReader>().option6.gameObject.SetActive(false);
         UI.GetComponent<DialogueReader>().quit.gameObject.SetActive(false);
 
-        
     }
 
     void Update()
