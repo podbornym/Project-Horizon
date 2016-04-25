@@ -132,6 +132,13 @@ public class BoardCreation : MonoBehaviour
 
     public static float match3Return;
 
+	// clips
+	public AudioClip m1;
+	public AudioClip m2;
+	public AudioClip m3;
+	public AudioClip m4;
+	public AudioClip m5;
+
     void Update()
     {
         seconds -= Time.deltaTime;
@@ -671,7 +678,8 @@ public class BoardCreation : MonoBehaviour
                     Color color = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().color;
                     Sprite sprite = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().sprite;
                     if (color == Color.red || sprite == ukiyoOne || sprite == surrealOne || sprite == baroqueOne)
-                    {
+					{
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m1, 1.0f);
                         redHit = hits.Length;
                         setRedValue += redHit;
                         redScore.text = setRed + setRedValue.ToString();
@@ -679,6 +687,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.green || sprite == ukiyoTwo || sprite == surrealTwo || sprite == baroqueTwo)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m2, 1.0f);
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
                         greenScore.text = setGreen + setGreenValue.ToString();
@@ -686,6 +695,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.blue || sprite == ukiyoThree || sprite == surrealThree || sprite == baroqueThree)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m3, 1.0f);
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
                         blueScore.text = setBlue + setBlueValue.ToString();
@@ -693,6 +703,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.yellow || sprite == ukiyoFour || sprite == surrealFour || sprite == baroqueFour)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m4, 1.0f);
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
                         yellowScore.text = setYellow + setYellowValue.ToString();
@@ -700,6 +711,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.magenta || sprite == ukiyoFive || sprite == surrealFive || sprite == baroqueFive)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m5, 1.0f);
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
                         magentaScore.text = setMagenta + setMagentaValue.ToString();
@@ -719,6 +731,7 @@ public class BoardCreation : MonoBehaviour
                     Sprite sprite = hits[0].transform.gameObject.GetComponent<SpriteRenderer>().sprite;
                     if (color == Color.red || sprite == ukiyoOne || sprite == surrealOne || sprite == baroqueOne)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m1, 1.0f);
                         redHit = hits.Length;
                         setRedValue += redHit;
                         redScore.text = setRed + setRedValue.ToString();
@@ -726,6 +739,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.green || sprite == ukiyoTwo || sprite == surrealTwo || sprite == baroqueTwo)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m2, 1.0f);
                         greenHit = hits.Length;
                         setGreenValue += greenHit;
                         greenScore.text = setGreen + setGreenValue.ToString();
@@ -733,6 +747,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.blue || sprite == ukiyoThree || sprite == surrealThree || sprite == baroqueThree)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m3, 1.0f);
                         blueHit = hits.Length;
                         setBlueValue += blueHit;
                         blueScore.text = setBlue + setBlueValue.ToString();
@@ -740,6 +755,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.yellow || sprite == ukiyoFour || sprite == surrealFour || sprite == baroqueFour)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m4, 1.0f);
                         yellowHit = hits.Length;
                         setYellowValue += yellowHit;
                         yellowScore.text = setYellow + setYellowValue.ToString();
@@ -747,6 +763,7 @@ public class BoardCreation : MonoBehaviour
                     }
                     if (color == Color.magenta || sprite == ukiyoFive || sprite == surrealFive || sprite == baroqueFive)
                     {
+						puzzleObject.GetComponent<AudioSource> ().PlayOneShot (m5, 1.0f);
                         magentaHit = hits.Length;
                         setMagentaValue += magentaHit;
                         magentaScore.text = setMagenta + setMagentaValue.ToString();
