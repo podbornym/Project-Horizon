@@ -210,6 +210,8 @@ public class BoardCreation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		// Set audio source
+		source = gameObject.GetComponent<AudioSource> ();
         // Disable the UI's canvas, attach the PersistBVars script to our match3 object
         if(GameObject.Find("GENERALUI"))
         {

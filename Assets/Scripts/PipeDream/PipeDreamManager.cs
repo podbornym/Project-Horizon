@@ -11,7 +11,7 @@ public class PipeDreamManager : MonoBehaviour {
     public int clicks = 0;
     public int minimum;
 
-    public static float pipeDreamReturn;
+    public static float pipeDreamReturn = 0;
 
     public GameObject[] tilePrefabs;
     GameObject end;
@@ -21,7 +21,7 @@ public class PipeDreamManager : MonoBehaviour {
 
     public PipeRotator rotator;
 
-    public bool gameRunning = true;
+    public bool gameRunning = false;
     public bool hitTile = true;
 
     public Sprite A;
@@ -42,8 +42,6 @@ public class PipeDreamManager : MonoBehaviour {
         {
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         }*/
-
-        StartCoroutine(Flow());
         if (end == null)
         {
             end = GameObject.FindWithTag("End");
@@ -145,6 +143,13 @@ public class PipeDreamManager : MonoBehaviour {
                 print("C");
             }
         }
+    }
+
+    
+
+    public void StartFlow()
+    {
+        StartCoroutine(Flow());
     }
 
     IEnumerator Flow()

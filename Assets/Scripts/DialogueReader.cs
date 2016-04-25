@@ -92,18 +92,21 @@ public class DialogueReader : MonoBehaviour
         }
         if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-eZone")
         {
+            print(true);
             intro_speech_ukiyo = false;
             ReadFile("./Assets/Dialogue/ukiyo intro.txt");
             NextLine();
         }
-        if (intro_speech_surreal && PersistVars.currentScene == "SurrealZone")
+        if (intro_speech_surreal && PersistVars.currentScene == "SurrealistZone")
         {
+            print(true);
             intro_speech_surreal = false;
             ReadFile("./Assets/Dialogue/surreal intro.txt");
             NextLine();
         }
         if (intro_speech_baroque && PersistVars.currentScene == "BaroqueZone")
         {
+            print(true);
             intro_speech_baroque = false;
             ReadFile("./Assets/Dialogue/baroque intro.txt");
             NextLine();

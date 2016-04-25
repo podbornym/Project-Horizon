@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
+using System.IO;
+using System.Collections.Generic;
 
 public class PersistVars : MonoBehaviour {
     //this script is attached to the UI so
@@ -138,19 +141,67 @@ public class PersistVars : MonoBehaviour {
         if(Ukiyo && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
-            audio.clip = ukiyoMusic;
-            audio.Play();//GetComponent<AudioSource>().Play();
+            switch(UnityEngine.Random.Range(0,3))
+            {
+                case 0:
+                    print(1);
+                    AudioClip temp = Resources.Load("Assets/Sound/Ukiyo-e Zone Music/Eastminister.mp3") as AudioClip;
+                    audio.clip = temp;
+                    audio.Play();
+                    break;
+                case 1:
+                    print(2);
+                    temp = Resources.Load("Assets/Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3") as AudioClip;
+                    audio.clip = temp;
+                    audio.Play();
+                    break;
+                case 2:
+                    print(3);
+                    temp = Resources.Load("Assets/Sound/Ukiyo-e Zone Music/Finding Movement.mp3") as AudioClip;
+                    audio.clip = temp;
+                    audio.Play();
+                    break;
+            }
+            print(audio.isPlaying);
         }
         if (Surreal && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
-            audio.clip = surrealMusic;
+            switch (UnityEngine.Random.Range(0, 3))
+            {
+                case 0:
+                    AudioClip temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 4.mp3") as AudioClip;
+                    audio.clip = temp;
+                    break;
+                case 1:
+                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 1.mp3") as AudioClip;
+                    audio.clip = temp;
+                    break;
+                case 2:
+                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/The Devils Trill.mp3") as AudioClip;
+                    audio.clip = temp;
+                    break;
+            }
             audio.Play();//GetComponent<AudioSource>().Play();
         }
         if (Baroque && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
-            audio.clip = baroqueMusic;
+            switch (UnityEngine.Random.Range(0, 3))
+            {
+                case 0:
+                    AudioClip temp = Resources.Load("Assets/Sound/Baroque Zone Music/Concerto no 3.mp3") as AudioClip;
+                    audio.clip = temp;
+                    break;
+                case 1:
+                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/BassoonRepertoire.mp3") as AudioClip;
+                    audio.clip = temp;
+                    break;
+                case 2:
+                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/Goldberg Variations.mp3") as AudioClip;
+                    audio.clip = temp;
+                    break;
+            }
             audio.Play();//GetComponent<AudioSource>().Play();
         }
         if (Baroque == false && Ukiyo == false && Surreal == false && gameObject.GetComponent<AudioSource>().isPlaying == false)
