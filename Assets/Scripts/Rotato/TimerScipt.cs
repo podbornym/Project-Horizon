@@ -20,18 +20,18 @@ public class TimerScipt : MonoBehaviour {
 	public Sprite GradeD;
 
     public GameObject[] puzzlePieces = new GameObject[2];
-    private SelectAndMove[] puzzleSM;
+    private PuzzleGrade[] puzzleSM;
 
     void Awake()
     {
 		//GameObject.Find ("Help Screen").GetComponent<Image> ().sprite = helpScreen;
 
-        puzzleSM = new SelectAndMove[puzzlePieces.Length];
+		puzzleSM = new PuzzleGrade[puzzlePieces.Length];
         int i = 0;
         foreach (GameObject cur in puzzlePieces)
         {
-			print (cur);
-			puzzleSM[i] = cur.GetComponent<SelectAndMove>();
+			//print (cur);
+			puzzleSM[i] = cur.GetComponent<PuzzleGrade>();
             i++;
         }
         
@@ -40,11 +40,11 @@ public class TimerScipt : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		
 		if (GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled == true) 
 		{
 			GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = false;
 		}
-
 
         seconds = 0;
         timeCounter = GameObject.Find("TimerText").GetComponent<Text>();
@@ -101,18 +101,19 @@ public class TimerScipt : MonoBehaviour {
 			//print ("Piece[" + i + "] has position score " + cur.returnPosScore () + " and rotated score " + cur.returnZScore ());
 //			print(cur.GetComponent<SelectAndMove>().returnPosScore() );
 
-			/*
-			posScore += cur.GetComponent<SelectAndMove>().returnPosScore();
-			zTotalScore += cur.GetComponent<SelectAndMove>().returnZScore();
+			PuzzleGrade sm = cur.GetComponent<PuzzleGrade> ();
+
+			posScore += sm.returnPosScore();
+			zTotalScore += sm.returnZScore();
             i++;
-            */
+            
         }
 
         print("Returned position score: " + posScore);
         print("Rotation Score: " + zTotalScore);
 
-		GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
-		GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
+		//GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
+		//GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
 
         if ((posScore < 9) && (zTotalScore < 15))
         {

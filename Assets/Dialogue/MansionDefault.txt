@@ -1,4 +1,7 @@
 #SetDialogue #SetWoodStock
+#SetDialogue #SetWoodStock
+#SetDialogue #SetWoodStock
+#SetDialogue #SetWoodStock
 <b>WoodStock:</b> How's your current painting coming along?
 #SetPlayer
 <b>Ren:</b> I'm still working on it.
@@ -8,4 +11,3 @@ Then we can take it to the black market and sell it.
 Good luck on your painting!
 #SetPlayer
 . #quit
-#quit

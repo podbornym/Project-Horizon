@@ -158,16 +158,24 @@ public class EnvInteracter : MonoBehaviour {
     }
     IEnumerator ElevatorTop()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.3f);
+        BElevator.SetInteger("ElevatorBottom", 1);
+        yield return new WaitForSeconds(.7f);
         TElevator.SetInteger("Elevator", -1);
+        BElevator.SetInteger("ElevatorBottom", -1);
         yield return new WaitForSeconds(2f);
         TElevator.SetInteger("Elevator", 0);
+        BElevator.SetInteger("ElevatorBottom", 0);
     }
     IEnumerator ElevatorBottom()
     {
-        yield return new WaitForSeconds(1.09f);
+        yield return new WaitForSeconds(1.3f);
+        TElevator.SetInteger("Elevator", 1);
+        yield return new WaitForSeconds(.7f);
         BElevator.SetInteger("ElevatorBottom", -1);
+        TElevator.SetInteger("Elevator", -1);
         yield return new WaitForSeconds(2f);
         BElevator.SetInteger("ElevatorBottom", 0);
+        TElevator.SetInteger("Elevator",0);
     }
 }
