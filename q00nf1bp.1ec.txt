@@ -1,0 +1,228 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	Assets/Art/PipeDream/Surrealism.meta
+#	Assets/Resources.meta
+#	Assets/Scenes/PipeDream.meta
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 8 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   Assets/Animations/Character/Character Animations v2/DoorWalkIn.anim
+#	new file:   Assets/Animations/Character/Character Animations v2/DoorWalkInto.anim
+#	new file:   Assets/Animations/Character/Character Animations v2/DoorWalkInto.anim.meta
+#	modified:   Assets/Animations/Programmer Idle Animation/roughCharacter 2.controller
+#	modified:   Assets/Art/character portraits/DrWoodStockPortrait.png.meta
+#	modified:   Assets/Art/character portraits/DragonPortrait.png.meta
+#	modified:   Assets/Art/character portraits/Portrait_BaroqueMuse.png.meta
+#	modified:   Assets/Art/character portraits/SurrealMuse.png.meta
+#	modified:   Assets/Art/character portraits/ren-excited.png.meta
+#	deleted:    Assets/Dialogue.meta
+#	modified:   Assets/Prefabs/Player.prefab
+#	new file:   Assets/Resources/Dialogue.meta
+#	renamed:    Assets/Dialogue/Lobby Brothel.txt -> Assets/Resources/Dialogue/Lobby Brothel.txt
+#	renamed:    Assets/Dialogue/Lobby Brothel.txt.meta -> Assets/Resources/Dialogue/Lobby Brothel.txt.meta
+#	renamed:    Assets/Dialogue/MansionDefault.txt -> Assets/Resources/Dialogue/MansionDefault.txt
+#	renamed:    Assets/Dialogue/MansionDefault.txt.meta -> Assets/Resources/Dialogue/MansionDefault.txt.meta
+#	renamed:    Assets/Dialogue/Shoki Striding.txt -> Assets/Resources/Dialogue/Shoki Striding.txt
+#	renamed:    Assets/Dialogue/Shoki Striding.txt.meta -> Assets/Resources/Dialogue/Shoki Striding.txt.meta
+#	renamed:    Assets/Dialogue/SuddenShowerDialogue.txt -> Assets/Resources/Dialogue/SuddenShowerDialogue.txt
+#	renamed:    Assets/Dialogue/SuddenShowerDialogue.txt.meta -> Assets/Resources/Dialogue/SuddenShowerDialogue.txt.meta
+#	renamed:    Assets/Dialogue/The Healer.txt -> Assets/Resources/Dialogue/The Healer.txt
+#	renamed:    Assets/Dialogue/The Healer.txt.meta -> Assets/Resources/Dialogue/The Healer.txt.meta
+#	renamed:    Assets/Dialogue/The Slug Room.txt -> Assets/Resources/Dialogue/The Slug Room.txt
+#	renamed:    Assets/Dialogue/The Slug Room.txt.meta -> Assets/Resources/Dialogue/The Slug Room.txt.meta
+#	renamed:    Assets/Dialogue/Three Beauties.txt -> Assets/Resources/Dialogue/Three Beauties.txt
+#	renamed:    Assets/Dialogue/Three Beauties.txt.meta -> Assets/Resources/Dialogue/Three Beauties.txt.meta
+#	renamed:    Assets/Dialogue/Turin Spring.txt -> Assets/Resources/Dialogue/Turin Spring.txt
+#	renamed:    Assets/Dialogue/Turin Spring.txt.meta -> Assets/Resources/Dialogue/Turin Spring.txt.meta
+#	renamed:    Assets/Dialogue/Wave of Kanagawa.txt -> Assets/Resources/Dialogue/Wave of Kanagawa.txt
+#	renamed:    Assets/Dialogue/Wave of Kanagawa.txt.meta -> Assets/Resources/Dialogue/Wave of Kanagawa.txt.meta
+#	renamed:    Assets/Dialogue/Yakko Adobei.txt -> Assets/Resources/Dialogue/Yakko Adobei.txt
+#	renamed:    Assets/Dialogue/Yakko Adobei.txt.meta -> Assets/Resources/Dialogue/Yakko Adobei.txt.meta
+#	renamed:    Assets/Dialogue/baroque intro.txt -> Assets/Resources/Dialogue/baroque intro.txt
+#	renamed:    Assets/Dialogue/baroque intro.txt.meta -> Assets/Resources/Dialogue/baroque intro.txt.meta
+#	renamed:    Assets/Dialogue/sell.txt -> Assets/Resources/Dialogue/sell.txt
+#	renamed:    Assets/Dialogue/sell.txt.meta -> Assets/Resources/Dialogue/sell.txt.meta
+#	renamed:    Assets/Dialogue/selling.txt -> Assets/Resources/Dialogue/selling.txt
+#	renamed:    Assets/Dialogue/selling.txt.meta -> Assets/Resources/Dialogue/selling.txt.meta
+#	renamed:    Assets/Dialogue/surreal intro.txt -> Assets/Resources/Dialogue/surreal intro.txt
+#	renamed:    Assets/Dialogue/surreal intro.txt.meta -> Assets/Resources/Dialogue/surreal intro.txt.meta
+#	renamed:    Assets/Dialogue/test.txt -> Assets/Resources/Dialogue/test.txt
+#	renamed:    Assets/Dialogue/test.txt.meta -> Assets/Resources/Dialogue/test.txt.meta
+#	renamed:    Assets/Dialogue/ukiyo intro.txt -> Assets/Resources/Dialogue/ukiyo intro.txt
+#	renamed:    Assets/Dialogue/ukiyo intro.txt.meta -> Assets/Resources/Dialogue/ukiyo intro.txt.meta
+#	renamed:    Assets/Sound.meta -> Assets/Resources/Sound.meta
+#	renamed:    Assets/Sound/Baroque Zone Music.meta -> Assets/Resources/Sound/Baroque Zone Music.meta
+#	renamed:    Assets/Sound/Baroque Zone Music/Baroque Clue.wav -> Assets/Resources/Sound/Baroque Zone Music/Baroque Clue.wav
+#	renamed:    Assets/Sound/Baroque Zone Music/Baroque Clue.wav.meta -> Assets/Resources/Sound/Baroque Zone Music/Baroque Clue.wav.meta
+#	renamed:    Assets/Sound/Baroque Zone Music/BassoonRepertoire.mp3 -> Assets/Resources/Sound/Baroque Zone Music/BassoonRepertoire.mp3
+#	renamed:    Assets/Sound/Baroque Zone Music/BassoonRepertoire.mp3.meta -> Assets/Resources/Sound/Baroque Zone Music/BassoonRepertoire.mp3.meta
+#	renamed:    Assets/Sound/Baroque Zone Music/Concerto no 3.mp3 -> Assets/Resources/Sound/Baroque Zone Music/Concerto no 3.mp3
+#	renamed:    Assets/Sound/Baroque Zone Music/Concerto no 3.mp3.meta -> Assets/Resources/Sound/Baroque Zone Music/Concerto no 3.mp3.meta
+#	renamed:    Assets/Sound/Baroque Zone Music/Goldberg Variations.mp3 -> Assets/Resources/Sound/Baroque Zone Music/Goldberg Variations.mp3
+#	renamed:    Assets/Sound/Baroque Zone Music/Goldberg Variations.mp3.meta -> Assets/Resources/Sound/Baroque Zone Music/Goldberg Variations.mp3.meta
+#	renamed:    Assets/Sound/Character SFX.meta -> Assets/Resources/Sound/Character SFX.meta
+#	renamed:    Assets/Sound/Character SFX/FootStep.wav -> Assets/Resources/Sound/Character SFX/FootStep.wav
+#	renamed:    Assets/Sound/Character SFX/FootStep.wav.meta -> Assets/Resources/Sound/Character SFX/FootStep.wav.meta
+#	renamed:    Assets/Sound/Character SFX/Interact.wav -> Assets/Resources/Sound/Character SFX/Interact.wav
+#	renamed:    Assets/Sound/Character SFX/Interact.wav.meta -> Assets/Resources/Sound/Character SFX/Interact.wav.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX.meta -> Assets/Resources/Sound/Hub-Mansion SFX.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Baroque Teleport.wav -> Assets/Resources/Sound/Hub-Mansion SFX/Baroque Teleport.wav
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Baroque Teleport.wav.meta -> Assets/Resources/Sound/Hub-Mansion SFX/Baroque Teleport.wav.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Door Close.mp3 -> Assets/Resources/Sound/Hub-Mansion SFX/Door Close.mp3
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Door Close.mp3.meta -> Assets/Resources/Sound/Hub-Mansion SFX/Door Close.mp3.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Door Open.mp3 -> Assets/Resources/Sound/Hub-Mansion SFX/Door Open.mp3
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Door Open.mp3.meta -> Assets/Resources/Sound/Hub-Mansion SFX/Door Open.mp3.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX/General Sounds.docx -> Assets/Resources/Sound/Hub-Mansion SFX/General Sounds.docx
+#	renamed:    Assets/Sound/Hub-Mansion SFX/General Sounds.docx.meta -> Assets/Resources/Sound/Hub-Mansion SFX/General Sounds.docx.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Surreal Teleport.wav -> Assets/Resources/Sound/Hub-Mansion SFX/Surreal Teleport.wav
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Surreal Teleport.wav.meta -> Assets/Resources/Sound/Hub-Mansion SFX/Surreal Teleport.wav.meta
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Ukiyoe Teleport.wav -> Assets/Resources/Sound/Hub-Mansion SFX/Ukiyoe Teleport.wav
+#	renamed:    Assets/Sound/Hub-Mansion SFX/Ukiyoe Teleport.wav.meta -> Assets/Resources/Sound/Hub-Mansion SFX/Ukiyoe Teleport.wav.meta
+#	renamed:    Assets/Sound/Intro Animation.meta -> Assets/Resources/Sound/Intro Animation.meta
+#	renamed:    Assets/Sound/Intro Animation/Applause.mp3 -> Assets/Resources/Sound/Intro Animation/Applause.mp3
+#	renamed:    Assets/Sound/Intro Animation/Applause.mp3.meta -> Assets/Resources/Sound/Intro Animation/Applause.mp3.meta
+#	renamed:    Assets/Sound/Intro Animation/BirdChirp1.WAV -> Assets/Resources/Sound/Intro Animation/BirdChirp1.WAV
+#	renamed:    Assets/Sound/Intro Animation/BirdChirp1.WAV.meta -> Assets/Resources/Sound/Intro Animation/BirdChirp1.WAV.meta
+#	renamed:    Assets/Sound/Intro Animation/BirdChirp2.WAV -> Assets/Resources/Sound/Intro Animation/BirdChirp2.WAV
+#	renamed:    Assets/Sound/Intro Animation/BirdChirp2.WAV.meta -> Assets/Resources/Sound/Intro Animation/BirdChirp2.WAV.meta
+#	renamed:    Assets/Sound/Intro Animation/Bush Rustling.wav -> Assets/Resources/Sound/Intro Animation/Bush Rustling.wav
+#	renamed:    Assets/Sound/Intro Animation/Bush Rustling.wav.meta -> Assets/Resources/Sound/Intro Animation/Bush Rustling.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/Car Drive By.WAV -> Assets/Resources/Sound/Intro Animation/Car Drive By.WAV
+#	renamed:    Assets/Sound/Intro Animation/Car Drive By.WAV.meta -> Assets/Resources/Sound/Intro Animation/Car Drive By.WAV.meta
+#	renamed:    Assets/Sound/Intro Animation/Car Drive away.wav -> Assets/Resources/Sound/Intro Animation/Car Drive away.wav
+#	renamed:    Assets/Sound/Intro Animation/Car Drive away.wav.meta -> Assets/Resources/Sound/Intro Animation/Car Drive away.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/Car Driving by.wav -> Assets/Resources/Sound/Intro Animation/Car Driving by.wav
+#	renamed:    Assets/Sound/Intro Animation/Car Driving by.wav.meta -> Assets/Resources/Sound/Intro Animation/Car Driving by.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/CarDoor+OpenClose.mp3 -> Assets/Resources/Sound/Intro Animation/CarDoor+OpenClose.mp3
+#	renamed:    Assets/Sound/Intro Animation/CarDoor+OpenClose.mp3.meta -> Assets/Resources/Sound/Intro Animation/CarDoor+OpenClose.mp3.meta
+#	renamed:    Assets/Sound/Intro Animation/Door Close.wav -> Assets/Resources/Sound/Intro Animation/Door Close.wav
+#	renamed:    Assets/Sound/Intro Animation/Door Close.wav.meta -> Assets/Resources/Sound/Intro Animation/Door Close.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/Door Closev2.wav -> Assets/Resources/Sound/Intro Animation/Door Closev2.wav
+#	renamed:    Assets/Sound/Intro Animation/Door Closev2.wav.meta -> Assets/Resources/Sound/Intro Animation/Door Closev2.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/Door Open.wav -> Assets/Resources/Sound/Intro Animation/Door Open.wav
+#	renamed:    Assets/Sound/Intro Animation/Door Open.wav.meta -> Assets/Resources/Sound/Intro Animation/Door Open.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/Graduation Music.mp3 -> Assets/Resources/Sound/Intro Animation/Graduation Music.mp3
+#	renamed:    Assets/Sound/Intro Animation/Graduation Music.mp3.meta -> Assets/Resources/Sound/Intro Animation/Graduation Music.mp3.meta
+#	renamed:    Assets/Sound/Intro Animation/Rain02.wav -> Assets/Resources/Sound/Intro Animation/Rain02.wav
+#	renamed:    Assets/Sound/Intro Animation/Rain02.wav.meta -> Assets/Resources/Sound/Intro Animation/Rain02.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/RainonRoof.wav -> Assets/Resources/Sound/Intro Animation/RainonRoof.wav
+#	renamed:    Assets/Sound/Intro Animation/RainonRoof.wav.meta -> Assets/Resources/Sound/Intro Animation/RainonRoof.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/pomp.wav -> Assets/Resources/Sound/Intro Animation/pomp.wav
+#	renamed:    Assets/Sound/Intro Animation/pomp.wav.meta -> Assets/Resources/Sound/Intro Animation/pomp.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/rain01.wav -> Assets/Resources/Sound/Intro Animation/rain01.wav
+#	renamed:    Assets/Sound/Intro Animation/rain01.wav.meta -> Assets/Resources/Sound/Intro Animation/rain01.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/wind1.wav -> Assets/Resources/Sound/Intro Animation/wind1.wav
+#	renamed:    Assets/Sound/Intro Animation/wind1.wav.meta -> Assets/Resources/Sound/Intro Animation/wind1.wav.meta
+#	renamed:    Assets/Sound/Intro Animation/windy.wav -> Assets/Resources/Sound/Intro Animation/windy.wav
+#	renamed:    Assets/Sound/Intro Animation/windy.wav.meta -> Assets/Resources/Sound/Intro Animation/windy.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX.meta -> Assets/Resources/Sound/Mini-Game SFX.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Audio Guide.xlsx -> Assets/Resources/Sound/Mini-Game SFX/Audio Guide.xlsx
+#	renamed:    Assets/Sound/Mini-Game SFX/Audio Guide.xlsx.meta -> Assets/Resources/Sound/Mini-Game SFX/Audio Guide.xlsx.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General.meta -> Assets/Resources/Sound/Mini-Game SFX/General.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General/Game_Over_Music.mp3 -> Assets/Resources/Sound/Mini-Game SFX/General/Game_Over_Music.mp3
+#	renamed:    Assets/Sound/Mini-Game SFX/General/Game_Over_Music.mp3.meta -> Assets/Resources/Sound/Mini-Game SFX/General/Game_Over_Music.mp3.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General/Game_Win_Music.wav -> Assets/Resources/Sound/Mini-Game SFX/General/Game_Win_Music.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/General/Game_Win_Music.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/General/Game_Win_Music.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General/Select_Sound.mp3 -> Assets/Resources/Sound/Mini-Game SFX/General/Select_Sound.mp3
+#	renamed:    Assets/Sound/Mini-Game SFX/General/Select_Sound.mp3.meta -> Assets/Resources/Sound/Mini-Game SFX/General/Select_Sound.mp3.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General/general_click.mp3 -> Assets/Resources/Sound/Mini-Game SFX/General/general_click.mp3
+#	renamed:    Assets/Sound/Mini-Game SFX/General/general_click.mp3.meta -> Assets/Resources/Sound/Mini-Game SFX/General/general_click.mp3.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General/general_click_slow.wav -> Assets/Resources/Sound/Mini-Game SFX/General/general_click_slow.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/General/general_click_slow.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/General/general_click_slow.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/General/time_running_out.wav -> Assets/Resources/Sound/Mini-Game SFX/General/time_running_out.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/General/time_running_out.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/General/time_running_out.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind.meta -> Assets/Resources/Sound/Mini-Game SFX/Mastermind.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind/correct.wav -> Assets/Resources/Sound/Mini-Game SFX/Mastermind/correct.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind/correct.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Mastermind/correct.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind/incorrect.wav -> Assets/Resources/Sound/Mini-Game SFX/Mastermind/incorrect.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind/incorrect.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Mastermind/incorrect.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind/time_out.wav -> Assets/Resources/Sound/Mini-Game SFX/Mastermind/time_out.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Mastermind/time_out.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Mastermind/time_out.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match1.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/match1.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match1.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/match1.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match2.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/match2.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match2.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/match2.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match3.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/match3.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match3.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/match3.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match4.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/match4.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match4.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/match4.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match5.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/match5.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match5.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/match5.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match6.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/match6.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/match6.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/match6.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/switch_block.wav -> Assets/Resources/Sound/Mini-Game SFX/Match3/switch_block.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Match3/switch_block.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Match3/switch_block.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1)(2).docx -> Assets/Resources/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1)(2).docx
+#	renamed:    Assets/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1)(2).docx.meta -> Assets/Resources/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1)(2).docx.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1).docx -> Assets/Resources/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1).docx
+#	renamed:    Assets/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1).docx.meta -> Assets/Resources/Sound/Mini-Game SFX/Minigame_Sounds_03-28-2016 (1).docx.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream.meta -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream/PipeFlow.wav -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream/PipeFlow.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream/PipeFlow.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream/PipeFlow.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream/Pipe_LockIn_To_Place.wav -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream/Pipe_LockIn_To_Place.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream/Pipe_LockIn_To_Place.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream/Pipe_LockIn_To_Place.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream/Pipe_Rotation.wav -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream/Pipe_Rotation.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Pipe Dream/Pipe_Rotation.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Pipe Dream/Pipe_Rotation.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Baroque Point.wav -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Baroque Point.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Baroque Point.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Baroque Point.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Baroque Wrong.wav -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Baroque Wrong.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Baroque Wrong.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Baroque Wrong.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Surreal Point.wav -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Surreal Point.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Surreal Point.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Surreal Point.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Surreal Wrong.wav -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Surreal Wrong.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Surreal Wrong.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Surreal Wrong.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Point.wav -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Point.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Point.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Point.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Wrong.wav -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Wrong.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Wrong.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Wrong.wav.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Tracer.meta -> Assets/Resources/Sound/Mini-Game SFX/Tracer.meta
+#	renamed:    Assets/Sound/Mini-Game SFX/Tracer/wawa_fail.wav -> Assets/Resources/Sound/Mini-Game SFX/Tracer/wawa_fail.wav
+#	renamed:    Assets/Sound/Mini-Game SFX/Tracer/wawa_fail.wav.meta -> Assets/Resources/Sound/Mini-Game SFX/Tracer/wawa_fail.wav.meta
+#	renamed:    Assets/Sound/Surrealism Zone Music.meta -> Assets/Resources/Sound/Surrealism Zone Music.meta
+#	renamed:    Assets/Sound/Surrealism Zone Music/Gnossienne no 1.mp3 -> Assets/Resources/Sound/Surrealism Zone Music/Gnossienne no 1.mp3
+#	renamed:    Assets/Sound/Surrealism Zone Music/Gnossienne no 1.mp3.meta -> Assets/Resources/Sound/Surrealism Zone Music/Gnossienne no 1.mp3.meta
+#	renamed:    Assets/Sound/Surrealism Zone Music/Gnossienne no 4.mp3 -> Assets/Resources/Sound/Surrealism Zone Music/Gnossienne no 4.mp3
+#	renamed:    Assets/Sound/Surrealism Zone Music/Gnossienne no 4.mp3.meta -> Assets/Resources/Sound/Surrealism Zone Music/Gnossienne no 4.mp3.meta
+#	renamed:    Assets/Sound/Surrealism Zone Music/Surreal Clue.wav -> Assets/Resources/Sound/Surrealism Zone Music/Surreal Clue.wav
+#	renamed:    Assets/Sound/Surrealism Zone Music/Surreal Clue.wav.meta -> Assets/Resources/Sound/Surrealism Zone Music/Surreal Clue.wav.meta
+#	renamed:    Assets/Sound/Surrealism Zone Music/The Devils Trill.mp3 -> Assets/Resources/Sound/Surrealism Zone Music/The Devils Trill.mp3
+#	renamed:    Assets/Sound/Surrealism Zone Music/The Devils Trill.mp3.meta -> Assets/Resources/Sound/Surrealism Zone Music/The Devils Trill.mp3.meta
+#	renamed:    Assets/Sound/UI SFX.meta -> Assets/Resources/Sound/UI SFX.meta
+#	renamed:    Assets/Sound/UI SFX/General Click.wav -> Assets/Resources/Sound/UI SFX/General Click.wav
+#	renamed:    Assets/Sound/UI SFX/General Click.wav.meta -> Assets/Resources/Sound/UI SFX/General Click.wav.meta
+#	renamed:    Assets/Sound/UI SFX/General Select.mp3 -> Assets/Resources/Sound/UI SFX/General Select.mp3
+#	renamed:    Assets/Sound/UI SFX/General Select.mp3.meta -> Assets/Resources/Sound/UI SFX/General Select.mp3.meta
+#	renamed:    Assets/Sound/UI SFX/Important Click.mp3 -> Assets/Resources/Sound/UI SFX/Important Click.mp3
+#	renamed:    Assets/Sound/UI SFX/Important Click.mp3.meta -> Assets/Resources/Sound/UI SFX/Important Click.mp3.meta
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music.meta -> Assets/Resources/Sound/Ukiyo-e Zone Music.meta
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Eastminster.mp3 -> Assets/Resources/Sound/Ukiyo-e Zone Music/Eastminster.mp3
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Eastminster.mp3.meta -> Assets/Resources/Sound/Ukiyo-e Zone Music/Eastminster.mp3.meta
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Finding Movement.mp3 -> Assets/Resources/Sound/Ukiyo-e Zone Music/Finding Movement.mp3
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Finding Movement.mp3.meta -> Assets/Resources/Sound/Ukiyo-e Zone Music/Finding Movement.mp3.meta
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3 -> Assets/Resources/Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3.meta -> Assets/Resources/Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3.meta
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Ukiyo Clue.wav -> Assets/Resources/Sound/Ukiyo-e Zone Music/Ukiyo Clue.wav
+#	renamed:    Assets/Sound/Ukiyo-e Zone Music/Ukiyo Clue.wav.meta -> Assets/Resources/Sound/Ukiyo-e Zone Music/Ukiyo Clue.wav.meta
+#	modified:   Assets/Scenes/Mansion/mansion.unity
+#	deleted:    Assets/Scenes/Minigames/PipeDream/Surrealism.meta
+#	modified:   Assets/Scripts/Env. Scripts/PlayerMovement.cs
+#	modified:   Assets/Scripts/Match3 Scripts/BoardCreation.cs
+#
+
