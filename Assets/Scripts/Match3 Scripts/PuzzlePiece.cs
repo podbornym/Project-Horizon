@@ -44,6 +44,7 @@ public class PuzzlePiece : MonoBehaviour
         allPieces = GameObject.FindGameObjectsWithTag("PuzzlePiece").ToList();
         boardScript = GameObject.Find("Scripts").GetComponent<BoardCreation>();
         //animation.Play("PieceCreation");
+
     }
 
     void OnMouseDrag()
