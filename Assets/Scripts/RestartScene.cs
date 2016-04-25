@@ -23,13 +23,13 @@ public class RestartScene : MonoBehaviour {
             GameObject.Find("Scripts").GetComponent<BoardCreation>().TallyScore();
             float timer = 2;
             timer -= Time.deltaTime;
-            print (timer);
-            if (PersistVars.previousScene != "null")// && timer < 0)
-            {
-                GameObject.Find("GENERALUI").GetComponent<PersistVars>().match3Score = BoardCreation.match3Return;
-                SceneManager.LoadScene(PersistVars.currentScene);
-                GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
-            }
+            print(timer);
+        }
+        if (PersistVars.previousScene != "null")// && timer < 0)
+        {
+            GameObject.Find("GENERALUI").GetComponent<PersistVars>().match3Score = BoardCreation.match3Return;
+            SceneManager.LoadScene(PersistVars.currentScene);
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
     }
 }

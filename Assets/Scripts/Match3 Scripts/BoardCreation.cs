@@ -180,7 +180,7 @@ public class BoardCreation : MonoBehaviour
         // Once time is up, disallow player movement, allow the player to continue
         if(seconds <= 0)
         {
-            dragging = true;
+            //dragging = true;
             spawning = true;
             timer.color = Color.red;
             timer.text = "Time's Up!";
@@ -794,7 +794,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 1)
             {
-				puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
                 match3Return = (1 - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
@@ -804,7 +804,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 2 && percentage > 1)
             {
-				puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
                 match3Return = (.9f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
@@ -814,7 +814,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage <= 3 && percentage > 2)
             {
-				puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
                 match3Return = (.8f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
@@ -824,7 +824,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage >= 4 && percentage > 3)
             {
-				puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
                 match3Return = (.7f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
@@ -834,7 +834,7 @@ public class BoardCreation : MonoBehaviour
 
             if (percentage > 4)
             {
-				puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
                 match3Return = (.6f - dragPenalty) * 100 + 10;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
@@ -843,7 +843,7 @@ public class BoardCreation : MonoBehaviour
             }
 			else
 			{
-				puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
 				match3Return = (.3f - dragPenalty) * 100 + 10;
 				warningText.color = Color.green;
 				warningText.text = "Your score was: " + match3Return + "%";
