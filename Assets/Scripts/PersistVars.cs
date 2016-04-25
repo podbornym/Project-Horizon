@@ -167,15 +167,15 @@ public class PersistVars : MonoBehaviour {
             switch (UnityEngine.Random.Range(0, 3))
             {
                 case 0:
-                    AudioClip temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 4", typeof(AudioClip)) as AudioClip;
+                    AudioClip temp = Resources.Load("Sound/Surrealism Zone Music/Gnossienne no 4", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 1:
-                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 1", typeof(AudioClip)) as AudioClip;
+                    temp = Resources.Load("Sound/Surrealism Zone Music/Gnossienne no 1", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 2:
-                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/The Devils Trill", typeof(AudioClip)) as AudioClip;
+                    temp = Resources.Load("Sound/Surrealism Zone Music/The Devils Trill", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
             }
@@ -187,15 +187,15 @@ public class PersistVars : MonoBehaviour {
             switch (UnityEngine.Random.Range(0, 3))
             {
                 case 0:
-                    AudioClip temp = Resources.Load("Assets/Sound/Baroque Zone Music/Concerto no 3", typeof(AudioClip)) as AudioClip;
+                    AudioClip temp = Resources.Load("Sound/Baroque Zone Music/Concerto no 3", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 1:
-                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/BassoonRepertoire", typeof(AudioClip)) as AudioClip;
+                    temp = Resources.Load("Sound/Baroque Zone Music/BassoonRepertoire", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 2:
-                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/Goldberg Variations", typeof(AudioClip)) as AudioClip;
+                    temp = Resources.Load("Sound/Baroque Zone Music/Goldberg Variations", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
             }

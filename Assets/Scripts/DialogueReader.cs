@@ -49,6 +49,7 @@ public class DialogueReader : MonoBehaviour
     public bool inMansion = true;
     public bool cAnswer;
 	public int blkPrice;
+    public AudioClip clueClick;
 
     // Use this for initialization
     void Start ()
@@ -147,8 +148,11 @@ public class DialogueReader : MonoBehaviour
             if (i == 1)
             {
                 clueOne = GameObject.Find("clue" + (i + (paintNum - 1) * 6).ToString());
-                if(clueOne != null)
+                if (clueOne != null)
+                {
                     clueOne.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                }
             }
             if (i == 2)
             {
@@ -253,8 +257,6 @@ public class DialogueReader : MonoBehaviour
                         currentWord += word[j];
                     }
                 }
-                print(currentWord == "#SetWoodStock");
-                print(currentWord);
                 switch (currentWord)
                 {
                     case "#SetDialogue":
