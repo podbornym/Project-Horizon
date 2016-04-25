@@ -274,46 +274,52 @@ public class PlayerMovement : MonoBehaviour {
                     myAnimator.SetInteger("Move", 1);
                     break;
                 case "door_0S":
+                    myAnimator.SetBool("DoorWalkIn", true);
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_0";
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 1");
+                    StartCoroutine(doorZeroS());
                     notMoving();
-                    SceneManager.LoadScene("S_0");
                     break;
                 case "door_1S":
+                    myAnimator.SetBool("DoorWalkIn", true);
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_1";
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 2");
+                    StartCoroutine(doorOneS());
                     notMoving();
-                    SceneManager.LoadScene("S_1");
                     break;
                 case "door_2S":
+                    myAnimator.SetBool("DoorWalkIn", true);
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_2";
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 3");
+                    StartCoroutine(doorTwoS());
                     notMoving();
-                    SceneManager.LoadScene("S_2");
                     break;
                 case "door_3S":
+                    myAnimator.SetBool("DoorWalkIn", true);
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_3";
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 4");
                     notMoving();
-                    SceneManager.LoadScene("S_3");
+                    StartCoroutine(doorThreeS());
                     break;
                 case "door_4S":
+                    myAnimator.SetBool("DoorWalkIn", true);
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_4";
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 5");
+                    StartCoroutine(doorFourS());
                     notMoving();
-                    SceneManager.LoadScene("S_4");
                     break;
                 case "door_5S":
+                    myAnimator.SetBool("DoorWalkIn", true);
                     PersistVars.previousScene = "SurrealistZone";
                     PersistVars.currentScene = "S_5";
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Studio 6");
+                    StartCoroutine(doorFiveS());
                     notMoving();
-                    SceneManager.LoadScene("S_5");
                     break;
                 //Baroque options
                 case "Bstairs1":
@@ -516,6 +522,36 @@ public class PlayerMovement : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         GameObject.Find("GENERALUI").GetComponent<AudioSource>().clip = null;
         SceneManager.LoadScene("SurrealistZone");
+    }
+    IEnumerator doorZeroS()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("S_0");
+    }
+    IEnumerator doorOneS()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("S_1");
+    }
+    IEnumerator doorTwoS()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("S_2");
+    }
+    IEnumerator doorThreeS()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("S_3");
+    }
+    IEnumerator doorFourS()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("S_4");
+    }
+    IEnumerator doorFiveS()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("S_5");
     }
 }
 
