@@ -43,6 +43,7 @@ public class traceScriptTwo : MonoBehaviour {
     public Sprite B;
     public Sprite C;
     public Sprite D;
+    public Sprite none;
 
     // Help and reset stuff
     public Text directions;
@@ -137,7 +138,7 @@ public class traceScriptTwo : MonoBehaviour {
             {
                 CalculateScore();
                 DisplayScore();
-                resetButton.interactable = false;
+                //resetButton.interactable = false;
                 continueButton.interactable = true;
                 print("continueButton not interactable");
             }
@@ -154,6 +155,8 @@ public class traceScriptTwo : MonoBehaviour {
             timeRemaining = timeRemainingTotal;
             gameObject.GetComponent<Renderer>().enabled = true;
             rend.enabled = true;
+            successRatio = 0;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = none;
         }
 
         else
@@ -165,15 +168,15 @@ public class traceScriptTwo : MonoBehaviour {
     // Display the corresponding Grade on-screen
     public void DisplayScore()
     {
-        if (successRatio>=.90)
+        if (successRatio>=.80)
             scoreCircle.GetComponent<SpriteRenderer>().sprite = A;
-        if (successRatio >= .80 && successRatio < .90)
-            scoreCircle.GetComponent<SpriteRenderer>().sprite = B;
         if (successRatio >= .70 && successRatio < .80)
-            scoreCircle.GetComponent<SpriteRenderer>().sprite = C;
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = B;
         if (successRatio >= .60 && successRatio < .70)
+            scoreCircle.GetComponent<SpriteRenderer>().sprite = C;
+        if (successRatio >= .50 && successRatio < .60)
             scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
-        if (successRatio < .60)
+        if (successRatio < .50)
             scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
     }
 
