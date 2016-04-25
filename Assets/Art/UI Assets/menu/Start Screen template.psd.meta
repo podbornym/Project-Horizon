@@ -1,0 +1,290 @@
+fileFormatVersion: 2
+guid: e072afaa22b0d6347988bc788523455e
+timeCreated: 1461621956
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Start Screen template_0
+    21300002: Start Screen template_9
+    21300004: Start Screen template_10
+    21300006: Start Screen template_11
+    21300008: Start Screen template_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Start Screen template_0
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 537
+        width: 873
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 257.5, y: -141.5}
+        - {x: 257.5, y: -41.5}
+        - {x: 176.5, y: -39.5}
+        - {x: 176.5, y: 41.5}
+        - {x: 35.5, y: -37.5}
+        - {x: 46.5, y: 17.5}
+        - {x: 32.5, y: 45.5}
+        - {x: -5.5, y: 45.5}
+        - {x: -40.5, y: 31.5}
+        - {x: -73.5, y: 3.5}
+        - {x: -170.5, y: -67.5}
+        - {x: -171.5, y: -77.5}
+        - {x: -166.5, y: -79.5}
+        - {x: -275.5, y: -143.5}
+        - {x: -202.5, y: -98.5}
+        - {x: -184.5, y: -87.5}
+        - {x: -172.5, y: -48.5}
+        - {x: -195.5, y: -18.5}
+        - {x: -247.5, y: -10.5}
+        - {x: -325.5, y: -42.5}
+        - {x: -328.5, y: -66.5}
+        - {x: -328.5, y: -176.5}
+        - {x: -320.5, y: -179.5}
+        - {x: 209.5, y: -179.5}
+      - - {x: 426.5, y: -108.5}
+        - {x: 373.5, y: -136.5}
+        - {x: 436.5, y: -101.5}
+        - {x: 436.5, y: -66.5}
+        - {x: 424.5, y: -53.5}
+        - {x: 346.5, y: -80.5}
+        - {x: 387.5, y: -56.5}
+        - {x: 397.5, y: 8.5}
+        - {x: 380.5, y: 11.5}
+        - {x: 334.5, y: 11.5}
+        - {x: 267.5, y: -41.5}
+        - {x: 236.5, y: -123.5}
+        - {x: 236.5, y: -179.5}
+        - {x: 402.5, y: -179.5}
+        - {x: 436.5, y: -119.5}
+        - {x: 436.5, y: -103.5}
+        - {x: 432.5, y: -103.5}
+      - - {x: 189.5, y: -8.5}
+        - {x: 177.5, y: -16.5}
+        - {x: 177.5, y: -36.5}
+        - {x: 186.5, y: -41.5}
+        - {x: 200.5, y: -41.5}
+        - {x: 215.5, y: -33.5}
+        - {x: 215.5, y: -9.5}
+        - {x: 208.5, y: -8.5}
+      - - {x: -418.5, y: 179.5}
+        - {x: -436.5, y: 165.5}
+        - {x: -436.5, y: 4.5}
+        - {x: -415.5, y: -9.5}
+        - {x: -379.5, y: -9.5}
+        - {x: -379.5, y: 179.5}
+      - - {x: -340.5, y: 54.5}
+        - {x: -357.5, y: 51.5}
+        - {x: -375.5, y: 20.5}
+        - {x: -375.5, y: -9.5}
+        - {x: -339.5, y: -9.5}
+        - {x: -324.5, y: 9.5}
+        - {x: -324.5, y: 54.5}
+      - - {x: -318.5, y: 130.5}
+        - {x: -318.5, y: -7.5}
+        - {x: -308.5, y: -9.5}
+        - {x: -270.5, y: -9.5}
+        - {x: -270.5, y: 130.5}
+      - - {x: -235.5, y: 129.5}
+        - {x: -242.5, y: 130.5}
+        - {x: -264.5, y: 130.5}
+        - {x: -264.5, y: 109.5}
+        - {x: -259.5, y: 105.5}
+        - {x: -264.5, y: 30.5}
+        - {x: -264.5, y: -9.5}
+        - {x: -236.5, y: -9.5}
+        - {x: -225.5, y: -4.5}
+        - {x: -215.5, y: 7.5}
+        - {x: -215.5, y: 114.5}
+      - - {x: -169.5, y: 129.5}
+        - {x: -171.5, y: 131.5}
+        - {x: -213.5, y: 131.5}
+        - {x: -213.5, y: 5.5}
+        - {x: -212.5, y: -8.5}
+        - {x: -157.5, y: -8.5}
+        - {x: -155.5, y: -6.5}
+        - {x: -155.5, y: 9.5}
+        - {x: -157.5, y: 11.5}
+      - - {x: -161.5, y: 131.5}
+        - {x: -161.5, y: -5.5}
+        - {x: -160.5, y: -8.5}
+        - {x: -96.5, y: -8.5}
+        - {x: -95.5, y: -6.5}
+        - {x: -95.5, y: 131.5}
+      - - {x: -375.5, y: 179.5}
+        - {x: -375.5, y: 139.5}
+        - {x: -371.5, y: 117.5}
+        - {x: -324.5, y: 117.5}
+        - {x: -324.5, y: 157.5}
+        - {x: -325.5, y: 169.5}
+        - {x: -342.5, y: 179.5}
+    - name: Start Screen template_9
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 190
+        width: 326
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 125, y: -115}
+        - {x: 139, y: -98}
+        - {x: 160, y: -61}
+        - {x: 163, y: -41}
+        - {x: 163, y: 28}
+        - {x: 157, y: 50}
+        - {x: 150, y: 65}
+        - {x: 130, y: 97}
+        - {x: 117, y: 112}
+        - {x: 108, y: 123}
+        - {x: 81, y: 142}
+        - {x: 60, y: 151}
+        - {x: 43, y: 160}
+        - {x: 18, y: 162}
+        - {x: 7, y: 164}
+        - {x: -9, y: 164}
+        - {x: -18, y: 160}
+        - {x: -37, y: 159}
+        - {x: -75, y: 148}
+        - {x: -105, y: 127}
+        - {x: -143, y: 85}
+        - {x: -151, y: 71}
+        - {x: -158, y: 48}
+        - {x: -163, y: 30}
+        - {x: -163, y: -39}
+        - {x: -162, y: -47}
+        - {x: -147, y: -86}
+        - {x: -116, y: -124}
+        - {x: -76, y: -152}
+        - {x: -41, y: -164}
+        - {x: 40, y: -164}
+        - {x: 57, y: -160}
+        - {x: 69, y: -155}
+        - {x: 94, y: -142}
+    - name: Start Screen template_10
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 26
+        width: 286
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: 32}
+        - {x: 140, y: 39}
+        - {x: 110, y: 62}
+        - {x: -109, y: 62}
+        - {x: -121, y: 60}
+        - {x: -143, y: 32}
+        - {x: -143, y: -27}
+        - {x: -140, y: -40}
+        - {x: -113, y: -60}
+        - {x: -104, y: -62}
+        - {x: 105, y: -62}
+        - {x: 111, y: -61}
+        - {x: 143, y: -41}
+    - name: Start Screen template_11
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 26
+        width: 286
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: 32}
+        - {x: 140, y: 39}
+        - {x: 110, y: 62}
+        - {x: -109, y: 62}
+        - {x: -121, y: 60}
+        - {x: -143, y: 32}
+        - {x: -143, y: -27}
+        - {x: -140, y: -40}
+        - {x: -113, y: -60}
+        - {x: -104, y: -62}
+        - {x: 105, y: -62}
+        - {x: 111, y: -61}
+        - {x: 143, y: -41}
+    - name: Start Screen template_12
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 26
+        width: 286
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: 32}
+        - {x: 140, y: 39}
+        - {x: 110, y: 62}
+        - {x: -109, y: 62}
+        - {x: -121, y: 60}
+        - {x: -143, y: 32}
+        - {x: -143, y: -27}
+        - {x: -140, y: -40}
+        - {x: -113, y: -60}
+        - {x: -104, y: -62}
+        - {x: 105, y: -62}
+        - {x: 111, y: -61}
+        - {x: 143, y: -41}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
