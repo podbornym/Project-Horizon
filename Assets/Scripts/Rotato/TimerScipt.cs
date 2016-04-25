@@ -59,10 +59,10 @@ public class TimerScipt : MonoBehaviour {
 
 	public void continueButtonClicked()
 	{
-		if (PersistVars.previousScene != "null") 
+		if (PersistVars.currentScene != "null") 
 		{
 			GameObject.Find ("GENERALUI").GetComponent<PersistVars> ().rotatoScore = rotatoTotalScore;
-			SceneManager.LoadScene (PersistVars.previousScene);
+			SceneManager.LoadScene (PersistVars.currentScene);
 			GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = true;
 		}
 
@@ -115,19 +115,19 @@ public class TimerScipt : MonoBehaviour {
 		//GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 		//GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
 
-        if ((posScore < 9) && (zTotalScore < 15))
+        if ((posScore < 8) && (zTotalScore < 12))
         {
             print("You have done 'A' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
         }
-        else if ((posScore < 15) && (zTotalScore < 23))
+        else if ((posScore < 12) && (zTotalScore < 18))
         {
             print("You have done 'B' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeB;
         }
-        else if ((posScore < 20) && (zTotalScore < 30))
+        else if ((posScore < 16) && (zTotalScore < 24))
         {
             print("You have done 'C' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;

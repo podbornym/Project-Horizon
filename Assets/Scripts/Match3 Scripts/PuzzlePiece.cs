@@ -20,6 +20,8 @@ public class PuzzlePiece : MonoBehaviour
 
     public float timeDragging = 0;
 
+	public AudioClip slide;
+
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, new Vector3(baseX, baseY, 0), 0.1f);
@@ -64,6 +66,7 @@ public class PuzzlePiece : MonoBehaviour
             {
                 if (Vector2.Distance(transform.position, allPieces[i].transform.position) < 0.45f)
                 {
+					gameObject.GetComponent<AudioSource> ().PlayOneShot (slide, 1.0f);
                     float newBaseX = allPieces[i].GetComponent<PuzzlePiece>().baseX;
                     float newBaseY = allPieces[i].GetComponent<PuzzlePiece>().baseY;
                     allPieces[i].GetComponent<PuzzlePiece>().baseX = baseX;

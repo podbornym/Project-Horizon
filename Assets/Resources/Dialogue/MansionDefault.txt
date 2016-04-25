@@ -10,4 +10,4 @@
 Then we can take it to the black market and sell it.
 Good luck on your painting!
 #SetPlayer
-. #quit
+#quit 
