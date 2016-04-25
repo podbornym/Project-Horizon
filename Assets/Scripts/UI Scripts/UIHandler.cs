@@ -109,6 +109,7 @@ public class UIHandler : MonoBehaviour {
             PersistVars.Baroque = false;
             GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
             ExpandMenu();
+            gameObject.GetComponent<AudioSource>().clip = null;
             SceneManager.LoadScene("mansion");
         }
     }

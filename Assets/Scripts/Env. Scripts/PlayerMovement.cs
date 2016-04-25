@@ -502,16 +502,19 @@ public class PlayerMovement : MonoBehaviour {
     IEnumerator UkiyoPortalEnter()
     {
         yield return new WaitForSeconds(3f);
+        GameObject.Find("GENERALUI").GetComponent<AudioSource>().clip = null;
         SceneManager.LoadScene("Ukiyo-eZone");
     }
     IEnumerator BaroquePortalEnter()
     {
         yield return new WaitForSeconds(3f);
+        GameObject.Find("GENERALUI").GetComponent<AudioSource>().clip = null;
         SceneManager.LoadScene("BaroqueZone");
     }
     IEnumerator SurrealismPortalEnter()
     {
         yield return new WaitForSeconds(3f);
+        GameObject.Find("GENERALUI").GetComponent<AudioSource>().clip = null;
         SceneManager.LoadScene("SurrealistZone");
     }
 }
