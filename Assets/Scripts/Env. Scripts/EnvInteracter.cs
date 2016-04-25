@@ -15,10 +15,14 @@ public class EnvInteracter : MonoBehaviour {
     public GameObject player;
     public GameObject ukiyo;
     public GameObject baroque;
+    public GameObject TopElevator;
+    public GameObject BottomElevator;
     public GameObject surrealism;
     private Animator ukioyAnimator;
     private Animator baroqueAnimator;
     private Animator surrealismAnimator;
+    private Animator TElevator;
+    private Animator BElevator;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +37,10 @@ public class EnvInteracter : MonoBehaviour {
                 baroqueAnimator = baroque.GetComponent<Animator>();
                 surrealism = GameObject.Find("Surrealism");
                 surrealismAnimator = surrealism.GetComponent<Animator>();
+
+                TElevator = TopElevator.GetComponent<Animator>();
+
+                BElevator = TopElevator.GetComponent<Animator>();
             }
             catch
             {
@@ -53,7 +61,7 @@ public class EnvInteracter : MonoBehaviour {
             {
                 Cursor.SetCursor(rightArrow, hotSpot, cursorMode);
             }
-            else if (gameObject.tag == "portal")
+            else if (gameObject.tag == "portal"|| gameObject.tag == "BaroquePortal"||gameObject.tag == "SurrealismPortal")
             {
                 Cursor.SetCursor(pinkCursor, hotSpot, cursorMode);
             }
@@ -73,7 +81,7 @@ public class EnvInteracter : MonoBehaviour {
     {
         if(!EventSystem.current.IsPointerOverGameObject())
         {
-            if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator" || gameObject.tag == "portal")
+            if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator" || gameObject.tag == "ElevatorBottom")
             {
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
             }
@@ -88,42 +96,74 @@ public class EnvInteracter : MonoBehaviour {
                     player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, 5);
                 }
             }
-            if (gameObject.tag == "portal")
+            else if (gameObject.tag == "portal")
             {
                 ukioyAnimator.SetInteger("OpenUkiyo-eDoor", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
-                ukioyAnimator.SetInteger("UkiyoIsOpen", 100);
-
-                StartCoroutine(Portal());
+                StartCoroutine(UkiyoPortal());
 
             }
-            if (gameObject.tag == "BaroquePortal")
+            else if (gameObject.tag == "BaroquePortal")
             {
                 baroqueAnimator.SetInteger("BaroqueIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
-                baroqueAnimator.SetInteger("BaroqueIsOpening", 100);
-
-                StartCoroutine(Portal());
+                StartCoroutine(BaroquePortal());
 
             }
-            if (gameObject.tag == "SurrealismPortal")
+            else if (gameObject.tag == "SurrealismPortal")
             {
                 surrealismAnimator.SetInteger("SurrealismIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
-                surrealismAnimator.SetInteger("SurrealismIsOpen", 100);
-
-                StartCoroutine(Portal());
+                StartCoroutine(SurrealismPortal());
 
             }
+            /*else if(gameObject.tag == "elevator")
+            {
+                //TElevator.SetInteger("Elevator", 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                StartCoroutine(ElevatorTop());
+            }
+            else if (gameObject.tag == "ElevatorBottom")
+            {
+                BElevator.SetInteger("ElevatorBottom", 1);
+                player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
+                StartCoroutine(ElevatorBottom());
+            }*/
             /* else
              {
                  player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
              }*/
         }
     }
-    IEnumerator Portal()
+    IEnumerator BaroquePortal()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.09f);
+        baroqueAnimator.SetInteger("BaroqueIsOpen", 100);
 
+
+    }
+    IEnumerator UkiyoPortal()
+    {
+        yield return new WaitForSeconds(1.09f);
+        ukioyAnimator.SetInteger("UkiyoIsOpen", 100);
+
+
+    }
+    IEnumerator SurrealismPortal()
+    {
+        yield return new WaitForSeconds(1.09f);
+        surrealismAnimator.SetInteger("SurrealismIsOpen", 100);
+
+
+    }
+    IEnumerator ElevatorTop()
+    {
+        yield return new WaitForSeconds(1.09f);
+        TElevator.SetInteger("Elevator", -1);
+    }
+    IEnumerator ElevatorBottom()
+    {
+        yield return new WaitForSeconds(1.09f);
+        TElevator.SetInteger("ElevatorBottom", -1);
     }
 }
