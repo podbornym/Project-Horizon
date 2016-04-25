@@ -179,6 +179,13 @@ public class DialogueReader : MonoBehaviour
             }
         }
         muse = GameObject.FindGameObjectWithTag("muse");
+        if(!isTalking)
+        {
+            if(muse != null)
+            {
+                muse.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
     }
 
     void FindClue()
