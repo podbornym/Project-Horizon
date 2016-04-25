@@ -32,15 +32,17 @@ public class PipeDreamManager : MonoBehaviour {
 
     void Awake()
     {
-        /*if (GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled == true)
-        {
-            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
-        }*/
+        
         //CreateGrid();
     }
 	// Use this for initialization
 	void Start () {
-        
+
+        /*if (GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled == true)
+        {
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        }*/
+
         StartCoroutine(Flow());
         if (end == null)
         {
@@ -105,14 +107,6 @@ public class PipeDreamManager : MonoBehaviour {
         }
     }
 
-    public void continueButtonClicked()
-    {
-        if (PersistVars.previousScene != "null")
-        {
-            SceneManager.LoadScene(PersistVars.previousScene);
-        }
-    }
-
     public void GameOver()
     {
         gameRunning = false;
@@ -124,6 +118,7 @@ public class PipeDreamManager : MonoBehaviour {
         {
             GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
             GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+            pipeDreamReturn = 0.6f;
             print("D");
         }
         else if (hitTile == true)
@@ -132,25 +127,22 @@ public class PipeDreamManager : MonoBehaviour {
             {
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
+                pipeDreamReturn = 1.0f;
                 print("A");
             }
             else if (clicks <= minimum + 4)
             {
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
+                pipeDreamReturn = 0.8f;
                 print("B");
-            }
-            else if (clicks <= minimum + 8)
-            {
-                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
-                print("C");
             }
             else
             {
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
-                print("D");
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
+                pipeDreamReturn = 0.7f;
+                print("C");
             }
         }
     }
