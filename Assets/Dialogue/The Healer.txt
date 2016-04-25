@@ -1,0 +1,195 @@
+@Start
+#SetDialogue #SetSurrealismMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Sculpture #option2Text Metal #option3Text Artist #option4Text Magritte  #option5Text Location  #option6Text Date
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> What can you tell me about this sculpture?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b>This particular piece is titled, <i>The Healer</i>.
+Would you like to try to sculpt it?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Could you tell me about this sculpture?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b>When the mood strikes me.
+#SetPlayer
+<b>Ren:</b> Is it striking you now?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> No.
+<b>Ren:</b> (I'll wander around for a bit)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Do you remember what metal the artist used to create <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> I do! It's bronze!
+Would you like to cast a copy of your own?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> <i>The Healer</i> looks like it's made of metal. What kind of metal is it?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Copper.
+<b>Ren:</b> Wouldn't it be green if it were copper?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Ah! I suppose you're right. Hmmm. Let me think a bit...
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> Can you tell me who sculpted <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Rene...
+#SetPlayer
+<b>Ren:</b> Rene who?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Magritte. Rene Magritte.
+Do you think you're ready to sculpt?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Do you know who sculpted <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Eventually I will.
+#SetPlayer
+<b>Ren:</b> I figured.
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Catching on are we?
+#SetPlayer
+<b>Ren:</b> (I think I'll go for a walk...)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Can you tell me more about Rene Magritte?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> He made living producing fakes of Van Gogh and Picasso.
+So, ready to make like Magritte and make a copy?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> Is there anything else you can tell me about Rene Magritte?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Are you sure YOU can't tell me more about him?
+#SetPlayer
+<b>Ren:</b> I...what? No...
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Really? You two have a bit in common...
+#SetPlayer
+<b>Ren:</b> I'll...be back later...
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Where did Magritte create <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> In Belgium, of course!
+Are you ready to re-create the sculpture?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> Where did Magritte create <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Waffles! Fries! Where's the syrup?
+#SetPlayer
+<b>Ren:</b> I'll be back after you've had breakfast...
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> Do you remember when Magritte sculpted <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> 1964? No, really! Maybe? I don't know. I don't remmebr much of the 60's, man...
+So. How about a mimicked sculpture?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> When did Magritte sculpt <i>The Healer</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> 1964?
+#SetPlayer
+<b>Ren:</b> I'll come back after you've had time to think...
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

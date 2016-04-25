@@ -1,0 +1,194 @@
+@Start
+#SetDialogue #SetSurrealismMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Media #option3Text Artist #option4Text Collage  #option5Text Gouache  #option6Text Date
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> This is the painting I need to know more about.
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b>Ah, yes! Well, this piece is titled, <i>The Slug Room</i>. It
+is not simply a painting, however.
+I think you might enjoy trying to recreate it. Interested?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Can you tell me about a surrealist painting?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b>Probably. I know quite a bit about surrealist art.
+#SetPlayer
+<b>Ren:</b> I suppose I should be more specific...
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> ...
+<b>Ren:</b> (I should show it the painting.)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Do you remember what media the artist used to create <i>The Slug Room</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Yes, I do. The artist used Gouache, tempera, ink, and paper to create a surrealist collage.
+Would you like to try to re-create the piece?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> What did you mean when you said <i>The Slug Room</i> piece is not simply a painting?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Simply that multiple media were used to create <i>The Slug Room</i>.
+<b>Ren:</b> What do you mean?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> You want a list? Come back later and I'll see if I can remember.
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> Do you remember the artist behind the creation of <i>The Slug Room</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Behind! Where?
+#SetPlayer
+<b>Ren:</b> Uh, I meant who created <i>The Slug Room</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Why didn't you say so? Talking about artists lurking behind...his name was Max Ernst.
+Say! Would you like to re-create the piece?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who is the artist that created <i>The Slug Room</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> 1920.
+#SetPlayer
+<b>Ren:</b> The artist's name was 1920?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Yes!
+#SetPlayer
+<b>Ren:</b> (I'll have to come back later. The muse seems to be preoccupied...)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> So...can you tell me more about surrealist collage?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Certainly! Max Ernst invented the technique of creating new realities using cut-out photographs from existing print media. 
+Ready to barroomf a copy of the piece?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> Can you tell me more about surrealist collage?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> SQUEEEEEEEEEEEEEK!
+#SetPlayer
+<b>Ren:</b> Excuse me?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Don't diggle! Merun amuf to parley. Your red mizzles aren't candunce.
+#SetPlayer
+<b>Ren:</b> I'll, uh, be back later.
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Can you tell me more about gouache as a medium?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Gouache is a water based paint that dries opaque. It used to be used in graphics design due to how fast it dries.
+Take a tube and try your hand with it!
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> What is gouache?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Fantastic to bathe in. Excuse me, I must go at once.
+#SetPlayer
+<b>Ren:</b> Bye?
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> can you remember when the piece was made?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> 1920!
+Take a go at re-creating the masterpiece! 
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> I forgott to ask; when was <i>The Slug Room</i> created?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Oh! 1891-1976! No... that isn't right. My stupendous mind has magnificently failed me. Come egonis in a flump.
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

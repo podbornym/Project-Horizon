@@ -1,0 +1,217 @@
+@Start
+#SetDialogue #SetUkiyoMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Print #option2Text Figure #option3Text Artist #option4Text Details #option5Text Inking #option6Text History
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> So, what else can you tell me about this print?
+#SetUkiyoMuse
+<b>Nasu:</b> It was created in June of 1794.
+It is a polychrome woodblock print, printed on white mica paper.
+I think you might enjoy trying to recreate it. Interested?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Can you tell me about this print?
+#SetUkiyoMuse
+<b>Nasu:</b> Ah yes, <i>Yakko Edobei.</i>
+The man on this print appears very angry indeed.
+#SetPlayer
+<b>Ren:</b> (Doesn't look like he wants to talk. I should show him something to spark his interest.)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Remember anything else about the "angry man"?"
+#SetUkiyoMuse
+<b>Nasu:</b> Ah, yes! The actor's man is Otani Onijii III.
+Here, he is depicted as Yakko Edobei.
+#SetPlayer
+<b>Ren:</b> Who is that?
+#SetUkiyoMuse
+<b>Nasu:</b> Yakko Edobei was a character in the play <i>The Colored Reins of Loving Wife</i>.
+Would you like to try recreate the expression seen here on "Yakko"?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> Who is the man depicted on the print?
+#SetUkiyoMuse
+<b>Nasu:</b> This print shows a Kabuki actor, a common theme for Ukiyo-e prints at the time.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> Maybe later. Can't really think of anything else to say...
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> So, what else can you tell me about this mystery artist?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, historians have analyzed many prints from the time.
+It appears as though this specific artist was active from 1774 to 1795.
+#SetPlayer
+<b>Ren:</b> That's quite a long time.
+#SetUkiyoMuse
+<b>Nasu:</b> Yes it was.
+The artist here was called by their pen-name, "Toshusai Sharaku."
+There have been 140 prints established as Shakaru's making.
+Would you like to try and create something like this mysterious man?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who is credited for the making of this print?
+#SetUkiyoMuse
+<b>Nasu:</b> He has no known identity.
+Historians have never discovered the true creator of this work.
+#SetPlayer
+<b>Ren:</b> Very interesting indeed!
+#SetUkiyoMuse
+<b>Nasu:</b> Hmm, yes, if you say so.
+#SetPlayer
+<b>Ren:</b> Thanks... (There's gotta be something around here to get him talking...)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Any more details about this print?
+#SetUkiyoMuse
+<b>Nasu:</b> This prints details a yakko, manservant used by samurai.
+However, this was no ordinary manservant. 
+This yakko here was used by samurai to perform many violent, cruel deeds
+The artist here portrays the menacing character with outstrecthed hands and a leering, devil-like face.
+#SetPlayer
+<b>Ren:</b> Wow, doesn't sound like a good dude.
+#SetUkiyoMuse
+<b>Nasu:</b> While the yakko was not, the actor protraying him was.
+In fact, that is why actors often made it on ukiyo-e prints, publicism.
+You should try to recreate the sterness of the features seen here.
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> So, tell me, what do you know about this print?
+#SetUkiyoMuse
+<b>Nasu:</b> As you can see, it is colored, which was a very tedious process during the ukiyo-e period.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> Nope. At least for now...
+#SetPlayer
+<b>Ren:</b> Maybe I'll come back later...
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Know anything else about the wood blocks?
+#SetUkiyoMuse
+<b>Nasu:</b> The wooden blocks were brought to a <i>horoshi,</i> or woodcarver.
+They would carve away relief lines of the image for inking.
+Then a <i>surushi</i> (printer) would produce the print with the woodblocks.
+Do you want to try for yourself?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> What do the artists use for these prints?
+#SetUkiyoMuse
+<b>Nasu:</b> It starts off with a series of woodblocks.
+Typically the type of wood used was cherrywood.
+There was more to this, but I can't recall what.
+#SetPlayer
+<b>Ren:</b> I'll come back later then.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> What else can you tell me about the period?
+#SetUkiyoMuse
+<b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
+But it declined as the century ended, being seen as both old-fashioned and requiring too much effort.
+Perhaps you'd like to test your knowledge?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> What can you tell me about this time period?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the Ukiyo-e art pieces depicted the entertainments of Edo in the beginning.
+This included amusements such as coutesan and kabuki actors.
+I know of more, but it's a bit foggy right now. Come back later.
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change prints?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous print. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

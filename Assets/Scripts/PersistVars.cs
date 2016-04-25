@@ -133,34 +133,30 @@ public class PersistVars : MonoBehaviour {
         }
 
         // Statements to detect what background music to play
-        if(Ukiyo)
+        if(Ukiyo && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
             audio.clip = ukiyoMusic;
             audio.Play();//GetComponent<AudioSource>().Play();
-            audio.loop = true;
         }
-        if(Surreal)
+        if (Surreal && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
             audio.clip = surrealMusic;
             audio.Play();//GetComponent<AudioSource>().Play();
-            audio.loop = true;
         }
-        if(Baroque)
+        if (Baroque && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
             audio.clip = baroqueMusic;
             audio.Play();//GetComponent<AudioSource>().Play();
-            audio.loop = true;
         }
-        /*else
+        if (Baroque == false && Ukiyo == false && Surreal == false && gameObject.GetComponent<AudioSource>().isPlaying == false)
         {
-            gameObject.GetComponent<AudioSource>().clip = mansionMusic;
-            GetComponent<AudioSource>().Play();
-            print(GetComponent<AudioSource>().isPlaying);
-            gameObject.GetComponent<AudioSource>().loop = true;
-        }*/
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.clip = mansionMusic;
+            audio.Play();//GetComponent<AudioSource>().Play();
+        }
         /*if (Input.GetMouseButtonDown(0))
         {
             FindClue();

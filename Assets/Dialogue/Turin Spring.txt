@@ -1,0 +1,192 @@
+@Start
+#SetDialogue #SetSurrealismMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Medium #option3Text Artist #option4Text Chirico  #option5Text Location  #option6Text Date
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> Could you talk to me about this painting?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b>Indeed. This painting is titled, <i>Turin Spring</i>.
+I think you might enjoy trying to recreate it. Interested?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> What do you know about this painting?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b>More than your consciousness can contain.
+#SetPlayer
+<b>Ren:</b> Can you break the knowledge down into chunks?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Perhaps after tea.
+<b>Ren:</b> (Is it always going to be this tedious?)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Do you remember what medium the artist used to create <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> The nogwal in Belidder city cried, "It was oil! OIL!" and promptly ran away.
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> Could you tell me what medium the artist used for <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> No.
+<b>Ren:</b> Why?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> It's locked away in my subconscious. Come back after I've had a nap.
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> Can you tell me who painted <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Ciorgio de Ghirico
+#SetPlayer
+<b>Ren:</b> That doesn't...
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Sorry! Tilp of the sounge as they say! The painters name was Giorgio de Chirico.
+Want to try hour yand at painting this piece?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who painted <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> A special sort of grey matter, I would expect.
+#SetPlayer
+<b>Ren:</b> What? Ew...
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Yes!
+#SetPlayer
+<b>Ren:</b> (I think it needs a nap. I'll come back)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Did you remember more about Giorgio de Chirico?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> I never forgot! Giorgio de Chirico is a noted alumni of the Higher School of Fine Arts in Athens.
+Would you like to see how you measure up to Giorgio de Chirico?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> Is there anything else you can tell me about Giorgio de Chirico?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> He studied art.
+#SetPlayer
+<b>Ren:</b> That's obvious. Where?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> In the Mediterranean somwhere. It's all a bit fuzzy...
+#SetPlayer
+<b>Ren:</b> I'll come back later.
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Where is <i>Turin Spring</i> housed?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> I meant to say it's private. <i>Turin Spring</i> belongs to a private collector.
+How about trying to mimic Giorgio de Chirico?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> Which museum houses <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> It's secret!
+#SetPlayer
+<b>Ren:</b> I'll come back when it isn't a secret.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> When did Giorgio de Chirico paint <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> I was there. It was 1914; a great year to be a muse!
+The oils beckon; would you care to induldge?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> Do you know when Giorgio de Chirico painted <i>Turin Spring</i>?
+#SetSurrealismMuse
+<b>SurrealismPlaceholder:</b> Do remember right this moment? ...Of course not! Come back in a bit.
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No
