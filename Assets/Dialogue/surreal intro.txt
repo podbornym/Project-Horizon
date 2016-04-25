@@ -1,0 +1,33 @@
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+NEEDS TO BE MODIFIED
+<b>???:</b> Greetings, traveler. I am Nasu.
+#SetPlayer
+<b>Ren:</b> What is this place?
+#SetUkiyoMuse
+<b>Nasu:</b> You are in Edo, otherwise known as Tokyo in your time.
+This is the peak of the artistic cultural period known as Ukiyo-e.
+#SetPlayer
+<b>Ren:</b> Japan, huh? I should get some sushi while I'm here.
+#SetUkiyoMuse
+<b>Nasu:</b> FOCUS ON YOUR ART, NOT YOUR STOMACH!
+#SetPlayer
+<b>Ren:</b> Sorry, haha!
+What exactly is Ukiyo-e?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, Ukiyo-e is made using wood carvings of prints.
+After making the carving, ink is brushed across multiple wood blocks with various carvings.
+The carvings form the different layers of the print, with different colored inks as well.
+It's essentially multiple wooden stamps, but put to much more detail.
+#SetPlayer
+<b>Ren:</b> That sounds like it'd be fun to make.
+#SetUkiyoMuse
+<b>Nasu:</b> Well, you'll have plenty of time to try yourself.
+Why don't you go have a look around and see what you can learn?
+Each studio contains <b>6</b> different clues that you can find, but only after you talk to me first!
+When you're finished, you can find me in any of the nearby studios.
+Just click on me to ask me any questions you have. Have fun!
+#SetPlayer
+#quit
