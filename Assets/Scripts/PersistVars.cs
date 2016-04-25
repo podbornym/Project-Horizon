@@ -145,19 +145,19 @@ public class PersistVars : MonoBehaviour {
             {
                 case 0:
                     print(1);
-                    AudioClip temp = Resources.Load("Assets/Sound/Ukiyo-e Zone Music/Eastminister.mp3") as AudioClip;
+                    AudioClip temp = Resources.Load("Sound/Ukiyo-e Zone Music/Eastminister.mp3") as AudioClip;
                     audio.clip = temp;
                     audio.Play();
                     break;
                 case 1:
                     print(2);
-                    temp = Resources.Load("Assets/Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3") as AudioClip;
+                    temp = Resources.Load("Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3") as AudioClip;
                     audio.clip = temp;
                     audio.Play();
                     break;
                 case 2:
                     print(3);
-                    temp = Resources.Load("Assets/Sound/Ukiyo-e Zone Music/Finding Movement.mp3") as AudioClip;
+                    temp = Resources.Load("Sound/Ukiyo-e Zone Music/Finding Movement.mp3") as AudioClip;
                     audio.clip = temp;
                     audio.Play();
                     break;
