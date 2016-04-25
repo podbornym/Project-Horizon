@@ -40,7 +40,7 @@ public class EnvInteracter : MonoBehaviour {
 
                 TElevator = TopElevator.GetComponent<Animator>();
 
-                BElevator = TopElevator.GetComponent<Animator>();
+                BElevator = BottomElevator.GetComponent<Animator>();
             }
             catch
             {
@@ -61,7 +61,7 @@ public class EnvInteracter : MonoBehaviour {
             {
                 Cursor.SetCursor(rightArrow, hotSpot, cursorMode);
             }
-            else if (gameObject.tag == "portal"|| gameObject.tag == "BaroquePortal"||gameObject.tag == "SurrealismPortal")
+            else if (gameObject.tag == "UkiyoEportal"|| gameObject.tag == "BaroquePortal"||gameObject.tag == "SurrealismPortal" || gameObject.tag == "portal")
             {
                 Cursor.SetCursor(pinkCursor, hotSpot, cursorMode);
             }
@@ -81,7 +81,7 @@ public class EnvInteracter : MonoBehaviour {
     {
         if(!EventSystem.current.IsPointerOverGameObject())
         {
-            if (gameObject.tag == "bridge" || gameObject.tag == "stairs" || gameObject.tag == "elevator" || gameObject.tag == "ElevatorBottom")
+            if (gameObject.tag == "bridge" || gameObject.tag == "stairs" /*|| gameObject.tag == "elevator" || gameObject.tag == "ElevatorBottom"*/ || gameObject.tag == "portal")
             {
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
             }
@@ -96,7 +96,7 @@ public class EnvInteracter : MonoBehaviour {
                     player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null, 5);
                 }
             }
-            else if (gameObject.tag == "portal")
+            else if (gameObject.tag == "UkiyoEportal")
             {
                 ukioyAnimator.SetInteger("OpenUkiyo-eDoor", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
@@ -117,9 +117,9 @@ public class EnvInteracter : MonoBehaviour {
                 StartCoroutine(SurrealismPortal());
 
             }
-            /*else if(gameObject.tag == "elevator")
+            else if(gameObject.tag == "elevator")
             {
-                //TElevator.SetInteger("Elevator", 1);
+                TElevator.SetInteger("Elevator", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
                 StartCoroutine(ElevatorTop());
             }
@@ -128,7 +128,7 @@ public class EnvInteracter : MonoBehaviour {
                 BElevator.SetInteger("ElevatorBottom", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
                 StartCoroutine(ElevatorBottom());
-            }*/
+            }
             /* else
              {
                  player.GetComponent<PlayerMovement>().MovePlayer(transform.position, null);
@@ -158,12 +158,16 @@ public class EnvInteracter : MonoBehaviour {
     }
     IEnumerator ElevatorTop()
     {
-        yield return new WaitForSeconds(1.09f);
+        yield return new WaitForSeconds(2f);
         TElevator.SetInteger("Elevator", -1);
+        yield return new WaitForSeconds(2f);
+        TElevator.SetInteger("Elevator", 0);
     }
     IEnumerator ElevatorBottom()
     {
         yield return new WaitForSeconds(1.09f);
-        TElevator.SetInteger("ElevatorBottom", -1);
+        BElevator.SetInteger("ElevatorBottom", -1);
+        yield return new WaitForSeconds(2f);
+        BElevator.SetInteger("ElevatorBottom", 0);
     }
 }
