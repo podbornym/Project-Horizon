@@ -174,9 +174,7 @@ public class traceScriptTwo : MonoBehaviour {
             scoreCircle.GetComponent<SpriteRenderer>().sprite = B;
         if (successRatio >= .60 && successRatio < .70)
             scoreCircle.GetComponent<SpriteRenderer>().sprite = C;
-        if (successRatio >= .50 && successRatio < .60)
-            scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
-        if (successRatio < .50)
+        if (successRatio < .60)
             scoreCircle.GetComponent<SpriteRenderer>().sprite = D;
     }
 
@@ -205,7 +203,16 @@ public class traceScriptTwo : MonoBehaviour {
     {
         if (PersistVars.previousScene != "null")
         {
-            GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = successRatio;
+            if (successRatio >= .80)
+                GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = .9f;
+            if (successRatio >= .70 && successRatio < .80)
+                GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = .8f;
+            if (successRatio >= .60 && successRatio < .70)
+                GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = .7f;
+            if (successRatio < .60)
+                GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = .6f;
+
+
             SceneManager.LoadScene(PersistVars.previousScene);
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
