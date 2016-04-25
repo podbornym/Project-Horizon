@@ -16,11 +16,11 @@ public class ButtonScript : MonoBehaviour {
 
     public void ContinuePressed()
     {
-        SceneManager.LoadScene(PersistVars.previousScene);
+        SceneManager.LoadScene(PersistVars.currentScene);
     }
 
     public void RestartPressed()
     {
-        SceneManager.LoadScene(PersistVars.currentScene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
