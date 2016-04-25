@@ -144,20 +144,17 @@ public class PersistVars : MonoBehaviour {
             switch(UnityEngine.Random.Range(0,3))
             {
                 case 0:
-                    print(1);
-                    AudioClip temp = Resources.Load("Sound/Ukiyo-e Zone Music/Eastminister.mp3") as AudioClip;
+                    AudioClip temp = Resources.Load("Sound/Ukiyo-e Zone Music/Eastminster", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     audio.Play();
                     break;
                 case 1:
-                    print(2);
-                    temp = Resources.Load("Sound/Ukiyo-e Zone Music/Ishikari Lore.mp3") as AudioClip;
+                    temp = Resources.Load("Sound/Ukiyo-e Zone Music/Ishikari Lore", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     audio.Play();
                     break;
                 case 2:
-                    print(3);
-                    temp = Resources.Load("Sound/Ukiyo-e Zone Music/Finding Movement.mp3") as AudioClip;
+                    temp = Resources.Load("Sound/Ukiyo-e Zone Music/Finding Movement", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     audio.Play();
                     break;
@@ -170,15 +167,15 @@ public class PersistVars : MonoBehaviour {
             switch (UnityEngine.Random.Range(0, 3))
             {
                 case 0:
-                    AudioClip temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 4.mp3") as AudioClip;
+                    AudioClip temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 4", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 1:
-                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 1.mp3") as AudioClip;
+                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/Gnossienne no 1", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 2:
-                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/The Devils Trill.mp3") as AudioClip;
+                    temp = Resources.Load("Assets/Sound/Surrealism Zone Music/The Devils Trill", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
             }
@@ -190,15 +187,15 @@ public class PersistVars : MonoBehaviour {
             switch (UnityEngine.Random.Range(0, 3))
             {
                 case 0:
-                    AudioClip temp = Resources.Load("Assets/Sound/Baroque Zone Music/Concerto no 3.mp3") as AudioClip;
+                    AudioClip temp = Resources.Load("Assets/Sound/Baroque Zone Music/Concerto no 3", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 1:
-                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/BassoonRepertoire.mp3") as AudioClip;
+                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/BassoonRepertoire", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
                 case 2:
-                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/Goldberg Variations.mp3") as AudioClip;
+                    temp = Resources.Load("Assets/Sound/Baroque Zone Music/Goldberg Variations", typeof(AudioClip)) as AudioClip;
                     audio.clip = temp;
                     break;
             }

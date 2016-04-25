@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class DialogueReader : MonoBehaviour
 {
     public static int paintNum;
-    public List<string> entries = new List<string>();
+    public string[] entries;
     private int lineNum = 0;
     private string option;
     private string[] choiceActions = new string[6];
@@ -53,7 +53,7 @@ public class DialogueReader : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        ReadFile("./Assets/Dialogue/MansionDefault.txt");
+        ReadFile("Dialogue/MansionDefault");
         nextButton.gameObject.SetActive(false);
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
@@ -94,21 +94,21 @@ public class DialogueReader : MonoBehaviour
         {
             print(true);
             intro_speech_ukiyo = false;
-            ReadFile("./Assets/Dialogue/ukiyo intro.txt");
+            ReadFile("Dialogue/ukiyo intro");
             NextLine();
         }
         if (intro_speech_surreal && PersistVars.currentScene == "SurrealistZone")
         {
             print(true);
             intro_speech_surreal = false;
-            ReadFile("./Assets/Dialogue/surreal intro.txt");
+            ReadFile("Dialogue/surreal intro");
             NextLine();
         }
         if (intro_speech_baroque && PersistVars.currentScene == "BaroqueZone")
         {
             print(true);
             intro_speech_baroque = false;
-            ReadFile("./Assets/Dialogue/baroque intro.txt");
+            ReadFile("Dialogue/baroque intro");
             NextLine();
         }
         if (PersistVars.currentScene == "mansion" && !inMansion)
@@ -116,11 +116,11 @@ public class DialogueReader : MonoBehaviour
             inMansion = true;
             if (PersistVars.paintingDone)
             {
-                ReadFile("./Assets/Dialogue/selling.txt");
+                ReadFile("Dialogue/selling");
             }
             else
             {
-                ReadFile("./Assets/Dialogue/MansionDefault.txt");
+                ReadFile("Dialogue/MansionDefault");
             }
         }
         else if(PersistVars.currentScene != "mansion")
@@ -239,10 +239,22 @@ public class DialogueReader : MonoBehaviour
             {
                 string currentWord = "";
                 string word = currentLine[i];
-                for (int j = 0; j < word.Length; j++)
+                if (i == currentLine.Length - 1)
                 {
-                    currentWord += word[j];
+                    for (int j = 0; j < word.Length - 1; j++)
+                    {
+                        currentWord += word[j];
+                    }
                 }
+                else
+                {
+                    for (int j = 0; j < word.Length; j++)
+                    {
+                        currentWord += word[j];
+                    }
+                }
+                print(currentWord == "#SetWoodStock");
+                print(currentWord);
                 switch (currentWord)
                 {
                     case "#SetDialogue":
@@ -730,7 +742,7 @@ public class DialogueReader : MonoBehaviour
     private void GoTo(string location)
     {
         string nextTopic = "@" + location;
-        for (int i = 0; i < entries.Count; i++)
+        for (int i = 0; i < entries.Length; i++)
         {
             string temp = entries[i];
             string place = "";
@@ -762,7 +774,7 @@ public class DialogueReader : MonoBehaviour
             if (intro_speech_ukiyo == false)
             {
                 finished_intro_u = true;
-                ReadFile("./Assets/Dialogue/Three Beauties.txt");
+                ReadFile("Dialogue/Three Beauties");
             }
         }
         if (finished_intro_s == false)
@@ -770,7 +782,7 @@ public class DialogueReader : MonoBehaviour
             if (intro_speech_surreal == false)
             {
                 finished_intro_s = true;
-                ReadFile("./Assets/Dialogue/The Slug Room.txt");
+                ReadFile("Dialogue/The Slug Room");
             }
         }
         if (finished_intro_b == false)
@@ -778,7 +790,7 @@ public class DialogueReader : MonoBehaviour
             if (intro_speech_baroque == false)
             {
                 finished_intro_b = true;
-                ReadFile("./Assets/Dialogue/Three Beauties.txt");
+                ReadFile("Dialogue/Three Beauties");
             }
         }
         GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
@@ -809,11 +821,11 @@ public class DialogueReader : MonoBehaviour
             inMansion = true;
             if (PersistVars.paintingDone)
             {
-                ReadFile("./Assets/Dialogue/selling.txt");
+                ReadFile("Dialogue/selling");
             }
             else
             {
-                ReadFile("./Assets/Dialogue/MansionDefault.txt");
+                ReadFile("Dialogue/MansionDefault");
             }
         }
     }
@@ -864,113 +876,113 @@ public class DialogueReader : MonoBehaviour
             {
                 PersistVars.paintingNum = 1;
                 paintNum = 1;
-                ReadFile("./Assets/Dialogue/Three Beauties.txt");
+                ReadFile("Dialogue/Three Beauties");
             }
             else if (PersistVars.currentScene == "U_1")
             {
                 PersistVars.paintingNum = 2;
                 paintNum = 2;
-                ReadFile("./Assets/Dialogue/Lobby Brothel.txt");
+                ReadFile("Dialogue/Lobby Brothel");
             }
             else if (PersistVars.currentScene == "U_2")
             {
                 PersistVars.paintingNum = 3;
                 paintNum = 3;
-                ReadFile("./Assets/Dialogue/Wave of Kanagawa.txt");
+                ReadFile("Dialogue/Wave of Kanagawa");
             }
             else if (PersistVars.currentScene == "U_3")
             {
                 PersistVars.paintingNum = 4;
                 paintNum = 4;
-                ReadFile("./Assets/Dialogue/Shoki Striding.txt");
+                ReadFile("Dialogue/Shoki Striding");
             }
             else if (PersistVars.currentScene == "U_4")
             {
                 PersistVars.paintingNum = 5;
                 paintNum = 5;
-                ReadFile("./Assets/Dialogue/SuddenShowerDialogue.txt");
+                ReadFile("Dialogue/SuddenShowerDialogue");
             }
             else if (PersistVars.currentScene == "U_5")
             {
                 PersistVars.paintingNum = 6;
                 paintNum = 6;
-                ReadFile("./Assets/Dialogue/Yakko Adobei.txt");
+                ReadFile("Dialogue/Yakko Adobei");
             }
             else if (PersistVars.currentScene == "S_0")
             {
                 PersistVars.paintingNum = 7;
                 paintNum = 7;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "S_1")
             {
                 PersistVars.paintingNum = 8;
                 paintNum = 8;
-                ReadFile("./Assets/Dialogue/The Healer.txt");
+                ReadFile("Dialogue/The Healer");
             }
             else if (PersistVars.currentScene == "S_2")
             {
                 PersistVars.paintingNum = 9;
                 paintNum = 9;
-                ReadFile("./Assets/Dialogue/The Slug Room.txt");
+                ReadFile("Dialogue/The Slug Room");
             }
             else if (PersistVars.currentScene == "S_3")
             {
                 PersistVars.paintingNum = 10;
                 paintNum = 10;
-                ReadFile("./Assets/Dialogue/Turin Spring.txt");
+                ReadFile("Dialogue/Turin Spring");
             }
             else if (PersistVars.currentScene == "S_4")
             {
                 PersistVars.paintingNum = 11;
                 paintNum = 11;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "S_5")
             {
                 PersistVars.paintingNum = 12;
                 paintNum = 12;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_0")
             {
                 PersistVars.paintingNum = 13;
                 paintNum = 13;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_1")
             {
                 PersistVars.paintingNum = 14;
                 paintNum = 14;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_2")
             {
                 PersistVars.paintingNum = 15;
                 paintNum = 15;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_3")
             {
                 PersistVars.paintingNum = 16;
                 paintNum = 16;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_4")
             {
                 PersistVars.paintingNum = 17;
                 paintNum = 17;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_5")
             {
                 PersistVars.paintingNum = 18;
                 paintNum = 18;
-                ReadFile("./Assets/Dialogue/whatever.txt");
+                ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "SellingScene")
 			{
-				ReadFile("./Assets/Dialogue/sell.txt");
+				ReadFile("Dialogue/sell");
 			}
 
             GameObject.Find("GENERALUI").GetComponent<UIHandler>().ChangePaintingInfo();
@@ -985,34 +997,17 @@ public class DialogueReader : MonoBehaviour
 
 	public void SellingStart()
 	{
-		ReadFile("./Assets/Dialogue/sell.txt");
+		ReadFile("Dialogue/sell");
 		GoTo("Start");
 		NextLine();
 	}
 
     void ReadFile(string filepath)
     {
-        sr = new StreamReader(filepath);
+        TextAsset dialogue = Resources.Load(filepath, typeof(TextAsset)) as TextAsset;
         textbox.text = "";
         lineNum = 0;
-        entries.Clear();
-        try
-        {
-            using (sr)
-            {
-                string line;
-                int i = 0;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    entries.Add(line);
-                    i++;
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            print("Exception: " + e);
-        }
+        entries = dialogue.text.Split('\n');
     }
 
     public void ColorChange(String button)
