@@ -120,28 +120,28 @@ public class TimerScipt : MonoBehaviour {
             print("You have done 'A' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
-			rotatoTotalScore = 0.95;
+			rotatoTotalScore = 0.95f;
         }
         else if ((posScore < 12) && (zTotalScore < 18))
         {
             print("You have done 'B' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeB;
-			rotatoTotalScore = 0.85;
+			rotatoTotalScore = 0.85f;
         }
         else if ((posScore < 16) && (zTotalScore < 24))
         {
             print("You have done 'C' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeC;
-			rotatoTotalScore = 0.75;
+			rotatoTotalScore = 0.75f;
         }
         else
         {
             print("You have done 'D' quality work.");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeD;
-			rotatoTotalScore = 0.60;
+			rotatoTotalScore = 0.60f;
         }
 
 

@@ -246,12 +246,12 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UThree", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
-                break;
                 b = GameObject.Find("Button (6)").GetComponent<Button>();
                 cb = b.colors;
                 cb.normalColor = Color.yellow;
                 cb.highlightedColor = new Color(1, 0.92f, 0.016f, 1);
                 b.colors = cb;
+                break;
             // Cases for the fourth Uk studio
             case "clue19":
                 print("found me");
