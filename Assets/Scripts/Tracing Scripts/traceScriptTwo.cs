@@ -213,7 +213,7 @@ public class traceScriptTwo : MonoBehaviour {
                 GameObject.Find("GENERALUI").GetComponent<PersistVars>().tracerScore = .6f;
 
 
-            SceneManager.LoadScene(PersistVars.previousScene);
+            SceneManager.LoadScene(PersistVars.currentScene);
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
     }
