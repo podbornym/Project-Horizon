@@ -23,7 +23,10 @@ public class wikiPaintingScript : MonoBehaviour {
         {
             TextField.text = "Three Beauties:\n";
             if (PersistVars.UkiyoOne[0] == true)
+            {
                 TextField.text += TextObject.GetComponent<wikiDataScript>().uk1[0] + "/n";
+                TextField.text += "UkiyoOne is true";
+            }
             if (PersistVars.UkiyoOne[1] == true)
                 TextField.text += TextObject.GetComponent<wikiDataScript>().uk1[1] + "/n";
             if (PersistVars.UkiyoOne[2] == true)
