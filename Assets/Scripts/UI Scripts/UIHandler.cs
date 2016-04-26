@@ -173,22 +173,22 @@ public class UIHandler : MonoBehaviour {
                 SetPieceInfo("Yakko Edobei\n1794, Toshusai Sharaku");
                 break;
             case 7:
-                SetPieceInfo("Tristan and Isolde\n1944, Salvador Dali");
-                break;
-            case 8:
-                SetPieceInfo("The Healer\n1937, Rene Magritte");
-                break;
-            case 9:
-                SetPieceInfo("The Slug Room\n1920, Max Ernst");
-                break;
-            case 10:
-                SetPieceInfo("Turin Spring\n1914, Giorgio de Chirico");
-                break;
-            case 11:
                 SetPieceInfo("Through Birds Through Fire But Not Through Glass\n1943, Yves Tanguy");
                 break;
-            case 12:
+            case 8:
+                SetPieceInfo("Turin Spring\n1914, Giorgio de Chirico");
+                break;
+            case 9:
                 SetPieceInfo("Alla Cuelga mi Vestido\n1933, Frida Kahlo");
+                break;
+            case 10:
+                SetPieceInfo("The Slug Room\n1920, Max Ernst");
+                break;
+            case 11:
+                SetPieceInfo("Tristan and Isolde\n1944, Salvador Dali");
+                break;
+            case 12:
+                SetPieceInfo("The Healer\n1937, Rene Magritte");
                 break;
             case 13:
                 SetPieceInfo("The Three Trees\n1643, Rembrant Harmenszoon van Rijn");
