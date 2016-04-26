@@ -18,7 +18,7 @@ What do you want to know?
 #SetPlayer
 <b>Ren:</b> What can you tell me about this sculpture?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b>This particular piece is titled, <i>The Healer</i>.
+<b>Jene:</b>This particular piece is titled, <i>The Healer</i>.
 Would you like to try to sculpt it?
 #SetOptions
 #option1 #play1
@@ -29,11 +29,11 @@ Would you like to try to sculpt it?
 #SetPlayer
 <b>Ren:</b> Could you tell me about this sculpture?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b>When the mood strikes me.
+<b>Jene:</b>When the mood strikes me.
 #SetPlayer
 <b>Ren:</b> Is it striking you now?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> No.
+<b>Jene:</b> No.
 <b>Ren:</b> (I'll wander around for a bit)
 #activateClue1
 #goto:Start
@@ -46,7 +46,7 @@ Would you like to try to sculpt it?
 #SetPlayer
 <b>Ren:</b> Do you remember what metal the artist used to create <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> I do! It's bronze!
+<b>Jene:</b> I do! It's bronze!
 Would you like to cast a copy of your own?
 #SetOptions
 #option1 #play2
@@ -57,10 +57,10 @@ Would you like to cast a copy of your own?
 #SetPlayer
 <b>Ren:</b> <i>The Healer</i> looks like it's made of metal. What kind of metal is it?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Copper.
+<b>Jene:</b> Copper.
 <b>Ren:</b> Wouldn't it be green if it were copper?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Ah! I suppose you're right. Hmmm. Let me think a bit...
+<b>Jene:</b> Ah! I suppose you're right. Hmmm. Let me think a bit...
 #activateClue2
 #goto:Start
 
@@ -72,11 +72,11 @@ Would you like to cast a copy of your own?
 #SetPlayer
 <b>Ren:</b> Can you tell me who sculpted <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Rene...
+<b>Jene:</b> Rene...
 #SetPlayer
 <b>Ren:</b> Rene who?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Magritte. Rene Magritte.
+<b>Jene:</b> Magritte. Rene Magritte.
 Do you think you're ready to sculpt?
 #SetOptions
 #option1 #play3
@@ -87,11 +87,11 @@ Do you think you're ready to sculpt?
 #SetPlayer
 <b>Ren:</b> Do you know who sculpted <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Eventually I will.
+<b>Jene:</b> Eventually I will.
 #SetPlayer
 <b>Ren:</b> I figured.
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Catching on are we?
+<b>Jene:</b> Catching on are we?
 #SetPlayer
 <b>Ren:</b> (I think I'll go for a walk...)
 #activateClue3
@@ -105,7 +105,7 @@ Do you think you're ready to sculpt?
 #SetPlayer
 <b>Ren:</b> Can you tell me more about Rene Magritte?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> He made living producing fakes of Van Gogh and Picasso.
+<b>Jene:</b> He made living producing fakes of Van Gogh and Picasso.
 So, ready to make like Magritte and make a copy?
 #SetOptions
 #option1 #play4
@@ -116,11 +116,11 @@ So, ready to make like Magritte and make a copy?
 #SetPlayer
 <b>Ren:</b> Is there anything else you can tell me about Rene Magritte?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Are you sure YOU can't tell me more about him?
+<b>Jene:</b> Are you sure YOU can't tell me more about him?
 #SetPlayer
 <b>Ren:</b> I...what? No...
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Really? You two have a bit in common...
+<b>Jene:</b> Really? You two have a bit in common...
 #SetPlayer
 <b>Ren:</b> I'll...be back later...
 #activateClue4
@@ -134,7 +134,7 @@ So, ready to make like Magritte and make a copy?
 #SetPlayer
 <b>Ren:</b> Where did Magritte create <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> In Belgium, of course!
+<b>Jene:</b> In Belgium, of course!
 Are you ready to re-create the sculpture?
 #SetOptions
 #option1 #play5
@@ -145,7 +145,7 @@ Are you ready to re-create the sculpture?
 #SetPlayer
 <b>Ren:</b> Where did Magritte create <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Waffles! Fries! Where's the syrup?
+<b>Jene:</b> Waffles! Fries! Where's the syrup?
 #SetPlayer
 <b>Ren:</b> I'll be back after you've had breakfast...
 #activateClue5
@@ -159,7 +159,7 @@ Are you ready to re-create the sculpture?
 #SetPlayer
 <b>Ren:</b> Do you remember when Magritte sculpted <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> 1964? No, really! Maybe? I don't know. I don't remmebr much of the 60's, man...
+<b>Jene:</b> 1964? No, really! Maybe? I don't know. I don't remmebr much of the 60's, man...
 So. How about a mimicked sculpture?
 #SetOptions
 #option1 #play6
@@ -170,7 +170,7 @@ So. How about a mimicked sculpture?
 #SetPlayer
 <b>Ren:</b> When did Magritte sculpt <i>The Healer</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> 1964?
+<b>Jene:</b> 1964?
 #SetPlayer
 <b>Ren:</b> I'll come back after you've had time to think...
 #activateClue6

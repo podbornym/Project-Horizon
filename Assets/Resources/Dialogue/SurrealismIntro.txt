@@ -1,0 +1,19 @@
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+#SetDialogue #SetUkiyoMuse
+NEEDS TO BE MODIFIED
+<b>Jene:</b> Welcome, It’s nice to see you again.
+#SetPlayer
+<b>Ren:</b> Again? I have never met you, where am I even?
+#SetUkiyoMuse
+<b>Jene:</b> You're right. You’ve just met me, but time is irrelevant. 
+You’re within a multi-dimensional world infused with surrealist ideas and concepts.
+#SetPlayer
+<b>Ren:</b> Well, that sounds pretty crazy, this place is so odd looking!
+#SetUkiyoMuse
+<b>Jene:</b> This place is what you make of it, sally forth and see for yourself what surrealism has to offer!
+Each studio contains <b>6</b> different clues that you can find, but only after you talk to me first!
+When you're finished, you can find me in any of the nearby studios.
+#SetPlayer
+#quit

@@ -1,0 +1,193 @@
+@Start
+#SetDialogue #SetSurrealismMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Artist  #option3Text Technique #option4Text Dali  #option5Text Output  #option6Text Date
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> Can you talk to me about this painting?
+#SetSurrealismMuse
+<b>Jene:</b>This painting is titled, <i>Tristan and Isolde</i>.
+Would you like to try making a copy?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> What can you tell me about this piece?
+#SetSurrealismMuse
+<b>Jene:</b> That is a painting on canvas.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetSurrealismMuse
+<b>Jene:</b> ZZZZzzzzzZzzzz
+<b>Ren:</b> (I’ll come back in a bit and see if its awake)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Can you tell me who painted <i>Tristan and Isolde</i>?
+#SetSurrealismMuse
+<b>Jene:</b> The late, great, Salavador Dali! He was from Spain, you know.
+Care to take a gamble and produce a copy?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> Do you know who painted <i>Tristan and Isolde</i>?
+#SetSurrealismMuse
+<b>Jene:</b> I should think so! I was there. 
+<b>Ren:</b> And?
+#SetSurrealismMuse
+<b>Jene:</b> It’s too dark. I can’t see. Come back when it’s lighter.
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> Can you tell me anything about Dali’s technique?
+#SetSurrealismMuse
+<b>Jene:</b> He painted.
+#SetPlayer
+<b>Ren:</b> Obviously.
+#SetSurrealismMuse
+<b>Jene:</b> Ah, yes! He developed a mental exercise designed to enhance artist creativity called “paranoiac-critical method”.
+Are you focused enough to try and make a copy?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> What sort of technique did Dali use while painting?
+#SetSurrealismMuse
+<b>Jene:</b> Well, oils and brushes.
+#SetPlayer
+<b>Ren:</b> Isn’t that media?
+#SetSurrealismMuse
+<b>Jene:</b> It certainly is!
+#SetPlayer
+<b>Ren:</b> (I’ll come back when its more focused.)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Do you know anything else about Salvador Dali?
+#SetSurrealismMuse
+<b>Jene:</b> He married Elena Dmitrievna Diakonova. She handled his legal and financial matters as well as negotiating contracts with brokers and exhibition promoters. Dynamic duo!
+Would you like to forge his mustache? Or his painting… 
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> Can you tell me more about Dali?
+#SetSurrealismMuse
+<b>Jene:</b> He’s Spanish, you know!
+#SetPlayer
+<b>Ren:</b> You already said that.
+#SetSurrealismMuse
+<b>Jene:</b> He had a really cool mustache! It was a sort of trademark of his, really. Mmmmm. Mustache…
+#SetPlayer
+<b>Ren:</b> I’ll check back in a bit.
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> How long did Dali keep painting?
+#SetSurrealismMuse
+<b>Jene:</b> He kept painting until after 1980. After 1980, he developed a motor disorder that made his hands tremble and too weak to hold a paintbrush.
+But you’re young and able! Take a crack at painting a copy!
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> What was Dali’s output like?
+#SetSurrealismMuse
+<b>Jene:</b> Well, a while. But it’s a bit sad.
+#SetPlayer
+<b>Ren:</b> I’ll grab some tissues and be back.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> When did Salvador Dali finish painting <i>Tristan and Isolde</i>?
+#SetSurrealismMuse
+<b>Jene:</b> 1944!
+Want to forge like it’s 1944?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> When was <i>Tristan and Isolde</i> painted?
+#SetSurrealismMuse
+<b>Jene:</b> I’ll need a moment. Come back in a bit!
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

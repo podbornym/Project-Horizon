@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class Mastermind : MonoBehaviour {
+public class Mastermind : MonoBehaviour
+{
     public Text question;
     public Text answer1;
     public Text answer2;
@@ -29,6 +30,7 @@ public class Mastermind : MonoBehaviour {
     public Sprite gradeB;
     public Sprite gradeC;
     public Sprite gradeD;
+
     public Sprite backgroundZ1_1;
     public Sprite backgroundZ1_2;
     public Sprite backgroundZ1_3;
@@ -42,8 +44,35 @@ public class Mastermind : MonoBehaviour {
     public Sprite imageZ1_5;
     public Sprite imageZ1_6;
 
+    public Sprite backgroundZ2_1;
+    public Sprite backgroundZ2_2;
+    public Sprite backgroundZ2_3;
+    public Sprite backgroundZ2_4;
+    public Sprite backgroundZ2_5;
+    public Sprite backgroundZ2_6;
+    public Sprite imageZ2_1;
+    public Sprite imageZ2_2;
+    public Sprite imageZ2_3;
+    public Sprite imageZ2_4;
+    public Sprite imageZ2_5;
+    public Sprite imageZ2_6;
+
+    public Sprite backgroundZ3_1;
+    public Sprite backgroundZ3_2;
+    public Sprite backgroundZ3_3;
+    public Sprite backgroundZ3_4;
+    public Sprite backgroundZ3_5;
+    public Sprite backgroundZ3_6;
+    public Sprite imageZ3_1;
+    public Sprite imageZ3_2;
+    public Sprite imageZ3_3;
+    public Sprite imageZ3_4;
+    public Sprite imageZ3_5;
+    public Sprite imageZ3_6;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         if (GameObject.Find("GENERALUI"))
         {
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
@@ -53,9 +82,10 @@ public class Mastermind : MonoBehaviour {
         //correctText.FindObject<CorrectText>.GetComponent<>();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         // Update the timer
         seconds -= Time.deltaTime;
         timer.text = seconds.ToString("0");
@@ -428,44 +458,674 @@ public class Mastermind : MonoBehaviour {
                     }
                 }
             }
+
+            if (artStyle == "surrealism")
+            {
+                if (paintingNo == 1) // Tristan and Isolde
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_1;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_1;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Tristan and Isolde";
+                        answer2.text = "Desecration Descripti";
+                        answer3.text = "Madrid. Drunk Man";
+                        answer4.text = "The Persistence of Memory";
+                        answer5.text = "Playing in the Dark";
+                        answer6.text = "Cabaret Scene";
+                        SetCorrectAnswer(1); // Answer: Tristan and Isolde
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Frida Kahlo";
+                        answer2.text = "Giorgio de Chirico";
+                        answer3.text = "René Magritte";
+                        answer4.text = "Yves Tanguy";
+                        answer5.text = "Salvador Dalí";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(5); // Answer: Salvador Dalí
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "What material did Salvador Dalí use to make this piece?";
+                        answer1.text = "Lead";
+                        answer2.text = "Watercolors";
+                        answer3.text = "Oil";
+                        answer4.text = "Chalk";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(3); // Answer: Oil
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "How does this piece portray Richard Wagner's opera of the same name?";
+                        answer1.text = "Serious";
+                        answer2.text = "Satirical";
+                        answer3.text = "Humorous";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(2); // Answer: Satirical
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 2) // The Healer
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_2;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_2;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "The Son of Man";
+                        answer2.text = "The Pilgrim";
+                        answer3.text = "The Healer";
+                        answer4.text = "Golconda";
+                        answer5.text = "Peirreries";
+                        answer6.text = "The Voice of the Air";
+                        SetCorrectAnswer(3); // Answer: The Healer
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "René Magritte";
+                        answer2.text = "Yves Tanguy";
+                        answer3.text = "Frida Kahlo";
+                        answer4.text = "Salvador Dalí";
+                        answer5.text = "Max Ernst";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(1); // Answer: René Magritte
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "How did Magritte want viewers to react to the objects in his paintings?";
+                        answer1.text = "To reconsider how they view the objects";
+                        answer2.text = "To question whether the objects exist";
+                        answer3.text = "To find the humor in their depictions";
+                        answer4.text = "To regain their appreciation for the objects";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(1); // Answer: To reconsider how they view the objects
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Why did Magritte claim the objects shown were not the objects they appeared to be?";
+                        answer1.text = "They were optical illusions";
+                        answer2.text = "They were somehow inaccurate";
+                        answer3.text = "They were simply images";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(3); // Answer: They were simply images
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 3) // The Slug Room
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_3;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_3;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "At the First Clear Word";
+                        answer2.text = "Fruit of a Long Experience";
+                        answer3.text = "Towers";
+                        answer4.text = "The Slug Room";
+                        answer5.text = "Cormorants";
+                        answer6.text = "Hydrometric Demonstration";
+                        SetCorrectAnswer(4); // Answer: The Slug Room
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Salvador Dalí";
+                        answer2.text = "Max Ernst";
+                        answer3.text = "Giorgio de Chirico";
+                        answer4.text = "René Magritte";
+                        answer5.text = "Yves Tanguy";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(2); // Answer: Max Ernst
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "The fast-drying paint used in 'The Slug Room' is known as what?";
+                        answer1.text = "Collage";
+                        answer2.text = "Gouache";
+                        answer3.text = "Decalcomania";
+                        answer4.text = "Tempera";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(4); // Answer: Tempera
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Whose theories inspired Ernst to use his psyche as a source of inspiration?";
+                        answer1.text = "Sigmund Freud";
+                        answer2.text = "Lawrence Kohlberg";
+                        answer3.text = "Erik Erikson";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(1); // Answer: Sigmund Freud
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 4) // Turin Spring
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_4;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_4;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Piazza d'Italia";
+                        answer2.text = "Turin Spring";
+                        answer3.text = "Playthings of the Prince";
+                        answer4.text = "The Anguish of Departure";
+                        answer5.text = "The Enigma of the Arrival and the Afternoon";
+                        answer6.text = "The Great Tower";
+                        SetCorrectAnswer(2); // Answer: Turin Spring
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Max Ernst";
+                        answer2.text = "Frida Kahlo";
+                        answer3.text = "Yves Tanguy";
+                        answer4.text = "Giorgio de Chirico";
+                        answer5.text = "Salvador Dalí";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(4); // Answer: Giorgio de Chirico
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "What kind of feeling is achieved through De Chirico's use of towers and long shadows?";
+                        answer1.text = "Serenity";
+                        answer2.text = "Emptiness";
+                        answer3.text = "Fear";
+                        answer4.text = "Helplessness";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(2); // Answer: Emptiness
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Paradoxically, what is another feeling achieved through his works?";
+                        answer1.text = "Freedom";
+                        answer2.text = "Bravery";
+                        answer3.text = "Kinship";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(1); // Answer: Freedom
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 5) // Through Birds, Through Fire but Not Through Glass
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_5;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_5;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Finish What I Have Begun";
+                        answer2.text = "Indefinite Divisibility";
+                        answer3.text = "The Satin Tuning Fork";
+                        answer4.text = "Mama, Papa is Wounded!";
+                        answer5.text = "Through Birds, Through Fire but Not Through Glass";
+                        answer6.text = "Time Without Change";
+                        SetCorrectAnswer(5); // Answer: Through Birds, Through Fire but Not Through Glass 
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Yves Tanguy";
+                        answer2.text = "René Magritte";
+                        answer3.text = "Giorgio de Chirico";
+                        answer4.text = "Max Ernst";
+                        answer5.text = "Frida Kahlo";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(1); // Answer: Yves Tanguy
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "How did Tanguy's works from his American period differ from his others?";
+                        answer1.text = "Less variety of objects";
+                        answer2.text = "More surreal figures";
+                        answer3.text = "Less detailed backgrounds";
+                        answer4.text = "More vibrant colors";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(4); // Answer: More vibrant colors
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Tanguy's technique of painting from his subconsciousness is known as what?";
+                        answer1.text = "Improvisational drawing";
+                        answer2.text = "Automatic drawing";
+                        answer3.text = "Imagination drawing";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(2); // Answer: Automatic drawing
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 6) // My Dress Hangs There
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_6;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_6;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Tree of Hope Remain Strong";
+                        answer2.text = "What the Water Gave Me";
+                        answer3.text = "My Dress Hangs There";
+                        answer4.text = "Self Portrait along the Boarder Line";
+                        answer5.text = "Roots";
+                        answer6.text = "Without Hope";
+                        SetCorrectAnswer(3); // Answer: My Dress Hangs There
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Giorgio de Chirico";
+                        answer2.text = "Salvador Dalí";
+                        answer3.text = "Frida Kahlo";
+                        answer4.text = "Max Ernst";
+                        answer5.text = "René Magritte";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(3); // Answer: Frida Kahlo
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "What makes 'My Dress Hangs There' particularly unusual among Kahlo's work?";
+                        answer1.text = "It reflects her personal opinion";
+                        answer2.text = "It's not a self-portrait";
+                        answer3.text = "It depicts a cityscape";
+                        answer4.text = "It doesn't have any animals";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(2); // Answer: It's not a self-portrait
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Which of these is NOT a representation of Kahlo's dissatisfaction with America?";
+                        answer1.text = "The barely-noticeable Statue of Liberty";
+                        answer2.text = "The toilet bowl on top of the column";
+                        answer3.text = "The dollar sign in the church window";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(1); // Answer: The barely-noticeable Statue of Liberty
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+            }
+
+            if (artStyle == "baroque")
+            {
+                if (paintingNo == 1) // The Three Trees
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_1;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_1;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "The Windmill";
+                        answer2.text = "Cottage among Trees";
+                        answer3.text = "Landscape with a Stone Bridge";
+                        answer4.text = "The Three Crosses";
+                        answer5.text = "The Three Trees";
+                        answer6.text = "The Landscape with Good Samaritan";
+                        SetCorrectAnswer(5); // Answer: The Three Trees
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Maria van Oosterwijck";
+                        answer2.text = "Rembrandt Harmenszoon van Rijn";
+                        answer3.text = "Caravaggio";
+                        answer4.text = "Gian Lorenzo Bernini";
+                        answer5.text = "Cornelis Norbertus Gysbrechts";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(2); // Answer: Rembrandt Harmenszoon van Rijn
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "Which of these parts of the landscape does not contain human figures?";
+                        answer1.text = "The riverbed";
+                        answer2.text = "The fields";
+                        answer3.text = "The horizon";
+                        answer4.text = "The treetops";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(4); // Answer: The treetops
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Which of the techniques used to make 'The Three Trees' creates soft, fuzzy lines?";
+                        answer1.text = "Engraving";
+                        answer2.text = "Drypoint";
+                        answer3.text = "Etching";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(2); // Answer: Drypoint
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 2) // Board Partition with Letter Rack and Music Book
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_2;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_2;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Letter Rack with a Kit and Pistol";
+                        answer2.text = "Studio Wall with Vanitas Still Life";
+                        answer3.text = "Quodlibet";
+                        answer4.text = "Reverse Side of a Painting, Notes Multiplied";
+                        answer5.text = "A Cabinet in the Artist's Studio";
+                        answer6.text = "Board Partition with Letter Rack and Music Book";
+                        SetCorrectAnswer(6); // Answer: Board Partition with Letter Rack and Music Book
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Caravaggio";
+                        answer2.text = "Rembrandt Harmenszoon van Rijn";
+                        answer3.text = "Gian Lorenzo Bernini";
+                        answer4.text = "Cornelis Norbertus Gysbrechts";
+                        answer5.text = "Maria van Oosterwijck";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(4); // Answer: Cornelis Norbertus Gysbrechts
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "'Board Partition' uses trompe-l'œil, a technique that gives the optical illusion of what?";
+                        answer1.text = "Movement";
+                        answer2.text = "3D objects";
+                        answer3.text = "Hidden images";
+                        answer4.text = "False colors";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(2); // Answer: 3D objects
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "What is included in letter board paintings to make them an alternative to portraits?";
+                        answer1.text = "Personalized objects";
+                        answer2.text = "Biographical references";
+                        answer3.text = "Hidden faces";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(1); // Answer: Personalized objects
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 3) // The Entombment of Christ
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_3;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_3;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "The Entombment of Christ";
+                        answer2.text = "The Taking of Christ";
+                        answer3.text = "The Flagellation of Christ";
+                        answer4.text = "The Denial of Saint Peter";
+                        answer5.text = "Martyrdom of Saint Matthew";
+                        answer6.text = "Death of the Virgin";
+                        SetCorrectAnswer(1); // Answer: The Entombment of Christ
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Cornelis Norbertus Gysbrechts";
+                        answer2.text = "Caravaggio";
+                        answer3.text = "Maria van Oosterwijck";
+                        answer4.text = "Gian Lorenzo Bernini";
+                        answer5.text = "Rembrandt Harmenszoon van Rijn";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(2); // Answer: Caravaggio
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "The figures in 'The Entombment of Christ' are arranged in what composition?";
+                        answer1.text = "Triangle";
+                        answer2.text = "Circle";
+                        answer3.text = "Diagonal line";
+                        answer4.text = "X";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(3); // Answer: Diagonal line
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Which of the three women is the Virgin Mary?";
+                        answer1.text = "On the left, holding her hand above John";
+                        answer2.text = "In the middle, drying her face with a handkerchief";
+                        answer3.text = "On the right, raising her arms in hysteria";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(1); // Answer: On the left, holding her hand above John
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 4) // Bouquet of Flowers in a Glass
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_4;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_4;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Roses and Butterfly";
+                        answer2.text = "Flower Still Life";
+                        answer3.text = "Bouquet of Flowers in a Glass";
+                        answer4.text = "Flowers, Fruit and Insects";
+                        answer5.text = "Vanitas-Still Life";
+                        answer6.text = "Still Life with Flowers, Insects and a Shell";
+                        SetCorrectAnswer(3); // Answer: Bouquet of Flowers in a Glass
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Gian Lorenzo Bernini";
+                        answer2.text = "Cornelis Norbertus Gysbrechts";
+                        answer3.text = "Rembrandt Harmenszoon van Rijn";
+                        answer4.text = "Caravaggio";
+                        answer5.text = "Maria van Oosterwijck";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(5); // Answer: Maria van Oosterwijck
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "The strong contrast between light and dark is a style called what?";
+                        answer1.text = "Sfumato";
+                        answer2.text = "Unione";
+                        answer3.text = "Cangiante";
+                        answer4.text = "Chiaroscuro";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(4); // Answer: Chiaroscuro
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "What butterfly appears in this and many of Oosterwijck's works?";
+                        answer1.text = "Painted Lady";
+                        answer2.text = "Red Admiral";
+                        answer3.text = "Kamehameha";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(2); // Answer: Red Admiral
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 5) // Christ Preaching
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_5;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_5;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Christ Presented to the People";
+                        answer2.text = "Descent from the Cross";
+                        answer3.text = "Christ Preaching";
+                        answer4.text = "Christ Healing the Sick";
+                        answer5.text = "The Prodigal Son in the Tavern";
+                        answer6.text = "Saul and David";
+                        SetCorrectAnswer(3); // Answer: Christ Preaching
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Rembrandt Harmenszoon van Rijn";
+                        answer2.text = "Maria van Oosterwijck";
+                        answer3.text = "Caravaggio";
+                        answer4.text = "Cornelis Norbertus Gysbrechts";
+                        answer5.text = "Gian Lorenzo Bernini";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(1); // Answer: Rembrandt Harmenszoon van Rijn
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "Which event from Christ's ministry does this scene depict?";
+                        answer1.text = "Forgiving the adulteress";
+                        answer2.text = "Blessing the children";
+                        answer3.text = "Reappearing to his disciples";
+                        answer4.text = "No event in particular";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(4); // Answer: No event in particular
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "This piece's alternate name, 'La Petite Tombe,' refers to which figure?";
+                        answer1.text = "The woman seated next to Christ";
+                        answer2.text = "The boy lying on the ground";
+                        answer3.text = "The man in the foreground";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(2); // Answer: The boy lying on the ground
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+
+                if (paintingNo == 6) // The Rape of Persephone
+                {
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_6;
+                    GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_6;
+                    if (questionNo == 1)
+                    {
+                        question.text = "What is the name of this piece?";
+                        answer1.text = "Neptune and Triton";
+                        answer2.text = "Apollo and Daphne";
+                        answer3.text = "Ecstasy of Saint Teresa";
+                        answer4.text = "Angel with the Crown of Thorns";
+                        answer5.text = "The Rape of Persephone";
+                        answer6.text = "The Vision of Constantine";
+                        SetCorrectAnswer(5); // Answer: The Rape of Persephone
+                    }
+                    if (questionNo == 2)
+                    {
+                        question.text = "Who created this piece?";
+                        answer1.text = "Rembrandt Harmenszoon van Rijn";
+                        answer2.text = "Cornelis Norbertus Gysbrechts";
+                        answer3.text = "Gian Lorenzo Bernini";
+                        answer4.text = "Caravaggio";
+                        answer5.text = "Maria van Oosterwijck";
+                        GameObject.Destroy(GameObject.Find("Answer6"));
+                        SetCorrectAnswer(3); // Answer: Gian Lorenzo Bernini
+                    }
+                    if (questionNo == 3)
+                    {
+                        question.text = "What material is the statue made of?";
+                        answer1.text = "Marble";
+                        answer2.text = "Granite";
+                        answer3.text = "Sandstone";
+                        answer4.text = "Slate";
+                        GameObject.Destroy(GameObject.Find("Answer5"));
+                        SetCorrectAnswer(1); // Answer: Marble
+                    }
+                    if (questionNo == 4)
+                    {
+                        question.text = "Who is the man kidnapping Persephone as depicted in the statue?";
+                        answer1.text = "Zeus";
+                        answer2.text = "Poseidon";
+                        answer3.text = "Hades";
+                        GameObject.Destroy(GameObject.Find("Answer4"));
+                        SetCorrectAnswer(3); // Answer: Hades
+                    }
+                    if (questionNo >= 5)
+                    {
+                        allAnswered = true;
+                        AllDone();
+                    }
+                }
+            }
+
+            // obtain level information
+            // if level = baroque
+            // if painting = 1
+            // set question1, answers
+            // set question2, answers-1
+            // set question3, answers-2
+            // set question4, answers-3
+            // if painting = 2
+            // set question1, answers
+            // set question2, answers-1
+            // set question3, answers-2
+            // set question4, answers-3
+            // if painting = 3
+            // if painting = 4
+            // if painting = 5
+            // if painting = 6
+
+            // if level = ukiyo-e
+            // if painting = 1
+            // if painting = 2
+            // if painting = 3
+            // if painting = 4
+            // if painting = 5
+            // if painting = 6
+
+            // if level = surrealism
+            // if painting = 1
+            // if painting = 2
+            // if painting = 3
+            // if painting = 4
+            // if painting = 5
+            // if painting = 6
+
         }
+    }
 
-        // obtain level information
-        // if level = baroque
-            // if painting = 1
-                // set question1, answers
-                // set question2, answers-1
-                // set question3, answers-2
-                // set question4, answers-3
-            // if painting = 2
-                // set question1, answers
-                // set question2, answers-1
-                // set question3, answers-2
-                // set question4, answers-3
-            // if painting = 3
-            // if painting = 4
-            // if painting = 5
-            // if painting = 6
-
-        // if level = ukiyo-e
-            // if painting = 1
-            // if painting = 2
-            // if painting = 3
-            // if painting = 4
-            // if painting = 5
-            // if painting = 6
-
-        // if level = surrealism
-            // if painting = 1
-            // if painting = 2
-            // if painting = 3
-            // if painting = 4
-            // if painting = 5
-            // if painting = 6
-	
-	}
-
-    void SetCorrectAnswer(int i)
+    public void SetCorrectAnswer(int i)
     {
         // set the correct answer to a specific button
         correctButton = GameObject.Find("Answer" + i);

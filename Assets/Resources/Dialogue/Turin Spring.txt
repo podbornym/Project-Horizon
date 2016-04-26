@@ -18,7 +18,7 @@ What do you want to know?
 #SetPlayer
 <b>Ren:</b> Could you talk to me about this painting?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b>Indeed. This painting is titled, <i>Turin Spring</i>.
+<b>Jene:</b>Indeed. This painting is titled, <i>Turin Spring</i>.
 I think you might enjoy trying to recreate it. Interested?
 #SetOptions
 #option1 #play1
@@ -29,11 +29,11 @@ I think you might enjoy trying to recreate it. Interested?
 #SetPlayer
 <b>Ren:</b> What do you know about this painting?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b>More than your consciousness can contain.
+<b>Jene:</b>More than your consciousness can contain.
 #SetPlayer
 <b>Ren:</b> Can you break the knowledge down into chunks?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Perhaps after tea.
+<b>Jene:</b> Perhaps after tea.
 <b>Ren:</b> (Is it always going to be this tedious?)
 #activateClue1
 #goto:Start
@@ -46,7 +46,8 @@ I think you might enjoy trying to recreate it. Interested?
 #SetPlayer
 <b>Ren:</b> Do you remember what medium the artist used to create <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> The nogwal in Belidder city cried, "It was oil! OIL!" and promptly ran away.
+<b>Jene:</b> The nogwal in Belidder city cried, "It was oil! OIL!" and promptly ran away.
+Would you like to re-create the painting?
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -56,10 +57,10 @@ I think you might enjoy trying to recreate it. Interested?
 #SetPlayer
 <b>Ren:</b> Could you tell me what medium the artist used for <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> No.
+<b>Jene:</b> No.
 <b>Ren:</b> Why?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> It's locked away in my subconscious. Come back after I've had a nap.
+<b>Jene:</b> It's locked away in my subconscious. Come back after I've had a nap.
 #activateClue2
 #goto:Start
 
@@ -71,11 +72,11 @@ I think you might enjoy trying to recreate it. Interested?
 #SetPlayer
 <b>Ren:</b> Can you tell me who painted <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Ciorgio de Ghirico
+<b>Jene:</b> Ciorgio de Ghirico
 #SetPlayer
 <b>Ren:</b> That doesn't...
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Sorry! Tilp of the sounge as they say! The painters name was Giorgio de Chirico.
+<b>Jene:</b> Sorry! Tilp of the sounge as they say! The painters name was Giorgio de Chirico.
 Want to try hour yand at painting this piece?
 #SetOptions
 #option1 #play3
@@ -86,11 +87,11 @@ Want to try hour yand at painting this piece?
 #SetPlayer
 <b>Ren:</b> Who painted <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> A special sort of grey matter, I would expect.
+<b>Jene:</b> A special sort of grey matter, I would expect.
 #SetPlayer
 <b>Ren:</b> What? Ew...
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Yes!
+<b>Jene:</b> Yes!
 #SetPlayer
 <b>Ren:</b> (I think it needs a nap. I'll come back)
 #activateClue3
@@ -104,7 +105,7 @@ Want to try hour yand at painting this piece?
 #SetPlayer
 <b>Ren:</b> Did you remember more about Giorgio de Chirico?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> I never forgot! Giorgio de Chirico is a noted alumni of the Higher School of Fine Arts in Athens.
+<b>Jene:</b> I never forgot! Giorgio de Chirico is a noted alumni of the Higher School of Fine Arts in Athens.
 Would you like to see how you measure up to Giorgio de Chirico?
 #SetOptions
 #option1 #play4
@@ -115,11 +116,11 @@ Would you like to see how you measure up to Giorgio de Chirico?
 #SetPlayer
 <b>Ren:</b> Is there anything else you can tell me about Giorgio de Chirico?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> He studied art.
+<b>Jene:</b> He studied art.
 #SetPlayer
 <b>Ren:</b> That's obvious. Where?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> In the Mediterranean somwhere. It's all a bit fuzzy...
+<b>Jene:</b> In the Mediterranean somewhere. It's all a bit fuzzy...
 #SetPlayer
 <b>Ren:</b> I'll come back later.
 #activateClue4
@@ -133,7 +134,7 @@ Would you like to see how you measure up to Giorgio de Chirico?
 #SetPlayer
 <b>Ren:</b> Where is <i>Turin Spring</i> housed?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> I meant to say it's private. <i>Turin Spring</i> belongs to a private collector.
+<b>Jene:</b> I meant to say it's private. <i>Turin Spring</i> belongs to a private collector.
 How about trying to mimic Giorgio de Chirico?
 #SetOptions
 #option1 #play5
@@ -144,7 +145,7 @@ How about trying to mimic Giorgio de Chirico?
 #SetPlayer
 <b>Ren:</b> Which museum houses <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> It's secret!
+<b>Jene:</b> It's secret!
 #SetPlayer
 <b>Ren:</b> I'll come back when it isn't a secret.
 #activateClue5
@@ -158,8 +159,8 @@ How about trying to mimic Giorgio de Chirico?
 #SetPlayer
 <b>Ren:</b> When did Giorgio de Chirico paint <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> I was there. It was 1914; a great year to be a muse!
-The oils beckon; would you care to induldge?
+<b>Jene:</b> I was there. It was 1914; a great year to be a muse!
+The oils beckon; would you care to indulge?
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -169,7 +170,7 @@ The oils beckon; would you care to induldge?
 #SetPlayer
 <b>Ren:</b> Do you know when Giorgio de Chirico painted <i>Turin Spring</i>?
 #SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Do remember right this moment? ...Of course not! Come back in a bit.
+<b>Jene:</b> Do I remember right this moment? ...Of course not! Come back in a bit.
 #activateClue6
 #goto:Start
 

@@ -1,0 +1,193 @@
+@Start
+#SetDialogue #SetSurrealismMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Artist  #option3Text Technique #option4Text Frida #option5Text Story  #option6Text Commentary
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> Can you teach me anything about this piece?
+#SetSurrealismMuse
+<b>Jene:</b>This particular piece is titled, <i>Alla cuelga mi vestido</i>, was made in 1933. The English translation is, “My Dress Hangs There.”
+You might enjoy making a copy. Give it a go?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Can you remember anything about this piece?
+#SetSurrealismMuse
+<b>Jene:</b> Shhh!
+#SetPlayer
+<b>Ren:</b> But…
+#SetSurrealismMuse
+<b>Jene:</b> SHHHHHH!!! I’m reading!
+<b>Ren:</b> (I’ll leave the muse alone for now)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Who created the piece, <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> Frida Kahlo from Mexico. She lived from 1907 to 1954.
+Are you going to try to forge the painting?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> Could you tell me who painted <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> Oh! It isn’t just a painting. 
+<b>Ren:</b> Well it looks…
+#SetSurrealismMuse
+<b>Jene:</b> Well it isn’t just a painting. You’ve offended me. Now go away!
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> What techniques did Frida use to create <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> Well, besides oil, she used collage.
+#SetPlayer
+<b>Ren:</b> Where?
+#SetSurrealismMuse
+<b>Jene:</b> Near the bottom. See it? In fact, it’s the only collage in the artist’s oeuvre.
+Are you ready to try to make your own copy?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> What sort of technique did Frida use to create <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b>She used oils.
+#SetPlayer
+<b>Ren:</b> Didn’t you say it wasn’t just a painting?
+#SetSurrealismMuse
+<b>Jene:</b> I did! Take a closer look
+#SetPlayer
+<b>Ren:</b> (OK. I’ll take a closer look.)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> What else do you know about Frida Kahlo?
+#SetSurrealismMuse
+<b>Jene:</b> She started painting after an accident! A bus she was riding collided with a street car which severely damaged her hip and cause fractures in her spine and pelvis. 
+Now, how about trying your hand at making a copy?
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> What more can you tell me about Frida Kahlo?
+#SetSurrealismMuse
+<b>Jene:</b> She is a very prominent Mexican painter.
+#SetPlayer
+<b>Ren:</b> Do you know anything else about her?
+#SetSurrealismMuse
+<b>Jene:</b> Quite a bit! Do you have time for a long story?
+#SetPlayer
+<b>Ren:</b> Sorry, not really. I’ll be back.
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> What’s the story behind <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> Frida wanted to return home to Mexico but her husband, Diego, wanted to stay in America. 
+Ready to copy this story in oil and collage?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> What else can you tell me about <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> I know the story it tells…but it’s time for my dinner so you’ll have to wait.
+#SetPlayer
+<b>Ren:</b> OK. I’ll come back later.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> What’s the commentary behind <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> The Painting is an ironic depiction of American capitalism and superficiality, revealing social decay and the destruction of fundamental human values.
+Ready to forge your own version?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> Anything else you can tell me about <i>Alla cuelga mi vestido</i>?
+#SetSurrealismMuse
+<b>Jene:</b> Social commentary! Come back for a sit-down and we’ll talk.
+#activateClue
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No
