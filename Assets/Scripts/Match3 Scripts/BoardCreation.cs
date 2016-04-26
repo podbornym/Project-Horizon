@@ -844,11 +844,11 @@ public class BoardCreation : MonoBehaviour
 			else
 			{
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-				match3Return = (.3f - dragPenalty) * 100 + 10;
+				match3Return = (.8f - dragPenalty) * 100 + 10;
 				warningText.color = Color.green;
 				warningText.text = "Your score was: " + match3Return + "%";
 				GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-				GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+				GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
 			}
         //}
 
