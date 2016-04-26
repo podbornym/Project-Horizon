@@ -1,4 +1,4 @@
-@Start
+﻿@Start
 #SetDialogue
 Are you sure you want to sell to this client?
 #SetOptions
@@ -15,11 +15,9 @@ Are you sure you want to sell to this client?
 #nsell
 
 @Continue
-#SetDialogue
 #Continue
 
 @GContinue
-#SetDialogue
 #GContinue
 
 @pass1

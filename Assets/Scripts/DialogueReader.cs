@@ -248,6 +248,7 @@ public class DialogueReader : MonoBehaviour
         }
         if(PersistVars.currentScene == "SellingScene" && !selling)
         {
+            SellCont = GameObject.Find("SellCanvas").GetComponent<SellingController>();
             SellingStart();
             selling = true;
             inMansion = false;
