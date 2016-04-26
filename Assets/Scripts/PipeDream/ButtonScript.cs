@@ -17,9 +17,9 @@ public class ButtonScript : MonoBehaviour {
 
     public void ContinuePressed()
     {
-        if (GameObject.Find("pipe-board-sized").GetComponent<SpriteRenderer>().enabled == true)
+        if (GameObject.Find("Cover").GetComponent<SpriteRenderer>().enabled == true)
         {
-            GameObject.Find("pipe-board-sized").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("Cover").GetComponent<SpriteRenderer>().enabled = false;
             GameObject.Find("Pipe Dream Manager").GetComponent<PipeDreamManager>().gameRunning = true;
             GameObject.Find("Pipe Dream Manager").GetComponent<PipeDreamManager>().StartFlow();
         }
