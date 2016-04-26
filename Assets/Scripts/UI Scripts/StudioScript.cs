@@ -14,6 +14,8 @@ public class StudioScript : MonoBehaviour {
     public static bool cursorSet = false;
     public Texture2D standardCursor;    //blue, unlit cursor
     public Texture2D hoverCursor;       //blue, lit cursor
+    public AudioClip clueClick = Resources.Load("Sound/UI SFX/Important Click", typeof (AudioClip)) as AudioClip;
+    public AudioClip click = Resources.Load("Sound/UI SFX/General Click", typeof(AudioClip)) as AudioClip;
 
     // Use this for initialization
     void Start () {
@@ -44,8 +46,27 @@ public class StudioScript : MonoBehaviour {
         Cursor.SetCursor(standardCursor, hotSpot, cursorMode);
     }
 
+    void OnMouseUp()
+    {
+        if(gameObject.GetComponent<AudioSource>())
+        {
+            Destroy(gameObject.GetComponent<AudioSource>());
+        }
+    }
+
     void OnMouseDown()
     {
+        AudioSource audio = new AudioSource();
+        if(gameObject.tag == "clue")
+        {
+            audio.clip = clueClick;
+            audio.PlayOneShot(clueClick);
+        }
+        else
+        {
+            audio.clip = click;
+            audio.PlayOneShot(click);
+        }
         switch(gameObject.name)
         {
             // Cases for the first Uk studio
