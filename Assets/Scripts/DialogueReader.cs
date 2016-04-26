@@ -49,7 +49,6 @@ public class DialogueReader : MonoBehaviour
     public bool inMansion = true;
     public bool cAnswer;
 	public int blkPrice;
-    public AudioClip clueClick;
 
     // Use this for initialization
     void Start ()
