@@ -1,5 +1,5 @@
-@Start
-#SetDialogue #SetSurrealismMuse
+﻿@Start
+#SetDialogue #SetSurrealMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -17,7 +17,7 @@ What do you want to know?
 @yes1
 #SetPlayer
 <b>Ren:</b> Can you talk to me about this painting?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b>This painting is titled, <i>Tristan and Isolde</i>.
 Would you like to try making a copy?
 #SetOptions
@@ -28,11 +28,11 @@ Would you like to try making a copy?
 @no1
 #SetPlayer
 <b>Ren:</b> What can you tell me about this piece?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> That is a painting on canvas.
 #SetPlayer
 <b>Ren:</b> Anything else?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> ZZZZzzzzzZzzzz
 <b>Ren:</b> (I’ll come back in a bit and see if its awake)
 #activateClue1
@@ -45,7 +45,7 @@ Would you like to try making a copy?
 @yes2
 #SetPlayer
 <b>Ren:</b> Can you tell me who painted <i>Tristan and Isolde</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> The late, great, Salavador Dali! He was from Spain, you know.
 Care to take a gamble and produce a copy?
 #SetOptions
@@ -56,10 +56,10 @@ Care to take a gamble and produce a copy?
 @no2
 #SetPlayer
 <b>Ren:</b> Do you know who painted <i>Tristan and Isolde</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> I should think so! I was there. 
 <b>Ren:</b> And?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> It’s too dark. I can’t see. Come back when it’s lighter.
 #activateClue2
 #goto:Start
@@ -71,11 +71,11 @@ Care to take a gamble and produce a copy?
 @yes3
 #SetPlayer
 <b>Ren:</b> Can you tell me anything about Dali’s technique?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> He painted.
 #SetPlayer
 <b>Ren:</b> Obviously.
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Ah, yes! He developed a mental exercise designed to enhance artist creativity called “paranoiac-critical method”.
 Are you focused enough to try and make a copy?
 #SetOptions
@@ -86,11 +86,11 @@ Are you focused enough to try and make a copy?
 @no3
 #SetPlayer
 <b>Ren:</b> What sort of technique did Dali use while painting?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Well, oils and brushes.
 #SetPlayer
 <b>Ren:</b> Isn’t that media?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> It certainly is!
 #SetPlayer
 <b>Ren:</b> (I’ll come back when its more focused.)
@@ -104,7 +104,7 @@ Are you focused enough to try and make a copy?
 @yes4
 #SetPlayer
 <b>Ren:</b> Do you know anything else about Salvador Dali?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> He married Elena Dmitrievna Diakonova. She handled his legal and financial matters as well as negotiating contracts with brokers and exhibition promoters. Dynamic duo!
 Would you like to forge his mustache? Or his painting… 
 #SetOptions
@@ -115,11 +115,11 @@ Would you like to forge his mustache? Or his painting…
 @no4
 #SetPlayer
 <b>Ren:</b> Can you tell me more about Dali?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> He’s Spanish, you know!
 #SetPlayer
 <b>Ren:</b> You already said that.
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> He had a really cool mustache! It was a sort of trademark of his, really. Mmmmm. Mustache…
 #SetPlayer
 <b>Ren:</b> I’ll check back in a bit.
@@ -133,7 +133,7 @@ Would you like to forge his mustache? Or his painting…
 @yes5
 #SetPlayer
 <b>Ren:</b> How long did Dali keep painting?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> He kept painting until after 1980. After 1980, he developed a motor disorder that made his hands tremble and too weak to hold a paintbrush.
 But you’re young and able! Take a crack at painting a copy!
 #SetOptions
@@ -144,7 +144,7 @@ But you’re young and able! Take a crack at painting a copy!
 @no5
 #SetPlayer
 <b>Ren:</b> What was Dali’s output like?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Well, a while. But it’s a bit sad.
 #SetPlayer
 <b>Ren:</b> I’ll grab some tissues and be back.
@@ -158,7 +158,7 @@ But you’re young and able! Take a crack at painting a copy!
 @yes6
 #SetPlayer
 <b>Ren:</b> When did Salvador Dali finish painting <i>Tristan and Isolde</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> 1944!
 Want to forge like it’s 1944?
 #SetOptions
@@ -169,7 +169,7 @@ Want to forge like it’s 1944?
 @no6
 #SetPlayer
 <b>Ren:</b> When was <i>Tristan and Isolde</i> painted?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> I’ll need a moment. Come back in a bit!
 #activateClue6
 #goto:Start

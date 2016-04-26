@@ -1,5 +1,5 @@
 @Start
-#SetDialogue #SetSurrealismMuse
+#SetDialogue #SetSurrealMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -17,8 +17,8 @@ What do you want to know?
 @yes1
 #SetPlayer
 <b>Ren:</b> Could you tell me something about this painting?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b>Perhaps...  <i>Through Birds, Through fire but Not Through Glass</i>.
+#SetSurrealMuse
+<b>Jene:</b>Perhaps...  <i>Through Birds, Through fire but Not Through Glass</i>.
 That is the name of this piece. Are you interested in recreating this piece?
 #SetOptions
 #option1 #play1
@@ -28,12 +28,12 @@ That is the name of this piece. Are you interested in recreating this piece?
 @no1
 #SetPlayer
 <b>Ren:</b> What can you tell me about this painting??
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b>An ocean of knowledge flows through my intact mind.
+#SetSurrealMuse
+<b>Jene:</b>An ocean of knowledge flows through my intact mind.
 #SetPlayer
 <b>Ren:</b> Can you elaborate on that, perhaps?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Maybe further down in time...
+#SetSurrealMuse
+<b>Jene:</b> Maybe further down in time...
 <b>Ren:</b> (This muse is ridiculous!)
 #activateClue1
 #goto:Start
@@ -45,8 +45,8 @@ That is the name of this piece. Are you interested in recreating this piece?
 @yes2
 #SetPlayer
 <b>Ren:</b> Do you remember what medium the artist used now?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> What is "Oil on canvas".
+#SetSurrealMuse
+<b>Jene:</b> What is "Oil on canvas".
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -55,11 +55,11 @@ That is the name of this piece. Are you interested in recreating this piece?
 @no2
 #SetPlayer
 <b>Ren:</b> Could you tell me what medium the artist used for this painting?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Yes.
+#SetSurrealMuse
+<b>Jene:</b> Yes.
 <b>Ren:</b> ...?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> ...
+#SetSurrealMuse
+<b>Jene:</b> ...
 #activateClue2
 #goto:Start
 
@@ -70,12 +70,12 @@ That is the name of this piece. Are you interested in recreating this piece?
 @yes3
 #SetPlayer
 <b>Ren:</b> Can you tell me who painted this now?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Yves Tanguy was that being.
+#SetSurrealMuse
+<b>Jene:</b> Yves Tanguy was that being.
 #SetPlayer
 <b>Ren:</b> Oh, thank you!
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Do not place your thanks upon me. Go, delve into the creative processes.
+#SetSurrealMuse
+<b>Jene:</b> Do not place your thanks upon me. Go, delve into the creative processes.
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -84,12 +84,12 @@ That is the name of this piece. Are you interested in recreating this piece?
 @no3
 #SetPlayer
 <b>Ren:</b> Who painted <i>Through Birds, Through Fire but Not Through Glass</i>?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> A being that was.
+#SetSurrealMuse
+<b>Jene:</b> A being that was.
 #SetPlayer
 <b>Ren:</b> What? Nevermind.. I'll be back.
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Will you?
+#SetSurrealMuse
+<b>Jene:</b> Will you?
 #SetPlayer
 <b>Ren:</b> (This is so much effort.)
 #activateClue3
@@ -102,8 +102,8 @@ That is the name of this piece. Are you interested in recreating this piece?
 @yes4
 #SetPlayer
 <b>Ren:</b> Did you remember more about Yves Tanguy now?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Of course I do. Yves became went from Paris to New York during World War 2.
+#SetSurrealMuse
+<b>Jene:</b> Of course I do. Yves became went from Paris to New York during World War 2.
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -112,12 +112,12 @@ That is the name of this piece. Are you interested in recreating this piece?
 @no4
 #SetPlayer
 <b>Ren:</b> Is there anything else you can tell me about Tanguy?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> He was an artist.
+#SetSurrealMuse
+<b>Jene:</b> He was an artist.
 #SetPlayer
 <b>Ren:</b> Oh really?..
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Really.
+#SetSurrealMuse
+<b>Jene:</b> Really.
 #SetPlayer
 <b>Ren:</b> I'll come back later.
 #activateClue4
@@ -130,8 +130,8 @@ That is the name of this piece. Are you interested in recreating this piece?
 @yes5
 #SetPlayer
 <b>Ren:</b> I'm back!
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Did you ever leave? To tend to my amusements, 
+#SetSurrealMuse
+<b>Jene:</b> Did you ever leave? To tend to my amusements, 
 The Minneapolis Institute of Arts is where this painting can be found in modern times.
 #SetOptions
 #option1 #play5
@@ -141,8 +141,8 @@ The Minneapolis Institute of Arts is where this painting can be found in modern 
 @no5
 #SetPlayer
 <b>Ren:</b> Which museum is this painting in?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> The one with the other artworks
+#SetSurrealMuse
+<b>Jene:</b> The one with the other artworks
 #SetPlayer
 <b>Ren:</b> I'll come back when you are less difficult.
 #activateClue5
@@ -155,8 +155,8 @@ The Minneapolis Institute of Arts is where this painting can be found in modern 
 @yes6
 #SetPlayer
 <b>Ren:</b> When did Giorgio de Yves Tanguy paint <i>Through Birds, Through Fire but Not Through Glass</i>?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> If time does indeed matter, this painting was born in 1943.
+#SetSurrealMuse
+<b>Jene:</b> If time does indeed matter, this painting was born in 1943.
 The horns upon the wind are sounding, now you shall discover your true skills.
 #SetOptions
 #option1 #play6
@@ -166,8 +166,8 @@ The horns upon the wind are sounding, now you shall discover your true skills.
 @no6
 #SetPlayer
 <b>Ren:</b> Do you know when this painting was created?
-#SetSurrealismMuse
-<b>SurrealismPlaceholder:</b> Is time relevent? Past, Present, and Future all exist in unision.
+#SetSurrealMuse
+<b>Jene:</b> Is time relevent? Past, Present, and Future all exist in unision.
 #activateClue6
 #goto:Start
 

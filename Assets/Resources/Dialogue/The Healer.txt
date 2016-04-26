@@ -1,5 +1,5 @@
 @Start
-#SetDialogue #SetSurrealismMuse
+#SetDialogue #SetSurrealMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -17,7 +17,7 @@ What do you want to know?
 @yes1
 #SetPlayer
 <b>Ren:</b> What can you tell me about this sculpture?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b>This particular piece is titled, <i>The Healer</i>.
 Would you like to try to sculpt it?
 #SetOptions
@@ -28,11 +28,11 @@ Would you like to try to sculpt it?
 @no1
 #SetPlayer
 <b>Ren:</b> Could you tell me about this sculpture?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b>When the mood strikes me.
 #SetPlayer
 <b>Ren:</b> Is it striking you now?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> No.
 <b>Ren:</b> (I'll wander around for a bit)
 #activateClue1
@@ -45,7 +45,7 @@ Would you like to try to sculpt it?
 @yes2
 #SetPlayer
 <b>Ren:</b> Do you remember what metal the artist used to create <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> I do! It's bronze!
 Would you like to cast a copy of your own?
 #SetOptions
@@ -56,10 +56,10 @@ Would you like to cast a copy of your own?
 @no2
 #SetPlayer
 <b>Ren:</b> <i>The Healer</i> looks like it's made of metal. What kind of metal is it?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Copper.
 <b>Ren:</b> Wouldn't it be green if it were copper?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Ah! I suppose you're right. Hmmm. Let me think a bit...
 #activateClue2
 #goto:Start
@@ -71,11 +71,11 @@ Would you like to cast a copy of your own?
 @yes3
 #SetPlayer
 <b>Ren:</b> Can you tell me who sculpted <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Rene...
 #SetPlayer
 <b>Ren:</b> Rene who?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Magritte. Rene Magritte.
 Do you think you're ready to sculpt?
 #SetOptions
@@ -86,11 +86,11 @@ Do you think you're ready to sculpt?
 @no3
 #SetPlayer
 <b>Ren:</b> Do you know who sculpted <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Eventually I will.
 #SetPlayer
 <b>Ren:</b> I figured.
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Catching on are we?
 #SetPlayer
 <b>Ren:</b> (I think I'll go for a walk...)
@@ -104,7 +104,7 @@ Do you think you're ready to sculpt?
 @yes4
 #SetPlayer
 <b>Ren:</b> Can you tell me more about Rene Magritte?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> He made living producing fakes of Van Gogh and Picasso.
 So, ready to make like Magritte and make a copy?
 #SetOptions
@@ -115,11 +115,11 @@ So, ready to make like Magritte and make a copy?
 @no4
 #SetPlayer
 <b>Ren:</b> Is there anything else you can tell me about Rene Magritte?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Are you sure YOU can't tell me more about him?
 #SetPlayer
 <b>Ren:</b> I...what? No...
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Really? You two have a bit in common...
 #SetPlayer
 <b>Ren:</b> I'll...be back later...
@@ -133,7 +133,7 @@ So, ready to make like Magritte and make a copy?
 @yes5
 #SetPlayer
 <b>Ren:</b> Where did Magritte create <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> In Belgium, of course!
 Are you ready to re-create the sculpture?
 #SetOptions
@@ -144,7 +144,7 @@ Are you ready to re-create the sculpture?
 @no5
 #SetPlayer
 <b>Ren:</b> Where did Magritte create <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Waffles! Fries! Where's the syrup?
 #SetPlayer
 <b>Ren:</b> I'll be back after you've had breakfast...
@@ -158,7 +158,7 @@ Are you ready to re-create the sculpture?
 @yes6
 #SetPlayer
 <b>Ren:</b> Do you remember when Magritte sculpted <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> 1964? No, really! Maybe? I don't know. I don't remmebr much of the 60's, man...
 So. How about a mimicked sculpture?
 #SetOptions
@@ -169,7 +169,7 @@ So. How about a mimicked sculpture?
 @no6
 #SetPlayer
 <b>Ren:</b> When did Magritte sculpt <i>The Healer</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> 1964?
 #SetPlayer
 <b>Ren:</b> I'll come back after you've had time to think...

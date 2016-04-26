@@ -1,5 +1,5 @@
 @Start
-#SetDialogue #SetSurrealismMuse
+#SetDialogue #SetSurrealMuse
 What do you want to know?
 #SetOptions
 #option1 #goto:ClueOne
@@ -17,9 +17,9 @@ What do you want to know?
 @yes1
 #SetPlayer
 <b>Ren:</b> This is the painting I need to know more about.
-#SetSurrealismMuse
-<b>Jene:</b>Ah, yes! Well, this piece is titled, <i>The Slug Room</i>. It
-is not simply a painting, however.
+#SetSurrealMuse
+<b>Jene:</b>Ah, yes! Well, this piece is titled, <i>The Slug Room</i>.
+It is not simply a painting, however.
 I think you might enjoy trying to recreate it. Interested?
 #SetOptions
 #option1 #play1
@@ -29,11 +29,11 @@ I think you might enjoy trying to recreate it. Interested?
 @no1
 #SetPlayer
 <b>Ren:</b> Can you tell me about a surrealist painting?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b>Probably. I know quite a bit about surrealist art.
 #SetPlayer
 <b>Ren:</b> I suppose I should be more specific...
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> ...
 <b>Ren:</b> (I should show it the painting.)
 #activateClue1
@@ -46,7 +46,7 @@ I think you might enjoy trying to recreate it. Interested?
 @yes2
 #SetPlayer
 <b>Ren:</b> Do you remember what media the artist used to create <i>The Slug Room</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Yes, I do. The artist used Gouache, tempera, ink, and paper to create a surrealist collage.
 Would you like to try to re-create the piece?
 #SetOptions
@@ -57,10 +57,10 @@ Would you like to try to re-create the piece?
 @no2
 #SetPlayer
 <b>Ren:</b> What did you mean when you said <i>The Slug Room</i> piece is not simply a painting?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Simply that multiple media were used to create <i>The Slug Room</i>.
 <b>Ren:</b> What do you mean?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> You want a list? Come back later and I'll see if I can remember.
 #activateClue2
 #goto:Start
@@ -72,11 +72,11 @@ Would you like to try to re-create the piece?
 @yes3
 #SetPlayer
 <b>Ren:</b> Do you remember the artist behind the creation of <i>The Slug Room</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Behind! Where?
 #SetPlayer
 <b>Ren:</b> Uh, I meant who created <i>The Slug Room</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Why didn't you say so? Talking about artists lurking behind...his name was Max Ernst.
 Say! Would you like to re-create the piece?
 #SetOptions
@@ -87,11 +87,11 @@ Say! Would you like to re-create the piece?
 @no3
 #SetPlayer
 <b>Ren:</b> Who is the artist that created <i>The Slug Room</i>?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> 1920.
 #SetPlayer
 <b>Ren:</b> The artist's name was 1920?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Yes!
 #SetPlayer
 <b>Ren:</b> (I'll have to come back later. The muse seems to be preoccupied...)
@@ -105,7 +105,7 @@ Say! Would you like to re-create the piece?
 @yes4
 #SetPlayer
 <b>Ren:</b> So...can you tell me more about surrealist collage?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Certainly! Max Ernst invented the technique of creating new realities using cut-out photographs from existing print media. 
 Ready to barroomf a copy of the piece?
 #SetOptions
@@ -116,11 +116,11 @@ Ready to barroomf a copy of the piece?
 @no4
 #SetPlayer
 <b>Ren:</b> Can you tell me more about surrealist collage?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> SQUEEEEEEEEEEEEEK!
 #SetPlayer
 <b>Ren:</b> Excuse me?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Don't diggle! Merun amuf to parley. Your red mizzles aren't candunce.
 #SetPlayer
 <b>Ren:</b> I'll, uh, be back later.
@@ -134,7 +134,7 @@ Ready to barroomf a copy of the piece?
 @yes5
 #SetPlayer
 <b>Ren:</b> Can you tell me more about gouache as a medium?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Gouache is a water based paint that dries opaque. It used to be used in graphics design due to how fast it dries.
 Take a tube and try your hand with it!
 #SetOptions
@@ -145,7 +145,7 @@ Take a tube and try your hand with it!
 @no5
 #SetPlayer
 <b>Ren:</b> What is gouache?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Fantastic to bathe in. Excuse me, I must go at once.
 #SetPlayer
 <b>Ren:</b> Bye?
@@ -159,7 +159,7 @@ Take a tube and try your hand with it!
 @yes6
 #SetPlayer
 <b>Ren:</b> can you remember when the piece was made?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> 1920!
 Take a go at re-creating the masterpiece! 
 #SetOptions
@@ -170,7 +170,7 @@ Take a go at re-creating the masterpiece!
 @no6
 #SetPlayer
 <b>Ren:</b> I forgot to ask; when was <i>The Slug Room</i> created?
-#SetSurrealismMuse
+#SetSurrealMuse
 <b>Jene:</b> Oh! 1891-1976! No... that isn't right. My stupendous mind has magnificently failed me. Come egonis in a flump.
 #activateClue6
 #goto:Start

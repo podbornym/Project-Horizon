@@ -144,7 +144,7 @@ public class DialogueReader : MonoBehaviour
             inSurrealZone = true;
             print(true);
             intro_speech_surreal = false;
-            ReadFile("Dialogue/surreal intro");
+            ReadFile("Dialogue/SurrealismIntro");
             NextLine();
         }
         else if (PersistVars.currentScene == "SurrealistZone" && !inSurrealZone)
@@ -156,7 +156,7 @@ public class DialogueReader : MonoBehaviour
             switch (paintNum)
             {
                 case 7:
-                    ReadFile("Dialogue/whatever");
+                    ReadFile("Dialogue/Tristan and Isolde");
                     break;
                 case 8:
                     ReadFile("Dialogue/The Healer");
@@ -168,10 +168,10 @@ public class DialogueReader : MonoBehaviour
                     ReadFile("Dialogue/Turin Spring");
                     break;
                 case 11:
-                    ReadFile("Dialogue/whatever");
+                    ReadFile("Dialogue/ThroughBirds");
                     break;
                 case 12:
-                    ReadFile("Dialogue/whatever");
+                    ReadFile("Dialogue/Alla cuelga mi vestido");
                     break;
                 default:
                     ReadFile("Dialogue/change");
@@ -1065,7 +1065,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/whatever");
+                ReadFile("Dialogue/Tristan and Isolde");
             }
             else if (PersistVars.currentScene == "S_1")
             {
@@ -1109,7 +1109,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/whatever");
+                ReadFile("Dialogue/ThroughBirds");
             }
             else if (PersistVars.currentScene == "S_5")
             {
@@ -1120,7 +1120,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/whatever");
+                ReadFile("Dialogue/Alla cuelga mi vestido");
             }
             else if (PersistVars.currentScene == "B_0")
             {

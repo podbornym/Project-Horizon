@@ -5,15 +5,17 @@
 <b>???:</b> Hello Ren! I am Veritas.
 #SetPlayer
 <b>Ren:</b> This place seems old...
-#SetUkiyoMuse
+#SetBaroqueMuse
 <b>Veritas:</b> Well, this is the Baroque era.
 You could be anywhere between the year 1600 or 1750.
 I appreciate you making the trip out here.
+#SetPlayer
 <b>Ren:</b> Well, I can't wait to work on some paintings while I'm here!
+#SetBaroqueMuse
 <b>Veritas:</b> Unfortunately, you'll have to wait longer.
 I don't have any paintings prepared for you to work on right now.
 Perhaps in a more complete game, you could work on something.
 You're welcome to look around, however.
 Enjoy your visit!
 #SetPlayer
-#quit
+#quit 

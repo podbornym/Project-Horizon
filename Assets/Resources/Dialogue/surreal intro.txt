@@ -30,4 +30,4 @@ Each studio contains <b>6</b> different clues that you can find, but only after 
 When you're finished, you can find me in any of the nearby studios.
 Just click on me to ask me any questions you have. Have fun!
 #SetPlayer
-#quit
+#quit 
