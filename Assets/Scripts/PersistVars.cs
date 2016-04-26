@@ -431,6 +431,9 @@ public class PersistVars : MonoBehaviour {
             case 6:
                 GameObject.Find("light_5").GetComponent<Image>().enabled = true;
                 break;
+            default:
+                KnowledgeClear();
+                break;
         }
     }
 

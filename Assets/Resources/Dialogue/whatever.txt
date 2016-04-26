@@ -1,0 +1,23 @@
+#SetDialogue
+This painting is unfortunately unavailable at this time.
+It'll be ready in a later build, so you'll have to wait.
+Sorry you just lost your painting progress. :(
+#quit 
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change prints?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous print. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

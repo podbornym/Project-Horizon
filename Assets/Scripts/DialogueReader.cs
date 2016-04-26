@@ -47,6 +47,9 @@ public class DialogueReader : MonoBehaviour
     public bool finished_intro_s = false;
     public bool finished_intro_b = false;
     public bool inMansion = true;
+    public bool inUkiyoZone = true;
+    public bool inSurrealZone = true;
+    public bool inBaroqueZone = true;
     public bool cAnswer;
 	public int blkPrice;
 
@@ -92,28 +95,139 @@ public class DialogueReader : MonoBehaviour
         }
         if (intro_speech_ukiyo && PersistVars.currentScene == "Ukiyo-eZone")
         {
+            inUkiyoZone = true;
+            inMansion = false;
+            inBaroqueZone = false;
+            inSurrealZone = false;
             print(true);
             intro_speech_ukiyo = false;
             ReadFile("Dialogue/ukiyo intro");
             NextLine();
         }
+        else if(PersistVars.currentScene == "Ukiyo-eZone" && !inUkiyoZone)
+        {
+            inUkiyoZone = true;
+            inMansion = false;
+            inBaroqueZone = false;
+            inSurrealZone = false;
+            switch (paintNum)
+            {
+                case 1:
+                    ReadFile("Dialogue/Three Beauties");
+                    break;
+                case 2:
+                    ReadFile("Dialogue/Lobby Brothel");
+                    break;
+                case 3:
+                    ReadFile("Dialogue/Wave of Kanagawa");
+                    break;
+                case 4:
+                    ReadFile("Dialogue/Shoki Striding");
+                    break;
+                case 5:
+                    ReadFile("Dialogue/SuddenShowerDialogue");
+                    break;
+                case 6:
+                    ReadFile("Dialogue/Yakko Adobei");
+                    break;
+                default:
+                    ReadFile("Dialogue/change");
+                    break;
+
+            }
+        }
         if (intro_speech_surreal && PersistVars.currentScene == "SurrealistZone")
         {
+            inUkiyoZone = false;
+            inMansion = false;
+            inBaroqueZone = false;
+            inSurrealZone = true;
             print(true);
             intro_speech_surreal = false;
             ReadFile("Dialogue/surreal intro");
             NextLine();
         }
+        else if (PersistVars.currentScene == "SurrealistZone" && !inSurrealZone)
+        {
+            inUkiyoZone = false;
+            inMansion = false;
+            inBaroqueZone = false;
+            inSurrealZone = true;
+            switch (paintNum)
+            {
+                case 7:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 8:
+                    ReadFile("Dialogue/The Healer");
+                    break;
+                case 9:
+                    ReadFile("Dialogue/The Slug Room");
+                    break;
+                case 10:
+                    ReadFile("Dialogue/Turin Spring");
+                    break;
+                case 11:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 12:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                default:
+                    ReadFile("Dialogue/change");
+                    break;
+
+            }
+        }
         if (intro_speech_baroque && PersistVars.currentScene == "BaroqueZone")
         {
+            inUkiyoZone = false;
+            inMansion = false;
+            inBaroqueZone = true;
+            inSurrealZone = false;
             print(true);
             intro_speech_baroque = false;
             ReadFile("Dialogue/baroque intro");
             NextLine();
         }
+        else if (PersistVars.currentScene == "BaroqueZone" && !inBaroqueZone)
+        {
+            inUkiyoZone = false;
+            inMansion = false;
+            inBaroqueZone = true;
+            inSurrealZone = false;
+            switch (paintNum)
+            {
+                case 1:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 2:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 3:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 4:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 5:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                case 6:
+                    ReadFile("Dialogue/whatever");
+                    break;
+                default:
+                    ReadFile("Dialogue/change");
+                    break;
+
+            }
+        }
         if (PersistVars.currentScene == "mansion" && !inMansion)
         {
             inMansion = true;
+            inUkiyoZone = false;
+            inBaroqueZone = false;
+            inSurrealZone = false;
             if (PersistVars.paintingDone)
             {
                 ReadFile("Dialogue/selling");
@@ -813,7 +927,10 @@ public class DialogueReader : MonoBehaviour
         option6.gameObject.SetActive(false);
         quit.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
-        muse.GetComponent<BoxCollider2D>().enabled = true;
+        if (PersistVars.currentScene != "Ukiyo-eZone" && PersistVars.currentScene != "SurrealistZone" && PersistVars.currentScene != "BaroqueZone")
+        {
+            muse.GetComponent<BoxCollider2D>().enabled = true;
+        }
         isTalking = false;
         textbox.text = " ";
 
@@ -876,109 +993,199 @@ public class DialogueReader : MonoBehaviour
             if (PersistVars.currentScene == "U_0")
             {
                 PersistVars.paintingNum = 1;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 1;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/Three Beauties");
             }
             else if (PersistVars.currentScene == "U_1")
             {
                 PersistVars.paintingNum = 2;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 2;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/Lobby Brothel");
             }
             else if (PersistVars.currentScene == "U_2")
             {
                 PersistVars.paintingNum = 3;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 paintNum = 3;
                 ReadFile("Dialogue/Wave of Kanagawa");
             }
             else if (PersistVars.currentScene == "U_3")
             {
                 PersistVars.paintingNum = 4;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 4;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/Shoki Striding");
             }
             else if (PersistVars.currentScene == "U_4")
             {
                 PersistVars.paintingNum = 5;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 5;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/SuddenShowerDialogue");
             }
             else if (PersistVars.currentScene == "U_5")
             {
                 PersistVars.paintingNum = 6;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 6;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/Yakko Adobei");
             }
             else if (PersistVars.currentScene == "S_0")
             {
                 PersistVars.paintingNum = 7;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 7;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "S_1")
             {
                 PersistVars.paintingNum = 8;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 8;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/The Healer");
             }
             else if (PersistVars.currentScene == "S_2")
             {
                 PersistVars.paintingNum = 9;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 9;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/The Slug Room");
             }
             else if (PersistVars.currentScene == "S_3")
             {
                 PersistVars.paintingNum = 10;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 10;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/Turin Spring");
             }
             else if (PersistVars.currentScene == "S_4")
             {
                 PersistVars.paintingNum = 11;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 11;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "S_5")
             {
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 PersistVars.paintingNum = 12;
                 paintNum = 12;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_0")
             {
                 PersistVars.paintingNum = 13;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 13;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_1")
             {
                 PersistVars.paintingNum = 14;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 14;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_2")
             {
                 PersistVars.paintingNum = 15;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 15;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_3")
             {
                 PersistVars.paintingNum = 16;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 16;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_4")
             {
                 PersistVars.paintingNum = 17;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 17;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "B_5")
             {
                 PersistVars.paintingNum = 18;
+                gameObject.GetComponent<PersistVars>().KnowledgeClear();
                 paintNum = 18;
+                for (int i = 0; i < 6; i++)
+                {
+                    ClueFound[i] = false;
+                }
                 ReadFile("Dialogue/whatever");
             }
             else if (PersistVars.currentScene == "SellingScene")

@@ -57,7 +57,7 @@ public class StudioScript : MonoBehaviour {
     void OnMouseDown()
     {
         AudioSource audio = new AudioSource();
-        if(gameObject.tag == "clue")
+        /*if(gameObject.tag == "clue")
         {
             audio.clip = clueClick;
             audio.PlayOneShot(clueClick);
@@ -66,7 +66,7 @@ public class StudioScript : MonoBehaviour {
         {
             audio.clip = click;
             audio.PlayOneShot(click);
-        }
+        }*/
         switch(gameObject.name)
         {
             // Cases for the first Uk studio
