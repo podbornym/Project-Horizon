@@ -50,6 +50,7 @@ public class DialogueReader : MonoBehaviour
     public bool inUkiyoZone = true;
     public bool inSurrealZone = true;
     public bool inBaroqueZone = true;
+    public bool selling = true;
     public bool cAnswer;
 	public int blkPrice;
 
@@ -99,8 +100,8 @@ public class DialogueReader : MonoBehaviour
             inMansion = false;
             inBaroqueZone = false;
             inSurrealZone = false;
-            print(true);
             intro_speech_ukiyo = false;
+            selling = false;
             ReadFile("Dialogue/ukiyo intro");
             NextLine();
         }
@@ -110,6 +111,7 @@ public class DialogueReader : MonoBehaviour
             inMansion = false;
             inBaroqueZone = false;
             inSurrealZone = false;
+            selling = false;
             switch (paintNum)
             {
                 case 1:
@@ -142,7 +144,7 @@ public class DialogueReader : MonoBehaviour
             inMansion = false;
             inBaroqueZone = false;
             inSurrealZone = true;
-            print(true);
+            selling = false;
             intro_speech_surreal = false;
             ReadFile("Dialogue/SurrealismIntro");
             NextLine();
@@ -153,6 +155,7 @@ public class DialogueReader : MonoBehaviour
             inMansion = false;
             inBaroqueZone = false;
             inSurrealZone = true;
+            selling = false;
             switch (paintNum)
             {
                 case 7:
@@ -185,7 +188,7 @@ public class DialogueReader : MonoBehaviour
             inMansion = false;
             inBaroqueZone = true;
             inSurrealZone = false;
-            print(true);
+            selling = false;
             intro_speech_baroque = false;
             ReadFile("Dialogue/baroque intro");
             NextLine();
@@ -196,6 +199,7 @@ public class DialogueReader : MonoBehaviour
             inMansion = false;
             inBaroqueZone = true;
             inSurrealZone = false;
+            selling = false;
             switch (paintNum)
             {
                 case 1:
@@ -228,6 +232,7 @@ public class DialogueReader : MonoBehaviour
             inUkiyoZone = false;
             inBaroqueZone = false;
             inSurrealZone = false;
+            selling = false;
             if (PersistVars.paintingDone)
             {
                 ReadFile("Dialogue/selling");
@@ -240,6 +245,16 @@ public class DialogueReader : MonoBehaviour
         else if(PersistVars.currentScene != "mansion")
         {
             inMansion = false;
+        }
+        if(PersistVars.currentScene == "SellingScene" && !selling)
+        {
+            SellingStart();
+            selling = true;
+            inMansion = false;
+            inUkiyoZone = false;
+            inBaroqueZone = false;
+            inSurrealZone = false;
+
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -335,7 +350,6 @@ public class DialogueReader : MonoBehaviour
 
     public void NextLine()
     {
-        print("next");
         message.text = "";
         option1.text = "";
         option2.text = "";
@@ -883,7 +897,6 @@ public class DialogueReader : MonoBehaviour
 
     public void EndDialogue()
     {
-        print("ended");
         if(finished_intro_u == false)
         {
             if (intro_speech_ukiyo == false)
@@ -964,11 +977,21 @@ public class DialogueReader : MonoBehaviour
         {
             if(choiceActions[optionNumber].Contains("1"))
             {
-                SceneManager.LoadScene("Z1-TR" + PersistVars.paintingNum.ToString());
+                if (PersistVars.currentScene == "Ukiyo-eZone" || PersistVars.previousScene == "Ukiyo-eZone")
+                    SceneManager.LoadScene("Z1-TR" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "SurrealistZone" || PersistVars.previousScene == "SurrealistZone")
+                    SceneManager.LoadScene("Z2-TR" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "BaroqueZone" || PersistVars.previousScene == "BaroqueZone")
+                    SceneManager.LoadScene("Z3-TR" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
             }
             else if (choiceActions[optionNumber].Contains("2"))
             {
-                SceneManager.LoadScene("Z1-SD" + PersistVars.paintingNum.ToString());
+                if (PersistVars.currentScene == "Ukiyo-eZone" || PersistVars.previousScene == "Ukiyo-eZone")
+                    SceneManager.LoadScene("Z1-SD" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "SurrealistZone" || PersistVars.previousScene == "SurrealistZone")
+                    SceneManager.LoadScene("Z2-SD" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "BaroqueZone" || PersistVars.previousScene == "BaroqueZone")
+                    SceneManager.LoadScene("Z3-SD" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
             }
             else if (choiceActions[optionNumber].Contains("3"))
             {
@@ -976,11 +999,21 @@ public class DialogueReader : MonoBehaviour
             }
             else if (choiceActions[optionNumber].Contains("4"))
             {
-                SceneManager.LoadScene("Z1-RT" + PersistVars.paintingNum.ToString());
+                if (PersistVars.currentScene == "Ukiyo-eZone" || PersistVars.previousScene == "Ukiyo-eZone")
+                    SceneManager.LoadScene("Z1-RT" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "SurrealistZone" || PersistVars.previousScene == "SurrealistZone")
+                    SceneManager.LoadScene("Z2-RT" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "BaroqueZone" || PersistVars.previousScene == "BaroqueZone")
+                    SceneManager.LoadScene("Z3-RT" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
             }
             else if (choiceActions[optionNumber].Contains("5"))
             {
-                SceneManager.LoadScene("Z1-PD" + PersistVars.paintingNum.ToString());
+                if (PersistVars.currentScene == "Ukiyo-eZone" || PersistVars.previousScene == "Ukiyo-eZone")
+                    SceneManager.LoadScene("Z1-PD" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "SurrealistZone" || PersistVars.previousScene == "SurrealistZone")
+                    SceneManager.LoadScene("Z2-PD" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
+                if (PersistVars.currentScene == "BaroqueZone" || PersistVars.previousScene == "BaroqueZone")
+                    SceneManager.LoadScene("Z3-PD" + (((PersistVars.paintingNum - 1) % 6) + 1).ToString());
             }
             else if (choiceActions[optionNumber].Contains("6"))
             {

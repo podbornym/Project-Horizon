@@ -331,6 +331,7 @@ public class PersistVars : MonoBehaviour {
             case "UOne":
                 UkiyoOne[index] = true;
                 UI.GetComponent<DialogueReader>().ClueFound[index] = true;
+                print(UkiyoOne[0]);
                 break;
             case "UTwo":
                 UkiyoTwo[index] = true;

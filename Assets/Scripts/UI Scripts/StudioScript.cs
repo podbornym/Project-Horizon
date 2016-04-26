@@ -75,7 +75,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 0);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
-
+                PersistVars.UkiyoOne[0] = true;
                 Button b = GameObject.Find("Button (1)").GetComponent<Button>();
                 ColorBlock cb = b.colors;
                 cb.normalColor = Color.yellow;
@@ -87,7 +87,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 1);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
-
+                PersistVars.UkiyoOne[1] = true;
                 b = GameObject.Find("Button (2)").GetComponent<Button>();
                 cb = b.colors;
                 cb.normalColor = Color.yellow;
@@ -99,7 +99,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 2);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
-
+                PersistVars.UkiyoOne[2] = true;
                 b = GameObject.Find("Button (3)").GetComponent<Button>();
                 cb = b.colors;
                 cb.normalColor = Color.yellow;
@@ -111,6 +111,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 3);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                PersistVars.UkiyoOne[3] = true;
                 b = GameObject.Find("Button (4)").GetComponent<Button>();
                 cb = b.colors;
                 cb.normalColor = Color.yellow;
@@ -122,6 +123,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 4);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                PersistVars.UkiyoOne[4] = true;
                 b = GameObject.Find("Button (5)").GetComponent<Button>();
                 cb = b.colors;
                 cb.normalColor = Color.yellow;
@@ -133,6 +135,7 @@ public class StudioScript : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 UI.GetComponent<PersistVars>().ArrayAccess("UOne", 5);
                 UI.GetComponent<PersistVars>().KnowledgeIncrement();
+                PersistVars.UkiyoOne[5] = true;
                 b = GameObject.Find("Button (6)").GetComponent<Button>();
                 cb = b.colors;
                 cb.normalColor = Color.yellow;
