@@ -1292,10 +1292,10 @@ public class Mastermind : MonoBehaviour
     // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
     public void NextLevel()
     {
-        if (PersistVars.previousScene != "null")
+        if (PersistVars.currentScene != "null")
         {
             GameObject.Find("GENERALUI").GetComponent<PersistVars>().mastermindScore = masterReturn;
-            SceneManager.LoadScene(PersistVars.previousScene);
+            SceneManager.LoadScene(PersistVars.currentScene);
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
     }

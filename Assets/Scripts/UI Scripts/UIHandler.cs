@@ -38,6 +38,7 @@ public class UIHandler : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GoBack();
+            //SceneManager.LoadScene(0);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
