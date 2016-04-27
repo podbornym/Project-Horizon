@@ -38,14 +38,13 @@ public class EnvInteracter : MonoBehaviour {
                 surrealism = GameObject.Find("Surrealism");
                 surrealismAnimator = surrealism.GetComponent<Animator>();
 
-                TopElevator = GameObject.Find("elevTop");
                 TElevator = TopElevator.GetComponent<Animator>();
-                BottomElevator = GameObject.Find("elevBot");
+
                 BElevator = BottomElevator.GetComponent<Animator>();
             }
             catch
             {
-                print("erro finding gameobjects and setting animators");
+
             }
         }
     }
