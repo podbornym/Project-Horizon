@@ -301,7 +301,7 @@ public class PersistVars : MonoBehaviour {
     }*/
 
     // Use to clear variables once a painting has been sold
-    void ClearVars()
+    public void ClearVars()
     {
         match3Score = 0f;
         rotatoScore = 0f;
