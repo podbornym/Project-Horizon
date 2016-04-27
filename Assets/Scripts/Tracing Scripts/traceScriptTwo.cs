@@ -50,11 +50,17 @@ public class traceScriptTwo : MonoBehaviour {
     public Button resetButton;
     public Button continueButton;
 
+	AudioSource source;
+	public int counter;
+	public bool first;
+
     void Start()
     {
-        GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        //GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         // directions.enabled = !directions.enabled;
-
+		source = gameObject.AddComponent<AudioSource>();
+		counter = 1;
+		first = false;
     }
     void Awake()
     {
@@ -106,8 +112,17 @@ public class traceScriptTwo : MonoBehaviour {
         if (firstHit == true && lastHit != true && mousePositionOld != mousePosition && Input.GetMouseButton(0))
         {
             //if the mousePosition is within the bounds of tracing line, hitCount is added to
-            if(GetComponent<Collider2D>() == Physics2D.OverlapPoint(mousePosition))
-                hitCount++;
+			if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (mousePosition)) 
+			{
+				hitCount++;
+				if (first == false) 
+				{
+					source.clip = Resources.Load ("Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E") as AudioClip;
+					first = true;
+				}
+				source.Play ();
+				Debug.Log ("called");
+			}
             // if there is no segement hit, then the missCount is added to
             else
                 missCount++;
@@ -140,7 +155,7 @@ public class traceScriptTwo : MonoBehaviour {
                 DisplayScore();
                 //resetButton.interactable = false;
                 continueButton.interactable = true;
-                print("continueButton not interactable");
+                //print("continueButton not interactable");
             }
         }
     }
@@ -168,6 +183,12 @@ public class traceScriptTwo : MonoBehaviour {
     // Display the corresponding Grade on-screen
     public void DisplayScore()
     {
+		if (counter == 1) 
+		{
+			source.clip = Resources.Load ("Sound/Mini-Game SFX/General/Game_Win_Music") as AudioClip;
+			source.Play ();
+			counter++;
+		}
         if (successRatio>=.80)
             scoreCircle.GetComponent<SpriteRenderer>().sprite = A;
         if (successRatio >= .70 && successRatio < .80)

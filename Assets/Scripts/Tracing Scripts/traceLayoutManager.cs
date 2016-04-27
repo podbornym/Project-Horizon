@@ -36,6 +36,7 @@ public class traceLayoutManager : MonoBehaviour {
     public Text score;
     public Text warning;
 
+
     public GameObject Tracer;
 
     void Awake() {}
@@ -47,6 +48,7 @@ public class traceLayoutManager : MonoBehaviour {
 
         /*startPoint.Set(startX, startY, -10);
         endPoint.Set(endX, endY, 0);*/
+		
     }
 	
 	// Update is called once per frame
