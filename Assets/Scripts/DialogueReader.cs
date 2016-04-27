@@ -655,7 +655,6 @@ public class DialogueReader : MonoBehaviour
 						break;
 					case "#Continue":
 						SceneManager.LoadScene ("mansion");
-						EndDialogue();
 						break;
 					case "#GContinue":
 						SceneManager.LoadScene ("GameOver");
@@ -1238,6 +1237,7 @@ public class DialogueReader : MonoBehaviour
 	public void SellingStart()
 	{
 		ReadFile("Dialogue/sell");
+		EndDialogue ();
 		//GoTo("Start");
 	}
 

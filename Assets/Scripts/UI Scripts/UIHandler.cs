@@ -13,7 +13,7 @@ public class UIHandler : MonoBehaviour {
     public GameObject flyupMenu;
     public GameObject MoveToPos;
     public float offsetY;
-	public SellingController sellC;
+	public GameObject sellC;
 	public string sellName;
     public bool UIALive = true;
     public Vector3 startPos;
@@ -132,8 +132,9 @@ public class UIHandler : MonoBehaviour {
 
 	public void SellClick()
 	{
+		sellC = GameObject.Find ("SellCanvas");
 		sellName = EventSystem.current.currentSelectedGameObject.name;
-		sellC.bHandle (sellName);
+		sellC.GetComponent<SellingController>().bHandle (sellName);
 	}
 
     public void QuitToDesktop()

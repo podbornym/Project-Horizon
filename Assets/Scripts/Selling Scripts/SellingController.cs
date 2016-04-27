@@ -24,6 +24,7 @@ public class SellingController : MonoBehaviour {
 	public Button blkButton;
 	public DialogueReader reader;
 	public string blockedClient;
+	public GameObject UI;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +40,14 @@ public class SellingController : MonoBehaviour {
 		avg = (float)System.Math.Round (avg,2);
 		maxValue = PersistVars.maxValue[PersistVars.paintingNum-1];
 		PersistVars.currentScene = "SellingScene";
+
+
+		Debug.Log (m1);
+		Debug.Log (m2);
+		Debug.Log (m3);
+		Debug.Log (m4);
+		Debug.Log (m5);
+		Debug.Log (m6);
 
 		// Setting estimate values
 		Text hText = highText.GetComponent<Text>();
@@ -75,9 +84,16 @@ public class SellingController : MonoBehaviour {
 			blkButton.interactable = false;
 			blkButton.GetComponent<Image>().color = block;
 		}
+
+		UI = GameObject.Find ("GENERALUI");
+		highButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
+		medButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
+		lowButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
+		blkButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
 	}
 
 	public void bHandle(string bName) {
+		Debug.Log ("bhandle");
 		highButton.interactable = false;
 		medButton.interactable = false;
 		lowButton.interactable = false;
@@ -104,7 +120,8 @@ public class SellingController : MonoBehaviour {
 		}
 		check = logic.ErrorCheck (buyer, avg);
 		Pay = logic.Payout (buyer,avg,maxValue);
-		reader.NextLine ();
+		UI.GetComponent<DialogueReader> ().NextLine ();
+		//reader.NextLine ();
 	}
 
 	public void bReset() {
