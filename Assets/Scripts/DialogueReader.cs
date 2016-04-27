@@ -439,9 +439,7 @@ public class DialogueReader : MonoBehaviour
                         GameObject.Find("WoodStock").GetComponent<Image>().enabled = true;
                         break;
 					case "#gosell":
-						Debug.Log ("reached gosell");
 						SceneManager.LoadScene ("SellingScene");
-						EndDialogue ();
 						break;
                     case "#activateClue1":
                         clueOne.gameObject.GetComponent<Collider2D>().enabled = true;
@@ -1240,8 +1238,7 @@ public class DialogueReader : MonoBehaviour
 	public void SellingStart()
 	{
 		ReadFile("Dialogue/sell");
-		GoTo("Start");
-		NextLine();
+		//GoTo("Start");
 	}
 
     void ReadFile(string filepath)

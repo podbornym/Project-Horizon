@@ -63,7 +63,7 @@ public class PersistVars : MonoBehaviour {
     public static bool[] painting = { false, false, false, false, false, false };
     //If a painting is true, use the location + the painting number. EX: If Ukiyo = true and using painting[2], location = "Ukiyo", clue set = location + "Three"
     //Ukiyo-e Clues
-    public static bool[] UkiyoOne = { false, false, false, false, false, false };
+	public static bool[] UkiyoOne = { false, false, false, false, false, false };
     public static bool[] UkiyoTwo = { false, false, false, false, false, false };
     public static bool[] UkiyoThree = { false, false, false, false, false, false };
     public static bool[] UkiyoFour = { false, false, false, false, false, false };
