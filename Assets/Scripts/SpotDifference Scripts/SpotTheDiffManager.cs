@@ -21,15 +21,20 @@ public class SpotTheDiffManager : MonoBehaviour
     public Sprite gradeC;
     public Sprite gradeD;
 
+	AudioSource src;
+	public int counter;
+
     // Use this for initialization
     void Start()
     {
+		counter = 1;
+		src = gameObject.AddComponent<AudioSource>();
         if (GameObject.Find("GENERALUI"))
         {
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         }
 
-        seconds = 90;
+        seconds = 5;
         // Get the UI text components
         howManyFound = GameObject.Find("FoundDiffText").GetComponent<Text>();
         timeCounter = GameObject.Find("TimerText").GetComponent<Text>();
@@ -104,6 +109,13 @@ public class SpotTheDiffManager : MonoBehaviour
         // Stop the timer when it reaches 0
         if (seconds <= 0 && !foundAll)
         {
+			/*if (counter == 1) 
+			{
+				src.clip = Resources.Load ("Sound/Mini-Game SFX/General/Game_Over_Music") as AudioClip;
+				src.Play ();
+				counter++;
+				Debug.Log ("reached");
+			}*/
             seconds = 0;
             timeCounter.text = "";
             timeUp.text = "Time's up!";
@@ -114,6 +126,12 @@ public class SpotTheDiffManager : MonoBehaviour
         // Acknowledge when the player finds every difference
         if (foundDiff == 5)
         {
+			/*if (counter == 1) 
+			{
+				src.clip = Resources.Load ("Sound/Mini-Game SFX/General/Game_Win_Music") as AudioClip;
+				src.Play ();
+				counter++;
+			}*/
             foundAll = true;
             timeCounter.text = "";
             timeUp.text = "You win!";
@@ -136,6 +154,18 @@ public class SpotTheDiffManager : MonoBehaviour
 
     public void FinalScore()
     {
+		if (counter == 1 && foundAll) 
+		{
+			src.clip = Resources.Load ("Sound/Mini-Game SFX/General/Game_Win_Music") as AudioClip;
+			src.Play ();
+			counter++;
+		} 
+		else 
+		{
+			src.clip = Resources.Load ("Sound/Mini-Game SFX/General/Game_Over_Music") as AudioClip;
+			src.Play ();
+			counter++;
+		}
         GameObject.Find("ContinueButton").GetComponent<Button>().interactable = true;
         GameObject.Find("ResetButton").GetComponent<Button>().interactable = true;
 

@@ -65,7 +65,6 @@ public class SpotTheDiff : MonoBehaviour
         {
 			if(sceneName=="Z1-SD1" || sceneName=="Z1-SD2" || sceneName=="Z1-SD3" || sceneName=="Z1-SD4" || sceneName=="Z1-SD5" || sceneName=="Z1-SD6")
 			{
-				Debug.Log ("called");
 				source.Play();
 			}
 			else if(sceneName=="Z2-SD1" || sceneName=="Z2-SD2" || sceneName=="Z2-SD3" || sceneName=="Z2-SD4" || sceneName=="Z2-SD5" || sceneName=="Z2-SD6")
