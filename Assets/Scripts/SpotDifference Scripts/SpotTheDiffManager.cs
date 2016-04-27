@@ -34,7 +34,7 @@ public class SpotTheDiffManager : MonoBehaviour
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         }
 
-        seconds = 5;
+        seconds = 90;
         // Get the UI text components
         howManyFound = GameObject.Find("FoundDiffText").GetComponent<Text>();
         timeCounter = GameObject.Find("TimerText").GetComponent<Text>();
