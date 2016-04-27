@@ -56,9 +56,10 @@ public class traceScriptTwo : MonoBehaviour {
 
     void Start()
     {
-        //GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         // directions.enabled = !directions.enabled;
-		source = gameObject.AddComponent<AudioSource>();
+        if (GameObject.Find("GENERALUI"))
+            GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
+        source = gameObject.AddComponent<AudioSource>();
 		counter = 1;
 		first = false;
     }
