@@ -655,6 +655,7 @@ public class DialogueReader : MonoBehaviour
 						break;
 					case "#Continue":
 						SceneManager.LoadScene ("mansion");
+						GoTo ("Quit");
 						break;
 					case "#GContinue":
 						SceneManager.LoadScene ("GameOver");
