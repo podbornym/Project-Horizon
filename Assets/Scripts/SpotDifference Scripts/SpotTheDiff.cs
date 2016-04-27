@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SpotTheDiff : MonoBehaviour
 {
@@ -7,14 +8,32 @@ public class SpotTheDiff : MonoBehaviour
     //public static int diffID;
     private float timeLeft;
 
+	AudioSource source;
+
+	public string sceneName;
+
     void Awake()
     {
         SpotTheDiffManager.foundDiff = 0;
+
     }
     // Use this for initialization
     void Start()
-    {
-
+	{
+		sceneName = SceneManager.GetActiveScene ().name;
+		source = gameObject.AddComponent<AudioSource>();
+		if(sceneName=="Z1-SD1" || sceneName=="Z1-SD2" || sceneName=="Z1-SD3" || sceneName=="Z1-SD4" || sceneName=="Z1-SD5" || sceneName=="Z1-SD6")
+		{
+			source.clip = Resources.Load ("Sound/Mini-Game SFX/Spot the Difference/Ukiyo-E Point") as AudioClip;
+		}
+		else if(sceneName=="Z2-SD1" || sceneName=="Z2-SD2" || sceneName=="Z2-SD3" || sceneName=="Z2-SD4" || sceneName=="Z2-SD5" || sceneName=="Z2-SD6")
+		{
+			source.clip = Resources.Load ("Sound/Mini-Game SFX/Spot the Difference/Surreal Point") as AudioClip;
+		}
+		else if(sceneName=="Z3-SD1" || sceneName=="Z3-SD2" || sceneName=="Z3-SD3" || sceneName=="Z3-SD4" || sceneName=="Z3-SD5" || sceneName=="Z3-SD6")
+		{
+			source.clip = Resources.Load ("Sound/Mini-Game SFX/Spot the Difference/Baroque Point") as AudioClip;
+		}
     }
 
     // Update is called once per frame
@@ -44,6 +63,19 @@ public class SpotTheDiff : MonoBehaviour
     {
         if (timeLeft > 0)
         {
+			if(sceneName=="Z1-SD1" || sceneName=="Z1-SD2" || sceneName=="Z1-SD3" || sceneName=="Z1-SD4" || sceneName=="Z1-SD5" || sceneName=="Z1-SD6")
+			{
+				Debug.Log ("called");
+				source.Play();
+			}
+			else if(sceneName=="Z2-SD1" || sceneName=="Z2-SD2" || sceneName=="Z2-SD3" || sceneName=="Z2-SD4" || sceneName=="Z2-SD5" || sceneName=="Z2-SD6")
+			{
+				source.Play();
+			}
+			else if(sceneName=="Z3-SD1" || sceneName=="Z3-SD2" || sceneName=="Z3-SD3" || sceneName=="Z3-SD4" || sceneName=="Z3-SD5" || sceneName=="Z3-SD6")
+			{
+				source.Play();
+			}
             SpotTheDiffManager.foundDiff += 1;
             Destroy(gameObject);
         }
