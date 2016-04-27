@@ -13,7 +13,6 @@ public class SellingController : MonoBehaviour {
 	public bool counter;
 	public int correct;
 	public int Pay;
-	public PersistVars vars;
 	public GameObject highText;
 	public GameObject medText;
 	public GameObject lowText;
@@ -28,26 +27,19 @@ public class SellingController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		UI = GameObject.Find ("GENERALUI");
 		// Setting variables
 		counter = true;
-		m1 = vars.match3Score;
-		m2 = vars.rotatoScore;
-		m3 = vars.pipeDreamScore;
-		m4 = vars.tracerScore;
-		m5 = vars.findDiffScore;
-		m6 = vars.mastermindScore;
+		m1 = UI.GetComponent<PersistVars>().match3Score;
+		m2 = UI.GetComponent<PersistVars>().rotatoScore;
+		m3 = UI.GetComponent<PersistVars>().pipeDreamScore;
+		m4 = UI.GetComponent<PersistVars>().tracerScore;
+		m5 = UI.GetComponent<PersistVars>().findDiffScore;
+		m6 = UI.GetComponent<PersistVars>().mastermindScore;
 		avg = logic.Avg (m1, m2, m3, m4, m5, m6);
 		avg = (float)System.Math.Round (avg,2);
 		maxValue = PersistVars.maxValue[PersistVars.paintingNum-1];
 		PersistVars.currentScene = "SellingScene";
-
-
-		Debug.Log (m1);
-		Debug.Log (m2);
-		Debug.Log (m3);
-		Debug.Log (m4);
-		Debug.Log (m5);
-		Debug.Log (m6);
 
 		// Setting estimate values
 		Text hText = highText.GetComponent<Text>();
@@ -84,8 +76,7 @@ public class SellingController : MonoBehaviour {
 			blkButton.interactable = false;
 			blkButton.GetComponent<Image>().color = block;
 		}
-
-		UI = GameObject.Find ("GENERALUI");
+			
 		highButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
 		medButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
 		lowButton.GetComponent<Button>().onClick.AddListener(() => {UI.GetComponent<UIHandler>().SellClick();});
