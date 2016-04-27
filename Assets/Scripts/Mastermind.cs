@@ -70,15 +70,27 @@ public class Mastermind : MonoBehaviour
     public Sprite imageZ3_5;
     public Sprite imageZ3_6;
 
+	// audio clips
+	public AudioClip win;
+	public AudioClip corA;
+	public AudioClip wrongA;
+	public AudioClip timeRun;
+	public AudioClip timeOut;
+
+	public int playcount;
+	public int playcount2;
+
     // Use this for initialization
     void Start()
     {
+		playcount = 1;
+		playcount2 = 1;
         if (GameObject.Find("GENERALUI"))
         {
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         }
         // start with one minute, we'll see how it works from there
-        seconds = 60;
+        seconds = 15;
         //correctText.FindObject<CorrectText>.GetComponent<>();
 
     }
@@ -90,9 +102,19 @@ public class Mastermind : MonoBehaviour
         seconds -= Time.deltaTime;
         timer.text = seconds.ToString("0");
 
+		if (timer.text=="10")
+		{
+			if (playcount==1)
+			{
+				gameObject.GetComponent<AudioSource> ().PlayOneShot (timeRun, 1.0f);
+				playcount++;
+			}
+		}
+
         // Stop the timer when it reaches 0 and finish
         if (seconds <= 0 && !allAnswered)
         {
+			//gameObject.GetComponent<AudioSource> ().PlayOneShot (timeOut, 1.0f);
             seconds = 0;
             penaltyTime = -1;
             correctText.text = "";
@@ -1144,6 +1166,7 @@ public class Mastermind : MonoBehaviour
             if (correctButton.GetComponent<ButtonPress>().isCorrect)
             {
                 // Clicked the right answer
+				gameObject.GetComponent<AudioSource> ().PlayOneShot (corA, 1.0f);
                 correctText.text = "O";
                 correctText.color = Color.green;
                 correct = true;
@@ -1151,6 +1174,7 @@ public class Mastermind : MonoBehaviour
             else
             {
                 // Clicked a wrong answer
+				gameObject.GetComponent<AudioSource> ().PlayOneShot (wrongA, 1.0f);
                 correctText.text = "X";
                 correctText.color = Color.red;
 
@@ -1195,10 +1219,22 @@ public class Mastermind : MonoBehaviour
     void AllDone()//bool allAnswered)
     {
         // Penalize the player if time ran out
-        if (seconds <= 0)
-        {
-            hiddenScore -= 3;
-        }
+		if (seconds <= 0) {
+			hiddenScore -= 3;
+			if (playcount2 == 1)
+			{
+				gameObject.GetComponent<AudioSource> ().PlayOneShot (timeOut, 1.0f);
+				playcount2++;
+			}
+		} 
+		else 
+		{
+			if (playcount2 == 1)
+			{
+				gameObject.GetComponent<AudioSource> ().PlayOneShot (win, 1.0f);
+				playcount2++;
+			}
+		}
 
         // Remove the other elements
         question.text = "";
@@ -1230,7 +1266,7 @@ public class Mastermind : MonoBehaviour
         }
         // Scored 6 or 7: grade B
         else if (hiddenScore >= 6 && hiddenScore <= 7)
-        {
+        {;
             GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
             GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeB;
         }
@@ -1242,7 +1278,7 @@ public class Mastermind : MonoBehaviour
         }
         // Scored 0, 1, or 2: grade D
         else if (hiddenScore <= 2)
-        {
+		{
             GameObject.Find("GradeUI").GetComponent<Image>().enabled = true;
             GameObject.Find("GradeUI").GetComponent<Image>().sprite = gradeD;
         }
