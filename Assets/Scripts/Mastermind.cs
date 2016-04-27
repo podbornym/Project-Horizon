@@ -90,7 +90,7 @@ public class Mastermind : MonoBehaviour
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
         }
         // start with one minute, we'll see how it works from there
-        seconds = 15;
+        seconds = 60;
         //correctText.FindObject<CorrectText>.GetComponent<>();
 
     }

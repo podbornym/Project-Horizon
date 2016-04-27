@@ -22,9 +22,13 @@ public class TimerScipt : MonoBehaviour {
     public GameObject[] puzzlePieces = new GameObject[2];
     private PuzzleGrade[] puzzleSM;
 
+	AudioSource audioSource;
+
     void Awake()
     {
 		//GameObject.Find ("Help Screen").GetComponent<Image> ().sprite = helpScreen;
+		audioSource = gameObject.AddComponent<AudioSource>();
+		audioSource.clip = Resources.Load ("Sound/Mini-Game SFX/General/Game_Win_Music") as AudioClip;
 
 		puzzleSM = new PuzzleGrade[puzzlePieces.Length];
         int i = 0;
@@ -40,7 +44,6 @@ public class TimerScipt : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
 		if (GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled == true) 
 		{
 			GameObject.Find ("GENERALUI").GetComponent<Canvas> ().enabled = false;
@@ -79,7 +82,7 @@ public class TimerScipt : MonoBehaviour {
         //GameObject.FindGameObjectWithTag("WaveArt").GetComponent<SelectAndMove>().finishButtonClicked();
 
         //        zScore = zError/zPerfectScore;//out of 100 ---> 0
-
+		audioSource.Play();
 
         if (puzzleSM == null)
         {
@@ -117,6 +120,7 @@ public class TimerScipt : MonoBehaviour {
 
         if ((posScore < 8) && (zTotalScore < 12))
         {
+			
             print("You have done 'A' quality work!");
 			GameObject.Find ("GradeUI").GetComponent<Image> ().enabled = true;
 			GameObject.Find ("GradeUI").GetComponent<Image> ().sprite = GradeA;
