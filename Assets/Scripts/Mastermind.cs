@@ -22,9 +22,9 @@ public class Mastermind : MonoBehaviour
     public float correctTime = -1;
     public float penaltyTime = -1;
     public bool correct = false;
-    public string artStyle = "ukiyo-e";
-    public int paintingNo = 1;
-    public int questionNo = 1;
+    public string artStyle;
+    public int paintingNo;
+    public int questionNo;
     public GameObject correctButton;
     public Sprite gradeA;
     public Sprite gradeB;
@@ -144,9 +144,9 @@ public class Mastermind : MonoBehaviour
 
         if (seconds > 0 && !allAnswered)
         {
-            if (artStyle == "ukiyo-e")
+            if (PersistVars.Ukiyo)
             {
-                if (paintingNo == 1) // Three Beauties of the Present Day
+                if (PersistVars.paintingNum == 1) // Three Beauties of the Present Day
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_1;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_1;
@@ -198,7 +198,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 2) // Waitress at an Inn at Akasaka
+                if (PersistVars.paintingNum == 2) // Waitress at an Inn at Akasaka
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_2;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_2;
@@ -250,7 +250,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 3) // The Great Wave off Kanagawa
+                if (PersistVars.paintingNum == 3) // The Great Wave off Kanagawa
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_3;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_3;
@@ -302,7 +302,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 4) // Shoki Striding
+                if (PersistVars.paintingNum == 4) // Shoki Striding
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_4;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_4;
@@ -354,7 +354,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 5) // Sudden Shower over Shin-Ōhashi Bridge and Atake
+                if (PersistVars.paintingNum == 5) // Sudden Shower over Shin-Ōhashi Bridge and Atake
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_5;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_5;
@@ -406,7 +406,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 6) // Otani Oniji III as Yakko Edobei
+                if (PersistVars.paintingNum == 6) // Otani Oniji III as Yakko Edobei
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ1_6;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ1_6;
@@ -459,9 +459,9 @@ public class Mastermind : MonoBehaviour
                 }
             }
 
-            if (artStyle == "surrealism")
+            if (PersistVars.Surreal)
             {
-                if (paintingNo == 1) // Tristan and Isolde
+                if (PersistVars.paintingNum == 1) // Tristan and Isolde
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_1;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_1;
@@ -513,7 +513,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 2) // The Healer
+                if (PersistVars.paintingNum == 2) // The Healer
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_2;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_2;
@@ -565,7 +565,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 3) // The Slug Room
+                if (PersistVars.paintingNum == 3) // The Slug Room
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_3;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_3;
@@ -617,7 +617,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 4) // Turin Spring
+                if (PersistVars.paintingNum == 4) // Turin Spring
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_4;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_4;
@@ -669,7 +669,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 5) // Through Birds, Through Fire but Not Through Glass
+                if (PersistVars.paintingNum == 5) // Through Birds, Through Fire but Not Through Glass
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_5;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_5;
@@ -721,7 +721,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 6) // My Dress Hangs There
+                if (PersistVars.paintingNum == 6) // My Dress Hangs There
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_6;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_6;
@@ -774,9 +774,9 @@ public class Mastermind : MonoBehaviour
                 }
             }
 
-            if (artStyle == "baroque")
+            if (PersistVars.Baroque)
             {
-                if (paintingNo == 1) // The Three Trees
+                if (PersistVars.paintingNum == 1) // The Three Trees
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_1;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_1;
@@ -828,7 +828,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 2) // Board Partition with Letter Rack and Music Book
+                if (PersistVars.paintingNum == 2) // Board Partition with Letter Rack and Music Book
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_2;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_2;
@@ -880,7 +880,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 3) // The Entombment of Christ
+                if (PersistVars.paintingNum == 3) // The Entombment of Christ
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_3;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_3;
@@ -932,7 +932,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 4) // Bouquet of Flowers in a Glass
+                if (PersistVars.paintingNum == 4) // Bouquet of Flowers in a Glass
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_4;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_4;
@@ -984,7 +984,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 5) // Christ Preaching
+                if (PersistVars.paintingNum == 5) // Christ Preaching
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_5;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_5;
@@ -1036,7 +1036,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (paintingNo == 6) // The Rape of Persephone
+                if (PersistVars.paintingNum == 6) // The Rape of Persephone
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_6;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_6;
@@ -1186,6 +1186,12 @@ public class Mastermind : MonoBehaviour
         questionNo++;
     }
 
+    public void HelpButton()
+    {
+        // Toggle the help information on and off
+        GameObject.Find("HelpUI").GetComponent<Image>().enabled = !GameObject.Find("HelpUI").GetComponent<Image>().enabled;
+    }
+
     void AllDone()//bool allAnswered)
     {
         // Penalize the player if time ran out
@@ -1250,10 +1256,10 @@ public class Mastermind : MonoBehaviour
     // Use this function to find the gameObject with the PersistentVars script, and get the previousScene component
     public void NextLevel()
     {
-        if (PersistVars.currentScene != "null")
+        if (PersistVars.previousScene != "null")
         {
             GameObject.Find("GENERALUI").GetComponent<PersistVars>().mastermindScore = masterReturn;
-            SceneManager.LoadScene(PersistVars.currentScene);
+            SceneManager.LoadScene(PersistVars.previousScene);
             GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = true;
         }
     }
