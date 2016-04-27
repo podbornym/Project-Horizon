@@ -218,6 +218,7 @@ public class BoardCreation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        print(PersistVars.Surreal);
         // Disable the UI's canvas, attach the PersistBVars script to our match3 object
         if(GameObject.Find("GENERALUI"))
         {
@@ -309,7 +310,7 @@ public class BoardCreation : MonoBehaviour
 
             switch (PersistVars.currentScene)
             {
-                case "S_O": // 1st Surrealism studio
+                case "S_0": // 1st Surrealism studio
                     setRedTotal = 23;
                     setYellowTotal = 3;
                     setGreenTotal = 23;
@@ -378,7 +379,7 @@ public class BoardCreation : MonoBehaviour
 
             switch (PersistVars.currentScene)
             {
-                case "B_O": // 1st Baroque studio
+                case "B_0": // 1st Baroque studio
                     setRedTotal = 23;
                     setYellowTotal = 3;
                     setGreenTotal = 23;
@@ -789,7 +790,7 @@ public class BoardCreation : MonoBehaviour
         /*if ((setYellowValue >= setYellowTotal && setBlueValue >= setBlueTotal && setGreenValue >= setGreenTotal && setRedValue >= setRedTotal && setMagentaValue >= setMagentaTotal) ||
             (setYellowValue - setYellowTotal <= -2 && setBlueValue - setYellowTotal <=-2 && setGreenValue - setGreenTotal <=-2 && setRedValue - setRedTotal <=-2 && setMagentaValue - setMagentaTotal <=-2))
         {*/
-            int percentage = (setYellowValue % setYellowTotal + setBlueValue % setYellowTotal + setGreenValue % setGreenTotal + setRedValue % setRedTotal + setMagentaValue % setMagentaTotal) / 5;
+            float percentage = (setYellowValue / setYellowTotal + setBlueValue / setYellowTotal + setGreenValue / setGreenTotal + setRedValue / setRedTotal + setMagentaValue / setMagentaTotal) / 5;
             //float match3Return;
 
             if (percentage <= 1)
@@ -841,15 +842,15 @@ public class BoardCreation : MonoBehaviour
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
             }
-			else
+			/*else
 			{
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
 				match3Return = (.5f - dragPenalty) * 100 + 10;
 				warningText.color = Color.green;
 				warningText.text = "Your score was: " + match3Return + "%";
 				GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-				GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
-			}
+				GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+			}*/
         //}
 
         /*else

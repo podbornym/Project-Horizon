@@ -255,7 +255,7 @@ public class PlayerMovement : MonoBehaviour
                 case "Surrealism":
                     PersistVars.previousScene = "mansion";
                     PersistVars.currentScene = "SurrealistZone";
-                    PersistVars.Surreal = false;
+                    PersistVars.Surreal = true;
                     myAnimator.SetBool("PortalWalk", true);
                     GameObject.Find("GENERALUI").GetComponent<UIHandler>().SetLocationText("Surrealism Zone");
                     notMoving();
