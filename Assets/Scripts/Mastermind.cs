@@ -483,7 +483,7 @@ public class Mastermind : MonoBehaviour
 
             if (PersistVars.Surreal)
             {
-                if (PersistVars.paintingNum == 1) // Tristan and Isolde
+                if (PersistVars.paintingNum == 7) // Tristan and Isolde
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_1;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_1;
@@ -535,7 +535,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 2) // The Healer
+                if (PersistVars.paintingNum == 8) // The Healer
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_2;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_2;
@@ -587,7 +587,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 3) // The Slug Room
+                if (PersistVars.paintingNum == 9) // The Slug Room
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_3;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_3;
@@ -639,7 +639,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 4) // Turin Spring
+                if (PersistVars.paintingNum == 10) // Turin Spring
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_4;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_4;
@@ -691,7 +691,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 5) // Through Birds, Through Fire but Not Through Glass
+                if (PersistVars.paintingNum == 11) // Through Birds, Through Fire but Not Through Glass
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_5;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_5;
@@ -743,7 +743,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 6) // My Dress Hangs There
+                if (PersistVars.paintingNum == 12) // My Dress Hangs There
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ2_6;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ2_6;
@@ -798,7 +798,7 @@ public class Mastermind : MonoBehaviour
 
             if (PersistVars.Baroque)
             {
-                if (PersistVars.paintingNum == 1) // The Three Trees
+                if (PersistVars.paintingNum == 13) // The Three Trees
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_1;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_1;
@@ -850,7 +850,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 2) // Board Partition with Letter Rack and Music Book
+                if (PersistVars.paintingNum == 14) // Board Partition with Letter Rack and Music Book
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_2;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_2;
@@ -902,7 +902,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 3) // The Entombment of Christ
+                if (PersistVars.paintingNum == 15) // The Entombment of Christ
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_3;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_3;
@@ -954,7 +954,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 4) // Bouquet of Flowers in a Glass
+                if (PersistVars.paintingNum == 16) // Bouquet of Flowers in a Glass
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_4;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_4;
@@ -1006,7 +1006,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 5) // Christ Preaching
+                if (PersistVars.paintingNum == 17) // Christ Preaching
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_5;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_5;
@@ -1058,7 +1058,7 @@ public class Mastermind : MonoBehaviour
                     }
                 }
 
-                if (PersistVars.paintingNum == 6) // The Rape of Persephone
+                if (PersistVars.paintingNum == 18) // The Rape of Persephone
                 {
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = backgroundZ3_6;
                     GameObject.Find("CurrentPiece").GetComponent<SpriteRenderer>().sprite = imageZ3_6;
