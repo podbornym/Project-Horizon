@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public MovieTexture openCinematic;
     private AudioSource openAudio;
     public int Move;
+	public GameObject player;
+	public AudioClip movement;
+	public AudioClip interact;
 
     //use for stairs cam shtuff
     public bool approachLeft = true;
@@ -29,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		player = GameObject.Find("Player");
         if (!cursorSet)
         {
             Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
@@ -109,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
     //also sets boolean moving to true so that the player cannot click other objects while they are moving to an object
     void moveStraight()
     {
+		player.GetComponent<AudioSource> ().PlayOneShot (movement, 1.0f);
         if (!moving)
         {
             if (gameObject.transform.position.x < moveToPos.x)

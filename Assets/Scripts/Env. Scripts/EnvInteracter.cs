@@ -98,6 +98,7 @@ public class EnvInteracter : MonoBehaviour {
             }
             else if (gameObject.tag == "UkiyoEportal")
             {
+				ukiyo.GetComponent<AudioSource> ().Play ();
                 ukioyAnimator.SetInteger("OpenUkiyo-eDoor", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
                 StartCoroutine(UkiyoPortal());
@@ -105,6 +106,7 @@ public class EnvInteracter : MonoBehaviour {
             }
             else if (gameObject.tag == "BaroquePortal")
             {
+				baroque.GetComponent<AudioSource> ().Play ();
                 baroqueAnimator.SetInteger("BaroqueIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
                 StartCoroutine(BaroquePortal());
@@ -112,6 +114,7 @@ public class EnvInteracter : MonoBehaviour {
             }
             else if (gameObject.tag == "SurrealismPortal")
             {
+				surrealism.GetComponent<AudioSource> ().Play ();
                 surrealismAnimator.SetInteger("SurrealismIsOpening", 1);
                 player.GetComponent<PlayerMovement>().MovePlayer(transform.position, gameObject);
                 StartCoroutine(SurrealismPortal());
