@@ -1,0 +1,208 @@
+@Start
+#SetDialogue #SetBaroqueMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Figures #option3Text Artist #option4Text Details #option5Text Process #option6Text History
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> So, what else can you tell me about this painting?
+#SetUkiyoMuse
+<b>Nasu:</b> The title of this painting is <i>The Entombment</i>.
+It was made with oil on canvas.
+I think you might enjoy trying to recreate it. Interested?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Can you tell me about this painting?
+#SetUkiyoMuse
+<b>Nasu:</b> Ah yes ... its title is ... hm
+It looks very nice.
+#SetPlayer
+<b>Ren:</b> (Doesn't look like he wants to talk. Maybe I can jog his memory somehow.)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Remember anything else about this work?
+#SetUkiyoMuse
+<b>Nasu:</b> Yea, I do! the work depicts Jesus being laid in his tomb as others mourn his passing.
+#SetPlayer
+<b>Ren:</b> Who are the others?
+#SetUkiyoMuse
+<b>Nasu:</b> Mary of Cleophas, Mary madgelene, John, and Nicodemus.
+Would you like to try  to continue to recreate this work?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> Who are the people depicted on the work?
+#SetUkiyoMuse
+<b>Nasu:</b> This work depicts something about Jesus' death.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> I'll think of more later. Can't really think of anything else...
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> So, do you remember his name yet?
+#SetUkiyoMuse
+<b>Nasu:</b> Yes! His name was Michelangel Merisi da Cravaggio.
+He lived from 1571 to 1610.
+#SetPlayer
+<b>Ren:</b> That's a long name.
+#SetUkiyoMuse
+<b>Nasu:</b> Yes it was, but he is known in art circles as "Caravaggio," for short.
+Would you like to try and create something like this man's work?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who created this work?
+#SetUkiyoMuse
+<b>Nasu:</b> His name was ... I have no idea.
+#SetPlayer
+<b>Ren:</b> Can you remember.
+#SetUkiyoMuse
+<b>Nasu:</b> Yes, just give me more time.
+#SetPlayer
+<b>Ren:</b> Okay...
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Any more details about this artist?
+#SetUkiyoMuse
+<b>Nasu:</b> Caravaggio was the leading Italian painter of the late 16th and early 17th Century.
+He is famous for the intense realism of his large-scale religious works.
+<b>Ren:</b> Wow, sounds like he was quite busy in his time.
+#SetUkiyoMuse
+<b>Nasu:</b> He was quite well-known, but his paintings did take a long time to make...
+You should try to recreate some of this painting.
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> So, tell me, what else do you know about the artist?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, he was an Italian painter...
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> I'll think of more later.
+#SetPlayer
+<b>Ren:</b> I'll get back to you...
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Know anything else about the process
+#SetUkiyoMuse
+<b>Nasu:</b> Yes! The painting was made over a period of two years, and was 120 by 80 inches, so it was incredibly large and detailed.
+Do you want to try for yourself?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> Can you tell me about how it was painted
+#SetUkiyoMuse
+<b>Nasu:</b> Other than that it was oil on canvas, no.
+#SetPlayer
+<b>Ren:</b> I'll come back later then.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> So, can you tell me anything else about the painting?
+#SetUkiyoMuse
+<b>Nasu:</b> Yes! It was painted from 1602 - 1603 for the Santa Maria in Vallicella in Rome, Italy.
+Perhaps you'd like to test your knowledge?
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> So, tell me, what else do you know about the painting?
+#SetUkiyoMuse
+<b>Nasu:</b> Well, the work was made in the early 17th century.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetUkiyoMuse
+<b>Nasu:</b> I'll think of more later.
+#SetPlayer
+<b>Ren:</b> I'll get back to you...
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change prints?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous print. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No
