@@ -197,7 +197,7 @@ public class BoardCreation : MonoBehaviour
             if(warningTimer >= warningSec)
             {
                 warningTimer = 0f;
-                dragPenalty += .02f;
+                dragPenalty += .002f;
                 warningText.color = Color.red;
                 warningText.text = "Warning: Dragging for too long will incur a score penalty!";
             }
@@ -793,47 +793,47 @@ public class BoardCreation : MonoBehaviour
             float percentage = (setYellowValue / setYellowTotal + setBlueValue / setYellowTotal + setGreenValue / setGreenTotal + setRedValue / setRedTotal + setMagentaValue / setMagentaTotal) / 5;
             //float match3Return;
 
-            if (percentage <= 1)
+            if (percentage <= 1.1 && percentage >= .9)
             {
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-                match3Return = (1 - dragPenalty) * 100 + 10;
+                match3Return = (1 - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
             }
 
-            if (percentage <= 2 && percentage > 1)
+            if (percentage <= 1.5 && percentage > 1.1 || percentage < .9 && percentage >= .7)
             {
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-                match3Return = (.9f - dragPenalty) * 100 + 10;
-                warningText.color = Color.green;
-                warningText.text = "Your score was: " + match3Return + "%";
-                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
-            }
-
-            if (percentage <= 3 && percentage > 2)
-            {
-				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-                match3Return = (.8f - dragPenalty) * 100 + 10;
+                match3Return = (.9f - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
             }
 
-            if (percentage >= 4 && percentage > 3)
+            if (percentage <= 1.7 && percentage > 1.5 || percentage < .7 && percentage >= .5)
             {
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-                match3Return = (.7f - dragPenalty) * 100 + 10;
+                match3Return = (.8f - dragPenalty) * 100;
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
             }
 
-            if (percentage > 4)
+            if (percentage <= 2.0 && percentage > 1.7 || percentage < .5 && percentage >= 0)
+            {
+				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
+                match3Return = (.7f - dragPenalty) * 100;
+                warningText.color = Color.green;
+                warningText.text = "Your score was: " + match3Return + "%";
+                GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+            }
+
+            /*if (percentage <= 1.5 && percentage > 1.1 || percentage < .9 && percentage >= .7)
             {
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
                 match3Return = (.6f - dragPenalty) * 100 + 10;
@@ -841,16 +841,16 @@ public class BoardCreation : MonoBehaviour
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
                 GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
-            }
-			/*else
+            }*/
+			else
 			{
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-				match3Return = (.5f - dragPenalty) * 100 + 10;
+				match3Return = (.5f - dragPenalty) * 100;
 				warningText.color = Color.green;
 				warningText.text = "Your score was: " + match3Return + "%";
 				GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
 				GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
-			}*/
+			}
         //}
 
         /*else

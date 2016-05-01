@@ -30,7 +30,7 @@ If you'd like, you can try recreating some of it now.
 #SetPlayer
 <b>Ren:</b> So what exactly is this print?
 #SetUkiyoMuse
-<b>Nasu:</b> This print is known as <i>Lobby of a Brothel.</i>
+<b>Nasu:</b> This print is known as <i>Waitress at an Inn.</i>
 I can't remember much about it right now.
 If I could only see it, then I might remember more.
 #SetPlayer
@@ -63,7 +63,7 @@ Perhaps you'd like to work on the print?
 #SetPlayer
 <b>Ren:</b> (That figures...)
 #SetUkiyoMuse
-<b>Nasu:</b> I do know that this painting represents a typical brothel of 15th century Japan.
+<b>Nasu:</b> I do know that this painting represents a restaurant in the Edo period.
 But I'm sure that if you give me some time, I'll have more to tell you.
 #activateClue2
 #goto:Start
@@ -76,11 +76,11 @@ But I'm sure that if you give me some time, I'll have more to tell you.
 #SetPlayer
 <b>Ren:</b> What do you know about the artist?
 #SetUkiyoMuse
-<b>Nasu:</b> Hishikawa Moronobu was born in 1618 and died in 1694, and is said to have set the standard for Ukiyo-e prints.
-He started drawing designs for his father who was an embroider.
-He later became an illustrator of storybooks using woodblocks.
-Moroobu later went on to develop this skill into reproducing paintings for the populace.
-Maybe you should try creating something as well?
+<b>Nasu:</b> Utagawa Hiroshige was born in 1797 and died in 1858.
+He is considered to be one of the last masters of the ukiyo-e style.
+After he died, ukiyo-e printing raidly declined.
+Like many other ukiyo-e artists, be began printing as an apprentice.
+Perhaps you too should apprentice like he did?
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -90,8 +90,8 @@ Maybe you should try creating something as well?
 #SetPlayer
 <b>Ren:</b> Who made this print?
 #SetUkiyoMuse
-<b>Nasu:</b> His name was Hishikawa Moronobu.
-He is thought to have made some of the first Ukiyo-e woodblock prints.
+<b>Nasu:</b> His name was Utagawa Hiroshige.
+He is best known for his landscape prints.
 #SetPlayer
 <b>Ren:</b> (I wonder if he knows more.)
 #activateClue3
@@ -105,13 +105,13 @@ He is thought to have made some of the first Ukiyo-e woodblock prints.
 #SetPlayer
 <b>Ren:</b> Do you know anything about the design of the print?
 #SetUkiyoMuse
-<b>Nasu:</b> This print depicts a brothel, a house where men can pay for prostitutes.
-Sexual themes were often present in many Ukiyo-e style prints.
+<b>Nasu:</b> This print depicts an inn, where soldiers and civilians alike stayed while traveling.
+Here we can see a waitress serving customers in this inn.
 Do you want to try making something?
 #SetOptions
+#option1Text Yes #option2Text No
 #option1 #play4
 #option2 #goto:Start
-#option1Text Yes #option2Text No
 
 @no4
 #SetPlayer

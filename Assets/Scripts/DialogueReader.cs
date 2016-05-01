@@ -53,6 +53,7 @@ public class DialogueReader : MonoBehaviour
     public bool selling = true;
     public bool cAnswer;
 	public int blkPrice;
+    public int paintingIncrement = 0;
 
     // Use this for initialization
     void Start ()
@@ -655,7 +656,16 @@ public class DialogueReader : MonoBehaviour
 						break;
 					case "#Continue":
 						SceneManager.LoadScene ("mansion");
-						GoTo ("Quit");
+                        gameObject.GetComponent<PersistVars>().match3Score = 0;
+                        gameObject.GetComponent<PersistVars>().mastermindScore = 0;
+                        gameObject.GetComponent<PersistVars>().rotatoScore = 0;
+                        gameObject.GetComponent<PersistVars>().pipeDreamScore = 0;
+                        gameObject.GetComponent<PersistVars>().tracerScore = 0;
+                        gameObject.GetComponent<PersistVars>().findDiffScore = 0;
+                        paintingIncrement++;
+                        GoTo("Quit");
+                        // Increment the painting lights
+                        //EndDialogue();
 						break;
 					case "#GContinue":
 						SceneManager.LoadScene ("GameOver");
@@ -791,11 +801,13 @@ public class DialogueReader : MonoBehaviour
 						questCount++;
 						break;
 					case "#blkresult":
+                        SLog = GameObject.Find("logic").GetComponent<SellingLogic>();
 						blkPrice = SLog.BkPay (SellCont.counter, SellCont.correct, SellCont.maxValue);
 						currentText.text = "You got " + SellCont.correct + " questions correct\n"
 						+ "You sold the forgery for $" + blkPrice;
 						PersistVars.currentMoney += blkPrice;
 						GoTo ("Continue");
+                        //EndDialogue();
 						break;
                     case "#change":
                         if(PersistVars.currentScene.Contains("0"))
@@ -1119,7 +1131,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/The Slug Room");
+                ReadFile("Dialogue/Turin Spring");
             }
             else if (PersistVars.currentScene == "S_3")
             {
@@ -1130,7 +1142,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/Turin Spring");
+                ReadFile("Dialogue/The Slug Room");
             }
             else if (PersistVars.currentScene == "S_4")
             {

@@ -40,6 +40,7 @@ public class UIHandler : MonoBehaviour {
             //GoBack();
             SceneManager.LoadScene(0);
             gameObject.GetComponent<PersistVars>().ClearVars();
+            Destroy(gameObject);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
