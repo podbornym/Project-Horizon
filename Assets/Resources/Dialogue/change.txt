@@ -1,7 +1,7 @@
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change prints?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -10,7 +10,7 @@ Would you like to change prints?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous print. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetSurrealMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -19,7 +19,7 @@ What do you want to know?
 <b>Ren:</b> Could you talk to me about this painting?
 #SetSurrealMuse
 <b>Jene:</b>Indeed. This painting is titled, <i>Turin Spring</i>.
-I think you might enjoy trying to recreate it. Interested?
+I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -47,7 +47,7 @@ I think you might enjoy trying to recreate it. Interested?
 <b>Ren:</b> Do you remember what medium the artist used to create <i>Turin Spring</i>?
 #SetSurrealMuse
 <b>Jene:</b> The nogwal in Belidder city cried, "It was oil! OIL!" and promptly ran away.
-Would you like to re-create the painting?
+Would you like to re-create the painting? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -77,7 +77,7 @@ Would you like to re-create the painting?
 <b>Ren:</b> That doesn't...
 #SetSurrealMuse
 <b>Jene:</b> Sorry! Tilp of the sounge as they say! The painters name was Giorgio de Chirico.
-Want to try hour yand at painting this piece?
+Want to try hour yand at painting this piece? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -106,7 +106,7 @@ Want to try hour yand at painting this piece?
 <b>Ren:</b> Did you remember more about Giorgio de Chirico?
 #SetSurrealMuse
 <b>Jene:</b> I never forgot! Giorgio de Chirico is a noted alumni of the Higher School of Fine Arts in Athens.
-Would you like to see how you measure up to Giorgio de Chirico?
+Would you like to see how you measure up to Giorgio de Chirico? #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -135,7 +135,7 @@ Would you like to see how you measure up to Giorgio de Chirico?
 <b>Ren:</b> Where is <i>Turin Spring</i> housed?
 #SetSurrealMuse
 <b>Jene:</b> I meant to say it's private. <i>Turin Spring</i> belongs to a private collector.
-How about trying to mimic Giorgio de Chirico?
+How about trying to mimic Giorgio de Chirico? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -160,7 +160,7 @@ How about trying to mimic Giorgio de Chirico?
 <b>Ren:</b> When did Giorgio de Chirico paint <i>Turin Spring</i>?
 #SetSurrealMuse
 <b>Jene:</b> I was there. It was 1914; a great year to be a muse!
-The oils beckon; would you care to indulge?
+The oils beckon; would you care to indulge? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -177,7 +177,7 @@ The oils beckon; would you care to indulge?
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -186,7 +186,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

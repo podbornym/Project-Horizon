@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetUkiyoMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetUkiyoMuse
 <b>Nasu:</b> Well, the print was created between 1740 to 1741.
 It is very unique in that it is much, much taller than it is wider.
-I think you might enjoy trying to recreate it. Interested?
+I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -50,7 +50,7 @@ It is a very intersting print, to be sure.
 #SetUkiyoMuse
 <b>Nasu:</b> In this print we see a Japanese man, facing left.
 It is believed that the print depicts a great general "striding" through the frame.
-Would you like to try and frame something similar?
+Would you like to try and frame something similar? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -83,7 +83,7 @@ He was influenced by the Torii school of ukiyo-e printing.
 #SetUkiyoMuse
 <b>Nasu:</b> Torii is a specific school of ukio-e painting and printing.
 It is known for developing ukiyo-e as an art-form, often depicted actors and kabuki scenes. 
-Why not try printing like they did?
+Why not try printing like they did? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -120,7 +120,7 @@ Additionally, mica, mital dust, and other elements were used by the artists of t
 <b>Ren:</b> Intersting. What did those do?
 #SetUkiyoMuse
 <b>Nasu:</b> Those materials were mainly used to add deeper contrast enhance the appearances of specific elements.
-You should try to enhance your abilities.
+You should try to enhance your abilities. #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -151,7 +151,7 @@ You should try to enhance your abilities.
 <b>Nasu:</b> The wooden blocks were brought to a <i>horoshi,</i> or woodcarver.
 They would carve away relief lines of the image for inking.
 Then a <i>surushi</i> (printer) would produce the print with the woodblocks.
-Do you want to try for yourself?
+Do you want to try for yourself? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -179,7 +179,7 @@ There was more to this, but I can't recall what.
 #SetUkiyoMuse
 <b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
 But it declined as the century ended, being seen as both old-fashioned and requiring too much effort.
-Perhaps you'd like to test your knowledge?
+Perhaps you'd like to test your knowledge? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -198,7 +198,7 @@ I know of more, but it's a bit foggy right now. Come back later.
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change prints?
+Would you like to change art pieces?
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -207,7 +207,7 @@ Would you like to change prints?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous print. Continue?
+WARNING: This will remove all progress from the previous piece. Continue?
 #SetOptions
 #option1 #change
 #option2 #quit

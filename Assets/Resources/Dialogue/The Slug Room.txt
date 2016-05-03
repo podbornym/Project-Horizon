@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetSurrealMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetSurrealMuse
 <b>Jene:</b>Ah, yes! Well, this piece is titled, <i>The Slug Room</i>.
 It is not simply a painting, however.
-I think you might enjoy trying to recreate it. Interested?
+I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -48,7 +48,7 @@ I think you might enjoy trying to recreate it. Interested?
 <b>Ren:</b> Do you remember what media the artist used to create <i>The Slug Room</i>?
 #SetSurrealMuse
 <b>Jene:</b> Yes, I do. The artist used Gouache, tempera, ink, and paper to create a surrealist collage.
-Would you like to try to re-create the piece?
+Would you like to try to re-create the piece? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -78,7 +78,7 @@ Would you like to try to re-create the piece?
 <b>Ren:</b> Uh, I meant who created <i>The Slug Room</i>?
 #SetSurrealMuse
 <b>Jene:</b> Why didn't you say so? Talking about artists lurking behind...his name was Max Ernst.
-Say! Would you like to re-create the piece?
+Say! Would you like to re-create the piece? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -107,7 +107,7 @@ Say! Would you like to re-create the piece?
 <b>Ren:</b> So...can you tell me more about surrealist collage?
 #SetSurrealMuse
 <b>Jene:</b> Certainly! Max Ernst invented the technique of creating new realities using cut-out photographs from existing print media. 
-Ready to barroomf a copy of the piece?
+Ready to barroomf a copy of the piece? #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -136,7 +136,7 @@ Ready to barroomf a copy of the piece?
 <b>Ren:</b> Can you tell me more about gouache as a medium?
 #SetSurrealMuse
 <b>Jene:</b> Gouache is a water based paint that dries opaque. It used to be used in graphics design due to how fast it dries.
-Take a tube and try your hand with it!
+Take a tube and try your hand with it! #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -161,7 +161,7 @@ Take a tube and try your hand with it!
 <b>Ren:</b> can you remember when the piece was made?
 #SetSurrealMuse
 <b>Jene:</b> 1920!
-Take a go at re-creating the masterpiece! 
+Take a go at re-creating the masterpiece! #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -178,7 +178,7 @@ Take a go at re-creating the masterpiece!
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -187,7 +187,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

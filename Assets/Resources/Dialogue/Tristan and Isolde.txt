@@ -1,6 +1,6 @@
 ﻿@Start
 #SetDialogue #SetSurrealMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -19,7 +19,7 @@ What do you want to know?
 <b>Ren:</b> Can you talk to me about this painting?
 #SetSurrealMuse
 <b>Jene:</b>This painting is titled, <i>Tristan and Isolde</i>.
-Would you like to try making a copy?
+Would you like to try making a copy? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -47,7 +47,7 @@ Would you like to try making a copy?
 <b>Ren:</b> Can you tell me who painted <i>Tristan and Isolde</i>?
 #SetSurrealMuse
 <b>Jene:</b> The late, great, Salavador Dali! He was from Spain, you know.
-Care to take a gamble and produce a copy?
+Care to take a gamble and produce a copy? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -77,7 +77,7 @@ Care to take a gamble and produce a copy?
 <b>Ren:</b> Obviously.
 #SetSurrealMuse
 <b>Jene:</b> Ah, yes! He developed a mental exercise designed to enhance artist creativity called “paranoiac-critical method”.
-Are you focused enough to try and make a copy?
+Are you focused enough to try and make a copy? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -106,7 +106,7 @@ Are you focused enough to try and make a copy?
 <b>Ren:</b> Do you know anything else about Salvador Dali?
 #SetSurrealMuse
 <b>Jene:</b> He married Elena Dmitrievna Diakonova. She handled his legal and financial matters as well as negotiating contracts with brokers and exhibition promoters. Dynamic duo!
-Would you like to forge his mustache? Or his painting… 
+Would you like to forge his mustache? Or his painting… #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -135,7 +135,7 @@ Would you like to forge his mustache? Or his painting…
 <b>Ren:</b> How long did Dali keep painting?
 #SetSurrealMuse
 <b>Jene:</b> He kept painting until after 1980. After 1980, he developed a motor disorder that made his hands tremble and too weak to hold a paintbrush.
-But you’re young and able! Take a crack at painting a copy!
+But you’re young and able! Take a crack at painting a copy! #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -160,7 +160,7 @@ But you’re young and able! Take a crack at painting a copy!
 <b>Ren:</b> When did Salvador Dali finish painting <i>Tristan and Isolde</i>?
 #SetSurrealMuse
 <b>Jene:</b> 1944!
-Want to forge like it’s 1944?
+Want to forge like it’s 1944? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -177,7 +177,7 @@ Want to forge like it’s 1944?
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -186,7 +186,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

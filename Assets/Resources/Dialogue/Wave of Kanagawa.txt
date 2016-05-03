@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetUkiyoMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetUkiyoMuse
 <b>Nasu:</b> Well, the painting was created between 1830 and 1833.
 It depicts a large wave terrorizing boats off the coast of Kanagawa.
-I think you might enjoy trying to recreate it. Interested?
+I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -50,7 +50,7 @@ It's quite a beautiful painting, yet...
 #SetUkiyoMuse
 <b>Nasu:</b> The wave is both the center of the piece and a frame for another part.
 If you look closely, you can see that Mount Fuji is framed by the wave.
-Would you like to try and frame something in a painting?
+Would you like to try and frame something in a painting? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -83,7 +83,7 @@ From then on he has made many prints, but most were destroyed in a studio fire.
 <b>Ren:</b> That's so tragic!
 #SetUkiyoMuse
 <b>Nasu:</b> Well, at least you won't have to worry about your studio lighting on fire.
-Why not try painting something?
+Why not try painting something? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -114,7 +114,7 @@ Katsukawa was one of the foremost Ukiyo-e artists of the time.
 #SetUkiyoMuse
 <b>Nasu:</b> The wave and Mount Fuji actually form a sense of unity.
 They create Yin and Yang, forming balance in the system.
-You should try to balance out your artistic abilities.
+You should try to balance out your artistic abilities. #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -146,7 +146,7 @@ The wave isn't as large as it appears.
 <b>Nasu:</b> The wooden blocks were brought to a <i>horoshi,</i> or woodcarver.
 They would carve away relief lines of the image for inking.
 Then a <i>surushi</i> (printer) would produce the print with the woodblocks.
-Do you want to try for yourself?
+Do you want to try for yourself? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -174,7 +174,7 @@ There was more to this, but I can't recall what.
 #SetUkiyoMuse
 <b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
 But it declined as the century ended, being seen as both old-fashioned and requiring too much effort.
-Perhaps you'd like to test your knowledge?
+Perhaps you'd like to test your knowledge? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -193,7 +193,7 @@ I know of more, but it's a bit foggy right now. Come back later.
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -202,7 +202,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

@@ -667,6 +667,9 @@ public class DialogueReader : MonoBehaviour
                         // Increment the painting lights
                         //EndDialogue();
 						break;
+                    case "#next":
+                        NextLine();
+                        break;
 					case "#GContinue":
 						SceneManager.LoadScene ("GameOver");
 						EndDialogue();

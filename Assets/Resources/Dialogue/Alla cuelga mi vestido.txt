@@ -1,6 +1,6 @@
 ﻿@Start
 #SetDialogue #SetSurrealMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -19,7 +19,7 @@ What do you want to know?
 <b>Ren:</b> Can you teach me anything about this piece?
 #SetSurrealMuse
 <b>Jene:</b>This particular piece is titled, <i>Alla cuelga mi vestido</i>, was made in 1933. The English translation is, “My Dress Hangs There.”
-You might enjoy making a copy. Give it a go?
+You might enjoy making a copy. Give it a go? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -47,7 +47,7 @@ You might enjoy making a copy. Give it a go?
 <b>Ren:</b> Who created the piece, <i>Alla cuelga mi vestido</i>?
 #SetSurrealMuse
 <b>Jene:</b> Frida Kahlo from Mexico. She lived from 1907 to 1954.
-Are you going to try to forge the painting?
+Are you going to try to forge the painting? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -77,7 +77,7 @@ Are you going to try to forge the painting?
 <b>Ren:</b> Where?
 #SetSurrealMuse
 <b>Jene:</b> Near the bottom. See it? In fact, it’s the only collage in the artist’s oeuvre.
-Are you ready to try to make your own copy?
+Are you ready to try to make your own copy? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -106,7 +106,7 @@ Are you ready to try to make your own copy?
 <b>Ren:</b> What else do you know about Frida Kahlo?
 #SetSurrealMuse
 <b>Jene:</b> She started painting after an accident! A bus she was riding collided with a street car which severely damaged her hip and cause fractures in her spine and pelvis. 
-Now, how about trying your hand at making a copy?
+Now, how about trying your hand at making a copy? #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -135,7 +135,7 @@ Now, how about trying your hand at making a copy?
 <b>Ren:</b> What’s the story behind <i>Alla cuelga mi vestido</i>?
 #SetSurrealMuse
 <b>Jene:</b> Frida wanted to return home to Mexico but her husband, Diego, wanted to stay in America. 
-Ready to copy this story in oil and collage?
+Ready to copy this story in oil and collage? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -160,7 +160,7 @@ Ready to copy this story in oil and collage?
 <b>Ren:</b> What’s the commentary behind <i>Alla cuelga mi vestido</i>?
 #SetSurrealMuse
 <b>Jene:</b> The Painting is an ironic depiction of American capitalism and superficiality, revealing social decay and the destruction of fundamental human values.
-Ready to forge your own version?
+Ready to forge your own version? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -177,7 +177,7 @@ Ready to forge your own version?
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -186,7 +186,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

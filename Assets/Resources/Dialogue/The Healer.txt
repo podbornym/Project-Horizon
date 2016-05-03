@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetSurrealMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -19,7 +19,7 @@ What do you want to know?
 <b>Ren:</b> What can you tell me about this sculpture?
 #SetSurrealMuse
 <b>Jene:</b>This particular piece is titled, <i>The Healer</i>.
-Would you like to try to sculpt it?
+Would you like to try to sculpt it? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -47,7 +47,7 @@ Would you like to try to sculpt it?
 <b>Ren:</b> Do you remember what metal the artist used to create <i>The Healer</i>?
 #SetSurrealMuse
 <b>Jene:</b> I do! It's bronze!
-Would you like to cast a copy of your own?
+Would you like to cast a copy of your own? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -77,7 +77,7 @@ Would you like to cast a copy of your own?
 <b>Ren:</b> Rene who?
 #SetSurrealMuse
 <b>Jene:</b> Magritte. Rene Magritte.
-Do you think you're ready to sculpt?
+Do you think you're ready to sculpt? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -106,7 +106,7 @@ Do you think you're ready to sculpt?
 <b>Ren:</b> Can you tell me more about Rene Magritte?
 #SetSurrealMuse
 <b>Jene:</b> He made living producing fakes of Van Gogh and Picasso.
-So, ready to make like Magritte and make a copy?
+So, ready to make like Magritte and make a copy? #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -135,7 +135,7 @@ So, ready to make like Magritte and make a copy?
 <b>Ren:</b> Where did Magritte create <i>The Healer</i>?
 #SetSurrealMuse
 <b>Jene:</b> In Belgium, of course!
-Are you ready to re-create the sculpture?
+Are you ready to re-create the sculpture? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -160,7 +160,7 @@ Are you ready to re-create the sculpture?
 <b>Ren:</b> Do you remember when Magritte sculpted <i>The Healer</i>?
 #SetSurrealMuse
 <b>Jene:</b> 1964? No, really! Maybe? I don't know. I don't remmebr much of the 60's, man...
-So. How about a mimicked sculpture?
+So. How about a mimicked sculpture? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -179,7 +179,7 @@ So. How about a mimicked sculpture?
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -188,7 +188,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

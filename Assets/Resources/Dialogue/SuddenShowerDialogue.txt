@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetUkiyoMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -19,7 +19,7 @@ What do you want to know?
 <b>Ren:</b> I think I've found something! Will this help you remember more?
 #SetUkiyoMuse
 <b>Nasu:</b> Hmm, ah yes. This print was created in 1857 as part of a series of several paintings.
-You're talented, no? You should try and make it yourself!
+You're talented, no? You should try and make it yourself! #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -45,7 +45,7 @@ I'd like to tell you more about it, but my memory just isn't what it used to be.
 <b>Ren:</b> I found this. Now can you tell me more about the bridge?
 #SetUkiyoMuse
 <b>Nasu:</b> The print shows the Ohashi bridge across the Sumida River.
-Perhaps now you'd like to work on the print?
+Perhaps now you'd like to work on the print? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -73,7 +73,7 @@ Perhaps now you'd like to work on the print?
 #SetUkiyoMuse
 <b>Nasu:</b> Of course! Hiroshige was best known for his landscape painting.
 He typically worked within the ukiyo-e genre, and was considered the last great master for the ukiyo-e tradition.
-You should continue working on your print!
+You should continue working on your print! #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -99,7 +99,7 @@ You should continue working on your print!
 #SetUkiyoMuse
 <b>Nasu:</b> The dark cluds seen in the painting were produced using the bokashi technique.
 This technique was very difficult, and was also used to create the water around the bridge.
-Do you want to try creating something?
+Do you want to try creating something? #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -129,7 +129,7 @@ Do you want to try creating something?
 #SetUkiyoMuse
 <b>Nasu:</b> Ukiyo-e means "Pictures of the floating world"
 And this world was definitely one of delightful and pleasurable themes.
-Would you like to try creating the print?
+Would you like to try creating the print? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -159,7 +159,7 @@ Would you like to try creating the print?
 It was more so advice than knowledge.
 My advice is "good luck working on this piece!"
 #SetPlayer
-<b>Ren:</b> (This dragon is something else..)
+<b>Ren:</b> (This dragon is something else..) #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -176,7 +176,7 @@ My advice is "good luck working on this piece!"
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -185,7 +185,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

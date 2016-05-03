@@ -5,7 +5,7 @@
 #SetPlayer
 <b>Ren:</b> I've finished it.
 #SetWoodStock
-<b>WoodStock:</b> Great! How about we sell it on the black market then?
+<b>WoodStock:</b> Great! How about we sell it on the black market then? #next
 #SetPlayer
 #SetOptions
 #option1 #goto:GoSell

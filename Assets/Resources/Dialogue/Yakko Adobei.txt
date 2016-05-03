@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetUkiyoMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetUkiyoMuse
 <b>Nasu:</b> It was created in June of 1794.
 It is a polychrome woodblock print, printed on white mica paper.
-I think you might enjoy trying to recreate it. Interested?
+I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -51,7 +51,7 @@ Here, he is depicted as Yakko Edobei.
 <b>Ren:</b> Who is that?
 #SetUkiyoMuse
 <b>Nasu:</b> Yakko Edobei was a character in the play <i>The Colored Reins of Loving Wife</i>.
-Would you like to try recreate the expression seen here on "Yakko"?
+Would you like to try recreate the expression seen here on "Yakko"? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -85,7 +85,7 @@ It appears as though this specific artist was active from 1774 to 1795.
 <b>Nasu:</b> Yes it was.
 The artist here was called by their pen-name, "Toshusai Sharaku."
 There have been 140 prints established as Shakaru's making.
-Would you like to try and create something like this mysterious man?
+Would you like to try and create something like this mysterious man? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -123,7 +123,7 @@ The artist here portrays the menacing character with outstrecthed hands and a le
 #SetUkiyoMuse
 <b>Nasu:</b> While the yakko was not, the actor protraying him was.
 In fact, that is why actors often made it on ukiyo-e prints, publicism.
-You should try to recreate the sterness of the features seen here.
+You should try to recreate the sterness of the features seen here. #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -154,7 +154,7 @@ You should try to recreate the sterness of the features seen here.
 <b>Nasu:</b> The wooden blocks were brought to a <i>horoshi,</i> or woodcarver.
 They would carve away relief lines of the image for inking.
 Then a <i>surushi</i> (printer) would produce the print with the woodblocks.
-Do you want to try for yourself?
+Do you want to try for yourself? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -182,7 +182,7 @@ There was more to this, but I can't recall what.
 #SetUkiyoMuse
 <b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
 But it declined as the century ended, being seen as both old-fashioned and requiring too much effort.
-Perhaps you'd like to test your knowledge?
+Perhaps you'd like to test your knowledge? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -201,7 +201,7 @@ I know of more, but it's a bit foggy right now. Come back later.
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change prints?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -210,7 +210,7 @@ Would you like to change prints?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous print. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

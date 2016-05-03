@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetUkiyoMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetUkiyoMuse
 <b>Nasu:</b> Ah, yes, now I remember! It was painted around 1793.
 This print was one of the most famuous of its time.
-If you'd like, you can try recreating some of it now.
+If you'd like, you can try recreating some of it now. #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -49,7 +49,7 @@ If I could only see it, then I might remember more.
 <b>Nasu:</b> Well, the one on the left is Takashima Hisa, known as the tea house waitress.
 The middle one is Tomimoto Toyohina, who is a <i>geisha</i> (female entertainer).
 The last one is Naniwaya Kita, another tea house waitress.
-Perhaps you'd like to work on the print?
+Perhaps you'd like to work on the print? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -78,7 +78,7 @@ But I'm sure that if you give me some time, I'll have more to tell you.
 #SetUkiyoMuse
 <b>Nasu:</b> Utamaro has made thousands of different prints.
 He has done many portraits of actors and theater programs.
-Maybe you should try creating something as well?
+Maybe you should try creating something as well? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -105,7 +105,7 @@ He was quite famous in his time.
 #SetUkiyoMuse
 <b>Nasu:</b> Well, the women are positioned in a traingular formation.
 This form is a symbol of unity, and holds the piece together.
-Do you want to try making something?
+Do you want to try making something? #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -138,7 +138,7 @@ This destroyed the original drawing in the process.
 <b>Ren:</b> But they used the blocks to create the final piece, right?
 #SetUkiyoMuse
 <b>Nasu:</b> Correct! The artist would place the paper on the inked blocks and rubbed with a burnishing tool, creating the print you see today.
-Would you like to try creating the print?
+Would you like to try creating the print? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -163,7 +163,7 @@ Well, I don't quite remember, to be honest.
 @yes6
 #SetPlayer
 You found it!
-Would you like to play game six?
+Would you like to play game six? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -180,7 +180,7 @@ Would you like to play game six?
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -189,7 +189,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

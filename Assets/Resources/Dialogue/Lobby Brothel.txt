@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetUkiyoMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetUkiyoMuse
 <b>Nasu:</b> Ah, yes, now I remember! It was painted around 1680.
 This print was one of the most famuous of its time.
-If you'd like, you can try recreating some of it now.
+If you'd like, you can try recreating some of it now. #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -49,7 +49,7 @@ If I could only see it, then I might remember more.
 <b>Nasu:</b> Well, the one on the left is Takashima Hisa, known as the tea house waitress.
 The middle one is Tomimoto Toyohina, who is a <i>geisha</i> (female entertainer).
 The last one is Naniwaya Kita, another tea house waitress.
-Perhaps you'd like to work on the print?
+Perhaps you'd like to work on the print? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -80,7 +80,7 @@ But I'm sure that if you give me some time, I'll have more to tell you.
 He is considered to be one of the last masters of the ukiyo-e style.
 After he died, ukiyo-e printing raidly declined.
 Like many other ukiyo-e artists, be began printing as an apprentice.
-Perhaps you too should apprentice like he did?
+Perhaps you too should apprentice like he did? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -107,7 +107,7 @@ He is best known for his landscape prints.
 #SetUkiyoMuse
 <b>Nasu:</b> This print depicts an inn, where soldiers and civilians alike stayed while traveling.
 Here we can see a waitress serving customers in this inn.
-Do you want to try making something?
+Do you want to try making something? #next
 #SetOptions
 #option1Text Yes #option2Text No
 #option1 #play4
@@ -141,7 +141,7 @@ This destroyed the original drawing in the process.
 #SetUkiyoMuse
 <b>Nasu:</b> Correct! The artist would place the paper on the inked blocks and rubbed with a burnishing tool, creating the print you see today.
 This print is hand-colored, something not commonly seen during the Ukiyo-e period.
-Would you like to try creating the print?
+Would you like to try creating the print? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -166,7 +166,7 @@ Well, I don't quite remember, to be honest.
 @yes6
 #SetPlayer
 Ukiyo-e often featured subjects including female beauties, actors, and sumo wrestlers.
-Would you like to explore this a bit?
+Would you like to explore this a bit? #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -183,7 +183,7 @@ Would you like to explore this a bit?
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change prints?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -192,7 +192,7 @@ Would you like to change prints?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous print. Continue?
+WARNING: This will remove all progress from the previous art piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetSurrealMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -19,7 +19,7 @@ What do you want to know?
 <b>Ren:</b> Could you tell me something about this painting?
 #SetSurrealMuse
 <b>Jene:</b>Perhaps...  <i>Through Birds, Through fire but Not Through Glass</i>.
-That is the name of this piece. Are you interested in recreating this piece?
+That is the name of this piece. Are you interested in recreating this piece? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -46,7 +46,7 @@ That is the name of this piece. Are you interested in recreating this piece?
 #SetPlayer
 <b>Ren:</b> Do you remember what medium the artist used now?
 #SetSurrealMuse
-<b>Jene:</b> What is "Oil on canvas".
+<b>Jene:</b> What is "Oil on canvas". #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -75,7 +75,7 @@ That is the name of this piece. Are you interested in recreating this piece?
 #SetPlayer
 <b>Ren:</b> Oh, thank you!
 #SetSurrealMuse
-<b>Jene:</b> Do not place your thanks upon me. Go, delve into the creative processes.
+<b>Jene:</b> Do not place your thanks upon me. Go, delve into the creative processes. #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -103,7 +103,7 @@ That is the name of this piece. Are you interested in recreating this piece?
 #SetPlayer
 <b>Ren:</b> Did you remember more about Yves Tanguy now?
 #SetSurrealMuse
-<b>Jene:</b> Of course I do. Yves became went from Paris to New York during World War 2.
+<b>Jene:</b> Of course I do. Yves became went from Paris to New York during World War 2. #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -132,7 +132,7 @@ That is the name of this piece. Are you interested in recreating this piece?
 <b>Ren:</b> I'm back!
 #SetSurrealMuse
 <b>Jene:</b> Did you ever leave? To tend to my amusements, 
-The Minneapolis Institute of Arts is where this painting can be found in modern times.
+The Minneapolis Institute of Arts is where this painting can be found in modern times. #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -157,7 +157,7 @@ The Minneapolis Institute of Arts is where this painting can be found in modern 
 <b>Ren:</b> When did Giorgio de Yves Tanguy paint <i>Through Birds, Through Fire but Not Through Glass</i>?
 #SetSurrealMuse
 <b>Jene:</b> If time does indeed matter, this painting was born in 1943.
-The horns upon the wind are sounding, now you shall discover your true skills.
+The horns upon the wind are sounding, now you shall discover your true skills. #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -174,7 +174,7 @@ The horns upon the wind are sounding, now you shall discover your true skills.
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -183,7 +183,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit

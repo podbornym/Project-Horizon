@@ -1,6 +1,6 @@
 ﻿@Start
 #SetDialogue
-Are you sure you want to sell to this client?
+Are you sure you want to sell to this client? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -79,7 +79,7 @@ can prove your knowledge of the piece you are selling.
 @ukiyo1_1
 #SetDialogue
 True or False:
-Hishikawa Moronobu created 'Shoki Striding'.
+Hishikawa Moronobu created 'Shoki Striding'. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -87,7 +87,7 @@ Hishikawa Moronobu created 'Shoki Striding'.
 @ukiyo1_2
 #SetDialogue
 True or False:
-'Shoki Striding' was printed on a paper size called hanging scroll.
+'Shoki Striding' was printed on a paper size called hanging scroll. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -95,7 +95,7 @@ True or False:
 @ukiyo1_3
 #SetDialogue
 True or False:
-Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints.
+Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -103,7 +103,7 @@ Thick lines set apart Masanobu's style, urushi-e, from other woodblock prints.
 @ukiyo2_1
 #SetDialogue
 True or False:
-'Otani Oniji III as Yakko Edobei' is the name of the currnt piece.
+'Otani Oniji III as Yakko Edobei' is the name of the currnt piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -111,7 +111,7 @@ True or False:
 @ukiyo2_2
 #SetDialogue
 True or False:
-Tōshūsai Sharaku created the current piece.
+Tōshūsai Sharaku created the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -119,7 +119,7 @@ Tōshūsai Sharaku created the current piece.
 @ukiyo2_3
 #SetDialogue
 True or False:
-Sharaku focused on the aspect of energy in his protraits.
+Sharaku focused on the aspect of energy in his protraits. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -127,7 +127,7 @@ Sharaku focused on the aspect of energy in his protraits.
 @ukiyo3_1
 #SetDialogue
 True or False:
-'The Great Wave off Kanagawa' is the name of the current piece.
+'The Great Wave off Kanagawa' is the name of the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -135,7 +135,7 @@ True or False:
 @ukiyo3_2
 #SetDialogue
 True or False:
-Utagawa Hiroshige created the current piece.
+Utagawa Hiroshige created the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -143,7 +143,7 @@ Utagawa Hiroshige created the current piece.
 @ukiyo3_3
 #SetDialogue
 True or False:
-'The Great Wave off Kanagawa' is the first of a print series called Oceans of Wisdom.
+'The Great Wave off Kanagawa' is the first of a print series called Oceans of Wisdom. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -151,7 +151,7 @@ True or False:
 @ukiyo4_1
 #SetDialogue
 True or False:
-'Famous Beauties of Edo' is the name of the current piece.
+'Famous Beauties of Edo' is the name of the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -159,7 +159,7 @@ True or False:
 @ukiyo4_2
 #SetDialogue
 True or False:
-The three women in the current piece are identified by family crests.
+The three women in the current piece are identified by family crests. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -167,7 +167,7 @@ The three women in the current piece are identified by family crests.
 @ukiyo4_3
 #SetDialogue
 True or False:
-Unity is represented by the triangle composition of the women.
+Unity is represented by the triangle composition of the women. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -175,7 +175,7 @@ Unity is represented by the triangle composition of the women.
 @ukiyo5_1
 #SetDialogue
 True or False:
-'Lobby of a Brothel' is the name of the current piece.
+'Lobby of a Brothel' is the name of the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -183,7 +183,7 @@ True or False:
 @ukiyo5_2
 #SetDialogue
 True or False:
-Hishikawa Moronobu created the current piece.
+Hishikawa Moronobu created the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -191,7 +191,7 @@ Hishikawa Moronobu created the current piece.
 @ukiyo5_3
 #SetDialogue
 True or False:
-Moronobu's strong, linear style had a huge influence on other ukiyo-e artists.
+Moronobu's strong, linear style had a huge influence on other ukiyo-e artists. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -199,7 +199,7 @@ Moronobu's strong, linear style had a huge influence on other ukiyo-e artists.
 @ukiyo6_1
 #SetDialogue
 True or False:
-Katsushika Hokusai created the current piece.
+Katsushika Hokusai created the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -207,7 +207,7 @@ Katsushika Hokusai created the current piece.
 @ukiyo6_2
 #SetDialogue
 True or False:
-'Rain Shower at Shōno' is the name of the current piece.
+'Rain Shower at Shōno' is the name of the current piece. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
@@ -215,7 +215,7 @@ True or False:
 @ukiyo6_3
 #SetDialogue
 True or False:
-The bokashi technique in the current piece to achieve parallel rain drops.
+The bokashi technique in the current piece to achieve parallel rain drops. #next
 #option1 #goto:blkTrue
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
