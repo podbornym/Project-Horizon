@@ -1,0 +1,181 @@
+@Start
+#SetDialogue #SetBaroqueMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Painting #option2Text Board #option3Text Artist #option4Text Details #option5Text Painting #option6Text History
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> Tell me about <i>The Board Partition with Letter Rack and Music Book.</i>
+#SetBaroqueMuse
+<b>Veritas:</b> Well, the painting was created in 1668.
+It depicts what a pin board of that time may have looked like.
+I think you might enjoy trying to recreate it. Interested?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Can you tell me about this painting?
+#SetBaroqueMuse
+<b>Veritas:</b> Ah yes, <i>The Board Partition with Letter Rack and Music Book.</i>
+It's quite a beautiful painting, yet...
+#SetPlayer
+<b>Ren:</b> What's wrong?
+#SetBaroqueMuse
+<b>Veritas:</b> I'm having difficulty remembering the details.
+<b>Ren:</b> (I should try to show it to him.)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Remember anything else about the board?
+#SetBaroqueMuse
+<b>Veritas:</b> The board is framed by a black cloth draped partially over it.
+There are also red ribbons seperating the painting into a grid.
+Would you like to try and frame something in a painting?
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> What's with the board?
+#SetBaroqueMuse
+<b>Veritas:</b> There are notes and letters scattered across the board.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetBaroqueMuse
+<b>Veritas:</b> Maybe later. It should come back to me any minute now...
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> Do you know anything about Gijsbrechts?
+#SetBaroqueMuse
+<b>Veritas:</b> Cornelius Norberus Gijsbrechts was court painter to two Danish kings, Frederick III and Christian V.
+Why not try and paint something?
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who is the creator of this?
+#SetBaroqueMuse
+<b>Veritas:</b> Cornelius Norberus Gijsbrechts, father of Franciscus Gijsbrechts, a Flemish Baroque painter.
+#SetPlayer
+<b>Ren:</b> But what about Gijsbrechts?
+#SetBaroqueMuse
+<b>Veritas:</b> Hmm, I'm having a hard time remembering...
+#SetPlayer
+<b>Ren:</b> (I'll ask him later. I'm sure he knows something.)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Any more details about this painting?
+#SetBaroqueMuse
+<b>Veritas:</b> The painting is meant to be an illusion.
+It is supposed to trick the spectator into believing that the objects are, in fact, real.
+You should try to trick viewers with your paintings.
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> Do you know any small details about this painting?
+#SetBaroqueMuse
+<b>Veritas:</b> There is a song written on a notebook in the painting.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetBaroqueMuse
+<b>Veritas:</b> There is also a feather tucked into one of the pouches on the left.
+#SetPlayer
+<b>Ren:</b> Maybe I'll come back later...
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Why would he have painted a pin board?
+#SetBaroqueMuse
+<b>Veritas:</b> Pin boards contain letters, which create an identity.
+A painting of a pin board could be seen as an alternative to a portrait.
+Do you want to create your identity in a painting?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> What purpose does painting a pin board serve?
+#SetBaroqueMuse
+<b>Veritas:</b> Probably like placing a note on your mirror, but more permanent.
+#SetPlayer
+<b>Ren:</b> That was helpful...
+I'll come back to him later.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> What else was Gijsbrechts painting at this time?
+#SetBaroqueMuse
+<b>Veritas:</b> He painted The Reverse of a Framed Painting and A Cabinet in the Artist's Studio.
+He was very interested in painting the places and processes of painting.
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> Did Gijsbrechts have any other paintings during this time?
+#SetBaroqueMuse
+<b>Veritas:</b> Hmm... I'm not sure, probably.
+#SetPlayer
+<b>Ren:</b> Alright.
+I'll have to come back.
+#activateClue6
+#goto:Start

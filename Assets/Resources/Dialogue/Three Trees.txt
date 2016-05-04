@@ -1,0 +1,204 @@
+@Start
+#SetDialogue #SetBaroqueMuse
+What do you want to know?
+#SetOptions
+#option1 #goto:ClueOne
+#option2 #goto:ClueTwo
+#option3 #goto:ClueThree
+#option4 #goto:ClueFour
+#option5 #goto:ClueFive
+#option6 #goto:ClueSix
+#option1Text Etching #option2Text Composition #option3Text Artist #option4Text Details #option5Text Engraving #option6Text History
+
+@ClueOne
+#SetDialogue
+#clueonefound
+
+@yes1
+#SetPlayer
+<b>Ren:</b> Tell me about <i>The Three Trees.</i>
+#SetUkiyoMuse
+<b>Veritas:</b> This etching was created in 1643.
+The scene shows a cloudy hillside and three trees, as the name might suggest.
+It also shows an artist on the top of the hill, and some people fishing.
+This would be an interesting piece to forge for yourself, give it a try?
+#SetOptions
+#option1 #play1
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no1
+#SetPlayer
+<b>Ren:</b> Can you tell me about this etching?
+#SetBaroqueMuse
+<b>Veritas:</b>Oh yes, I can tell you about <i>The Three Trees.</i>
+It is quite a beautiful scene of a hillside and some trees...
+#SetPlayer
+<b>Ren:</b> Is something wrong?
+#SetBaroqueMuse
+<b>Veritas:</b> The details of the piece seem to be escaping me.
+<b>Ren:</b> (I should try to show it to him.)
+#activateClue1
+#goto:Start
+
+@ClueTwo
+#SetDialogue
+#cluetwofound
+
+@yes2
+#SetPlayer
+<b>Ren:</b> Any information for me on the composition of the piece?
+#SetBaroqueMuse
+<b>Veritas:</b> Rembrandt used a variety of techniques to create a sense of flux in nature.
+He used drypoint, engraving, and a speckled tone to achieve this.
+#SetOptions
+#option1 #play2
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no2
+#SetPlayer
+<b>Ren:</b> Whats going on with this scene?
+#SetBaroqueMuse
+<b>Veritas:</b> There seem to be a lot of scattered images within this scene.
+These include an artist on the hill, livestock, and some interesting clouds.
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetBaroqueMuse
+<b>Veritas:</b> There may be more, but I cant think of it now.  Ask me later?
+#activateClue2
+#goto:Start
+
+@ClueThree
+#SetDialogue
+#cluethreefound
+
+@yes3
+#SetPlayer
+<b>Ren:</b> Do you know about Rembrandt?
+#SetBaroqueMuse
+<b>Veritas:</b> He was considered one of the greatest painters and printmakers in European Art and the most important in Dutch history.
+Although his art was popular, he experienced much personal tragedy and financial hardship.
+#SetPlayer
+<b>Ren:</b> That's so sad!
+#SetBaroqueMuse
+<b>Veritas:</b> Well, at least you are making good money for recreating his works.
+Im sure he would be happy someone is getting paid!
+#SetOptions
+#option1 #play3
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no3
+#SetPlayer
+<b>Ren:</b> Who is the creator of this?
+#SetBaroqueMuse
+<b>Veritas:</b> Rembrandt, a very famous Dutch artist.
+I seem to have some detail about not having much money floating around my head.
+#SetPlayer
+<b>Ren:</b> Anything more?
+#SetBaroqueMuse
+<b>Veritas:</b> I can't seem to recall...
+#SetPlayer
+<b>Ren:</b> (I'll ask him later. I'm sure he knows something.)
+#activateClue3
+#goto:Start
+
+@ClueFour
+#SetDialogue
+#cluefourfound
+
+@yes4
+#SetPlayer
+<b>Ren:</b> Any more details about this etching?
+#SetBaroqueMuse
+<b>Veritas:</b> Some of the unnatural cloud formations on the left of the image indicate that the artist may have used an old plate for this etching.
+#SetOptions
+#option1 #play4
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no4
+#SetPlayer
+<b>Ren:</b> Do you know any small details about this painting?
+#SetBaroqueMuse
+<b>Veritas:</b> The clouds on the left of the painting look different from the ones on the left...
+#SetPlayer
+<b>Ren:</b> Anything else?
+#SetBaroqueMuse
+<b>Veritas:</b> There are three trees in the middle of the image...
+#SetPlayer
+<b>Ren:</b> Thanks...
+#activateClue4
+#goto:Start
+
+@ClueFive
+#SetDialogue
+#cluefivefound
+
+@yes5
+#SetPlayer
+<b>Ren:</b> Can you tell me anything else about engraving and etching?
+#SetBaroqueMuse
+<b>Veritas:</b> The artist uses blocks of metal usually, and uses tools to create an image in the metal.
+The spaces created in the metal then hold ink in, and when pressed onto paper transfer the held ink to the paper.
+Do you want to try for yourself?
+#SetOptions
+#option1 #play5
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no5
+#SetPlayer
+<b>Ren:</b> What do the artists use for these prints?
+#SetBaroqueMuse
+<b>Veritas:</b> Typically, the artist will use tools and put an image in a chunk of material.
+This image is then transferred to a sheet of paper somehow.
+That's all I can remember for now...
+#SetPlayer
+<b>Ren:</b> I'll come back later then.
+#activateClue5
+#goto:Start
+
+@ClueSix
+#SetDialogue
+#cluesixfound
+
+@yes6
+#SetPlayer
+<b>Ren:</b> What else can you tell me about the history of the piece?
+#SetBaroqueMuse
+<b>Veritas:</b> The Baroque Era was a period where the art that was popular involved exaggerated motion and clear drama.
+This style was very encouraged by the church, because this style could communicate religious themes directly and produce an emotional involvement.
+#SetOptions
+#option1 #play6
+#option2 #goto:Start
+#option1Text Yes #option2Text No
+
+@no6
+#SetPlayer
+<b>Ren:</b> What can you tell me about this time period?
+#SetBaroqueMuse
+<b>Veritas:</b> The Baroque Era was known for the drama that was created in its art.
+The aristocracy thought this style expressed power and control, and would impress visitors.
+There is some more information on this, but I can't remember it all now...
+#activateClue6
+#goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change paintings?
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous painting. Continue?
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No
