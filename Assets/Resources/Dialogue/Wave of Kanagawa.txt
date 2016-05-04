@@ -8,7 +8,7 @@ What do you want to know? #next
 #option4 #goto:ClueFour
 #option5 #goto:ClueFive
 #option6 #goto:ClueSix
-#option1Text Painting #option2Text Wave #option3Text Artist #option4Text Details #option5Text Inking #option6Text History
+#option1Text Print #option2Text Wave #option3Text Artist #option4Text Details #option5Text Inking #option6Text History
 
 @ClueOne
 #SetDialogue
@@ -18,7 +18,7 @@ What do you want to know? #next
 #SetPlayer
 <b>Ren:</b> Tell me about <i>The Great Wave off Kanagawa.</i>
 #SetUkiyoMuse
-<b>Nasu:</b> Well, the painting was created between 1830 and 1833.
+<b>Nasu:</b> Well, the print was created between 1830 and 1833.
 It depicts a large wave terrorizing boats off the coast of Kanagawa.
 I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
@@ -28,10 +28,10 @@ I think you might enjoy trying to recreate it. Interested? #next
 
 @no1
 #SetPlayer
-<b>Ren:</b> Can you tell me about this painting?
+<b>Ren:</b> Can you tell me about this print?
 #SetUkiyoMuse
 <b>Nasu:</b> Ah yes, <i>The Great Wave off Kanagawa.</i>
-It's quite a beautiful painting, yet...
+It's quite a beautiful print, yet...
 #SetPlayer
 <b>Ren:</b> What's wrong?
 #SetUkiyoMuse
@@ -50,7 +50,7 @@ It's quite a beautiful painting, yet...
 #SetUkiyoMuse
 <b>Nasu:</b> The wave is both the center of the piece and a frame for another part.
 If you look closely, you can see that Mount Fuji is framed by the wave.
-Would you like to try and frame something in a painting? #next
+Would you like to try and frame something in a print? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -83,7 +83,7 @@ From then on he has made many prints, but most were destroyed in a studio fire.
 <b>Ren:</b> That's so tragic!
 #SetUkiyoMuse
 <b>Nasu:</b> Well, at least you won't have to worry about your studio lighting on fire.
-Why not try painting something? #next
+Why not try print something? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -110,7 +110,7 @@ Katsukawa was one of the foremost Ukiyo-e artists of the time.
 
 @yes4
 #SetPlayer
-<b>Ren:</b> Any more details about this painting?
+<b>Ren:</b> Any more details about this print?
 #SetUkiyoMuse
 <b>Nasu:</b> The wave and Mount Fuji actually form a sense of unity.
 They create Yin and Yang, forming balance in the system.
@@ -122,7 +122,7 @@ You should try to balance out your artistic abilities. #next
 
 @no4
 #SetPlayer
-<b>Ren:</b> Do you know any small details about this painting?
+<b>Ren:</b> Do you know any small details about this print?
 #SetUkiyoMuse
 <b>Nasu:</b> The boats in the picture can act as a scale to determine how big the wave is.
 The wave isn't as large as it appears.
@@ -172,7 +172,7 @@ There was more to this, but I can't recall what.
 #SetPlayer
 <b>Ren:</b> What else can you tell me about the period?
 #SetUkiyoMuse
-<b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e paintings.
+<b>Nasu:</b> As the period came to an end, there was a large diversity in genre for Ukiyo-e prints.
 But it declined as the century ended, being seen as both old-fashioned and requiring too much effort.
 Perhaps you'd like to test your knowledge? #next
 #SetOptions

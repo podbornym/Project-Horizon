@@ -104,7 +104,7 @@ He was quite famous in his time.
 <b>Ren:</b> Do you know anything about the design of the print?
 #SetUkiyoMuse
 <b>Nasu:</b> Well, the women are positioned in a traingular formation.
-This form is a symbol of unity, and holds the piece together.
+This shape is a symbol of unity, and holds the piece together.
 Do you want to try making something? #next
 #SetOptions
 #option1 #play4
@@ -115,7 +115,7 @@ Do you want to try making something? #next
 #SetPlayer
 <b>Ren:</b> What kind of information do you have about this print?
 #SetUkiyoMuse
-<b>Nasu:</b> The print is 35 by 27 cm, made with multiple woodblocks and paper.
+<b>Nasu:</b> The print is 35 by 27 cm, made with multiple wood carvings and ink.
 #SetPlayer
 <b>Ren:</b> That's not quite what I had in mind...
 #SetUkiyoMuse

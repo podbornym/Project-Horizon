@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 public class DialogueReader : MonoBehaviour
 {
+    public bool next = false;
     public static int paintNum;
     public string[] entries;
     private int lineNum = 0;
@@ -29,6 +30,7 @@ public class DialogueReader : MonoBehaviour
 	public SellingController SellCont;
 	public SellingLogic SLog;
     public bool[] ClueFound = { false, false, false, false, false, false };
+    public bool[] Clicked = { false, false, false, false, false, false };
     public Text message;
     public Text textbox;
     public Text option1;
@@ -668,7 +670,7 @@ public class DialogueReader : MonoBehaviour
                         //EndDialogue();
 						break;
                     case "#next":
-                        NextLine();
+                        next = true;
                         break;
 					case "#GContinue":
 						SceneManager.LoadScene ("GameOver");
@@ -964,6 +966,11 @@ public class DialogueReader : MonoBehaviour
             {
                 textbox.text += "\n" + currentText.text;
             }
+        }
+        if(next)
+        {
+            message.text = "";
+            next = false;
         }
         if (message.text == "" && option1.text == "" && option2.text == "" && option3.text == "" && option4.text == "" && option5.text == "" && option6.text == "")
         {
