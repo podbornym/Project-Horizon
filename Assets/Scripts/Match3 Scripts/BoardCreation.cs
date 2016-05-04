@@ -810,7 +810,7 @@ public class BoardCreation : MonoBehaviour
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = A;
             }
 
             if (percentage <= 1.7 && percentage > 1.5 || percentage < .7 && percentage >= .5)
@@ -820,7 +820,7 @@ public class BoardCreation : MonoBehaviour
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
             }
 
             if (percentage <= 2.0 && percentage > 1.7 || percentage < .5 && percentage >= 0)
@@ -830,7 +830,7 @@ public class BoardCreation : MonoBehaviour
                 warningText.color = Color.green;
                 warningText.text = "Your score was: " + match3Return + "%";
                 GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-                GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+                GameObject.Find("GradeImage").GetComponent<Image>().sprite = C;
             }
 
             /*if (percentage <= 1.5 && percentage > 1.1 || percentage < .9 && percentage >= .7)
@@ -845,11 +845,11 @@ public class BoardCreation : MonoBehaviour
 			else
 			{
 				//puzzleObject.GetComponent<AudioSource> ().PlayOneShot (wining, 1.0f);
-				match3Return = (.5f - dragPenalty) * 100;
+				match3Return = (.8f - dragPenalty) * 100;
 				warningText.color = Color.green;
 				warningText.text = "Your score was: " + match3Return + "%";
 				GameObject.Find("GradeImage").GetComponent<Image>().enabled = true;
-				GameObject.Find("GradeImage").GetComponent<Image>().sprite = D;
+				GameObject.Find("GradeImage").GetComponent<Image>().sprite = B;
 			}
         //}
 

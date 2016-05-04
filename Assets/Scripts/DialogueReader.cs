@@ -88,6 +88,57 @@ public class DialogueReader : MonoBehaviour
                 cb.highlightedColor = Color.white;
                 b.colors = cb;
             }
+            else
+            {
+                if(i == 0 && gameObject.GetComponent<PersistVars>().tracerScore != 0)
+                {
+                    Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                    ColorBlock cb = b.colors;
+                    cb.normalColor = Color.green;
+                    cb.highlightedColor = Color.green;
+                    b.colors = cb;
+                }
+                if (i == 1 && gameObject.GetComponent<PersistVars>().findDiffScore != 0)
+                {
+                    Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                    ColorBlock cb = b.colors;
+                    cb.normalColor = Color.green;
+                    cb.highlightedColor = Color.green;
+                    b.colors = cb;
+                }
+                if (i == 2 && gameObject.GetComponent<PersistVars>().match3Score != 0)
+                {
+                    Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                    ColorBlock cb = b.colors;
+                    cb.normalColor = Color.green;
+                    cb.highlightedColor = Color.green;
+                    b.colors = cb;
+                }
+                if (i == 3 && gameObject.GetComponent<PersistVars>().rotatoScore != 0)
+                {
+                    Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                    ColorBlock cb = b.colors;
+                    cb.normalColor = Color.green;
+                    cb.highlightedColor = Color.green;
+                    b.colors = cb;
+                }
+                if (i == 4 && gameObject.GetComponent<PersistVars>().pipeDreamScore != 0)
+                {
+                    Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                    ColorBlock cb = b.colors;
+                    cb.normalColor = Color.green;
+                    cb.highlightedColor = Color.green;
+                    b.colors = cb;
+                }
+                if (i == 5 && gameObject.GetComponent<PersistVars>().mastermindScore != 0)
+                {
+                    Button b = GameObject.Find("Button (" + (i + 1) + ")").GetComponent<Button>();
+                    ColorBlock cb = b.colors;
+                    cb.normalColor = Color.green;
+                    cb.highlightedColor = Color.green;
+                    b.colors = cb;
+                }
+            }
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -657,16 +708,23 @@ public class DialogueReader : MonoBehaviour
 						GoTo ("Continue");
 						break;
 					case "#Continue":
-						SceneManager.LoadScene ("mansion");
-                        gameObject.GetComponent<PersistVars>().match3Score = 0;
+                        gameObject.GetComponent<UIHandler>().goToHome();
+						//SceneManager.LoadScene ("mansion");
+                        /*gameObject.GetComponent<PersistVars>().match3Score = 0;
                         gameObject.GetComponent<PersistVars>().mastermindScore = 0;
                         gameObject.GetComponent<PersistVars>().rotatoScore = 0;
                         gameObject.GetComponent<PersistVars>().pipeDreamScore = 0;
                         gameObject.GetComponent<PersistVars>().tracerScore = 0;
-                        gameObject.GetComponent<PersistVars>().findDiffScore = 0;
-                        paintingIncrement++;
+                        gameObject.GetComponent<PersistVars>().findDiffScore = 0;*/
+                        gameObject.GetComponent<PersistVars>().ClearVars();
+                        PersistVars.paintingDone = false;
+                        PersistVars.paintingNum = 0;
+                        for (int j = 0; j < 6; j++ )
+                        {
+                            ClueFound[j] = false;
+                        }
+                        gameObject.GetComponent<PersistVars>().PaintingIncrement();
                         GoTo("Quit");
-                        // Increment the painting lights
                         //EndDialogue();
 						break;
                     case "#next":
@@ -1360,14 +1418,5 @@ public class DialogueReader : MonoBehaviour
         textbox.text = "";
         lineNum = 0;
         entries = dialogue.text.Split('\n');
-    }
-
-    public void ColorChange(String button)
-    {
-        Button b = GameObject.Find(button).GetComponent<Button>();
-        ColorBlock cb = b.colors;
-        cb.normalColor = Color.white;
-        cb.highlightedColor = Color.white;
-        b.colors = cb;
     }
 }

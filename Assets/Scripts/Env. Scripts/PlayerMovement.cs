@@ -89,6 +89,12 @@ public class PlayerMovement : MonoBehaviour
             Screen.fullScreen = false;
             openCinematic.Stop();
             openAudio.Stop();
+
+            if(openCinematic.isPlaying == false)
+            {
+                SceneManager.LoadScene("StartScene");
+                Destroy(GameObject.Find("GENERALUI"));
+            }
         }
     }
 

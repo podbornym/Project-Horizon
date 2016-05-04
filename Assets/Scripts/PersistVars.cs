@@ -23,6 +23,7 @@ public class PersistVars : MonoBehaviour {
 	public bool freePass = false;
 
     public int knowledgeCount = 0;
+    public int paintingCount = 0;
 
     public static string currentScene = "mansion";
     public static string previousScene = null;
@@ -438,12 +439,50 @@ public class PersistVars : MonoBehaviour {
         }
     }
 
+    public void PaintingIncrement()
+    {
+        paintingCount++;
+
+        switch (paintingCount)
+        {
+            case 1:
+                GameObject.Find("light_0P").GetComponent<Image>().enabled = true;
+                break;
+            case 2:
+                GameObject.Find("light_1P").GetComponent<Image>().enabled = true;
+                break;
+            case 3:
+                GameObject.Find("light_2P").GetComponent<Image>().enabled = true;
+                break;
+            case 4:
+                GameObject.Find("light_3P").GetComponent<Image>().enabled = true;
+                break;
+            case 5:
+                GameObject.Find("light_4P").GetComponent<Image>().enabled = true;
+                break;
+            case 6:
+                GameObject.Find("light_5P").GetComponent<Image>().enabled = true;
+                break;
+            default:
+                PaintingClear();
+                break;
+        }
+    }
+
     // Clear the knowledge meter on the UI
     public void KnowledgeClear()
     {
         for(int i = 0; i < 6; i++)
         {
             GameObject.Find("light_" + i).GetComponent<Image>().enabled = false;
+        }
+    }
+
+    public void PaintingClear()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            GameObject.Find("light_" + i + "P").GetComponent<Image>().enabled = false;
         }
     }
 }
