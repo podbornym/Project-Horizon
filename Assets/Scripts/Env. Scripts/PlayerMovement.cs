@@ -86,11 +86,14 @@ public class PlayerMovement : MonoBehaviour
         // Skip the opening cinematic upon pressing 'Escape'
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Screen.fullScreen = false;
-            openCinematic.Stop();
-            openAudio.Stop();
+            if(openCinematic.isPlaying == true)
+            {
+                Screen.fullScreen = false;
+                openCinematic.Stop();
+                openAudio.Stop();
+            }
 
-            if(openCinematic.isPlaying == false)
+            else
             {
                 SceneManager.LoadScene("StartScene");
                 Destroy(GameObject.Find("GENERALUI"));

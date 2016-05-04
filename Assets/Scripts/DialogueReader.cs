@@ -45,9 +45,11 @@ public class DialogueReader : MonoBehaviour
     public bool intro_speech_ukiyo = true;
     public bool intro_speech_surreal = true;
     public bool intro_speech_baroque = true;
+    public bool intro_speech_mansion = true;
     public bool finished_intro_u = false;
     public bool finished_intro_s = false;
     public bool finished_intro_b = false;
+    public bool finished_intro_m = false;
     public bool inMansion = true;
     public bool inUkiyoZone = true;
     public bool inSurrealZone = true;
