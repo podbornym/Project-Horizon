@@ -220,5 +220,149 @@ The bokashi technique in the current piece to achieve parallel rain drops. #next
 #option2 #goto:blkFalse
 #option1Text True. #option2Text False.
 
+@surreal1_1
+#SetDialogue
+True or False:
+'Tristan and Isolde' is the name of the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal1_2
+#SetDialogue
+True or False:
+Frida Kahlo created the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal1_3
+#SetDialogue
+True or False:
+Oil was used to make this piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal2_1
+#SetDialogue
+True or False:
+'The Son of Man' is the name of the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal2_2
+#SetDialogue
+True or False:
+Max Ernst created the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal2_3
+#SetDialogue
+True or False:
+Magitte wanted viewers to consider how they view objects in his paintings. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal3_1
+#SetDialogue
+True or False:
+'The Slug Room' is the name of the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal3_2
+#SetDialogue
+True or False:
+Gouache is a fast-drying paint used in the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal3_3
+#SetDialogue
+True or False:
+Sigmund Freud's theories was an inspiration for Ernst. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal4_1
+#SetDialogue
+True or False:
+Max Ernst created the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal4_2
+#SetDialogue
+True or False:
+'Turin Spring' is the name of the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal4_3
+#SetDialogue
+True or False:
+Freedom is expressed through others of De Chirico's works. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal5_1
+#SetDialogue
+True or False:
+'Time Without Change' is the name of the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal5_2
+#SetDialogue
+True or False:
+Yves Tanguy created the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal5_3
+#SetDialogue
+True or False:
+Tanguy's American period used vibrant colors. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal6_1
+#SetDialogue
+True or False:
+Max Ernst created the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal6_2
+#SetDialogue
+True or False:
+'Roots' is the name of the current piece. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
+@surreal6_3
+#SetDialogue
+True or False:
+A lack of animals makes the current piece unusual among Kahlo's works. #next
+#option1 #goto:blkTrue
+#option2 #goto:blkFalse
+#option1Text True. #option2Text False.
+
 @Quit
 #quit 

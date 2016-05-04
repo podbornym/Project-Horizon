@@ -708,6 +708,36 @@ public class DialogueReader : MonoBehaviour
 							cAnswer = false;
 							GoTo ("ukiyo6_1");
 						}
+						else if (PersistVars.paintingNum == 7) // Tristan and Isolde
+						{
+							cAnswer = true;
+							GoTo ("surreal1_1");
+						}
+						else if (PersistVars.paintingNum == 8) // The Healer
+						{
+							cAnswer = false;
+							GoTo ("surreal2_1");
+						}
+						else if (PersistVars.paintingNum == 9) // The Slug Room
+						{
+							cAnswer = true;
+							GoTo ("surreal3_1");
+						}
+						else if (PersistVars.paintingNum == 10) // Turin Spring
+						{
+							cAnswer = false;
+							GoTo ("surreal4_1");
+						}
+						else if (PersistVars.paintingNum == 11) // Through Birds, Through Fire but Not Through Glass
+						{
+							cAnswer = false;
+							GoTo ("surreal5_1");
+						}
+						else if (PersistVars.paintingNum == 12) // My Dress Hangs There
+						{
+							cAnswer = false;
+							GoTo ("surreal6_1");
+						}
 						break;
 					case "#quest2":
 						if (PersistVars.paintingNum == 4) // Shoki Striding
@@ -740,6 +770,36 @@ public class DialogueReader : MonoBehaviour
 							cAnswer = false;
 							GoTo ("ukiyo6_2");
 						}
+						else if (PersistVars.paintingNum == 7) // Tristan and Isolde
+						{
+							cAnswer = false;
+							GoTo ("surreal1_2");
+						}
+						else if (PersistVars.paintingNum == 8) // The Healer
+						{
+							cAnswer = false;
+							GoTo ("surreal2_2");
+						}
+						else if (PersistVars.paintingNum == 9) // The Slug Room
+						{
+							cAnswer = false;
+							GoTo ("surreal3_2");
+						}
+						else if (PersistVars.paintingNum == 10) // Turin Spring
+						{
+							cAnswer = true;
+							GoTo ("surreal4_2");
+						}
+						else if (PersistVars.paintingNum == 11) // Through Birds, Through Fire but Not Through Glass
+						{
+							cAnswer = true;
+							GoTo ("surreal5_2");
+						}
+						else if (PersistVars.paintingNum == 12) // My Dress Hangs There
+						{
+							cAnswer = false;
+							GoTo ("surrealo6_2");
+						}
 						break;
 					case "#quest3":
 						if (PersistVars.paintingNum == 4) // Shoki Striding
@@ -771,6 +831,36 @@ public class DialogueReader : MonoBehaviour
 						{
 							cAnswer = false;
 							GoTo ("ukiyo6_3");
+						}
+						else if (PersistVars.paintingNum == 7) // Tristan and Isolde
+						{
+							cAnswer = true;
+							GoTo ("surreal1_3");
+						}
+						else if (PersistVars.paintingNum == 8) // The Healer
+						{
+							cAnswer = true;
+							GoTo ("surreal2_3");
+						}
+						else if (PersistVars.paintingNum == 9) // The Slug Room
+						{
+							cAnswer = true;
+							GoTo ("surreal3_3");
+						}
+						else if (PersistVars.paintingNum == 10) // Turin Spring
+						{
+							cAnswer = true;
+							GoTo ("surreal4_3");
+						}
+						else if (PersistVars.paintingNum == 11) // Through Birds, Through Fire but Not Through Glass
+						{
+							cAnswer = true;
+							GoTo ("surreal5_3");
+						}
+						else if (PersistVars.paintingNum == 12) // My Dress Hangs There
+						{
+							cAnswer = false;
+							GoTo ("surrealo6_3");
 						}
 						break;
 					case "#blkTrue":
