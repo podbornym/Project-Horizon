@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("StartScene");
-                Destroy(GameObject.Find("GENERALUI"));
+                GameObject.Find("GENERALUI").GetComponent<Canvas>().enabled = false;
             }
         }
     }

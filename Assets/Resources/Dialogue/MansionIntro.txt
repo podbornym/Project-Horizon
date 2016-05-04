@@ -7,10 +7,10 @@ You navigate with the Mouse, using the Left Mouse Button on objects that make th
 Once you have found the lab, your goal is to complete art forgeries, just like your uncle.
 You can teleport to 3 zones: The Ukiyo-e, Surrealism, and Baroque art periods are all open for exploration.
 Once in a zone, find a studio to work from. In each studio is a Muse...click on them to start a conversation.
-Talk a bit, and a clue in the studio will activate - you just have to find it!
+Talk a bit, and a clue in the studio will activate - you just have to find it (use Tab to hide the User Interface if necessary)!
 Once found, you can play a minigame. Once you complete the minigame, you have progressed 1/6 of the way to finishing a forery.
 When you have played all the games, return to Woodstock, your friendly mannequin Woodstock will offer to sell your painting on the Black Market.
 Succeed, and you will be rewarded generously.
-Otherwise, the cops might catch on to your historically accurate replicas.
+Otherwise, the cops might catch on to your mischeviousness.
 Enjoy!
-#quit
+#quit 
