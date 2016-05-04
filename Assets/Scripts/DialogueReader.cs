@@ -282,7 +282,18 @@ public class DialogueReader : MonoBehaviour
 
             }
         }
-        if (PersistVars.currentScene == "mansion" && !inMansion)
+        if(PersistVars.currentScene == "mansion" && intro_speech_mansion)
+        {
+            inUkiyoZone = false;
+            inMansion = true;
+            inBaroqueZone = false;
+            inSurrealZone = true;
+            selling = false;
+            intro_speech_mansion = false;
+            ReadFile("Dialogue/MansionIntro");
+            NextLine();
+        }
+        else if (PersistVars.currentScene == "mansion" && !inMansion)
         {
             inMansion = true;
             inUkiyoZone = false;
@@ -1092,6 +1103,14 @@ public class DialogueReader : MonoBehaviour
                 ReadFile("Dialogue/Three Beauties");
             }
         }
+        if (finished_intro_m == false)
+        {
+            if(intro_speech_mansion == false)
+            {
+                finished_intro_m = true;
+                ReadFile("Dialogue/MansionDefault");
+            }
+        }
         GameObject.Find("RenPortExcite").GetComponent<Image>().enabled = true;
         GameObject.Find("DragPort").GetComponent<Image>().enabled = false;
         GameObject.Find("SurrealMuse").GetComponent<Image>().enabled = false;
@@ -1335,7 +1354,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/whatever");
+                ReadFile("Dialogue/Three Trees");
             }
             else if (PersistVars.currentScene == "B_1")
             {
@@ -1346,7 +1365,7 @@ public class DialogueReader : MonoBehaviour
                 {
                     ClueFound[i] = false;
                 }
-                ReadFile("Dialogue/whatever");
+                ReadFile("Dialogue/Board-Partition");
             }
             else if (PersistVars.currentScene == "B_2")
             {

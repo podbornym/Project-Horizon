@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetBaroqueMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -20,7 +20,7 @@ What do you want to know?
 #SetBaroqueMuse
 <b>Veritas:</b> Well, the painting was created in 1668.
 It depicts what a pin board of that time may have looked like.
-I think you might enjoy trying to recreate it. Interested?
+I think you might enjoy trying to recreate it. Interested? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -50,7 +50,7 @@ It's quite a beautiful painting, yet...
 #SetBaroqueMuse
 <b>Veritas:</b> The board is framed by a black cloth draped partially over it.
 There are also red ribbons seperating the painting into a grid.
-Would you like to try and frame something in a painting?
+Would you like to try and frame something in a painting? #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -77,7 +77,7 @@ Would you like to try and frame something in a painting?
 <b>Ren:</b> Do you know anything about Gijsbrechts?
 #SetBaroqueMuse
 <b>Veritas:</b> Cornelius Norberus Gijsbrechts was court painter to two Danish kings, Frederick III and Christian V.
-Why not try and paint something?
+Why not try and paint something? #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -107,7 +107,7 @@ Why not try and paint something?
 #SetBaroqueMuse
 <b>Veritas:</b> The painting is meant to be an illusion.
 It is supposed to trick the spectator into believing that the objects are, in fact, real.
-You should try to trick viewers with your paintings.
+You should try to trick viewers with your paintings. #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -137,7 +137,7 @@ You should try to trick viewers with your paintings.
 #SetBaroqueMuse
 <b>Veritas:</b> Pin boards contain letters, which create an identity.
 A painting of a pin board could be seen as an alternative to a portrait.
-Do you want to create your identity in a painting?
+Do you want to create your identity in a painting? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -163,7 +163,7 @@ I'll come back to him later.
 <b>Ren:</b> What else was Gijsbrechts painting at this time?
 #SetBaroqueMuse
 <b>Veritas:</b> He painted The Reverse of a Framed Painting and A Cabinet in the Artist's Studio.
-He was very interested in painting the places and processes of painting.
+He was very interested in painting the places and processes of painting. #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -179,3 +179,21 @@ He was very interested in painting the places and processes of painting.
 I'll have to come back.
 #activateClue6
 #goto:Start
+
+@change
+#SetDialogue
+#SetDialogue
+Would you like to change art pieces? #next
+#SetOptions
+#option1 #goto:confirm
+#option2 #quit
+#option1Text Yes #option2Text No
+
+@confirm
+#SetDialogue
+#SetDialogue
+WARNING: This will remove all progress from the previous piece. Continue? #next
+#SetOptions
+#option1 #change
+#option2 #quit
+#option1Text Yes #option2Text No

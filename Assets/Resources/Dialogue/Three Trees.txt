@@ -1,6 +1,6 @@
 @Start
 #SetDialogue #SetBaroqueMuse
-What do you want to know?
+What do you want to know? #next
 #SetOptions
 #option1 #goto:ClueOne
 #option2 #goto:ClueTwo
@@ -21,7 +21,7 @@ What do you want to know?
 <b>Veritas:</b> This etching was created in 1643.
 The scene shows a cloudy hillside and three trees, as the name might suggest.
 It also shows an artist on the top of the hill, and some people fishing.
-This would be an interesting piece to forge for yourself, give it a try?
+This would be an interesting piece to forge for yourself, give it a try? #next
 #SetOptions
 #option1 #play1
 #option2 #goto:Start
@@ -50,7 +50,7 @@ It is quite a beautiful scene of a hillside and some trees...
 <b>Ren:</b> Any information for me on the composition of the piece?
 #SetBaroqueMuse
 <b>Veritas:</b> Rembrandt used a variety of techniques to create a sense of flux in nature.
-He used drypoint, engraving, and a speckled tone to achieve this.
+He used drypoint, engraving, and a speckled tone to achieve this. #next
 #SetOptions
 #option1 #play2
 #option2 #goto:Start
@@ -83,7 +83,7 @@ Although his art was popular, he experienced much personal tragedy and financial
 <b>Ren:</b> That's so sad!
 #SetBaroqueMuse
 <b>Veritas:</b> Well, at least you are making good money for recreating his works.
-Im sure he would be happy someone is getting paid!
+Im sure he would be happy someone is getting paid! #next
 #SetOptions
 #option1 #play3
 #option2 #goto:Start
@@ -112,7 +112,7 @@ I seem to have some detail about not having much money floating around my head.
 #SetPlayer
 <b>Ren:</b> Any more details about this etching?
 #SetBaroqueMuse
-<b>Veritas:</b> Some of the unnatural cloud formations on the left of the image indicate that the artist may have used an old plate for this etching.
+<b>Veritas:</b> Some of the unnatural cloud formations on the left of the image indicate that the artist may have used an old plate for this etching. #next
 #SetOptions
 #option1 #play4
 #option2 #goto:Start
@@ -142,7 +142,7 @@ I seem to have some detail about not having much money floating around my head.
 #SetBaroqueMuse
 <b>Veritas:</b> The artist uses blocks of metal usually, and uses tools to create an image in the metal.
 The spaces created in the metal then hold ink in, and when pressed onto paper transfer the held ink to the paper.
-Do you want to try for yourself?
+Do you want to try for yourself? #next
 #SetOptions
 #option1 #play5
 #option2 #goto:Start
@@ -169,7 +169,7 @@ That's all I can remember for now...
 <b>Ren:</b> What else can you tell me about the history of the piece?
 #SetBaroqueMuse
 <b>Veritas:</b> The Baroque Era was a period where the art that was popular involved exaggerated motion and clear drama.
-This style was very encouraged by the church, because this style could communicate religious themes directly and produce an emotional involvement.
+This style was very encouraged by the church, because this style could communicate religious themes directly and produce an emotional involvement. #next
 #SetOptions
 #option1 #play6
 #option2 #goto:Start
@@ -188,7 +188,7 @@ There is some more information on this, but I can't remember it all now...
 @change
 #SetDialogue
 #SetDialogue
-Would you like to change paintings?
+Would you like to change art pieces? #next
 #SetOptions
 #option1 #goto:confirm
 #option2 #quit
@@ -197,7 +197,7 @@ Would you like to change paintings?
 @confirm
 #SetDialogue
 #SetDialogue
-WARNING: This will remove all progress from the previous painting. Continue?
+WARNING: This will remove all progress from the previous piece. Continue? #next
 #SetOptions
 #option1 #change
 #option2 #quit
